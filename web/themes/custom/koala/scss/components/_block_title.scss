@@ -1,0 +1,25 @@
+.paragraph--type--titulo-y-subtitulo-de-secciones- {
+  text-align: center;
+  color     : black;
+
+  > .paragraph__column {
+    padding-bottom: 0.5rem;
+  }
+
+  .field--name-field-titulo-de-la-seccion {
+    font-weight  : 700;
+    font-size    : 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .field--name-field-subtitulo-de-la-seccion {
+    font-weight: 500;
+    margin: 1rem 1rem 0.5rem 1rem;
+  }
+}
+@media only screen and (max-width: 600px) and (min-width: 192px)  {
+  .paragraph--type--titulo-y-subtitulo-de-secciones- {
+    width: 100%;
+    margin: 0 auto;
+  }
+}

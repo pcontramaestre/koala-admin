@@ -1,0 +1,240 @@
+body.simplelogin {
+  padding-top: 5rem;
+  position   : relative;
+
+  .barra-superior {
+    position      : absolute;
+    top           : 0;
+    left          : 0;
+    width         : 100vw;
+    background    : white;
+    min-height    : 5.2rem;
+    display       : flex;
+    flex-direction: row;
+    flex-wrap     : nowrap;
+    align-items   : center;
+    padding-left  : 4rem;
+    font-size     : 24px;
+    color         : black;
+    box-shadow    : 0px 0px 15px 0px rgb(187, 183, 183);
+
+    .atras {
+      margin-right: 2.5rem;
+
+      a {
+        color     : black;
+        margin-top: 0.5rem;
+        display   : block;
+      }
+    }
+  }
+
+  .simplelogin-wrapper {
+    padding: 20% 0 0;
+
+    .simplelogin-form {
+      border-radius : 32px;
+      display       : flex;
+      flex-direction: column;
+      padding       : 2rem 1.2rem 2rem 1.2rem;
+
+      .login-form__top {
+        .texto-login {
+          text-align   : center;
+          font-weight  : 700;
+          margin-bottom: 2rem;
+          font-size    : 1rem;
+
+          a {
+            text-decoration-line: underline;
+            color               : $TurqK500;
+          }
+        }
+
+        .title-form {
+          text-align   : center;
+          font-weight  : 700;
+          font-size    : 1.25rem;
+          line-height  : 1.69rem;
+          color        : #000000;
+          margin-bottom: 1rem;
+        }
+
+        .forgot-password2 {
+          margin    : 0.5rem 1rem 1rem 1rem;
+          color     : black;
+          font-size : 1rem;
+          text-align: center;
+
+
+          margin-top: 1rem;
+
+          a {
+            color          : black;
+            font-weight    : 700;
+            text-decoration: underline;
+            font-weight    : 700;
+          }
+        }
+
+        .separador {
+          text-align   : center;
+          margin-top   : 1rem;
+          margin-bottom: 1rem;
+          font-weight  : 700;
+          font-size    : 1rem;
+        }
+
+        .boton-google {
+          #edit-submit2.btn-google {
+            display        : flex;
+            flex-direction : row;
+            justify-content: center;
+            align-items    : center;
+            padding        : 12px 16px;
+            gap            : 16px;
+            background     : #FFC2C4;
+            border         : 2px solid #FF9294;
+            border-radius  : 32px;
+            color          : black;
+            text-transform: capitalize;
+            font-size: 1rem;
+          }
+        }
+      }
+
+      .login-form__submit {
+        text-align: center;
+
+        .form-submit {
+          color           : black;
+          background-color: #E6F1F1;
+          border          : 2px solid #BECACA;
+          border-radius   : 30px;
+          font-weight     : 800;
+          font-size       : 1rem;
+          width           : 62%;
+          margin-top      : 1rem;
+          text-transform  : capitalize!important;
+
+        }
+      }
+
+      .simplelogin-link {
+        display    : none;
+        text-align : center;
+        font-size  : 1rem;
+        font-weight: 700;
+
+        a {
+          border        : none;
+          color         : black;
+          text-transform: capitalize;
+
+          &:hover {
+            text-decoration: none;
+            color          : white;
+          }
+        }
+      }
+
+      .simplelogin-bg {
+        order: 1;
+
+        .simplelogin-logo {
+          img {
+            max-width    : 100px !important;
+            margin-bottom: 2rem;
+          }
+
+          h1 {
+            display: none;
+          }
+        }
+
+        nav.tabs {
+          display: none;
+        }
+
+        .tabs {
+          .nav-tabs {
+            display         : flex;
+            flex-direction  : column;
+            background-color: white;
+            border          : none;
+            width           : 73%;
+            margin          : 0 auto;
+
+            .nav-item {
+              margin-bottom: 0.5rem;
+              font-size    : 1.3rem;
+              font-weight  : 700;
+
+              a {
+                border: none;
+              }
+
+              &.active a {
+                background-color: white;
+                border          : none;
+              }
+
+              &:nth-child(2) {
+                display: none;
+              }
+
+              &:nth-child(3) {
+                display: none;
+              }
+            }
+          }
+        }
+
+        .block-system {
+          .content {
+            form {
+              input {
+                border-radius   : 25px;
+                border          : 2px solid $GreyK200;
+                background-color: white;
+                height          : 2.9rem;
+                color           : $GreyK200;
+                margin-bottom   : 1rem;
+              }
+
+              .form-actions {
+                text-align: center;
+
+                .button {
+                  color           : black;
+                  background-color: $GreyK100;
+                  border          : 2px solid $GreyK200;
+                  border-radius   : 30px;
+                  font-weight     : 800;
+                  font-size       : 1rem;
+                  width           : 62%;
+                  margin-top      : 1rem;
+                  text-transform  : capitalize;
+                }
+              }
+            }
+          }
+        }
+
+        .forgot-password {
+          display        : none;
+          margin         : 0.5rem 1rem 1rem 1rem;
+          color          : black;
+          font-size      : 1rem;
+          text-align     : center;
+          font-weight    : 700;
+          text-decoration: underline;
+
+          a {
+            color: black;
+          }
+        }
+      }
+    }
+  }
+}

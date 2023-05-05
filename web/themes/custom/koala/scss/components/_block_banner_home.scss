@@ -1,0 +1,214 @@
+.view-banner-home.view-id-banner_home {
+  .view-content {
+    >.views-row {
+      padding   : 0;
+      margin-top: 2rem;
+
+      .banner-home {
+        min-height: 411px;
+        max-height: 411px;
+
+        >img.background {
+          position     : absolute;
+          width        : 100%;
+          max-height   : 411px;
+          object-fit   : cover;
+          border-radius: 40px;
+          height       : 100%;
+        }
+
+        .pantalla-chica {
+          position      : relative;
+          display       : flex;
+          flex-direction: row;
+          flex-wrap     : wrap;
+          align-items   : center;
+          min-height    : 411px;
+          align-content : stretch;
+          padding       : 1rem;
+
+          .titulo {
+            text-align: center;
+            font-size : 1.5rem;
+          }
+
+          .imagen-derecha {
+            img {
+              height       : auto;
+              max-width    : 100%;
+              object-fit   : cover;
+              max-height   : 230px;
+              margin-bottom: 1rem;
+            }
+          }
+
+          .enlaces-banner {
+            display        : flex;
+            flex-direction : row;
+            flex-wrap      : wrap;
+            justify-content: space-evenly;
+            align-items    : center;
+            max-width      : 100%;
+
+            >div {
+              max-width: 50%;
+            }
+          }
+
+          .enlace-video {
+            >a {
+              font-weight    : 700;
+              color          : $TurqK500;
+              font-size      : 1.25rem;
+              text-decoration: none;
+
+              &:before {
+                content     : url('youtube.png');
+                margin-right: 0.5rem;
+                position    : relative;
+                top         : 6px;
+              }
+            }
+          }
+
+          .enlace-pruebalo {
+            a {
+              border          : 2px solid $TurqK500;
+              border-radius   : 30px;
+              padding         : 0.5rem 2rem;
+              font-size       : 1.3rem;
+              color           : black;
+              font-weight     : 700;
+              text-decoration : none;
+              background-color: $AguaK500;
+
+              &:hover {
+                background-color: $TurqK500;
+                color           : white;
+              }
+            }
+          }
+        }
+
+        .pantalla-grande {
+          position  : relative;
+          padding   : 1.5rem 3rem;
+          min-height: 411px;
+          max-height: 411px;
+
+          .izquierda {
+            // display        : flex;
+            // flex-direction : column;
+            // flex-wrap      : wrap;
+            // justify-content: space-between;
+
+            .titulo {
+              font-size  : 3rem;
+              line-height: 1.1;
+            }
+
+            .contenedor-video {
+              padding      : 1.6rem;
+              background   : $RedK200;
+              border-radius: 32px;
+              margin-bottom: 2.2rem;
+
+              .col-4 {
+                img {
+                  border-radius: 15px;
+                  height       : 6.5rem;
+                }
+              }
+
+              .titulo-video {
+                font-weight: 700;
+                font-size  : 1.25rem;
+              }
+
+              .enlace-video {
+                a {
+                  font-weight: 700;
+                  color      : $TurqK500;
+                  font-size  : 1.1rem;
+
+                  &:before {
+                    content     : url('youtube.png');
+                    margin-right: 0.5rem;
+                    position    : relative;
+                    top         : 6px;
+                  }
+                }
+              }
+
+              .descripcion-video {
+                font-weight  : 500;
+                margin-bottom: 0.5rem;
+              }
+            }
+
+            .enlace-pruebalo {
+              a {
+                border          : 2px solid $TurqK500;
+                border-radius   : 30px;
+                padding         : 0.5rem 3.5rem;
+                font-size       : 1.3rem;
+                color           : black;
+                font-weight     : 700;
+                text-decoration : none;
+                background-color: $AguaK500;
+
+                &:hover {
+                  background-color: $TurqK500;
+                  color           : white;
+                }
+              }
+            }
+          }
+
+          .derecha {
+            display        : flex;
+            flex-direction : column;
+            justify-content: center;
+
+            .imagen-derecha {
+              padding: 2rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+div[class^="bannerCarousel_"] {
+  padding: 0rem 6rem 0rem 6rem;
+}
+div[class^="bannerCarousel_"] img.ms-Image-image{
+  object-fit: contain !important;
+  // background: #5fba47;
+}
+
+
+@media only screen and (max-width: 1199px) and (min-width: 192px) {
+  .view-banner-home.view-id-banner_home {
+    .view-content {
+      >.views-row {
+        .banner-home {
+          .pantalla-grande {
+            position  : relative;
+            padding   : 1.5rem 3rem;
+            min-height: 411px;
+            max-height: 411px;
+
+            .izquierda {
+              .titulo {
+                font-size  : 1.8rem;
+                line-height: 1.1;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

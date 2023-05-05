@@ -1,0 +1,125 @@
+//Bloque de Planes y precios del Home
+.view-id-planes_y_precios.view-display-id-block_1 {
+  background   : $GreyK100;
+  padding      : 2rem 4rem 2rem 4rem;
+  border-radius: 40px;
+
+  .view-header {
+    padding-bottom: 1rem;
+    font-size     : 1.5rem;
+  }
+
+  .view-content.row {
+    .planes-y-precios {
+      .views-field-nothing {
+        padding      : 1.3rem 0rem 0rem 0rem;
+        background   : white;
+        box-shadow   : 0px 2px 10px rgba(67, 67, 67, 0.15), 0px 5px 20px rgba(74, 74, 74, 0.08), 0px 10px 80px rgba(74, 74, 74, 0.02);
+        border-radius: 32px;
+        width        : 90%;
+        margin       : 0 auto;
+
+        .envoltura {
+          .title {
+            color: $RedK500;
+
+            h2 {
+              font-size: 1.6rem;
+            }
+          }
+
+          .subtitle {
+            display: none;
+          }
+
+          .precio1 {
+            font-size  : 2.5rem;
+            font-weight: 700;
+          }
+
+          .precio2 {
+            font-size  : 1.3rem;
+            font-weight: 700;
+          }
+
+          .caracteristicas-del-plan {
+            padding    : 0rem 1rem 0.7rem 1rem;
+            font-weight: 600;
+
+            .item-list {
+              .list-group {
+                li {
+                  border: none;
+                  margin: 0.3rem;
+                  padding-left: 2rem;
+
+                  &:before {
+                    content     : url('Check-icon.png');
+                    margin-right: 1rem;
+                    position: absolute;
+                    top: 5px;
+                    left: 0px;
+                  }
+                }
+              }
+            }
+          }
+
+          .enlace {
+            background-color          : #D8FFFD;
+            height                    : 5.7rem;
+            border-bottom-right-radius: 30px;
+            border-bottom-left-radius : 30px;
+            padding-top               : 1.7rem;
+
+            a {
+              border          : 2px solid $TurqK500;
+              border-radius   : 30px;
+              padding         : 0.5rem 2rem;
+              font-size       : 1.3rem;
+              color           : black;
+              font-weight     : 700;
+              text-decoration : none;
+              background-color: $AguaK500;
+
+              &:hover {
+                background-color: $TurqK500;
+                color           : white;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.paragraph--type--bp-blank {
+  .field--name-bp-unrestricted {
+    h2 {
+      font-weight: 700;
+      font-size  : 1.5rem;
+      text-align : center;
+    }
+  }
+}
+
+.paragraph--type--contenedor-de-iconos-izquierda-t {
+  background-color: $GreyK100;
+  font-weight     : 600;
+  width           : 90%;
+  margin          : 0 auto;
+}
+
+@media only screen and (max-width: 600px) and (min-width: 374px) {
+  .view-id-planes_y_precios {
+    padding: 2rem 1rem 0rem 1rem !important;
+
+    .planes-y-precios {
+      .views-field-nothing {
+        margin-bottom: 2rem !important;
+        width        : 100%!important;
+      }
+    }
+  }
+}

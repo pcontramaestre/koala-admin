@@ -1,0 +1,579 @@
+p,
+div,
+span,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $font-nunito;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0, 0, 0)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E") !important;
+}
+
+.ancho-1300px {
+  max-width: 1240px;
+}
+
+#header {
+  #navbar-main {
+    background: white !important;
+    height    : 5.2rem;
+    box-shadow: 0px 0px 15px 0px rgb(187 183 183);
+
+    .navbar-brand {
+      margin: 0;
+
+      img {
+        max-width: 112px;
+        height   : auto;
+
+        @media (max-width: 1200px) {
+          z-index : 10000;
+          position: relative;
+        }
+      }
+
+      span {
+        display: none !important;
+      }
+    }
+
+    #block-koala-main-menu {
+      display    : flex;
+      align-items: center;
+
+      .nav.navbar-nav {
+        display       : flex;
+        flex-direction: row;
+        align-items   : center;
+        padding       : 0px;
+        gap           : 8px;
+
+        .nav-item:nth-child(6) {
+          margin-left: 1rem;
+
+          a {
+            background   : #FFFFFF;
+            border       : 2px solid $TurqK500;
+            border-radius: 28px;
+            color        : $TurqK500 !important;
+            padding      : 0.2rem 1rem 0.2rem 1rem;
+            margin-left  : 2rem;
+
+            &:hover {
+              background-color: $TurqK500;
+              color           : white !important;
+            }
+          }
+        }
+
+        .nav-item:nth-child(7) {
+          a {
+            text-decoration: underline;
+            margin-left    : 1rem;
+          }
+        }
+      }
+    }
+
+    #CollapsingNavbar {
+      .offcanvas-body {
+        justify-content: space-evenly;
+
+        #block-koala-main-menu {
+          padding-top: 0.5rem;
+        }
+      }
+
+      .navbar-nav {
+        .nav-item {
+          .nav-link {
+            color      : black !important;
+            font-size  : 1rem;
+            font-weight: 700;
+            padding    : 0 0.5rem;
+            transition : all 0.3s ease-in-out;
+            position   : relative;
+            z-index    : 1;
+
+            &:hover {
+              background-color: $AlgaK100;
+              border-radius   : 20px;
+
+              &:after {
+                content   : "";
+                position  : absolute;
+                bottom    : -5px;
+                left      : 0;
+                width     : 0;
+                height    : 2px;
+                background: #fff;
+                transition: all 0.3s ease-in-out;
+              }
+            }
+
+            &:after {
+              content   : "";
+              position  : absolute;
+              bottom    : -5px;
+              left      : 0;
+              width     : 0;
+              height    : 2px;
+              background: #fff;
+              transition: all 0.3s ease-in-out;
+            }
+          }
+
+          .nav-link.active {
+            background-color: $AlgaK100;
+            border-radius   : 20px;
+          }
+        }
+
+        #block-koala-account-menu {
+          .nav-link--user-login {
+            color          : black !important;
+            font-size      : 1rem;
+            font-weight    : 700;
+            text-decoration: underline;
+
+            &:hover {
+              background-color: $AlgaK100;
+              border-radius   : 20px;
+              height          : 1.6rem;
+              display         : flex;
+              align-items     : center;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  #lang_dropdown_form_lang-dropdown-form {
+    display        : flex;
+    flex-direction : row;
+    flex-wrap      : nowrap;
+    justify-content: space-evenly;
+    align-items    : center;
+
+    .form-type-select {
+      margin: 0 !important;
+    }
+
+    .language-icon {
+      min-width   : 26px;
+      margin-right: 5px;
+    }
+  }
+}
+
+.block-dropdown-language {
+  .js-form-item {
+    legend {
+      display: none !important;
+    }
+
+    .clearfix {
+      .nav-link--koala-koala-web-user-login {
+        color          : black !important;
+        font-size      : 1rem;
+        font-weight    : 700;
+        text-decoration: underline;
+
+        &:hover {
+          background-color: #C6F5F2;
+          border-radius   : 20px;
+          height          : 1.6rem;
+          display         : flex;
+          align-items     : center;
+        }
+      }
+    }
+  }
+
+  .dropbutton-multiple {
+    margin-top: 0.5rem;
+    width     : 8rem;
+
+    .dropbutton-widget {
+      border: none;
+
+      .dropdown-language-item {
+        border          : none;
+        background-color: $TurqK50;
+
+        .dropbutton-action {
+          height : 2.2rem;
+          padding: 0.3rem 0rem 0rem 0.5rem;
+
+          span {
+            font-weight: 700;
+            padding    : 0;
+            color      : black;
+
+            img {
+              border-radius: 15px;
+              height       : 1rem;
+            }
+          }
+
+          a {
+            text-decoration: none;
+            font-weight    : 700;
+
+            img {
+              border-radius: 15px;
+              height       : 1rem;
+            }
+          }
+        }
+
+        .secondary-action {
+          border-top-color: none;
+        }
+
+        .dropbutton-toggle {
+          button {
+            background-color: $TurqK50;
+            background-image: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+@media (min-width: 1200px) {
+
+  .container,
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container-xl {
+    max-width: 1240px !important;
+  }
+}
+
+@media only screen and (max-width: 600px) and (min-width: 374px) {
+  #header {
+    #navbar-main {
+      #CollapsingNavbar {
+        width: 100%;
+
+        .offcanvas-header {
+          box-shadow     : 0px 0px 15px 0px rgb(187, 183, 183);
+          height         : 5.2rem;
+          display        : flex;
+          justify-content: flex-end;
+          padding        : 1rem 2rem 1rem 2rem;
+        }
+      }
+
+      #block-koala-main-menu {
+        .nav.navbar-nav {
+          display: block;
+          width  : 84%;
+
+          .nav-item {
+            margin: 0rem 1rem 2rem 0.5rem;
+            width : 100%;
+
+            .nav-link {
+              font-size     : 1.1rem;
+              letter-spacing: 1px;
+            }
+          }
+
+          .nav-item:nth-child(6) {
+            display: none;
+          }
+
+          .nav-item:nth-child(7) {
+            margin: 0rem 1rem 1rem 0.5rem !important;
+
+            a {
+              margin-left     : 0rem;
+              border          : 2px solid #297E88;
+              border-radius   : 40px;
+              padding         : 0.5rem 0rem;
+              font-size       : 1.2rem;
+              font-weight     : 700;
+              text-decoration : none;
+              background-color: #2FF7EE;
+              text-align      : center;
+
+              &:hover {
+                background-color: #fff;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .block-dropdown-language {
+    .dropbutton-multiple {
+      margin-top: 0.5rem;
+      width     : 87%;
+      margin    : 0 auto;
+
+      .dropbutton-widget {
+        width        : 45%;
+        border-radius: 40px;
+
+        .dropdown-language-item {
+          padding: 0.5rem 0rem;
+
+          .dropbutton-action {
+            font-size: 1.2rem;
+            height   : auto;
+
+            span {
+              img {
+                height: 1.2rem;
+                width : 1.2rem;
+              }
+            }
+
+            a {
+              img {
+                height: 2rem;
+                width : 2rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1199px) and (min-width: 601px) {
+  #header {
+    #navbar-main {
+      #CollapsingNavbar {
+        width: 70%;
+      }
+
+      #block-koala-main-menu {
+        .nav.navbar-nav {
+          display: block !important;
+          width  : 70%;
+
+          .nav-item {
+            margin: 2rem;
+            width : 100%;
+
+            .nav-link {
+              font-size     : 1.5rem;
+              letter-spacing: 1px;
+            }
+          }
+
+          .nav-item:nth-child(6) {
+            display: none;
+          }
+
+          .nav-item:nth-child(7) {
+            a {
+              margin-left     : 0rem;
+              border          : 2px solid #297E88;
+              border-radius   : 40px;
+              padding         : 1rem 0rem;
+              font-size       : 1.8rem;
+              font-weight     : 700;
+              text-decoration : none;
+              background-color: #2FF7EE;
+              text-align      : center;
+
+              &:hover {
+                background-color: #fff;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .block-dropdown-language {
+    .dropbutton-multiple {
+      margin-top: 0.5rem;
+      width     : auto;
+
+      .dropbutton-widget {
+        width        : 50%;
+        border-radius: 40px;
+
+        .dropdown-language-item {
+          padding: 1rem 0rem;
+
+          .dropbutton-action {
+            font-size: 1.5rem;
+            height   : auto;
+
+            span {
+              img {
+                height: 2rem;
+                width : 2rem;
+              }
+            }
+
+            a {
+              img {
+                height: 2rem;
+                width : 2rem;
+              }
+            }
+          }
+
+          .dropbutton-toggle {
+            width: 3rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+.mfp-bg {
+  background: white !important;
+  opacity   : 1 !important;
+}
+
+.mfp-image-holder .mfp-close,
+.mfp-iframe-holder .mfp-close {
+  color: black !important;
+}
+
+.mfp-iframe-holder {
+  padding-top: 8.2rem;
+
+  .mfp-content {
+    .mfp-iframe-scaler {
+      .mfp-close {
+        background-color: $RedK300;
+        width           : 1.8rem;
+        border-radius   : 7px;
+        height          : 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: end;
+      }
+
+      .mfp-iframe {
+        height: 90%;
+      }
+    }
+  }
+}
+
+.accordion-collapse.collapse:not(.mostrando) {
+  display   : none;
+  transition: all 0.5s ease;
+}
+
+.accordion-collapse.collapse {
+  transition: display 0.5s ease;
+}
+
+body.mobile {
+  .view-redes-sociales-p {
+    display: none;
+  }
+
+  #CollapsingNavbar {
+    .view-redes-sociales-p {
+      display: unset;
+    }
+  }
+
+  #block-views-block-live-chat-flotante {
+    right    : 0%;
+    max-width: 50px;
+
+    .view-content.row {
+      .views-row:nth-child(2) {
+        .boton-chat i {
+          font-size: 1rem;
+        }
+
+        div {
+          font-size: 13px;
+        }
+      }
+    }
+  }
+
+  .contenedor.clases-activas {
+    .texto-izquierda {
+      font-size: 4rem !important;
+    }
+
+    .texto-derecha {
+      font-size: 2rem !important;
+    }
+  }
+
+  .view-testimonios {
+    .slick-prev {
+      left: -5px;
+    }
+
+    .slick-next {
+      right: -5px;
+    }
+  }
+}
+
+
+// QUIERO SER PROFESOR PANTALLAS MENORES A 1200PX
+
+@media (max-width: 1199px) {
+  //DESLIZAR IMAGEN A LA DERECHA
+  .paragraph--id--204.paragraph--width--full {
+    .field--name-bp-image-field.field--type-image {
+      overflow: auto;
+      margin-top: 1rem;
+      margin-bottom: -1rem;
+      position: relative;
+      max-width: 100vw;
+      overflow: auto;
+  
+      > img {
+        max-width: max-content;
+      }
+    }
+  }
+
+  // texto despues de la imagen alargada
+  .paragraph--id--231 {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  
+    .field--type-text-long {
+      > p {
+        > span {
+          display: block;
+          font-style: normal;
+          font-weight: 500;
+          font-size: 16px;
+          line-height: 22px;
+          text-align: center;
+          color: #000000;
+        }
+      }
+    }
+  }
+}
+
+

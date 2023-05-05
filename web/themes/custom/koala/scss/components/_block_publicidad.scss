@@ -1,0 +1,77 @@
+.paragraph--type--publicidad {
+  > .paragraph__column {
+    padding-top: 0rem;
+    padding-bottom: 8px;
+
+    .field--name-field-seleccionar-publicidad-a-m {
+      > a {
+        text-decoration: none;
+
+        .publicidad {
+          color: black;
+          text-decoration: none;
+          padding: 0.25rem 0.625rem 0.4rem 0.4rem;
+          mix-blend-mode: multiply;
+          border-radius: 22px;
+
+          .text-end {
+            > i {
+              font-size: 1.2rem;
+              position: relative;
+              padding-left: 1rem;
+              &::before {
+                margin-top: 5px;
+                margin-bottom: -5px;
+                position: absolute;
+                left: 0px;
+                top: -3px;
+                font-size: 25px;
+              }
+            }
+          }
+
+          .text-start {
+            padding: 0;
+            .texto {
+              width: max-content;
+              display: flex;
+              flex-direction: row;
+              justify-content: center;
+              align-items: center;
+              padding: 2px 8px;
+              height: 26px;
+              background: #D7EFF2;
+              border-radius: 16px;
+              flex: none;
+              order: 0;
+              flex-grow: 0;
+              margin-top: 2px;
+            }
+          }
+
+          &.movil {
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+            align-items: center;
+
+            > div {
+              max-width: max-content;
+              @media only screen and (max-width: 600px) and (min-width: 192px) {
+                font-size: 13px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// FIX HOME ESPACIADOS
+.path-frontpage {
+  .paragraph--type--publicidad {
+    margin-top: 1rem;
+    margin-bottom: -2rem;
+  }
+}

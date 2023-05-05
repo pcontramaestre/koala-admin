@@ -1,0 +1,105 @@
+.paragraph--type--bloque-de-texto-con-imagen-de-fo {
+  margin-bottom  : 2rem;
+  min-height     : 250px;
+  display        : flex;
+  flex-direction : column;
+  flex-wrap      : wrap;
+  justify-content: center;
+  padding        : 2rem 4rem 2rem 4rem;
+
+  .paragraph__column {
+    padding: 0;
+
+    h1,
+    h2 {
+      font-size  : 1.5rem;
+      font-weight: 700;
+    }
+
+    p {
+      font-weight: 500;
+      font-size  : 1rem;
+
+      a {
+        background     : white;
+        text-decoration: unset;
+        display        : block;
+        max-width      : max-content;
+        margin         : 0 auto;
+        padding        : 0.5rem 2rem 0.5rem 2rem;
+        border         : 2px solid $TurqK500;
+        border-radius  : 40px;
+        color          : $TurqK500;
+        margin-top     : 0.4rem;
+        font-weight    : 700;
+        font-size      : 1.2rem;
+
+        &:hover {
+          background-color: $TurqK500;
+          color           : white;
+        }
+      }
+    }
+
+    .field--name-field-informacion-a-mostrar-en-e {
+      display        : flex;
+      flex-direction : column;
+      flex-wrap      : wrap;
+      justify-content: center;
+
+      h1 {
+        margin-bottom: 1.5rem;
+      }
+    }
+
+    .contenedor.clases-activas {
+      display        : flex;
+      flex-direction : row;
+      flex-wrap      : nowrap;
+      justify-content: center;
+      align-items    : center;
+
+      .texto-izquierda {
+        font-size    : 6rem;
+        font-weight  : 700;
+        padding-right: 1rem;
+      }
+
+      .texto-derecha {
+        font-size  : 3rem;
+        font-weight: 700;
+        color      : $GreyK500;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) and (min-width: 374px) {
+  .paragraph--type--bloque-de-texto-con-imagen-de-fo {
+    margin             : 0 auto;
+    padding            : 2rem 1rem;
+    margin-bottom      : 1rem;
+    background-position: unset;
+
+    .paragraph__column {
+      .field--name-field-informacion-a-mostrar-en-e{
+        .clases-activas {
+          display       : flex;
+          flex-direction: column;
+
+          .texto-izquierda {
+            height       : 6rem;
+            padding-right: 0rem;
+          }
+
+          .texto-derecha {
+            font-size : 2rem;
+            margin-top: 1rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1024px) and (min-width: 600px) {}

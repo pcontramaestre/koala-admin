@@ -1,0 +1,126 @@
+// media mayor a 1200px
+@media (min-width: 1200px) {
+  body {
+    #page-wrapper {
+      #page {
+        header#header {
+          position: fixed;
+          width   : 100vw;
+          top     : 0;
+          z-index : 10000;
+          left    : 0;
+        }
+
+        #main-wrapper {
+          margin-top: 84px;
+        }
+      }
+    }
+  }
+}
+
+//media menor a 1200px
+@media (max-width: 1199px) {
+  body.scrollup {
+    #page-wrapper {
+      #page {
+        header#header {
+          position: fixed;
+          width   : 100vw;
+          top     : 0;
+          z-index : 10000;
+          left    : 0;
+        }
+
+        #main-wrapper {
+          margin-top: 84px;
+        }
+      }
+    }
+  }
+
+  header#header {
+    .probar-ahora.nav-link {
+      background: #FFFFFF;
+      border: 2px solid #297E88;
+      border-radius: 28px;
+      color: #297E88 !important;
+      padding: 0.2rem 1rem 0.2rem 1rem;
+      margin-left: 2rem;
+
+      &:hover {
+        background-color: #297E88;
+        color: white !important;
+      }
+    }
+
+    #block-views-block-redes-sociales-p-responsive {
+      margin-left: 1.6rem;
+
+      h2 {
+        font-size: 1rem;
+      }
+
+      .content {
+        .view-redes-sociales-p {
+          .view-content {
+            display  : flex;
+            flex-wrap: nowrap;
+            margin-left: 0.1rem;
+
+            .views-row {
+              width  : 15%;
+              padding: 0;
+              margin : 0;
+            }
+          }
+        }
+      }
+    }
+
+    #block-legal-2 {
+      margin-left: 1.6rem;
+
+      h2 {
+        font-size: 1rem;
+      }
+
+      ul {
+        list-style  : none;
+        padding-left: 0rem;
+
+        li {
+          margin-bottom: 2rem;
+
+          a {
+            color          : black;
+            text-decoration: none;
+            font-size      : 1.1rem;
+            letter-spacing : 0.0625rem;
+            font-weight    : 800;
+          }
+        }
+      }
+    }
+
+  }
+
+
+}
+
+@media (min-width: 1200px) {
+
+  header#header {
+    #block-legal-2 {
+      display: none;
+    }
+
+    #block-views-block-live-chat-responsive {
+      display: none;
+    }
+
+    #block-views-block-redes-sociales-p-responsive {
+      display: none;
+    }
+  }
+}

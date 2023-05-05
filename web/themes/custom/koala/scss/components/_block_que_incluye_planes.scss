@@ -1,0 +1,29 @@
+.paragraph--type--contenedor-de-iconos-izquierda-t {
+  > .paragraph__column {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+
+    .paragraph--type--icono-izquierda-texto-derecha {
+      padding-right: 1rem;
+
+      > .paragraph__column {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: flex-start;
+
+        img {
+          margin: 0;
+        }
+        .field--name-field-icono{
+          margin-right: 1rem;
+        }
+      }
+    }
+  }
+}

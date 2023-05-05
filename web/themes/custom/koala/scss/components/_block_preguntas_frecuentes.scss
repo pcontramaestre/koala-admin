@@ -1,0 +1,27 @@
+.view-id-preguntas_frecuentes {
+  width: 90%;
+  margin: 0 auto;
+  .views-view-grid {
+    .views-field-nothing {
+      .contenedor-pregunta {
+        .titulo-body {
+          margin-bottom: 2.5rem;
+          .titulo {
+            font-weight: 800;
+            font-size  : 1.2rem;
+          }
+
+          .descripcion {
+            font-weight: 600;
+          }
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 600px) and (min-width: 192px)  {
+  .view-id-preguntas_frecuentes {
+    width: 100%;
+    margin: 0 auto;
+  }
+}

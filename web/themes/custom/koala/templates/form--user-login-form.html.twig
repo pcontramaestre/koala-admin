@@ -1,0 +1,27 @@
+<div class="login-form login-form__wrapper">
+    <form{{ attributes }}>
+        <div class="login-form__top">
+            <div class="texto-login">
+              {{ 'Eres nuevo,'|t }} <a href="/user/register">{{ 'Regístrate aquí'|t }}</a>
+            </div>
+            <h3 class="title-form">Iniciar sesión</h3>
+            <div id="error_messages"></div>
+            {{ element.messages }}
+            {{ element.name }} {# username element #}
+            {{ element.pass }} {# password element #}
+              <div class="forgot-password2">
+                <a href="/user/password">{{ 'Restablecer su contraseña'|t }}</a>
+              </div>
+            {{ element.form_build_id }} {# required #}
+            {{ element.form_id }} {# required #}
+            <div class="login-form__submit">
+                {{ element.actions.submit }}              
+            </div>
+            <div class="separador">ó</div>
+            <div class="boton-google">
+              <button  type="submit" id="edit-submit2" name="opGoogle" value="Ingresa con Google" class="button js-form-submit form-submit btn btn-google">Ingresa con Google</button>
+            </div>
+
+        </div>
+    </form>
+</div>

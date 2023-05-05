@@ -1,0 +1,77 @@
+.view-testimonios.view-id-testimonios {
+
+  //Contenido del slider
+  .slick-slide .views-row {
+    padding: 0rem 2rem 2rem 2rem;
+
+    .views-field-field-avatar-testimonio {
+      .field-content {
+        display: flex;
+
+        img {
+          max-width: 60px;
+          height   : auto;
+
+          &:nth-child(2) {
+            position: relative;
+            left    : -20px;
+          }
+        }
+      }
+    }
+
+    .views-field-field-texto-resaltado-del-testim {
+      font-weight  : 700;
+      margin-top   : 0.5rem;
+      margin-bottom: 0.5rem;
+      font-size    : 1.2rem;
+    }
+
+    .views-field-field-texto-2 {
+      font-weight: 400;
+      color      : black;
+    }
+  }
+
+  .slick-initialized {
+    .slick-dots li button:before {
+      color        : pink;
+      border-radius: 15px;
+      font-size    : 10px;
+    }
+  }
+
+  //Botones de navegación
+  .slick-prev,
+  .slick-next {
+    width: auto;
+
+    &:before {
+      opacity  : .25;
+      color    : black;
+      font-size: 25px;
+    }
+  }
+
+  .slick-dots {
+    li.slick-active {
+      
+    }
+  }
+}
+
+@media only screen and (max-width: 700px) and (min-width: 374px) {
+  .view-testimonios.view-id-testimonios {
+
+    .slick-prev,
+    .slick-next {
+      display: none !important;
+    }
+
+    .slick-slide {
+      .views-row {
+        padding: 0rem 1rem 1rem 1rem;
+      }
+    }
+  }
+}

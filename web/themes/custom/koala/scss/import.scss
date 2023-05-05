@@ -1,0 +1,47 @@
+/* IMPORTS */
+
+//@import url(font-awesome.min.css);
+// variables
+@import "variables";
+// typography
+@import "typography";
+//bootstrap
+@import "bootstrap";
+//material design bootstrap
+//@import "../node_modules/mdbootstrap/scss/mdb-free.scss";
+// mixins
+@import "mixins";
+// barrio
+@import "barrio";
+// components
+@import "components/home";
+@import "components/generales";
+@import "components/bloques";
+@import "components/paginas_internas";
+@import "components/block_title";
+@import "components/block_slider_testimonios";
+@import "components/block_planes_precios";
+@import "components/block_texto_imagen";
+@import "components/block_banner_home";
+@import "components/block_nuestra_plataforma";
+@import "../../koala/node_modules/bootstrap-icons/font/bootstrap-icons.scss";
+@import "components/block_nuestra_metodologia";
+@import "components/block_barra_cuadros";
+@import "components/footer";
+@import "components/block_preguntas_frecuentes";
+@import "components/block_que_incluye_planes";
+@import "components/block_banner_nuestra_empresa";
+@import "components/block_cuadros_img-izquierda_text_derecha";
+@import "components/block_acordeon";
+@import "components/block_webform";
+@import "components/block_banner_profesores";
+@import "components/block_chat_questions";
+@import "components/block_banner_escuelas";
+@import "components/block_como_funciona";
+@import "components/block_redes_sociales";
+@import "components/block_chat";
+@import "components/login_form";
+@import "components/header";
+@import "components/block_publicidad";
+@import "components/quiero_ser_profesor";
+@import "components/page_user_register"

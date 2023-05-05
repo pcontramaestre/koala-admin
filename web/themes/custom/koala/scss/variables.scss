@@ -1,0 +1,81 @@
+/* VARIABLES */
+$barrio_path_images: "../images";
+// ESPACIOS
+$spacer: 8px;
+
+// colors
+
+//Green
+$GreenK100: #F5F8D8;
+
+//Yelow
+$YellowK100: #FFF0CC;
+//Gris
+$GreyK100: #E6F1F1;
+$GreyK200: #BECACA;
+$GreyK500: #727F7F;
+
+// Cyan
+$AlgaK100: #C6F5F2;
+$AguaK100: #D8FFFD;
+$AguaK500: #2FF7EE;
+
+//Turquesa
+$TurqK50 :#D7EFF2;
+$TurqK100: #D7EFF2;
+$TurqK500: #297E88;
+
+
+
+//Rojo
+$RedK50: #FFE8E8;
+$RedK100 : #FFE8E8;
+$RedK200: #FFC2C4;
+$RedK300:#FF9294;
+$RedK500: #FF6669;
+
+
+$primary-shade: rgb(255, 78, 46);
+$primary-light: lighten($primary-shade, 37%);
+$primary-dark: darken($primary-shade, 12%);
+$accent-shade: #0079C0;
+$accent-light: lighten($accent-shade, 37%);
+$accent-dark: darken($accent-shade, 12%);
+// Reassign color vars to semantic color scheme
+$red: #dc3545;
+$yellow: #ffc107;
+$green: #28a745;
+$cyan: #17a2b8;
+$white: #fff;
+$gray-100: #f8f9fa;
+$gray-800: #343a40;
+$theme-colors: ( primary: $accent-shade, secondary: $primary-shade, success: $green, info: $cyan, warning: $yellow, danger: $red, light: $gray-100, dark: $gray-800);
+$brand-primary: $accent-shade;
+//$brand-success: $green;
+//$brand-info: $teal;
+//$brand-warning: $orange;
+//$brand-danger: $red;
+$brand-inverse: $primary-shade;
+// Body
+//
+// Settings for the `<body>` element.
+$body-bg: $white;
+$body-color: $gray-800;
+$inverse-bg: $primary-shade;
+$inverse-color: $white;
+// Links
+//
+// Style anchor elements.
+$link-color: $accent-shade;
+$link-decoration: none;
+$link-hover-color: $accent-dark;
+$link-hover-decoration: underline;
+// Comments
+$comment-spacer-x: 1.25em;
+$comment-spacer-y: 1.25em;
+// Responsive font sizes
+$enable-responsive-font-sizes: true;
+$enable-shadows: false;
+$enable-gradients: false;
+// Breadcrumbs (Works only on Bootstrap 5+)
+// $breadcrumb-divider: quote(">");

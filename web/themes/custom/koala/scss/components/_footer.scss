@@ -1,0 +1,162 @@
+.featured-bottom {
+  background: $GreyK200;
+
+  .field--name-field-logo-footer {
+    margin: 2rem 2rem 1rem 3.3rem;
+
+    img {
+      max-width: 100px;
+      height   : auto;
+    }
+  }
+}
+
+footer.site-footer {
+  background: $GreyK200 !important;
+
+  .container {
+    padding: 0;
+
+    .site-footer__top {
+      display        : flex;
+      flex-direction : row;
+      flex-wrap      : wrap;
+      justify-content: space-between;
+      width          : 90%;
+      margin         : 0rem 4rem 0rem 2rem;
+
+      >section.region {
+        max-width: 33%;
+      }
+
+      a {
+        color          : black;
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+
+      .menu {
+        list-style : none;
+        font-weight: 700;
+        font-size  : 1.2rem;
+
+        .menu-item {
+          margin-bottom: 1.7rem;
+        }
+      }
+
+      .block-config-pages {
+        .field--name-field-texto-footer-derechos-rese {
+          font-weight: 600;
+          margin     : 1rem 0rem 1rem 2rem;
+        }
+      }
+
+      .region-footer-first {
+        width: 32%;
+      }
+
+      .region-footer-second {
+        width: 27%;
+        height: 16rem;
+        h2 {
+          font-size    : 1rem;
+          font-weight  : 600;
+          margin-bottom: 0.5rem;
+        }
+
+        ul {
+          padding-left: 1rem;
+        }
+
+        .config_pages--view-mode--correo- {
+          .field--name-field-correo-electronico-footer {
+            font-weight    : 700;
+            font-size      : 1.2rem;
+            text-decoration: underline;
+            padding-left   : 1rem;
+
+            &:before {
+              content     : url('EnvelopeOpen.png');
+              position    : relative;
+              top         : 6px;
+              margin-right: 0.5rem;
+            }
+          }
+        }
+      }
+
+      .region-footer-third {
+        width: 15%;
+        height: auto;
+        h2 {
+          font-size    : 1rem;
+          font-weight  : 600;
+          margin-bottom: 0.5rem;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1199px) and (min-width: 192px) {
+  footer.site-footer {
+    text-align: center;
+
+    .container {
+      .site-footer__top {
+        >section.region {
+          max-width: 100%;
+        }
+
+        .region-footer-first {
+          width: 100%;
+        }
+
+        .block-config-pages {
+          .field--name-field-texto-footer-derechos-rese {
+            margin: 1rem 0rem 1rem 0rem;
+          }
+        }
+
+        .region-footer-second {
+          width: 100%;
+
+          ul {
+            padding-left: 0rem;
+          }
+        }
+
+        .menu {
+          padding-left: 0rem;
+        }
+
+        .region-footer-third {
+          width: 100%;
+
+          .block-dropdown-language {
+            margin-top: 1.7rem;
+            padding   : 0;
+
+            .dropbutton-multiple {
+              .dropbutton-widget {
+                margin       : 0 auto;
+                margin-bottom: 2rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .featured-bottom {
+    .field--name-field-logo-footer {
+      text-align : center;
+      margin-left: 0rem;
+    }
+  }
+}

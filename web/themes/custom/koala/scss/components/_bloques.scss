@@ -1,0 +1,95 @@
+.paragraph--type--bp-simple {
+  .field--name-bp-text {
+    .probar-ahora {
+      border          : 2px solid $TurqK500;
+      border-radius   : 30px;
+      padding         : 0.5rem 3.5rem;
+      font-size       : 1.3rem;
+      color           : black;
+      font-weight     : 700;
+      text-decoration : none;
+      background-color: $AguaK500;
+
+      &:hover {
+        background-color: $TurqK500;
+        color           : white;
+      }
+    }
+
+    p {
+      span {
+        font-weight: 600;
+
+        strong {
+          font-size: 1.5rem;
+        }
+      }
+    }
+  }
+}
+
+.paragraph--type--bp-columns {
+  width : 90%;
+  margin: 0 auto;
+
+  .paragraph--type--bp-columns__2col {
+    .field--name-bp-text {
+      font-weight: 600;
+    }
+  }
+}
+
+@media only screen and (max-width: 800px) and (min-width: 374px) {
+  .paragraph--type--bp-columns {
+    width: 100%;
+
+    .paragraph__column {
+      position: relative;
+      .slick-prev {
+        height          : 2.5rem;
+        border-radius   : 10px;
+        width           : 2.5rem;
+        background-color: $AguaK500;
+        left            : 13%;        
+        left: 9%;
+        position: absolute;
+        top: 94%;
+        z-index: 100;
+        &:before {
+          color: black;
+        }
+      }
+
+      .slick-next {
+        position        : absolute;
+        right            : 8%;
+        height          : 2.5rem;
+        border-radius   : 10px;
+        width           : 2.5rem;
+        background-color: $AguaK500;
+        top: 94%;
+        z-index: 100;
+
+        &:before {
+          color: black;
+        }
+      }
+
+      .slick-list {
+        padding: 1rem !important;
+
+        .slick-track {
+          .slick-slide {
+            border-bottom: 1px solid $GreyK200;
+            margin-bottom: 1rem;
+          }
+        }
+      }
+    }
+  }
+
+  .paragraph--type--bp-simple {
+    padding-bottom: 0 !important;
+  }
+
+}

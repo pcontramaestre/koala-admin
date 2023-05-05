@@ -1,0 +1,63 @@
+.view-acordeones-con-icono {
+  .view-content {
+    >.accordion {
+      width : 90%;
+      margin: 0 auto;
+
+      .accordion-item {
+        border       : unset;
+        padding      : 0.25rem;
+        margin-bottom: 1rem;
+
+        .accordion-header {
+          button {
+            background   : $TurqK100;
+            border       : unset;
+            height       : 4rem;
+            border-radius: 25px;
+            color        : black;
+            padding      : 0.5rem 1rem 0.5rem 0.5rem;
+            font-weight  : 700;
+
+            &:not(.collapsed) {
+              border-bottom-right-radius: unset;
+              border-bottom-left-radius : unset;
+            }
+
+            &:focus {
+              box-shadow: none;
+            }
+
+            img {
+              margin-right: 1rem;
+            }
+          }
+        }
+
+        .accordion-collapse {
+          background                : $TurqK100;
+          border                    : unset;
+          border-bottom-left-radius : 32px;
+          border-bottom-right-radius: 32px;
+          font-weight               : 600;
+
+          .accordion-body {
+            padding: 0.5rem 0.8rem 0.8rem 0.8rem;
+          }
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 900px) and (min-width: 374px)  {
+  .view-acordeones-con-icono {
+    .view-content {
+      .accordion {
+        width : 100%;
+        .accordion-item {
+          margin-bottom: 0rem;
+        }
+      }
+    }
+  }
+}

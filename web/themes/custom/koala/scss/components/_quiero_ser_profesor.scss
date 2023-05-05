@@ -1,0 +1,26 @@
+.node--type-paginas-internas {
+  .paragraph--id--199,.paragraph--id--231 {
+    .field--name-bp-text {
+      p {
+        span {
+          font-weight: 400;
+          font-size: 1.5rem;
+          color: black;
+        }
+      }
+    }
+  }
+  .paragraph--type--bp-simple .field--name-bp-text p span strong {
+    font-weight: 700;
+  }
+
+  //Bloques 3 de Acerca de koala
+  .paragraph--id--165 {
+    width: 96%;
+    .field--name-bp-text {
+      > img {
+        margin-bottom: 1rem;
+      }
+    }
+  }
+}

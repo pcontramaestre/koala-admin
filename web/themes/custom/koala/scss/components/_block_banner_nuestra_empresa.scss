@@ -1,0 +1,70 @@
+.view-conoce-nuestra-empresa {
+  .banner-nuestra-empresa {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: center;
+
+    .izquierda {
+      .titulo {
+        font-size: 3rem;
+        font-weight: 700;
+      }
+      .texto {
+        margin-top: 1rem;
+        font-weight: 600;
+      }
+      .boton-azul {
+        margin-top: 2rem;
+
+        a {
+          border: 2px solid $TurqK500;
+          border-radius: 30px;
+          padding: 0.5rem 2rem;
+          font-size: 1.3rem;
+          color: black;
+          font-weight: 700;
+          text-decoration: none;
+          background-color: $AguaK500;
+
+          &:hover {
+            background-color: $TurqK500;
+            color: white;
+          }
+        }
+      }
+    }
+
+    .derecha {
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 900px) and (min-width: 374px)  {
+  .view-conoce-nuestra-empresa {
+    margin-top: 0;
+    .banner-nuestra-empresa {
+      .izquierda {
+        .titulo {
+          text-align: center;
+          font-size: 1.5rem;
+          margin-top: 1rem;
+        }
+        .boton-azul {
+          text-align: center;
+          margin-top: 0;
+        }
+        .texto{
+          p{
+            margin-bottom: 2rem;
+          }
+        }
+      }
+    }
+  }
+}
