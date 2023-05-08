@@ -1,0 +1,18 @@
+.page-login {
+  #page {
+    header#header {
+      display: none;
+    }
+
+    #main-wrapper {
+      #main {
+        #block-koala-page-title {
+          display: none;
+        }
+        nav.tabs {
+          display: none;
+        }
+      }
+    }
+  }
+}

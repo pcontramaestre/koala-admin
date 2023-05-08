@@ -1,11 +1,13 @@
 <div class="login-form login-form__wrapper">
     <form{{ attributes }}>
-        <div class="login-form__top">
+        <div class="login-form__top simplelogin-form">
+            <div class="simplelogin-logo"><a href="/"><img src="/themes/custom/koala/images/logo-koala-login.png" alt="Home"></a></div>
             <div class="texto-login">
               {{ 'Eres nuevo,'|t }} <a href="/user/register">{{ 'Regístrate aquí'|t }}</a>
             </div>
             <h3 class="title-form">Iniciar sesión</h3>
             <div id="error_messages"></div>
+
             {{ element.messages }}
             {{ element.name }} {# username element #}
             {{ element.pass }} {# password element #}

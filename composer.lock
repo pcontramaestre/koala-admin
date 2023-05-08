@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e2777b8e41053edcd39f6a2856ae80fc",
+    "content-hash": "26353706417935f53d189f97ca610fdb",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1172,17 +1172,17 @@
         },
         {
             "name": "drupal/asset_injector",
-            "version": "2.16.0",
+            "version": "2.17.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/asset_injector.git",
-                "reference": "8.x-2.16"
+                "reference": "8.x-2.17"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/asset_injector-8.x-2.16.zip",
-                "reference": "8.x-2.16",
-                "shasum": "34965a20c346c2fbcf14b690166b070070837a13"
+                "url": "https://ftp.drupal.org/files/projects/asset_injector-8.x-2.17.zip",
+                "reference": "8.x-2.17",
+                "shasum": "e273ba3c8736a25496caf9e7a7b0e47e6052594c"
             },
             "require": {
                 "drupal/core": "^9.3 || ^10.0"
@@ -1190,8 +1190,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-2.16",
-                    "datestamp": "1672243573",
+                    "version": "8.x-2.17",
+                    "datestamp": "1683305302",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -1294,17 +1294,17 @@
         },
         {
             "name": "drupal/bootstrap_barrio",
-            "version": "5.5.10",
+            "version": "5.5.11",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/bootstrap_barrio.git",
-                "reference": "5.5.10"
+                "reference": "5.5.11"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/bootstrap_barrio-5.5.10.zip",
-                "reference": "5.5.10",
-                "shasum": "4015cae184be99d08329878e609b814700a73e60"
+                "url": "https://ftp.drupal.org/files/projects/bootstrap_barrio-5.5.11.zip",
+                "reference": "5.5.11",
+                "shasum": "7a290ec91c4991cb84993407418417f52b9dae92"
             },
             "require": {
                 "drupal/core": "^9.4 || ^10",
@@ -1313,8 +1313,8 @@
             "type": "drupal-theme",
             "extra": {
                 "drupal": {
-                    "version": "5.5.10",
-                    "datestamp": "1679769012",
+                    "version": "5.5.11",
+                    "datestamp": "1683494389",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -1817,6 +1817,98 @@
             }
         },
         {
+            "name": "drupal/inline_entity_form",
+            "version": "1.0.0-rc15",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/inline_entity_form.git",
+                "reference": "8.x-1.0-rc15"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/inline_entity_form-8.x-1.0-rc15.zip",
+                "reference": "8.x-1.0-rc15",
+                "shasum": "7702801f7e599956fc3d10cff8257809f53ac3ec"
+            },
+            "require": {
+                "drupal/core": "^8.8 || ^9 || ^10",
+                "php": ">=7.1"
+            },
+            "require-dev": {
+                "drupal/entity_reference_revisions": "^1.0"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-1.0-rc15",
+                    "datestamp": "1678126675",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "RC releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "bojanz",
+                    "homepage": "https://www.drupal.org/user/86106"
+                },
+                {
+                    "name": "Centarro",
+                    "homepage": "https://www.drupal.org/user/3661446"
+                },
+                {
+                    "name": "dawehner",
+                    "homepage": "https://www.drupal.org/user/99340"
+                },
+                {
+                    "name": "geek-merlin",
+                    "homepage": "https://www.drupal.org/user/229048"
+                },
+                {
+                    "name": "joachim",
+                    "homepage": "https://www.drupal.org/user/107701"
+                },
+                {
+                    "name": "jsacksick",
+                    "homepage": "https://www.drupal.org/user/972218"
+                },
+                {
+                    "name": "kaythay",
+                    "homepage": "https://www.drupal.org/user/2182186"
+                },
+                {
+                    "name": "oknate",
+                    "homepage": "https://www.drupal.org/user/471638"
+                },
+                {
+                    "name": "ram4nd",
+                    "homepage": "https://www.drupal.org/user/601534"
+                },
+                {
+                    "name": "rszrama",
+                    "homepage": "https://www.drupal.org/user/49344"
+                },
+                {
+                    "name": "slashrsm",
+                    "homepage": "https://www.drupal.org/user/744628"
+                },
+                {
+                    "name": "webflo",
+                    "homepage": "https://www.drupal.org/user/254778"
+                }
+            ],
+            "description": "Provides a widget for inline management (creation, modification, removal) of referenced entities.",
+            "homepage": "https://www.drupal.org/project/inline_entity_form",
+            "support": {
+                "source": "https://git.drupalcode.org/project/inline_entity_form"
+            }
+        },
+        {
             "name": "drupal/jquery_ui",
             "version": "1.6.0",
             "source": {
@@ -2154,6 +2246,93 @@
                 "source": "https://git.drupalcode.org/project/libraries",
                 "issues": "http://drupal.org/project/issues/libraries",
                 "irc": "irc://irc.freenode.org/drupal-contribute"
+            }
+        },
+        {
+            "name": "drupal/login_destination",
+            "version": "2.0.0-beta6",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/login_destination.git",
+                "reference": "8.x-2.0-beta6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/login_destination-8.x-2.0-beta6.zip",
+                "reference": "8.x-2.0-beta6",
+                "shasum": "f48647adf7b19a722534ef54058a824d677af217"
+            },
+            "require": {
+                "drupal/core": "^8.7.10 || ^9 || ^10"
+            },
+            "require-dev": {
+                "drupal/admin_toolbar": "^1.23",
+                "drupal/admin_toolbar_tools": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-2.0-beta6",
+                    "datestamp": "1680182197",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Beta releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "rsvelko",
+                    "homepage": "https://www.drupal.org/u/rsvelko",
+                    "role": "Creator, Maintainer"
+                },
+                {
+                    "name": "Other Contributors",
+                    "homepage": "https://www.drupal.org/node/69051/committers",
+                    "role": "Contributors"
+                },
+                {
+                    "name": "ddrozdik",
+                    "homepage": "https://www.drupal.org/user/574124"
+                },
+                {
+                    "name": "jng12",
+                    "homepage": "https://www.drupal.org/user/204316"
+                },
+                {
+                    "name": "marcp",
+                    "homepage": "https://www.drupal.org/user/20885"
+                },
+                {
+                    "name": "mithy",
+                    "homepage": "https://www.drupal.org/user/258911"
+                },
+                {
+                    "name": "moshe weitzman",
+                    "homepage": "https://www.drupal.org/user/23"
+                },
+                {
+                    "name": "Oliver Huynh",
+                    "homepage": "https://www.drupal.org/user/243730"
+                },
+                {
+                    "name": "perennial.sky",
+                    "homepage": "https://www.drupal.org/user/2622667"
+                },
+                {
+                    "name": "rsvelko",
+                    "homepage": "https://www.drupal.org/user/337401"
+                }
+            ],
+            "description": "Customizes the destination the user is redirected to after login/logout/registration/one-time login.",
+            "homepage": "https://drupal.org/project/login_destination",
+            "support": {
+                "source": "https://git.drupalcode.org/project/login_destination",
+                "issues": "https://drupal.org/project/issues/login_destination"
             }
         },
         {
@@ -4791,16 +4970,16 @@
         },
         {
             "name": "psy/psysh",
-            "version": "v0.11.16",
+            "version": "v0.11.17",
             "source": {
                 "type": "git",
                 "url": "https://github.com/bobthecow/psysh.git",
-                "reference": "151b145906804eea8e5d71fea23bfb470c904bfb"
+                "reference": "3dc5d4018dabd80bceb8fe1e3191ba8460569f0a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/bobthecow/psysh/zipball/151b145906804eea8e5d71fea23bfb470c904bfb",
-                "reference": "151b145906804eea8e5d71fea23bfb470c904bfb",
+                "url": "https://api.github.com/repos/bobthecow/psysh/zipball/3dc5d4018dabd80bceb8fe1e3191ba8460569f0a",
+                "reference": "3dc5d4018dabd80bceb8fe1e3191ba8460569f0a",
                 "shasum": ""
             },
             "require": {
@@ -4861,9 +5040,9 @@
             ],
             "support": {
                 "issues": "https://github.com/bobthecow/psysh/issues",
-                "source": "https://github.com/bobthecow/psysh/tree/v0.11.16"
+                "source": "https://github.com/bobthecow/psysh/tree/v0.11.17"
             },
-            "time": "2023-04-26T12:53:57+00:00"
+            "time": "2023-05-05T20:02:42+00:00"
         },
         {
             "name": "ralouphie/getallheaders",
@@ -7638,6 +7817,8 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
+        "drupal/inline_entity_form": 5,
+        "drupal/login_destination": 10,
         "drupal/openai": 15,
         "drupal/page_manager": 5,
         "drupal/webform": 10
