@@ -1,0 +1,25 @@
+uuid: 08a999e1-e8c3-4beb-b46c-ce839a5e2790
+langcode: es
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - koala
+_core:
+  default_config_hash: zATbINFhoA3PsUIhaSV9IpKP_hTenIfrP9adf9AeBM8
+id: koala_site_branding
+theme: koala
+region: header
+weight: -7
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  label_display: '0'
+  provider: system
+  use_site_logo: true
+  use_site_name: true
+  use_site_slogan: false
+visibility: {  }

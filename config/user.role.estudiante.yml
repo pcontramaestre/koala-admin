@@ -1,0 +1,9 @@
+uuid: 61e5b39d-860c-4617-a1b8-e459331bc092
+langcode: es
+status: true
+dependencies: {  }
+id: estudiante
+label: Estudiante
+weight: 6
+is_admin: null
+permissions: {  }

@@ -1,0 +1,14 @@
+uuid: 8a29f924-8526-4174-b00d-014c2c5ed1a8
+langcode: es
+status: true
+dependencies:
+  config:
+    - user.role.profesor
+  module:
+    - user
+id: user_add_role_action.profesor
+label: 'Añade el rol Profesor al(los) usuario(s) seleccionado(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: profesor

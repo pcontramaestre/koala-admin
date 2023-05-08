@@ -1,0 +1,22 @@
+uuid: da511d9f-2b58-491c-92a6-03d2ccbca180
+langcode: es
+status: true
+dependencies:
+  theme:
+    - koala
+_core:
+  default_config_hash: SfiAuOm4xu64DrAGJJVifozpV1_lTcn6Z25CagJuenU
+id: koala_primary_local_tasks
+theme: koala
+region: content
+weight: -5
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: 'Primary tabs'
+  label_display: '0'
+  provider: core
+  primary: true
+  secondary: false
+visibility: {  }

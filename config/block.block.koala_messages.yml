@@ -1,0 +1,22 @@
+uuid: d8f80a65-76ff-46f4-9073-711dec5b12b2
+langcode: es
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - koala
+_core:
+  default_config_hash: XGNCwTVqw0Frv1VFUGohlocMSXDpPcOaiH8D-xHYit4
+id: koala_messages
+theme: koala
+region: highlighted
+weight: -6
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  label_display: '0'
+  provider: system
+visibility: {  }

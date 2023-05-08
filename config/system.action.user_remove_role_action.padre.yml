@@ -1,0 +1,14 @@
+uuid: 9c1a4e5d-b932-46e4-a66a-d36a83478e83
+langcode: es
+status: true
+dependencies:
+  config:
+    - user.role.padre
+  module:
+    - user
+id: user_remove_role_action.padre
+label: 'Elimina el rol Padre al(los) usuario(s) seleccionado(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: padre

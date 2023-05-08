@@ -1,0 +1,78 @@
+uuid: 856bc0ff-8214-4937-88e9-bff1c4711f41
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.field.user.user.field_celular
+    - field.field.user.user.field_nombre_del_acudiente
+    - field.field.user.user.user_picture
+    - image.style.thumbnail
+  module:
+    - field_layout
+    - image
+    - layout_builder
+    - user
+third_party_settings:
+  field_layout:
+    id: layout_twocol_section
+    settings:
+      label: ''
+      column_widths: 50-50
+_core:
+  default_config_hash: FaQ9Ptcpxpg30AtiqRDtl_8zbJArHP1LPfug_s59TOA
+id: user.user.default
+targetEntityType: user
+bundle: user
+mode: default
+content:
+  account:
+    weight: 1
+    region: first
+    settings: {  }
+    third_party_settings: {  }
+  contact:
+    weight: 4
+    region: first
+    settings: {  }
+    third_party_settings: {  }
+  field_celular:
+    type: string_textfield
+    weight: 7
+    region: first
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_nombre_del_acudiente:
+    type: string_textfield
+    weight: 0
+    region: first
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  language:
+    weight: 3
+    region: first
+    settings: {  }
+    third_party_settings: {  }
+  timezone:
+    weight: 5
+    region: first
+    settings: {  }
+    third_party_settings: {  }
+  translation:
+    weight: 6
+    region: first
+    settings: {  }
+    third_party_settings: {  }
+  user_picture:
+    type: image_image
+    weight: 2
+    region: first
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+hidden:
+  langcode: true

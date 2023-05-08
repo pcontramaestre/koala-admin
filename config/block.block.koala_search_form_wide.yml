@@ -1,0 +1,23 @@
+uuid: 27d7c0c5-ba32-45a3-b5a8-33e6a1a49094
+langcode: es
+status: false
+dependencies:
+  module:
+    - search
+  theme:
+    - koala
+_core:
+  default_config_hash: YN5J1tIdiNNo7C2IS7CednOUpcMqq_F-IT0PHMMM7-I
+id: koala_search_form_wide
+theme: koala
+region: top_header_form
+weight: -7
+provider: null
+plugin: search_form_block
+settings:
+  id: search_form_block
+  label: 'Search form (wide)'
+  label_display: '0'
+  provider: search
+  page_id: ''
+visibility: {  }

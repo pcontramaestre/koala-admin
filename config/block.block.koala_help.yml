@@ -1,0 +1,22 @@
+uuid: acc6e2cf-fe0a-436d-a127-b7e59850e929
+langcode: es
+status: false
+dependencies:
+  module:
+    - help
+  theme:
+    - koala
+_core:
+  default_config_hash: xElHYdL6rClDeG7PN3u-sjvQ64QyDLt_XNScM0tHkAo
+id: koala_help
+theme: koala
+region: highlighted
+weight: -2
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  label_display: '0'
+  provider: help
+visibility: {  }

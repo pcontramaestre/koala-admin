@@ -1,0 +1,26 @@
+uuid: 1cad49ab-c7f6-4232-90d0-dbf548d3eb9a
+langcode: es
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - koala
+_core:
+  default_config_hash: '-vdxmyF9pYgsnWtX0lwpITjJgfdrP_x6T65b-hT2FLg'
+id: koala_page_title
+theme: koala
+region: content
+weight: -7
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  label_display: '0'
+  provider: core
+visibility:
+  request_path:
+    id: request_path
+    negate: true
+    pages: '/user/*'

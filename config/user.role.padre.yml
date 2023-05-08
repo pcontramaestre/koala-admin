@@ -1,0 +1,9 @@
+uuid: bbfdc0ca-5ea7-4ebc-8f2f-85fd4bd56827
+langcode: es
+status: true
+dependencies: {  }
+id: padre
+label: Padre
+weight: 5
+is_admin: null
+permissions: {  }

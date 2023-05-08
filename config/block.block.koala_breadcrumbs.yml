@@ -1,0 +1,22 @@
+uuid: e6ce726b-879a-4877-96f2-c904093e526c
+langcode: es
+status: false
+dependencies:
+  module:
+    - system
+  theme:
+    - koala
+_core:
+  default_config_hash: d5RRR4sCguf9KoTb2urPQWdaepVzH5Vh3o0jIKsdkyg
+id: koala_breadcrumbs
+theme: koala
+region: breadcrumb
+weight: 0
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  label_display: '0'
+  provider: system
+visibility: {  }

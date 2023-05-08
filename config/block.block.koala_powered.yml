@@ -1,0 +1,22 @@
+uuid: 0a28d2be-6af0-43b6-8548-b5f1723073f8
+langcode: es
+status: false
+dependencies:
+  module:
+    - system
+  theme:
+    - koala
+_core:
+  default_config_hash: cBMF1Yr7bqVVP-72Z0F4GxUPfomi9E1IU-NU_uec1ME
+id: koala_powered
+theme: koala
+region: top_header
+weight: -7
+provider: null
+plugin: system_powered_by_block
+settings:
+  id: system_powered_by_block
+  label: 'Powered by Drupal'
+  label_display: '0'
+  provider: system
+visibility: {  }

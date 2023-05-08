@@ -1,0 +1,35 @@
+uuid: ba8a3a1a-f3a9-4cb8-abdf-0f56fe740007
+langcode: es
+status: false
+dependencies:
+  config:
+    - system.menu.account
+  module:
+    - system
+    - user
+  theme:
+    - koala
+_core:
+  default_config_hash: mx3mE3EjsmE4O0zgT0wA65e4cj8e2xfG1K6tiRQzsXI
+id: koala_account_menu
+theme: koala
+region: secondary_menu
+weight: -7
+provider: null
+plugin: 'system_menu_block:account'
+settings:
+  id: 'system_menu_block:account'
+  label: 'User account menu'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 1
+  expand_all_items: false
+visibility:
+  user_role:
+    id: user_role
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+    roles:
+      authenticated: authenticated

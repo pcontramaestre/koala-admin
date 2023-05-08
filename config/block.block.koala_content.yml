@@ -1,0 +1,22 @@
+uuid: ff591a2a-796b-454a-9b01-b191c643a6ae
+langcode: es
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - koala
+_core:
+  default_config_hash: AUdprqdbIw1MY55WKQmJxnHPaSsGtTNXmS2dmL_KFco
+id: koala_content
+theme: koala
+region: content
+weight: -3
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  label_display: '0'
+  provider: system
+visibility: {  }

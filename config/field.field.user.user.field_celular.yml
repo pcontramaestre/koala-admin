@@ -1,0 +1,20 @@
+uuid: fa105ae7-6839-43ca-aaa9-85c1a5ec923e
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_celular
+  module:
+    - user
+id: user.user.field_celular
+field_name: field_celular
+entity_type: user
+bundle: user
+label: Celular
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
