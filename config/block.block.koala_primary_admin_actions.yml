@@ -2,6 +2,8 @@ uuid: 296175e5-37f1-4283-91cb-4db3ba0a6263
 langcode: es
 status: true
 dependencies:
+  module:
+    - user
   theme:
     - koala
 _core:
@@ -17,4 +19,12 @@ settings:
   label: 'Primary admin actions'
   label_display: '0'
   provider: core
-visibility: {  }
+visibility:
+  user_role:
+    id: user_role
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+    roles:
+      content_editor: content_editor
+      administrator: administrator

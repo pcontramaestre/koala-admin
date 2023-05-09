@@ -1,7 +1,41 @@
-.page-user-register {
+body.simplelogin.page-user-register {
   #header {
     #navbar-main {
       display: noneg;
+    }
+  }
+  .simplelogin-wrapper {
+    padding: 6% 0 0;
+
+    > .simplelogin-form {
+      width: 90% !important;
+      max-width: 1200px;
+      background: unset;
+      box-shadow: unset;
+
+      .simplelogin-logo {
+        display: none;
+      }
+
+      .title-logos {
+        > .title {
+          max-width: 70%;
+          margin: 0 auto;
+        }
+
+        > .iconos {
+          max-width: 70%;
+          margin: 0 auto;
+          padding-bottom: 2rem;
+
+          .texto {
+            max-width: 75%;
+            margin: 0 auto;
+            line-height: 1.1;
+            padding-top: 1rem;
+          }
+        }
+      }
     }
   }
 }

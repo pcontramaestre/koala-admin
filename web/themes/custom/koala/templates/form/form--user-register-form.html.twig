@@ -1,0 +1,35 @@
+{#
+/**
+ * @file
+ * Theme override for a 'form' element.
+ *
+ * Available variables
+ * - attributes: A list of HTML attributes for the wrapper element.
+ * - children: The child elements of the form.
+ *
+ * @see template_preprocess_form()
+ */
+#}
+{{ attach_library('bootstrap_barrio/form') }}
+<div class="row title-logos">
+  <div class="col-12 title text-center pt-4 pb-5"><h2>{{ 'Agenda una clase de prueba gratis'|t }}</h2></div>
+  <div class="col-12 iconos text-center d-flex">
+    <div class="col-4">
+      <div class="img"><img src="/themes/custom/koala/images/clase.png" alt="Class"></div>
+      <div class="texto">{{ '25 minutos de clase'|t }}</div>
+    </div>
+
+    <div class="col-4">
+      <div class="img"><img src="/themes/custom/koala/images/test.png" alt="Class"></div>
+      <div class="texto">{{ 'Test de nivel'|t }}</div>
+    </div>
+
+    <div class="col-4">
+      <div class="img"><img src="/themes/custom/koala/images/conocer.png" alt="Class"></div>
+      <div class="texto">{{ 'Conocer al niño'|t }}</div>
+    </div>
+  </div>
+</div>
+<form{{ attributes }}>
+  {{ children }}
+</form>

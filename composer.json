@@ -30,6 +30,7 @@
         "drupal/login_destination": "^2.0@beta",
         "drupal/openai": "^1.0@alpha",
         "drupal/page_manager": "^4.0@RC",
+        "drupal/random_number_field": "^1.0@RC",
         "drupal/simplelogin": "^6.0",
         "drupal/token": "^1.11",
         "drupal/twig_tweak": "^3.2",

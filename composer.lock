@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c8b6a74b4c5fb455ae6b96b2d2bc90b1",
+    "content-hash": "0c03559872f8bc5e9d6178384229ee9c",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2703,6 +2703,53 @@
                 "source": "https://git.drupal.org/project/page_manager.git",
                 "issues": "https://www.drupal.org/project/issues/page_manager",
                 "irc": "irc://irc.freenode.org/drupal-contribute"
+            }
+        },
+        {
+            "name": "drupal/random_number_field",
+            "version": "1.0.0-rc1",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/random_number_field.git",
+                "reference": "8.x-1.0-rc1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/random_number_field-8.x-1.0-rc1.zip",
+                "reference": "8.x-1.0-rc1",
+                "shasum": "3a42489e427c1229921990dc206d5aaa2416d8e9"
+            },
+            "require": {
+                "drupal/core": "^8 || ^9"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-1.0-rc1",
+                    "datestamp": "1591636249",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "RC releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "andy_w",
+                    "homepage": "https://www.drupal.org/user/2581622"
+                }
+            ],
+            "description": "Define a field type to be populated with a random number each time new content is created.",
+            "homepage": "https://www.drupal.org/project/random_number_field",
+            "keywords": [
+                "Drupal"
+            ],
+            "support": {
+                "source": "https://git.drupalcode.org/project/random_number_field"
             }
         },
         {
@@ -8419,6 +8466,7 @@
         "drupal/login_destination": 10,
         "drupal/openai": 15,
         "drupal/page_manager": 5,
+        "drupal/random_number_field": 5,
         "drupal/webform": 10
     },
     "prefer-stable": true,
