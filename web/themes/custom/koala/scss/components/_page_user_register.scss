@@ -4,35 +4,127 @@ body.simplelogin.page-user-register {
       display: noneg;
     }
   }
-  .simplelogin-wrapper {
-    padding: 6% 0 0;
 
-    > .simplelogin-form {
-      width: 90% !important;
-      max-width: 1200px;
+  .simplelogin-wrapper {
+    padding: 1% 0 0;
+
+    >.simplelogin-form {
+      width     : 70% !important;
+      max-width : 1200px;
       background: unset;
       box-shadow: unset;
+
+      .simplelogin-bg {
+        .block-system {
+          .content {
+            form {
+              .layout--twocol-section {
+                .layout__region--first {
+                  .field--type-string {
+                    .js-form-item {
+                      label {
+                        display: none;
+                      }
+                    }
+                  }
+                }
+
+                .layout__region--second {
+                  .js-form-wrapper {
+                    #edit-pass {
+                      .js-form-item {
+                        padding-left: 0;
+
+                        input {
+                          width: 100%;
+                        }
+
+                        .password-confirm-message {
+                          margin-bottom: 1rem;
+                        }
+                      }
+
+                      .password-suggestions {
+                        display: none;
+                      }
+
+                      small {
+                        display: none;
+                      }
+                    }
+                  }
+                }
+              }
+
+              .form-actions {
+                button {
+                  background-color: $AguaK500;
+                  border          : 2px solid $TurqK500;
+                  width           : 30%;
+                  font-size       : 1.2rem;
+                  font-weight     : 700;
+                  height          : 3rem;
+                  display         : flex;
+                  justify-content : center;
+                  align-items     : center;
+                  flex-direction  : column;
+                  margin          : 0 auto;
+
+                  &:hover {
+                    background-color: $TurqK500;
+                    color           : white;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
 
       .simplelogin-logo {
         display: none;
       }
 
       .title-logos {
-        > .title {
+        >.title {
           max-width: 70%;
-          margin: 0 auto;
+          margin   : 0 auto;
         }
 
-        > .iconos {
-          max-width: 70%;
-          margin: 0 auto;
+        >.iconos {
+          max-width     : 70%;
+          margin        : 0 auto;
           padding-bottom: 2rem;
 
           .texto {
-            max-width: 75%;
-            margin: 0 auto;
+            max-width  : 75%;
+            margin     : 0 auto;
             line-height: 1.1;
             padding-top: 1rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 640px) and (min-width: 340px) {
+  body.simplelogin.page-user-register {
+    .simplelogin-wrapper {
+      .simplelogin-form {
+        width: 100% !important;
+
+        .simplelogin-bg {
+          .block-system {
+            .content {
+              form {
+                .form-actions {
+                  button {
+                    width: 62%;
+                  }
+                }
+              }
+            }
           }
         }
       }
