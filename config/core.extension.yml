@@ -21,17 +21,28 @@ module:
   config_translation: 0
   contact: 0
   contextual: 0
+  create_koalas: 0
   ctools: 0
+  custom_role_redirect: 0
+  date_recur: 0
+  date_recur_modular: 0
   datetime: 0
   datetime_range: 0
   dblog: 0
+  devel: 0
+  devel_entity_updates: 0
   dynamic_page_cache: 0
   editor: 0
+  entity: 0
   field: 0
+  field_group: 0
   field_layout: 0
   field_ui: 0
   file: 0
   filter: 0
+  form_mode_manager: 0
+  form_mode_manager_theme_switcher: 0
+  form_mode_user_roles_assign: 0
   help: 0
   history: 0
   image: 0
@@ -51,14 +62,19 @@ module:
   media_library: 0
   menu_link_content: 0
   menu_ui: 0
+  multiple_registration: 0
   mysql: 0
   node: 0
+  node_view_permissions: 0
+  nodeaccess: 0
   options: 0
   page_cache: 0
   page_manager: 0
   page_manager_ui: 0
   path: 0
   path_alias: 0
+  redirect_page_by_role: 0
+  registration_role: 0
   responsive_image: 0
   rest: 0
   search: 0
@@ -70,15 +86,23 @@ module:
   taxonomy: 0
   telephone: 0
   text: 0
+  time_picker: 0
   token: 0
+  token_filter: 0
+  token_views_filter: 0
   toolbar: 0
   tour: 0
   twig_tweak: 0
   update: 0
   user: 0
+  user_view_mode: 0
+  view_mode_select_by_token: 0
+  views_extras: 0
   views_templates: 0
+  views_tokenized: 0
   views_ui: 0
   xls_serialization: 0
+  pathauto: 1
   content_translation: 10
   views: 10
   standard: 1000

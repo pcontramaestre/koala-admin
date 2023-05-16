@@ -1,0 +1,10 @@
+uuid: dc4b310d-4db4-4667-acf6-40e11272b678
+langcode: es
+status: true
+dependencies:
+  module:
+    - node
+id: node.agendar_clases
+label: 'Agendar clases'
+targetEntityType: node
+cache: true

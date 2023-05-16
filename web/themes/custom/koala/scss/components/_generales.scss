@@ -469,9 +469,9 @@ h2 {
         width           : 1.8rem;
         border-radius   : 7px;
         height          : 1.5rem;
-        display: flex;
-        align-items: center;
-        justify-content: end;
+        display         : flex;
+        align-items     : center;
+        justify-content : end;
       }
 
       .mfp-iframe {
@@ -543,17 +543,18 @@ body.mobile {
 // QUIERO SER PROFESOR PANTALLAS MENORES A 1200PX
 
 @media (max-width: 1199px) {
+
   //DESLIZAR IMAGEN A LA DERECHA
   .paragraph--id--204.paragraph--width--full {
     .field--name-bp-image-field.field--type-image {
-      overflow: auto;
-      margin-top: 1rem;
+      overflow     : auto;
+      margin-top   : 1rem;
       margin-bottom: -1rem;
-      position: relative;
-      max-width: 100vw;
-      overflow: auto;
-  
-      > img {
+      position     : relative;
+      max-width    : 100vw;
+      overflow     : auto;
+
+      >img {
         max-width: max-content;
       }
     }
@@ -561,23 +562,32 @@ body.mobile {
 
   // texto despues de la imagen alargada
   .paragraph--id--231 {
-    margin-top: 1rem;
+    margin-top   : 1rem;
     margin-bottom: 1rem;
-  
+
     .field--type-text-long {
-      > p {
-        > span {
-          display: block;
-          font-style: normal;
+      >p {
+        >span {
+          display    : block;
+          font-style : normal;
           font-weight: 500;
-          font-size: 16px;
+          font-size  : 16px;
           line-height: 22px;
-          text-align: center;
-          color: #000000;
+          text-align : center;
+          color      : #000000;
         }
       }
     }
   }
 }
 
+//Mensajes de drupal
+.user-logged-in {
+  .toast-container {
+    top: 6vw !important;
+  }
+}
 
+.toast-container {
+  z-index: 100000 !important;
+}

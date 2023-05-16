@@ -1,0 +1,19 @@
+uuid: 721a8483-29c1-4e68-9b99-a2c3b09a8aa5
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_fecha_de_la_cita
+    - node.type.agendar_clase
+id: node.agendar_clase.field_fecha_de_la_cita
+field_name: field_fecha_de_la_cita
+entity_type: node
+bundle: agendar_clase
+label: 'Fecha de la cita'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

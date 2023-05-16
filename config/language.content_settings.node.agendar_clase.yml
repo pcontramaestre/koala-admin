@@ -1,0 +1,11 @@
+uuid: 7c1e8864-b14e-4da6-bd08-0b90bac986d8
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.agendar_clase
+id: node.agendar_clase
+target_entity_type_id: node
+target_bundle: agendar_clase
+default_langcode: site_default
+language_alterable: false

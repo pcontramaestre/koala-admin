@@ -1,0 +1,20 @@
+custom_role_redirect.redirect:
+  path: "/"
+  defaults:
+    _controller: '\Drupal\custom_role_redirect\Controller\CustomRoleRedirectController::redirectToRole'
+  requirements:
+    _permission: "access content"
+
+custom_role_redirect.padres:
+  path: "/padres"
+  defaults:
+    _controller: '\Drupal\custom_role_redirect\Controller\CustomRoleRedirectController::redirectToPadres'
+  requirements:
+    _permission: "access content"
+
+custom_role_redirect.profesor:
+  path: "/profesor"
+  defaults:
+    _controller: '\Drupal\custom_role_redirect\Controller\CustomRoleRedirectController::redirectToProfesor'
+  requirements:
+    _permission: "access content"

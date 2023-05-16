@@ -1,0 +1,16 @@
+uuid: 1aaf36bf-6995-423f-be97-71315675a9c0
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.crear_hijos
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+id: node.crear_hijos
+target_entity_type_id: node
+target_bundle: crear_hijos
+default_langcode: site_default
+language_alterable: false

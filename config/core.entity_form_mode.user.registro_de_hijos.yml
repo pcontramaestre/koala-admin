@@ -1,0 +1,10 @@
+uuid: 49288851-075d-47d1-bd6d-5534a3b1859a
+langcode: es
+status: true
+dependencies:
+  module:
+    - user
+id: user.registro_de_hijos
+label: 'Registro de hijos'
+targetEntityType: user
+cache: true

@@ -13,7 +13,15 @@
     }
   };
 
-
+  jQuery('#edit-field-fecha-nacimiento-0-value').datepicker({
+    dateFormat: 'dd-mm-yy',// 22-05-2019
+    changeMonth: true,
+    changeYear: true,
+    yearRange: '2001:2023',
+    altFormat: 'dd-mm-yy',
+    maxDate: '-1m -1w',
+    minDate: new Date(2001, 1 - 1, 1)
+  });
 
   jQuery(document).ready(function($) {
 
@@ -33,7 +41,7 @@
       if ( screenWidth <= 1200 ) {
         // agregar la clase .mobile a la etiqueta body
         document.body.classList.add('mobile');
-       
+
       }
       if ( screenWidth <= 580 ) {
         document.body.classList.add('mobile-580');
@@ -47,7 +55,7 @@
       $('.view-nuestra-metodologia > .view-content').slick({
         dots: false,
         infinite: false,
-        speed: 300,        
+        speed: 300,
         slidesToShow: 3,
         slidesToScroll: 1,
         responsive: [
@@ -185,9 +193,9 @@
       $('.paragraph--id--195 .webform-submission-hoja-de-vida-form').css({'width':'70%'});
       if ( pageMobile580 === true ) {
         $('.paragraph--id--195 .webform-submission-hoja-de-vida-form').css({'width':'90%'});
-      }  
+      }
     }
-    
+
 
 
     $('.paragraph--id--195 .webform-submission-hoja-de-vida-form #edit-titulo').click(function(){
@@ -200,20 +208,20 @@
           $('.paragraph--id--195 .webform-submission-hoja-de-vida-form').css({'width':'70%','padding-bottom':'1rem','border-radius':'32px'});
           $('.paragraph--id--195 .webform-submission-hoja-de-vida-form #edit-flexbox').css({'display':'flex'});
           if ( pageMobile === true ) {
-            $('.paragraph--id--195 .webform-submission-hoja-de-vida-form').css({'width':'90%'});  
-          }      
+            $('.paragraph--id--195 .webform-submission-hoja-de-vida-form').css({'width':'90%'});
+          }
           // REMOVE CLASS collapse-n TO #edit-titulo
           $('.paragraph--id--195 .webform-submission-hoja-de-vida-form #edit-titulo').removeClass('collapse-n');
         } else {
           $('.paragraph--id--195 .webform-submission-hoja-de-vida-form').css({'width':'30%','padding-bottom':'0px','border-radius':'32px'});
           if ( pageMobile === true ) {
-            $('.paragraph--id--195 .webform-submission-hoja-de-vida-form').css({'width':'70%'}); 
+            $('.paragraph--id--195 .webform-submission-hoja-de-vida-form').css({'width':'70%'});
             if ( pageMobile580 === true ) {
-              $('.paragraph--id--195 .webform-submission-hoja-de-vida-form').css({'width':'90%'});  
+              $('.paragraph--id--195 .webform-submission-hoja-de-vida-form').css({'width':'90%'});
             }
-          }      
+          }
           // ADD CLASS collapse-n TO #edit-titulo
-          $('.paragraph--id--195 .webform-submission-hoja-de-vida-form #edit-titulo').addClass('collapse-n'); 
+          $('.paragraph--id--195 .webform-submission-hoja-de-vida-form #edit-titulo').addClass('collapse-n');
         }
       });
 
@@ -260,7 +268,7 @@
               $('.paragraph--id--232 .webform-submission-hoja-de-vida-form').css({'width':'90%'});
             }
           }
-          
+
           // ADD CLASS collapse-n TO #edit-titulo--2
           $('.paragraph--id--232 .webform-submission-hoja-de-vida-form #edit-titulo--2').addClass('collapse-n');
 
@@ -424,7 +432,7 @@
     // $('.panel-group.accordion h2.accordion-header >.accordion-button').click(function(){
     //   //get class div parent parent div.show
     //   var display = $(this).parent().parent().find('.accordion-collapse').is(':visible');
-    //   if ( display === true ) {        
+    //   if ( display === true ) {
     //     $(this).parent().parent().find('.accordion-collapse').removeClass('show');
     //     $(this).parent().parent().find('.accordion-collapse').addClass('show-not');
     //   } else {
@@ -448,7 +456,7 @@
         $(this).parent().parent().find('.accordion-collapse').removeClass('show');
         //.accordion-button remove class show-not
         $(this).removeClass('button-mostrando');
-        // collapsed add class 
+        // collapsed add class
         $(this).addClass('collapsed');
       } else {
         $(this).parent().parent().find('.accordion-collapse').addClass('show');
@@ -467,8 +475,8 @@
       iframe: {
         patterns: {
           youtube: {
-            index: 'youtube.com/', 
-            id: 'v=', 
+            index: 'youtube.com/',
+            id: 'v=',
             src: '//www.youtube.com/embed/%id%?autoplay=1'
           }
         }
@@ -480,14 +488,14 @@
       let screenWidth = window.screen.width;
       console.log('La pantalla ha cambiado de tamaño');
       console.log(screenWidth);
-      
-    }); 
+
+    });
 
     if ( screenWidth <= 1200 ) {
       console.log('Pantalla menor a 1200px');
       $('.view-display-id-block_1_quienes .view-content.row .views-row .views-field-field-crear-bloques > .field-content').slick({
         dots: false,
-        infinite: false,      
+        infinite: false,
         slidesToShow: 1,
         slidesToScroll: 1,
         responsive: [
@@ -525,7 +533,7 @@
 
       $('.paragraph--id--165 > .paragraph__column').slick({
         dots: false,
-        infinite: false,      
+        infinite: false,
         slidesToShow: 1,
         slidesToScroll: 1,
         centerMode: true,
@@ -533,17 +541,17 @@
 
 
 
-    }   
+    }
 
     if ( screenWidth <= 992 ) {
       $('.view-como-funciona.view-id-como_funciona > .view-content > .views-row:nth-child(2) .como-funcion > .izquierda > .row').slick({
         dots: false,
-        infinite: false,      
+        infinite: false,
         slidesToShow: 1,
         slidesToScroll: 1,
         centerMode: true,
       });
     }
-    
+
   });
 })(jQuery, Drupal);

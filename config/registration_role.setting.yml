@@ -1,0 +1,10 @@
+_core:
+  default_config_hash: o1wWkhSOJotsHFgvzESaUOiTWhLak62cKBDyEtewAIM
+langcode: es
+role_to_select:
+  padre: padre
+  content_editor: '0'
+  administrator: '0'
+  profesor: '0'
+  estudiante: '0'
+registration_mode: user

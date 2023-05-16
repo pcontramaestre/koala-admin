@@ -5,12 +5,15 @@ dependencies:
   config:
     - field.field.user.user.field_celular
     - field.field.user.user.field_nombre_del_acudiente
+    - field.field.user.user.field_nombre_del_hijo
+    - field.field.user.user.field_padre
     - field.field.user.user.user_picture
     - image.style.thumbnail
   module:
     - field_layout
     - image
     - layout_builder
+    - path
     - user
 third_party_settings:
   field_layout:
@@ -49,10 +52,34 @@ content:
     region: first
     settings:
       size: 60
+      placeholder: 'Nombre del acudiente'
+    third_party_settings: {  }
+  field_nombre_del_hijo:
+    type: string_textfield
+    weight: 32
+    region: first
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_padre:
+    type: entity_reference_autocomplete
+    weight: 33
+    region: first
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
       placeholder: ''
     third_party_settings: {  }
   language:
     weight: 3
+    region: first
+    settings: {  }
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 30
     region: first
     settings: {  }
     third_party_settings: {  }

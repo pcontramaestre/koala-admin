@@ -1,0 +1,17 @@
+uuid: afa4b9e9-47b7-471d-b8e6-637de3c18099
+langcode: es
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: 'Agendar clase GRATIS'
+type: agendar_clase
+description: ''
+help: ''
+new_revision: false
+preview_mode: 0
+display_submitted: true

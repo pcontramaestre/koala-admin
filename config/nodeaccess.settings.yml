@@ -1,0 +1,186 @@
+_core:
+  default_config_hash: ev_QLQNwc0-1EGokxDRzrPpUi1kLXjeBRd5vhwpB6h0
+langcode: es
+allowed_grant_operations:
+  grant_view: true
+  grant_update: true
+  grant_delete: true
+bundles_roles_grants:
+  article:
+    anonymous:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    authenticated:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    content_editor:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    administrator:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    profesor:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    padre:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    author:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    hijo:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+  crear_hijos:
+    anonymous:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    authenticated:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    content_editor:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    administrator:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    profesor:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    padre:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    author:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    hijo:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+  page:
+    anonymous:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    authenticated:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    content_editor:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    administrator:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    profesor:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    padre:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    author:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    hijo:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+  agendar_clase:
+    anonymous:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    authenticated:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    content_editor:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    administrator:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    profesor:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    padre:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    author:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    hijo:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+grants_tab_availability:
+  agendar_clase: false
+map_rid_gid:
+  anonymous: 0
+  authenticated: 1
+  content_editor: 2
+  administrator: 3
+  profesor: 4
+  padre: 5
+  hijo: 7
+roles_settings:
+  anonymous:
+    display_name: 'Usuario anónimo'
+    name: 'Usuario anónimo'
+    weight: 0
+    selected: false
+  authenticated:
+    display_name: 'Usuario autenticado'
+    name: 'Usuario autenticado'
+    weight: 0
+    selected: false
+  content_editor:
+    display_name: 'Editor de contenido'
+    name: 'Editor de contenido'
+    weight: 0
+    selected: false
+  administrator:
+    display_name: Administrador
+    name: Administrador
+    weight: 0
+    selected: false
+  profesor:
+    display_name: Profesor
+    name: Profesor
+    weight: 0
+    selected: false
+  padre:
+    display_name: Padre
+    name: Padre
+    weight: 0
+    selected: false
+  hijo:
+    display_name: Hijo
+    name: Hijo
+    weight: 0
+    selected: false

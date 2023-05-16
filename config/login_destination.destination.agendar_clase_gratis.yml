@@ -1,0 +1,16 @@
+uuid: a6cb0902-de56-4f71-bd89-e72276cf8c09
+langcode: es
+status: true
+dependencies: {  }
+name: agendar_clase_gratis
+label: 'Agendar clase gratis'
+triggers:
+  registration: registration
+destination_path: 'internal:/node/add/agendar_clase/agendar_clases'
+pages_type: 0
+pages: ''
+language: ''
+roles:
+  padre: padre
+weight: 0
+enabled: true

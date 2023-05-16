@@ -1,0 +1,22 @@
+uuid: e4ae605a-93a8-4376-b787-00b368827a93
+langcode: es
+status: true
+dependencies:
+  module:
+    - user
+id: inicio_padres
+label: 'Inicio Padres'
+description: ''
+use_admin_theme: false
+path: /padres
+access_logic: and
+access_conditions:
+  -
+    id: user_role
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+    roles:
+      administrator: administrator
+      padre: padre
+parameters: {  }

@@ -5,6 +5,8 @@ dependencies:
   config:
     - field.field.user.user.field_celular
     - field.field.user.user.field_nombre_del_acudiente
+    - field.field.user.user.field_nombre_del_hijo
+    - field.field.user.user.field_padre
     - field.field.user.user.user_picture
     - image.style.thumbnail
   module:
@@ -87,6 +89,38 @@ third_party_settings:
                 third_party_settings: {  }
             weight: 3
             additional: {  }
+          fd4d0654-d540-41ae-86f5-541d3b9ac115:
+            uuid: fd4d0654-d540-41ae-86f5-541d3b9ac115
+            region: content
+            configuration:
+              id: 'field_block:user:user:field_nombre_del_hijo'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: string
+                label: above
+                settings:
+                  link_to_entity: false
+                third_party_settings: {  }
+            weight: 5
+            additional: {  }
+          a40050c4-3573-4417-8b5f-2c9113d298e0:
+            uuid: a40050c4-3573-4417-8b5f-2c9113d298e0
+            region: content
+            configuration:
+              id: 'field_block:user:user:field_padre'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_label
+                label: above
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: 6
+            additional: {  }
         third_party_settings: {  }
 _core:
   default_config_hash: mZLyuWM9CQx2ZJVqFGSbzgFnHzudVbHBYmdU256A5Wk
@@ -110,6 +144,22 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     weight: 6
+    region: content
+  field_nombre_del_hijo:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 9
+    region: content
+  field_padre:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 10
     region: content
   member_for:
     settings: {  }

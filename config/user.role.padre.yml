@@ -1,9 +1,31 @@
 uuid: bbfdc0ca-5ea7-4ebc-8f2f-85fd4bd56827
 langcode: es
 status: true
-dependencies: {  }
+dependencies:
+  config:
+    - node.type.agendar_clase
+    - node.type.crear_hijos
+  module:
+    - form_mode_manager
+    - node
+    - node_view_permissions
+    - nodeaccess
 id: padre
 label: Padre
 weight: 5
 is_admin: null
-permissions: {  }
+permissions:
+  - 'create agendar_clase content'
+  - 'create crear_hijos content'
+  - 'delete own agendar_clase content'
+  - 'delete own crear_hijos content'
+  - 'edit own agendar_clase content'
+  - 'edit own crear_hijos content'
+  - 'nodeaccess grant agendar_clase permissions'
+  - 'nodeaccess grant crear_hijos permissions'
+  - 'revert crear_hijos revisions'
+  - 'use node.agendar_clases form mode'
+  - 'use node.crear_koalas form mode'
+  - 'view crear_hijos revisions'
+  - 'view own agendar_clase content'
+  - 'view own crear_hijos content'

@@ -1,0 +1,10 @@
+uuid: 4d723a03-e6f5-445f-97ed-883985bed5b4
+langcode: es
+status: true
+dependencies:
+  module:
+    - node
+id: node.administrador
+label: Administrador
+targetEntityType: node
+cache: true

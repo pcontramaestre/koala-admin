@@ -1,0 +1,14 @@
+uuid: 0346f9cc-4b93-4250-ae6e-c2185025d8b7
+langcode: es
+status: true
+dependencies:
+  config:
+    - user.role.hijo
+  module:
+    - user
+id: user_add_role_action.hijo
+label: 'Añade el rol Hijo al(los) usuario(s) seleccionado(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: hijo

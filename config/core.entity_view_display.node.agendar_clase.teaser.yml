@@ -1,0 +1,31 @@
+uuid: 03202024-edbb-41a5-88e2-0a277550e9c5
+langcode: es
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.agendar_clase.field_fecha_de_la_cita
+    - field.field.node.agendar_clase.field_fecha_nac
+    - field.field.node.agendar_clase.field_hora
+    - field.field.node.agendar_clase.field_nombre_del_nino_a
+    - field.field.node.agendar_clase.field_sexo_n
+    - node.type.agendar_clase
+  module:
+    - user
+id: node.agendar_clase.teaser
+targetEntityType: node
+bundle: agendar_clase
+mode: teaser
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_fecha_de_la_cita: true
+  field_fecha_nac: true
+  field_hora: true
+  field_nombre_del_nino_a: true
+  field_sexo_n: true
+  langcode: true
