@@ -3,7 +3,8 @@ _core:
 langcode: es
 form_modes:
   node:
-    to_exclude: {  }
+    to_exclude:
+      administrador: administrador
   user:
     to_exclude:
       register: register

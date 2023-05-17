@@ -38,6 +38,16 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  field_padre:
+    type: entity_reference_autocomplete
+    weight: 2
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
   hijo_profiles:
     type: options_select
     weight: 9
@@ -48,7 +58,6 @@ hidden:
   contact: true
   field_celular: true
   field_nombre_del_acudiente: true
-  field_padre: true
   langcode: true
   language: true
   path: true

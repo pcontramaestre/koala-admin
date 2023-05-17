@@ -90,4 +90,30 @@ function koala_theme_suggestions_alter(array &$suggestions, array &$variables, $
     $suggestions[] = 'form__' . str_replace('-', '_', $variables['element']['#id']);
   }
   $variables['pablo'] = 'ESTO ES UNA VARIABLE GLOBAL';
+
+  if ($hook == 'node_edit_form') {
+    if ($node = \Drupal::routeMatch()->getParameter('node')) {
+      $content_type = $node->bundle();
+    } else {
+      $current_path = \Drupal::service('path.current')->getPath();
+      $path_args = explode('/', $current_path);
+      $content_type = $path_args[3];
+    }
+    $suggestions[] = 'node_edit_form__' . $content_type;
+  }
+}
+
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function koala_theme_suggestions_form_alter(array &$suggestions, array $variables) {
+  if (isset($variables['element']['#theme']) && is_array($variables['element']['#theme'])) {
+    foreach ($variables['element']['#theme'] as $theme) {
+      if (strpos($theme, '_edit_') !== FALSE) {
+        $suggestions[] = 'form__' . str_replace('_edit_', '_', $theme);
+      }
+      $suggestions[] = 'form__' . $theme;
+    }
+  }
 }

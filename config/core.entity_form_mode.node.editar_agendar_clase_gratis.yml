@@ -1,0 +1,10 @@
+uuid: be6fdfee-bdd9-47bb-805b-0127bc2aa810
+langcode: es
+status: true
+dependencies:
+  module:
+    - node
+id: node.editar_agendar_clase_gratis
+label: 'Editar Agendar Clase Gratis'
+targetEntityType: node
+cache: true

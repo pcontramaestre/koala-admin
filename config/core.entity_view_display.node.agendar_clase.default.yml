@@ -3,21 +3,33 @@ langcode: es
 status: true
 dependencies:
   config:
+    - field.field.node.agendar_clase.field_fecha_cita_gratis
     - field.field.node.agendar_clase.field_fecha_de_la_cita
     - field.field.node.agendar_clase.field_fecha_nac
+    - field.field.node.agendar_clase.field_he_leido_y_estoy_de_acuerd
     - field.field.node.agendar_clase.field_hora
+    - field.field.node.agendar_clase.field_hora_clase
     - field.field.node.agendar_clase.field_nombre_del_nino_a
     - field.field.node.agendar_clase.field_sexo_n
     - node.type.agendar_clase
   module:
     - datetime
     - options
+    - timefield
     - user
 id: node.agendar_clase.default
 targetEntityType: node
 bundle: agendar_clase
 mode: default
 content:
+  field_fecha_cita_gratis:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 107
+    region: content
   field_fecha_de_la_cita:
     type: string
     label: above
@@ -34,6 +46,16 @@ content:
     third_party_settings: {  }
     weight: 104
     region: content
+  field_he_leido_y_estoy_de_acuerd:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 108
+    region: content
   field_hora:
     type: datetime_default
     label: above
@@ -42,6 +64,19 @@ content:
       format_type: medium
     third_party_settings: {  }
     weight: 102
+    region: content
+  field_hora_clase:
+    type: timefield_default_formatter
+    label: above
+    settings:
+      display_format:
+        hour: g
+        minute: i
+        separator: ':'
+        period: a
+        periodSeparator: ''
+    third_party_settings: {  }
+    weight: 106
     region: content
   field_nombre_del_nino_a:
     type: string

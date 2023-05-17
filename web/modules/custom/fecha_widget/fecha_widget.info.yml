@@ -1,0 +1,7 @@
+name: "Fecha Widget"
+type: module
+description: "Agrega un nuevo formato de widget de fecha para campos de texto."
+core_version_requirement: ^9 || ^10
+package: Custom
+dependencies:
+  - datetime

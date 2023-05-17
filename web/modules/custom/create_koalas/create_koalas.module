@@ -1,59 +1,105 @@
 <?php
+
+/**
+ * @file
+ * Contains \Drupal\create_koalas\Form\CreateKoalasForm.
+ */
+
 use Drupal\node\Entity\Node;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\user\Entity\User;
+use Drupal\Core\StringTranslation\TranslatableMarkup;
 
+/**
+ * Implements hook_form_FORM_ID_alter() for the node_agendar_clase_form.
+ */
 function create_koalas_form_alter(&$form, FormStateInterface $form_state, $form_id) {
-  //var_dump($form_id);
-  //Obtener el usuario actual 
+  // var_dump($form_id);
+  // Obtener el usuario actual.
   $user = \Drupal::currentUser();
   $uid = $user->id();
-  // Obtener el displayname del usuario actual drupal 9
+  // Obtener el displayname del usuario actual drupal 9.
   $username = $user->getDisplayName();
 
-  // Obtener el field_nombre_del_acudiente del usuario actual
+  // Obtener el field_nombre_del_acudiente del usuario actual.
   $query = \Drupal::entityQuery('user');
   $query->condition('uid', $uid);
   $entity_ids = $query->execute();
-  $user = \Drupal\user\Entity\User::load(array_shift($entity_ids));
+  $user = User::load(array_shift($entity_ids));
   $field_nombre_del_acudiente = $user->get('field_nombre_del_acudiente')->value;
 
-  if ($form_id == 'node_agendar_clase_form' || $form_id == 'node_agendar_clase_agendar_clases_form') {    
-    $title_value = \Drupal::translation()->translate('Agendar clase gratuita de 25 minutos al usuario ') .$field_nombre_del_acudiente;    
+  // Comprobar que estamos agregando un nuevo nodo o editando uno existente.
+  $routeMatch = \Drupal::routeMatch();
+  $routeName = $routeMatch->getRouteName();
+  $editando = TRUE;
+  if ($routeName == 'node.add.agendar_clases') {
+    $editando = FALSE;
+  }
+
+  if ($form_id == 'node_agendar_clase_form' || $form_id == 'node_agendar_clase_agendar_clases_form') {
+    $title_value = \Drupal::translation()->translate('Agendar clase gratuita de 25 minutos al usuario ') . $field_nombre_del_acudiente;
     $form['title']['widget'][0]['value']['#default_value'] = $title_value;
     $form['title']['#access'] = FALSE;
-    $form['actions']['submit']['#value'] = t('Agendar clase');
-    foreach (array_keys($form['actions']) as $action) {
-      if ($action != 'preview' && isset($form['actions'][$action]['#type']) && $form['actions'][$action]['#type'] === 'submit') {
-        $form['actions'][$action]['#submit'][] = 'callback_submit';
+    $form['actions']['submit']['#value'] = new TranslatableMarkup('Agendar clase');
+    if ($editando) {
+      $form['actions']['submit']['#value'] = new TranslatableMarkup('Actualizar clase');
+      /*
+       * Ocultar los siguientes campos:
+       * field_fecha_nac
+       * field_he_leido_y_estoy_de_acuerd
+       * field_nombre_del_nino_a
+       * field_sexo_n
+       */
+      $form['field_fecha_nac']['#access'] = FALSE;
+      $form['field_he_leido_y_estoy_de_acuerd']['#access'] = FALSE;
+      $form['field_nombre_del_nino_a']['#access'] = FALSE;
+      $form['field_sexo_n']['#access'] = FALSE;
+    }
+    else {
+      foreach (array_keys($form['actions']) as $action) {
+        if ($action != 'preview' && isset($form['actions'][$action]['#type']) && $form['actions'][$action]['#type'] === 'submit') {
+          $form['actions'][$action]['#submit'][] = 'callback_submit';
+        }
       }
     }
-
   }
-//node_crear_hijos_form  and node_crear_hijos_crear_koalas_form 
-if ($form_id == 'node_crear_hijos_form' || $form_id == 'node_crear_hijos_crear_koalas_form') {
-  $form['actions']['submit']['#value'] = t('Crear hijo');
-  foreach (array_keys($form['actions']) as $action) {
-    if ($action != 'preview' && isset($form['actions'][$action]['#type']) && $form['actions'][$action]['#type'] === 'submit') {
-      $form['actions'][$action]['#submit'][] = 'callback_submit_crear_hijo';
+
+  // node_crear_hijos_form  and node_crear_hijos_crear_koalas_form.
+  if ($form_id == 'node_crear_hijos_form' || $form_id == 'node_crear_hijos_crear_koalas_form') {
+    $form['actions']['submit']['#value'] = t('Crear hijo');
+    foreach (array_keys($form['actions']) as $action) {
+      if ($action != 'preview' && isset($form['actions'][$action]['#type']) && $form['actions'][$action]['#type'] === 'submit') {
+        $form['actions'][$action]['#submit'][] = 'callback_submit_crear_hijo';
+      }
     }
   }
 }
 
+/**
+ * Implements hook_form_FORM_ID_alter() for the user_register_form.
+ */
+function create_koalas_form_user_register_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  // Hide the username field.
+  $form['account']['name']['#access'] = FALSE;
 
+  // Assign the email as the username.
+  $form['#submit'][] = 'custom_user_registration_assign_username';
 }
 
-// Funcion callback_submit_crear_hijo para crear un nuevo usuario de tipo hijo
+/**
+ * Funcion callback_submit_crear_hijo para crear un nuevo usuario de tipo hijo.
+ */
 function callback_submit_crear_hijo($form, &$form_state) {
   $user = \Drupal::currentUser();
   $uid = $user->id();
   $correo_padre = $user->getEmail();
   $password = '123456-' . $uid;
-  //numero random para el correo del 100 al 999
+  // Numero random para el correo del 100 al 999.
   $random = rand(100, 999);
   $correo = 'correo-' . $uid . '-' . $random . '@correohijo.com';
-  // El nombre del hijo es el title del nodo
+  // El nombre del hijo es el title del nodo.
   $nombre = $form_state->getValue('title');
+
   // Create user account programmatically.
   $user = User::create();
   $user->setPassword($password);
@@ -62,10 +108,10 @@ function callback_submit_crear_hijo($form, &$form_state) {
   $user->setUsername($correo);
   $user->set("field_nombre_del_hijo", $nombre);
 
-  // set field_padre entity reference to user padre
+  // Set field_padre entity reference to user padre.
   $user->set("field_padre", $uid);
 
-  // add role hijo
+  // Add role hijo.
   $user->addRole('hijo');
   $user->set("init", $correo_padre);
 
@@ -73,51 +119,50 @@ function callback_submit_crear_hijo($form, &$form_state) {
   $user->save();
   $newid = $user->id();
 
-  // save $newid in field_hijo_relacionado of form node_crear_hijos_form
+  // Save $newid in field_hijo_relacionado of form node_crear_hijos_form.
   $node = Node::load($form_state->getValue('nid'));
   $node->set('field_hijo_relacionado', $newid);
   $node->save();
 
 }
 
-
-/* 
-  Crear un hook para que despues de guardar el formulario con id node_agendar_clase_agendar_clases_form
-  se cree un nuevo nodo de tipo crear_hijos con los datos del formulario anterior 
-  title = field_nombre_del_nino_a 
-  field_sexo = field_sexo_n
-  field_fecha_nacimiento = field_fecha_nac
-*/
-// function create_koalas_node_agendar_clase_agendar_clases_form_submit(&$form, FormStateInterface $form_state) {
+/*
+Crear un hook para que despues de guardar el formulario con id node_agendar_clase_agendar_clases_form
+se cree un nuevo nodo de tipo crear_hijos con los datos del formulario anterior
+title = field_nombre_del_nino_a
+field_sexo = field_sexo_n
+field_fecha_nacimiento = field_fecha_nac
+ */
+// Function create_koalas_node_agendar_clase_agendar_clases_form_submit(&$form, FormStateInterface $form_state) {
 //   var_dump($form_state->getValues());
 //   exit();
 
-
-// }
-
-
-function callback_submit($form, &$form_state)
-{
-  //  sleep(10);
-  //  $form_state->setRedirect('<front>');  
+/**
+ * }
+ */
+function callback_submit($form, &$form_state) {
+  // sleep(10);
+  //  $form_state->setRedirect('<front>');.
   $user = \Drupal::currentUser();
   $uid = $user->id();
-  // Obtener el displayname del usuario actual drupal 9
+  // Obtener el displayname del usuario actual drupal 9.
   $username = $user->getDisplayName();
 
-  // Obtener el correo del usuario actual
+  // Obtener el correo del usuario actual.
   $correo_padre = $user->getEmail();
+
+  // Get value radio field_sexo_n.
+  $sexo = $form_state->getValue('field_sexo_n');
 
   // Obtener el field_nombre_del_acudiente del usuario actual
   // $query = \Drupal::entityQuery('user');
   // $query->condition('uid', $uid);
   // $entity_ids = $query->execute();
   // $user = \Drupal\user\Entity\User::load(array_shift($entity_ids));
-
   $password = '123456-' . $uid;
-  //numero random para el correo del 100 al 999
+  // Numero random para el correo del 100 al 999.
   $random = rand(100, 999);
-  $correo = 'correo-' . $uid .'-'.$random.'@correohijo.com';
+  $correo = 'correo-' . $uid . '-' . $random . '@correohijo.com';
   $nombre = $form_state->getValue('field_nombre_del_nino_a');
 
   // Create user account programmatically.
@@ -128,10 +173,10 @@ function callback_submit($form, &$form_state)
   $user->setUsername($correo);
   $user->set("field_nombre_del_hijo", $nombre);
 
-  // set field_padre entity reference to user padre
+  // Set field_padre entity reference to user padre.
   $user->set("field_padre", $uid);
 
-  // add role hijo
+  // Add role hijo.
   $user->addRole('hijo');
   $user->set("init", $correo_padre);
 
@@ -139,26 +184,27 @@ function callback_submit($form, &$form_state)
   $user->save();
   $newidhijo = $user->id();
 
-
-  // Crear un nuevo nodo de tipo crear_hijos
+  // Crear un nuevo nodo de tipo crear_hijos.
   $node = Node::create([
     'type'        => 'crear_hijos',
     'title'       => $form_state->getValue('field_nombre_del_nino_a'),
-    'field_sexo'  =>  $form_state->getValue('field_sexo'),
+    'field_sexo'  => $sexo,
     'field_fecha_nacimiento' => $form_state->getValue('field_fecha_nac'),
     'field_hijo_relacionado' => $newidhijo,
     'uid' => $uid,
   ])->save();
 
+  /**
+   * Custom submit handler to assign email as username.
+   */
+  function custom_user_registration_assign_username(&$form, FormStateInterface $form_state) {
+    $email = $form_state->getValue('mail');
+    $form_state->setValue('name', $email);
+  }
 
-
-
-
-
-  sleep(10);
-  //redirect to page internal /padres
-  $url = Drupal\core\Url::fromUserInput('/padres');
-  $form_state->setRedirectUrl($url);
-  //$form_state->setRedirect('internal:/padres');
+  // sleep(10);
+  // redirect to page internal /padres
+  //  $url = Drupal\core\Url::fromUserInput('/padres');
+  //  $form_state->setRedirectUrl($url);
+  // $form_state->setRedirect('internal:/padres');
 }
-

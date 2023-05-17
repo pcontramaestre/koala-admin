@@ -1,0 +1,24 @@
+uuid: 1f7b9ae9-52b2-4b78-8670-42f618778044
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hora_clase
+    - node.type.agendar_clase
+  module:
+    - timefield
+id: node.agendar_clase.field_hora_clase
+field_name: field_hora_clase
+entity_type: node
+bundle: agendar_clase
+label: Hora
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  totime: ''
+  weekly_summary: 0
+  weekly_summary_with_label: 0
+field_type: timefield

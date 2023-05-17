@@ -1,0 +1,21 @@
+uuid: 3acffa68-36c0-40e8-92ce-1afbf884cb9d
+langcode: es
+status: true
+dependencies:
+  config:
+    - config_pages.type.home_padres
+    - field.storage.config_pages.field_texto_del_banner
+  module:
+    - text
+id: config_pages.home_padres.field_texto_del_banner
+field_name: field_texto_del_banner
+entity_type: config_pages
+bundle: home_padres
+label: 'Texto del banner'
+description: 'Ingrese aquí el texto que va dentro del banner'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

@@ -1,0 +1,23 @@
+uuid: 2b69182a-c922-41a0-a15f-937934d4f191
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_he_leido_y_estoy_de_acuerd
+    - node.type.agendar_clase
+id: node.agendar_clase.field_he_leido_y_estoy_de_acuerd
+field_name: field_he_leido_y_estoy_de_acuerd
+entity_type: node
+bundle: agendar_clase
+label: 'He leído y estoy de acuerdo con'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: Activado
+  off_label: Desactivado
+field_type: boolean

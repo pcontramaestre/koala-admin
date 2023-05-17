@@ -1,0 +1,17 @@
+uuid: 48401f74-fe4b-421c-bfb3-031a1045ece8
+langcode: es
+status: true
+dependencies: {  }
+id: home_padres
+label: 'Home Padres'
+token: false
+context:
+  show_warning: true
+  group:
+    language: false
+  fallback:
+    language: ''
+menu:
+  path: /admin/config-home
+  weight: -1
+  description: 'Padres Config'

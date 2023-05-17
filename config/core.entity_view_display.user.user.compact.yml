@@ -73,4 +73,5 @@ hidden:
   field_nombre_del_hijo: true
   field_padre: true
   langcode: true
+  mail: true
   member_for: true

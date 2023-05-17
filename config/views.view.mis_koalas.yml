@@ -323,8 +323,10 @@ display:
           entity_field: uid
           plugin_id: standard
           required: true
+      css_class: ''
       use_ajax: true
-      header:
+      header: {  }
+      footer:
         area_text_custom:
           id: area_text_custom
           table: views
@@ -333,10 +335,9 @@ display:
           group_type: group
           admin_label: ''
           plugin_id: text_custom
-          empty: false
-          content: '<a href="/node/add/crear_hijos/crear_koalas?destination=/user" class="btn btn-primary mt-5 mb-5" data-drupal-link-system-path="node/add-list/crear_koalas">Agregar Koalas</a>'
+          empty: true
+          content: "<a href=\"/node/add/agendar_clase/agendar_clases\" class=\"btn btn-primary mt-5 mb-5\" data-drupal-link-system-path=\"/node/add/agendar_clase/agendar_clases\">Agregar Koalas</a>\r\n\r\n\r\n"
           tokenize: false
-      footer: {  }
       display_extenders: {  }
     cache_metadata:
       max-age: -1

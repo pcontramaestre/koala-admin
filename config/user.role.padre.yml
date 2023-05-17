@@ -6,6 +6,7 @@ dependencies:
     - node.type.agendar_clase
     - node.type.crear_hijos
   module:
+    - config_pages
     - form_mode_manager
     - node
     - node_view_permissions
@@ -15,6 +16,7 @@ label: Padre
 weight: 5
 is_admin: null
 permissions:
+  - 'access user profiles'
   - 'create agendar_clase content'
   - 'create crear_hijos content'
   - 'delete own agendar_clase content'
@@ -26,6 +28,9 @@ permissions:
   - 'revert crear_hijos revisions'
   - 'use node.agendar_clases form mode'
   - 'use node.crear_koalas form mode'
+  - 'use node.editar_agendar_clase_gratis form mode'
   - 'view crear_hijos revisions'
+  - 'view home_padres config page entity'
   - 'view own agendar_clase content'
   - 'view own crear_hijos content'
+  - 'view user email addresses'

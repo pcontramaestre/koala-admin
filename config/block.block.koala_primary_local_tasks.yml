@@ -2,6 +2,9 @@ uuid: da511d9f-2b58-491c-92a6-03d2ccbca180
 langcode: es
 status: true
 dependencies:
+  module:
+    - node
+    - taxonomy
   theme:
     - koala
 _core:
@@ -9,7 +12,7 @@ _core:
 id: koala_primary_local_tasks
 theme: koala
 region: content
-weight: -5
+weight: -4
 provider: null
 plugin: local_tasks_block
 settings:
@@ -19,4 +22,17 @@ settings:
   provider: core
   primary: true
   secondary: false
-visibility: {  }
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      agendar_clase: agendar_clase
+  'entity_bundle:taxonomy_term':
+    id: 'entity_bundle:taxonomy_term'
+    negate: true
+    context_mapping:
+      taxonomy_term: '@taxonomy_term.taxonomy_term_route_context:taxonomy_term'
+    bundles: {  }

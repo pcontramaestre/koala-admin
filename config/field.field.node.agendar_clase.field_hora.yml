@@ -11,11 +11,14 @@ id: node.agendar_clase.field_hora
 field_name: field_hora
 entity_type: node
 bundle: agendar_clase
-label: Hora
+label: 'Fecha cita'
 description: ''
 required: false
 translatable: false
-default_value: {  }
+default_value:
+  -
+    default_date_type: relative
+    default_date: '+1 days'
 default_value_callback: ''
 settings: {  }
 field_type: datetime

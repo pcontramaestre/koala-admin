@@ -1,0 +1,12 @@
+uuid: 0ac67a74-8d1f-403a-af91-69979b5e3da1
+langcode: es
+status: true
+dependencies: {  }
+id: separacion_superior_mt_5
+label: 'Separación superior mt-5'
+classes: mt-5
+type: component
+group: default
+block_restrictions: {  }
+layout_restrictions: {  }
+weight: 0

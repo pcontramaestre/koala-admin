@@ -73,3 +73,10 @@ node_modules/
 .DS_Store
 */.DS_Store
 ../.DS_Store
+
+#Ignore css
+ web/themes/custom/koala/css/style.css
+/web/themes/custom/koala/css/style.css
+web/themes/custom/koala/css/style.min.css
+/web/themes/custom/koala/css/style.css
+.idea/
