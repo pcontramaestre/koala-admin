@@ -1,0 +1,18 @@
+uuid: 204de849-1c40-453f-8523-88b962bc1213
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.crear_hijos
+id: node.crear_hijos.title
+field_name: title
+entity_type: node
+bundle: crear_hijos
+label: 'Nombre del hijo'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

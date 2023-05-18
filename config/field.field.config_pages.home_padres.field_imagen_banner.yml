@@ -1,0 +1,29 @@
+uuid: 7a187411-39fc-43a0-8113-4b22a4ab21bd
+langcode: es
+status: true
+dependencies:
+  config:
+    - config_pages.type.home_padres
+    - field.storage.config_pages.field_imagen_banner
+    - media.type.image
+id: config_pages.home_padres.field_imagen_banner
+field_name: field_imagen_banner
+entity_type: config_pages
+bundle: home_padres
+label: 'Imagen Banner'
+description: 'Banner del perfil de los padres'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

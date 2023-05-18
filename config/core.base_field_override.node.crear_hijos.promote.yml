@@ -1,0 +1,22 @@
+uuid: ef0b3673-faa3-427f-bdf7-e1ebed02529c
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.crear_hijos
+id: node.crear_hijos.promote
+field_name: promote
+entity_type: node
+bundle: crear_hijos
+label: 'Promocionado a la página principal'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: Activado
+  off_label: Desactivado
+field_type: boolean

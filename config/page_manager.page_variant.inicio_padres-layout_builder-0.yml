@@ -1,0 +1,99 @@
+uuid: 5b58c5d3-da8f-4420-96cb-efb90a75e311
+langcode: es
+status: true
+dependencies:
+  config:
+    - page_manager.page.inicio_padres
+    - views.view.banner_perfil_padres
+    - views.view.clases_gratuitas
+    - views.view.mis_koalas
+    - views.view.usuario_actual
+  module:
+    - layout_builder
+    - layout_discovery
+    - views
+id: inicio_padres-layout_builder-0
+label: Padres
+weight: 0
+variant: layout_builder
+variant_settings:
+  id: layout_builder
+  label: null
+  weight: 0
+  uuid: 370308de-af96-4383-927d-f089c715a1fc
+  sections:
+    -
+      layout_id: layout_onecol
+      layout_settings:
+        label: Banner
+        context_mapping: {  }
+      components:
+        9124fc20-746f-439f-8d6d-dd973f8a270f:
+          uuid: 9124fc20-746f-439f-8d6d-dd973f8a270f
+          region: content
+          configuration:
+            id: 'views_block:banner_perfil_padres-block_1'
+            label: ''
+            label_display: '0'
+            provider: views
+            context_mapping: {  }
+            views_label: ''
+            items_per_page: none
+          weight: 0
+          additional: {  }
+      third_party_settings: {  }
+    -
+      layout_id: layout_twocol_section
+      layout_settings:
+        label: Contenido
+        context_mapping: {  }
+        column_widths: 33-67
+      components:
+        3da81c2c-e87e-4022-952e-eff1b10b9b3a:
+          uuid: 3da81c2c-e87e-4022-952e-eff1b10b9b3a
+          region: first
+          configuration:
+            id: 'views_block:mis_koalas-block_1'
+            label: ''
+            label_display: visible
+            provider: views
+            context_mapping: {  }
+            views_label: ''
+            items_per_page: none
+          weight: 1
+          additional:
+            layout_builder_styles_style:
+              separacion_superior_mt_5: separacion_superior_mt_5
+        0073dc21-525d-4fcc-9729-4cc2f196115f:
+          uuid: 0073dc21-525d-4fcc-9729-4cc2f196115f
+          region: first
+          configuration:
+            id: 'views_block:usuario_actual-block_1'
+            label: ''
+            label_display: '0'
+            provider: views
+            context_mapping: {  }
+            views_label: ''
+            items_per_page: none
+          weight: 0
+          additional: {  }
+        cc4024f1-0a80-40f9-a896-384f4d4b2a7e:
+          uuid: cc4024f1-0a80-40f9-a896-384f4d4b2a7e
+          region: second
+          configuration:
+            id: 'views_block:clases_gratuitas-block_1'
+            label: ''
+            label_display: '0'
+            provider: views
+            context_mapping: {  }
+            views_label: ''
+            items_per_page: none
+          weight: 0
+          additional:
+            layout_builder_styles_style:
+              separacion_superior_mt_5: 0
+      third_party_settings: {  }
+page: inicio_padres
+selection_criteria: {  }
+selection_logic: and
+static_context: {  }

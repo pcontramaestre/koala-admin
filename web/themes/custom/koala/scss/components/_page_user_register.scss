@@ -104,6 +104,13 @@ body.simplelogin.page-user-register {
           }
         }
       }
+
+      .js-form-item-field-celular-0-value, .js-form-item-field-nombre-del-acudiente-0-value {
+        > label {
+          display: none;
+        }
+      }
+
     }
   }
 }

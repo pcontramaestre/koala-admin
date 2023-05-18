@@ -1,0 +1,22 @@
+roles:
+  estudiante:
+    path: /user/register/hijos
+    url: /user/register/estudiante
+    redirect_path: /admin
+    hidden: 1
+    form_mode_register: registro_de_hijos
+    form_mode_edit: registro_de_hijos
+  hijo:
+    path: /register/hijo
+    url: /user/register/hijo
+    redirect_path: /admin/people
+    hidden: 1
+    form_mode_register: registro_de_hijos
+    form_mode_edit: registro_de_hijos
+  padre:
+    path: /user/register
+    url: /user/register/padre
+    redirect_path: /padre
+    hidden: 1
+    form_mode_register: register
+    form_mode_edit: register

@@ -1,0 +1,14 @@
+uuid: 6e34a77b-2409-4c2f-a23b-d0af8fde94d7
+langcode: es
+status: true
+dependencies:
+  config:
+    - user.role.hijo
+  module:
+    - user
+id: user_remove_role_action.hijo
+label: 'Elimina el rol Hijo al(los) usuario(s) seleccionado(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: hijo

@@ -1,0 +1,10 @@
+uuid: e7f7d1ee-fbde-48cb-a49f-9a5e51f4a9f1
+langcode: es
+status: true
+dependencies:
+  module:
+    - node
+id: node.crear_koalas
+label: 'Crear Koalas'
+targetEntityType: node
+cache: true

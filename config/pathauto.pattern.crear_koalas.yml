@@ -1,0 +1,22 @@
+uuid: 9ea3c8b3-6473-4c15-981d-78c4fff4b09f
+langcode: es
+status: true
+dependencies:
+  module:
+    - node
+id: crear_koalas
+label: 'Crear Koalas'
+type: 'canonical_entities:node'
+pattern: 'koalas/[current-user:account-name]/[node:title]'
+selection_criteria:
+  bcb89291-e7ac-4034-b65a-e7b4e2b0e9e6:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: bcb89291-e7ac-4034-b65a-e7b4e2b0e9e6
+    context_mapping:
+      node: node
+    bundles:
+      crear_hijos: crear_hijos
+selection_logic: and
+weight: -5
+relationships: {  }

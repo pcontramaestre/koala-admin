@@ -11,7 +11,7 @@ _core:
 id: koala_page_title
 theme: koala
 region: content
-weight: -7
+weight: -6
 provider: null
 plugin: page_title_block
 settings:
@@ -23,4 +23,4 @@ visibility:
   request_path:
     id: request_path
     negate: true
-    pages: "/user/*\r\n<front>"
+    pages: "/user/*\r\n<front>\r\n/node/add/agendar_clase/*"

@@ -1,0 +1,46 @@
+uuid: 822e6bbd-7b2b-4f73-a40e-9eba87c89cd1
+langcode: es
+status: true
+dependencies:
+  config:
+    - config_pages.type.home_padres
+    - field.field.config_pages.home_padres.field_enlace_boton_banner
+    - field.field.config_pages.home_padres.field_imagen_banner
+    - field.field.config_pages.home_padres.field_texto_del_banner
+  module:
+    - link
+    - text
+id: config_pages.home_padres.default
+targetEntityType: config_pages
+bundle: home_padres
+mode: default
+content:
+  field_enlace_boton_banner:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_imagen_banner:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_texto_del_banner:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden: {  }

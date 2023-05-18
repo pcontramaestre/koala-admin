@@ -1,0 +1,57 @@
+uuid: a2d06e74-0cef-4809-8c1a-f63f72c25c07
+langcode: es
+status: true
+dependencies:
+  config:
+    - core.entity_form_mode.node.crear_koalas
+    - field.field.node.crear_hijos.body
+    - field.field.node.crear_hijos.field_fecha_nacimiento
+    - field.field.node.crear_hijos.field_hijo_relacionado
+    - field.field.node.crear_hijos.field_sexo
+    - node.type.crear_hijos
+  module:
+    - field_layout
+    - layout_discovery
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+id: node.crear_hijos.crear_koalas
+targetEntityType: node
+bundle: crear_hijos
+mode: crear_koalas
+content:
+  field_fecha_nacimiento:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: 'Fecha de nacimiento'
+    third_party_settings: {  }
+  field_sexo:
+    type: options_buttons
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  body: true
+  created: true
+  field_hijo_relacionado: true
+  langcode: true
+  path: true
+  promote: true
+  status: true
+  sticky: true
+  translation: true
+  uid: true

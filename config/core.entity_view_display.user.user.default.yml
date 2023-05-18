@@ -5,13 +5,15 @@ dependencies:
   config:
     - field.field.user.user.field_celular
     - field.field.user.user.field_nombre_del_acudiente
+    - field.field.user.user.field_nombre_del_hijo
+    - field.field.user.user.field_padre
     - field.field.user.user.user_picture
     - image.style.thumbnail
   module:
     - field_layout
     - image
     - layout_builder
-    - layout_discovery
+    - show_email
     - user
 third_party_settings:
   field_layout:
@@ -19,75 +21,8 @@ third_party_settings:
     settings:
       label: ''
   layout_builder:
-    enabled: true
-    sections:
-      -
-        layout_id: layout_onecol
-        layout_settings:
-          label: ''
-        components:
-          1cee3ba5-0947-4425-bc12-9b8852b9f3e8:
-            uuid: 1cee3ba5-0947-4425-bc12-9b8852b9f3e8
-            region: content
-            configuration:
-              id: 'field_block:user:user:user_picture'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              formatter:
-                type: image
-                label: hidden
-                settings:
-                  image_link: content
-                  image_style: thumbnail
-                  image_loading:
-                    attribute: lazy
-                third_party_settings: {  }
-            weight: 0
-            additional: {  }
-          830480c7-e429-4e3e-80aa-0968d4342f56:
-            uuid: 830480c7-e429-4e3e-80aa-0968d4342f56
-            region: content
-            configuration:
-              id: 'extra_field_block:user:user:member_for'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-            weight: 1
-            additional: {  }
-          361ec306-6f66-4484-bee7-93e4519ac7ba:
-            uuid: 361ec306-6f66-4484-bee7-93e4519ac7ba
-            region: content
-            configuration:
-              id: 'field_block:user:user:field_nombre_del_acudiente'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              formatter:
-                type: string
-                label: above
-                settings:
-                  link_to_entity: false
-                third_party_settings: {  }
-            weight: 2
-            additional: {  }
-          5504be40-d400-4aab-8cff-17dce9c86424:
-            uuid: 5504be40-d400-4aab-8cff-17dce9c86424
-            region: content
-            configuration:
-              id: 'field_block:user:user:field_celular'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              formatter:
-                type: string
-                label: above
-                settings:
-                  link_to_entity: false
-                third_party_settings: {  }
-            weight: 3
-            additional: {  }
-        third_party_settings: {  }
+    enabled: false
+    allow_custom: false
 _core:
   default_config_hash: mZLyuWM9CQx2ZJVqFGSbzgFnHzudVbHBYmdU256A5Wk
 id: user.user.default
@@ -101,7 +36,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 7
+    weight: 3
     region: content
   field_nombre_del_acudiente:
     type: string
@@ -109,12 +44,44 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
+    weight: 2
+    region: content
+  field_nombre_del_hijo:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_padre:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  mail:
+    type: show_email_address
+    label: above
+    settings:
+      hide_user_one: 0
+      email_mailto: '1'
+      hide_per_role:
+        administrator: administrator
+        profesor: profesor
+        padre: padre
+        authenticated: 0
+        content_editor: 0
+        hijo: 0
+    third_party_settings: {  }
     weight: 6
     region: content
   member_for:
     settings: {  }
     third_party_settings: {  }
-    weight: 5
+    weight: 1
     region: content
   user_picture:
     type: image

@@ -1,0 +1,30 @@
+uuid: b88c5a00-7566-4707-a1fa-444328061425
+langcode: es
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_sexo_n
+field_name: field_sexo_n
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: Niño
+      label: Niño
+    -
+      value: Niña
+      label: Niña
+    -
+      value: NA
+      label: NA
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

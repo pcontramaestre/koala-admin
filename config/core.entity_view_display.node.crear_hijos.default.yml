@@ -1,0 +1,56 @@
+uuid: 6fa11e14-97fc-4895-9e2c-e105d90072a2
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.field.node.crear_hijos.body
+    - field.field.node.crear_hijos.field_fecha_nacimiento
+    - field.field.node.crear_hijos.field_hijo_relacionado
+    - field.field.node.crear_hijos.field_sexo
+    - node.type.crear_hijos
+  module:
+    - options
+    - text
+    - user
+id: node.crear_hijos.default
+targetEntityType: node
+bundle: crear_hijos
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_fecha_nacimiento:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_hijo_relacionado:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 105
+    region: content
+  field_sexo:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  langcode: true

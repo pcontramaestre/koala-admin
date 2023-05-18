@@ -1,0 +1,109 @@
+uuid: eef994ff-a4d2-4729-95f5-7acba79f5254
+langcode: es
+status: true
+dependencies:
+  config:
+    - core.entity_form_mode.node.agendar_clases
+    - field.field.node.agendar_clase.field_fecha_cita_gratis
+    - field.field.node.agendar_clase.field_fecha_de_la_cita
+    - field.field.node.agendar_clase.field_fecha_nac
+    - field.field.node.agendar_clase.field_he_leido_y_estoy_de_acuerd
+    - field.field.node.agendar_clase.field_hora
+    - field.field.node.agendar_clase.field_hora_clase
+    - field.field.node.agendar_clase.field_nombre_del_nino_a
+    - field.field.node.agendar_clase.field_sexo_n
+    - node.type.agendar_clase
+  module:
+    - field_layout
+    - layout_discovery
+    - timefield
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+id: node.agendar_clase.agendar_clases
+targetEntityType: node
+bundle: agendar_clase
+mode: agendar_clases
+content:
+  field_fecha_de_la_cita:
+    type: string_textfield
+    weight: 3
+    region: content
+    settings:
+      size: 60
+      placeholder: 'Fecha de la clase'
+    third_party_settings: {  }
+  field_fecha_nac:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: 'Fecha de nacimiento'
+    third_party_settings: {  }
+  field_he_leido_y_estoy_de_acuerd:
+    type: boolean_checkbox
+    weight: 5
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  field_hora_clase:
+    type: timefield_standard_widget
+    weight: 4
+    region: content
+    settings:
+      separator: ':'
+      showPeriod: '1'
+      periodSeparator: ''
+      am_text: AM
+      pm_text: PM
+      closeButtonText: Done
+      showNowButton: '1'
+      nowButtonText: Ahora
+      showDeselectButton: '1'
+      deselectButtonText: Deselect
+      myPosition: 'left top'
+      atPosition: 'left bottom'
+      disable_plugin: 0
+      showLeadingZero: 0
+      showCloseButton: 0
+      showMinutesLeadingZero: true
+      showHours: true
+      showMinutes: true
+      minute_interval: 5
+    third_party_settings: {  }
+  field_nombre_del_nino_a:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: 'Nombre del niño/a'
+    third_party_settings: {  }
+  field_sexo_n:
+    type: options_buttons
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 6
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  field_fecha_cita_gratis: true
+  field_hora: true
+  langcode: true
+  path: true
+  promote: true
+  status: true
+  sticky: true
+  uid: true

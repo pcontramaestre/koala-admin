@@ -6,6 +6,8 @@ dependencies:
     - core.entity_view_mode.user.compact
     - field.field.user.user.field_celular
     - field.field.user.user.field_nombre_del_acudiente
+    - field.field.user.user.field_nombre_del_hijo
+    - field.field.user.user.field_padre
     - field.field.user.user.user_picture
     - image.style.thumbnail
   module:
@@ -68,5 +70,8 @@ content:
 hidden:
   field_celular: true
   field_nombre_del_acudiente: true
+  field_nombre_del_hijo: true
+  field_padre: true
   langcode: true
+  mail: true
   member_for: true

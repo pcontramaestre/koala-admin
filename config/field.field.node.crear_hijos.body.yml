@@ -1,0 +1,23 @@
+uuid: e4ac50e2-2ec6-4970-8f36-4edbe885a24d
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.crear_hijos
+  module:
+    - text
+id: node.crear_hijos.body
+field_name: body
+entity_type: node
+bundle: crear_hijos
+label: 'Mi descripción'
+description: 'Descripción de quien soy'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: false
+  required_summary: false
+field_type: text_with_summary

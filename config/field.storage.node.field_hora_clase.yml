@@ -1,0 +1,19 @@
+uuid: 56f18864-2c05-434a-9a00-7127407ab4af
+langcode: es
+status: true
+dependencies:
+  module:
+    - node
+    - timefield
+id: node.field_hora_clase
+field_name: field_hora_clase
+entity_type: node
+type: timefield
+settings: {  }
+module: timefield
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

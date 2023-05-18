@@ -1,0 +1,21 @@
+uuid: 3c5a7951-2b16-4705-a04d-89827c874e50
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_sexo
+    - node.type.crear_hijos
+  module:
+    - options
+id: node.crear_hijos.field_sexo
+field_name: field_sexo
+entity_type: node
+bundle: crear_hijos
+label: Sexo
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

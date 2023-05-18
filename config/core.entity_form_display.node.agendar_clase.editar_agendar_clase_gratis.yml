@@ -1,0 +1,166 @@
+uuid: 16ae466a-fc7c-45c4-bfd2-6d014249b344
+langcode: es
+status: false
+dependencies:
+  config:
+    - core.entity_form_mode.node.editar_agendar_clase_gratis
+    - field.field.node.agendar_clase.field_fecha_cita_gratis
+    - field.field.node.agendar_clase.field_fecha_de_la_cita
+    - field.field.node.agendar_clase.field_fecha_nac
+    - field.field.node.agendar_clase.field_he_leido_y_estoy_de_acuerd
+    - field.field.node.agendar_clase.field_hora
+    - field.field.node.agendar_clase.field_hora_clase
+    - field.field.node.agendar_clase.field_nombre_del_nino_a
+    - field.field.node.agendar_clase.field_sexo_n
+    - node.type.agendar_clase
+  module:
+    - datetime
+    - field_layout
+    - layout_discovery
+    - path
+    - timefield
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+id: node.agendar_clase.editar_agendar_clase_gratis
+targetEntityType: node
+bundle: agendar_clase
+mode: editar_agendar_clase_gratis
+content:
+  created:
+    type: datetime_timestamp
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_fecha_cita_gratis:
+    type: string_textfield
+    weight: 27
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_fecha_de_la_cita:
+    type: string_textfield
+    weight: 8
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_fecha_nac:
+    type: string_textfield
+    weight: 12
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_he_leido_y_estoy_de_acuerd:
+    type: boolean_checkbox
+    weight: 28
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  field_hora:
+    type: datetime_default
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_hora_clase:
+    type: timefield_standard_widget
+    weight: 26
+    region: content
+    settings:
+      disable_plugin: false
+      separator: ':'
+      showLeadingZero: false
+      showMinutesLeadingZero: true
+      showPeriod: true
+      periodSeparator: ''
+      showHours: true
+      showMinutes: true
+      am_text: AM
+      pm_text: PM
+      minute_interval: 5
+      showCloseButton: false
+      closeButtonText: Done
+      showNowButton: false
+      nowButtonText: Now
+      showDeselectButton: false
+      deselectButtonText: Deselect
+      myPosition: 'left top'
+      atPosition: 'left bottom'
+    third_party_settings: {  }
+  field_nombre_del_nino_a:
+    type: string_textfield
+    weight: 11
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_sexo_n:
+    type: options_select
+    weight: 13
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 1
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 6
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  promote:
+    type: boolean_checkbox
+    weight: 4
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 7
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  sticky:
+    type: boolean_checkbox
+    weight: 5
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 2
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }

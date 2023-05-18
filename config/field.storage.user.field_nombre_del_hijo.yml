@@ -1,0 +1,21 @@
+uuid: 46466a31-3d48-47d5-9e6c-e423dbf32257
+langcode: es
+status: true
+dependencies:
+  module:
+    - user
+id: user.field_nombre_del_hijo
+field_name: field_nombre_del_hijo
+entity_type: user
+type: string
+settings:
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

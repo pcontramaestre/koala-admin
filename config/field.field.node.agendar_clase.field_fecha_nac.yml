@@ -1,0 +1,19 @@
+uuid: 060e0a8a-3449-4040-a472-3268eee79d8e
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_fecha_nac
+    - node.type.agendar_clase
+id: node.agendar_clase.field_fecha_nac
+field_name: field_fecha_nac
+entity_type: node
+bundle: agendar_clase
+label: 'Fecha de Nacimiento'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

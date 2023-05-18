@@ -1,0 +1,19 @@
+uuid: f2afceec-b9d9-489e-a4f7-68393880d62a
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_fecha_nacimiento
+    - node.type.crear_hijos
+id: node.crear_hijos.field_fecha_nacimiento
+field_name: field_fecha_nacimiento
+entity_type: node
+bundle: crear_hijos
+label: 'Fecha de Nacimiento'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -6,10 +6,13 @@ dependencies:
     - core.entity_form_mode.user.register
     - field.field.user.user.field_celular
     - field.field.user.user.field_nombre_del_acudiente
+    - field.field.user.user.field_nombre_del_hijo
+    - field.field.user.user.field_padre
     - field.field.user.user.user_picture
   module:
     - field_layout
     - layout_builder
+    - path
     - user
 third_party_settings:
   field_layout:
@@ -25,7 +28,7 @@ bundle: user
 mode: register
 content:
   account:
-    weight: 2
+    weight: 3
     region: second
     settings: {  }
     third_party_settings: {  }
@@ -43,10 +46,18 @@ content:
     region: first
     settings:
       size: 60
-      placeholder: ''
+      placeholder: 'Nombre del acudiente'
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 2
+    region: first
+    settings: {  }
     third_party_settings: {  }
 hidden:
   contact: true
+  field_nombre_del_hijo: true
+  field_padre: true
   langcode: true
   language: true
   timezone: true

@@ -1,0 +1,7 @@
+name: "Custom Role Redirect"
+type: module
+description: "Un módulo personalizado para redirigir usuarios según su rol."
+package: Custom
+core_version_requirement: ^8 || ^9
+dependencies:
+  - user

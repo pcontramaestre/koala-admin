@@ -1,0 +1,17 @@
+uuid: 7e48af06-5c8f-4bca-8c43-ac9aa4cfca42
+langcode: es
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Koalas
+type: crear_hijos
+description: ''
+help: ''
+new_revision: false
+preview_mode: 0
+display_submitted: true

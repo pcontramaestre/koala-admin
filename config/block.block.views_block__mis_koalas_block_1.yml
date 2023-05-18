@@ -1,0 +1,30 @@
+uuid: 5e806fa3-5638-4a9b-9baf-b6a810cd3f87
+langcode: es
+status: true
+dependencies:
+  config:
+    - views.view.mis_koalas
+  module:
+    - system
+    - views
+  theme:
+    - koala
+id: views_block__mis_koalas_block_1
+theme: koala
+region: content
+weight: -1
+provider: null
+plugin: 'views_block:mis_koalas-block_1'
+settings:
+  id: 'views_block:mis_koalas-block_1'
+  label: ''
+  label_display: visible
+  provider: views
+  context_mapping: {  }
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '/user/*'

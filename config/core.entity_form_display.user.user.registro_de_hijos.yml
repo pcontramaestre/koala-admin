@@ -1,0 +1,66 @@
+uuid: f392df4f-4b04-419f-9dda-5643985c8e0b
+langcode: es
+status: true
+dependencies:
+  config:
+    - core.entity_form_mode.user.registro_de_hijos
+    - field.field.user.user.field_celular
+    - field.field.user.user.field_nombre_del_acudiente
+    - field.field.user.user.field_nombre_del_hijo
+    - field.field.user.user.field_padre
+    - field.field.user.user.user_picture
+  module:
+    - field_layout
+    - layout_discovery
+    - user
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+_core:
+  default_config_hash: FaQ9Ptcpxpg30AtiqRDtl_8zbJArHP1LPfug_s59TOA
+id: user.user.registro_de_hijos
+targetEntityType: user
+bundle: user
+mode: registro_de_hijos
+content:
+  account:
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_nombre_del_hijo:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_padre:
+    type: entity_reference_autocomplete
+    weight: 2
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  hijo_profiles:
+    type: options_select
+    weight: 9
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  contact: true
+  field_celular: true
+  field_nombre_del_acudiente: true
+  langcode: true
+  language: true
+  path: true
+  timezone: true
+  translation: true
+  user_picture: true

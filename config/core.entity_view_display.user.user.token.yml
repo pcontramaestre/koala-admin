@@ -1,0 +1,99 @@
+uuid: 8e00dfbc-8f49-4a7a-9500-f1fdefc46731
+langcode: es
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.user.token
+    - field.field.user.user.field_celular
+    - field.field.user.user.field_nombre_del_acudiente
+    - field.field.user.user.field_nombre_del_hijo
+    - field.field.user.user.field_padre
+    - field.field.user.user.user_picture
+    - image.style.thumbnail
+  module:
+    - field_layout
+    - image
+    - layout_builder
+    - show_email
+    - user
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+  layout_builder:
+    enabled: false
+    allow_custom: false
+_core:
+  default_config_hash: mZLyuWM9CQx2ZJVqFGSbzgFnHzudVbHBYmdU256A5Wk
+id: user.user.token
+targetEntityType: user
+bundle: user
+mode: token
+content:
+  field_celular:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_nombre_del_acudiente:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_nombre_del_hijo:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_padre:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  mail:
+    type: show_email_address
+    label: above
+    settings:
+      hide_user_one: 0
+      email_mailto: '1'
+      hide_per_role:
+        administrator: administrator
+        padre: padre
+        authenticated: 0
+        content_editor: 0
+        profesor: 0
+        hijo: 0
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  member_for:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  user_picture:
+    type: image
+    label: hidden
+    settings:
+      image_link: content
+      image_style: thumbnail
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  langcode: true
