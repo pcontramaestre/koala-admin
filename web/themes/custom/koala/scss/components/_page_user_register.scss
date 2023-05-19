@@ -1,119 +1,256 @@
-body.simplelogin.page-user-register {
+body.page-user-register {
   #header {
     #navbar-main {
-      display: noneg;
+      #block-koala-main-menu {
+        display: none;
+      }
+
+      .navbar-brand {
+        text-align: center;
+        width     : 100%;
+      }
     }
   }
 
-  .simplelogin-wrapper {
-    padding: 1% 0 0;
+  #block-koala-content {
+    .content {
+      .title-logos {
+        .title {
+          h2 {
+            font-weight: 700;
+          }
+        }
 
-    >.simplelogin-form {
-      width     : 70% !important;
-      max-width : 1200px;
-      background: unset;
-      box-shadow: unset;
+        .iconos {
+          .col-4:nth-child(1) {
+            display       : flex;
+            flex-direction: column;
+            align-items   : end;
 
-      .simplelogin-bg {
-        .block-system {
+            .img {
+              margin-right : 2.3rem;
+              margin-bottom: 0.5rem;
+            }
+          }
+
+          .col-4:nth-child(2) {
+            .img {
+              margin-bottom: 0.5rem;
+            }
+          }
+
+          .col-4:nth-child(3) {
+            display       : flex;
+            flex-direction: column;
+            align-items   : baseline;
+
+            .img {
+              margin-bottom: 0.5rem;
+              padding-left : 1.3rem;
+            }
+          }
+
+          .col-4 {
+            .img {
+              img {
+                width: 4rem;
+              }
+            }
+
+            .texto {
+              font-weight: 600;
+            }
+          }
+        }
+      }
+
+      form {
+        width     : 70%;
+        margin    : 0 auto;
+        margin-top: 2rem;
+
+        .layout--twocol-section {
+          .layout__region--first {
+            padding-right: 0.5rem;
+
+            .field--type-string {
+              .js-form-item {
+                label {
+                  display: none;
+                }
+
+                input {
+                  border-radius: 25px;
+                  border       : 2px solid #BECACA;
+                  height       : 2.8rem;
+                  color        : #BECACA;
+                }
+              }
+            }
+          }
+
+          .layout__region--second {
+            padding-left: 0.5rem;
+
+            .js-form-wrapper {
+              .js-form-item {
+                input {
+                  width        : 100%;
+                  border-radius: 25px;
+                  border       : 2px solid #BECACA;
+                  height       : 2.8rem;
+                  color        : #BECACA;
+                }
+
+                .password-suggestions {
+                  border-radius   : 15px;
+                  background-color: grey;
+                  color           : white;
+                  padding         : 0.5rem 1rem;
+                  font-size       : 0.9rem;
+                }
+              }
+            }
+
+
+            small {
+              display: none;
+            }
+          }
+        }
+      }
+
+      .form-actions {
+        button {
+          background-color: $AguaK500;
+          border          : 2px solid $TurqK500;
+          width           : 30%;
+          font-size       : 1.2rem;
+          font-weight     : 700;
+          height          : 3rem;
+          display         : flex;
+          justify-content : center;
+          align-items     : center;
+          flex-direction  : column;
+          margin          : 0 auto;
+          color           : black;
+          border-radius   : 25px;
+
+          &:hover {
+            background-color: $TurqK500;
+            color           : white;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Estilos register Pagina 2/2
+
+.node-agendar-clases {
+  #main-wrapper {
+    .main-content {
+      .section {
+        #block-koala-content {
           .content {
             form {
-              .layout--twocol-section {
-                .layout__region--first {
+              width     : 70%;
+              margin    : 0 auto;
+              margin-top: 3rem;
+
+              .formulario {
+                .title-1 {
+                  text-align : center;
+                  font-size  : 1.2rem;
+                  font-weight: 700;
+                }
+
+                .title-2 {
+                  text-align : center;
+                  font-size  : 1.6rem;
+                  font-weight: 700;
+                  margin-top : 3rem;
+                }
+
+                .layout__region--content {
                   .field--type-string {
                     .js-form-item {
                       label {
                         display: none;
                       }
+
+                      input {
+                        width        : 100%;
+                        border-radius: 25px;
+                        border       : 2px solid #BECACA;
+                        height       : 2.8rem;
+                        color        : #BECACA;
+                      }
                     }
                   }
-                }
 
-                .layout__region--second {
-                  .js-form-wrapper {
-                    #edit-pass {
-                      .js-form-item {
-                        padding-left: 0;
-
-                        input {
-                          width: 100%;
-                        }
-
-                        .password-confirm-message {
-                          margin-bottom: 1rem;
-                        }
-                      }
-
-                      .password-suggestions {
+                  .field--name-field-hora-clase {
+                    .js-form-item {
+                      label {
                         display: none;
                       }
 
-                      small {
+                      input {
+                        width        : 100%;
+                        border-radius: 25px;
+                        border       : 2px solid #BECACA;
+                        height       : 2.8rem;
+                        color        : #BECACA;
+                      }
+                    }
+                  }
+
+                  .field--type-boolean {
+                    width : 80%;
+                    margin: 0 auto;
+                  }
+
+                  .field--name-field-sexo-n {
+                    #edit-field-sexo-n--wrapper {
+                      .fieldset-legend {
                         display: none;
                       }
                     }
                   }
                 }
               }
+            }
 
-              .form-actions {
-                button {
-                  background-color: $AguaK500;
-                  border          : 2px solid $TurqK500;
-                  width           : 30%;
-                  font-size       : 1.2rem;
-                  font-weight     : 700;
-                  height          : 3rem;
-                  display         : flex;
-                  justify-content : center;
-                  align-items     : center;
-                  flex-direction  : column;
-                  margin          : 0 auto;
+            .form-actions {
+              button {
+                background-color: white;
+                border          : 2px solid $GreyK200;
+                width           : 30%;
+                font-size       : 1.2rem;
+                font-weight     : 700;
+                height          : 3rem;
+                display         : flex;
+                justify-content : center;
+                align-items     : center;
+                flex-direction  : column;
+                margin          : 0 auto;
+                color           : $GreyK200;
+                border-radius   : 25px;
 
-                  &:hover {
-                    background-color: $TurqK500;
-                    color           : white;
-                  }
+                &:hover {
+                  background-color: $TurqK500;
+                  color           : white;
                 }
               }
             }
           }
         }
       }
-
-      .simplelogin-logo {
-        display: none;
-      }
-
-      .title-logos {
-        >.title {
-          max-width: 70%;
-          margin   : 0 auto;
-        }
-
-        >.iconos {
-          max-width     : 70%;
-          margin        : 0 auto;
-          padding-bottom: 2rem;
-
-          .texto {
-            max-width  : 75%;
-            margin     : 0 auto;
-            line-height: 1.1;
-            padding-top: 1rem;
-          }
-        }
-      }
-
-      .js-form-item-field-celular-0-value, .js-form-item-field-nombre-del-acudiente-0-value {
-        > label {
-          display: none;
-        }
-      }
-
     }
   }
 }
+
 
 @media only screen and (max-width: 640px) and (min-width: 340px) {
   body.simplelogin.page-user-register {
