@@ -81,9 +81,9 @@ body.page-user-register {
 
                 input {
                   border-radius: 25px;
-                  border       : 2px solid #BECACA;
+                  border       : 2px solid $GreyK200;
                   height       : 2.8rem;
-                  color        : #BECACA;
+                  color        : $GreyK200;
                 }
               }
             }
@@ -97,9 +97,9 @@ body.page-user-register {
                 input {
                   width        : 100%;
                   border-radius: 25px;
-                  border       : 2px solid #BECACA;
+                  border       : 2px solid $GreyK200;
                   height       : 2.8rem;
-                  color        : #BECACA;
+                  color        : $GreyK200;
                 }
 
                 .password-suggestions {
@@ -108,6 +108,22 @@ body.page-user-register {
                   color           : white;
                   padding         : 0.5rem 1rem;
                   font-size       : 0.9rem;
+                }
+
+                .js-form-type-password {
+                  .password-strength {
+                    .password-strength__title {
+                      font-size  : 0.9rem;
+                      font-weight: 600;
+                      color      : $GreyK200;
+                    }
+                  }
+
+                  .password-confirm-message {
+                    font-size  : 0.9rem;
+                    font-weight: 600;
+                    color      : $GreyK200;
+                  }
                 }
               }
             }
@@ -124,7 +140,7 @@ body.page-user-register {
         button {
           background-color: $AguaK500;
           border          : 2px solid $TurqK500;
-          width           : 30%;
+          padding         : 0rem 1rem;
           font-size       : 1.2rem;
           font-weight     : 700;
           height          : 3rem;
@@ -135,6 +151,7 @@ body.page-user-register {
           margin          : 0 auto;
           color           : black;
           border-radius   : 25px;
+          margin-bottom   : 3rem;
 
           &:hover {
             background-color: $TurqK500;
@@ -145,112 +162,6 @@ body.page-user-register {
     }
   }
 }
-
-// Estilos register Pagina 2/2
-
-.node-agendar-clases {
-  #main-wrapper {
-    .main-content {
-      .section {
-        #block-koala-content {
-          .content {
-            form {
-              width     : 70%;
-              margin    : 0 auto;
-              margin-top: 3rem;
-
-              .formulario {
-                .title-1 {
-                  text-align : center;
-                  font-size  : 1.2rem;
-                  font-weight: 700;
-                }
-
-                .title-2 {
-                  text-align : center;
-                  font-size  : 1.6rem;
-                  font-weight: 700;
-                  margin-top : 3rem;
-                }
-
-                .layout__region--content {
-                  .field--type-string {
-                    .js-form-item {
-                      label {
-                        display: none;
-                      }
-
-                      input {
-                        width        : 100%;
-                        border-radius: 25px;
-                        border       : 2px solid #BECACA;
-                        height       : 2.8rem;
-                        color        : #BECACA;
-                      }
-                    }
-                  }
-
-                  .field--name-field-hora-clase {
-                    .js-form-item {
-                      label {
-                        display: none;
-                      }
-
-                      input {
-                        width        : 100%;
-                        border-radius: 25px;
-                        border       : 2px solid #BECACA;
-                        height       : 2.8rem;
-                        color        : #BECACA;
-                      }
-                    }
-                  }
-
-                  .field--type-boolean {
-                    width : 80%;
-                    margin: 0 auto;
-                  }
-
-                  .field--name-field-sexo-n {
-                    #edit-field-sexo-n--wrapper {
-                      .fieldset-legend {
-                        display: none;
-                      }
-                    }
-                  }
-                }
-              }
-            }
-
-            .form-actions {
-              button {
-                background-color: white;
-                border          : 2px solid $GreyK200;
-                width           : 30%;
-                font-size       : 1.2rem;
-                font-weight     : 700;
-                height          : 3rem;
-                display         : flex;
-                justify-content : center;
-                align-items     : center;
-                flex-direction  : column;
-                margin          : 0 auto;
-                color           : $GreyK200;
-                border-radius   : 25px;
-
-                &:hover {
-                  background-color: $TurqK500;
-                  color           : white;
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-}
-
 
 @media only screen and (max-width: 640px) and (min-width: 340px) {
   body.simplelogin.page-user-register {

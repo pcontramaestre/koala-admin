@@ -1,0 +1,118 @@
+.ui-widget.ui-widget-content {
+  border: none !important;
+  box-shadow: 0px 1.67507px 8.37533px rgba(67, 67, 67, 0.15),
+    0px 4.18766px 16.7507px rgba(74, 74, 74, 0.08),
+    0px 8.37533px 67.0026px rgba(74, 74, 74, 0.02);
+  background-color: $RedK50;
+  border-radius   : 8px;
+  padding         : 0.5rem;
+}
+
+.ui-state-default,
+.ui-widget-content .ui-state-default {
+  border          : none !important;
+  color           : black !important;
+  border-radius   : 5px;
+  background-color: white;
+  font-weight     : 600;
+  text-align      : center;
+}
+
+.ui-state-default,
+.ui-widget-content .ui-state-default:hover {
+  background-color: $RedK500;
+  color           : white !important;
+}
+
+.ui-corner-all {
+  border          : none !important;
+  background-color: $RedK50;
+}
+
+.ui-datepicker select.ui-datepicker-month {
+  width        : 32% !important;
+  border       : none;
+  height       : 2rem;
+  border-radius: 5px;
+  margin-right : 0.1rem;
+  text-align   : center;
+  font-weight  : 600;
+
+  option {
+    font-weight: 700;
+  }
+}
+
+.ui-datepicker select.ui-datepicker-year {
+  width        : 32% !important;
+  border       : none;
+  height       : 2rem;
+  border-radius: 5px;
+  text-align   : center;
+  font-weight  : 600;
+
+  option {
+    font-weight: 700;
+  }
+
+}
+
+.ui-widget-header .ui-corner-all {
+  width           : 1.8rem;
+  height          : 1.8rem;
+  border-radius   : 15px;
+  background-color: white;
+
+  &:hover {
+    background-color: $RedK500;
+    color           : white !important;
+  }
+}
+
+#ui-datepicker-div {
+  width: 25%;
+  margin-left: 2.5rem;
+  .ui-datepicker-calendar {
+    tbody {
+      tr {
+        td {
+          width : 2.6rem;
+          height: 2.6rem;
+
+          span {
+            height         : 100%;
+            display        : flex;
+            align-items    : center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.8rem;
+          }
+          a {
+            height         : 100%;
+            display        : flex;
+            align-items    : center;
+            justify-content: center;
+          }
+        }
+      }
+    }
+  }
+}
+#ui-timepicker-div{
+  border-radius: 15px;
+    width: 25%;
+    padding: 1rem;
+    margin-left: 2.5rem;
+    tbody{
+      tr{
+        td{
+          .ui-timepicker-buttonpane {
+            button:nth-child(1){
+              margin-left: 1.7rem;
+            }
+          }
+        }
+      }
+    }
+}
+

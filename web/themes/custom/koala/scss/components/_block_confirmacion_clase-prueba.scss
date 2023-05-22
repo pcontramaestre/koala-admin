@@ -1,0 +1,91 @@
+#block-koala-content {
+  .node--type-agendar-clase {
+    margin-top: 2rem;
+
+    .node__content {
+      .superior {
+        h2 {
+          font-weight: 700;
+          margin-top : 0.7rem;
+        }
+      }
+
+      .cuadro {
+        width        : 70%;
+        margin       : 0 auto;
+        border-radius: 15px;
+        padding      : 1rem 1rem 1.5rem 1rem;
+        box-shadow   : 0px 2px 10px rgba(67, 67, 67, 0.15),
+          0px 5px 20px rgba(74, 74, 74, 0.08),
+          0px 10px 80px rgba(74, 74, 74, 0.02);
+        margin-top: 1rem;
+
+        .col-12 {
+          text-align: center;
+
+          h3 {
+            font-weight: 700;
+            font-size  : 1.3rem;
+          }
+        }
+
+        .col-md-12 {
+          h4 {
+            font-size : 1rem;
+            margin-top: 0.5rem;
+          }
+
+          p {
+            font-size   : 1.6rem;
+            font-weight : 700;
+            display     : flex;
+            float       : left;
+            margin-right: 0.5rem;
+          }
+
+          .field--name- {
+            .field__label {
+              display: none;
+
+            }
+
+            .field--type- {
+              font-size  : 1.6rem;
+              font-weight: 700;
+            }
+          }
+
+          a {
+            background-color: $RedK100;
+            border-radius   : 25px;
+            padding         : 0.5rem 3rem;
+            text-decoration : none;
+            color           : black;
+            font-weight     : 500;
+          }
+        }
+      }
+    }
+
+    .ir-a-cuenta {
+      height     : 6rem;
+      padding-top: 2rem;
+      text-align : center;
+
+      .boton-ir-a-cuenta {
+        background     : #FFFFFF;
+        border         : 2px solid #297E88;
+        border-radius  : 28px;
+        color          : #297E88 !important;
+        padding        : 0.3rem 1rem 0.3rem 1rem;
+        text-decoration: none;
+        font-weight    : 700;
+
+        &:hover {
+          background-color: #297E88;
+          color           : white !important;
+        }
+      }
+    }
+  }
+}
