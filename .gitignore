@@ -80,8 +80,15 @@ web/themes/custom/koala/css/style.css
 web/themes/custom/koala/css/style.min.css
 /web/themes/custom/koala/css/style.css
 .idea/
+.idea/*
 web/themes/custom/koala/css
 /web/themes/custom/koala/css/*
 koala/css
 koala/css/style.min.css
 koala/css/style.css
+/.idea/
+/.vscode/
+*.iml
+*.code-workspace
+web/themes/custom/koala/css/style.min.css
+web/themes/custom/koala/css/style.css
