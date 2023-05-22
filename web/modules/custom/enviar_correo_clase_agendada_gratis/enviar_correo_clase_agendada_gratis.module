@@ -23,7 +23,7 @@ function enviar_correo_clase_agendada_gratis_send_email(array &$form, FormStateI
   
   // Obtener los valores necesarios del formulario.
   $fecha_clase = $values['field_fecha_de_la_cita']->value;
-  $hora_clase = $values['field_hora_de_la_clase']->value;
+  $hora_clase = $values['field_hora_clase']->value;
   $titulo = $values['title']->value;
 
   // Crear el contenido del correo.
