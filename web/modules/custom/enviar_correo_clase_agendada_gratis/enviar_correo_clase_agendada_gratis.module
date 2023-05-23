@@ -1,0 +1,135 @@
+<?php
+
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Mail\MailManagerInterface;
+use Drupal\Component\Render\FormattableMarkup;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
+use Drupal\Core\StringTranslation\TranslatableMarkup;
+use DrupalCodeGenerator\Helper\Dumper;
+use Drupal\Core\Language\LanguageManagerInterface;
+
+/**
+ * Implements hook_form_FORM_ID_alter() for agendar_clase node edit form.
+ */
+function enviar_correo_clase_agendada_gratis_form_alter(array &$form, FormStateInterface $form_state, $form_id) {
+  // Agregar un #submit handler personalizado para enviar el correo.
+  //dump($form_id);
+    if ($form_id === 'agendar_clase_node_form' || $form_id === 'node_agendar_clase_agendar_clases_form') {
+      $form['actions']['submit']['#submit'][] = 'enviar_correo_clase_agendada_gratis_send_email';
+    }
+}
+
+/**
+ * Submit handler para enviar el correo.
+ */
+function enviar_correo_clase_agendada_gratis_send_email(array &$form, FormStateInterface $form_state) {
+  //$values = $form_state->getValues();
+  
+  // Obtener los valores necesarios del formulario.
+  // $fecha_clase = $values['field_fecha_de_la_cita']->value;
+  // $hora_clase = $values['field_hora_clase']->value;
+  // $titulo = $values['title']->value;
+
+  $fecha_clase = $form_state->getValue('field_fecha_de_la_cita');
+  $hora_clase = $form_state->getValue('field_hora_clase');
+  $titulo = $form_state->getValue('title');
+  $titulo = $titulo['0']['value'];
+  $fecha_clase = $fecha_clase['0']['value'];
+  $hora_clase = $hora_clase['0']['value'];
+  //dump($fecha_clase, $hora_clase, $titulo);
+  //exit;
+
+
+  // Crear el contenido del correo.
+  $message = new FormattableMarkup('<p>Aquí está el archivo invite.ics adjunto para tu clase agendada.</p>
+  <br/>
+  <p>Fecha: @fecha</p>
+  <p>Hora: @hora</p>
+  <p>Título: @titulo</p>', [
+    '@fecha' => $fecha_clase,
+    '@hora' => $hora_clase,
+    '@titulo' => $titulo,
+  ]);
+  
+  // Obtener el correo del usuario actual.
+  $user = \Drupal::currentUser();
+  $email = $user->getEmail();
+  $email = 'pablo@icreativadigital.com';
+  // Generar el archivo invite.ics
+  $file_content = 'BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Drupal//Envío de Correo//ES
+BEGIN:VEVENT
+SUMMARY:' . $titulo . '
+DTSTART:' . $fecha_clase . 'T' . $hora_clase . '00
+DTEND:' . $fecha_clase . 'T' . $hora_clase . '25
+END:VEVENT
+END:VCALENDAR';
+  
+  dump($file_content);
+  // Guardar el archivo en la carpeta temporal de Drupal.
+  
+  //$temporary_path = \Drupal::service('file_system')->getTempDirectory() . '/invite.ics';
+  //Create  $temporary_path file on sites/default/files/invite.ics drupal 9
+  $temporary_path = \Drupal::service('file_system')->realpath('public://invite.ics');
+
+  
+
+  //dump($temporary_path);
+
+  file_put_contents($temporary_path, $file_content);
+
+  
+  // Adjuntar el archivo al correo.
+  $attachments[] = $temporary_path;
+  //dump($attachments);
+  
+  // Obtener la configuración de correo del sitio.
+  $config = \Drupal::config('system.site');
+  $site_mail = $config->get('mail');
+  
+  //convertir $message en html para que se pueda enviar el correo
+  $message = new FormattableMarkup($message, []);
+  
+  // Crear el objeto de correo.
+  $params['message'] = $message;
+  $params['subject'] = 'Invitación a la clase agendada';
+  $params['attachments'] = [$temporary_path];
+  $params['to'] = $email;
+  $params['from'] = $site_mail;
+  $params['headers']['Content-Type'] = 'text/html; charset=UTF-8';
+  
+  // Enviar el correo.
+ $mailManager = \Drupal::service('plugin.manager.mail');
+ $result = $mailManager->mail('enviar_correo_clase_agendada_gratis', 'enviar_correo', $email, 'es', $params, NULL);
+ 
+
+
+ 
+  // Verificar si ocurrió un error al enviar el correo.
+  if ($result['result'] !== TRUE) {
+    // drupal_set_message(t('Hubo un problema al enviar el correo. Por favor, intenta nuevamente más tarde.'), 'error');
+    // messenger()->addError(t('Hubo un problema al enviar el correo. Por favor, intenta nuevamente más tarde.'));
+    //\Drupal::messenger()->addError(t('Hubo un problema al enviar el correo. Por favor, intenta nuevamente más tarde.'));
+     \Drupal::messenger()->addError(new TranslatableMarkup('Hubo un problema al enviar el correo. Por favor, intenta nuevamente más tarde.'));    
+  } else {
+    // Mensaje de éxito.
+    // drupal_set_message(t('El correo fue enviado correctamente.'));
+    // messenger()->addMessage(t('El correo fue enviado correctamente.'));
+    //\Drupal::messenger()->addMessage(t('El correo fue enviado correctamente.'));
+    \Drupal::messenger()->addMessage(new TranslatableMarkup('El correo fue enviado correctamente.'));
+  }
+}
+
+/**
+ * Implementa hook_mail().
+ */
+function enviar_correo_clase_agendada_gratis_mail($key, &$message, $params) {
+  switch ($key) {
+    case 'enviar_correo':
+      $message['subject'] = $params['subject'];
+      $message['body'][] = $params['message'];
+      $message['params']['attachments'] = $params['attachments'];
+      break;
+  }
+}

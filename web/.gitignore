@@ -24,8 +24,10 @@ sites/*/services*.yml
 # Ignore paths that contain user-generated content.
 sites/*/files
 sites/*/private
+themes/custom/koala/css
+themes/custom/koala/css/*.css
 
-# Ignore multi-site test environment.
+# Ignore SimpleTest multi-site environment.
 sites/simpletest
 
 # If you prefer to store your .gitignore file in the sites/ folder, comment
@@ -38,5 +40,5 @@ sites/simpletest
 # */files
 # */private
 
-# Ignore multi-site test environment.
+# Ignore SimpleTest multi-site environment.
 # simpletest
