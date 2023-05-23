@@ -1,0 +1,7 @@
+name: 'Enviar Correo Clase Agendada Gratis'
+type: module
+description: 'Envía un correo con el archivo invite.ics al agendar una clase gratis.'
+core_version_requirement: ^9
+package: Custom
+dependencies:
+  - drupal:node
