@@ -1,0 +1,344 @@
+// banner principal padres
+
+#block-koala-content {
+  .content {
+    .layout--onecol {
+      .layout__region {
+        .views-element-container {
+          .content {
+            .view-banner-perfil-padres {
+              margin-top: 2.5rem;
+
+              .banner-padres-perfil {
+                .texto {
+                  position   : relative;
+                  padding    : 3.6rem 0rem 0.5rem 0rem;
+                  width      : 71%;
+                  margin     : 0 auto;
+                  font-weight: 700;
+                  font-size  : 2rem;
+
+                  p {
+                    line-height: 35px;
+                  }
+                }
+
+                .boton-comprar {
+                  position: relative;
+                  width   : 71%;
+                  margin  : 0 auto;
+
+                  a {
+                    background     : #FFFFFF;
+                    border         : 2px solid #297E88;
+                    border-radius  : 28px;
+                    color          : black !important;
+                    padding        : 0.5rem 1.2rem 0.5rem 1.2rem;
+                    text-decoration: none;
+                    font-weight    : 700;
+                    font-size      : 1.2rem;
+
+                    &:hover {
+                      background-color: #297E88;
+                      color           : white !important;
+                    }
+                  }
+                }
+
+                .field--name-field-media-image {
+                  .field__item {
+                    img {
+                      position: absolute;
+                      width   : 90%;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .layout--twocol-section {
+      position: relative;
+      padding : 9rem 6rem 1rem 6rem;
+
+      .layout__region--first {
+        .block-views-blockusuario-actual-block-1 {
+          &:before {
+            content    : "Mi perfil";
+            font-size  : 1.3rem;
+            font-weight: 700;
+          }
+
+          .view-usuario-actual {
+            border       : 2px solid #E6F1F1;
+            border-radius: 24px;
+            padding      : 16px 5px 16px 16px;
+            width        : 118%;
+            margin-top   : 1.3rem;
+
+            .cuadro-perfil-padre {
+              .fila1 {
+                margin-bottom: 1rem;
+
+                .avatar1 {
+                  width      : 2.6rem;
+                  padding    : 0px;
+                  margin-left: 11px;
+                }
+
+                .nombre-ac {
+                  display    : flex;
+                  align-items: center;
+                  font-size  : 1.2rem;
+                }
+
+                .editar-usuario {
+                  display        : flex;
+                  align-items    : center;
+                  justify-content: end;
+                  margin-bottom  : 0.2rem;
+                }
+              }
+
+              .fila2 {
+                .correo {
+                  font-weight    : 700;
+                  text-decoration: underline;
+                }
+              }
+            }
+          }
+        }
+
+        .block-views-blockmis-koalas-block-1 {
+          border       : 2px solid #E6F1F1;
+          border-radius: 24px;
+          width        : 118%;
+          padding      : 16px;
+          margin-top   : 1.5rem !important;
+          margin-bottom: 2rem;
+
+          h2 {
+            font-size  : 1.3rem;
+            font-weight: 700;
+          }
+
+          .content {
+            .view-mis-koalas {
+              .view-content {
+                .views-row {
+                  .views-field-title {
+                    background   : $GreyK100;
+                    border-radius: 32px;
+                    padding      : 8px;
+                    gap          : 16px;
+                    width        : 239px;
+                    height       : 56px;
+                    margin-top: 0.8rem;
+
+                    .field-content {
+                      a {
+                        font-weight: 700;
+                        font-size  : 1.3rem;
+                        color      : black;
+                        margin-left: 1rem;
+                      }
+                    }
+                  }
+
+                  .views-field-operations {
+                    display: none;
+                  }
+                }
+              }
+            }
+
+            .view-footer {
+              a {
+                background     : #FFFFFF;
+                border         : 2px solid #297E88;
+                border-radius  : 28px;
+                color          : black !important;
+                padding        : 0.5rem 1.2rem 0.5rem 1.2rem;
+                text-decoration: none;
+                font-weight    : 700;
+                font-size      : 1.2rem;
+
+                &:hover {
+                  background-color: #297E88;
+                  color           : white !important;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .layout__region--second {
+    .block-views-blockclases-gratuitas-block-1 {
+      &:before {
+        content    : "Próximas clases";
+        font-size  : 1.3rem;
+        font-weight: 700;
+        margin-left: 5.5rem;
+      }
+
+      .view-clases-gratuitas {
+        margin-left  : 5.5rem;
+        background   : #E6F1F1;
+        border-radius: 24px;
+        padding      : 16px;
+        width        : 596px;
+        height       : 248px;
+        margin-top   : 1.3rem;
+
+        .view-content {
+          .views-field-title {
+            text-align: center;
+
+            span {
+              a {
+                color          : black;
+                font-size      : 1.3rem;
+                text-decoration: none;
+                font-weight    : 600;
+              }
+            }
+          }
+
+          .views-field-field-fecha-de-la-cita {
+            display        : flex;
+            justify-content: end;
+
+            .field-content {
+              background-color: white;
+              border-radius   : 15px;
+              box-shadow      : 0px 1.67507px 8.37533px rgba(67, 67, 67, 0.15), 0px 4.18766px 16.7507px rgba(74, 74, 74, 0.08), 0px 8.37533px 67.0026px rgba(74, 74, 74, 0.02);
+              font-weight     : 700;
+              font-size       : 2rem;
+              padding         : 1rem;
+              width           : 60%;
+              text-align      : center;
+              margin-top      : 1rem;
+            }
+          }
+
+          .views-field-field-nombre-del-nino-a {
+            background-color: white;
+            border-radius   : 15px;
+            width           : 35%;
+            display         : flex;
+            float           : inline-start;
+            position        : relative;
+            top             : -78px;
+            height          : 168px;
+            display         : flex;
+            align-items     : center;
+            justify-content : center;
+            float           : left;
+
+            .field-content {
+              font-weight: 700;
+              font-size  : 1.3rem;
+            }
+          }
+
+          .views-field-field-hora-clase {
+            margin     : 0.5rem 1rem;
+            width      : 50%;
+            text-align : center;
+            font-weight: 700;
+          }
+
+          .views-field-nid {
+            margin: 1rem 0rem;
+            width : 100%;
+
+            .field-content {
+              a {
+                background-color: white;
+                border          : 2px solid $GreyK200;
+                font-size       : 1.2rem;
+                font-weight     : 700;
+                height          : 3rem;
+                display         : flex;
+                justify-content : center;
+                align-items     : center;
+                flex-direction  : column;
+                color           : $GreyK200;
+                border-radius   : 25px;
+                margin-bottom   : 3rem;
+                width           : 42%;
+                margin          : 0 auto;
+                text-decoration : none;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+// @media only screen and (max-width: 600px) and (min-width: 374px) {
+//   #block-koala-content {
+//     .content {
+//       .layout--onecol {
+//         .layout__region {
+//           .views-element-container {
+//             .content {
+//               .view-banner-perfil-padres {
+//                 .banner-padres-perfil {
+//                   .texto {
+//                     left     : 18%;
+//                     top      : 20%;
+//                     font-size: 1rem;
+
+//                     p {
+//                       line-height: 1rem;
+//                     }
+//                   }
+//                 }
+//               }
+//             }
+//           }
+//         }
+//       }
+//     }
+//   }
+// }
+
+// @media only screen and (max-width: 1120px) and (min-width: 601px) {
+//   #block-koala-content {
+//     .content {
+//       .layout--onecol {
+//         .layout__region {
+//           .views-element-container {
+//             .content {
+//               .view-banner-perfil-padres {
+//                 .banner-padres-perfil {
+//                   .texto {
+//                     left     : 24%;
+//                     top      : 24%;
+//                     font-size: 1.2rem;
+
+//                     p {
+//                       line-height: 1.3rem;
+//                     }
+//                   }
+//                 }
+//               }
+//             }
+//           }
+//         }
+//       }
+//     }
+//   }
+// }
