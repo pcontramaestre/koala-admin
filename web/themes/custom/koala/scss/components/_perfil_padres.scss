@@ -11,12 +11,11 @@
 
               .banner-padres-perfil {
                 .texto {
-                  position   : relative;
-                  padding    : 3.6rem 0rem 0.5rem 0rem;
-                  width      : 71%;
-                  margin     : 0 auto;
+                  position   : absolute;
                   font-weight: 700;
                   font-size  : 2rem;
+                  top        : 28%;
+                  left       : 18%;
 
                   p {
                     line-height: 35px;
@@ -24,9 +23,9 @@
                 }
 
                 .boton-comprar {
-                  position: relative;
-                  width   : 71%;
-                  margin  : 0 auto;
+                  position: absolute;
+                  top     : 42%;
+                  left    : 18%;
 
                   a {
                     background     : #FFFFFF;
@@ -44,15 +43,6 @@
                     }
                   }
                 }
-
-                .field--name-field-media-image {
-                  .field__item {
-                    img {
-                      position: absolute;
-                      width   : 90%;
-                    }
-                  }
-                }
               }
             }
           }
@@ -60,11 +50,13 @@
       }
     }
 
-    .layout--twocol-section {
-      position: relative;
-      padding : 9rem 6rem 1rem 6rem;
+    .layout--twocol-section--33-67 {
+      width      : 88%;
+      margin     : 0 auto;
+      padding-top: 1rem;
 
       .layout__region--first {
+        flex: 0 1 38%!important;
         .block-views-blockusuario-actual-block-1 {
           &:before {
             content    : "Mi perfil";
@@ -76,8 +68,8 @@
             border       : 2px solid #E6F1F1;
             border-radius: 24px;
             padding      : 16px 5px 16px 16px;
-            width        : 118%;
-            margin-top   : 1.3rem;
+
+            margin-top: 1.3rem;
 
             .cuadro-perfil-padre {
               .fila1 {
@@ -116,7 +108,7 @@
         .block-views-blockmis-koalas-block-1 {
           border       : 2px solid #E6F1F1;
           border-radius: 24px;
-          width        : 118%;
+
           padding      : 16px;
           margin-top   : 1.5rem !important;
           margin-bottom: 2rem;
@@ -137,7 +129,7 @@
                     gap          : 16px;
                     width        : 239px;
                     height       : 56px;
-                    margin-top: 0.8rem;
+                    margin-top   : 0.8rem;
 
                     .field-content {
                       a {
@@ -176,106 +168,125 @@
           }
         }
       }
-    }
-  }
 
-  .layout__region--second {
-    .block-views-blockclases-gratuitas-block-1 {
-      &:before {
-        content    : "Próximas clases";
-        font-size  : 1.3rem;
-        font-weight: 700;
-        margin-left: 5.5rem;
-      }
-
-      .view-clases-gratuitas {
-        margin-left  : 5.5rem;
-        background   : #E6F1F1;
-        border-radius: 24px;
-        padding      : 16px;
-        width        : 596px;
-        height       : 248px;
-        margin-top   : 1.3rem;
-
-        .view-content {
-          .views-field-title {
-            text-align: center;
-
-            span {
-              a {
-                color          : black;
-                font-size      : 1.3rem;
-                text-decoration: none;
-                font-weight    : 600;
-              }
-            }
-          }
-
-          .views-field-field-fecha-de-la-cita {
-            display        : flex;
-            justify-content: end;
-
-            .field-content {
-              background-color: white;
-              border-radius   : 15px;
-              box-shadow      : 0px 1.67507px 8.37533px rgba(67, 67, 67, 0.15), 0px 4.18766px 16.7507px rgba(74, 74, 74, 0.08), 0px 8.37533px 67.0026px rgba(74, 74, 74, 0.02);
-              font-weight     : 700;
-              font-size       : 2rem;
-              padding         : 1rem;
-              width           : 60%;
-              text-align      : center;
-              margin-top      : 1rem;
-            }
-          }
-
-          .views-field-field-nombre-del-nino-a {
-            background-color: white;
-            border-radius   : 15px;
-            width           : 35%;
-            display         : flex;
-            float           : inline-start;
-            position        : relative;
-            top             : -78px;
-            height          : 168px;
-            display         : flex;
-            align-items     : center;
-            justify-content : center;
-            float           : left;
-
-            .field-content {
-              font-weight: 700;
-              font-size  : 1.3rem;
-            }
-          }
-
-          .views-field-field-hora-clase {
-            margin     : 0.5rem 1rem;
-            width      : 50%;
-            text-align : center;
+      .layout__region--second {
+        flex: 0 1 60%!important;
+        .block-views-blockclases-gratuitas-block-1 {
+          &:before {
+            content    : "Próximas clases";
+            font-size  : 1.3rem;
             font-weight: 700;
+            margin-left: 5.5rem;
           }
 
-          .views-field-nid {
-            margin: 1rem 0rem;
-            width : 100%;
+          .view-clases-gratuitas {
+            float        : right;
+            width: 596px;
+            .view-content {
+              .views-row {
+                border-radius: 24px;
+                padding      : 16px;
+                height       : 260px;
+                margin-top   : 1.3rem;
+                .views-field-title {
+                  text-align: center;
 
-            .field-content {
-              a {
-                background-color: white;
-                border          : 2px solid $GreyK200;
-                font-size       : 1.2rem;
-                font-weight     : 700;
-                height          : 3rem;
-                display         : flex;
-                justify-content : center;
-                align-items     : center;
-                flex-direction  : column;
-                color           : $GreyK200;
-                border-radius   : 25px;
-                margin-bottom   : 3rem;
-                width           : 42%;
-                margin          : 0 auto;
-                text-decoration : none;
+                  span {
+                    a {
+                      color          : black;
+                      font-size      : 1.3rem;
+                      text-decoration: none;
+                      font-weight    : 600;
+                    }
+                  }
+                }
+
+                .views-field-field-fecha-de-la-cita {
+                  display        : flex;
+                  justify-content: end;
+
+                  .field-content {
+                    background-color: white;
+                    border-radius   : 15px;
+                    box-shadow      : 0px 1.67507px 8.37533px rgba(67, 67, 67, 0.15), 0px 4.18766px 16.7507px rgba(74, 74, 74, 0.08), 0px 8.37533px 67.0026px rgba(74, 74, 74, 0.02);
+                    font-weight     : 700;
+                    font-size       : 2rem;
+                    padding         : 1rem;
+                    width           : 60%;
+                    text-align      : center;
+                    margin-top      : 1rem;
+                  }
+                }
+
+                .views-field-field-nombre-del-nino-a {
+                  background-color: white;
+                  border-radius   : 15px;
+                  width           : 35%;
+                  display         : flex;
+                  float           : inline-start;
+                  position        : relative;
+                  top             : -78px;
+                  height          : 168px;
+                  display         : flex;
+                  align-items     : center;
+                  justify-content : center;
+                  float           : left;
+
+                  .field-content {
+                    font-weight: 700;
+                    font-size  : 1.3rem;
+                  }
+                }
+
+                .views-field-field-hora-clase {
+                  margin     : 0.5rem 1rem;
+                  width      : 50%;
+                  text-align : center;
+                  font-weight: 700;
+                }
+
+                .views-field-nid {
+                  margin: 1rem 0rem;
+                  width : 100%;
+
+                  .field-content {
+                    a {
+                      background-color: white;
+                      border          : 2px solid $GreyK200;
+                      font-size       : 1.2rem;
+                      font-weight     : 700;
+                      height          : 3rem;
+                      display         : flex;
+                      justify-content : center;
+                      align-items     : center;
+                      flex-direction  : column;
+                      color           : $GreyK200;
+                      border-radius   : 25px;
+                      margin-bottom   : 3rem;
+                      width           : 42%;
+                      margin          : 0 auto;
+                      text-decoration : none;
+                    }
+                  }
+                }
+              }
+              .views-row:nth-child(1) {
+                background   : #E6F1F1;
+              }
+              .views-row:nth-child(2) {
+                background   : $AlgaK100;
+              }
+              .views-row:nth-child(3) {
+                background   : #E6F1F1;
+              }
+              .views-row:nth-child(4) {
+                background   : $AlgaK100;
+              }
+              .views-row:nth-child(5) {
+                background   : #E6F1F1;
+              }
+              .views-row:nth-child(6) {
+                background   : $AlgaK100;
               }
             }
           }
@@ -283,6 +294,8 @@
       }
     }
   }
+
+
 }
 
 
