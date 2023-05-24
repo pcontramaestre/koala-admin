@@ -3,17 +3,22 @@ langcode: es
 status: true
 dependencies:
   config:
+    - field.field.user.user.field_avatar
     - field.field.user.user.field_celular
+    - field.field.user.user.field_direccion
     - field.field.user.user.field_nombre_del_acudiente
     - field.field.user.user.field_nombre_del_hijo
+    - field.field.user.user.field_nombres_y_apellidos_del_pr
     - field.field.user.user.field_padre
+    - field.field.user.user.field_pais
     - field.field.user.user.user_picture
     - image.style.thumbnail
   module:
     - field_layout
-    - image
     - layout_builder
+    - options
     - show_email
+    - svg_image
     - user
 third_party_settings:
   field_layout:
@@ -30,6 +35,14 @@ targetEntityType: user
 bundle: user
 mode: default
 content:
+  field_avatar:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 10
+    region: content
   field_celular:
     type: string
     label: above
@@ -37,6 +50,13 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     weight: 3
+    region: content
+  field_direccion:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 8
     region: content
   field_nombre_del_acudiente:
     type: string
@@ -54,6 +74,14 @@ content:
     third_party_settings: {  }
     weight: 4
     region: content
+  field_nombres_y_apellidos_del_pr:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 9
+    region: content
   field_padre:
     type: entity_reference_label
     label: above
@@ -61,6 +89,13 @@ content:
       link: true
     third_party_settings: {  }
     weight: 5
+    region: content
+  field_pais:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 7
     region: content
   mail:
     type: show_email_address

@@ -1,17 +1,15 @@
-uuid: d443f6e3-b60f-45c9-bcd1-6e47a3d55986
+uuid: 4a71c237-1cb2-451a-bbcb-6d62bda16da5
 langcode: es
 status: true
 dependencies:
   module:
-    - node
-id: node.field_fecha_cita_gratis
-field_name: field_fecha_cita_gratis
-entity_type: node
-type: string
+    - user
+id: user.field_direccion
+field_name: field_direccion
+entity_type: user
+type: string_long
 settings:
-  max_length: 12
   case_sensitive: false
-  is_ascii: false
 module: core
 locked: false
 cardinality: 1

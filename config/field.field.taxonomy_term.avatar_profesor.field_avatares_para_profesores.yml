@@ -1,0 +1,29 @@
+uuid: c4f004e9-4158-4ca1-b77e-bbbdd2aab1a8
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_avatares_para_profesores
+    - media.type.avatares_profesores
+    - taxonomy.vocabulary.avatar_profesor
+id: taxonomy_term.avatar_profesor.field_avatares_para_profesores
+field_name: field_avatares_para_profesores
+entity_type: taxonomy_term
+bundle: avatar_profesor
+label: 'Avatares para profesores'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      avatares_profesores: avatares_profesores
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

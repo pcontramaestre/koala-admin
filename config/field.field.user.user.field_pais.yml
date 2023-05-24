@@ -1,0 +1,34 @@
+uuid: 8962c0ca-9f11-40ee-b12a-655480323c9e
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_pais
+  module:
+    - multiple_registration
+    - options
+    - user
+third_party_settings:
+  multiple_registration:
+    user_additional_register_form_required:
+      authenticated: 0
+      padre: 0
+      hijo: 0
+    user_additional_register_form:
+      authenticated: 0
+      padre: 0
+      hijo: 0
+id: user.user.field_pais
+field_name: field_pais
+entity_type: user
+bundle: user
+label: País
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 'United States of America'
+default_value_callback: ''
+settings: {  }
+field_type: list_string

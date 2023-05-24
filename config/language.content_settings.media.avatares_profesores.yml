@@ -1,0 +1,11 @@
+uuid: af1c1481-f125-45c1-8b32-e9f5c69e6216
+langcode: es
+status: true
+dependencies:
+  config:
+    - media.type.avatares_profesores
+id: media.avatares_profesores
+target_entity_type_id: media
+target_bundle: avatares_profesores
+default_langcode: site_default
+language_alterable: false

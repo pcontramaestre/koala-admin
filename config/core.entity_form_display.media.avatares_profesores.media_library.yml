@@ -1,0 +1,38 @@
+uuid: 677b06c3-0500-4d06-9ab3-d5f2d83d33a1
+langcode: es
+status: true
+dependencies:
+  config:
+    - core.entity_form_mode.media.media_library
+    - field.field.media.avatares_profesores.field_media_image
+    - image.style.thumbnail
+    - media.type.avatares_profesores
+  module:
+    - field_layout
+    - layout_discovery
+    - svg_image
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+id: media.avatares_profesores.media_library
+targetEntityType: media
+bundle: avatares_profesores
+mode: media_library
+content:
+  field_media_image:
+    type: image_image
+    weight: -50
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+hidden:
+  created: true
+  langcode: true
+  name: true
+  path: true
+  status: true
+  uid: true

@@ -1,0 +1,10 @@
+uuid: 5c5b0c71-a680-42b8-8965-445e9d93c08f
+langcode: es
+status: true
+dependencies:
+  module:
+    - user
+id: user.editar_profesor
+label: 'Editar profesor'
+targetEntityType: user
+cache: true

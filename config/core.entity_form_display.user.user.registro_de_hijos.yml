@@ -4,10 +4,14 @@ status: true
 dependencies:
   config:
     - core.entity_form_mode.user.registro_de_hijos
+    - field.field.user.user.field_avatar
     - field.field.user.user.field_celular
+    - field.field.user.user.field_direccion
     - field.field.user.user.field_nombre_del_acudiente
     - field.field.user.user.field_nombre_del_hijo
+    - field.field.user.user.field_nombres_y_apellidos_del_pr
     - field.field.user.user.field_padre
+    - field.field.user.user.field_pais
     - field.field.user.user.user_picture
   module:
     - field_layout
@@ -56,8 +60,12 @@ content:
     third_party_settings: {  }
 hidden:
   contact: true
+  field_avatar: true
   field_celular: true
+  field_direccion: true
   field_nombre_del_acudiente: true
+  field_nombres_y_apellidos_del_pr: true
+  field_pais: true
   langcode: true
   language: true
   path: true

@@ -6,6 +6,7 @@ module:
   admin_toolbar_links_access_filter: 0
   admin_toolbar_search: 0
   admin_toolbar_tools: 0
+  advanced_text_formatter: 0
   asset_injector: 0
   auto_username: 0
   automated_cron: 0
@@ -16,8 +17,13 @@ module:
   breakpoint: 0
   calendar: 0
   calendar_datetime: 0
+  calendar_link: 0
+  chosen: 0
+  chosen_field: 0
+  chosen_lib: 0
   ckeditor5: 0
   comment: 0
+  computed_field: 0
   config: 0
   config_pages: 0
   config_translation: 0
@@ -25,6 +31,7 @@ module:
   contextual: 0
   create_koalas: 0
   ctools: 0
+  ctools_entity_mask: 0
   custom_role_redirect: 0
   date_recur: 0
   date_recur_modular: 0
@@ -36,18 +43,28 @@ module:
   dynamic_page_cache: 0
   editor: 0
   entity: 0
+  entity_usage: 0
+  enviar_correo_clase_agendada_gratis: 0
   fecha_widget: 0
   field: 0
+  field_display_label: 0
+  field_formatter_class: 0
   field_group: 0
   field_layout: 0
+  field_permissions: 0
   field_ui: 0
+  field_validation: 0
   file: 0
+  filefield_paths: 0
   filter: 0
+  fivestar: 0
   form_mode_manager: 0
   form_mode_manager_theme_switcher: 0
-  form_mode_user_roles_assign: 0
+  formatter_suite: 0
+  fpa: 0
   help: 0
   history: 0
+  iframe: 0
   image: 0
   inline_entity_form: 0
   jquery_ui: 0
@@ -62,9 +79,12 @@ module:
   link: 0
   locale: 0
   login_destination: 0
+  mailjet: 0
+  mailsystem: 0
   media: 0
   media_library: 0
   menu_link_content: 0
+  menu_token: 0
   menu_ui: 0
   multiple_registration: 0
   mysql: 0
@@ -77,37 +97,50 @@ module:
   page_manager_ui: 0
   path: 0
   path_alias: 0
+  readonly_field_widget: 0
   redirect_page_by_role: 0
   registration_role: 0
   responsive_image: 0
   rest: 0
+  rules: 0
   search: 0
   serialization: 0
   shortcut: 0
   show_email: 0
   simple_multistep: 0
   simplelogin: 0
+  smart_date: 0
+  smtp: 0
+  svg_image: 0
+  svg_image_responsive: 0
   syslog: 0
   system: 0
   taxonomy: 0
   telephone: 0
   text: 0
   themable_forms: 0
+  time_field: 0
+  time_picker: 0
   timefield: 0
+  timepicker: 0
   token: 0
   token_filter: 0
   token_views_filter: 0
   toolbar: 0
   tour: 0
   twig_tweak: 0
+  typed_data: 0
   update: 0
   user: 0
   user_view_mode: 0
   view_mode_select_by_token: 0
+  view_password: 0
   views_extras: 0
   views_templates: 0
   views_tokenized: 0
   views_ui: 0
+  votingapi: 0
+  votingapi_tokens: 0
   xls_serialization: 0
   pathauto: 1
   content_translation: 10

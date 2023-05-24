@@ -1,0 +1,10 @@
+uuid: 6080b7a4-43b5-4a6a-bade-c89df1d18b65
+langcode: es
+status: true
+dependencies:
+  module:
+    - user
+id: user.registro_basico
+label: 'Registro básico'
+targetEntityType: user
+cache: true

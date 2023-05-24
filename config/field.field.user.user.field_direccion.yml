@@ -1,0 +1,31 @@
+uuid: c1943d91-a289-4811-8ebd-3f9da849fd91
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_direccion
+  module:
+    - multiple_registration
+    - user
+third_party_settings:
+  multiple_registration:
+    user_additional_register_form_required:
+      authenticated: 0
+      padre: 0
+      hijo: 0
+    user_additional_register_form:
+      authenticated: 0
+      padre: 0
+      hijo: 0
+id: user.user.field_direccion
+field_name: field_direccion
+entity_type: user
+bundle: user
+label: Dirección
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

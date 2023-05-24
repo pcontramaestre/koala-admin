@@ -3,13 +3,21 @@ langcode: es
 status: true
 dependencies:
   config:
+    - media.type.avatares_profesores
     - node.type.article
     - node.type.page
+    - taxonomy.vocabulary.avatar_profesor
     - taxonomy.vocabulary.tags
   module:
     - comment
+    - content_translation
     - contextual
+    - date_recur_modular
+    - field_permissions
     - file
+    - fivestar
+    - form_mode_manager
+    - media
     - node
     - path
     - system
@@ -31,18 +39,46 @@ permissions:
   - 'access tour'
   - 'administer url aliases'
   - 'create article content'
+  - 'create avatares_profesores media'
+  - 'create field_avatar'
+  - 'create field_nombres_y_apellidos_del_pr'
   - 'create page content'
+  - 'create terms in avatar_profesor'
   - 'create terms in tags'
   - 'create url aliases'
+  - 'date_recur_modular use sierra form'
+  - 'delete any avatares_profesores media'
   - 'delete article revisions'
   - 'delete own article content'
+  - 'delete own avatares_profesores media'
   - 'delete own page content'
   - 'delete page revisions'
+  - 'delete terms in avatar_profesor'
+  - 'edit any avatares_profesores media'
+  - 'edit field_avatar'
+  - 'edit field_nombres_y_apellidos_del_pr'
   - 'edit own article content'
+  - 'edit own avatares_profesores media'
   - 'edit own comments'
+  - 'edit own field_avatar'
+  - 'edit own field_nombres_y_apellidos_del_pr'
   - 'edit own page content'
+  - 'edit terms in avatar_profesor'
   - 'edit terms in tags'
+  - 'rate content'
   - 'revert all revisions'
+  - 'translate avatar_profesor taxonomy_term'
+  - 'use node.agendar_clases form mode'
+  - 'use node.crear_koalas form mode'
+  - 'use node.editar_agendar_clase_gratis form mode'
+  - 'use user.default form mode'
+  - 'use user.editar_perfil_padre form mode'
+  - 'use user.editar_profesor form mode'
+  - 'use user.register form mode'
+  - 'use user.registro_de_hijos form mode'
+  - 'use user.registro_de_profesores form mode'
   - 'view all revisions'
+  - 'view own field_avatar'
+  - 'view own field_nombres_y_apellidos_del_pr'
   - 'view own unpublished content'
   - 'view the administration theme'

@@ -1,0 +1,18 @@
+uuid: bc9b0b2b-ede2-4feb-a4c4-cbcf6c454644
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.profesores
+id: node.profesores.title
+field_name: title
+entity_type: node
+bundle: profesores
+label: 'Nombres y apellidos'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

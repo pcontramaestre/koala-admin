@@ -1,0 +1,10 @@
+uuid: 5db0b728-1216-4e91-9341-a7ac840373a1
+langcode: es
+status: true
+dependencies:
+  module:
+    - user
+id: user.registro_de_profesores
+label: 'Registro de Profesores'
+targetEntityType: user
+cache: true

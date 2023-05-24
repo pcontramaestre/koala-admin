@@ -1,0 +1,10 @@
+uuid: 91811c3c-6980-4e6e-aaaa-5ecc47170c8b
+langcode: es
+status: true
+dependencies:
+  module:
+    - user
+id: user.editar_perfil_padre
+label: 'Editar perfil padre'
+targetEntityType: user
+cache: true

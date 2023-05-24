@@ -1,0 +1,88 @@
+uuid: b9eac42c-d37f-45c8-9ea2-efeef19f5ce1
+langcode: es
+status: true
+dependencies:
+  config:
+    - core.entity_form_mode.user.editar_perfil_padre
+    - field.field.user.user.field_avatar
+    - field.field.user.user.field_celular
+    - field.field.user.user.field_direccion
+    - field.field.user.user.field_nombre_del_acudiente
+    - field.field.user.user.field_nombre_del_hijo
+    - field.field.user.user.field_nombres_y_apellidos_del_pr
+    - field.field.user.user.field_padre
+    - field.field.user.user.field_pais
+    - field.field.user.user.user_picture
+    - image.style.medium
+  module:
+    - field_layout
+    - layout_builder
+    - svg_image
+    - user
+third_party_settings:
+  field_layout:
+    id: layout_twocol_section
+    settings:
+      label: ''
+      column_widths: 50-50
+_core:
+  default_config_hash: FaQ9Ptcpxpg30AtiqRDtl_8zbJArHP1LPfug_s59TOA
+id: user.user.editar_perfil_padre
+targetEntityType: user
+bundle: user
+mode: editar_perfil_padre
+content:
+  account:
+    weight: 3
+    region: second
+    settings: {  }
+    third_party_settings: {  }
+  field_celular:
+    type: string_textfield
+    weight: 2
+    region: first
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_direccion:
+    type: string_textarea
+    weight: 5
+    region: second
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_nombre_del_acudiente:
+    type: string_textfield
+    weight: 1
+    region: first
+    settings:
+      size: 60
+      placeholder: 'Nombre del acudiente'
+    third_party_settings: {  }
+  field_pais:
+    type: options_select
+    weight: 4
+    region: second
+    settings: {  }
+    third_party_settings: {  }
+  user_picture:
+    type: image_image
+    weight: 0
+    region: first
+    settings:
+      progress_indicator: throbber
+      preview_image_style: medium
+    third_party_settings: {  }
+hidden:
+  contact: true
+  field_avatar: true
+  field_nombre_del_hijo: true
+  field_nombres_y_apellidos_del_pr: true
+  field_padre: true
+  langcode: true
+  language: true
+  path: true
+  timezone: true
+  translation: true

@@ -7,7 +7,10 @@ dependencies:
   module:
     - comment
     - contact
+    - date_recur_modular
+    - field_permissions
     - filter
+    - fivestar
     - media
     - search
     - shortcut
@@ -23,8 +26,12 @@ permissions:
   - 'access content'
   - 'access shortcuts'
   - 'access site-wide contact form'
+  - 'date_recur_modular use sierra form'
   - 'post comments'
+  - 'rate content'
   - 'search content'
   - 'skip comment approval'
   - 'use text format basic_html'
+  - 'view field_avatar'
+  - 'view field_nombres_y_apellidos_del_pr'
   - 'view media'

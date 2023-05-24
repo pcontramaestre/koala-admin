@@ -4,11 +4,11 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.full
-    - field.field.node.agendar_clase.field_fecha_cita_gratis
+    - field.field.node.agendar_clase.field_fecha_cita_oculta
     - field.field.node.agendar_clase.field_fecha_de_la_cita
     - field.field.node.agendar_clase.field_fecha_nac
     - field.field.node.agendar_clase.field_he_leido_y_estoy_de_acuerd
-    - field.field.node.agendar_clase.field_hora
+    - field.field.node.agendar_clase.field_hora_cita_oculta
     - field.field.node.agendar_clase.field_hora_clase
     - field.field.node.agendar_clase.field_nombre_del_nino_a
     - field.field.node.agendar_clase.field_sexo_n
@@ -56,10 +56,10 @@ content:
     weight: 0
     region: content
 hidden:
-  field_fecha_cita_gratis: true
+  field_fecha_cita_oculta: true
   field_fecha_nac: true
   field_he_leido_y_estoy_de_acuerd: true
-  field_hora: true
+  field_hora_cita_oculta: true
   field_sexo_n: true
   langcode: true
   links: true

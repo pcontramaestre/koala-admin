@@ -1,0 +1,31 @@
+uuid: 87be2373-6753-4eb6-a7d3-9fee887da266
+langcode: es
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.profesores.body
+    - node.type.profesores
+  module:
+    - text
+    - user
+id: node.profesores.teaser
+targetEntityType: node
+bundle: profesores
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  langcode: true

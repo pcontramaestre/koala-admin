@@ -3,6 +3,9 @@ langcode: es
 status: true
 dependencies:
   module:
+    - date_recur_modular
+    - field_permissions
+    - fivestar
     - user_view_mode
 third_party_settings:
   user_view_mode:
@@ -12,4 +15,7 @@ id: hijo
 label: Hijo
 weight: 7
 is_admin: null
-permissions: {  }
+permissions:
+  - 'date_recur_modular use sierra form'
+  - 'rate content'
+  - 'view own field_nombres_y_apellidos_del_pr'
