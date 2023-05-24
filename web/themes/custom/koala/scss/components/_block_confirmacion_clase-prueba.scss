@@ -89,3 +89,16 @@
     }
   }
 }
+
+@media only screen and (max-width: 700px) and (min-width: 340px) {
+  #block-koala-content .node--type-agendar-clase .node__content .cuadro {
+    width  : 90%;
+    padding: 1rem 0rem 1.5rem 0rem;
+    .col-md-12 {
+      text-align: center;
+      a{
+        padding: 0.5rem 1rem;
+      }
+    }
+  }
+}

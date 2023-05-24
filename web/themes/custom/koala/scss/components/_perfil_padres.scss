@@ -56,7 +56,8 @@
       padding-top: 1rem;
 
       .layout__region--first {
-        flex: 0 1 38%!important;
+        flex: 0 1 38% !important;
+
         .block-views-blockusuario-actual-block-1 {
           &:before {
             content    : "Mi perfil";
@@ -170,7 +171,8 @@
       }
 
       .layout__region--second {
-        flex: 0 1 60%!important;
+        flex: 0 1 60% !important;
+
         .block-views-blockclases-gratuitas-block-1 {
           &:before {
             content    : "Próximas clases";
@@ -180,14 +182,16 @@
           }
 
           .view-clases-gratuitas {
-            float        : right;
+            float: right;
             width: 596px;
+
             .view-content {
               .views-row {
                 border-radius: 24px;
                 padding      : 16px;
                 height       : 260px;
                 margin-top   : 1.3rem;
+
                 .views-field-title {
                   text-align: center;
 
@@ -266,27 +270,38 @@
                       width           : 42%;
                       margin          : 0 auto;
                       text-decoration : none;
+
+                      &:hover {
+                        background-color: #297E88;
+                        color           : white !important;
+                      }
                     }
                   }
                 }
               }
+
               .views-row:nth-child(1) {
-                background   : #E6F1F1;
+                background: #E6F1F1;
               }
+
               .views-row:nth-child(2) {
-                background   : $AlgaK100;
+                background: $AlgaK100;
               }
+
               .views-row:nth-child(3) {
-                background   : #E6F1F1;
+                background: #E6F1F1;
               }
+
               .views-row:nth-child(4) {
-                background   : $AlgaK100;
+                background: $AlgaK100;
               }
+
               .views-row:nth-child(5) {
-                background   : #E6F1F1;
+                background: #E6F1F1;
               }
+
               .views-row:nth-child(6) {
-                background   : $AlgaK100;
+                background: $AlgaK100;
               }
             }
           }
@@ -300,33 +315,151 @@
 
 
 
-// @media only screen and (max-width: 600px) and (min-width: 374px) {
-//   #block-koala-content {
-//     .content {
-//       .layout--onecol {
-//         .layout__region {
-//           .views-element-container {
-//             .content {
-//               .view-banner-perfil-padres {
-//                 .banner-padres-perfil {
-//                   .texto {
-//                     left     : 18%;
-//                     top      : 20%;
-//                     font-size: 1rem;
+@media only screen and (max-width: 700px) and (min-width: 374px) {
+  #block-koala-content {
+    .content {
+      .layout--onecol {
+        .layout__region {
+          .views-element-container {
+            .content {
+              .view-banner-perfil-padres {
+                margin-top: 1.5rem;
 
-//                     p {
-//                       line-height: 1rem;
-//                     }
-//                   }
-//                 }
-//               }
-//             }
-//           }
-//         }
-//       }
-//     }
-//   }
-// }
+                .banner-padres-perfil {
+                  .field--name-field-media-image {
+                    .field__item {
+                      height: 244px;
+
+                      img {
+                        height       : 100%;
+                        object-fit   : cover;
+                        border-radius: 20px;
+                      }
+                    }
+                  }
+
+                  .texto {
+                    left     : 11%;
+                    top      : 23%;
+                    font-size: 1.4rem;
+
+                    p {
+                      line-height: 1.7rem;
+                    }
+                  }
+
+                  .boton-comprar {
+                    top : 36%;
+                    left: 15%;
+
+                    a {
+                      padding: 0.3rem 0.7rem 0.3rem 0.7rem;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .layout--twocol-section--33-67 {
+        width      : 96%;
+        margin     : 0 auto;
+        padding-top: 1rem;
+
+        .layout__region--first {
+          flex: 0 1 100% !important;
+
+          .block-views-blockusuario-actual-block-1 {
+            text-align   : center;
+            margin-bottom: 1rem;
+
+            .view-usuario-actual {
+              .cuadro-perfil-padre {
+                padding: 0rem 0rem 0rem 0.5rem;
+
+                .fila1 {
+                  .avatar1 {
+                    margin-left: 0px;
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        .layout__region--second {
+          flex: 0 1 100% !important;
+
+          .block-views-blockclases-gratuitas-block-1 {
+            text-align: center;
+
+            &:before {
+              margin-left: 1rem;
+            }
+
+            .view-clases-gratuitas {
+              width : 100%;
+              padding: 1rem;
+
+              .view-content {
+                .views-row {
+                  display       : flex;
+                  flex-direction: column;
+                  height        : auto;
+
+                  .views-field-title {
+                    text-align: center;
+                    order     : 2;
+                    margin    : 1rem 0.5rem 1rem 0.5rem;
+
+                    span a {
+                      font-size: 1rem;
+                    }
+                  }
+
+                  .views-field-field-fecha-de-la-cita {
+                    order: 3;
+
+                    .field-content {
+                      width : 90%;
+                      margin: 0 auto;
+                    }
+                  }
+
+                  .views-field-field-nombre-del-nino-a {
+                    order        : 1;
+                    border-radius: 30px;
+                    width        : 85%;
+                    height       : 3.5rem;
+                    margin       : 0 auto;
+                    top          : 0px;
+                  }
+
+                  .views-field-field-hora-clase {
+                    order: 4;
+                    width: 90%;
+                  }
+
+                  .views-field-nid {
+                    order: 5;
+
+                    .field-content {
+                      a {
+                        width: 100%;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
 
 // @media only screen and (max-width: 1120px) and (min-width: 601px) {
 //   #block-koala-content {
