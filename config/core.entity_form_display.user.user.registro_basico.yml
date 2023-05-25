@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_form_mode.user.registro_basico
+    - field.field.user.user.field_apodo
     - field.field.user.user.field_avatar
     - field.field.user.user.field_celular
     - field.field.user.user.field_direccion
@@ -12,6 +13,8 @@ dependencies:
     - field.field.user.user.field_nombres_y_apellidos_del_pr
     - field.field.user.user.field_padre
     - field.field.user.user.field_pais
+    - field.field.user.user.field_tu_presentacion
+    - field.field.user.user.field_tu_video_
     - field.field.user.user.user_picture
     - image.style.thumbnail
   module:
@@ -140,4 +143,7 @@ content:
       preview_image_style: thumbnail
     third_party_settings: {  }
 hidden:
+  field_apodo: true
+  field_tu_presentacion: true
+  field_tu_video_: true
   langcode: true

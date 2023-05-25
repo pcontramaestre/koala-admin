@@ -12,6 +12,7 @@ dependencies:
     - filter
     - fivestar
     - media
+    - node_view_permissions
     - search
     - shortcut
     - system
@@ -32,6 +33,13 @@ permissions:
   - 'search content'
   - 'skip comment approval'
   - 'use text format basic_html'
+  - 'view any page content'
+  - 'view field_apodo'
   - 'view field_avatar'
   - 'view field_nombres_y_apellidos_del_pr'
+  - 'view field_tu_presentacion'
+  - 'view field_tu_video_'
   - 'view media'
+  - 'view own article content'
+  - 'view own field_tu_presentacion'
+  - 'view own field_tu_video_'

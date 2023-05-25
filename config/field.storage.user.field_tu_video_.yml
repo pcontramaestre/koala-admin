@@ -1,0 +1,24 @@
+uuid: ab364135-a12b-43e1-87bf-68c841cbbdf7
+langcode: es
+status: true
+dependencies:
+  module:
+    - field_permissions
+    - media
+    - user
+third_party_settings:
+  field_permissions:
+    permission_type: custom
+id: user.field_tu_video_
+field_name: field_tu_video_
+entity_type: user
+type: entity_reference
+settings:
+  target_type: media
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

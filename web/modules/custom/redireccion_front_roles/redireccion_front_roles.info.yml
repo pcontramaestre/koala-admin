@@ -1,0 +1,5 @@
+name: Redirección Front Roles
+type: module
+description: Cambia el frontpage de Drupal según el rol del usuario. ¡Que emocionante!
+core_version_requirement: ^9 || ^8
+package: Custom

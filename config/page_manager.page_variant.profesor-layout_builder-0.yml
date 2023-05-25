@@ -1,0 +1,20 @@
+uuid: e1e8c53c-5915-434f-b0c7-aa5de59bba6d
+langcode: es
+status: true
+dependencies:
+  config:
+    - page_manager.page.profesor
+id: profesor-layout_builder-0
+label: 'Layout Builder'
+weight: 0
+variant: layout_builder
+variant_settings:
+  id: layout_builder
+  label: null
+  weight: 0
+  uuid: 83691f84-a429-42e7-9830-945762241898
+  sections: {  }
+page: profesor
+selection_criteria: {  }
+selection_logic: and
+static_context: {  }

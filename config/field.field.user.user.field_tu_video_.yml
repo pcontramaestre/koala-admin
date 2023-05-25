@@ -1,0 +1,45 @@
+uuid: cc502b37-5cc2-4cfa-b32f-811c9193ca15
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_tu_video_
+    - media.type.remote_video
+    - media.type.video
+  module:
+    - multiple_registration
+    - user
+third_party_settings:
+  multiple_registration:
+    user_additional_register_form_required:
+      authenticated: 0
+      profesor: 0
+      padre: 0
+      hijo: 0
+    user_additional_register_form:
+      authenticated: 0
+      profesor: 0
+      padre: 0
+      hijo: 0
+id: user.user.field_tu_video_
+field_name: field_tu_video_
+entity_type: user
+bundle: user
+label: 'Tu video '
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      remote_video: remote_video
+      video: video
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: remote_video
+field_type: entity_reference

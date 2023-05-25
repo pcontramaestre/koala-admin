@@ -58,6 +58,7 @@ module:
   filefield_paths: 0
   filter: 0
   fivestar: 0
+  form_mode_control: 0
   form_mode_manager: 0
   form_mode_manager_theme_switcher: 0
   formatter_suite: 0
@@ -98,6 +99,10 @@ module:
   path: 0
   path_alias: 0
   readonly_field_widget: 0
+  redireccion_front_roles: 0
+  redirect: 0
+  redirect_404: 0
+  redirect_domain: 0
   redirect_page_by_role: 0
   registration_role: 0
   responsive_image: 0

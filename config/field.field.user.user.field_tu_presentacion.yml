@@ -1,0 +1,34 @@
+uuid: cb154c75-628d-4084-a5bf-9187726206f8
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_tu_presentacion
+  module:
+    - multiple_registration
+    - text
+    - user
+third_party_settings:
+  multiple_registration:
+    user_additional_register_form_required:
+      authenticated: 0
+      profesor: 0
+      padre: 0
+      hijo: 0
+    user_additional_register_form:
+      authenticated: 0
+      profesor: 0
+      padre: 0
+      hijo: 0
+id: user.user.field_tu_presentacion
+field_name: field_tu_presentacion
+entity_type: user
+bundle: user
+label: 'Tu presentación'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

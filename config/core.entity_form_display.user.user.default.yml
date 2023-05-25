@@ -3,6 +3,7 @@ langcode: es
 status: true
 dependencies:
   config:
+    - field.field.user.user.field_apodo
     - field.field.user.user.field_avatar
     - field.field.user.user.field_celular
     - field.field.user.user.field_direccion
@@ -11,14 +12,18 @@ dependencies:
     - field.field.user.user.field_nombres_y_apellidos_del_pr
     - field.field.user.user.field_padre
     - field.field.user.user.field_pais
+    - field.field.user.user.field_tu_presentacion
+    - field.field.user.user.field_tu_video_
     - field.field.user.user.user_picture
     - image.style.thumbnail
   module:
     - chosen_field
     - field_layout
     - layout_builder
+    - media_library
     - path
     - svg_image
+    - text
     - user
 third_party_settings:
   field_layout:
@@ -42,6 +47,14 @@ content:
     weight: 4
     region: first
     settings: {  }
+    third_party_settings: {  }
+  field_apodo:
+    type: string_textfield
+    weight: 40
+    region: first
+    settings:
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
   field_avatar:
     type: entity_reference_autocomplete
@@ -108,6 +121,21 @@ content:
     weight: 34
     region: first
     settings: {  }
+    third_party_settings: {  }
+  field_tu_presentacion:
+    type: text_textarea
+    weight: 38
+    region: first
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_tu_video_:
+    type: media_library_widget
+    weight: 39
+    region: first
+    settings:
+      media_types: {  }
     third_party_settings: {  }
   language:
     weight: 3

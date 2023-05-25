@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c4c07fdf165d40470098bf1014f6d90a",
+    "content-hash": "15f5fa4c92bdad81f8ff436f4e6b0703",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -3192,6 +3192,78 @@
             }
         },
         {
+            "name": "drupal/ds",
+            "version": "5.0.0-alpha3",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/ds.git",
+                "reference": "5.0.0-alpha3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/ds-5.0.0-alpha3.zip",
+                "reference": "5.0.0-alpha3",
+                "shasum": "a4469983b61abc475fb13b6f129f97de50e9a1f6"
+            },
+            "require": {
+                "drupal/core": "^9.5 || ^10"
+            },
+            "require-dev": {
+                "drupal/classy": "^1.0",
+                "drupal/devel": "5.x-dev",
+                "drupal/field_group": "3.x-dev",
+                "drupal/stable": "^2.0"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "5.0.0-alpha3",
+                    "datestamp": "1664659379",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Alpha releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Bram Goffings",
+                    "homepage": "https://www.drupal.org/user/172527",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "Kristof De Jaeger",
+                    "homepage": "http://realize.be/",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "Brecht Ceyssens",
+                    "homepage": "https://www.drupal.org/user/591438",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "swentel",
+                    "homepage": "https://www.drupal.org/user/107403"
+                }
+            ],
+            "description": "Extend the display options for every entity type.",
+            "homepage": "https://www.drupal.org/project/ds",
+            "keywords": [
+                "drupal",
+                "layout",
+                "php"
+            ],
+            "support": {
+                "source": "http://git.drupal.org/project/ds.git",
+                "issues": "https://www.drupal.org/project/issues/ds",
+                "irc": "irc://irc.freenode.org/drupal-contribute"
+            }
+        },
+        {
             "name": "drupal/entity",
             "version": "1.4.0",
             "source": {
@@ -3732,6 +3804,78 @@
             "support": {
                 "source": "https://git.drupalcode.org/project/fivestar",
                 "issues": "https://www.drupal.org/project/issues/fivestar"
+            }
+        },
+        {
+            "name": "drupal/form_mode_control",
+            "version": "2.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/form_mode_control.git",
+                "reference": "8.x-2.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/form_mode_control-8.x-2.1.zip",
+                "reference": "8.x-2.1",
+                "shasum": "5b6ee8cbc795ae269f615de6f8d13f4c33eda2b8"
+            },
+            "require": {
+                "drupal/core": "^8 || ^9 || ^10"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-2.1",
+                    "datestamp": "1659299482",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Dakwamine",
+                    "homepage": "https://www.drupal.org/user/3517785"
+                },
+                {
+                    "name": "eme",
+                    "homepage": "https://www.drupal.org/user/542492"
+                },
+                {
+                    "name": "Flodevelop",
+                    "homepage": "https://www.drupal.org/user/735818"
+                },
+                {
+                    "name": "mandclu",
+                    "homepage": "https://www.drupal.org/user/52136"
+                },
+                {
+                    "name": "matio89",
+                    "homepage": "https://www.drupal.org/user/2320090"
+                },
+                {
+                    "name": "mh.marouan",
+                    "homepage": "https://www.drupal.org/user/3203501"
+                },
+                {
+                    "name": "MichaelB",
+                    "homepage": "https://www.drupal.org/user/2309046"
+                },
+                {
+                    "name": "snake_plissken",
+                    "homepage": "https://www.drupal.org/user/3624793"
+                }
+            ],
+            "description": "Allow you to use the form modes per role and per bundle / Entity.",
+            "homepage": "https://www.drupal.org/project/form_mode_control",
+            "support": {
+                "source": "https://git.drupalcode.org/project/form_mode_control"
             }
         },
         {
@@ -5129,6 +5273,58 @@
             }
         },
         {
+            "name": "drupal/popup_field_group",
+            "version": "1.7.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/popup_field_group.git",
+                "reference": "8.x-1.7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/popup_field_group-8.x-1.7.zip",
+                "reference": "8.x-1.7",
+                "shasum": "f224697e74261c1ea5d9926ff593f00117739499"
+            },
+            "require": {
+                "drupal/core": "^8 || ^9.0",
+                "drupal/field_group": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-1.7",
+                    "datestamp": "1636535396",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Anton Ivanov",
+                    "homepage": "https://www.drupal.org/u/antonnavi",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "James Silver",
+                    "homepage": "https://www.drupal.org/u/jamsilver",
+                    "role": "Maintainer"
+                }
+            ],
+            "description": "Adds a new field group option 'popup' which puts its children in a simple popup.",
+            "homepage": "https://www.drupal.org/project/popup_field_group",
+            "support": {
+                "source": "https://git.drupalcode.org/project/popup_field_group",
+                "issues": "https://www.drupal.org/project/issues/popup_field_group"
+            }
+        },
+        {
             "name": "drupal/profile",
             "version": "1.7.0",
             "source": {
@@ -5285,6 +5481,58 @@
             "homepage": "https://www.drupal.org/project/readonly_field_widget",
             "support": {
                 "source": "https://git.drupalcode.org/project/readonly_field_widget"
+            }
+        },
+        {
+            "name": "drupal/redirect",
+            "version": "1.8.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/redirect.git",
+                "reference": "8.x-1.8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/redirect-8.x-1.8.zip",
+                "reference": "8.x-1.8",
+                "shasum": "a7a440423434472ff7115ae69df01553f763f839"
+            },
+            "require": {
+                "drupal/core": "^9.2 || ^10"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-1.8",
+                    "datestamp": "1661806955",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Berdir",
+                    "homepage": "https://www.drupal.org/user/214652"
+                },
+                {
+                    "name": "Dave Reid",
+                    "homepage": "https://www.drupal.org/user/53892"
+                },
+                {
+                    "name": "pifagor",
+                    "homepage": "https://www.drupal.org/user/2375692"
+                }
+            ],
+            "description": "Allows users to redirect from old URLs to new URLs.",
+            "homepage": "https://www.drupal.org/project/redirect",
+            "support": {
+                "source": "https://git.drupalcode.org/project/redirect"
             }
         },
         {
@@ -13200,6 +13448,7 @@
         "drupal/calendar": 15,
         "drupal/computed_field": 15,
         "drupal/date_recur_modular": 5,
+        "drupal/ds": 15,
         "drupal/entity_usage": 10,
         "drupal/field_validation": 10,
         "drupal/filefield_paths": 10,

@@ -4,9 +4,11 @@ status: true
 dependencies:
   config:
     - field.field.node.page.body
+    - field.field.node.page.field_iframe_incrustado
     - node.type.page
   module:
     - field_layout
+    - iframe
     - layout_builder
     - layout_discovery
     - text
@@ -49,6 +51,28 @@ third_party_settings:
                 entity: layout_builder.entity
             weight: 1
             additional: {  }
+          3f1e81ab-4a56-41dc-b5cc-5e06ee57b06f:
+            uuid: 3f1e81ab-4a56-41dc-b5cc-5e06ee57b06f
+            region: content
+            configuration:
+              id: 'field_block:node:page:field_iframe_incrustado'
+              label: 'Iframe incrustado'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: iframe_default
+                label: hidden
+                settings: {  }
+                third_party_settings:
+                  field_formatter_class:
+                    class: ''
+            weight: 2
+            additional:
+              layout_builder_styles_style:
+                separacion_superior_mt_5: 0
         third_party_settings: {  }
 _core:
   default_config_hash: M_Y8L5tfmhx7DR143E05YyZSpvgil6VFvqcfBWykalg
@@ -63,6 +87,24 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 100
+    region: content
+  field_iframe_incrustado:
+    type: iframe_default
+    label: above
+    settings:
+      url: ''
+      title: ''
+      headerlevel: '3'
+      class: ''
+      frameborder: '0'
+      scrolling: ''
+      transparency: '0'
+      allowfullscreen: '0'
+      tokensupport: '0'
+      width: ''
+      height: ''
+    third_party_settings: {  }
+    weight: 102
     region: content
   links:
     settings: {  }

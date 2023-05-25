@@ -14,12 +14,33 @@
 #}
 {% set attributes = attributes.addClass('site-branding') %}
 {% if site_logo or site_name %}
-  <a href="{{ path('<front>') }}" title="{{ 'Home'|t }}" rel="home" class="navbar-brand">
-    {% if site_logo %}
-      <img src="{{ site_logo }}" alt="{{ 'Home'|t }}" class="img-fluid d-inline-block align-top" />
-    {% endif %}
-    <span class="ml-2 d-none d-md-inline">{{ site_name }}</span>
-  </a>
- <a href="" class="d-xl-none d-xll-none probar-ahora nav-link nav-link-">Probar</a>
+  {# obtener el rol del usuario actual y buscar el rol profesor, despues comprobar el rol de padre, despues el de hijo #}
+  {% set roles = user.getroles(TRUE) %}
+  {# Buscar en la variable roles si exite el item profesor #}
+  {% if rol == 'hijo' %}
+    <a href="/hijo" title="{{ 'Home'|t }}" rel="home" class="navbar-brand">
+      {% if site_logo %}
+        <img src="{{ site_logo }}" alt="{{ 'Home'|t }}" class="img-fluid d-inline-block align-top" />
+      {% endif %}
+      <span class="ml-2 d-none d-md-inline">{{ site_name }}</span>
+    </a>
+  {% endif %}
+  {% if 'profesor' in user.getroles(TRUE)  %}
+    <a href="/profesor" title="{{ 'Home'|t }}" rel="home" class="navbar-brand">
+      {% if site_logo %}
+        <img src="{{ site_logo }}" alt="{{ 'Home'|t }}" class="img-fluid d-inline-block align-top" />
+      {% endif %}
+      <span class="ml-2 d-none d-md-inline">{{ site_name }}</span>
+    </a>
+  {% endif %}
+  {% if 'padre' in user.getroles(TRUE)  %}
+    <a href="/padres" title="{{ 'Home'|t }}" rel="home" class="navbar-brand">
+      {% if site_logo %}
+        <img src="{{ site_logo }}" alt="{{ 'Home'|t }}" class="img-fluid d-inline-block align-top" />
+      {% endif %}
+      <span class="ml-2 d-none d-md-inline">{{ site_name }}</span>
+    </a>
+  {% endif %}
+
 {% endif %}
 

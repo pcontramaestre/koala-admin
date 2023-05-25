@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.user.compact
+    - field.field.user.user.field_apodo
     - field.field.user.user.field_avatar
     - field.field.user.user.field_celular
     - field.field.user.user.field_direccion
@@ -12,6 +13,8 @@ dependencies:
     - field.field.user.user.field_nombres_y_apellidos_del_pr
     - field.field.user.user.field_padre
     - field.field.user.user.field_pais
+    - field.field.user.user.field_tu_presentacion
+    - field.field.user.user.field_tu_video_
     - field.field.user.user.user_picture
     - image.style.thumbnail
   module:
@@ -72,6 +75,7 @@ content:
     weight: 0
     region: content
 hidden:
+  field_apodo: true
   field_avatar: true
   field_celular: true
   field_direccion: true
@@ -80,6 +84,8 @@ hidden:
   field_nombres_y_apellidos_del_pr: true
   field_padre: true
   field_pais: true
+  field_tu_presentacion: true
+  field_tu_video_: true
   langcode: true
   mail: true
   member_for: true
