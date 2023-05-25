@@ -1,6 +1,6 @@
 uuid: 7466c35d-f3db-4b57-8e31-45ccea21ab11
 langcode: es
-status: true
+status: false
 dependencies: {  }
 id: redirigir_al_home_de_padres
 label: 'Redirigir al home de padres'

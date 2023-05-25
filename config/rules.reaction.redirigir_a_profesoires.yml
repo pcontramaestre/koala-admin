@@ -1,0 +1,56 @@
+uuid: 6febc83b-5b92-413e-981c-919af59e57d6
+langcode: es
+status: false
+dependencies: {  }
+id: redirigir_a_profesoires
+label: 'Redirigir a profesoires'
+events:
+  -
+    event_name: rules_user_login
+description: ''
+tags: {  }
+config_version: '3'
+expression:
+  id: rules_rule
+  uuid: a6aa1c2e-c653-4860-a816-e19adaa26afd
+  weight: 0
+  conditions:
+    id: rules_and
+    uuid: e026a95c-0554-40c6-befa-77ee766a4d10
+    weight: 0
+    conditions:
+      -
+        id: rules_condition
+        uuid: 38c611ba-f4ea-4435-9c7c-0c10bb52a41f
+        weight: 0
+        condition_id: rules_user_has_role
+        negate: false
+        context_values:
+          roles:
+            - profesor
+          operation: AND
+        context_mapping:
+          user: '@user.current_user_context:current_user'
+        context_processors:
+          roles:
+            rules_tokens: {  }
+          operation:
+            rules_tokens: {  }
+        provides_mapping: {  }
+  actions:
+    id: rules_action_set
+    uuid: faabf6a3-1416-4ff9-a94a-22242b904216
+    weight: 0
+    actions:
+      -
+        id: rules_action
+        uuid: 62cf76e3-8e26-4414-8486-40816993c8a4
+        weight: 0
+        action_id: rules_page_redirect
+        context_values:
+          url: /profesor
+        context_mapping: {  }
+        context_processors:
+          url:
+            rules_tokens: {  }
+        provides_mapping: {  }

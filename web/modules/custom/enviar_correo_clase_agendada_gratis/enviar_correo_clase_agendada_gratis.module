@@ -129,7 +129,10 @@ function enviar_correo_clase_agendada_gratis_mail($key, &$message, $params) {
     case 'enviar_correo':
       $message['subject'] = $params['subject'];
       $message['body'][] = $params['message'];
-      $message['params']['attachments'] = $params['attachments'];
+      $message['headers'] = $params['headers'];
+      $message['attachments'] = $params['attachments'];
+      
+
       break;
   }
 }

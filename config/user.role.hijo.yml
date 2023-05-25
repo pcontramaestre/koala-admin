@@ -6,6 +6,7 @@ dependencies:
     - date_recur_modular
     - field_permissions
     - fivestar
+    - node_view_permissions
     - user_view_mode
 third_party_settings:
   user_view_mode:
@@ -18,4 +19,8 @@ is_admin: null
 permissions:
   - 'date_recur_modular use sierra form'
   - 'rate content'
+  - 'view any page content'
+  - 'view own article content'
+  - 'view own field_apodo'
   - 'view own field_nombres_y_apellidos_del_pr'
+  - 'view own field_tu_presentacion'

@@ -1,0 +1,12 @@
+uuid: e12e7d4e-996c-43a3-884a-5f9c10a5d565
+langcode: es
+status: true
+dependencies: {  }
+id: profesor
+label: Profesor
+description: ''
+use_admin_theme: false
+path: /profesor
+access_logic: and
+access_conditions: {  }
+parameters: {  }

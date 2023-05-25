@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_form_mode.user.editar_profesor
+    - field.field.user.user.field_apodo
     - field.field.user.user.field_avatar
     - field.field.user.user.field_celular
     - field.field.user.user.field_direccion
@@ -12,21 +13,95 @@ dependencies:
     - field.field.user.user.field_nombres_y_apellidos_del_pr
     - field.field.user.user.field_padre
     - field.field.user.user.field_pais
+    - field.field.user.user.field_tu_presentacion
+    - field.field.user.user.field_tu_video_
     - field.field.user.user.user_picture
     - image.style.thumbnail
   module:
     - chosen_field
+    - field_group
     - field_layout
-    - layout_builder
-    - path
+    - layout_discovery
+    - media_library
     - svg_image
+    - text
     - user
 third_party_settings:
   field_layout:
-    id: layout_twocol_section
+    id: layout_onecol
     settings:
       label: ''
-      column_widths: 50-50
+  field_group:
+    group_columnas:
+      children:
+        - group_tus_datos
+        - group_tu_presentacion
+        - group_tu_ubicacion
+      label: Columnas
+      region: content
+      parent_name: ''
+      weight: 0
+      format_type: tabs
+      format_settings:
+        classes: ''
+        show_empty_fields: true
+        id: ''
+        direction: horizontal
+        width_breakpoint: 640
+    group_tus_datos:
+      children:
+        - field_nombres_y_apellidos_del_pr
+        - field_apodo
+        - account
+        - user_picture
+        - field_avatar
+      label: 'Tus datos'
+      region: content
+      parent_name: group_columnas
+      weight: 20
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: true
+        id: ''
+        formatter: open
+        description: ''
+        required_fields: true
+    group_tu_presentacion:
+      children:
+        - field_tu_presentacion
+        - field_tu_video_
+      label: 'Tu presentación'
+      region: content
+      parent_name: group_columnas
+      weight: 21
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: true
+        id: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+    group_tu_ubicacion:
+      children:
+        - field_celular
+        - field_pais
+        - field_direccion
+        - language
+        - timezone
+      label: 'Tu ubicación'
+      region: content
+      parent_name: group_columnas
+      weight: 22
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: true
+        id: ''
+        formatter: closed
+        description: ''
+        required_fields: true
 _core:
   default_config_hash: FaQ9Ptcpxpg30AtiqRDtl_8zbJArHP1LPfug_s59TOA
 id: user.user.editar_profesor
@@ -35,93 +110,92 @@ bundle: user
 mode: editar_profesor
 content:
   account:
-    weight: 1
-    region: first
+    weight: 3
+    region: content
     settings: {  }
     third_party_settings: {  }
-  contact:
-    weight: 4
-    region: first
+  field_apodo:
+    type: string_textfield
+    weight: 2
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_avatar:
+    type: options_buttons
+    weight: 5
+    region: content
     settings: {  }
     third_party_settings: {  }
   field_celular:
     type: string_textfield
-    weight: 7
-    region: first
+    weight: 10
+    region: content
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
   field_direccion:
     type: string_textarea
-    weight: 35
-    region: first
+    weight: 13
+    region: content
     settings:
       rows: 5
       placeholder: ''
     third_party_settings: {  }
-  field_nombre_del_acudiente:
+  field_nombres_y_apellidos_del_pr:
     type: string_textfield
-    weight: 0
-    region: first
+    weight: 1
+    region: content
     settings:
-      size: 60
-      placeholder: 'Nombre del acudiente'
-    third_party_settings: {  }
-  field_nombre_del_hijo:
-    type: string_textfield
-    weight: 32
-    region: first
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  field_padre:
-    type: entity_reference_autocomplete
-    weight: 33
-    region: first
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
       size: 60
       placeholder: ''
     third_party_settings: {  }
   field_pais:
     type: chosen_select
-    weight: 34
-    region: first
+    weight: 12
+    region: content
     settings: {  }
+    third_party_settings: {  }
+  field_tu_presentacion:
+    type: text_textarea
+    weight: 9
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_tu_video_:
+    type: media_library_widget
+    weight: 10
+    region: content
+    settings:
+      media_types: {  }
     third_party_settings: {  }
   language:
-    weight: 3
-    region: first
-    settings: {  }
-    third_party_settings: {  }
-  path:
-    type: path
-    weight: 30
-    region: first
+    weight: 14
+    region: content
     settings: {  }
     third_party_settings: {  }
   timezone:
-    weight: 5
-    region: first
-    settings: {  }
-    third_party_settings: {  }
-  translation:
-    weight: 6
-    region: first
+    weight: 15
+    region: content
     settings: {  }
     third_party_settings: {  }
   user_picture:
     type: image_image
-    weight: 2
-    region: first
+    weight: 4
+    region: content
     settings:
       progress_indicator: throbber
       preview_image_style: thumbnail
     third_party_settings: {  }
 hidden:
-  field_avatar: true
-  field_nombres_y_apellidos_del_pr: true
+  contact: true
+  field_nombre_del_acudiente: true
+  field_nombre_del_hijo: true
+  field_padre: true
   langcode: true
+  path: true
+  translation: true

@@ -1,0 +1,59 @@
+{#
+/**
+ * @file
+ * Default theme implementation for a three-column layout.
+ *
+ * Available variables:
+ * - in_preview: Whether the plugin is being rendered in preview mode.
+ * - content: The content for this layout.
+ * - attributes: HTML attributes for the layout <div>.
+ *
+ * @ingroup themeable
+ */
+#}
+{% if content %}
+  <div{{ attributes.addClass(classes) }}>
+
+    {% if content.first %}
+      <div {{ region_attributes.first.addClass('layout__region', 'layout__region--first') }}>
+        <h1>Tus datos personales</h1>
+                {#
+          Agregar el campo "field_avatar"
+        #}
+        {% if node.field_avatar %}
+          <div class="field-avatar">
+            {{ content.field_avatar }}
+          </div>
+        {% endif %}
+
+        {#
+          Agregar el campo "field_celular"
+        #}
+        {% if node.field_celular %}
+          <div class="field-celular">
+            {{ content.field_celular }}
+          </div>
+        {% endif %}
+        
+        {{ content.first }}
+        {#
+          Mostrar el campo field_avatar
+        #}
+
+               
+      </div>
+    {% endif %}
+
+    {% if content.second %}
+      <div {{ region_attributes.second.addClass('layout__region', 'layout__region--second') }}>
+        {{ content.second }}
+      </div>
+    {% endif %}
+
+    {% if content.third %}
+      <div {{ region_attributes.third.addClass('layout__region', 'layout__region--third') }}>
+        {{ content.third }}
+      </div>
+    {% endif %}
+  </div>
+{% endif %}

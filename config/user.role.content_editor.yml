@@ -19,6 +19,7 @@ dependencies:
     - form_mode_manager
     - media
     - node
+    - node_view_permissions
     - path
     - system
     - taxonomy
@@ -40,8 +41,11 @@ permissions:
   - 'administer url aliases'
   - 'create article content'
   - 'create avatares_profesores media'
+  - 'create field_apodo'
   - 'create field_avatar'
   - 'create field_nombres_y_apellidos_del_pr'
+  - 'create field_tu_presentacion'
+  - 'create field_tu_video_'
   - 'create page content'
   - 'create terms in avatar_profesor'
   - 'create terms in tags'
@@ -55,13 +59,19 @@ permissions:
   - 'delete page revisions'
   - 'delete terms in avatar_profesor'
   - 'edit any avatares_profesores media'
+  - 'edit field_apodo'
   - 'edit field_avatar'
   - 'edit field_nombres_y_apellidos_del_pr'
+  - 'edit field_tu_presentacion'
+  - 'edit field_tu_video_'
   - 'edit own article content'
   - 'edit own avatares_profesores media'
   - 'edit own comments'
+  - 'edit own field_apodo'
   - 'edit own field_avatar'
   - 'edit own field_nombres_y_apellidos_del_pr'
+  - 'edit own field_tu_presentacion'
+  - 'edit own field_tu_video_'
   - 'edit own page content'
   - 'edit terms in avatar_profesor'
   - 'edit terms in tags'
@@ -78,7 +88,12 @@ permissions:
   - 'use user.registro_de_hijos form mode'
   - 'use user.registro_de_profesores form mode'
   - 'view all revisions'
+  - 'view any page content'
+  - 'view field_tu_presentacion'
+  - 'view own article content'
+  - 'view own field_apodo'
   - 'view own field_avatar'
   - 'view own field_nombres_y_apellidos_del_pr'
+  - 'view own field_tu_presentacion'
   - 'view own unpublished content'
   - 'view the administration theme'
