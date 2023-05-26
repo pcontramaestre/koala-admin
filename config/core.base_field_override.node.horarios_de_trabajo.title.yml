@@ -1,0 +1,18 @@
+uuid: 1947f02f-e6e7-422c-968e-5a337a172a35
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.horarios_de_trabajo
+id: node.horarios_de_trabajo.title
+field_name: title
+entity_type: node
+bundle: horarios_de_trabajo
+label: 'Título de referencia (No se muestra en la página)'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

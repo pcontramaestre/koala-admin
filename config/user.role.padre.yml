@@ -10,6 +10,7 @@ dependencies:
     - date_recur_modular
     - field_permissions
     - fivestar
+    - form_mode_control
     - form_mode_manager
     - node
     - node_view_permissions
@@ -20,6 +21,7 @@ weight: 5
 is_admin: null
 permissions:
   - 'access user profiles'
+  - access_all_form_modes
   - 'create agendar_clase content'
   - 'create crear_hijos content'
   - 'date_recur_modular use sierra form'
@@ -37,7 +39,9 @@ permissions:
   - 'use user.default form mode'
   - 'use user.editar_perfil_padre form mode'
   - 'use user.registro_de_hijos form mode'
+  - 'view any horarios_de_trabajo content'
   - 'view any page content'
+  - 'view any profesores content'
   - 'view crear_hijos revisions'
   - 'view home_padres config page entity'
   - 'view own agendar_clase content'
@@ -46,4 +50,5 @@ permissions:
   - 'view own field_apodo'
   - 'view own field_nombres_y_apellidos_del_pr'
   - 'view own field_tu_presentacion'
+  - 'view own horarios_de_trabajo content'
   - 'view user email addresses'

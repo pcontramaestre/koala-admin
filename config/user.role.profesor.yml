@@ -10,6 +10,7 @@ dependencies:
     - media.type.image
     - media.type.remote_video
     - media.type.video
+    - node.type.horarios_de_trabajo
     - node.type.profesores
   module:
     - comment
@@ -19,6 +20,7 @@ dependencies:
     - field_permissions
     - filter
     - fivestar
+    - form_mode_control
     - form_mode_manager
     - media
     - node
@@ -32,6 +34,7 @@ permissions:
   - 'access site-wide contact form'
   - 'access user contact forms'
   - 'access user profiles'
+  - access_all_form_modes
   - 'create audio media'
   - 'create document media'
   - 'create field_apodo'
@@ -39,6 +42,7 @@ permissions:
   - 'create field_nombres_y_apellidos_del_pr'
   - 'create field_tu_presentacion'
   - 'create field_tu_video_'
+  - 'create horarios_de_trabajo content'
   - 'create image media'
   - 'create media'
   - 'create remote_video media'
@@ -46,6 +50,7 @@ permissions:
   - 'date_recur_modular use sierra form'
   - 'delete own audio media'
   - 'delete own document media'
+  - 'delete own horarios_de_trabajo content'
   - 'delete own image media'
   - 'delete own remote_video media'
   - 'delete own video media'
@@ -57,6 +62,7 @@ permissions:
   - 'edit own field_nombres_y_apellidos_del_pr'
   - 'edit own field_tu_presentacion'
   - 'edit own field_tu_video_'
+  - 'edit own horarios_de_trabajo content'
   - 'edit own image media'
   - 'edit own profesores content'
   - 'edit own remote_video media'
@@ -65,11 +71,15 @@ permissions:
   - 'rate content'
   - 'translate profesores node'
   - 'update media'
+  - 'use  The form mode default linked to  node entity( horarios_de_trabajo )'
+  - 'use  The form mode editar_horarios linked to  node entity( horarios_de_trabajo )'
+  - 'use node.editar_horarios form mode'
   - 'use text format basic_html'
   - 'use text format restricted_html'
   - 'use user.default form mode'
   - 'use user.editar_profesor form mode'
   - 'use user.registro_de_profesores form mode'
+  - 'view any horarios_de_trabajo content'
   - 'view any page content'
   - 'view media'
   - 'view own article content'
@@ -77,5 +87,6 @@ permissions:
   - 'view own field_avatar'
   - 'view own field_nombres_y_apellidos_del_pr'
   - 'view own field_tu_presentacion'
+  - 'view own horarios_de_trabajo content'
   - 'view own profesores content'
   - 'view user email addresses'

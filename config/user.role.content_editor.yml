@@ -5,6 +5,7 @@ dependencies:
   config:
     - media.type.avatares_profesores
     - node.type.article
+    - node.type.horarios_de_trabajo
     - node.type.page
     - taxonomy.vocabulary.avatar_profesor
     - taxonomy.vocabulary.tags
@@ -16,6 +17,7 @@ dependencies:
     - field_permissions
     - file
     - fivestar
+    - form_mode_control
     - form_mode_manager
     - media
     - node
@@ -38,6 +40,7 @@ permissions:
   - 'access files overview'
   - 'access toolbar'
   - 'access tour'
+  - access_all_form_modes
   - 'administer url aliases'
   - 'create article content'
   - 'create avatares_profesores media'
@@ -46,19 +49,24 @@ permissions:
   - 'create field_nombres_y_apellidos_del_pr'
   - 'create field_tu_presentacion'
   - 'create field_tu_video_'
+  - 'create horarios_de_trabajo content'
   - 'create page content'
   - 'create terms in avatar_profesor'
   - 'create terms in tags'
   - 'create url aliases'
   - 'date_recur_modular use sierra form'
   - 'delete any avatares_profesores media'
+  - 'delete any horarios_de_trabajo content'
   - 'delete article revisions'
+  - 'delete horarios_de_trabajo revisions'
   - 'delete own article content'
   - 'delete own avatares_profesores media'
+  - 'delete own horarios_de_trabajo content'
   - 'delete own page content'
   - 'delete page revisions'
   - 'delete terms in avatar_profesor'
   - 'edit any avatares_profesores media'
+  - 'edit any horarios_de_trabajo content'
   - 'edit field_apodo'
   - 'edit field_avatar'
   - 'edit field_nombres_y_apellidos_del_pr'
@@ -72,15 +80,20 @@ permissions:
   - 'edit own field_nombres_y_apellidos_del_pr'
   - 'edit own field_tu_presentacion'
   - 'edit own field_tu_video_'
+  - 'edit own horarios_de_trabajo content'
   - 'edit own page content'
   - 'edit terms in avatar_profesor'
   - 'edit terms in tags'
   - 'rate content'
   - 'revert all revisions'
+  - 'revert horarios_de_trabajo revisions'
   - 'translate avatar_profesor taxonomy_term'
+  - 'use  The form mode default linked to  node entity( horarios_de_trabajo )'
+  - 'use  The form mode editar_horarios linked to  node entity( horarios_de_trabajo )'
   - 'use node.agendar_clases form mode'
   - 'use node.crear_koalas form mode'
   - 'use node.editar_agendar_clase_gratis form mode'
+  - 'use node.editar_horarios form mode'
   - 'use user.default form mode'
   - 'use user.editar_perfil_padre form mode'
   - 'use user.editar_profesor form mode'
@@ -88,12 +101,23 @@ permissions:
   - 'use user.registro_de_hijos form mode'
   - 'use user.registro_de_profesores form mode'
   - 'view all revisions'
+  - 'view any agendar_clase content'
+  - 'view any article content'
+  - 'view any crear_hijos content'
+  - 'view any horarios_de_trabajo content'
   - 'view any page content'
+  - 'view any profesores content'
   - 'view field_tu_presentacion'
+  - 'view horarios_de_trabajo revisions'
+  - 'view own agendar_clase content'
   - 'view own article content'
+  - 'view own crear_hijos content'
   - 'view own field_apodo'
   - 'view own field_avatar'
   - 'view own field_nombres_y_apellidos_del_pr'
   - 'view own field_tu_presentacion'
+  - 'view own horarios_de_trabajo content'
+  - 'view own page content'
+  - 'view own profesores content'
   - 'view own unpublished content'
   - 'view the administration theme'

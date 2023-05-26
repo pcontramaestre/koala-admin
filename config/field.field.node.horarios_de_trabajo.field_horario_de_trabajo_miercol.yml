@@ -1,0 +1,331 @@
+uuid: cfe9bcde-d968-4b68-a04e-332bb4cbefdf
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_horario_de_trabajo_miercol
+    - node.type.horarios_de_trabajo
+  module:
+    - double_field
+    - field_display_label
+third_party_settings:
+  field_display_label:
+    display_label: Miércoles
+id: node.horarios_de_trabajo.field_horario_de_trabajo_miercol
+field_name: field_horario_de_trabajo_miercol
+entity_type: node
+bundle: horarios_de_trabajo
+label: 'Horario de trabajo Miércoles'
+description: "Agregue aquí su disponibilidad horaria para los días miércoles.\r\n"
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  first:
+    label: 'Hora de inicio'
+    list: true
+    allowed_values:
+      -
+        label: '06:00am'
+        value: '06:00am'
+      -
+        label: '06:30am'
+        value: '06:30am'
+      -
+        label: '07:00am'
+        value: '07:00am'
+      -
+        label: '07:30am'
+        value: '07:30am'
+      -
+        label: '08:00am'
+        value: '08:00am'
+      -
+        label: '08:30am'
+        value: '08:30am'
+      -
+        label: '09:00am'
+        value: '09:00am'
+      -
+        label: '09:30am'
+        value: '09:30am'
+      -
+        label: '10:00am'
+        value: '10:00am'
+      -
+        label: '10:30am'
+        value: '10:30am'
+      -
+        label: '11:00am'
+        value: '11:00am'
+      -
+        label: '11:30am'
+        value: '11:30am'
+      -
+        label: '12:00pm'
+        value: '12:00pm'
+      -
+        label: '12:30pm'
+        value: '12:30pm'
+      -
+        label: '01:00pm'
+        value: '01:00pm'
+      -
+        label: '01:30pm'
+        value: '01:30pm'
+      -
+        label: '02:00pm'
+        value: '02:00pm'
+      -
+        label: '02:30pm'
+        value: '02:30pm'
+      -
+        label: '03:00pm'
+        value: '03:00pm'
+      -
+        label: '03:30pm'
+        value: '03:30pm'
+      -
+        label: '04:00pm'
+        value: '04:00pm'
+      -
+        label: '04:30pm'
+        value: '04:30pm'
+      -
+        label: '05:00pm'
+        value: '05:00pm'
+      -
+        label: '05:30pm'
+        value: '05:30pm'
+      -
+        label: '06:00pm'
+        value: '06:00pm'
+      -
+        label: '06:30pm'
+        value: '06:30pm'
+      -
+        label: '07:00pm'
+        value: '07:00pm'
+      -
+        label: '07:30pm'
+        value: '07:30pm'
+      -
+        label: '08:00pm'
+        value: '08:00pm'
+      -
+        label: '08:30pm'
+        value: '08:30pm'
+      -
+        label: '09:00pm'
+        value: '09:00pm'
+      -
+        label: '09:30pm'
+        value: '09:30pm'
+      -
+        label: '10:00pm'
+        value: '10:00pm'
+      -
+        label: '10:30pm'
+        value: '10:30pm'
+      -
+        label: '11:00pm'
+        value: '11:00pm'
+      -
+        label: '11:30pm'
+        value: '11:30pm'
+      -
+        label: '12:00am'
+        value: '12:00am'
+      -
+        label: '12:30am'
+        value: '12:30am'
+      -
+        label: '01:00am'
+        value: '01:00am'
+      -
+        label: '01:30am'
+        value: '01:30am'
+      -
+        label: '02:00am'
+        value: '02:00am'
+      -
+        label: '02:30am'
+        value: '02:30am'
+      -
+        label: '03:00am'
+        value: '03:00am'
+      -
+        label: '03:30am'
+        value: '03:30am'
+      -
+        label: '04:00am'
+        value: '04:00am'
+      -
+        label: '04:30am'
+        value: '04:30am'
+      -
+        label: '05:00am'
+        value: '05:00am'
+      -
+        label: '05:30am'
+        value: '05:30am'
+    max: null
+    min: null
+    required: true
+    on_label: Activado
+    off_label: Desactivado
+  second:
+    label: 'Hora de fin'
+    list: true
+    allowed_values:
+      -
+        label: '06:00am'
+        value: '06:00am'
+      -
+        label: '06:30am'
+        value: '06:30am'
+      -
+        label: '07:00am'
+        value: '07:00am'
+      -
+        label: '07:30am'
+        value: '07:30am'
+      -
+        label: '08:00am'
+        value: '08:00am'
+      -
+        label: '08:30am'
+        value: '08:30am'
+      -
+        label: '09:00am'
+        value: '09:00am'
+      -
+        label: '09:30am'
+        value: '09:30am'
+      -
+        label: '10:00am'
+        value: '10:00am'
+      -
+        label: '10:30am'
+        value: '10:30am'
+      -
+        label: '11:00am'
+        value: '11:00am'
+      -
+        label: '11:30am'
+        value: '11:30am'
+      -
+        label: '12:00pm'
+        value: '12:00pm'
+      -
+        label: '12:30pm'
+        value: '12:30pm'
+      -
+        label: '01:00pm'
+        value: '01:00pm'
+      -
+        label: '01:30pm'
+        value: '01:30pm'
+      -
+        label: '02:00pm'
+        value: '02:00pm'
+      -
+        label: '02:30pm'
+        value: '02:30pm'
+      -
+        label: '03:00pm'
+        value: '03:00pm'
+      -
+        label: '03:30pm'
+        value: '03:30pm'
+      -
+        label: '04:00pm'
+        value: '04:00pm'
+      -
+        label: '04:30pm'
+        value: '04:30pm'
+      -
+        label: '05:00pm'
+        value: '05:00pm'
+      -
+        label: '05:30pm'
+        value: '05:30pm'
+      -
+        label: '06:00pm'
+        value: '06:00pm'
+      -
+        label: '06:30pm'
+        value: '06:30pm'
+      -
+        label: '07:00pm'
+        value: '07:00pm'
+      -
+        label: '07:30pm'
+        value: '07:30pm'
+      -
+        label: '08:00pm'
+        value: '08:00pm'
+      -
+        label: '08:30pm'
+        value: '08:30pm'
+      -
+        label: '09:00pm'
+        value: '09:00pm'
+      -
+        label: '09:30pm'
+        value: '09:30pm'
+      -
+        label: '10:00pm'
+        value: '10:00pm'
+      -
+        label: '10:30pm'
+        value: '10:30pm'
+      -
+        label: '11:00pm'
+        value: '11:00pm'
+      -
+        label: '11:30pm'
+        value: '11:30pm'
+      -
+        label: '12:00am'
+        value: '12:00am'
+      -
+        label: '12:30am'
+        value: '12:30am'
+      -
+        label: '01:00am'
+        value: '01:00am'
+      -
+        label: '01:30am'
+        value: '01:30am'
+      -
+        label: '02:00am'
+        value: '02:00am'
+      -
+        label: '02:30am'
+        value: '02:30am'
+      -
+        label: '03:00am'
+        value: '03:00am'
+      -
+        label: '03:30am'
+        value: '03:30am'
+      -
+        label: '04:00am'
+        value: '04:00am'
+      -
+        label: '04:30am'
+        value: '04:30am'
+      -
+        label: '05:00am'
+        value: '05:00am'
+      -
+        label: '05:30am'
+        value: '05:30am'
+    max: null
+    min: null
+    required: true
+    on_label: Activado
+    off_label: Desactivado
+field_type: double_field

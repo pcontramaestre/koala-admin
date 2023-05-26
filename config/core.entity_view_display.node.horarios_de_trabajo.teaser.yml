@@ -1,0 +1,37 @@
+uuid: 4722f573-3c0e-47f7-b5e6-0ba9069c986a
+langcode: es
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.horarios_de_trabajo.field_horario_de_trabajo_domingo
+    - field.field.node.horarios_de_trabajo.field_horario_de_trabajo_jueves
+    - field.field.node.horarios_de_trabajo.field_horario_de_trabajo_lunes
+    - field.field.node.horarios_de_trabajo.field_horario_de_trabajo_martes
+    - field.field.node.horarios_de_trabajo.field_horario_de_trabajo_miercol
+    - field.field.node.horarios_de_trabajo.field_horario_de_trabajo_sabado
+    - field.field.node.horarios_de_trabajo.field_horario_de_trabajo_viernes
+    - field.field.node.horarios_de_trabajo.field_profesor
+    - node.type.horarios_de_trabajo
+  module:
+    - user
+id: node.horarios_de_trabajo.teaser
+targetEntityType: node
+bundle: horarios_de_trabajo
+mode: teaser
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_horario_de_trabajo_domingo: true
+  field_horario_de_trabajo_jueves: true
+  field_horario_de_trabajo_lunes: true
+  field_horario_de_trabajo_martes: true
+  field_horario_de_trabajo_miercol: true
+  field_horario_de_trabajo_sabado: true
+  field_horario_de_trabajo_viernes: true
+  field_profesor: true
+  langcode: true

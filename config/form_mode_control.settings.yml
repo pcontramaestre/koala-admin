@@ -28,3 +28,6 @@
 'use  The form mode default linked to  media entity( remote_video )': media.remote_video.default
 'use  The form mode default linked to  media entity( video )': media.video.default
 'use  The form mode default linked to  taxonomy_term entity( avatar_profesor )': taxonomy_term.avatar_profesor.default
+'use  The form mode default linked to  node entity( horarios_de_trabajo )': node.horarios_de_trabajo.default
+'use  The form mode administrador linked to  node entity( horarios_de_trabajo )': node.horarios_de_trabajo.administrador
+'use  The form mode editar_horarios linked to  node entity( horarios_de_trabajo )': node.horarios_de_trabajo.editar_horarios
