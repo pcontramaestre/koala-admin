@@ -1,0 +1,11 @@
+uuid: 4e083d73-b6b2-4002-b29a-94842ec5cf4c
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.horarios_de_trabajo
+id: node.horarios_de_trabajo
+target_entity_type_id: node
+target_bundle: horarios_de_trabajo
+default_langcode: site_default
+language_alterable: false

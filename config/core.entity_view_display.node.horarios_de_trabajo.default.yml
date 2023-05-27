@@ -1,0 +1,205 @@
+uuid: 7d5e033b-b90f-4eee-95e7-e5380b154e4d
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.field.node.horarios_de_trabajo.field_horario_de_trabajo_domingo
+    - field.field.node.horarios_de_trabajo.field_horario_de_trabajo_jueves
+    - field.field.node.horarios_de_trabajo.field_horario_de_trabajo_lunes
+    - field.field.node.horarios_de_trabajo.field_horario_de_trabajo_martes
+    - field.field.node.horarios_de_trabajo.field_horario_de_trabajo_miercol
+    - field.field.node.horarios_de_trabajo.field_horario_de_trabajo_sabado
+    - field.field.node.horarios_de_trabajo.field_horario_de_trabajo_viernes
+    - field.field.node.horarios_de_trabajo.field_profesor
+    - node.type.horarios_de_trabajo
+  module:
+    - double_field
+    - user
+id: node.horarios_de_trabajo.default
+targetEntityType: node
+bundle: horarios_de_trabajo
+mode: default
+content:
+  field_horario_de_trabajo_domingo:
+    type: double_field_unformatted_list
+    label: above
+    settings:
+      first:
+        format_type: medium
+        link: false
+        hidden: false
+        key: false
+        decimal_separator: .
+        thousand_separator: ''
+        scale: 2
+      second:
+        format_type: medium
+        link: false
+        hidden: false
+        key: false
+        decimal_separator: .
+        thousand_separator: ''
+        scale: 2
+      inline: true
+    third_party_settings: {  }
+    weight: 109
+    region: content
+  field_horario_de_trabajo_jueves:
+    type: double_field_unformatted_list
+    label: above
+    settings:
+      first:
+        format_type: medium
+        link: false
+        hidden: false
+        key: false
+        decimal_separator: .
+        thousand_separator: ''
+        scale: 2
+      second:
+        format_type: medium
+        link: false
+        hidden: false
+        key: false
+        decimal_separator: .
+        thousand_separator: ''
+        scale: 2
+      inline: true
+    third_party_settings: {  }
+    weight: 106
+    region: content
+  field_horario_de_trabajo_lunes:
+    type: double_field_unformatted_list
+    label: above
+    settings:
+      first:
+        format_type: medium
+        link: false
+        hidden: false
+        key: false
+        decimal_separator: .
+        thousand_separator: ''
+        scale: 2
+      second:
+        format_type: medium
+        link: false
+        hidden: false
+        key: false
+        decimal_separator: .
+        thousand_separator: ''
+        scale: 2
+      inline: true
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  field_horario_de_trabajo_martes:
+    type: double_field_unformatted_list
+    label: above
+    settings:
+      first:
+        format_type: medium
+        link: false
+        hidden: false
+        key: false
+        decimal_separator: .
+        thousand_separator: ''
+        scale: 2
+      second:
+        format_type: medium
+        link: false
+        hidden: false
+        key: false
+        decimal_separator: .
+        thousand_separator: ''
+        scale: 2
+      inline: true
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_horario_de_trabajo_miercol:
+    type: double_field_unformatted_list
+    label: above
+    settings:
+      first:
+        format_type: medium
+        link: false
+        hidden: false
+        key: false
+        decimal_separator: .
+        thousand_separator: ''
+        scale: 2
+      second:
+        format_type: medium
+        link: false
+        hidden: false
+        key: false
+        decimal_separator: .
+        thousand_separator: ''
+        scale: 2
+      inline: true
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  field_horario_de_trabajo_sabado:
+    type: double_field_unformatted_list
+    label: above
+    settings:
+      first:
+        format_type: medium
+        link: false
+        hidden: false
+        key: false
+        decimal_separator: .
+        thousand_separator: ''
+        scale: 2
+      second:
+        format_type: medium
+        link: false
+        hidden: false
+        key: false
+        decimal_separator: .
+        thousand_separator: ''
+        scale: 2
+      inline: true
+    third_party_settings: {  }
+    weight: 108
+    region: content
+  field_horario_de_trabajo_viernes:
+    type: double_field_unformatted_list
+    label: above
+    settings:
+      first:
+        format_type: medium
+        link: false
+        hidden: false
+        key: false
+        decimal_separator: .
+        thousand_separator: ''
+        scale: 2
+      second:
+        format_type: medium
+        link: false
+        hidden: false
+        key: false
+        decimal_separator: .
+        thousand_separator: ''
+        scale: 2
+      inline: true
+    third_party_settings: {  }
+    weight: 107
+    region: content
+  field_profesor:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 110
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  langcode: true

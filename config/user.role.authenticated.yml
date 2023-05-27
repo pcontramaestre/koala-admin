@@ -11,6 +11,7 @@ dependencies:
     - field_permissions
     - filter
     - fivestar
+    - form_mode_control
     - media
     - node_view_permissions
     - search
@@ -27,12 +28,14 @@ permissions:
   - 'access content'
   - 'access shortcuts'
   - 'access site-wide contact form'
+  - access_all_form_modes
   - 'date_recur_modular use sierra form'
   - 'post comments'
   - 'rate content'
   - 'search content'
   - 'skip comment approval'
   - 'use text format basic_html'
+  - 'view any horarios_de_trabajo content'
   - 'view any page content'
   - 'view field_apodo'
   - 'view field_avatar'
@@ -43,3 +46,4 @@ permissions:
   - 'view own article content'
   - 'view own field_tu_presentacion'
   - 'view own field_tu_video_'
+  - 'view own horarios_de_trabajo content'
