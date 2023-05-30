@@ -72,12 +72,6 @@
                                 align-items    : center;
                                 justify-content: center;
                               }
-
-                              label {
-                                display       : flex;
-                                flex-direction: column;
-
-                              }
                             }
                           }
                         }
@@ -243,6 +237,7 @@
                     border          : none;
                     padding-left    : 1.5rem;
                     font-size       : 1.4rem;
+                    width: 33.333%;
 
                     a {
                       color: black;

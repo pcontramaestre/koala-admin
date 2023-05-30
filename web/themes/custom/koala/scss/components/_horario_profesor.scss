@@ -1,0 +1,99 @@
+#block-koala-content {
+  .views-element-container {
+    .view-ver-horario-profesor {
+      margin-top: 2rem;
+
+      .view-content {
+        .views-field {
+          border-radius: 20px;
+          padding      : 1rem 1.5rem;
+          width        : 90%;
+          margin       : 0 auto;
+          margin-bottom: 1rem;
+
+          h2 {
+            font-weight: 700;
+            font-size  : 1.3rem;
+          }
+
+          .field-content {
+            .table-responsive {
+              table {
+                thead {
+                  border-style: none;
+                  border-color: transparent;
+                }
+
+                tbody {
+                  border-radius   : 20px !important;
+                  tr {
+                    border-style: none;
+                    border-color: transparent;
+
+                    td:nth-child(1) {
+                      border-bottom-left-radius: 20px;
+                      border-top-left-radius   : 20px;
+                    }
+
+                    td:nth-child(2) {
+                      border-bottom-right-radius: 20px;
+                      border-top-right-radius   : 20px;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        .views-field-nid {
+          .field-content {
+            a {
+              background     : #FFFFFF;
+              border         : 2px solid #297E88;
+              border-radius  : 28px;
+              color          : black !important;
+              padding        : 0.5rem 1.2rem 0.5rem 1.2rem;
+              text-decoration: none;
+              font-weight    : 700;
+              font-size      : 1.2rem;
+
+              &:hover {
+                background-color: #297E88;
+                color           : white !important;
+              }
+            }
+          }
+        }
+
+        .views-field-field-horario-de-trabajo-lunes {
+          background: $RedK100;
+        }
+
+        .views-field-field-horario-de-trabajo-martes {
+          background: $TurqK100;
+        }
+
+        .views-field-field-horario-de-trabajo-miercol {
+          background: $GreenK100;
+        }
+
+        .views-field-field-horario-de-trabajo-jueves {
+          background: $AguaK100;
+        }
+
+        .views-field-field-horario-de-trabajo-viernes {
+          background: $YellowK100;
+        }
+
+        .views-field-field-horario-de-trabajo-sabado {
+          background: $BrowmK100;
+        }
+
+        .views-field-field-horario-de-trabajo-domingo {
+          background: $AguaK100;
+        }
+      }
+    }
+  }
+}
