@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2c988ec419f5111ea02e13966dc8833e",
+    "content-hash": "84bc4ec4bec94a81ceb5c4949193fe19",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -4869,6 +4869,50 @@
             "homepage": "https://www.drupal.org/project/mailsystem",
             "support": {
                 "source": "https://git.drupalcode.org/project/mailsystem"
+            }
+        },
+        {
+            "name": "drupal/media_video_micromodal",
+            "version": "1.0.10",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/media_video_micromodal.git",
+                "reference": "1.0.10"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/media_video_micromodal-1.0.10.zip",
+                "reference": "1.0.10",
+                "shasum": "837a2bb0228a307708eb50ab6dce6de010b52dd4"
+            },
+            "require": {
+                "drupal/core": "^8 || ^9 || ^10"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "1.0.10",
+                    "datestamp": "1676060870",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "scott_earnest",
+                    "homepage": "https://www.drupal.org/user/416158"
+                }
+            ],
+            "description": "Displays core media remote videos in a modal popup using micromodal.js.",
+            "homepage": "https://www.drupal.org/project/media_video_micromodal",
+            "support": {
+                "source": "https://git.drupalcode.org/project/media_video_micromodal"
             }
         },
         {

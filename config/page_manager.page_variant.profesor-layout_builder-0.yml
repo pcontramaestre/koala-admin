@@ -3,7 +3,14 @@ langcode: es
 status: true
 dependencies:
   config:
+    - block_content.type.basic
     - page_manager.page.profesor
+    - views.view.detalle_profesor
+    - views.view.ver_horario_profesor
+  module:
+    - layout_builder
+    - layout_discovery
+    - views
 id: profesor-layout_builder-0
 label: 'Layout Builder'
 weight: 0
@@ -13,7 +20,84 @@ variant_settings:
   label: null
   weight: 0
   uuid: 83691f84-a429-42e7-9830-945762241898
-  sections: {  }
+  sections:
+    -
+      layout_id: layout_onecol
+      layout_settings:
+        label: ''
+        context_mapping: {  }
+      components: {  }
+      third_party_settings: {  }
+    -
+      layout_id: layout_twocol_section
+      layout_settings:
+        label: ''
+        context_mapping: {  }
+        column_widths: 33-67
+      components:
+        3db57daa-4885-42a6-9f19-c0ba8f99d468:
+          uuid: 3db57daa-4885-42a6-9f19-c0ba8f99d468
+          region: first
+          configuration:
+            id: 'views_block:detalle_profesor-block_1'
+            label: ''
+            label_display: '0'
+            provider: views
+            context_mapping: {  }
+            views_label: ''
+            items_per_page: none
+          weight: 0
+          additional:
+            layout_builder_styles_style:
+              separacion_superior_mt_5: 0
+        c0126bf6-b004-43f7-b309-10d8d35fd26a:
+          uuid: c0126bf6-b004-43f7-b309-10d8d35fd26a
+          region: second
+          configuration:
+            id: 'inline_block:basic'
+            label: Agenda
+            label_display: '0'
+            provider: layout_builder
+            view_mode: full
+            context_mapping: {  }
+            block_revision_id: 1
+            block_serialized: null
+          weight: 0
+          additional:
+            layout_builder_styles_style:
+              separacion_superior_mt_5: 0
+        e6cfc9eb-6367-43be-8f15-d918f3bc10a6:
+          uuid: e6cfc9eb-6367-43be-8f15-d918f3bc10a6
+          region: second
+          configuration:
+            id: 'views_block:ver_horario_profesor-block_1'
+            label: 'Mi horario'
+            label_display: visible
+            provider: views
+            context_mapping: {  }
+            views_label: 'Mi horario'
+            items_per_page: none
+          weight: 1
+          additional:
+            layout_builder_styles_style:
+              separacion_superior_mt_5: 0
+        f019aecb-513c-41e6-bb38-c51a951d06ea:
+          uuid: f019aecb-513c-41e6-bb38-c51a951d06ea
+          region: first
+          configuration:
+            id: 'inline_block:basic'
+            label: 'Mis koalas'
+            label_display: visible
+            provider: layout_builder
+            view_mode: full
+            context_mapping: {  }
+            block_revision_id: 2
+            block_serialized: null
+          weight: 1
+          additional:
+            layout_builder_styles_style:
+              separacion_superior_mt_5: separacion_superior_mt_5
+      third_party_settings: {  }
 page: profesor
 selection_criteria: {  }
 selection_logic: and
