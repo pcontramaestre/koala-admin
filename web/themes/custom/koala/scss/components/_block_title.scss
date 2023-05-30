@@ -2,7 +2,7 @@
   text-align: center;
   color     : black;
 
-  > .paragraph__column {
+  >.paragraph__column {
     padding-bottom: 0.5rem;
   }
 
@@ -14,19 +14,25 @@
 
   .field--name-field-subtitulo-de-la-seccion {
     font-weight: 500;
-    margin: 1rem 1rem 0.5rem 1rem;
+    margin     : 1rem 1rem 0.5rem 1rem;
   }
 }
-#block-koala-page-title .title{
-  font-size: 1.8rem;
-  font-weight: 700;
-  width: 90%;
-  margin: 0 auto;
-  margin-top: 1rem;
+
+#block-koala-page-title{
+  .content {
+   .title {
+     font-size  : 1.8rem;
+     font-weight: 700;
+     width      : 90%;
+     margin     : 0 auto;
+     margin-top : 1rem;
+   }
+ }
 }
-@media only screen and (max-width: 600px) and (min-width: 192px)  {
+
+@media only screen and (max-width: 600px) and (min-width: 192px) {
   .paragraph--type--titulo-y-subtitulo-de-secciones- {
-    width: 100%;
+    width : 100%;
     margin: 0 auto;
   }
 }

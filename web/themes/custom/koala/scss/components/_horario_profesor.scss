@@ -1,3 +1,4 @@
+// Horario profesor
 #block-koala-content {
   .views-element-container {
     .view-ver-horario-profesor {
@@ -25,7 +26,8 @@
                 }
 
                 tbody {
-                  border-radius   : 20px !important;
+                  border-radius: 20px !important;
+
                   tr {
                     border-style: none;
                     border-color: transparent;
@@ -92,6 +94,207 @@
 
         .views-field-field-horario-de-trabajo-domingo {
           background: $AguaK100;
+        }
+      }
+    }
+  }
+}
+
+// Editar horario profesor
+
+.node-horarios-de-trabajo-editar-horarios-form {
+  width : 90%;
+  margin: 0 auto;
+
+  .btn-primary {
+    background     : #FFFFFF;
+    border         : 2px solid #297E88;
+    border-radius  : 28px;
+    color          : black !important;
+    padding        : 0.2rem 0.7rem 0.2rem 0.7rem;
+    text-decoration: none;
+    font-weight    : 700;
+    font-size      : 1.2rem;
+    margin-top     : 0.5rem;
+
+    &:hover {
+      background-color: #297E88;
+      color           : white !important;
+    }
+  }
+  .button--danger{
+    background: #FFC2C4;
+    border: 2px solid #FF9294;
+    border-radius: 32px;
+    color: black;
+    padding: 0.3rem 0.5rem;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.2rem;
+  }
+
+  .link.tabledrag-toggle-weight {
+    font-weight  : 700;
+    border-radius: 20px;
+
+    &:hover {
+      background-color: $RedK100;
+    }
+  }
+
+  .content {
+    margin-top: 1.5rem;
+
+    .layout-region {
+      .layout--onecol {
+        .layout__region {
+          .field--name-title {
+            .js-form-item {
+              label {
+                font-weight  : 600;
+                margin-bottom: 0.5rem;
+              }
+
+              input {
+                border-radius   : 25px;
+                border          : 2px solid #BECACA;
+                background-color: white;
+                height          : 2.9rem;
+                color           : #BECACA;
+                margin-bottom   : 1rem;
+              }
+            }
+          }
+
+          .field--type-double-field {
+            .js-form-item {
+              .table-responsive {
+                border-radius: 20px;
+                padding      : 1rem 0rem 0rem 0rem;
+                border       : 2px solid #BECACA;
+                margin-bottom: 0.5rem;
+
+                .tabledrag-toggle-weight-wrapper {
+                  padding-right: 1rem;
+                }
+
+                table {
+                  thead {
+                    tr {
+                      th {
+                        h4 {
+                          font-weight: 700;
+                        }
+                      }
+
+                      .tabledrag-hide {
+                        padding-bottom: 1rem;
+                      }
+                    }
+                  }
+
+                  tbody {
+                    .draggable {
+                      .js-form-item {
+                        .double-field-elements {
+                          .double-field-subfield-form-item {
+                            label {
+                              font-weight  : 600;
+                              margin-bottom: 0.5rem;
+                            }
+
+                            .chosen-container {
+                              background-image: none;
+                              border          : none;
+                              padding         : 0;
+                              border-radius   : 32px;
+
+                              .chosen-single {
+                                height         : 48px;
+                                background     : #FFFFFF;
+                                border         : 2px solid #BECACA;
+                                border-radius  : 32px;
+                                display        : flex;
+                                flex-direction : row;
+                                justify-content: center;
+                                align-items    : center;
+                                font-weight    : 500;
+                                color          : black;
+
+                                div {
+                                  b {
+                                    background-position: -2px 11px !important;
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+
+              small {
+                font-size: 1rem;
+              }
+            }
+          }
+          .field--type-entity-reference{
+            .js-form-item{
+              label {
+                font-weight  : 600;
+                margin-bottom: 0.5rem;
+              }
+
+              .chosen-container {
+                background-image: none;
+                border          : none;
+                padding         : 0;
+                border-radius   : 32px;
+
+                .chosen-single {
+                  height         : 48px;
+                  background     : #FFFFFF;
+                  border         : 2px solid #BECACA;
+                  border-radius  : 32px;
+                  display        : flex;
+                  flex-direction : row;
+                  justify-content: center;
+                  align-items    : center;
+                  font-weight    : 500;
+                  color          : black;
+
+                  div {
+                    b {
+                      background-position: -2px 11px !important;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .layout-region-node-secondary {
+      .js-form-item {
+        .vertical-tabs {
+          border-radius: 20px;
+          border       : 2px solid #BECACA;
+          margin-top: 2rem;
+
+          .vertical-tabs__menu {
+            border: none;
+          }
+
+          .vertical-tabs__menu-item {
+            border       : none;
+            border-radius: 20px;
+          }
+
         }
       }
     }
