@@ -3,6 +3,11 @@ langcode: es
 status: true
 dependencies:
   module:
+    - date_recur_modular
+    - field_permissions
+    - fivestar
+    - form_mode_control
+    - node_view_permissions
     - user_view_mode
 third_party_settings:
   user_view_mode:
@@ -12,4 +17,15 @@ id: hijo
 label: Hijo
 weight: 7
 is_admin: null
-permissions: {  }
+permissions:
+  - access_all_form_modes
+  - 'date_recur_modular use sierra form'
+  - 'rate content'
+  - 'view any horarios_de_trabajo content'
+  - 'view any page content'
+  - 'view any profesores content'
+  - 'view own article content'
+  - 'view own field_apodo'
+  - 'view own field_nombres_y_apellidos_del_pr'
+  - 'view own field_tu_presentacion'
+  - 'view own horarios_de_trabajo content'

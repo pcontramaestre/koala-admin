@@ -1,0 +1,21 @@
+uuid: 161e89e9-58c4-4d20-97bb-cc86d3df5216
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_fecha_cita_oculta
+    - node.type.agendar_clase
+  module:
+    - datetime
+id: node.agendar_clase.field_fecha_cita_oculta
+field_name: field_fecha_cita_oculta
+entity_type: node
+bundle: agendar_clase
+label: Fecha_Cita_Oculta
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

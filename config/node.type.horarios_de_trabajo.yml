@@ -1,0 +1,17 @@
+uuid: 9c440426-7783-4ea7-9d00-3cf9a1822261
+langcode: es
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: 'Horarios de trabajo'
+type: horarios_de_trabajo
+description: ''
+help: ''
+new_revision: false
+preview_mode: 0
+display_submitted: true

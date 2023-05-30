@@ -4,11 +4,11 @@ status: true
 dependencies:
   config:
     - core.entity_form_mode.node.agendar_clases
-    - field.field.node.agendar_clase.field_fecha_cita_gratis
+    - field.field.node.agendar_clase.field_fecha_cita_oculta
     - field.field.node.agendar_clase.field_fecha_de_la_cita
     - field.field.node.agendar_clase.field_fecha_nac
     - field.field.node.agendar_clase.field_he_leido_y_estoy_de_acuerd
-    - field.field.node.agendar_clase.field_hora
+    - field.field.node.agendar_clase.field_hora_cita_oculta
     - field.field.node.agendar_clase.field_hora_clase
     - field.field.node.agendar_clase.field_nombre_del_nino_a
     - field.field.node.agendar_clase.field_sexo_n
@@ -61,15 +61,15 @@ content:
       am_text: AM
       pm_text: PM
       closeButtonText: Done
-      showNowButton: '1'
-      nowButtonText: Ahora
-      showDeselectButton: '1'
+      nowButtonText: Now
       deselectButtonText: Deselect
       myPosition: 'left top'
       atPosition: 'left bottom'
       disable_plugin: 0
       showLeadingZero: 0
       showCloseButton: 0
+      showNowButton: 0
+      showDeselectButton: 0
       showMinutesLeadingZero: true
       showHours: true
       showMinutes: true
@@ -99,8 +99,8 @@ content:
     third_party_settings: {  }
 hidden:
   created: true
-  field_fecha_cita_gratis: true
-  field_hora: true
+  field_fecha_cita_oculta: true
+  field_hora_cita_oculta: true
   langcode: true
   path: true
   promote: true

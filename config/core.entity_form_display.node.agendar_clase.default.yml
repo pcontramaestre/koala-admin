@@ -3,11 +3,11 @@ langcode: es
 status: true
 dependencies:
   config:
-    - field.field.node.agendar_clase.field_fecha_cita_gratis
+    - field.field.node.agendar_clase.field_fecha_cita_oculta
     - field.field.node.agendar_clase.field_fecha_de_la_cita
     - field.field.node.agendar_clase.field_fecha_nac
     - field.field.node.agendar_clase.field_he_leido_y_estoy_de_acuerd
-    - field.field.node.agendar_clase.field_hora
+    - field.field.node.agendar_clase.field_hora_cita_oculta
     - field.field.node.agendar_clase.field_hora_clase
     - field.field.node.agendar_clase.field_nombre_del_nino_a
     - field.field.node.agendar_clase.field_sexo_n
@@ -17,6 +17,7 @@ dependencies:
     - field_layout
     - layout_discovery
     - path
+    - time_field
     - timefield
 third_party_settings:
   field_layout:
@@ -34,13 +35,11 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_fecha_cita_gratis:
-    type: string_textfield
-    weight: 27
+  field_fecha_cita_oculta:
+    type: datetime_default
+    weight: 29
     region: content
-    settings:
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   field_fecha_de_la_cita:
     type: string_textfield
@@ -65,11 +64,13 @@ content:
     settings:
       display_label: true
     third_party_settings: {  }
-  field_hora:
-    type: datetime_default
-    weight: 10
+  field_hora_cita_oculta:
+    type: time_widget
+    weight: 30
     region: content
-    settings: {  }
+    settings:
+      enabled: false
+      step: 5
     third_party_settings: {  }
   field_hora_clase:
     type: timefield_standard_widget

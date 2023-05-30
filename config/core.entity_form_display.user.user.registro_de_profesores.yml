@@ -1,0 +1,115 @@
+uuid: b41b1fd5-c201-47f3-9095-28a7964f94a7
+langcode: es
+status: true
+dependencies:
+  config:
+    - core.entity_form_mode.user.registro_de_profesores
+    - field.field.user.user.field_apodo
+    - field.field.user.user.field_avatar
+    - field.field.user.user.field_celular
+    - field.field.user.user.field_direccion
+    - field.field.user.user.field_nombre_del_acudiente
+    - field.field.user.user.field_nombre_del_hijo
+    - field.field.user.user.field_nombres_y_apellidos_del_pr
+    - field.field.user.user.field_padre
+    - field.field.user.user.field_pais
+    - field.field.user.user.field_tu_presentacion
+    - field.field.user.user.field_tu_video_
+    - field.field.user.user.user_picture
+    - image.style.thumbnail
+  module:
+    - chosen_field
+    - field_layout
+    - layout_builder
+    - svg_image
+    - user
+third_party_settings:
+  field_layout:
+    id: layout_threecol_section
+    settings:
+      label: ''
+      column_widths: 25-50-25
+_core:
+  default_config_hash: FaQ9Ptcpxpg30AtiqRDtl_8zbJArHP1LPfug_s59TOA
+id: user.user.registro_de_profesores
+targetEntityType: user
+bundle: user
+mode: registro_de_profesores
+content:
+  account:
+    weight: 2
+    region: first
+    settings: {  }
+    third_party_settings: {  }
+  field_apodo:
+    type: string_textfield
+    weight: 1
+    region: first
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_avatar:
+    type: options_buttons
+    weight: 4
+    region: second
+    settings: {  }
+    third_party_settings: {  }
+  field_celular:
+    type: string_textfield
+    weight: 7
+    region: third
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_direccion:
+    type: string_textarea
+    weight: 9
+    region: third
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_nombres_y_apellidos_del_pr:
+    type: string_textfield
+    weight: 0
+    region: first
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_pais:
+    type: chosen_select
+    weight: 8
+    region: third
+    settings: {  }
+    third_party_settings: {  }
+  language:
+    weight: 5
+    region: second
+    settings: {  }
+    third_party_settings: {  }
+  timezone:
+    weight: 6
+    region: second
+    settings: {  }
+    third_party_settings: {  }
+  user_picture:
+    type: image_image
+    weight: 3
+    region: first
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+hidden:
+  contact: true
+  field_nombre_del_acudiente: true
+  field_nombre_del_hijo: true
+  field_padre: true
+  field_tu_presentacion: true
+  field_tu_video_: true
+  langcode: true
+  path: true
+  translation: true

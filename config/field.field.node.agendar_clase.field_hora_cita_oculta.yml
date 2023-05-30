@@ -1,0 +1,21 @@
+uuid: 24368d83-5dd9-4b46-9505-a9904c4e752b
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hora_cita_oculta
+    - node.type.agendar_clase
+  module:
+    - time_field
+id: node.agendar_clase.field_hora_cita_oculta
+field_name: field_hora_cita_oculta
+entity_type: node
+bundle: agendar_clase
+label: Hora_cita_oculta
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: time

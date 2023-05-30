@@ -1,0 +1,149 @@
+uuid: 149237a0-f34a-4c7d-a02c-e57fd7f1d427
+langcode: es
+status: true
+dependencies:
+  config:
+    - core.entity_form_mode.user.registro_basico
+    - field.field.user.user.field_apodo
+    - field.field.user.user.field_avatar
+    - field.field.user.user.field_celular
+    - field.field.user.user.field_direccion
+    - field.field.user.user.field_nombre_del_acudiente
+    - field.field.user.user.field_nombre_del_hijo
+    - field.field.user.user.field_nombres_y_apellidos_del_pr
+    - field.field.user.user.field_padre
+    - field.field.user.user.field_pais
+    - field.field.user.user.field_tu_presentacion
+    - field.field.user.user.field_tu_video_
+    - field.field.user.user.user_picture
+    - image.style.thumbnail
+  module:
+    - chosen_field
+    - field_layout
+    - layout_builder
+    - path
+    - svg_image
+    - user
+third_party_settings:
+  field_layout:
+    id: layout_twocol_section
+    settings:
+      label: ''
+      column_widths: 50-50
+_core:
+  default_config_hash: FaQ9Ptcpxpg30AtiqRDtl_8zbJArHP1LPfug_s59TOA
+id: user.user.registro_basico
+targetEntityType: user
+bundle: user
+mode: registro_basico
+content:
+  account:
+    weight: 1
+    region: first
+    settings: {  }
+    third_party_settings: {  }
+  contact:
+    weight: 4
+    region: first
+    settings: {  }
+    third_party_settings: {  }
+  field_avatar:
+    type: entity_reference_autocomplete
+    weight: 37
+    region: first
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_celular:
+    type: string_textfield
+    weight: 7
+    region: first
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_direccion:
+    type: string_textarea
+    weight: 35
+    region: first
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_nombre_del_acudiente:
+    type: string_textfield
+    weight: 0
+    region: first
+    settings:
+      size: 60
+      placeholder: 'Nombre del acudiente'
+    third_party_settings: {  }
+  field_nombre_del_hijo:
+    type: string_textfield
+    weight: 32
+    region: first
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_nombres_y_apellidos_del_pr:
+    type: string_textfield
+    weight: 36
+    region: first
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_padre:
+    type: entity_reference_autocomplete
+    weight: 33
+    region: first
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_pais:
+    type: chosen_select
+    weight: 34
+    region: first
+    settings: {  }
+    third_party_settings: {  }
+  language:
+    weight: 3
+    region: first
+    settings: {  }
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 30
+    region: first
+    settings: {  }
+    third_party_settings: {  }
+  timezone:
+    weight: 5
+    region: first
+    settings: {  }
+    third_party_settings: {  }
+  translation:
+    weight: 6
+    region: first
+    settings: {  }
+    third_party_settings: {  }
+  user_picture:
+    type: image_image
+    weight: 2
+    region: first
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+hidden:
+  field_apodo: true
+  field_tu_presentacion: true
+  field_tu_video_: true
+  langcode: true

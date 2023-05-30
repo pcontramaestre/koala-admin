@@ -1,0 +1,27 @@
+uuid: baf09600-7ab5-4ded-bffc-105352b3aae8
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.profesores
+  module:
+    - field_display_label
+    - text
+third_party_settings:
+  field_display_label:
+    display_label: Presentación
+id: node.profesores.body
+field_name: body
+entity_type: node
+bundle: profesores
+label: Presentación
+description: 'Agregue aquí una presentación de usted como profesor'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: false
+  required_summary: false
+field_type: text_with_summary

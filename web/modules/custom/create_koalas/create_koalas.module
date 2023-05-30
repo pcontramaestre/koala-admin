@@ -14,7 +14,7 @@ use Drupal\Core\StringTranslation\TranslatableMarkup;
  * Implements hook_form_FORM_ID_alter() for the node_agendar_clase_form.
  */
 function create_koalas_form_alter(&$form, FormStateInterface $form_state, $form_id) {
-  // var_dump($form_id);
+  //dump($form_id);
   // Obtener el usuario actual.
   $user = \Drupal::currentUser();
   $uid = $user->id();
@@ -27,6 +27,24 @@ function create_koalas_form_alter(&$form, FormStateInterface $form_state, $form_
   $entity_ids = $query->execute();
   $user = User::load(array_shift($entity_ids));
   $field_nombre_del_acudiente = $user->get('field_nombre_del_acudiente')->value;
+  $field_nombres_y_apellidos_del_pr = $user->get('field_nombres_y_apellidos_del_pr')->value;
+
+  // Que no se puedan editar el campo field_nombres_y_apellidos_del_pr del formulario user_editar_profesor_form pero que muestre su valor.
+  if ($form_id == 'user_editar_profesor_form') {
+    $form['field_nombres_y_apellidos_del_pr']['widget'][0]['value']['#default_value'] = $field_nombres_y_apellidos_del_pr;
+    //$form['field_nombres_y_apellidos_del_pr']['#access'] = FALSE;
+    $form['field_nombres_y_apellidos_del_pr']['widget'][0]['value']['#attributes']['readonly'] = 'readonly';
+    $form['field_nombres_y_apellidos_del_pr']['widget'][0]['value']['#attributes']['disabled'] = 'disabled';
+
+    // Deshabilitar el campo de correo electrónico.
+      $form['account']['mail']['#attributes']['readonly'] = 'readonly';
+      $form['account']['mail']['#attributes']['disabled'] = 'disabled';
+
+    $form['actions']['submit']['#value'] = new TranslatableMarkup('Actualizar perfil');
+  }
+
+
+
 
   // Comprobar que estamos agregando un nuevo nodo o editando uno existente.
   $routeMatch = \Drupal::routeMatch();
@@ -66,7 +84,7 @@ function create_koalas_form_alter(&$form, FormStateInterface $form_state, $form_
 
   // node_crear_hijos_form  and node_crear_hijos_crear_koalas_form.
   if ($form_id == 'node_crear_hijos_form' || $form_id == 'node_crear_hijos_crear_koalas_form') {
-    $form['actions']['submit']['#value'] = t('Crear hijo');
+    $form['actions']['submit']['#value'] = new TranslatableMarkup('Crear hijo');
     foreach (array_keys($form['actions']) as $action) {
       if ($action != 'preview' && isset($form['actions'][$action]['#type']) && $form['actions'][$action]['#type'] === 'submit') {
         $form['actions'][$action]['#submit'][] = 'callback_submit_crear_hijo';

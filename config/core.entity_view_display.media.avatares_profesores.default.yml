@@ -1,0 +1,36 @@
+uuid: cc12fd73-7c12-440c-8776-cadf1b7893e5
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.field.media.avatares_profesores.field_media_image
+    - image.style.large
+    - media.type.avatares_profesores
+  module:
+    - svg_image
+id: media.avatares_profesores.default
+targetEntityType: media
+bundle: avatares_profesores
+mode: default
+content:
+  field_media_image:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: large
+      image_loading:
+        attribute: lazy
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  created: true
+  langcode: true
+  name: true
+  thumbnail: true
+  uid: true

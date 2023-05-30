@@ -1,0 +1,245 @@
+#block-koala-content {
+  .content {
+    .user-editar-perfil-padre-form {
+      .layout--twocol-section {
+        width : 90%;
+        margin: 0 auto;
+
+        .layout__region--first {
+          display       : flex;
+          flex-direction: column;
+
+          padding       : 0rem 1rem 1rem 1rem;
+
+          .field--type-string {
+            .js-form-item {
+              input {
+                color        : #727F7F;
+                border       : 2px solid #BECACA;
+                border-radius: 32px;
+                height       : 3rem;
+                font-weight  : 600;
+              }
+
+              label {
+                font-weight  : 600;
+                margin-bottom: 0.5rem;
+              }
+            }
+          }
+
+          .field--name-user-picture {
+            order                     : 2;
+            background-color          : $GreyK100;
+            border-bottom-left-radius : 20px;
+            border-bottom-right-radius: 20px;
+            padding                   : 0rem 1rem 1rem 1rem;
+
+            #ajax-wrapper {
+              .js-form-item {
+                #edit-user-picture-0--label {
+                  font-weight  : 600;
+                  margin-bottom: 0.5rem;
+
+                  &:before {
+                    content: 'Subir ';
+                  }
+                }
+
+                .image-widget {
+                  height: 3.5rem;
+
+                  .image-preview {
+                    img {
+                      width : 3rem;
+                      height: 3rem;
+                    }
+                  }
+
+                  .image-widget-data {
+                    display: flex;
+                    float  : initial;
+
+                    input {
+                      background   : #D8FFFD;
+                      border       : 2px dashed #297E88;
+                      border-radius: 32px;
+                      margin-top   : 0.3rem;
+                      font-size    : 0.9rem;
+                      font-weight  : 600;
+                    }
+                  }
+                }
+
+                #edit-user-picture-0--description {
+                  display: flex;
+                }
+              }
+            }
+          }
+
+          .field--name-field-nombre-del-acudiente {
+            order                  : 1;
+            background-color       : $GreyK100;
+            border-top-left-radius : 20px;
+            border-top-right-radius: 20px;
+            margin-bottom          : 0rem !important;
+            padding                : 1rem 1rem 0rem 1rem;
+          }
+        }
+
+        .field--name-field-celular {
+          order: 3;
+        }
+      }
+
+      .layout__region--second {
+
+        padding: 0rem 1rem 1rem 1rem;
+
+        .field--name-field-pais {
+          .js-form-item {
+            margin-bottom: 0rem !important;
+
+            .chosen-container {
+              background-image: none;
+              border          : none;
+              padding         : 0;
+
+              .chosen-single {
+                height         : 48px;
+                background     : #FFFFFF;
+                border         : 2px solid #BECACA;
+                border-radius  : 32px;
+                display        : flex;
+                flex-direction : row;
+                justify-content: center;
+                align-items    : center;
+                font-weight    : 500;
+                color          : black;
+
+                div {
+                  b {
+                    background-position: -2px 11px !important;
+                  }
+                }
+              }
+            }
+
+            .chosen-container-active.chosen-with-drop.chosen-single.div {
+              b {
+                background-position: -19px 11px !important;
+              }
+            }
+          }
+        }
+
+        .field--name-field-direccion {
+          .js-form-item {
+            .form-textarea-wrapper {
+              textarea {
+                color        : black;
+                border       : 2px solid #BECACA;
+                border-radius: 32px;
+                height       : 3rem;
+
+              }
+            }
+          }
+        }
+
+        .js-form-wrapper {
+          display       : flex;
+          flex-direction: column;
+
+          .js-form-type-password-confirm {
+            font-weight  : 500;
+            font-size    : 14px;
+            margin-bottom: 0rem !important;
+          }
+
+          .js-form-item {
+            input {
+              color        : black;
+              border       : 2px solid $GreyK200;
+              border-radius: 32px;
+              height       : 3rem;
+              font-weight  : 600;
+            }
+
+            label {
+              font-weight  : 600;
+              margin-bottom: 0.5rem;
+            }
+          }
+
+          .js-form-type-password {
+            margin-bottom: 0rem !important;
+
+            .password-strength {
+              font-weight   : 500;
+              font-size     : 14px;
+              color         : grey;
+              padding-bottom: 1rem;
+              width         : 100%;
+            }
+
+            .password-confirm-message {
+              font-weight: 500;
+              font-size  : 14px;
+              color      : grey;
+            }
+
+            .description {
+              a {
+                color      : $TurqK600;
+                font-weight: 700;
+                font-size  : 16px;
+              }
+            }
+          }
+
+          .password-suggestions {
+            border-radius   : 15px;
+            background-color: grey;
+            color           : white;
+            padding         : 0.5rem 1rem;
+            font-size       : 0.9rem;
+          }
+        }
+      }
+
+      .form-actions {
+        width: 90%;
+        margin: 0 auto;
+        .button {
+          padding        : 12px 16px;
+          gap            : 16px;
+          width          : 311px;
+          height         : 51px;
+          background     : #FFFFFF;
+          border         : 2px solid #BECACA;
+          border-radius  : 32px;
+          color          : #BECACA;
+          font-weight    : 700;
+          font-size      : 20px;
+          display        : flex;
+          justify-content: center;
+          align-items    : center;
+          &:hover{
+            background-color: $TurqK500;
+            color           : white;
+          }
+        }
+      }
+      &:before {
+        content        : "Tus datos";
+        font-size      : 1.3rem;
+        font-weight    : 700;
+        display        : flex;
+        justify-content: center;
+        padding        : 3rem 0rem 1.5rem 0rem;
+      }
+    }
+  }
+}

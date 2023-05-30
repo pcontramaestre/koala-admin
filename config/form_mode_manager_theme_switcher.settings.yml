@@ -1,0 +1,18 @@
+type:
+  media_media_library: _none
+  node_agendar_clases: _none
+  node_crear_koalas: _none
+  node_editar_agendar_clase_gratis: _none
+  user_editar_perfil_padre: _none
+  user_editar_profesor: _none
+  user_registro_de_hijos: _none
+  user_registro_de_profesores: _none
+form_mode:
+  media_media_library: null
+  node_agendar_clases: null
+  node_crear_koalas: null
+  node_editar_agendar_clase_gratis: null
+  user_editar_perfil_padre: null
+  user_editar_profesor: null
+  user_registro_de_hijos: null
+  user_registro_de_profesores: null

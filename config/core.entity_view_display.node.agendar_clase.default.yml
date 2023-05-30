@@ -3,11 +3,11 @@ langcode: es
 status: true
 dependencies:
   config:
-    - field.field.node.agendar_clase.field_fecha_cita_gratis
+    - field.field.node.agendar_clase.field_fecha_cita_oculta
     - field.field.node.agendar_clase.field_fecha_de_la_cita
     - field.field.node.agendar_clase.field_fecha_nac
     - field.field.node.agendar_clase.field_he_leido_y_estoy_de_acuerd
-    - field.field.node.agendar_clase.field_hora
+    - field.field.node.agendar_clase.field_hora_cita_oculta
     - field.field.node.agendar_clase.field_hora_clase
     - field.field.node.agendar_clase.field_nombre_del_nino_a
     - field.field.node.agendar_clase.field_sexo_n
@@ -15,6 +15,7 @@ dependencies:
   module:
     - datetime
     - options
+    - time_field
     - timefield
     - user
 id: node.agendar_clase.default
@@ -22,13 +23,22 @@ targetEntityType: node
 bundle: agendar_clase
 mode: default
 content:
-  field_fecha_cita_gratis:
-    type: string
+  computed_fecha_nueva:
+    type: entity_reference_label
     label: above
     settings:
-      link_to_entity: false
+      link: true
     third_party_settings: {  }
-    weight: 107
+    weight: 109
+    region: content
+  field_fecha_cita_oculta:
+    type: datetime_default
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: medium
+    third_party_settings: {  }
+    weight: 110
     region: content
   field_fecha_de_la_cita:
     type: string
@@ -56,14 +66,13 @@ content:
     third_party_settings: {  }
     weight: 108
     region: content
-  field_hora:
-    type: datetime_default
+  field_hora_cita_oculta:
+    type: time_formatter
     label: above
     settings:
-      timezone_override: ''
-      format_type: medium
+      time_format: 'h:i a'
     third_party_settings: {  }
-    weight: 102
+    weight: 111
     region: content
   field_hora_clase:
     type: timefield_default_formatter

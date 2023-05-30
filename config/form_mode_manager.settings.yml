@@ -7,7 +7,7 @@ form_modes:
       administrador: administrador
   user:
     to_exclude:
-      register: register
+      registro_basico: registro_basico
   commerce_order_item:
     to_exclude:
       add_to_cart: add_to_cart

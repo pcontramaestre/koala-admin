@@ -19,4 +19,11 @@ roles:
     redirect_path: /padre
     hidden: 1
     form_mode_register: register
-    form_mode_edit: register
+    form_mode_edit: editar_perfil_padre
+  profesor:
+    path: /user/add/teacher
+    url: /user/register/profesor
+    redirect_path: /teacher
+    hidden: 1
+    form_mode_register: registro_de_profesores
+    form_mode_edit: editar_profesor

@@ -1,0 +1,8 @@
+uuid: 5c758eba-3c16-470c-a94b-1df26db39756
+langcode: es
+status: true
+dependencies: {  }
+name: 'Avatar Profesor'
+vid: avatar_profesor
+description: 'Avatares para profesores'
+weight: 0

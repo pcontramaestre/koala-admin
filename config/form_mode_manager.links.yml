@@ -5,7 +5,7 @@ local_tasks:
   node:
     position: primary
   user:
-    position: secondary
+    position: primary
   block_content:
     position: secondary
   comment:

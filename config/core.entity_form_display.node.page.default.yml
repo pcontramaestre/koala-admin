@@ -4,9 +4,11 @@ status: true
 dependencies:
   config:
     - field.field.node.page.body
+    - field.field.node.page.field_iframe_incrustado
     - node.type.page
   module:
     - field_layout
+    - iframe
     - layout_discovery
     - path
     - text
@@ -37,6 +39,22 @@ content:
     weight: 10
     region: content
     settings: {  }
+    third_party_settings: {  }
+  field_iframe_incrustado:
+    type: iframe_urlwidthheight
+    weight: 121
+    region: content
+    settings:
+      headerlevel: '3'
+      class: ''
+      frameborder: '0'
+      scrolling: auto
+      transparency: '0'
+      allowfullscreen: '0'
+      tokensupport: '0'
+      width: ''
+      height: ''
+      expose_class: false
     third_party_settings: {  }
   langcode:
     type: language_select
@@ -89,5 +107,10 @@ content:
       match_limit: 10
       size: 60
       placeholder: ''
+    third_party_settings: {  }
+  url_redirects:
+    weight: 50
+    region: content
+    settings: {  }
     third_party_settings: {  }
 hidden: {  }

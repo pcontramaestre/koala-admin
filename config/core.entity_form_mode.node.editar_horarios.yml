@@ -1,0 +1,10 @@
+uuid: 9dbecfb3-109a-493c-a2f5-094e46408ac9
+langcode: es
+status: true
+dependencies:
+  module:
+    - node
+id: node.editar_horarios
+label: 'Editar horarios'
+targetEntityType: node
+cache: true

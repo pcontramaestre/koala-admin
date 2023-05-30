@@ -1,0 +1,29 @@
+uuid: ffd11d92-43b1-47fa-8fe3-2e73cc197a4a
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.field.node.profesores.body
+    - node.type.profesores
+  module:
+    - text
+    - user
+id: node.profesores.default
+targetEntityType: node
+bundle: profesores
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  langcode: true

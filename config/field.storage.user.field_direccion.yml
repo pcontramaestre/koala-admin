@@ -1,0 +1,19 @@
+uuid: 4a71c237-1cb2-451a-bbcb-6d62bda16da5
+langcode: es
+status: true
+dependencies:
+  module:
+    - user
+id: user.field_direccion
+field_name: field_direccion
+entity_type: user
+type: string_long
+settings:
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

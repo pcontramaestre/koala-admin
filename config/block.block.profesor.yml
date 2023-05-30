@@ -1,0 +1,33 @@
+uuid: 017db4ab-130d-4c23-9b2f-c6937e7c352f
+langcode: es
+status: true
+dependencies:
+  config:
+    - system.menu.profesor
+  module:
+    - system
+    - user
+  theme:
+    - koala
+id: profesor
+theme: koala
+region: primary_menu
+weight: -6
+provider: null
+plugin: 'system_menu_block:profesor'
+settings:
+  id: 'system_menu_block:profesor'
+  label: Profesor
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility:
+  user_role:
+    id: user_role
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+    roles:
+      profesor: profesor

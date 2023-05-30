@@ -1,0 +1,32 @@
+uuid: 5b6f9369-7a16-4c5d-bb65-40a4610afb59
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.avatar_profesor.field_avatares_para_profesores
+    - taxonomy.vocabulary.avatar_profesor
+  module:
+    - text
+id: taxonomy_term.avatar_profesor.default
+targetEntityType: taxonomy_term
+bundle: avatar_profesor
+mode: default
+content:
+  description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_avatares_para_profesores:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  langcode: true

@@ -1,0 +1,20 @@
+uuid: 25b2059b-c101-4724-915f-d790c8ef057c
+langcode: es
+status: true
+dependencies:
+  module:
+    - datetime
+    - node
+id: node.field_fecha_cita_oculta
+field_name: field_fecha_cita_oculta
+entity_type: node
+type: datetime
+settings:
+  datetime_type: date
+module: datetime
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

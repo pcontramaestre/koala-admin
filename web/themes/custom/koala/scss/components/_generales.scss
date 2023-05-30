@@ -30,6 +30,7 @@ h2 {
 
     .navbar-brand {
       margin: 0;
+      padding-left: 2rem;
 
       img {
         max-width: 112px;
@@ -85,8 +86,11 @@ h2 {
     }
 
     #CollapsingNavbar {
+      background-color: white;
+
       .offcanvas-body {
         justify-content: space-evenly;
+
 
         #block-koala-main-menu {
           padding-top: 0.5rem;

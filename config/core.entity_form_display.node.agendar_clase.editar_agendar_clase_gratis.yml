@@ -4,17 +4,16 @@ status: false
 dependencies:
   config:
     - core.entity_form_mode.node.editar_agendar_clase_gratis
-    - field.field.node.agendar_clase.field_fecha_cita_gratis
+    - field.field.node.agendar_clase.field_fecha_cita_oculta
     - field.field.node.agendar_clase.field_fecha_de_la_cita
     - field.field.node.agendar_clase.field_fecha_nac
     - field.field.node.agendar_clase.field_he_leido_y_estoy_de_acuerd
-    - field.field.node.agendar_clase.field_hora
+    - field.field.node.agendar_clase.field_hora_cita_oculta
     - field.field.node.agendar_clase.field_hora_clase
     - field.field.node.agendar_clase.field_nombre_del_nino_a
     - field.field.node.agendar_clase.field_sexo_n
     - node.type.agendar_clase
   module:
-    - datetime
     - field_layout
     - layout_discovery
     - path
@@ -34,14 +33,6 @@ content:
     weight: 3
     region: content
     settings: {  }
-    third_party_settings: {  }
-  field_fecha_cita_gratis:
-    type: string_textfield
-    weight: 27
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
     third_party_settings: {  }
   field_fecha_de_la_cita:
     type: string_textfield
@@ -65,12 +56,6 @@ content:
     region: content
     settings:
       display_label: true
-    third_party_settings: {  }
-  field_hora:
-    type: datetime_default
-    weight: 10
-    region: content
-    settings: {  }
     third_party_settings: {  }
   field_hora_clase:
     type: timefield_standard_widget
@@ -163,4 +148,6 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  field_fecha_cita_oculta: true
+  field_hora_cita_oculta: true

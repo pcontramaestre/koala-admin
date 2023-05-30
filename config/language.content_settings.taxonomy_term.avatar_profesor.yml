@@ -1,0 +1,16 @@
+uuid: ad62dca3-a99b-4f7c-9c2a-06a5a4cf0ad2
+langcode: es
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.avatar_profesor
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+id: taxonomy_term.avatar_profesor
+target_entity_type_id: taxonomy_term
+target_bundle: avatar_profesor
+default_langcode: site_default
+language_alterable: false

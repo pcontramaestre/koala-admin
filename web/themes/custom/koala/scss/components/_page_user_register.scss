@@ -1,50 +1,188 @@
-body.simplelogin.page-user-register {
+body.page-user-register {
   #header {
     #navbar-main {
-      display: noneg;
-    }
-  }
-  .simplelogin-wrapper {
-    padding: 6% 0 0;
-
-    > .simplelogin-form {
-      width: 90% !important;
-      max-width: 1200px;
-      background: unset;
-      box-shadow: unset;
-
-      .simplelogin-logo {
+      #block-koala-main-menu {
         display: none;
       }
 
+      .navbar-brand {
+        text-align: center;
+        width     : 100%;
+      }
+    }
+  }
+
+  #block-koala-content {
+    .content {
       .title-logos {
-        > .title {
-          max-width: 70%;
-          margin: 0 auto;
+        .title {
+          h2 {
+            font-weight: 700;
+          }
         }
 
-        > .iconos {
-          max-width: 70%;
-          margin: 0 auto;
-          padding-bottom: 2rem;
+        .iconos {
+          .col-4:nth-child(1) {
+            display       : flex;
+            flex-direction: column;
+            align-items   : end;
 
-          .texto {
-            max-width: 75%;
-            margin: 0 auto;
-            line-height: 1.1;
-            padding-top: 1rem;
+            .img {
+              margin-right : 2.3rem;
+              margin-bottom: 0.5rem;
+            }
+          }
+
+          .col-4:nth-child(2) {
+            .img {
+              margin-bottom: 0.5rem;
+            }
+          }
+
+          .col-4:nth-child(3) {
+            display       : flex;
+            flex-direction: column;
+            align-items   : baseline;
+
+            .img {
+              margin-bottom: 0.5rem;
+              padding-left : 1.3rem;
+            }
+          }
+
+          .col-4 {
+            .img {
+              img {
+                width: 4rem;
+              }
+            }
+
+            .texto {
+              font-weight: 600;
+            }
           }
         }
       }
 
-      .js-form-item-field-celular-0-value, .js-form-item-field-nombre-del-acudiente-0-value {
-        > label {
-          display: none;
+      .user-register-form {
+        width     : 70%;
+        margin    : 0 auto;
+        margin-top: 2rem;
+
+        .layout--twocol-section {
+          .layout__region--first {
+            padding-right: 0.5rem;
+
+            .field--type-string {
+              .js-form-item {
+                label {
+                  display: none;
+                }
+
+                input {
+                  border-radius: 25px;
+                  border       : 2px solid $GreyK200;
+                  height       : 2.8rem;
+                  color        : $GreyK200;
+                }
+              }
+            }
+          }
+
+          .layout__region--second {
+            padding-left: 0.5rem;
+
+            .js-form-wrapper {
+              .js-form-item {
+                input {
+                  width        : 100%;
+                  border-radius: 25px;
+                  border       : 2px solid $GreyK200;
+                  height       : 2.8rem;
+                  color        : $GreyK200;
+                }
+
+                .password-suggestions {
+                  border-radius   : 15px;
+                  background-color: grey;
+                  color           : white;
+                  padding         : 0.5rem 1rem;
+                  font-size       : 0.9rem;
+                }
+
+                .js-form-type-password {
+                  .password-strength {
+                    .password-strength__title {
+                      font-size  : 0.9rem;
+                      font-weight: 600;
+                      color      : $GreyK200;
+                    }
+                  }
+
+                  .password-confirm-message {
+                    font-size  : 0.9rem;
+                    font-weight: 600;
+                    color      : $GreyK200;
+                  }
+                }
+              }
+            }
+
+
+            small {
+              display: none;
+            }
+          }
         }
       }
 
+      .form-actions {
+        button {
+          background-color: $AguaK500;
+          border          : 2px solid $TurqK500;
+          padding         : 0rem 1rem;
+          font-size       : 1.2rem;
+          font-weight     : 700;
+          height          : 3rem;
+          display         : flex;
+          justify-content : center;
+          align-items     : center;
+          flex-direction  : column;
+          margin          : 0 auto;
+          color           : black;
+          border-radius   : 25px;
+          margin-bottom   : 3rem;
+
+          &:hover {
+            background-color: $TurqK500;
+            color           : white;
+          }
+        }
+      }
     }
   }
 }
 
+@media only screen and (max-width: 640px) and (min-width: 340px) {
+  body.simplelogin.page-user-register {
+    .simplelogin-wrapper {
+      .simplelogin-form {
+        width: 100% !important;
 
+        .simplelogin-bg {
+          .block-system {
+            .content {
+              form {
+                .form-actions {
+                  button {
+                    width: 62%;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,8 @@
+uuid: 348cd36d-4aa9-4bb6-a7d0-5664a8990ac4
+langcode: es
+status: true
+dependencies: {  }
+id: profesor
+label: Profesor
+description: ''
+locked: false

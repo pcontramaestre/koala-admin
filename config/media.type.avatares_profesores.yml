@@ -1,0 +1,14 @@
+uuid: e79170b8-fddb-4ff5-b336-4fa605e2853e
+langcode: es
+status: true
+dependencies: {  }
+id: avatares_profesores
+label: 'Avatares profesores'
+description: ''
+source: image
+queue_thumbnail_downloads: false
+new_revision: false
+source_configuration:
+  source_field: field_media_image
+field_map:
+  name: name

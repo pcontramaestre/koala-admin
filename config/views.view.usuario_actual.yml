@@ -240,7 +240,7 @@ display:
           exclude: true
           alter:
             alter_text: true
-            text: '<a href="/user/{{ uid }}/edit"><img src="/themes/custom/koala/images/edit.png"></a>'
+            text: '<a href="/user/{{ uid }}/edit/editar_perfil_padre"><img src="/themes/custom/koala/images/edit.png"></a>'
             make_link: false
             path: ''
             absolute: false

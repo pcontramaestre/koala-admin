@@ -1,6 +1,6 @@
 uuid: 5e806fa3-5638-4a9b-9baf-b6a810cd3f87
 langcode: es
-status: true
+status: false
 dependencies:
   config:
     - views.view.mis_koalas

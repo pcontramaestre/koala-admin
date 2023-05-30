@@ -4,17 +4,24 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.user.token
+    - field.field.user.user.field_apodo
+    - field.field.user.user.field_avatar
     - field.field.user.user.field_celular
+    - field.field.user.user.field_direccion
     - field.field.user.user.field_nombre_del_acudiente
     - field.field.user.user.field_nombre_del_hijo
+    - field.field.user.user.field_nombres_y_apellidos_del_pr
     - field.field.user.user.field_padre
+    - field.field.user.user.field_pais
+    - field.field.user.user.field_tu_presentacion
+    - field.field.user.user.field_tu_video_
     - field.field.user.user.user_picture
     - image.style.thumbnail
   module:
     - field_layout
-    - image
     - layout_builder
     - show_email
+    - svg_image
     - user
 third_party_settings:
   field_layout:
@@ -96,4 +103,11 @@ content:
     weight: 0
     region: content
 hidden:
+  field_apodo: true
+  field_avatar: true
+  field_direccion: true
+  field_nombres_y_apellidos_del_pr: true
+  field_pais: true
+  field_tu_presentacion: true
+  field_tu_video_: true
   langcode: true

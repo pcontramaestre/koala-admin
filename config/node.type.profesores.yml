@@ -1,0 +1,17 @@
+uuid: e01643e5-4bdf-4f65-a496-971474ce73d1
+langcode: es
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Profesores
+type: profesores
+description: 'Agregar nuevo profesor'
+help: ''
+new_revision: false
+preview_mode: 0
+display_submitted: true

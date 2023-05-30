@@ -1,0 +1,28 @@
+# Spanish translation of Views Extras (Session/Cookie/Token Support) (2.0.0-alpha1)
+# Copyright (c) 2022 by the Spanish translation team
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Views Extras (Session/Cookie/Token Support) (2.0.0-alpha1)\n"
+"POT-Creation-Date: 2022-06-18 09:54+0000\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Language-Team: Spanish\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+
+msgid "Views"
+msgstr "Vistas"
+msgid "Display"
+msgstr "Presentación"
+msgid ""
+"You may use HTML code in this field. The following tokens are "
+"supported:"
+msgstr ""
+"Puede usar código HTML en este campo. Se admiten los siguientes "
+"tokens:"
+msgid "Shows result summary, for example the items per page."
+msgstr "Muestra el resumen de resultados, por ejemplo los items por página"
+msgid "Displaying @start - @end of @total"
+msgstr "Mostrando @start - @end de @total"

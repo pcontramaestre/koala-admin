@@ -6,6 +6,9 @@
  */
 
 use Drupal\Core\Form\FormStateInterface;
+use \Drupal\Core\StringTranslation\TranslatableMarkup;
+
+
 
 /**
  * Implements hook_form_system_theme_settings_alter() for settings form.
@@ -14,20 +17,20 @@ use Drupal\Core\Form\FormStateInterface;
  */
 function koala_form_system_theme_settings_alter(&$form, FormStateInterface $form_state) {
   $form['components']['navbar']['bootstrap_barrio_navbar_top_background']['#options'] = array(
-    'bg-primary' => t('Primary'),
-    'bg-secondary' => t('Secondary'),
-    'bg-light' => t('Light'),
-    'bg-dark' => t('Dark'),
-    'bg-white' => t('White'),
-    'bg-transparent' => t('Transparent'),
+    'bg-primary' => new TranslatableMarkup('Primary'),
+    'bg-secondary' => new TranslatableMarkup('Secondary'),
+    'bg-light' => new TranslatableMarkup('Light'),
+    'bg-dark' => new TranslatableMarkup('Dark'),
+    'bg-white' => new TranslatableMarkup('White'),
+    'bg-transparent' => new TranslatableMarkup('Transparent'),
   );
   $form['components']['navbar']['bootstrap_barrio_navbar_background']['#options'] = array(
-    'bg-primary' => t('Primary'),
-    'bg-secondary' => t('Secondary'),
-    'bg-light' => t('Light'),
-    'bg-dark' => t('Dark'),
-    'bg-white' => t('White'),
-    'bg-transparent' => t('Transparent'),
+    'bg-primary' => new TranslatableMarkup('Primary'),
+    'bg-secondary' => new TranslatableMarkup('Secondary'),
+    'bg-light' => new TranslatableMarkup('Light'),
+    'bg-dark' => new TranslatableMarkup('Dark'),
+    'bg-white' => new TranslatableMarkup('White'),
+    'bg-transparent' => new TranslatableMarkup('Transparent'),
   );
 }
 /**
@@ -90,6 +93,17 @@ function koala_theme_suggestions_alter(array &$suggestions, array &$variables, $
     $suggestions[] = 'form__' . str_replace('-', '_', $variables['element']['#id']);
   }
   $variables['pablo'] = 'ESTO ES UNA VARIABLE GLOBAL';
+  //Guardar el rol o los roles del usuario en una variable
+  $roles = \Drupal::currentUser()->getRoles();
+  //Si el usuario tiene el rol de administrador
+  if (in_array('administrator', $roles)) {
+    //Añadir la clase admin a la variable de sugerencia
+    $variables['attributes']['class'][] = 'admin';
+  } else {
+    //Añadir la clase no-admin a la variable de sugerencia
+    $variables['attributes']['class'][] = 'no-admin';
+  } 
+
 
   if ($hook == 'node_edit_form') {
     if ($node = \Drupal::routeMatch()->getParameter('node')) {
@@ -116,4 +130,13 @@ function koala_theme_suggestions_form_alter(array &$suggestions, array $variable
       $suggestions[] = 'form__' . $theme;
     }
   }
+}
+
+function koala_theme_suggestions_user(&$suggestions, $variables, $hook) {
+
+  // Define the view mode.
+  $mode = $variables['elements']['#view_mode'];
+  // Create a theme hook suggestion which has the view mode name in it.
+  $suggestions[] = 'user__' . $mode;
+
 }
