@@ -17,9 +17,13 @@
     margin: 1rem 1rem 0.5rem 1rem;
   }
 }
-// #block-koala-page-title{
-//   display: none;
-// }
+#block-koala-page-title .title{
+  font-size: 1.8rem;
+  font-weight: 700;
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 1rem;
+}
 @media only screen and (max-width: 600px) and (min-width: 192px)  {
   .paragraph--type--titulo-y-subtitulo-de-secciones- {
     width: 100%;

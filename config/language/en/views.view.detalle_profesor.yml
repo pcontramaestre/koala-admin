@@ -1,0 +1,7 @@
+display:
+  default:
+    display_options:
+      fields:
+        nothing:
+          alter:
+            text: "<div class=\"row cuadro-perfil-profesor\">\r\n  <div class=\"col-12 img-name\">\r\n    <div class=\"col-md-12 col-lg-4 imagen\">\r\n      {{ user_picture }}\r\n    </div>\r\n    <div class=\"col-md-12 col-lg-8 nombre\">\r\n      <h2>{{ field_apodo }}</h2>\r\n      <h3>{{ field_nombres_y_apellidos_del_pr }}</h3>\r\n    </div>\r\n  </div>\r\n  <div class=\"col-12 presentacion\">\r\n    <h4>Presentation</h4>\r\n    <p>{{ field_tu_presentacion }}</p>\r\n  </div>\r\n  <div class=\"col-12 video\">\r\n    <h4>Video</h4>\r\n    <p>{{ field_tu_video_ }}</p>\r\n  </div>\r\n</div>"

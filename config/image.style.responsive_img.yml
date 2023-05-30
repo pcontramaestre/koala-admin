@@ -1,0 +1,14 @@
+uuid: 9d54e423-125b-47f3-a140-dc76f38aae4c
+langcode: es
+status: true
+dependencies: {  }
+name: responsive_img
+label: 150x150
+effects:
+  13e90950-5934-4144-b355-6323c93e9e74:
+    uuid: 13e90950-5934-4144-b355-6323c93e9e74
+    id: image_resize
+    weight: 1
+    data:
+      width: 150
+      height: 150

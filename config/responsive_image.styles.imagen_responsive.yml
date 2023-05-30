@@ -1,0 +1,9 @@
+uuid: 58b4b4e1-2e59-4347-8e04-248a86d3130f
+langcode: es
+status: true
+dependencies: {  }
+id: imagen_responsive
+label: 'Imagen responsive'
+image_style_mappings: {  }
+breakpoint_group: responsive_image
+fallback_image_style: '_original image_'

@@ -1,0 +1,10 @@
+uuid: ae3eb0ad-a629-4e93-83b3-b60c40972e0c
+langcode: es
+status: true
+dependencies:
+  module:
+    - media
+id: media.enlace_video
+label: 'Enlace Video'
+targetEntityType: media
+cache: true

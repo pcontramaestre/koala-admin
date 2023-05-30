@@ -68,6 +68,7 @@
         "drupal/login_destination": "^2.0@beta",
         "drupal/mailjet": "^3.0@alpha",
         "drupal/mailsystem": "^4.4",
+        "drupal/media_video_micromodal": "^1.0",
         "drupal/menu_token": "9.1.x-dev@dev",
         "drupal/multiple_registration": "^3.2",
         "drupal/node_view_permissions": "^1.5",
