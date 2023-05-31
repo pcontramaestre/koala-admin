@@ -72,9 +72,9 @@
     'clearfix',
   ]
 %}
-{% set fecha_texto =  content.field_fecha_cita_gratis.value %}  {# Aquí reemplaza "27-05-2023" por tu variable que contiene el valor del campo de tipo texto #}
+{% set fecha_texto =  content.field_fecha_de_la_cita[0]['#context'].value %}  {# Aquí reemplaza "27-05-2023" por tu variable que contiene el valor del campo de tipo texto #}
 {% set fecha = fecha_texto|date("d-m-Y") %}
-{% set fecha_inicio =  content.field_fecha_cita_gratis.value|date("Ymd", 'utc') ~ 'T' ~ content.field_hora_clase.value|date("His", 'utc') ~ 'Z' %}
+{% set fecha_inicio =  content.field_fecha_de_la_cita[0]['#context'].value|date("Ymd") ~ 'T' ~ content.field_hora_clase.value|date("His", 'utc') ~ 'Z' %}
 {% set alumno = content.field_nombre_del_nino_a.0 %}
 {# {{fecha_inicio}} #}
 

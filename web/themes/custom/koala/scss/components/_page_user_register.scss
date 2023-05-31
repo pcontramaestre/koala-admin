@@ -163,7 +163,57 @@ body.page-user-register {
   }
 }
 
-@media only screen and (max-width: 640px) and (min-width: 340px) {
+@media only screen and (max-width: 700px) and (min-width: 340px) {
+  body.page-user-register {
+    #header {
+      #navbar-main {
+        #block-koala-main-menu {
+          display: none;
+        }
+
+        .navbar-brand {
+          width: auto;
+        }
+      }
+    }
+    #block-koala-content {
+      .content {
+        .title-logos {
+          .title {
+            padding-bottom: 1rem!important;
+            margin-top: -2rem;
+            h2 {
+              font-weight: 700;
+            }
+          }
+
+          .iconos {
+            .col-4 {
+              .texto {
+                width : 78%;
+                margin: 0 auto;
+              }
+            }
+          }
+        }
+
+        .user-register-form {
+          width: 90%;
+
+          .layout--twocol-section {
+            .layout__region--first {
+              padding-right: 0rem;
+            }
+
+            .layout__region--second {
+              padding-left: 0rem;
+            }
+          }
+        }
+      }
+    }
+  }
+
   body.simplelogin.page-user-register {
     .simplelogin-wrapper {
       .simplelogin-form {
@@ -185,4 +235,22 @@ body.page-user-register {
       }
     }
   }
+
 }
+
+
+  @media only screen and (max-width: 1199px) and (min-width: 701px) {
+    body.page-user-register {
+      #header {
+        #navbar-main {
+          #block-koala-main-menu {
+            display: none;
+          }
+
+          .navbar-brand {
+            width: auto;
+          }
+        }
+      }
+    }
+  }
