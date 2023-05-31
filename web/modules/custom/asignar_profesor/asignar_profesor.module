@@ -1,0 +1,51 @@
+<?php
+
+/**
+ * @file
+ * Contains \Drupal\create_koalas\Form\CreateKoalasForm.
+ */
+
+use Drupal\node\Entity\Node;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\user\Entity\User;
+use Drupal\Core\StringTranslation\TranslatableMarkup;
+
+/**
+ * Implements hook_form_FORM_ID_alter() for the node_agendar_clase_form.
+ */
+function asignar_profesor_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  //dump($form_id);
+  if ($form_id == 'node_agendar_clase_asignar_profesor_form') {
+
+  }
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter() for node_edit_form.
+ */
+// function asignar_profesor_theme_suggestions_node_edit_form_alter(array &$suggestions, array $variables) {
+//   $route_match = \Drupal::routeMatch();
+//   //Detextar el rol del usuario actual, si es editor o administrador.
+//   $user = \Drupal::currentUser();
+//   $roles = $user->getRoles();
+  
+
+
+//   if (in_array('editor', $roles) || in_array('administrator', $roles)) {
+//     if ($node = $route_match->getParameter('node')) {
+//       // When editing an existing node, add the node's bundle as the theme hook
+//       // suggestion.
+//       $suggestions[] = $variables['theme_hook_original'] . '__' . $node->bundle();
+//     }
+//     elseif ($node_type = $route_match->getParameter('node_type')) {
+//       // When a new node is created, the node type (object) is provided.
+//       $suggestions[] = $variables['theme_hook_original'] . '__' . $node_type->id();
+//     }
+//   }
+//   else {
+//     $suggestions[] = 'node_edit_form__' . $variables['node']->bundle() . '__' . $user->id();
+//   }
+
+
+//   return $suggestions;
+// }

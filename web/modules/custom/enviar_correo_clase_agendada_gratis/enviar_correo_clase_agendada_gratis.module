@@ -7,6 +7,13 @@ use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Drupal\Core\StringTranslation\TranslatableMarkup;
 use DrupalCodeGenerator\Helper\Dumper;
 use Drupal\Core\Language\LanguageManagerInterface;
+use Drupal\Core\Datetime\DrupalDateTime;
+use Drupal\datetime\Plugin\Field\FieldType\DateTimeItemInterface;
+use Drupal\Core\Entity;
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\node\Entity\Node;
+use Drupal\Core\Render\Element;
+use Drupal\node\NodeInterface;
 
 /**
  * Implements hook_form_FORM_ID_alter() for agendar_clase node edit form.
@@ -19,6 +26,56 @@ function enviar_correo_clase_agendada_gratis_form_alter(array &$form, FormStateI
     }
 }
 
+
+// Implementar form submit para guardar la fecha y hora de la clase en un campo oculto
+
+function enviar_correo_clase_agendada_gratis_form_submit(array &$form, FormStateInterface $form_state) {
+  // Check if this form is the correct one\
+   dump('Parada 1');
+  if ($form_state->getFormObject()->getFormId() !== 'agendar_clase_node_form' && $form_state->getFormObject()->getFormId() !== 'node_agendar_clase_agendar_clases_form') {
+     dump('Parada 1');
+     exit;
+    return;
+  }
+   dump('Parada 2');
+  // Get necessary values from form state
+  $fecha_clase = isset($form_state->getValue('field_fecha_de_la_cita')[0]['value']) ? $form_state->getValue('field_fecha_de_la_cita')[0]['value'] : null;
+  $hora_clase = isset($form_state->getValue('field_hora_clase')[0]['value']) ? $form_state->getValue('field_hora_clase')[0]['value'] : null;
+
+   dump('Parada 3');
+  // Validate values before use
+  if (!$fecha_clase || !$hora_clase) {
+    dump('Parada 3');
+    exit;
+    return;
+  }
+
+  // Convert seconds to hours and minutes
+  $horas = gmdate('H', $hora_clase);
+  $minutos = gmdate('i', $hora_clase);
+  $segundos = gmdate('s', $hora_clase);
+
+  // Format the time as HH:mm:ss
+  $horaFormateada = $horas . ':' . $minutos;
+
+  // Combine date and time into a single string
+  $fechaHoraTexto = $fecha_clase .' '. $horaFormateada .':'. $segundos;
+
+  // Create DateTime object from combined string
+  $fechaHoraObjeto = \DateTime::createFromFormat('d-m-Y h:i:s', $fechaHoraTexto);
+
+  // Format date as required
+  $fechaFormateada = $fechaHoraObjeto->format('d-m-Y\TH:i:s');
+
+  // Save formatted date to hidden field
+  $form_state->setValue('field_fecha_cita_oculta', $fechaFormateada);
+  dump($form_state->getValue('field_fecha_cita_oculta'));
+  dump('Parada');
+  exit;
+}
+
+
+
 /**
  * Submit handler para enviar el correo.
  */
@@ -29,6 +86,85 @@ function enviar_correo_clase_agendada_gratis_send_email(array &$form, FormStateI
   // $fecha_clase = $values['field_fecha_de_la_cita']->value;
   // $hora_clase = $values['field_hora_clase']->value;
   // $titulo = $values['title']->value;
+
+  // dump field_hora_clase and field_fecha_de_la_cita
+//  var_dump('field_hora_clase and field_fecha_de_la_cita');
+  // dump($form_state->getValue('field_hora_clase'));
+  // dump($form_state->getValue('field_fecha_de_la_cita'));
+
+  // Save field_hora_clase (type text) and field_fecha_de_la_cita (Number of seconds after 12am) to datetime field field_fecha_cita_oculta
+  $fecha_clase_save = $form_state->getValue('field_fecha_de_la_cita');
+  $hora_clase_save = $form_state->getValue('field_hora_clase');
+  $fecha_clase_save = $fecha_clase_save[0]['value'];
+  // var_dump('field_fecha_de_la_cita');
+  $hora_clase_save = $hora_clase_save[0]['value'];
+  // dump($fecha_clase_save);
+  // Convierte los segundos a horas y minutos
+  $horas = gmdate('H', $hora_clase_save);
+  $minutos = gmdate('i', $hora_clase_save);
+  $segundos = gmdate('s', $hora_clase_save);
+
+  // Formatea la hora como HH:mm:ss
+  $horaFormateada = $horas . ':' . $minutos . ':' . $segundos;
+  dump($horaFormateada);
+
+
+
+$fechaHoraTexto = $fecha_clase_save .' '. $horaFormateada;
+//$fechaHoraTexto = $fecha_clase_save;
+dump($fechaHoraTexto);
+//convertir en texto a $fechaHoraTexto
+dump(strtotime($fechaHoraTexto));
+
+// Crea un objeto DateTime a partir del texto combinado
+$fechaHoraObjeto = \DateTime::createFromFormat('d-m-Y H:i:s', $fechaHoraTexto);
+
+//convertir $fechaHoraObjeto a 'd-m-Y\TH:i:s format for datetime field in drupal
+
+
+
+// Obtiene la fecha formateada
+$fechaFormateada = $fechaHoraObjeto->format('d-m-Y\TH:i:s');
+dump($fechaFormateada);
+
+//dump($fechaFormateada);
+
+// Guarda la fecha formateada en el campo oculto
+
+  $form_state->setValue('field_fecha_cita_oculta', $fechaFormateada);
+
+    $formObject = $form_state->getFormObject();
+    if (!($formObject instanceof \Drupal\Core\Entity\EntityFormInterface)) {
+      // Not an entity form, nothin to alter.
+      return;
+    }
+     $node = $formObject->getEntity();
+      $node->save();
+
+  // Verifica si el objeto es una instancia de NodeInterface y obtiene el ID del nodo.
+  if ($node instanceof NodeInterface) {
+    $nid = $node->id();
+    // Realiza las acciones necesarias con el ID del nodo.
+    // Por ejemplo, muestra un mensaje con el ID del nodo.
+    dump($nid);
+    $node = Node::load($nid);
+
+    if ($node instanceof NodeInterface) {
+      try {
+        $node->set('field_fecha_cita_oculta', date('Y-m-d\TH:i:s', strtotime($fechaHoraTexto)));
+        $node->save();
+      }
+      catch (\Exception $e) {
+        dump('myerrorid', $e);
+      }
+    }
+    
+  }
+
+    
+  
+ 
+
 
   $fecha_clase = $form_state->getValue('field_fecha_de_la_cita');
   $hora_clase = $form_state->getValue('field_hora_clase');
@@ -43,9 +179,10 @@ function enviar_correo_clase_agendada_gratis_send_email(array &$form, FormStateI
   // Crear el contenido del correo.
   $message = new FormattableMarkup('<p>Aquí está el archivo invite.ics adjunto para tu clase agendada.</p>
   <br/>
-  <p>Fecha: @fecha</p>
-  <p>Hora: @hora</p>
-  <p>Título: @titulo</p>', [
+  <p>Fecha: @fecha</p><br>
+  <p>Hora: @hora</p><br>
+  <p>Título: @titulo</p><br>
+  ', [
     '@fecha' => $fecha_clase,
     '@hora' => $hora_clase,
     '@titulo' => $titulo,

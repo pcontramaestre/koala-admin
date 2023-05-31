@@ -1,0 +1,5 @@
+name: 'Alterar Agendar Clase Form'
+type: module
+description: 'Modulo de Drupal para alterar el formulario Agendar Clase'
+core_version_requirement: ^9
+package: Custom
