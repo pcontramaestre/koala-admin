@@ -87,7 +87,8 @@
                     border-radius   : 13px;
                     height          : 3.4rem;
                     background-color: white;
-                    .js-form-item{
+
+                    .js-form-item {
                       margin: 0.9rem 1rem 0rem 1rem;
                     }
                   }
@@ -152,14 +153,17 @@
     }
   }
 }
-.form-switch .form-check-input{
+
+.form-switch .form-check-input {
   background-color: $RedK100;
-  border-color: $RedK100;
+  border-color    : $RedK100;
 }
+
 .form-switch .form-check-input:checked {
   background-color: $RedK500;
-  border-color: $RedK500;
+  border-color    : $RedK500;
 }
+
 .form-check-input:checked[type=radio] {
   background-color: $RedK100 !important;
   border-color    : $RedK500 !important;
@@ -181,4 +185,72 @@
   justify-content: center;
   width          : 18px;
   height         : 18px;
+}
+
+@media only screen and (max-width: 700px) and (min-width: 340px) {
+  .node-agendar-clases {
+    #main-wrapper {
+      .main-content {
+        .section {
+          #block-koala-content {
+            .content {
+              form {
+                width     : 90%;
+                margin    : 0 auto;
+                margin-top: 3rem;
+
+                .formulario {
+                  .title-1 {
+                    display: none;
+                  }
+                  .title-2 {
+                    margin-top: 1rem;
+                    margin-bottom: 1rem;
+                  }
+
+                  .layout__region--content {
+                    .field--name-field-nombre-del-nino-a {
+                      width        : 100%;
+                      padding      : 0rem;
+                      margin-bottom: 0rem !important;
+                      // order        : 1;
+                    }
+
+                    .field--name-field-fecha-nac {
+                      width        : 100%;
+                      padding      : 0rem;
+                      margin-bottom: 0rem !important;
+                      // order        : 3;
+                    }
+
+                    .field--name-field-fecha-de-la-cita {
+                      width        : 50%;
+                      margin-bottom: 0rem !important;
+                      // order        : 4;
+                    }
+
+                    .field--name-field-hora-clase {
+                      width        : 50%;
+                      margin-bottom: 0rem !important;
+                      // order        : 5;
+                    }
+
+                    .field--name-field-sexo-n {
+                      margin-bottom: 0.5rem !important;
+                      // order        : 2;
+                    }
+
+                    .field--type-boolean {
+                      // order: 6;
+                      width: 100%;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }
