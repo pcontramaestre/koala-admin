@@ -1,4 +1,8 @@
 body.page-user-register {
+  background-image : url('http://localhost/koala/koala-admin/web/sites/default/files/simplelogin/background.jpg');
+  background-repeat: no-repeat;
+  background-size  : cover;
+
   #header {
     #navbar-main {
       #block-koala-main-menu {
@@ -176,12 +180,14 @@ body.page-user-register {
         }
       }
     }
+
     #block-koala-content {
       .content {
         .title-logos {
           .title {
-            padding-bottom: 1rem!important;
-            margin-top: -2rem;
+            padding-bottom: 1rem !important;
+            margin-top    : -2rem;
+
             h2 {
               font-weight: 700;
             }
@@ -239,18 +245,18 @@ body.page-user-register {
 }
 
 
-  @media only screen and (max-width: 1199px) and (min-width: 701px) {
-    body.page-user-register {
-      #header {
-        #navbar-main {
-          #block-koala-main-menu {
-            display: none;
-          }
+@media only screen and (max-width: 1199px) and (min-width: 701px) {
+  body.page-user-register {
+    #header {
+      #navbar-main {
+        #block-koala-main-menu {
+          display: none;
+        }
 
-          .navbar-brand {
-            width: auto;
-          }
+        .navbar-brand {
+          width: auto;
         }
       }
     }
   }
+}
