@@ -1,4 +1,7 @@
 .node-agendar-clases {
+  background-image : url('http://localhost/koala/koala-admin/web/sites/default/files/simplelogin/background.jpg');
+  background-repeat: no-repeat;
+  background-size  : cover;
   #main-wrapper {
     .main-content {
       .section {
@@ -81,9 +84,9 @@
                   }
 
                   .field--type-boolean {
-                    float           : right;
+                    float           : left;
                     width           : 80%;
-                    margin          : 0 auto;
+                    margin-left: 10%;
                     border-radius   : 13px;
                     height          : 3.4rem;
                     background-color: white;
@@ -93,6 +96,17 @@
                     }
                   }
 
+                  .field--name-field-hora-cita-oculta{
+                    .js-form-item{
+                      label{
+                        display: none;
+                        position: absolute;
+                      }
+                      input{
+                        display: none;
+                      }
+                    }
+                  }
                   .field--name-field-sexo-n {
                     width: 100%;
                     float: left;

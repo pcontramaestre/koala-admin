@@ -124,20 +124,18 @@
               .view-content {
                 .views-row {
                   .views-field-title {
-                    background   : $GreyK100;
-                    border-radius: 32px;
-                    padding      : 8px;
-                    gap          : 16px;
-                    width        : 239px;
-                    height       : 56px;
-                    margin-top   : 0.8rem;
 
                     .field-content {
+                      display: flex;
                       a {
                         font-weight: 700;
-                        font-size  : 1.3rem;
-                        color      : black;
-                        margin-left: 1rem;
+                        font-size: 1.3rem;
+                        color: black;
+                        background   : $GreyK100;
+                        border-radius: 40px;
+                        padding: 0.5rem 1rem;
+                        min-height: 56px;
+                        margin-top: 0.8rem;
                       }
                     }
                   }
@@ -189,7 +187,7 @@
               .views-row {
                 border-radius: 24px;
                 padding      : 16px;
-                height       : 280px;
+                height       : 300px;
                 margin-top   : 1.3rem;
 
                 .views-field-title {
@@ -226,15 +224,15 @@
                   background-color: white;
                   border-radius   : 15px;
                   width           : 35%;
-                  display         : flex;
                   float           : inline-start;
                   position        : relative;
                   top             : -78px;
-                  height          : 168px;
+                  min-height: 218px;
                   display         : flex;
                   align-items     : center;
                   justify-content : center;
                   float           : left;
+                  padding: 1rem;
 
                   .field-content {
                     font-weight: 700;
