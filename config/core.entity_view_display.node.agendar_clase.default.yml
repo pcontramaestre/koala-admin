@@ -3,6 +3,7 @@ langcode: es
 status: true
 dependencies:
   config:
+    - field.field.node.agendar_clase.field_asignar_profesor
     - field.field.node.agendar_clase.field_fecha_cita_oculta
     - field.field.node.agendar_clase.field_fecha_de_la_cita
     - field.field.node.agendar_clase.field_fecha_nac
@@ -10,12 +11,14 @@ dependencies:
     - field.field.node.agendar_clase.field_hora_cita_oculta
     - field.field.node.agendar_clase.field_hora_clase
     - field.field.node.agendar_clase.field_nombre_del_nino_a
+    - field.field.node.agendar_clase.field_otra_hora
     - field.field.node.agendar_clase.field_sexo_n
     - node.type.agendar_clase
   module:
     - datetime
     - options
     - time_field
+    - time_picker
     - timefield
     - user
 id: node.agendar_clase.default
@@ -30,6 +33,27 @@ content:
       link: true
     third_party_settings: {  }
     weight: 109
+    region: content
+  computed_prueba:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 113
+    region: content
+  content_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: -20
+    region: content
+  field_asignar_profesor:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 112
     region: content
   field_fecha_cita_oculta:
     type: datetime_default
@@ -94,6 +118,13 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     weight: 103
+    region: content
+  field_otra_hora:
+    type: time_picker_formatter
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 114
     region: content
   field_sexo_n:
     type: list_default

@@ -1,0 +1,17 @@
+uuid: 36cf21b1-ed22-44c6-99d2-bcf12bae1234
+langcode: es
+status: true
+dependencies: {  }
+name: redirigir_admin_y_editor
+label: 'Redirigir Admin y Editor'
+triggers:
+  login: login
+destination_path: 'internal:/admin'
+pages_type: 0
+pages: ''
+language: ''
+roles:
+  content_editor: content_editor
+  administrator: administrator
+weight: 0
+enabled: true

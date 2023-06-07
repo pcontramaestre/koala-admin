@@ -1,0 +1,22 @@
+uuid: c7fd723c-8654-4448-ac28-6a670b02a1e9
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.agendar_clase_no_gratis
+id: node.agendar_clase_no_gratis.promote
+field_name: promote
+entity_type: node
+bundle: agendar_clase_no_gratis
+label: 'Promocionado a la página principal'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: Activado
+  off_label: Desactivado
+field_type: boolean

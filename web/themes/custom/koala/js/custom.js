@@ -36,17 +36,47 @@
   );
 
   jQuery(document).ready(function ($) {
+    //COUNTDOWN
+    let pageNodePADRES = document.body.classList.contains("path-padres");
+    if (pageNodePADRES === true) {
+      // Detectar clase del div que contiene el countdown. view-id-clases_gratuitas view-display-id-block_1
+      let countdown = document.querySelector(
+        ".view-id-clases_gratuitas.view-display-id-block_1"
+      );
+      // Varificar si countdown existe y tiene un valor diferente de null
+      if (countdown != null) {
+        //Fecha y Hora detectada en el campo de la vista .views-field-field-fecha-de-la-cita time
+        let fechaHora = jQuery(
+          ".views-field-field-fecha-de-la-cita time"
+        ).html();
+        fechaHora = fechaHora.trim();
+        // Unix timestamp (in seconds) to count down to
+        var twoDaysFromNow = new Date(fechaHora).getTime() / 1000;
+        console.log(twoDaysFromNow);
+        // // Set up FlipDown
+        // var flipdown = new FlipDown(twoDaysFromNow)
+
+        //   // Start the countdown
+        //   .start()
+
+        //   // Do something when the countdown ends
+        //   .ifEnded(() => {
+        //     console.log("The countdown has ended!");
+        //   });
+      }
+    }
+
     // detectar el tamaño de la pantalla y guardarlo en variable para usarla en el codigo
     let screenWidth = window.screen.width;
 
     // detectar las clases .path-node en el body
     let pageNode = document.body.classList.contains("path-node");
     let pageFront = document.body.classList.contains("path-frontpage");
-    console.log(pageNode);
-    console.log(pageFront);
+    // console.log(pageNode);
+    // console.log(pageFront);
     // si existe la clase .page-node-27 o .page-node-26 en el body
     if (pageNode === true || pageFront === true) {
-      console.log("mobile");
+      // console.log("mobile");
       // si el tamaño de la pantalla es menor a 1200px
       if (screenWidth <= 1200) {
         // agregar la clase .mobile a la etiqueta body

@@ -31,3 +31,5 @@
 'use  The form mode default linked to  node entity( horarios_de_trabajo )': node.horarios_de_trabajo.default
 'use  The form mode administrador linked to  node entity( horarios_de_trabajo )': node.horarios_de_trabajo.administrador
 'use  The form mode editar_horarios linked to  node entity( horarios_de_trabajo )': node.horarios_de_trabajo.editar_horarios
+'use  The form mode asignar_profesor linked to  node entity( agendar_clase )': node.agendar_clase.asignar_profesor
+'use  The form mode default linked to  node entity( agendar_clase_no_gratis )': node.agendar_clase_no_gratis.default

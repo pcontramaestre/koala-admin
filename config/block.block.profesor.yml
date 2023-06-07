@@ -12,7 +12,7 @@ dependencies:
 id: profesor
 theme: koala
 region: primary_menu
-weight: -6
+weight: -7
 provider: null
 plugin: 'system_menu_block:profesor'
 settings:

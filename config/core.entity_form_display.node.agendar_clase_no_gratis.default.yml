@@ -1,0 +1,135 @@
+uuid: 13f2ebec-2919-41a6-ace8-c1e2e6e79f59
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.field.node.agendar_clase_no_gratis.body
+    - field.field.node.agendar_clase_no_gratis.field_fecha_a_buscar
+    - node.type.agendar_clase_no_gratis
+  module:
+    - content_moderation
+    - field_layout
+    - flatpickr_datepicker
+    - layout_discovery
+    - path
+    - text
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+id: node.agendar_clase_no_gratis.default
+targetEntityType: node
+bundle: agendar_clase_no_gratis
+mode: default
+content:
+  body:
+    type: text_textarea_with_summary
+    weight: 121
+    region: content
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+      show_summary: false
+    third_party_settings: {  }
+  created:
+    type: datetime_timestamp
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_fecha_a_buscar:
+    type: flatpickr_datepicker_default_widget
+    weight: 122
+    region: content
+    settings:
+      datepicker_type: single_datetime
+      enabling_specific_dates: ''
+      enabling_ranges_date: ''
+      disabling_specific_dates: ''
+      disabling_ranges_date: ''
+      min_date: ''
+      max_date: ''
+      enable_validation: '1'
+      date_format: Y-m-d
+      datetime_format: 'Y-m-d H:i A'
+      enable_only_specific_dates: 0
+      disable_days_week:
+        1: 0
+        2: 0
+        3: 0
+        4: 0
+        5: 0
+        6: 0
+        7: 0
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  moderation_state:
+    type: moderation_state_default
+    weight: 100
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 30
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  promote:
+    type: boolean_checkbox
+    weight: 15
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 120
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  sticky:
+    type: boolean_checkbox
+    weight: 16
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: -5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  translation:
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 5
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  url_redirects:
+    weight: 50
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

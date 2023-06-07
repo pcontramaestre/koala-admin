@@ -1,0 +1,36 @@
+.page-view-mis-koalas.path-padres {
+  #main {
+    .main-content {
+      >section.section {
+        margin-top: 2rem;
+
+        //DETALLE AGENDAR CLASE A NIÑO
+        .view-mis-koalas.view-display-id-page_1 {
+
+          //Fila de los datos del niño
+          .view-content {}
+
+          // PROFESORES DISPONIBLES
+          .attachment.attachment-after {
+            .view-display-id-attachment_1 {
+
+              // TITULO DE LA SECCION
+              .view-header {}
+
+              //CONTENIDO - PROFESORES DISPONIBLES
+              .view-content {
+                display              : grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                gap                  : 15px 15px;
+                justify-content      : center;
+                align-content        : center;
+                justify-items        : center;
+                align-items          : center;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,157 @@
+uuid: 1b218785-6073-45d4-acf0-13844c628487
+langcode: es
+status: true
+dependencies:
+  config:
+    - core.entity_form_mode.node.asignar_profesor
+    - field.field.node.agendar_clase.field_asignar_profesor
+    - field.field.node.agendar_clase.field_fecha_cita_oculta
+    - field.field.node.agendar_clase.field_fecha_de_la_cita
+    - field.field.node.agendar_clase.field_fecha_nac
+    - field.field.node.agendar_clase.field_he_leido_y_estoy_de_acuerd
+    - field.field.node.agendar_clase.field_hora_cita_oculta
+    - field.field.node.agendar_clase.field_hora_clase
+    - field.field.node.agendar_clase.field_nombre_del_nino_a
+    - field.field.node.agendar_clase.field_otra_hora
+    - field.field.node.agendar_clase.field_sexo_n
+    - node.type.agendar_clase
+    - workflows.workflow.asignar_profesor
+  module:
+    - chosen_field
+    - content_moderation
+    - datetime
+    - field_layout
+    - layout_discovery
+    - readonly_field_widget
+    - time_field
+    - timepicker
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+id: node.agendar_clase.asignar_profesor
+targetEntityType: node
+bundle: agendar_clase
+mode: asignar_profesor
+content:
+  field_asignar_profesor:
+    type: chosen_select
+    weight: 7
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_fecha_cita_oculta:
+    type: datetime_default
+    weight: 5
+    region: content
+    settings: {  }
+    third_party_settings:
+      timepicker:
+        enabled: '1'
+        type: timepicker_jonthornton
+        js_options:
+          value: ''
+  field_fecha_de_la_cita:
+    type: readonly_field_widget
+    weight: 0
+    region: content
+    settings:
+      label: above
+      formatter_type: null
+      formatter_settings: {  }
+      show_description: false
+    third_party_settings: {  }
+  field_fecha_nac:
+    type: readonly_field_widget
+    weight: 2
+    region: content
+    settings:
+      label: above
+      formatter_type: null
+      formatter_settings: {  }
+      show_description: false
+    third_party_settings: {  }
+  field_hora_cita_oculta:
+    type: time_widget
+    weight: 6
+    region: content
+    settings:
+      enabled: false
+      step: 5
+    third_party_settings: {  }
+  field_hora_clase:
+    type: readonly_field_widget
+    weight: 4
+    region: content
+    settings:
+      label: above
+      formatter_type: timefield_default_formatter
+      formatter_settings:
+        timefield_mini_calendar_formatter:
+          column_format:
+            hour: g
+            minute: i
+            separator: ':'
+            period: a
+            periodSeparator: ''
+          first_day: mon
+          absolute_start: '8:00 am'
+          absolute_end: '10:00 pm'
+          range: '120'
+          display_format:
+            hour: g
+            minute: i
+            separator: ':'
+            period: a
+            periodSeparator: ''
+          adjust_range: 0
+        timefield_duration_formatter:
+          duration_format: minutes
+        timefield_default_formatter:
+          display_format:
+            hour: g
+            minute: i
+            separator: ':'
+            period: a
+            periodSeparator: ''
+      show_description: true
+    third_party_settings: {  }
+  field_nombre_del_nino_a:
+    type: readonly_field_widget
+    weight: 1
+    region: content
+    settings:
+      label: above
+      formatter_type: null
+      formatter_settings: {  }
+      show_description: false
+    third_party_settings: {  }
+  field_sexo_n:
+    type: readonly_field_widget
+    weight: 3
+    region: content
+    settings:
+      label: above
+      formatter_type: null
+      formatter_settings: {  }
+      show_description: false
+    third_party_settings: {  }
+  moderation_state:
+    type: moderation_state_default
+    weight: 8
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  field_he_leido_y_estoy_de_acuerd: true
+  field_otra_hora: true
+  langcode: true
+  path: true
+  promote: true
+  status: true
+  sticky: true
+  title: true
+  uid: true
+  url_redirects: true

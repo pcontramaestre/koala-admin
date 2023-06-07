@@ -7,6 +7,8 @@ module:
   admin_toolbar_search: 0
   admin_toolbar_tools: 0
   advanced_text_formatter: 0
+  agregar_profesores: 0
+  asignar_profesor: 0
   asset_injector: 0
   auto_username: 0
   automated_cron: 0
@@ -15,8 +17,6 @@ module:
   block: 0
   block_content: 0
   breakpoint: 0
-  calendar: 0
-  calendar_datetime: 0
   calendar_link: 0
   chosen: 0
   chosen_field: 0
@@ -28,6 +28,7 @@ module:
   config_pages: 0
   config_translation: 0
   contact: 0
+  content_moderation: 0
   contextual: 0
   create_koalas: 0
   ctools: 0
@@ -40,6 +41,7 @@ module:
   dblog: 0
   devel: 0
   devel_entity_updates: 0
+  devel_php: 0
   double_field: 0
   dynamic_page_cache: 0
   editor: 0
@@ -50,6 +52,7 @@ module:
   field: 0
   field_display_label: 0
   field_formatter_class: 0
+  field_formatter_filter: 0
   field_group: 0
   field_layout: 0
   field_permissions: 0
@@ -59,18 +62,26 @@ module:
   filefield_paths: 0
   filter: 0
   fivestar: 0
+  flatpickr_datepicker: 0
   form_mode_control: 0
   form_mode_manager: 0
   form_mode_manager_theme_switcher: 0
   formatter_suite: 0
   fpa: 0
+  fullcalendar_view: 0
   help: 0
   history: 0
+  html_field_formatter: 0
   iframe: 0
   image: 0
   inline_entity_form: 0
   jquery_ui: 0
+  jquery_ui_accordion: 0
+  jquery_ui_autocomplete: 0
+  jquery_ui_checkboxradio: 0
+  jquery_ui_controlgroup: 0
   jquery_ui_datepicker: 0
+  jquery_ui_menu: 0
   jquery_ui_slider: 0
   jquery_ui_touch_punch: 0
   language: 0
@@ -123,9 +134,9 @@ module:
   syslog: 0
   system: 0
   taxonomy: 0
+  taxonomy_manager: 0
   telephone: 0
   text: 0
-  themable_forms: 0
   time_field: 0
   time_picker: 0
   timefield: 0
@@ -136,22 +147,26 @@ module:
   toolbar: 0
   tour: 0
   twig_tweak: 0
+  twig_ui: 0
   typed_data: 0
   update: 0
   user: 0
   user_view_mode: 0
   view_mode_select_by_token: 0
   view_password: 0
+  views_bootstrap: 0
   views_extras: 0
   views_templates: 0
   views_tokenized: 0
   views_ui: 0
   votingapi: 0
   votingapi_tokens: 0
+  workflows: 0
   xls_serialization: 0
   pathauto: 1
   content_translation: 10
   views: 10
+  twigsuggest: 100
   standard: 1000
 theme:
   olivero: 0
@@ -159,4 +174,5 @@ theme:
   bootstrap_barrio: 0
   bootstrap_barrio_subtheme: 0
   koala: 0
+  gin: 0
 profile: standard

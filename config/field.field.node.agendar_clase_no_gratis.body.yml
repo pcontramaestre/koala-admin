@@ -1,0 +1,23 @@
+uuid: 07cf3155-9e11-47ce-bbf4-13dd99d4659a
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.agendar_clase_no_gratis
+  module:
+    - text
+id: node.agendar_clase_no_gratis.body
+field_name: body
+entity_type: node
+bundle: agendar_clase_no_gratis
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary

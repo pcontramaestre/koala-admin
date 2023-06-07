@@ -1,0 +1,24 @@
+uuid: 931ddd51-cef9-431a-8757-aac81b04f526
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_otra_hora
+    - node.type.agendar_clase
+  module:
+    - time_picker
+id: node.agendar_clase.field_otra_hora
+field_name: field_otra_hora
+entity_type: node
+bundle: agendar_clase
+label: 'Otra hora'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    time: '02:28 AM'
+    locate: null
+default_value_callback: ''
+settings: {  }
+field_type: time_picker

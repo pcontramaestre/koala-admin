@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_form_mode.node.agendar_clases
+    - field.field.node.agendar_clase.field_asignar_profesor
     - field.field.node.agendar_clase.field_fecha_cita_oculta
     - field.field.node.agendar_clase.field_fecha_de_la_cita
     - field.field.node.agendar_clase.field_fecha_nac
@@ -11,11 +12,13 @@ dependencies:
     - field.field.node.agendar_clase.field_hora_cita_oculta
     - field.field.node.agendar_clase.field_hora_clase
     - field.field.node.agendar_clase.field_nombre_del_nino_a
+    - field.field.node.agendar_clase.field_otra_hora
     - field.field.node.agendar_clase.field_sexo_n
     - node.type.agendar_clase
   module:
     - field_layout
     - layout_discovery
+    - time_field
     - timefield
 third_party_settings:
   field_layout:
@@ -49,6 +52,14 @@ content:
     region: content
     settings:
       display_label: true
+    third_party_settings: {  }
+  field_hora_cita_oculta:
+    type: time_widget
+    weight: 7
+    region: content
+    settings:
+      enabled: false
+      step: 5
     third_party_settings: {  }
   field_hora_clase:
     type: timefield_standard_widget
@@ -99,11 +110,14 @@ content:
     third_party_settings: {  }
 hidden:
   created: true
+  field_asignar_profesor: true
   field_fecha_cita_oculta: true
-  field_hora_cita_oculta: true
+  field_otra_hora: true
   langcode: true
+  moderation_state: true
   path: true
   promote: true
   status: true
   sticky: true
   uid: true
+  url_redirects: true

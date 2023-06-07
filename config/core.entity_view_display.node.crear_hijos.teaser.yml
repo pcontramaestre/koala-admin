@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.crear_hijos.body
     - field.field.node.crear_hijos.field_fecha_nacimiento
     - field.field.node.crear_hijos.field_hijo_relacionado
+    - field.field.node.crear_hijos.field_logros
     - field.field.node.crear_hijos.field_sexo
     - node.type.crear_hijos
   module:
@@ -33,5 +34,6 @@ content:
 hidden:
   field_fecha_nacimiento: true
   field_hijo_relacionado: true
+  field_logros: true
   field_sexo: true
   langcode: true

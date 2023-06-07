@@ -1,0 +1,33 @@
+uuid: 8a12d0b4-fcf7-44df-ac63-5295b1eea550
+langcode: es
+status: true
+dependencies:
+  config:
+    - system.menu.padres
+  module:
+    - system
+    - user
+  theme:
+    - koala
+id: padres
+theme: koala
+region: primary_menu
+weight: -6
+provider: null
+plugin: 'system_menu_block:padres'
+settings:
+  id: 'system_menu_block:padres'
+  label: Padres
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility:
+  user_role:
+    id: user_role
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+    roles:
+      padre: padre

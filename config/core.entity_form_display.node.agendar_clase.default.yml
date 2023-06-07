@@ -3,6 +3,7 @@ langcode: es
 status: true
 dependencies:
   config:
+    - field.field.node.agendar_clase.field_asignar_profesor
     - field.field.node.agendar_clase.field_fecha_cita_oculta
     - field.field.node.agendar_clase.field_fecha_de_la_cita
     - field.field.node.agendar_clase.field_fecha_nac
@@ -10,15 +11,20 @@ dependencies:
     - field.field.node.agendar_clase.field_hora_cita_oculta
     - field.field.node.agendar_clase.field_hora_clase
     - field.field.node.agendar_clase.field_nombre_del_nino_a
+    - field.field.node.agendar_clase.field_otra_hora
     - field.field.node.agendar_clase.field_sexo_n
     - node.type.agendar_clase
+    - workflows.workflow.asignar_profesor
   module:
+    - content_moderation
     - datetime
     - field_layout
     - layout_discovery
     - path
     - time_field
+    - time_picker
     - timefield
+    - timepicker
 third_party_settings:
   field_layout:
     id: layout_onecol
@@ -35,12 +41,27 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_asignar_profesor:
+    type: entity_reference_autocomplete
+    weight: 101
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
   field_fecha_cita_oculta:
     type: datetime_default
     weight: 29
     region: content
     settings: {  }
-    third_party_settings: {  }
+    third_party_settings:
+      timepicker:
+        enabled: '1'
+        type: timepicker_jquery_ui_addon
+        js_options:
+          value: ''
   field_fecha_de_la_cita:
     type: string_textfield
     weight: 8
@@ -105,6 +126,12 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  field_otra_hora:
+    type: time_picker_widget
+    weight: 102
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   field_sexo_n:
     type: options_select
     weight: 13
@@ -117,6 +144,12 @@ content:
     region: content
     settings:
       include_locked: true
+    third_party_settings: {  }
+  moderation_state:
+    type: moderation_state_default
+    weight: 100
+    region: content
+    settings: {  }
     third_party_settings: {  }
   path:
     type: path
@@ -162,5 +195,10 @@ content:
       match_limit: 10
       size: 60
       placeholder: ''
+    third_party_settings: {  }
+  url_redirects:
+    weight: 50
+    region: content
+    settings: {  }
     third_party_settings: {  }
 hidden: {  }

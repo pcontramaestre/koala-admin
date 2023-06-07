@@ -6,6 +6,7 @@ dependencies:
     - field.field.node.crear_hijos.body
     - field.field.node.crear_hijos.field_fecha_nacimiento
     - field.field.node.crear_hijos.field_hijo_relacionado
+    - field.field.node.crear_hijos.field_logros
     - field.field.node.crear_hijos.field_sexo
     - node.type.crear_hijos
   module:
@@ -39,6 +40,14 @@ content:
       link: true
     third_party_settings: {  }
     weight: 105
+    region: content
+  field_logros:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 106
     region: content
   field_sexo:
     type: list_default

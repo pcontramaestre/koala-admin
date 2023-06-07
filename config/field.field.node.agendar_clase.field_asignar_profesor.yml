@@ -1,0 +1,25 @@
+uuid: e211a755-f9ef-4413-baba-a9ee9ff47cd0
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_asignar_profesor
+    - node.type.agendar_clase
+id: node.agendar_clase.field_asignar_profesor
+field_name: field_asignar_profesor
+entity_type: node
+bundle: agendar_clase
+label: 'Asignar profesor'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: views
+  handler_settings:
+    view:
+      view_name: profesores
+      display_name: entity_reference_1
+      arguments: {  }
+field_type: entity_reference

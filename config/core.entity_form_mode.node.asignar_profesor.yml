@@ -1,0 +1,10 @@
+uuid: 35cd2061-d949-4c70-9ae6-0eaccc2bf6d5
+langcode: es
+status: true
+dependencies:
+  module:
+    - node
+id: node.asignar_profesor
+label: 'Asignar profesor'
+targetEntityType: node
+cache: true

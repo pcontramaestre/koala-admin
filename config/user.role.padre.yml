@@ -5,8 +5,10 @@ dependencies:
   config:
     - node.type.agendar_clase
     - node.type.crear_hijos
+    - workflows.workflow.asignar_profesor
   module:
     - config_pages
+    - content_moderation
     - date_recur_modular
     - field_permissions
     - fivestar
@@ -24,15 +26,19 @@ permissions:
   - access_all_form_modes
   - 'create agendar_clase content'
   - 'create crear_hijos content'
+  - 'create field_hora_clase'
   - 'date_recur_modular use sierra form'
   - 'delete own agendar_clase content'
   - 'delete own crear_hijos content'
+  - 'edit field_hora_clase'
   - 'edit own agendar_clase content'
   - 'edit own crear_hijos content'
+  - 'edit own field_hora_clase'
   - 'nodeaccess grant agendar_clase permissions'
   - 'nodeaccess grant crear_hijos permissions'
   - 'rate content'
   - 'revert crear_hijos revisions'
+  - 'use asignar_profesor transition publish'
   - 'use node.agendar_clases form mode'
   - 'use node.crear_koalas form mode'
   - 'use node.editar_agendar_clase_gratis form mode'
@@ -43,11 +49,15 @@ permissions:
   - 'view any page content'
   - 'view any profesores content'
   - 'view crear_hijos revisions'
+  - 'view field_hora_clase'
+  - 'view field_logros'
   - 'view home_padres config page entity'
   - 'view own agendar_clase content'
   - 'view own article content'
   - 'view own crear_hijos content'
   - 'view own field_apodo'
+  - 'view own field_hora_clase'
+  - 'view own field_logros'
   - 'view own field_nombres_y_apellidos_del_pr'
   - 'view own field_tu_presentacion'
   - 'view own horarios_de_trabajo content'

@@ -4,6 +4,7 @@ status: false
 dependencies:
   config:
     - core.entity_form_mode.node.editar_agendar_clase_gratis
+    - field.field.node.agendar_clase.field_asignar_profesor
     - field.field.node.agendar_clase.field_fecha_cita_oculta
     - field.field.node.agendar_clase.field_fecha_de_la_cita
     - field.field.node.agendar_clase.field_fecha_nac
@@ -11,9 +12,12 @@ dependencies:
     - field.field.node.agendar_clase.field_hora_cita_oculta
     - field.field.node.agendar_clase.field_hora_clase
     - field.field.node.agendar_clase.field_nombre_del_nino_a
+    - field.field.node.agendar_clase.field_otra_hora
     - field.field.node.agendar_clase.field_sexo_n
     - node.type.agendar_clase
+    - workflows.workflow.asignar_profesor
   module:
+    - content_moderation
     - field_layout
     - layout_discovery
     - path
@@ -103,6 +107,12 @@ content:
     settings:
       include_locked: true
     third_party_settings: {  }
+  moderation_state:
+    type: moderation_state_default
+    weight: 100
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   path:
     type: path
     weight: 6
@@ -148,6 +158,13 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  url_redirects:
+    weight: 50
+    region: content
+    settings: {  }
+    third_party_settings: {  }
 hidden:
+  field_asignar_profesor: true
   field_fecha_cita_oculta: true
   field_hora_cita_oculta: true
+  field_otra_hora: true

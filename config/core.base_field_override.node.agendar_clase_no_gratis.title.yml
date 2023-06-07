@@ -1,0 +1,18 @@
+uuid: c6408058-9ffd-43e6-955f-8302e916b286
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.agendar_clase_no_gratis
+id: node.agendar_clase_no_gratis.title
+field_name: title
+entity_type: node
+bundle: agendar_clase_no_gratis
+label: 'Título de referencia'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -175,3 +175,16 @@ function koala_theme_suggestions_node_edit_form_alter(array &$suggestions, array
 
   return $suggestions;
 }
+
+/**
+ * Implements hook_theme_suggestions_HOOK().
+ *
+ * Add views field template suggestions.
+ * 
+ * @inheritdoc
+ */
+function koala_theme_suggestions_views_view_field(array $variables) {
+  return [
+    'views_view_field__' . $variables['field']->field
+  ];
+}
