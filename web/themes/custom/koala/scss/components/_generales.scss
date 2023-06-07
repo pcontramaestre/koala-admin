@@ -30,7 +30,6 @@ h2 {
 
     .navbar-brand {
       margin: 0;
-      padding-left: 2rem;
 
       img {
         max-width: 112px;
@@ -86,6 +85,8 @@ h2 {
     }
 
     #CollapsingNavbar {
+      display    : flex;
+      align-items: center;
       background-color: white;
 
       .offcanvas-body {
@@ -98,6 +99,11 @@ h2 {
       }
 
       .navbar-nav {
+        display       : flex;
+        flex-direction: row;
+        align-items   : center;
+        padding       : 0px;
+        gap           : 8px;
         .nav-item {
           .nav-link {
             color      : black !important;
@@ -139,6 +145,30 @@ h2 {
           .nav-link.active {
             background-color: $AlgaK100;
             border-radius   : 20px;
+          }
+        }
+        .nav-item:nth-child(6) {
+          margin-left: 1rem;
+
+          a {
+            background   : #FFFFFF;
+            border       : 2px solid $TurqK500;
+            border-radius: 28px;
+            color        : $TurqK500 !important;
+            padding      : 0.2rem 1rem 0.2rem 1rem;
+            margin-left  : 2rem;
+
+            &:hover {
+              background-color: $TurqK500;
+              color           : white !important;
+            }
+          }
+        }
+
+        .nav-item:nth-child(7) {
+          a {
+            text-decoration: underline;
+            margin-left    : 1rem;
           }
         }
 

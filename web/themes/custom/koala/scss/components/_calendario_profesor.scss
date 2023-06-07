@@ -1,0 +1,385 @@
+.view-clases-gratuitas-profesores {
+  margin-top: 1rem;
+
+  .no-admin {
+    .js-drupal-fullcalendar {
+      .fc-header-toolbar {
+        .fc-left {
+          .fc-button-group {
+            button {
+              background-color: white;
+              color           : black;
+              border          : none;
+            }
+          }
+
+          .fc-today-button {
+            background-color: white;
+            color           : #FF6669;
+            border          : none;
+            font-weight     : 700;
+          }
+        }
+
+        .fc-center {
+          width: 63%;
+
+          h2 {
+            font-weight: 700;
+            font-size  : 20px;
+            color      : #727F7F;
+          }
+        }
+
+        .fc-right {
+          .fc-button-group {
+            button {
+              background-color: white;
+              color           : #FF6669;
+              border          : none;
+              font-weight     : 700;
+
+            }
+
+            .fc-button-active {
+              border-bottom: 2px solid grey;
+              border-radius: 0px;
+            }
+          }
+        }
+      }
+
+      .fc-view-container {
+
+        .fc-dayGridMonth-view,
+        .fc-timeGridWeek-view {
+          border: 1px solid #E6F1F1;
+
+          table {
+            .fc-head {
+              tr {
+                .fc-head-container {
+                  color : $GreyK500;
+                  border: 2px solid #E6F1F1;
+                }
+              }
+            }
+
+            .fc-body {
+              tr {
+                .fc-widget-content {
+                  .fc-day-grid-container {
+                    height: 600px !important;
+
+                    .fc-day-grid {
+                      .fc-week {
+                        height: 100px !important;
+
+                        .fc-bg {
+                          table {
+                            tbody {
+                              tr {
+                                td {
+                                  border: 2px solid #E6F1F1;
+                                }
+                              }
+                            }
+                          }
+                        }
+
+                        .fc-content-skeleton {
+                          table {
+                            thead {
+                              .fc-day-top {
+                                .fc-day-number {
+                                  color          : #727F7F;
+                                  text-decoration: none;
+                                  float          : left !important;
+                                  margin-left    : 0.5rem;
+                                  font-weight    : 600;
+                                  font-size      : 14px;
+                                }
+                              }
+                            }
+
+                            tbody {
+                              tr {
+                                .fc-event-container {
+                                  .fc-day-grid-event {
+                                    background-color: transparent !important;
+                                    border          : none;
+
+                                    .fc-content {
+                                      margin-left: 0.5rem;
+
+                                      .fc-time {
+                                        font-weight     : 500 !important;
+                                        background-color: white;
+                                        color           : #727F7F;
+                                        border          : none;
+                                        font-size       : 12px;
+                                      }
+
+                                      .fc-title {
+                                        background-color: #F8E5DE;
+                                        border-radius   : 12px;
+                                        color           : #AF654A;
+                                        font-weight     : 700;
+                                        font-size       : 12px;
+                                        padding         : 0.1rem 0.2rem 0.2rem 0.2rem;
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+
+                  .fc-time-grid-container {
+                    .fc-time-grid {
+                      .fc-slats {
+                        table {
+                          tbody {
+                            tr {
+                              border: 2px solid #E6F1F1;
+
+                              .fc-axis {
+                                span {
+                                  color    : #727F7F;
+                                  font-size: 14px;
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+
+                      .fc-content-skeleton {
+                        table {
+                          tbody {
+                            tr {
+                              td {
+                                .fc-content-col {
+                                  .fc-event-container {
+                                    .fc-time-grid-event {
+                                      background-color: transparent !important;
+                                      border          : none;
+
+                                      .fc-content {
+                                        .fc-time {
+                                          display: none;
+                                        }
+
+                                        .fc-title {
+                                          background-color: #F8E5DE;
+                                          border-radius   : 12px;
+                                          color           : #AF654A;
+                                          font-weight     : 700;
+                                          font-size       : 12px;
+                                          padding         : 0.1rem 0.2rem 0.2rem 0.2rem;
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+
+                  .fc-day-grid {
+                    .fc-week {
+                      .fc-bg {
+                        table {
+                          tbody {
+                            tr {
+                              .fc-axis {
+                                span {
+                                  color    : #727F7F;
+                                  font-size: 14px;
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        .fc-timeGridDay-view {
+          border: 1px solid #E6F1F1;
+
+          table {
+            .fc-head {
+
+              tr {
+                .fc-head-container {
+                  .fc-row {
+                    border: 1px solid #E6F1F1;
+
+                    table {
+                      thead {
+                        tr {
+                          .fc-day-header {
+
+                            span {
+                              color    : #727F7F;
+                              font-size: 14px;
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+
+            .fc-body {
+              tr {
+                .fc-widget-content {
+                  .fc-time-grid-container {
+                    .fc-time-grid {
+                      .fc-slats {
+                        table {
+                          tbody {
+                            tr {
+                              border: 2px solid #E6F1F1;
+
+                              .fc-axis {
+                                span {
+                                  color    : #727F7F;
+                                  font-size: 14px;
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+
+                      .fc-content-skeleton {
+                        table {
+
+                          tbody {
+                            tr {
+                              td {
+                                .fc-content-col {
+                                  .fc-event-container {
+                                    .fc-time-grid-event {
+                                      background-color: transparent !important;
+                                      border          : none;
+
+                                      .fc-content {
+                                        margin-left: 0.5rem;
+                                        display    : flex;
+                                        align-items: center;
+
+                                        .fc-time {
+                                          font-weight     : 500 !important;
+                                          background-color: white;
+                                          color           : #727F7F;
+                                          border          : none;
+                                          font-size       : 12px;
+                                        }
+
+                                        .fc-title {
+                                          background-color: #F8E5DE;
+                                          border-radius   : 12px;
+                                          color           : #AF654A;
+                                          font-weight     : 700;
+                                          font-size       : 12px;
+                                          padding         : 0.1rem 0.2rem 0.2rem 0.2rem;
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+
+                  .fc-day-grid {
+                    .fc-week {
+                      .fc-bg {
+                        table {
+                          tbody {
+                            tr {
+                              .fc-axis {
+                                span {
+                                  color    : #727F7F;
+                                  font-size: 14px;
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        .fc-listYear-view {
+          border: 2px solid #E6F1F1;
+          .fc-scroller {
+            .fc-list-table {
+              tbody {
+                .fc-list-heading {
+                  .fc-widget-header {
+                    a {
+                      color: #727F7F;
+                    }
+                  }
+                }
+
+                .fc-list-item {
+                  .fc-list-item-time {
+                    font-weight     : 500 !important;
+                    background-color: white;
+                    color           : #727F7F;
+                    border          : none;
+                    font-size       : 14px;
+                  }
+                  .fc-list-item-marker{
+                    padding: 8px 0px !important;
+                  }
+                  .fc-list-item-title{
+                    display: flex;
+                    a{
+                      background-color: #F8E5DE;
+                      border-radius: 12px;
+                      color: #AF654A;
+                      font-weight: 700;
+                      font-size: 12px;
+                      padding: 0.1rem 0.2rem 0.2rem 0.2rem;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

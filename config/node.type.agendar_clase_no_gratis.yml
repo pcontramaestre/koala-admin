@@ -1,0 +1,17 @@
+uuid: 9d4414d6-af3d-4f9f-998d-703a72d7e998
+langcode: es
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: 'Agendar clase'
+type: agendar_clase_no_gratis
+description: 'Agendar clase para un Koala'
+help: ''
+new_revision: true
+preview_mode: 0
+display_submitted: true

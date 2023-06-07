@@ -7,9 +7,11 @@ dependencies:
     - field.field.node.crear_hijos.body
     - field.field.node.crear_hijos.field_fecha_nacimiento
     - field.field.node.crear_hijos.field_hijo_relacionado
+    - field.field.node.crear_hijos.field_logros
     - field.field.node.crear_hijos.field_sexo
     - node.type.crear_hijos
   module:
+    - content_moderation
     - field_layout
     - layout_discovery
 third_party_settings:
@@ -36,6 +38,12 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  moderation_state:
+    type: moderation_state_default
+    weight: 100
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   title:
     type: string_textfield
     weight: 0
@@ -44,10 +52,16 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  url_redirects:
+    weight: 50
+    region: content
+    settings: {  }
+    third_party_settings: {  }
 hidden:
   body: true
   created: true
   field_hijo_relacionado: true
+  field_logros: true
   langcode: true
   path: true
   promote: true

@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.full
+    - field.field.node.agendar_clase.field_asignar_profesor
     - field.field.node.agendar_clase.field_fecha_cita_oculta
     - field.field.node.agendar_clase.field_fecha_de_la_cita
     - field.field.node.agendar_clase.field_fecha_nac
@@ -11,6 +12,7 @@ dependencies:
     - field.field.node.agendar_clase.field_hora_cita_oculta
     - field.field.node.agendar_clase.field_hora_clase
     - field.field.node.agendar_clase.field_nombre_del_nino_a
+    - field.field.node.agendar_clase.field_otra_hora
     - field.field.node.agendar_clase.field_sexo_n
     - node.type.agendar_clase
   module:
@@ -26,6 +28,11 @@ targetEntityType: node
 bundle: agendar_clase
 mode: full
 content:
+  content_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: -20
+    region: content
   field_fecha_de_la_cita:
     type: string
     label: above
@@ -56,10 +63,12 @@ content:
     weight: 0
     region: content
 hidden:
+  field_asignar_profesor: true
   field_fecha_cita_oculta: true
   field_fecha_nac: true
   field_he_leido_y_estoy_de_acuerd: true
   field_hora_cita_oculta: true
+  field_otra_hora: true
   field_sexo_n: true
   langcode: true
   links: true

@@ -1,3 +1,64 @@
+// header profesor
+#header {
+  #navbar-main {
+    #CollapsingNavbar {
+      #block-profesor {
+        .nav {
+          gap: 30px;
+
+          .nav-item {
+            .nav-link {
+              color      : black !important;
+              font-size  : 1rem;
+              font-weight: 700;
+              padding    : 0 0.5rem;
+              position   : relative;
+              transition : all 0.3s ease-in-out;
+
+              &:hover {
+                background-color: #C6F5F2;
+                border-radius   : 20px;
+              }
+            }
+
+            .nav-link.active {
+              background-color: #C6F5F2;
+              border-radius   : 20px;
+            }
+          }
+        }
+      }
+
+      #block-koala-account-menu {
+        .nav {
+          gap: 30px;
+
+          .nav-link {
+            color      : black !important;
+            font-size  : 1rem;
+            font-weight: 700;
+            padding    : 0 0.5rem;
+            position   : relative;
+            transition : all 0.3s ease-in-out;
+
+            &:hover {
+              background-color: #C6F5F2;
+              border-radius   : 20px;
+            }
+          }
+
+          .nav-link.active {
+            background-color: #C6F5F2;
+            border-radius   : 20px;
+          }
+        }
+
+      }
+    }
+  }
+}
+
+
 // media mayor a 1200px
 @media (min-width: 1200px) {
   body {
@@ -41,16 +102,16 @@
 
   header#header {
     .probar-ahora.nav-link {
-      background: #FFFFFF;
-      border: 2px solid #297E88;
+      background   : #FFFFFF;
+      border       : 2px solid #297E88;
       border-radius: 28px;
-      color: #297E88 !important;
-      padding: 0.2rem 1rem 0.2rem 1rem;
-      margin-left: 2rem;
+      color        : #297E88 !important;
+      padding      : 0.2rem 1rem 0.2rem 1rem;
+      margin-left  : 2rem;
 
       &:hover {
         background-color: #297E88;
-        color: white !important;
+        color           : white !important;
       }
     }
 
@@ -64,8 +125,8 @@
       .content {
         .view-redes-sociales-p {
           .view-content {
-            display  : flex;
-            flex-wrap: nowrap;
+            display    : flex;
+            flex-wrap  : nowrap;
             margin-left: 0.1rem;
 
             .views-row {

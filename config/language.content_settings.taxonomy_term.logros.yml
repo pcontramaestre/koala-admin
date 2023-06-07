@@ -1,0 +1,16 @@
+uuid: 70ededb6-7ef8-4eeb-991d-bbe964a5dc1a
+langcode: es
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.logros
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+id: taxonomy_term.logros
+target_entity_type_id: taxonomy_term
+target_bundle: logros
+default_langcode: site_default
+language_alterable: false

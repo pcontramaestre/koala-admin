@@ -1,0 +1,16 @@
+uuid: fdc07d66-5798-4e24-a17f-14b7d1021bd6
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.agendar_clase_no_gratis
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+id: node.agendar_clase_no_gratis
+target_entity_type_id: node
+target_bundle: agendar_clase_no_gratis
+default_langcode: site_default
+language_alterable: false

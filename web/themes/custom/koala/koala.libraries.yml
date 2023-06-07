@@ -6,12 +6,14 @@ global-styling:
     js/custom.js: {}
     js/slick/slick.min.js: {}
     js/jquery.magnific-popup.min.js: {}
+    js/flipdown/dist/flipdown.min.js: {}
   css:
     component:
       css/style.css: {}
       js/slick/slick.css: {}
       js/slick/slick-theme.css: {}
       css/magnific-popup.css: {}
+      /themes/custom/koala/js/flipdown/dist/flipdown.min.css: {}
   dependencies:
     - core/jquery
     - core/drupal

@@ -1,0 +1,40 @@
+uuid: dce49994-d898-4733-8761-057fc2d375cd
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.field.node.agendar_clase_no_gratis.body
+    - field.field.node.agendar_clase_no_gratis.field_fecha_a_buscar
+    - node.type.agendar_clase_no_gratis
+  module:
+    - flatpickr_datepicker
+    - text
+    - user
+id: node.agendar_clase_no_gratis.default
+targetEntityType: node
+bundle: agendar_clase_no_gratis
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_fecha_a_buscar:
+    type: flatpickr_datepicker_default_formatter
+    label: above
+    settings:
+      display_layout: calendar_view
+      date_format: 'F j, Y'
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  langcode: true

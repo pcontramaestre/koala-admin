@@ -3,19 +3,35 @@ langcode: es
 status: true
 dependencies:
   config:
+    - filter.format.basic_html
+    - filter.format.full_html
+    - filter.format.restricted_html
+    - media.type.audio
     - media.type.avatares_profesores
+    - media.type.document
+    - media.type.image
+    - media.type.remote_video
+    - media.type.video
+    - node.type.agendar_clase
     - node.type.article
+    - node.type.crear_hijos
     - node.type.horarios_de_trabajo
     - node.type.page
+    - node.type.profesores
     - taxonomy.vocabulary.avatar_profesor
     - taxonomy.vocabulary.tags
+    - workflows.workflow.asignar_profesor
   module:
+    - admin_toolbar_search
     - comment
+    - config_pages
+    - content_moderation
     - content_translation
     - contextual
     - date_recur_modular
     - field_permissions
     - file
+    - filter
     - fivestar
     - form_mode_control
     - form_mode_manager
@@ -23,10 +39,13 @@ dependencies:
     - node
     - node_view_permissions
     - path
+    - registration_role
     - system
     - taxonomy
     - toolbar
     - tour
+    - twig_ui
+    - votingapi
 _core:
   default_config_hash: Wur9kcEOwY1Jal81NssKnz3RhVJxAvBwyWQBGcA_1Go
 id: content_editor
@@ -35,71 +54,138 @@ weight: 2
 is_admin: false
 permissions:
   - 'access administration pages'
+  - 'access comments'
   - 'access content overview'
   - 'access contextual links'
   - 'access files overview'
+  - 'access media overview'
+  - 'access site in maintenance mode'
+  - 'access taxonomy overview'
   - 'access toolbar'
   - 'access tour'
+  - 'access user profiles'
   - access_all_form_modes
+  - 'administer media'
+  - 'administer media types'
+  - 'administer menu'
+  - 'administer registration roles'
   - 'administer url aliases'
+  - 'administer users'
+  - 'create agendar_clase content'
   - 'create article content'
+  - 'create audio media'
   - 'create avatares_profesores media'
+  - 'create content translations'
+  - 'create crear_hijos content'
+  - 'create document media'
   - 'create field_apodo'
   - 'create field_avatar'
+  - 'create field_hora_clase'
+  - 'create field_logros'
   - 'create field_nombres_y_apellidos_del_pr'
   - 'create field_tu_presentacion'
   - 'create field_tu_video_'
   - 'create horarios_de_trabajo content'
+  - 'create image media'
+  - 'create media'
   - 'create page content'
+  - 'create profesores content'
+  - 'create remote_video media'
   - 'create terms in avatar_profesor'
   - 'create terms in tags'
   - 'create url aliases'
+  - 'create video media'
   - 'date_recur_modular use sierra form'
+  - 'delete any audio media'
   - 'delete any avatares_profesores media'
+  - 'delete any document media'
   - 'delete any horarios_de_trabajo content'
+  - 'delete any image media'
+  - 'delete any media'
+  - 'delete any remote_video media'
+  - 'delete any video media'
   - 'delete article revisions'
   - 'delete horarios_de_trabajo revisions'
+  - 'delete media'
   - 'delete own article content'
+  - 'delete own audio media'
   - 'delete own avatares_profesores media'
+  - 'delete own document media'
   - 'delete own horarios_de_trabajo content'
+  - 'delete own image media'
   - 'delete own page content'
+  - 'delete own remote_video media'
+  - 'delete own video media'
   - 'delete page revisions'
   - 'delete terms in avatar_profesor'
+  - 'delete terms in tags'
+  - 'delete votes'
+  - 'edit any agendar_clase content'
+  - 'edit any audio media'
   - 'edit any avatares_profesores media'
+  - 'edit any crear_hijos content'
+  - 'edit any document media'
   - 'edit any horarios_de_trabajo content'
+  - 'edit any image media'
+  - 'edit any profesores content'
+  - 'edit any remote_video media'
+  - 'edit any video media'
+  - 'edit config_pages entity'
   - 'edit field_apodo'
   - 'edit field_avatar'
+  - 'edit field_hora_clase'
   - 'edit field_nombres_y_apellidos_del_pr'
   - 'edit field_tu_presentacion'
   - 'edit field_tu_video_'
+  - 'edit home_padres config page entity'
   - 'edit own article content'
+  - 'edit own audio media'
   - 'edit own avatares_profesores media'
   - 'edit own comments'
+  - 'edit own document media'
   - 'edit own field_apodo'
   - 'edit own field_avatar'
+  - 'edit own field_hora_clase'
   - 'edit own field_nombres_y_apellidos_del_pr'
   - 'edit own field_tu_presentacion'
   - 'edit own field_tu_video_'
   - 'edit own horarios_de_trabajo content'
+  - 'edit own image media'
   - 'edit own page content'
+  - 'edit own remote_video media'
+  - 'edit own video media'
   - 'edit terms in avatar_profesor'
   - 'edit terms in tags'
+  - 'load twig templates from file system'
+  - 'post comments'
   - 'rate content'
   - 'revert all revisions'
   - 'revert horarios_de_trabajo revisions'
   - 'translate avatar_profesor taxonomy_term'
+  - 'update any media'
+  - 'update content translations'
+  - 'update media'
+  - 'use  The form mode asignar_profesor linked to  node entity( agendar_clase )'
   - 'use  The form mode default linked to  node entity( horarios_de_trabajo )'
   - 'use  The form mode editar_horarios linked to  node entity( horarios_de_trabajo )'
+  - 'use admin toolbar search'
+  - 'use asignar_profesor transition asignacion_de_profesor'
+  - 'use asignar_profesor transition publish'
   - 'use node.agendar_clases form mode'
+  - 'use node.asignar_profesor form mode'
   - 'use node.crear_koalas form mode'
   - 'use node.editar_agendar_clase_gratis form mode'
   - 'use node.editar_horarios form mode'
+  - 'use text format basic_html'
+  - 'use text format full_html'
+  - 'use text format restricted_html'
   - 'use user.default form mode'
   - 'use user.editar_perfil_padre form mode'
   - 'use user.editar_profesor form mode'
   - 'use user.register form mode'
   - 'use user.registro_de_hijos form mode'
   - 'use user.registro_de_profesores form mode'
+  - 'view all media revisions'
   - 'view all revisions'
   - 'view any agendar_clase content'
   - 'view any article content'
@@ -107,17 +193,30 @@ permissions:
   - 'view any horarios_de_trabajo content'
   - 'view any page content'
   - 'view any profesores content'
+  - 'view config_pages entity'
+  - 'view field_apodo'
+  - 'view field_avatar'
+  - 'view field_hora_clase'
+  - 'view field_nombres_y_apellidos_del_pr'
   - 'view field_tu_presentacion'
+  - 'view field_tu_video_'
+  - 'view home_padres config page entity'
   - 'view horarios_de_trabajo revisions'
+  - 'view latest version'
+  - 'view media'
   - 'view own agendar_clase content'
   - 'view own article content'
   - 'view own crear_hijos content'
   - 'view own field_apodo'
   - 'view own field_avatar'
+  - 'view own field_hora_clase'
   - 'view own field_nombres_y_apellidos_del_pr'
   - 'view own field_tu_presentacion'
+  - 'view own field_tu_video_'
   - 'view own horarios_de_trabajo content'
   - 'view own page content'
   - 'view own profesores content'
   - 'view own unpublished content'
+  - 'view own unpublished media'
   - 'view the administration theme'
+  - 'view user email addresses'

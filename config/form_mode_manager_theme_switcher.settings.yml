@@ -7,6 +7,9 @@ type:
   user_editar_profesor: _none
   user_registro_de_hijos: _none
   user_registro_de_profesores: _none
+  node_asignar_profesor: admin
+  node_editar_horarios: _none
+  user_register: _none
 form_mode:
   media_media_library: null
   node_agendar_clases: null
@@ -16,3 +19,6 @@ form_mode:
   user_editar_profesor: null
   user_registro_de_hijos: null
   user_registro_de_profesores: null
+  node_asignar_profesor: null
+  node_editar_horarios: null
+  user_register: null

@@ -1,0 +1,29 @@
+uuid: 059c8980-2ffc-4197-85e7-46f1324a9d33
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_logros
+    - node.type.crear_hijos
+    - taxonomy.vocabulary.logros
+id: node.crear_hijos.field_logros
+field_name: field_logros
+entity_type: node
+bundle: crear_hijos
+label: Logros
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      logros: logros
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

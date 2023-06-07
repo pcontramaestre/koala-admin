@@ -1,0 +1,62 @@
+<?php
+
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Entity\EntityTypeManagerInterface;
+use Drupal\user\Entity\User;
+use Drupal\node\Entity\Node;
+
+/**
+ * Implements hook_entity_presave().
+ */
+// function agregar_profesores_entity_presave(EntityInterface $entity) {
+//   // Verifica si la entidad es un usuario y tiene el rol "profesor".
+//   if ($entity instanceof User && in_array('profesor', $entity->getRoles())) {
+
+//     //Obtener el id del usuario que se esta guardando.
+//     $id = $entity->id();
+//     var_dump("id del usuario:");
+//     var_dump($id);
+//     var_dump("Roles:");
+//     var_dump($entity->getRoles());
+//     var_dump("Nombre:");
+//     var_dump($entity->get('name')->value);
+//     var_dump("Correo:");
+//     var_dump($entity->get('mail')->value);
+//     exit;
+
+//     // Crea un nodo de tipo "horarios_de_trabajo".
+//     $node = Node::create([
+//       'type' => 'horarios_de_trabajo',
+//       'title' => 'Horarios de trabajo',
+//       'field_profesor' => $entity->id(),
+//       'uid' => $entity->id(),
+//     ]);
+
+//     // Guarda el nodo creado.
+//     $node->save();
+//   }
+// }
+
+/**
+ * Implements hook_entity_insert().
+ * Create node after register user role profesor.
+ */
+function agregar_profesores_entity_insert(EntityInterface $entity) {
+  // Verifica si la entidad es un usuario y tiene el rol "profesor".
+  if ($entity instanceof User && in_array('profesor', $entity->getRoles())) {
+
+    //Obtener el field_nombres_y_apellidos_del_pr
+    $nombres_y_apellidos = $entity->get('field_nombres_y_apellidos_del_pr')->value;
+
+    // Crea un nodo de tipo "horarios_de_trabajo".
+    $node = Node::create([
+      'type' => 'horarios_de_trabajo',
+      'title' => 'Horario de trabajo de '.$nombres_y_apellidos,
+      'field_profesor' => $entity->id(),
+      'uid' => $entity->id(),
+    ]);
+
+    // Guarda el nodo creado.
+    $node->save();
+  }
+}

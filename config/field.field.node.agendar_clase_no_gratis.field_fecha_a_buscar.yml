@@ -1,0 +1,21 @@
+uuid: a332633e-0ab1-48cb-b408-dd8c601ecae7
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_fecha_a_buscar
+    - node.type.agendar_clase_no_gratis
+  module:
+    - flatpickr_datepicker
+id: node.agendar_clase_no_gratis.field_fecha_a_buscar
+field_name: field_fecha_a_buscar
+entity_type: node
+bundle: agendar_clase_no_gratis
+label: 'Fecha a buscar'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: flatpickr_datepicker

@@ -49,3 +49,16 @@ function asignar_profesor_form_alter(&$form, FormStateInterface $form_state, $fo
 
 //   return $suggestions;
 // }
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ *
+ * Add views field template suggestions.
+ *
+ * @inheritdoc
+ */
+function asignar_profesor_theme_suggestions_views_view_field_alter(array &$suggestions, array $variables) {
+  $suggestions[] = 'views_view_field__' . $variables['view']->id();
+  // suggestion for field in view
+  $suggestions[] = 'views_view_field__' . $variables['view']->id() . '__' . $variables['field']->field;
+}

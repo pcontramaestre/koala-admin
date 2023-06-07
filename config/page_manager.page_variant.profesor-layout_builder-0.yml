@@ -5,6 +5,7 @@ dependencies:
   config:
     - block_content.type.basic
     - page_manager.page.profesor
+    - views.view.clases_gratuitas_profesores
     - views.view.detalle_profesor
     - views.view.ver_horario_profesor
   module:
@@ -77,10 +78,10 @@ variant_settings:
             context_mapping: {  }
             views_label: 'Mi horario'
             items_per_page: none
-          weight: 1
+          weight: 2
           additional:
             layout_builder_styles_style:
-              separacion_superior_mt_5: 0
+              separacion_superior_mt_5: separacion_superior_mt_5
         f019aecb-513c-41e6-bb38-c51a951d06ea:
           uuid: f019aecb-513c-41e6-bb38-c51a951d06ea
           region: first
@@ -93,6 +94,21 @@ variant_settings:
             context_mapping: {  }
             block_revision_id: 2
             block_serialized: null
+          weight: 1
+          additional:
+            layout_builder_styles_style:
+              separacion_superior_mt_5: separacion_superior_mt_5
+        adb59d82-b070-453c-82b9-b3dcbf0371b0:
+          uuid: adb59d82-b070-453c-82b9-b3dcbf0371b0
+          region: second
+          configuration:
+            id: 'views_block:clases_gratuitas_profesores-block_1'
+            label: 'Clases Gratuitas'
+            label_display: visible
+            provider: views
+            context_mapping: {  }
+            views_label: 'Clases Gratuitas'
+            items_per_page: none
           weight: 1
           additional:
             layout_builder_styles_style:

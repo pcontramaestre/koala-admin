@@ -60,12 +60,21 @@
                       #edit-field-avatar--wrapper {
                         .fieldset-wrapper {
                           .form-radios {
+                            display        : flex;
+                            overflow-y     : scroll;
+                            scroll-behavior: smooth;
+                            gap            : 10px;
+
                             .js-form-item {
-                              border       : 1px solid black;
-                              width        : 9.5rem;
-                              border-radius: 20px;
-                              padding      : 0.5rem;
-                              margin-bottom: 1rem;
+                              border            : 1px solid black;
+                              width             : 9.5rem;
+                              border-radius     : 20px;
+                              padding           : 0.5rem;
+                              margin-bottom     : 1rem;
+                              text-align        : center;
+                              display           : flex;
+                              align-items       : center;
+                              flex-direction    : column;
 
                               input {
                                 display        : flex;
@@ -237,7 +246,7 @@
                     border          : none;
                     padding-left    : 1.5rem;
                     font-size       : 1.4rem;
-                    width: 33.333%;
+                    width           : 33.333%;
 
                     a {
                       color: black;
