@@ -11,6 +11,7 @@
 
               .banner-padres-perfil {
                 position: relative;
+
                 .texto {
                   position   : absolute;
                   font-weight: 700;
@@ -194,7 +195,7 @@
               .views-row {
                 border-radius: 24px;
                 padding      : 16px;
-                height       : 300px;
+                height       : 320px;
                 margin-top   : 1.3rem;
 
                 .views-field-title {
@@ -220,7 +221,7 @@
                     box-shadow      : 0px 1.67507px 8.37533px rgba(67, 67, 67, 0.15), 0px 4.18766px 16.7507px rgba(74, 74, 74, 0.08), 0px 8.37533px 67.0026px rgba(74, 74, 74, 0.02);
                     font-weight     : 700;
                     font-size       : 2rem;
-                    padding         : 1rem;
+                    padding         : 0.5rem 1rem 1rem 1rem;
                     width           : 60%;
                     text-align      : center;
                     margin-top      : 1rem;
@@ -233,7 +234,7 @@
                   width           : 35%;
                   float           : inline-start;
                   position        : relative;
-                  top             : -78px;
+                  top             : -109px;
                   min-height      : 190px;
                   display         : flex;
                   align-items     : center;
@@ -247,6 +248,10 @@
                   }
                 }
 
+                .views-field-field-fecha-cita-oculta {
+                  display: none;
+                }
+
                 .views-field-field-hora-clase {
                   margin     : 0.5rem 1rem;
                   width      : 50%;
@@ -255,7 +260,7 @@
                 }
 
                 .views-field-nid {
-                  margin: 1rem 0rem;
+                  margin: 2rem 0rem;
                   width : 100%;
 
                   .field-content {

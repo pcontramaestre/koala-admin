@@ -1,3 +1,6 @@
+body #main-wrapper{
+  min-height: 95vh;
+}
 // header profesor
 #header {
   #navbar-main {
@@ -57,8 +60,48 @@
     }
   }
 }
+// header padres
 
+#header {
+  #navbar-main {
+    padding: 0rem 2rem;
+    #CollapsingNavbar {
+      .offcanvas-body{
+        .block-menu{
+          .nav {
+            gap: 30px;
 
+            .nav-item {
+              .nav-link {
+                color      : black !important;
+                font-size  : 1rem;
+                font-weight: 700;
+                padding    : 0 0.5rem;
+                position   : relative;
+                transition : all 0.3s ease-in-out;
+
+                &:hover {
+                  background-color: #C6F5F2;
+                  border-radius   : 20px;
+                }
+              }
+
+              .nav-link.active {
+                background-color: #C6F5F2;
+                border-radius   : 20px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media (min-width: 1400px) {
+  body #main-wrapper #main{
+    max-width: 80%!important;
+  }
+}
 // media mayor a 1200px
 @media (min-width: 1200px) {
   body {
