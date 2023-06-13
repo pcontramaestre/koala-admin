@@ -64,12 +64,14 @@ body #main-wrapper{
 
 #header {
   #navbar-main {
-    padding: 0rem 2rem;
+    padding: 0rem 4rem;
     #CollapsingNavbar {
+      align-items: initial;
       .offcanvas-body{
-        .block-menu{
+        justify-content: space-between;
+        #block-padres{
           .nav {
-            gap: 30px;
+            gap: 50px;
 
             .nav-item {
               .nav-link {
@@ -89,7 +91,27 @@ body #main-wrapper{
               .nav-link.active {
                 background-color: #C6F5F2;
                 border-radius   : 20px;
+                padding: 0rem 1.5rem;
               }
+              &:nth-child(3){
+                order: 1;
+              }
+              &:nth-child(2){
+                order: 2;
+              }
+              &:nth-child(1){
+                order: 2;
+              }
+            }
+          }
+        }
+        #block-koala-account-menu{
+          .no-admin{
+            .nav-link{
+              font-size: 1rem;
+              font-weight: 700;
+              color: $TurqK500!important;
+              text-decoration: underline;
             }
           }
         }
