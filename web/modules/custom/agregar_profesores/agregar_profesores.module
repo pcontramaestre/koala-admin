@@ -48,9 +48,9 @@ function agregar_profesores_entity_insert(EntityInterface $entity) {
     //Obtener el field_nombres_y_apellidos_del_pr
     $nombres_y_apellidos = $entity->get('field_nombres_y_apellidos_del_pr')->value;
 
-    // Crea un nodo de tipo "horarios_de_trabajo".
+    // Crea un nodo de tipo "horarios_profesores".
     $node = Node::create([
-      'type' => 'horarios_de_trabajo',
+      'type' => 'horarios_profesores',
       'title' => 'Horario de trabajo de '.$nombres_y_apellidos,
       'field_profesor' => $entity->id(),
       'uid' => $entity->id(),

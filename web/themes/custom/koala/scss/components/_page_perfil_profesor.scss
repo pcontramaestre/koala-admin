@@ -8,3 +8,43 @@
     .cuadro-perfil-profesor {}
   }
 }
+
+.field--type-entity-reference.field--name-field-avatar {
+  .fieldset-wrapper {
+    #edit-field-avatar {
+      .js-form-type-radio.form-item-field-avatar {
+        >input {
+          margin-left: 0.1rem;
+        }
+
+        span.views-field.views-field-name {
+          display: none;
+        }
+
+        img {
+          max-width      : 80%;
+          height         : auto;
+          border-radius  : 50%;
+          margin-top     : 1rem;
+          object-fit     : cover;
+          object-position: center;
+          padding        : 0.5rem;
+          border         : 1px solid;
+        }
+      }
+    }
+  }
+}
+
+.smartdate--widget .byday-checkboxes input {
+  display: unset;
+}
+
+.ui-dialog.ui-corner-all.ui-widget.ui-widget-content.ui-front {
+  top    : 7rem !important;
+  z-index: 20000 !important;
+
+  #drupal-modal {
+    max-height: 500px !important;
+  }
+}

@@ -21,6 +21,9 @@
  */
 #}
 
-<input type="radio" name="field_profesor[]" value="{{ output|striptags|trim }}" id="field_{{ output |striptags|trim}}"/>
-<label for="field_{{ output |striptags|trim}}">{{ output }}</label>
+<input type="radio" name="field_profesor[]" value="{{ row.nid|striptags|trim }}" id="field_{{ row.nid |striptags|trim}}"/>
+<label for="field_{{ row.nid |striptags|trim}}">{{ output }}</label>
+
+
+
 
