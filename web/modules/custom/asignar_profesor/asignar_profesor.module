@@ -9,6 +9,7 @@ use Drupal\node\Entity\Node;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\user\Entity\User;
 use Drupal\Core\StringTranslation\TranslatableMarkup;
+use Drupal\views\ViewExecutable;
 
 /**
  * Implements hook_form_FORM_ID_alter() for the node_agendar_clase_form.
@@ -62,3 +63,5 @@ function asignar_profesor_theme_suggestions_views_view_field_alter(array &$sugge
   // suggestion for field in view
   $suggestions[] = 'views_view_field__' . $variables['view']->id() . '__' . $variables['field']->field;
 }
+
+
