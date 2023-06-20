@@ -62,11 +62,18 @@
           }
 
           // PROFESORES DISPONIBLES
-          .attachment.attachment-after {
-            .view-display-id-attachment_1 {
+          .view-footer {
+            .view-id-mis_koalas.view-display-id-block_3 {
+              display       : flex;
+              flex-direction: row;
+              flex-wrap     : wrap;
+              width         : 100%;
+
 
               // TITULO DE LA SECCION
               .view-header {
+                width: 100%;
+
                 .titulo-profesores {
                   font-weight  : 700;
                   font-size    : 1.5rem;
@@ -74,10 +81,27 @@
                 }
               }
 
+              .view-filters {
+                width: 33%;
+              }
+
+              .view-empty {
+                width          : 63%;
+                display        : flex;
+                align-content  : center;
+                justify-content: center;
+                align-items    : center;
+                background     : #FFE8E8;
+                border-radius  : 15px;
+                margin-left    : 3%;
+              }
+
               //CONTENIDO - PROFESORES DISPONIBLES
               .view-content {
+                width                : 63%;
+                margin-left          : 3%;
                 display              : grid;
-                grid-template-columns: 1fr 1fr 1fr;
+                grid-template-columns: 1fr 1fr 1fr 1fr;
                 gap                  : 15px 15px;
                 justify-content      : center;
                 align-content        : center;
@@ -86,9 +110,59 @@
 
                 .views-row {
                   .views-field-field-nombres-y-apellidos-del-pr {
+                    background   : #297E88;
+                    border-radius: 25px;
+                  }
+                }
+
+                .views-row:nth-child(2n) {
+                  .views-field-field-nombres-y-apellidos-del-pr {
+                    background   : #00D2C2;
+                    border-radius: 25px;
+                  }
+                }
+
+                .views-row:nth-child(3n) {
+                  .views-field-field-nombres-y-apellidos-del-pr {
+                    background   : #727F7F;
+                    border-radius: 25px;
+                  }
+                }
+
+                .views-row:nth-child(4n) {
+                  .views-field-field-nombres-y-apellidos-del-pr {
+                    background   : #FF6669;
+                    border-radius: 25px;
+                  }
+                }
+
+                .views-row:nth-child(5n) {
+                  .views-field-field-nombres-y-apellidos-del-pr {
+                    background   : #869021;
+                    border-radius: 25px;
+                  }
+                }
+
+                .views-row {
+                  .views-field-field-nombres-y-apellidos-del-pr {
+                    width: 100%;
+
                     .field-content {
+                      display       : flex;
+                      flex-direction: row;
+                      flex-wrap     : nowrap;
+                      align-content : center;
+                      align-items   : center;
+
                       label {
-                        font-weight: 700;
+                        font-weight   : 700;
+                        display       : flex;
+                        flex-direction: row;
+                        flex-wrap     : nowrap;
+                        align-items   : center;
+                        padding       : 4px;
+                        color         : white;
+                        text-align    : left;
 
                         img {
                           border       : 1px solid $gray-500;
@@ -110,6 +184,9 @@
           .view-footer {
             display        : flex;
             justify-content: center;
+            flex-wrap      : wrap;
+            flex-direction : column;
+            align-items    : center;
 
             .btn-primary {
               background     : #FFFFFF;

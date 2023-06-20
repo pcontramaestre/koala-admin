@@ -14,6 +14,8 @@ use Drupal\Core\Entity\EntityInterface;
 use Drupal\node\Entity\Node;
 use Drupal\Core\Render\Element;
 use Drupal\node\NodeInterface;
+use Drupal\user\Entity\User;
+use Drupal\views\ViewExecutable;
 
 /**
  * Implements hook_form_FORM_ID_alter() for agendar_clase node edit form.
@@ -82,6 +84,62 @@ function enviar_correo_clase_agendada_gratis_form_submit(array &$form, FormState
 function enviar_correo_clase_agendada_gratis_send_email(array &$form, FormStateInterface $form_state) {
   //$values = $form_state->getValues();
   
+  $user = \Drupal::currentUser();
+  $uid = $user->id();
+  // Obtener el displayname del usuario actual drupal 9.
+  $username = $user->getDisplayName();
+
+  // Obtener el correo del usuario actual.
+  $correo_padre = $user->getEmail();
+
+  // Get value radio field_sexo_n.
+  $sexo = $form_state->getValue('field_sexo_n');
+
+  // Obtener el field_nombre_del_acudiente del usuario actual
+  // $query = \Drupal::entityQuery('user');
+  // $query->condition('uid', $uid);
+  // $entity_ids = $query->execute();
+  // $user = \Drupal\user\Entity\User::load(array_shift($entity_ids));
+  $password = '123456-' . $uid;
+  // Numero random para el correo del 100 al 999.
+  $random = rand(100, 999);
+  $correo = 'correo-' . $uid . '-' . $random . '@correohijo.com';
+  $nombre = $form_state->getValue('field_nombre_del_nino_a');
+
+  // Create user account programmatically.
+  $user = User::create();
+  $user->setPassword($password);
+  $user->enforceIsNew();
+  $user->setEmail($correo);
+  $user->setUsername($correo);
+  $user->set("field_nombre_del_hijo", $nombre);
+
+  // Set field_padre entity reference to user padre.
+  $user->set("field_padre", $uid);
+
+  // Add role hijo.
+  $user->addRole('hijo');
+  $user->set("init", $correo_padre);
+
+  $user->activate();
+  $user->save();
+  $newidhijo = $user->id();
+
+  // Crear un nuevo nodo de tipo crear_hijos.
+  $node = Node::create([
+    'type'        => 'crear_hijos',
+    'title'       => $form_state->getValue('field_nombre_del_nino_a'),
+    'field_sexo'  => $sexo,
+    'field_fecha_nacimiento' => $form_state->getValue('field_fecha_nac'),
+    'field_hijo_relacionado' => $newidhijo,
+    'uid' => $uid,
+  ])->save();
+
+
+
+
+
+
   // Obtener los valores necesarios del formulario.
   // $fecha_clase = $values['field_fecha_de_la_cita']->value;
   // $hora_clase = $values['field_hora_clase']->value;
@@ -129,6 +187,11 @@ dump($fechaFormateada);
 
 //dump($fechaFormateada);
 
+
+$form_state->setValue('field_alumno_relacionado', $newidhijo);
+$form_state->setValue('field_id_texto_alumno', $newidhijo);
+
+
 // Guarda la fecha formateada en el campo oculto
 
   $form_state->setValue('field_fecha_cita_oculta', $fechaFormateada);
@@ -152,9 +215,14 @@ dump($fechaFormateada);
     if ($node instanceof NodeInterface) {
       try {
         $node->set('field_fecha_cita_oculta', date('Y-m-d\TH:i:s', strtotime($fechaHoraTexto)));
+        // gaurdar field_alumno_relacionado y field_id_texto_alumno
+        $node->set('field_alumno_relacionado', $newidhijo);
+        $node->set('field_id_texto_alumno', $newidhijo);        
         $node->save();
+        \Drupal::messenger()->addMessage('Node saved successfully ID: '.$newidhijo); 
       }
       catch (\Exception $e) {
+        \Drupal::messenger()->addMessage($e->getMessage(), 'error');  
         dump('myerrorid', $e);
       }
     }

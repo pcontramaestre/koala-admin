@@ -20,14 +20,18 @@
  * @ingroup themeable
  */
 #}
+{# {{ output -}}
+{{ dump(row._entity.field_fecha_nacimiento.value)}} #}
 
-{# <input type="radio" name="field_profesor" value="{{ row.nid|striptags|trim }}" id="field_{{ row.nid |striptags|trim}}"/> #}
-{# <label for="field_{{ row.nid |striptags|trim}}">{{ output }}</label> #}
+{% set fecha_nacimiento = row._entity.field_fecha_nacimiento.value | date('d-m-Y') %}
+{% set hoy = "now" | date('d-m-Y') %}
+{% set edad = hoy | date('Y') - fecha_nacimiento | date('Y') %}
+
+{{ edad }} años
 
 
-<input type="radio" name="field_profesor" value="{{ row.nid|striptags|trim }}" id="field_profesor_{{ row.nid |striptags|trim}}"/>
 
-<label for="field_profesor_{{ row.nid |striptags|trim}}">{{ output }}</label>
+
 
 
 
