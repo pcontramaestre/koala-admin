@@ -63,9 +63,17 @@
                                 margin-bottom  : 1rem;
                               }
 
-                              // .nav-link.active {
-                              //   border-bottom: 2px solid black;
-                              // }
+                              .nav-link.active {
+
+                                &:after {
+                                  border-bottom: 2px solid black;
+                                  content      : "";
+                                  top          : 40px;
+                                  width        : 14%;
+                                  position     : absolute;
+                                }
+                              }
+
                               &:nth-child(2) {
                                 button {
                                   background: #F5F8D8;

@@ -105,6 +105,46 @@
 
                               tbody {
                                 tr {
+                                  .fc-event-container:nth-child(6) {
+                                    .fc-day-grid-event {
+                                      .fc-content {
+                                       .fc-title {
+                                          background-color: #FFE8E8;
+                                          color           : #FF6669;
+                                        }
+                                      }
+                                    }
+                                  }
+                                  .fc-event-container:nth-child(5) {
+                                    .fc-day-grid-event {
+                                      .fc-content {
+                                        .fc-title {
+                                          background-color: #F5F8D8;
+                                          color           : #869021;
+                                        }
+                                      }
+                                    }
+                                  }
+                                  .fc-event-container:nth-child(3) {
+                                    .fc-day-grid-event {
+                                      .fc-content {
+                                        .fc-title {
+                                          background-color: #FFE8E8;
+                                          color           : #FF6669;
+                                        }
+                                      }
+                                    }
+                                  }
+                                  .fc-event-container:nth-child(2) {
+                                    .fc-day-grid-event {
+                                      .fc-content {
+                                        .fc-title {
+                                          background-color: #F5F8D8;
+                                          color           : #869021;
+                                        }
+                                      }
+                                    }
+                                  }
                                   .fc-event-container {
                                     .fc-day-grid-event {
                                       background-color: transparent !important;
@@ -184,9 +224,63 @@
                                             font-weight     : 700;
                                             font-size       : 12px;
                                             padding         : 0.2rem 0.2rem 0.2rem 0.4rem;
-
                                             margin-top: 0.1rem;
-
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                                td:nth-child(2) {
+                                  .fc-content-col {
+                                    .fc-event-container {
+                                      .fc-time-grid-event {
+                                        .fc-content {
+                                          .fc-title {
+                                            background-color: #F5F8D8;
+                                            color           : #869021;
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                                td:nth-child(3) {
+                                  .fc-content-col {
+                                    .fc-event-container {
+                                      .fc-time-grid-event {
+                                        .fc-content {
+                                          .fc-title {
+                                            background-color: #FFE8E8;
+                                            color           : #FF6669;
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                                td:nth-child(5) {
+                                  .fc-content-col {
+                                    .fc-event-container {
+                                      .fc-time-grid-event {
+                                        .fc-content {
+                                          .fc-title {
+                                            background-color: #F5F8D8;
+                                            color           : #869021;
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                                td:nth-child(6) {
+                                  .fc-content-col {
+                                    .fc-event-container {
+                                      .fc-time-grid-event {
+                                        .fc-content {
+                                          .fc-title {
+                                            background-color: #FFE8E8;
+                                            color           : #FF6669;
                                           }
                                         }
                                       }
@@ -316,7 +410,62 @@
                                     }
                                   }
                                 }
-
+                                td:nth-child(2) {
+                                  .fc-content-col {
+                                    .fc-event-container {
+                                      .fc-time-grid-event {
+                                        .fc-content {
+                                          .fc-title {
+                                            background-color: #F5F8D8;
+                                            color           : #869021;
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                                td:nth-child(3) {
+                                  .fc-content-col {
+                                    .fc-event-container {
+                                      .fc-time-grid-event {
+                                        .fc-content {
+                                          .fc-title {
+                                            background-color: #FFE8E8;
+                                            color           : #FF6669;
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                                td:nth-child(5) {
+                                  .fc-content-col {
+                                    .fc-event-container {
+                                      .fc-time-grid-event {
+                                        .fc-content {
+                                          .fc-title {
+                                            background-color: #F5F8D8;
+                                            color           : #869021;
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                                td:nth-child(6) {
+                                  .fc-content-col {
+                                    .fc-event-container {
+                                      .fc-time-grid-event {
+                                        .fc-content {
+                                          .fc-title {
+                                            background-color: #FFE8E8;
+                                            color           : #FF6669;
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
                               }
                             }
                           }
@@ -361,62 +510,7 @@
                       }
                     }
                   }
-
-                  tr:nth-child(6) {
-                    .fc-list-item-time {
-                      font-weight     : 500 !important;
-                      background-color: white;
-                      color           : #727F7F;
-                      border          : none;
-                      font-size       : 14px;
-                    }
-
-                    .fc-list-item-marker {
-                      padding: 8px 0px !important;
-                    }
-
-                    .fc-list-item-title {
-                      display: flex;
-
-                      a {
-                        background-color: #F8E5DE;
-                        border-radius   : 12px;
-                        color           : #AF654A;
-                        font-weight     : 700;
-                        font-size       : 12px;
-                        padding         : 0.2rem 0.2rem 0.2rem 0.4rem;
-                        margin-top      : 0.1rem;
-                      }
-                    }
-                  }
-                  tr:nth-child(4) {
-                    .fc-list-item-time {
-                      font-weight     : 500 !important;
-                      background-color: white;
-                      color           : #727F7F;
-                      border          : none;
-                      font-size       : 14px;
-                    }
-
-                    .fc-list-item-marker {
-                      padding: 8px 0px !important;
-                    }
-
-                    .fc-list-item-title {
-                      display: flex;
-
-                      a {
-                        background-color: #F5F8D8;
-                        border-radius   : 12px;
-                        color           : #869021;
-                        font-weight     : 700;
-                        font-size       : 12px;
-                        padding         : 0.2rem 0.2rem 0.2rem 0.4rem;
-                        margin-top      : 0.1rem;
-                      }
-                    }
-                  }
-                  tr:nth-child(2) {
+                  tr {
                     .fc-list-item-time {
                       font-weight     : 500 !important;
                       background-color: white;
@@ -440,6 +534,40 @@
                         font-size       : 12px;
                         padding         : 0.2rem 0.2rem 0.2rem 0.4rem;
                         margin-top      : 0.1rem;
+                      }
+                    }
+                  }
+                  tr:nth-child(4) {
+                    .fc-list-item-title {
+                      a {
+                        background-color: #F5F8D8;
+                        color           : #869021;
+                      }
+                    }
+                  }
+                  tr:nth-child(6) {
+                    .fc-list-item-title {
+
+                      a {
+                        background-color: #F8E5DE;
+                        color           : #AF654A;
+                      }
+                    }
+                  }
+
+                  tr:nth-child(10) {
+                    .fc-list-item-title {
+                      a {
+                        background-color: #F5F8D8;
+                        color           : #869021;
+                      }
+                    }
+                  }
+                  tr:nth-child(12) {
+                    .fc-list-item-title {
+                      a {
+                        background-color: #FFE8E8;
+                        color           : #FF6669;
                       }
                     }
                   }
