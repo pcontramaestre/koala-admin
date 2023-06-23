@@ -4,7 +4,7 @@
  *
  */
 (function ($, Drupal) {
-  "use strict";
+  ("use strict");
 
   Drupal.behaviors.koala = {
     attach: function (context, settings) {},
@@ -14,11 +14,20 @@
     jQuery('input[name="field_profesor"]').on("click", function () {
       console.log("Se ha seleccionado un profesor");
       var selectedValue = $(this).val();
+
+      var idbuscar = $(this).attr("id");
+      console.log(idbuscar);
+      var idusuario = jQuery(
+        'label[for="field_profesor_' + idbuscar + '"] .idusuario'
+      ).text();
+
+      console.log(idusuario);
+
       var linkUrl =
-        "/agendar_cita?id=" +
+        "//node/add/agendar_clase/agendando_clase?id=" +
         getLastParameterFromUrl() +
         "&field_profesor=" +
-        selectedValue;
+        idusuario;
       $("#boton-agendamos-clase").attr("href", linkUrl);
     });
 
@@ -74,6 +83,31 @@
 
   jQuery("#edit-field-fecha-de-la-cita-0-value").datepicker({
     dateFormat: "dd-mm-yy", // 22-05-2019
+    changeMonth: true,
+    changeYear: true,
+    yearRange: "2023:2024",
+    altFormat: "dd/mm/yy",
+    maxDate: "+1m",
+    minDate: "+1d",
+  });
+
+  jQuery(
+    ".view-mis-koalas.view-display-id-block_3 .view-filters .form-item-field-fechas-laborables-value-min input"
+  ).datepicker({
+    dateFormat: "mm/dd/yy", // 06-30-2019
+    changeMonth: true,
+    changeYear: true,
+    yearRange: "2023:2024",
+    altFormat: "dd/mm/yy",
+    maxDate: "+1m",
+    minDate: "+1d",
+  });
+
+  //form-item-field-fechas-laborables-value-max
+  jQuery(
+    ".view-mis-koalas.view-display-id-block_3 .view-filters .form-item-field-fechas-laborables-value-max input"
+  ).datepicker({
+    dateFormat: "mm/dd/yy", // 06-30-2019
     changeMonth: true,
     changeYear: true,
     yearRange: "2023:2024",

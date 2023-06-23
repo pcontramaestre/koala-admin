@@ -108,12 +108,26 @@ function koala_theme_suggestions_alter(array &$suggestions, array &$variables, $
   if ($hook == 'node_edit_form') {
     if ($node = \Drupal::routeMatch()->getParameter('node')) {
       $content_type = $node->bundle();
+      // get node view mode
+      $view_mode = \Drupal::routeMatch()->getParameter('view_mode');
+      $content_type = $content_type . '__' . $view_mode;
+
     } else {
       $current_path = \Drupal::service('path.current')->getPath();
       $path_args = explode('/', $current_path);
       $content_type = $path_args[3];
     }
+    $route_match = \Drupal::routeMatch();
+    if ($route_match->getRouteName() == 'node.add.agendando_clase') {
+      // When a new node is created, the node type (object) is provided.
+      $suggestions[] = 'node_edit_form__agendar_clase_agendando_clase';
+      $variables['agendar_clase'] = 'agendando_clase';
+    }
+
     $suggestions[] = 'node_edit_form__' . $content_type;
+  }
+  if ($hook == 'node_add_form') {
+    $suggestions[] = 'node_add_form__' . $variables['node']->getType();
   }
 }
 
@@ -162,6 +176,19 @@ function koala_generate_hours($start, $end, $interval = 30, $format = '12') {
  */
 function koala_theme_suggestions_node_edit_form_alter(array &$suggestions, array $variables) {
   $route_match = \Drupal::routeMatch();
+  // get from $route_match the node_type and node view_mode
+  // $node_view_mode = $route_match->getParameter('view_mode');
+
+  // dump( $route_match);
+  // dump( $route_match->getParameter('node_type'));
+
+  //   dump( $route_match->getRouteName());
+  
+  if ($route_match->getRouteName() == 'node.add.agendando_clase') {
+    // When a new node is created, the node type (object) is provided.
+    $suggestions[] = 'node_edit_form__agendar_clase_agendando_clase';
+    $variables['agendar_clase'] = 'agendando_clase';
+  }
 
   if ($node = $route_match->getParameter('node')) {
     // When editing an existing node, add the node's bundle as the theme hook
@@ -173,7 +200,24 @@ function koala_theme_suggestions_node_edit_form_alter(array &$suggestions, array
     $suggestions[] = $variables['theme_hook_original'] . '__' . $node_type->id();
   }
 
+  // // Obtén el tipo de contenido y el modo de formulario del nodo actual.
+  // $node = $variables['node'];
+  // dump($node);
+  // $bundle = $node->bundle();
+  // dump($bundle);
+  // $form_mode = $variables['form']['#form_mode'];
+  // dump($form_mode);
+  // // Verifica si el tipo de contenido es "agendar_clase" y el modo de formulario es "agendando_clase".
+  // if ($bundle === 'agendar_clase' && $form_mode === 'agendando_clase') {
+  //   // Agrega la sugerencia al arreglo de sugerencias.
+  //   $suggestions[] = 'node_edit_form__agendar_clase_agendando_clase';
+  // }
+
+
+
   return $suggestions;
+
+
 }
 
 /**
@@ -188,4 +232,19 @@ function koala_theme_suggestions_views_view_field(array $variables) {
     'views_view_field__' . $variables['field']->field
   ];
 }
+
+/**
+ * Implements hook_theme().
+ */
+function koala_theme($existing, $type, $theme, $path) {
+  return [
+    // form id (weather it's an edit node for or a new node form)
+    'node_agendar_clase_edit_form' => [
+      'render element' => 'form',
+    ],
+  ];
+}
+
+
+
 

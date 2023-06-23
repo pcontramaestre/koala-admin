@@ -292,11 +292,11 @@ function callback_submit($form, &$form_state) {
  */
 function create_koalas_views_pre_view(ViewExecutable $view, $display_id, array &$args) {
   // Obtener el ID de la vista y el nombre del display.
-  $view_id = $view->id();
+  // $view_id = $view->id();
   
-  // Mostrar el ID de la vista y el nombre del display.
-  \Drupal::messenger()->addMessage(t('ID de la vista: @view_id, Nombre del display: @display_id', [
-    '@view_id' => $view_id,
-    '@display_id' => $display_id,
-  ]));
+  // // Mostrar el ID de la vista y el nombre del display.
+  // \Drupal::messenger()->addMessage(t('ID de la vista: @view_id, Nombre del display: @display_id', [
+  //   '@view_id' => $view_id,
+  //   '@display_id' => $display_id,
+  // ]));
 }

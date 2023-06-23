@@ -15,16 +15,59 @@
  * @see seven_form_node_form_alter()
  */
 #}
-<div class="content clearfix row">
-  <div class="col-md-12 layout-region layout-region-node-main">
-    <div class = "formulario">
-      <h3 class="title-1">{{ 'Paso 2/2'|t }}</h3>
-      <h2 class="title-2">{{ 'Agenda tu clase'|t }}</h2>
-      {{ form|without('advanced', 'actions') }}
-    </div>    
+
+{# Guarda en la variable agendar_paga el valor de agendar_clase #}
+{% set agendar_paga = agendar_clase|trim %}
+
+{# Verificar si agendar_paga es igual a  agendando_clase #}
+{% if agendar_paga == 'agendando_clase' %}
+
+  <div class="content clearfix row mt-5">
+    <div class="col-md-4 izquierda">
+      {{ drupal_view('profesor_agendar_clase', 'block_1') }}
+    </div>
+    <div class="col-md-8 derecha">
+      <div class="formulario">
+        <h3 class="title-1">{{ 'Paso 2/2 - Agendando Clase'|t }}</h3>
+        <h2 class="title-2">{{ 'Agenda tu clase'|t }}</h2>
+        {{ form|without('advanced', 'actions') }}
+      </div>
+    </div>
   </div>
 
-  <div class="col layout-region-node-footer">
-    {{ form.actions }}
+  
+  <div class="content clearfix row">
+    <div class="col-md-12 layout-region layout-region-node-main">
+      <div class="formulario">
+        <h3 class="title-1">{{ 'Paso 2/2 - Agendando Clase'|t }}</h3>
+        <h2 class="title-2">{{ 'Agenda tu clase'|t }}</h2>
+        {{ form|without('advanced', 'actions') }}
+      </div>
+    </div>
+
+    <div class="col layout-region-node-footer">
+      {{ form.actions }}
+    </div>
   </div>
-</div>
+{% else %}
+  <div class="content clearfix row">
+    <div class="col-md-12 layout-region layout-region-node-main">
+      <div class="formulario">
+        <h3 class="title-1">{{ 'Paso 2/2 '|t }}</h3>
+        <h2 class="title-2">{{ 'Agenda tu clase'|t }}</h2>
+        {{ form|without('advanced', 'actions') }}
+      </div>
+    </div>
+    <div class="col layout-region-node-footer">
+      {{ form.actions }}
+    </div>
+  </div>
+
+{% endif %}
+
+
+
+
+
+
+

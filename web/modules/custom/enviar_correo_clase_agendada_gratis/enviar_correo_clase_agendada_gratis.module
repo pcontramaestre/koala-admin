@@ -232,8 +232,8 @@ $form_state->setValue('field_id_texto_alumno', $newidhijo);
     
   
  
-
-
+  //AQUI ENVIAMOS EL CORREO. DESCOMENTAR MAS ADELANTE CUANDO SE ARREGLE EL PROBLEMA DE ENVIO DE CORREO
+/*
   $fecha_clase = $form_state->getValue('field_fecha_de_la_cita');
   $hora_clase = $form_state->getValue('field_hora_clase');
   $titulo = $form_state->getValue('title');
@@ -324,6 +324,8 @@ END:VCALENDAR';
     //\Drupal::messenger()->addMessage(t('El correo fue enviado correctamente.'));
     \Drupal::messenger()->addMessage(new TranslatableMarkup('El correo fue enviado correctamente.'));
   }
+
+*/
 }
 
 /**
