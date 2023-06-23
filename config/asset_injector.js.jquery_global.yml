@@ -1,0 +1,46 @@
+uuid: f9e2710c-3625-4e4c-86e4-b29e9456baae
+langcode: es
+status: true
+dependencies: {  }
+id: jquery_global
+label: 'Jquery Global'
+code: |-
+  console.log('Cargando informacion al hacer clic dinamicamente');
+  jQuery(document).ready(function($) {
+    $(document).on('click', 'input[name="field_profesor"]', function() {
+      var selectedValue = $(this).val();
+      
+        var idbuscar = $(this).attr("id");
+        var idusuario2 = jQuery('label[for="' + idbuscar + '"] > div.idusuario').html();
+
+      var linkUrl = '/node/add/agendar_clase/agendando_clase?id=' + getLastParameterFromUrl() + '&field_profesor=' + idusuario2;
+      $('#boton-agendamos-clase').attr('href', linkUrl);
+    });
+
+    function getLastParameterFromUrl() {
+      var url = window.location.href;
+      var urlSegments = url.split('/');
+      var lastSegment = urlSegments[urlSegments.length - 1];
+      var noultimo = urlSegments[urlSegments.length - 2];
+      lastSegment = lastSegment +'&idcontenido='+noultimo;
+      return lastSegment;
+    }
+
+    // Verificar si los radios ya están presentes al cargar la página
+    if ($('input[name="field_profesor"]').length > 0) {
+      // Activar el evento si los radios están presentes inicialmente
+      $('input[name="field_profesor"]').on('click', function() {
+        var selectedValue = $(this).val();
+        var linkUrl = '/agendar_cita?id=' + getLastParameterFromUrl() + '&field_profesor=' + selectedValue;
+        $('#boton-agendamos-clase').attr('href', linkUrl);
+      });
+    }
+  });
+noscript: ''
+noscriptRegion: {  }
+jquery: true
+header: false
+preprocess: true
+conditions: {  }
+contexts: {  }
+conditions_require_all: true

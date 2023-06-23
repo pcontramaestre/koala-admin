@@ -1,12 +1,22 @@
-uuid: e12e7d4e-996c-43a3-884a-5f9c10a5d565
+uuid: be3f19d0-b529-4015-b45f-a3eed179a679
 langcode: es
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - user
 id: profesor
 label: Profesor
 description: ''
 use_admin_theme: false
 path: /profesor
 access_logic: and
-access_conditions: {  }
+access_conditions:
+  -
+    id: user_role
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+    roles:
+      administrator: administrator
+      profesor: profesor
 parameters: {  }

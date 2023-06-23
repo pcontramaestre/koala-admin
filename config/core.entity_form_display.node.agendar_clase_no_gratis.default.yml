@@ -49,7 +49,7 @@ content:
       enabling_ranges_date: ''
       disabling_specific_dates: ''
       disabling_ranges_date: ''
-      min_date: ''
+      min_date: today
       max_date: ''
       enable_validation: '1'
       date_format: Y-m-d

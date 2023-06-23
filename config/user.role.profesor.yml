@@ -11,13 +11,16 @@ dependencies:
     - media.type.remote_video
     - media.type.video
     - node.type.horarios_de_trabajo
+    - node.type.horarios_profesores
     - node.type.profesores
   module:
     - comment
     - contact
     - content_translation
+    - date_recur
     - date_recur_modular
     - field_permissions
+    - file
     - filter
     - fivestar
     - form_mode_control
@@ -25,16 +28,21 @@ dependencies:
     - media
     - node
     - node_view_permissions
+    - smart_date_recur
+    - system
 id: profesor
 label: Profesor
 weight: 4
 is_admin: null
 permissions:
   - 'access comments'
+  - 'access content'
+  - 'access files overview'
   - 'access site-wide contact form'
   - 'access user contact forms'
   - 'access user profiles'
   - access_all_form_modes
+  - 'cancel smart date recur instances'
   - 'create audio media'
   - 'create document media'
   - 'create field_apodo'
@@ -48,6 +56,7 @@ permissions:
   - 'create media'
   - 'create remote_video media'
   - 'create video media'
+  - 'date_recur manage interpreters'
   - 'date_recur_modular use sierra form'
   - 'delete own audio media'
   - 'delete own document media'
@@ -68,12 +77,15 @@ permissions:
   - 'edit own field_tu_presentacion'
   - 'edit own field_tu_video_'
   - 'edit own horarios_de_trabajo content'
+  - 'edit own horarios_profesores content'
   - 'edit own image media'
   - 'edit own profesores content'
   - 'edit own remote_video media'
   - 'edit own video media'
+  - 'make smart dates recur'
   - 'post comments'
   - 'rate content'
+  - 'reschedule smart date recur instances'
   - 'translate profesores node'
   - 'update media'
   - 'use  The form mode default linked to  node entity( horarios_de_trabajo )'
@@ -86,6 +98,7 @@ permissions:
   - 'use user.registro_de_profesores form mode'
   - 'view any agendar_clase content'
   - 'view any horarios_de_trabajo content'
+  - 'view any horarios_profesores content'
   - 'view any page content'
   - 'view field_hora_clase'
   - 'view field_logros'
@@ -99,5 +112,6 @@ permissions:
   - 'view own field_nombres_y_apellidos_del_pr'
   - 'view own field_tu_presentacion'
   - 'view own horarios_de_trabajo content'
+  - 'view own horarios_profesores content'
   - 'view own profesores content'
   - 'view user email addresses'

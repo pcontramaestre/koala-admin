@@ -63,9 +63,17 @@
                                 margin-bottom  : 1rem;
                               }
 
-                              // .nav-link.active {
-                              //   border-bottom: 2px solid black;
-                              // }
+                              .nav-link.active {
+
+                                &:after {
+                                  border-bottom: 2px solid black;
+                                  content      : "";
+                                  top          : 40px;
+                                  width        : 14%;
+                                  position     : absolute;
+                                }
+                              }
+
                               &:nth-child(2) {
                                 button {
                                   background: #F5F8D8;
@@ -120,6 +128,83 @@
                   }
                 }
               }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  #views-bootstrap-tab-views-bootstrap-mis-koalas-block-2 {
+    .nav-tabs {
+      border-bottom: 2px solid #E6F1F1;
+      width        : 78%;
+
+      .nav-item {
+        margin-right: 2rem;
+
+        button,
+        a {
+          border         : none;
+          background     : #FFE8E8;
+          border-radius  : 16px;
+          color          : #FF6669;
+          font-weight    : 700;
+          font-size      : 16px;
+          min-width      : 175px;
+          height         : 24px;
+          display        : flex;
+          justify-content: center;
+          align-items    : center;
+          margin-bottom  : 1rem;
+        }
+
+        // .nav-link.active {
+        //   border-bottom: 2px solid black;
+        // }
+        &:nth-child(2) {
+          button {
+            background: #F5F8D8;
+            color     : #869021;
+          }
+        }
+
+        &:nth-child(3) {
+          button {
+            background: #F8E5DE;
+            color     : #AF654A;
+          }
+        }
+      }
+    }
+
+    .tab-content {
+      .tab-pane {
+        .views-field {
+          .field-content {
+            .boton-agendar {
+              text-align: center;
+
+              .agendar-clase {
+                width        : 188px;
+                height       : 45px;
+                background   : #FFFFFF;
+                border       : 2px solid #297E88;
+                border-radius: 32px;
+                color        : black;
+                font-weight  : 700;
+                font-size    : 20px;
+
+                &:hover {
+                  background-color: #297E88;
+                  color           : white;
+                }
+              }
+            }
+
+            .texto-logros {
+              font-weight: 600;
+              font-size  : 16px;
             }
           }
         }

@@ -1,0 +1,10 @@
+uuid: a0400dcc-b5d2-40d7-937a-189742d051ee
+langcode: es
+status: true
+dependencies:
+  module:
+    - node
+id: node.agendando_clase
+label: 'Agendando clase'
+targetEntityType: node
+cache: true

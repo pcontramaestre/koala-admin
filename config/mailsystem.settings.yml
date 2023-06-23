@@ -3,5 +3,5 @@ _core:
 langcode: es
 theme: current
 defaults:
-  sender: SMTPMailSystem
-  formatter: php_mail
+  sender: devel_mail_log
+  formatter: devel_mail_log

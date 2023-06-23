@@ -3,6 +3,7 @@ langcode: es
 status: true
 dependencies:
   config:
+    - field.field.node.agendar_clase.field_alumno_relacionado
     - field.field.node.agendar_clase.field_asignar_profesor
     - field.field.node.agendar_clase.field_fecha_cita_oculta
     - field.field.node.agendar_clase.field_fecha_de_la_cita
@@ -10,6 +11,7 @@ dependencies:
     - field.field.node.agendar_clase.field_he_leido_y_estoy_de_acuerd
     - field.field.node.agendar_clase.field_hora_cita_oculta
     - field.field.node.agendar_clase.field_hora_clase
+    - field.field.node.agendar_clase.field_id_texto_alumno
     - field.field.node.agendar_clase.field_nombre_del_nino_a
     - field.field.node.agendar_clase.field_otra_hora
     - field.field.node.agendar_clase.field_sexo_n
@@ -46,6 +48,14 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: -20
+    region: content
+  field_alumno_relacionado:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 115
     region: content
   field_asignar_profesor:
     type: entity_reference_label
@@ -110,6 +120,14 @@ content:
         periodSeparator: ''
     third_party_settings: {  }
     weight: 106
+    region: content
+  field_id_texto_alumno:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 116
     region: content
   field_nombre_del_nino_a:
     type: string
