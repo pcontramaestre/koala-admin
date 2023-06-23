@@ -35,6 +35,8 @@
       var url = window.location.href;
       var urlSegments = url.split("/");
       var lastSegment = urlSegments[urlSegments.length - 1];
+      var noultimo = urlSegments[urlSegments.length - 2];
+      console.log(noultimo);
       return lastSegment;
     }
   });

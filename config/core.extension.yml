@@ -2,6 +2,7 @@ _core:
   default_config_hash: R4IF-ClDHXxblLcG0L7MgsLvfBIMAvi_skumNFQwkDc
 langcode: es
 module:
+  add_content_by_bundle: 0
   admin_toolbar: 0
   admin_toolbar_links_access_filter: 0
   admin_toolbar_search: 0
@@ -17,6 +18,8 @@ module:
   block: 0
   block_content: 0
   breakpoint: 0
+  calendar: 0
+  calendar_datetime: 0
   calendar_link: 0
   chosen: 0
   chosen_field: 0
@@ -100,6 +103,7 @@ module:
   menu_link_content: 0
   menu_token: 0
   menu_ui: 0
+  multiple_fields_remove_button: 0
   multiple_registration: 0
   mysql: 0
   node: 0
@@ -128,6 +132,9 @@ module:
   simple_multistep: 0
   simplelogin: 0
   smart_date: 0
+  smart_date_calendar_kit: 0
+  smart_date_recur: 0
+  smart_date_starter_kit: 0
   smtp: 0
   svg_image: 0
   svg_image_responsive: 0
@@ -165,6 +172,7 @@ module:
   xls_serialization: 0
   pathauto: 1
   content_translation: 10
+  formdazzle: 10
   views: 10
   twigsuggest: 100
   standard: 1000

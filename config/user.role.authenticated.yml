@@ -36,6 +36,7 @@ permissions:
   - 'skip comment approval'
   - 'use text format basic_html'
   - 'view any horarios_de_trabajo content'
+  - 'view any horarios_profesores content'
   - 'view any page content'
   - 'view field_apodo'
   - 'view field_avatar'
@@ -47,3 +48,4 @@ permissions:
   - 'view own field_tu_presentacion'
   - 'view own field_tu_video_'
   - 'view own horarios_de_trabajo content'
+  - 'view own horarios_profesores content'

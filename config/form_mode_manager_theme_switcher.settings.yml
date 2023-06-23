@@ -4,11 +4,11 @@ type:
   node_crear_koalas: _none
   node_editar_agendar_clase_gratis: _none
   user_editar_perfil_padre: _none
-  user_editar_profesor: _none
+  user_editar_profesor: default
   user_registro_de_hijos: _none
   user_registro_de_profesores: _none
   node_asignar_profesor: admin
-  node_editar_horarios: _none
+  node_editar_horarios: admin
   user_register: _none
 form_mode:
   media_media_library: null

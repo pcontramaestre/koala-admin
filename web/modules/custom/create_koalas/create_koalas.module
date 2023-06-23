@@ -11,6 +11,7 @@ use Drupal\user\Entity\User;
 use Drupal\Core\StringTranslation\TranslatableMarkup;
 use Drupal\views\ViewExecutable;
 use \Drupal\node\NodeInterface;
+use Symfony\Component\HttpFoundation\RequestStack;
 
 
 
@@ -52,7 +53,66 @@ function create_koalas_form_alter(&$form, FormStateInterface $form_state, $form_
 
   // Comprobar que estamos agregando un nuevo nodo o editando uno existente.
   $routeMatch = \Drupal::routeMatch();
-  $routeName = $routeMatch->getRouteName();
+  $routeName = $routeMatch->getRouteName();  
+
+  if ($routeName == 'node.add.agendando_clase') {
+    // Obtener el objeto RequestStack.
+    $request_stack = \Drupal::service('request_stack');
+    // Obtener el objeto Request de la solicitud actual.
+    $request = $request_stack->getCurrentRequest();
+    // Obtener el valor del parámetro 'id'.
+    $id = $request->query->get('id');
+    // Cargar la entidad correspondiente al ID de usuario.
+    $entity_type_manager = \Drupal::service('entity_type.manager');
+    $user = $entity_type_manager->getStorage('user')->load($id);
+    // get field_nombre_del_hijo from user
+    $field_nombre_del_hijo = $user->get('field_nombre_del_hijo')->value;    
+
+    // Asignar el valor del parámetro 'id' al campo field_alumno_relacionado del formulario.
+    $form['field_alumno_relacionado']['widget'][0]['target_id']['#default_value'] = $user;
+
+    // Asignar el valor del parámetro 'field_nombre_del_hijo' al campo field_nombre_del_nino_a del formulario.
+    $form['field_nombre_del_nino_a']['widget'][0]['value']['#default_value'] = $field_nombre_del_hijo;
+    // Agregar solo lectura al campo field_nombre_del_nino_a
+    $form['field_nombre_del_nino_a']['widget'][0]['value']['#attributes']['readonly'] = 'readonly';
+
+
+    // Obtener el valor del parámetro 'idcontenido'.
+    $idcontenido = $request->query->get('idcontenido');
+    // Cargar la entidad correspondiente al ID de contenido.
+    $node = $entity_type_manager->getStorage('node')->load($idcontenido);
+    // get field_fecha_nacimiento from node
+    $field_fecha_nacimiento = $node->get('field_fecha_nacimiento')->value;
+    // Asignar el valor del parámetro 'field_fecha_nacimiento' al campo field_fecha_nac del formulario.
+    $form['field_fecha_nac']['widget'][0]['value']['#default_value'] = $field_fecha_nacimiento;
+    // Agregar solo lectura al campo field_fecha_nac
+    $form['field_fecha_nac']['widget'][0]['value']['#attributes']['readonly'] = 'readonly';
+
+    // Obtener el valor del parámetro 'field_profesor'.
+    $field_profesor = $request->query->get('field_profesor');
+    // Asignar el valor del parámetro 'field_profesor' al campo field_asignar_profesor del formulario.
+    $form['field_asignar_profesor']['widget']['#default_value'] = $field_profesor;
+    // Agregar solo lectura al campo field_asignar_profesor
+    $form['field_asignar_profesor']['widget']['#attributes']['readonly'] = 'readonly';
+
+    // Cambiar el titulo a mostrar del campo field_fecha_cita_oculta
+    $form['field_fecha_cita_oculta']['widget'][0]['value']['#title'] = 'Fecha de la clase';
+
+    // Agregar atributos min y max al campo field_fecha_cita_oculta
+    $form['field_fecha_cita_oculta']['widget'][0]['value']['#attributes']['min'] = date('Y-m-d', strtotime('+1 day'));
+    $form['field_fecha_cita_oculta']['widget'][0]['value']['#attributes']['max'] = date('Y-m-d', strtotime('+1 month'));
+
+
+    $title_value = \Drupal::translation()->translate('Agendar clase al Koala ') . $field_nombre_del_hijo;
+    $form['title']['widget'][0]['value']['#default_value'] = $title_value;
+    // Agregar solo lectura al campo title
+    $form['title']['widget'][0]['value']['#attributes']['readonly'] = 'readonly';
+
+    
+    $form['actions']['submit']['#value'] = new TranslatableMarkup('Confirmar clase');
+  }
+
+
   $editando = TRUE;
   if ($routeName == 'node.add.agendar_clases') {
     $editando = FALSE;

@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.full
+    - field.field.node.agendar_clase.field_alumno_relacionado
     - field.field.node.agendar_clase.field_asignar_profesor
     - field.field.node.agendar_clase.field_fecha_cita_oculta
     - field.field.node.agendar_clase.field_fecha_de_la_cita
@@ -11,13 +12,15 @@ dependencies:
     - field.field.node.agendar_clase.field_he_leido_y_estoy_de_acuerd
     - field.field.node.agendar_clase.field_hora_cita_oculta
     - field.field.node.agendar_clase.field_hora_clase
+    - field.field.node.agendar_clase.field_id_texto_alumno
     - field.field.node.agendar_clase.field_nombre_del_nino_a
     - field.field.node.agendar_clase.field_otra_hora
     - field.field.node.agendar_clase.field_sexo_n
     - node.type.agendar_clase
   module:
+    - datetime
+    - field_formatter_class
     - layout_builder
-    - timefield
     - user
 third_party_settings:
   layout_builder:
@@ -31,27 +34,17 @@ content:
   content_moderation_control:
     settings: {  }
     third_party_settings: {  }
-    weight: -20
+    weight: 0
     region: content
-  field_fecha_de_la_cita:
-    type: string
+  field_fecha_cita_oculta:
+    type: datetime_default
     label: above
     settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 1
-    region: content
-  field_hora_clase:
-    type: timefield_default_formatter
-    label: above
-    settings:
-      display_format:
-        hour: g
-        minute: i
-        separator: ':'
-        period: a
-        periodSeparator: ''
-    third_party_settings: {  }
+      timezone_override: ''
+      format_type: medium
+    third_party_settings:
+      field_formatter_class:
+        class: ''
     weight: 2
     region: content
   field_nombre_del_nino_a:
@@ -60,14 +53,17 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 0
+    weight: 1
     region: content
 hidden:
+  field_alumno_relacionado: true
   field_asignar_profesor: true
-  field_fecha_cita_oculta: true
+  field_fecha_de_la_cita: true
   field_fecha_nac: true
   field_he_leido_y_estoy_de_acuerd: true
   field_hora_cita_oculta: true
+  field_hora_clase: true
+  field_id_texto_alumno: true
   field_otra_hora: true
   field_sexo_n: true
   langcode: true

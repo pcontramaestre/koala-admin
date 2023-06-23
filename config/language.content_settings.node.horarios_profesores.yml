@@ -1,0 +1,11 @@
+uuid: 37d02352-b116-458f-8ff2-09e2f2c5417e
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.horarios_profesores
+id: node.horarios_profesores
+target_entity_type_id: node
+target_bundle: horarios_profesores
+default_langcode: site_default
+language_alterable: false

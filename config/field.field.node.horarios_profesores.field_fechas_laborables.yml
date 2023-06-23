@@ -1,0 +1,33 @@
+uuid: 4aa04c22-6d12-4108-84d3-d56f8f5e0724
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_fechas_laborables
+    - node.type.horarios_profesores
+  module:
+    - smart_date
+    - smart_date_recur
+third_party_settings:
+  smart_date_recur:
+    allow_recurring: true
+    month_limit: 3
+id: node.horarios_profesores.field_fechas_laborables
+field_name: field_fechas_laborables
+entity_type: node
+bundle: horarios_profesores
+label: 'Fechas laborables'
+description: 'Seleccione aquí las fechas o días que vas a laborar'
+required: false
+translatable: false
+default_value:
+  -
+    default_duration: 60
+    default_duration_increments: "30\r\n60|1 hour\r\n90\r\n120|2 hours\r\n240|4 hours\r\n480|8 hours\r\ncustom"
+    default_date_type: ''
+    default_date: ''
+    min: '[current-date:html_date]'
+    max: ''
+default_value_callback: ''
+settings: {  }
+field_type: smartdate

@@ -212,8 +212,17 @@
                 }
 
                 .views-field-field-fecha-de-la-cita {
+                  display: none !important;
+                }
+
+                .views-field-field-fecha-de-la-cita,
+                .views-field-field-fecha-cita-oculta-2 {
                   display        : flex;
                   justify-content: end;
+
+                  span.views-label-field-fecha-de-la-cita {
+                    display: none;
+                  }
 
                   .field-content {
                     background-color: white;

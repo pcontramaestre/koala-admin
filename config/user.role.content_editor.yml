@@ -16,6 +16,7 @@ dependencies:
     - node.type.article
     - node.type.crear_hijos
     - node.type.horarios_de_trabajo
+    - node.type.horarios_profesores
     - node.type.page
     - node.type.profesores
     - taxonomy.vocabulary.avatar_profesor
@@ -28,6 +29,7 @@ dependencies:
     - content_moderation
     - content_translation
     - contextual
+    - date_recur
     - date_recur_modular
     - field_permissions
     - file
@@ -40,6 +42,7 @@ dependencies:
     - node_view_permissions
     - path
     - registration_role
+    - smart_date_recur
     - system
     - taxonomy
     - toolbar
@@ -71,6 +74,7 @@ permissions:
   - 'administer registration roles'
   - 'administer url aliases'
   - 'administer users'
+  - 'cancel smart date recur instances'
   - 'create agendar_clase content'
   - 'create article content'
   - 'create audio media'
@@ -86,6 +90,7 @@ permissions:
   - 'create field_tu_presentacion'
   - 'create field_tu_video_'
   - 'create horarios_de_trabajo content'
+  - 'create horarios_profesores content'
   - 'create image media'
   - 'create media'
   - 'create page content'
@@ -95,23 +100,27 @@ permissions:
   - 'create terms in tags'
   - 'create url aliases'
   - 'create video media'
+  - 'date_recur manage interpreters'
   - 'date_recur_modular use sierra form'
   - 'delete any audio media'
   - 'delete any avatares_profesores media'
   - 'delete any document media'
   - 'delete any horarios_de_trabajo content'
+  - 'delete any horarios_profesores content'
   - 'delete any image media'
   - 'delete any media'
   - 'delete any remote_video media'
   - 'delete any video media'
   - 'delete article revisions'
   - 'delete horarios_de_trabajo revisions'
+  - 'delete horarios_profesores revisions'
   - 'delete media'
   - 'delete own article content'
   - 'delete own audio media'
   - 'delete own avatares_profesores media'
   - 'delete own document media'
   - 'delete own horarios_de_trabajo content'
+  - 'delete own horarios_profesores content'
   - 'delete own image media'
   - 'delete own page content'
   - 'delete own remote_video media'
@@ -126,6 +135,7 @@ permissions:
   - 'edit any crear_hijos content'
   - 'edit any document media'
   - 'edit any horarios_de_trabajo content'
+  - 'edit any horarios_profesores content'
   - 'edit any image media'
   - 'edit any profesores content'
   - 'edit any remote_video media'
@@ -150,6 +160,7 @@ permissions:
   - 'edit own field_tu_presentacion'
   - 'edit own field_tu_video_'
   - 'edit own horarios_de_trabajo content'
+  - 'edit own horarios_profesores content'
   - 'edit own image media'
   - 'edit own page content'
   - 'edit own remote_video media'
@@ -157,20 +168,25 @@ permissions:
   - 'edit terms in avatar_profesor'
   - 'edit terms in tags'
   - 'load twig templates from file system'
+  - 'make smart dates recur'
   - 'post comments'
   - 'rate content'
+  - 'reschedule smart date recur instances'
   - 'revert all revisions'
   - 'revert horarios_de_trabajo revisions'
+  - 'revert horarios_profesores revisions'
   - 'translate avatar_profesor taxonomy_term'
   - 'update any media'
   - 'update content translations'
   - 'update media'
+  - 'use  The form mode agendando_clase linked to  node entity( agendar_clase )'
   - 'use  The form mode asignar_profesor linked to  node entity( agendar_clase )'
   - 'use  The form mode default linked to  node entity( horarios_de_trabajo )'
   - 'use  The form mode editar_horarios linked to  node entity( horarios_de_trabajo )'
   - 'use admin toolbar search'
   - 'use asignar_profesor transition asignacion_de_profesor'
   - 'use asignar_profesor transition publish'
+  - 'use node.agendando_clase form mode'
   - 'use node.agendar_clases form mode'
   - 'use node.asignar_profesor form mode'
   - 'use node.crear_koalas form mode'
@@ -191,6 +207,7 @@ permissions:
   - 'view any article content'
   - 'view any crear_hijos content'
   - 'view any horarios_de_trabajo content'
+  - 'view any horarios_profesores content'
   - 'view any page content'
   - 'view any profesores content'
   - 'view config_pages entity'
@@ -202,6 +219,7 @@ permissions:
   - 'view field_tu_video_'
   - 'view home_padres config page entity'
   - 'view horarios_de_trabajo revisions'
+  - 'view horarios_profesores revisions'
   - 'view latest version'
   - 'view media'
   - 'view own agendar_clase content'
@@ -214,6 +232,7 @@ permissions:
   - 'view own field_tu_presentacion'
   - 'view own field_tu_video_'
   - 'view own horarios_de_trabajo content'
+  - 'view own horarios_profesores content'
   - 'view own page content'
   - 'view own profesores content'
   - 'view own unpublished content'

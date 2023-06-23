@@ -1,0 +1,27 @@
+uuid: 3c1f1fbc-d77c-47eb-b283-04ef45cb548f
+langcode: es
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.horarios_profesores.field_fechas_laborables
+    - field.field.node.horarios_profesores.field_profesor
+    - field.field.node.horarios_profesores.field_recurrent
+    - node.type.horarios_profesores
+  module:
+    - user
+id: node.horarios_profesores.teaser
+targetEntityType: node
+bundle: horarios_profesores
+mode: teaser
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_fechas_laborables: true
+  field_profesor: true
+  field_recurrent: true
+  langcode: true

@@ -1,0 +1,71 @@
+uuid: f82da013-e54f-4d8e-9914-5cb0382f3ea9
+langcode: es
+status: true
+dependencies:
+  config:
+    - core.date_format.medium
+    - field.field.node.horarios_profesores.field_fechas_laborables
+    - field.field.node.horarios_profesores.field_profesor
+    - field.field.node.horarios_profesores.field_recurrent
+    - node.type.horarios_profesores
+  module:
+    - date_recur
+    - smart_date
+    - user
+id: node.horarios_profesores.default
+targetEntityType: node
+bundle: horarios_profesores
+mode: default
+content:
+  field_fechas_laborables:
+    type: smartdate_default
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: medium
+      format: default
+      force_chronological: false
+      add_classes: false
+      time_wrapper: true
+      localize: false
+      parts:
+        - start
+        - end
+      duration:
+        separator: ' | '
+        unit: ''
+        decimals: 2
+        suffix: h
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_profesor:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  field_recurrent:
+    type: date_recur_basic_formatter
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: medium
+      separator: '-'
+      show_next: 5
+      count_per_item: true
+      occurrence_format_type: medium
+      same_end_date_format_type: medium
+      interpreter: null
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  langcode: true

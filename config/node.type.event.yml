@@ -1,0 +1,19 @@
+uuid: 1f215137-564b-4b2d-b824-4386736e082a
+langcode: es
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+_core:
+  default_config_hash: bGxZZFF3KZ6wrBM9gs1atSH4ilcr0rPmwxiMzlcZa3U
+name: Evento
+type: event
+description: 'Content which describes something happening at a specific time.'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false

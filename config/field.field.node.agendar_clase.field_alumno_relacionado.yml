@@ -1,0 +1,29 @@
+uuid: 33b88b2a-abea-47d9-9efc-d0232a89670e
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_alumno_relacionado
+    - node.type.agendar_clase
+id: node.agendar_clase.field_alumno_relacionado
+field_name: field_alumno_relacionado
+entity_type: node
+bundle: agendar_clase
+label: 'Alumno relacionado'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:user'
+  handler_settings:
+    target_bundles: null
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    filter:
+      type: _none
+    include_anonymous: false
+field_type: entity_reference

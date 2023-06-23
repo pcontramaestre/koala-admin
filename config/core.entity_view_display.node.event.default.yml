@@ -1,0 +1,63 @@
+uuid: 7ae60f2a-31b6-4847-a94d-87d464e5e459
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.field.node.event.body
+    - field.field.node.event.field_when
+    - node.type.event
+  module:
+    - field_formatter_class
+    - smart_date_recur
+    - text
+    - user
+_core:
+  default_config_hash: _wJpjAm9mL9fSrTxY990d6dqKbX1oKvHzs_AEvwrhU0
+id: node.event.default
+targetEntityType: node
+bundle: event
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_when:
+    type: smartdate_recurring
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: medium
+      format: default
+      force_chronological: true
+      add_classes: true
+      time_wrapper: true
+      past_display: 3
+      upcoming_display: 100
+      show_next: false
+      parts:
+        start: start
+        end: end
+        duration: duration
+      duration:
+        separator: ' | '
+        unit: ''
+        decimals: '2'
+        suffix: h
+      localize: '1'
+      current_upcoming: '1'
+    third_party_settings:
+      field_formatter_class:
+        class: ''
+    weight: 1
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  langcode: true

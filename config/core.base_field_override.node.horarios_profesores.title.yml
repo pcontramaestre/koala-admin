@@ -1,0 +1,18 @@
+uuid: b7f68004-f3d0-49fd-8c14-d7d64def1f25
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.horarios_profesores
+id: node.horarios_profesores.title
+field_name: title
+entity_type: node
+bundle: horarios_profesores
+label: 'Título de referencia'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

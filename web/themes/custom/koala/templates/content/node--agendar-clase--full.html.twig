@@ -72,59 +72,66 @@
     'clearfix',
   ]
 %}
-{% set fecha_texto =  content.field_fecha_de_la_cita[0]['#context'].value %}  {# Aquí reemplaza "27-05-2023" por tu variable que contiene el valor del campo de tipo texto #}
+{% set fecha_texto =  content.field_fecha_de_la_cita[0]['#context'].value %}
+{# Aquí reemplaza "27-05-2023" por tu variable que contiene el valor del campo de tipo texto #}
 {% set fecha = fecha_texto|date("d-m-Y") %}
 {% set fecha_inicio =  content.field_fecha_de_la_cita[0]['#context'].value|date("Ymd") ~ 'T' ~ content.field_hora_clase.value|date("His", 'utc') ~ 'Z' %}
 {% set alumno = content.field_nombre_del_nino_a.0 %}
 {# {{fecha_inicio}} #}
 
-<article{{ attributes.addClass(classes) }}>
-  
-  <div{{ content_attributes.addClass('node__content', 'clearfix') }}>
-    <div class="superior text-center">
-      <img src="/themes/custom/koala/images/perfecto.png">
-      <h2>¡Perfecto! Lo has conseguido</h2>
-    </div>
-    <div class="cuadro row">
-      <div class="col-12">
-        <h3>{{ 'Tu clase de prueba ha sido reservada'|t }}</h3>
-      </div>
-      <div class="col-md-12 col-lg-6">
-        <div><h4>{{ 'Alumno'|t }}</h4></div>
-        <div><p>{{ content.field_nombre_del_nino_a.0 }}</p></div>
-      </div>
-      <div class="col-md-12 col-lg-6">
-        <div><h4>{{ 'Fecha'|t }}</h4></div>
-        <div><p>{{ fecha }} - {{ content.field_hora_clase }}</p></div>
-      </div>
+<article{{attributes.addClass(classes)}}>
 
-      <div class="col-md-12 col-lg-6">
-        {# Obtener el titulo del nodo en una variable llamada titulo_evento #}
-        {% set titulo_del_evento = "Clase gratuita de 25 minutos para Koala" %}
-        {% set detalles_clase = "Agendamiento+de+25+minutos+de+una+clase+gratuita.+En+la+clase+se+evaluara+el+nivel+de+español+de+su+hijo" %}
-        <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text={{ titulo_del_evento }}&details={{detalles_clase}}&dates={{fecha_inicio}}" target="_blank" class="calendario-google">Agregar a Google Calendar</a>
-      </div>   
-      {# {{ content }} #}
-    </div>    
-  </div>
+	<div{{content_attributes.addClass('node__content','clearfix')}}>
+		<div class="superior text-center">
+			<img src="/themes/custom/koala/images/perfecto.png">
+			<h2>¡Perfecto! Lo has conseguido</h2>
+		</div>
+		<div class="cuadro row">
+			<div class="col-12">
+				<h3>{{ 'Tu clase de prueba ha sido reservada'|t }}</h3>
+			</div>
+			<div class="col-md-12 col-lg-6">
+				<div>
+					<h4>{{ 'Alumno'|t }}</h4>
+				</div>
+				<div>
+					<p>{{ content.field_nombre_del_nino_a.0 }}</p>
+				</div>
+			</div>
+			<div class="col-md-12 col-lg-6">
+				<div>
+					<h4>{{ 'Fecha'|t }}</h4>
+				</div>
+				<div>
+					<p>{{ content.field_fecha_cita_oculta.0 }}</p>
+				</div>
+			</div>
 
- 
-
-  {# <div class="botones-edicion">
-    <a href="{{ path('entity.node.edit_form', {'node': node.id}) }}/agendar_clases" class="boton-editar">Editar clase</a>
-    <a href="{{ path('entity.node.delete_form', {'node': node.id}) }}" class="boton-eliminar">Eliminar clase gratuita</a>
-  </div> #}
-
-  <div class="ir-a-cuenta">
-    <a href="/padres" class="boton-ir-a-cuenta">Ir a mi cuenta</a>
-  </div>
-
-  {# {{ fecha|date("Ymd",'utc') }} #}
-
-  
-  {# {{ content.field_fecha_cita_gratis.value|date("Ymd", 'utc') ~ 'T' ~ content.field_hora_clase.value|date("His", 'utc') ~ 'Z'}} #}
+			<div
+				class="col-md-12 col-lg-6">
+				{# Obtener el titulo del nodo en una variable llamada titulo_evento #}
+				{% set titulo_del_evento = "Clase gratuita de 25 minutos para Koala" %}
+				{% set detalles_clase = "Agendamiento+de+25+minutos+de+una+clase+gratuita.+En+la+clase+se+evaluara+el+nivel+de+español+de+su+hijo" %}
+				<a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text={{ titulo_del_evento }}&details={{detalles_clase}}&dates={{fecha_inicio}}" target="_blank" class="calendario-google">Agregar a Google Calendar</a>
+			</div>
+			{# {{ content }} #}
+		</div>
+	</div>
 
 
+	{# <div class="botones-edicion">
+									    <a href="{{ path('entity.node.edit_form', {'node': node.id}) }}/agendar_clases" class="boton-editar">Editar clase</a>
+									    <a href="{{ path('entity.node.delete_form', {'node': node.id}) }}" class="boton-eliminar">Eliminar clase gratuita</a>
+									  </div> #}
 
- 
+	<div class="ir-a-cuenta">
+		<a href="/padres" class="boton-ir-a-cuenta">Ir a mi cuenta</a>
+	</div>
+
+	{# {{ fecha|date("Ymd",'utc') }} #}
+
+
+	{# {{ content.field_fecha_cita_gratis.value|date("Ymd", 'utc') ~ 'T' ~ content.field_hora_clase.value|date("His", 'utc') ~ 'Z'}} #}
+
+
 </article>

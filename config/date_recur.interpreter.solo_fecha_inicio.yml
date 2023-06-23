@@ -1,0 +1,14 @@
+uuid: bca742d7-0c1e-4191-a3fd-189af536c009
+langcode: es
+status: true
+dependencies:
+  config:
+    - core.date_format.short
+id: solo_fecha_inicio
+label: 'Solo fecha inicio'
+plugin: rl
+settings:
+  show_start_date: true
+  show_until: false
+  date_format: short
+  show_infinite: false

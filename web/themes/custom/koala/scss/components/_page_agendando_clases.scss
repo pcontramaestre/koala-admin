@@ -1,0 +1,94 @@
+.path-node.rol-padre {
+  form.node-agendar-clase-agendando-clase-form.node-form {
+    .content {
+      .volver {
+        a {
+          color          : #000;
+          text-decoration: none;
+          color          : black;
+          border-bottom  : 1px solid;
+        }
+      }
+
+      .izquierda {
+        .view-content {
+          .views-row {
+
+            .datos-profesor,
+            .datos-del-koala {
+              align-content: center;
+              align-items  : center;
+
+              &.datos-del-koala {
+                margin-top: 2rem;
+
+                .titulo-bloque {
+                  font-size    : 1.5rem;
+                  background   : #80808036;
+                  padding      : 1rem;
+                  margin-bottom: 1rem;
+
+                  h3 {
+                    font-size: 1.4rem;
+                  }
+                }
+              }
+
+              .titulo-bloque {
+                font-size    : 1.5rem;
+                background   : #80808036;
+                padding      : 1rem;
+                margin-bottom: 1rem;
+
+                h3 {
+                  font-size: 1.4rem;
+                  margin   : 0;
+                }
+              }
+
+              .imagen-profesor {
+                img {
+                  border-radius: 50%;
+                  width        : 100px;
+                  height       : 100px;
+                  object-fit   : cover;
+                  border       : 1px solid #8080803d;
+                }
+              }
+
+              .nombres-profesor {
+                padding-right: 1rem;
+
+                h2 {
+                  margin     : 0;
+                  font-size  : 1.5rem;
+                  line-height: 1.6rem;
+                }
+              }
+            }
+
+            .views-field-field-tu-video- {
+              iframe {
+                width     : 100%;
+                min-height: 250px;
+                height    : auto;
+              }
+            }
+          }
+        }
+      }
+
+      .derecha {
+        padding-left: 2rem;
+
+        .field--name-field-fecha-cita-oculta {
+          fieldset {
+            legend {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}
