@@ -9,6 +9,10 @@ use Drupal\node\Entity\Node;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\user\Entity\User;
 use Drupal\Core\StringTranslation\TranslatableMarkup;
+use Drupal\views\ViewExecutable;
+use \Drupal\node\NodeInterface;
+
+
 
 /**
  * Implements hook_form_FORM_ID_alter() for the node_agendar_clase_form.
@@ -161,56 +165,96 @@ field_fecha_nacimiento = field_fecha_nac
 function callback_submit($form, &$form_state) {
   // sleep(10);
   //  $form_state->setRedirect('<front>');.
-  $user = \Drupal::currentUser();
-  $uid = $user->id();
-  // Obtener el displayname del usuario actual drupal 9.
-  $username = $user->getDisplayName();
 
-  // Obtener el correo del usuario actual.
-  $correo_padre = $user->getEmail();
 
-  // Get value radio field_sexo_n.
-  $sexo = $form_state->getValue('field_sexo_n');
 
-  // Obtener el field_nombre_del_acudiente del usuario actual
-  // $query = \Drupal::entityQuery('user');
-  // $query->condition('uid', $uid);
-  // $entity_ids = $query->execute();
-  // $user = \Drupal\user\Entity\User::load(array_shift($entity_ids));
-  $password = '123456-' . $uid;
-  // Numero random para el correo del 100 al 999.
-  $random = rand(100, 999);
-  $correo = 'correo-' . $uid . '-' . $random . '@correohijo.com';
-  $nombre = $form_state->getValue('field_nombre_del_nino_a');
+  // $user = \Drupal::currentUser();
+  // $uid = $user->id();
+  // // Obtener el displayname del usuario actual drupal 9.
+  // $username = $user->getDisplayName();
 
-  // Create user account programmatically.
-  $user = User::create();
-  $user->setPassword($password);
-  $user->enforceIsNew();
-  $user->setEmail($correo);
-  $user->setUsername($correo);
-  $user->set("field_nombre_del_hijo", $nombre);
+  // // Obtener el correo del usuario actual.
+  // $correo_padre = $user->getEmail();
 
-  // Set field_padre entity reference to user padre.
-  $user->set("field_padre", $uid);
+  // // Get value radio field_sexo_n.
+  // $sexo = $form_state->getValue('field_sexo_n');
 
-  // Add role hijo.
-  $user->addRole('hijo');
-  $user->set("init", $correo_padre);
+  // // Obtener el field_nombre_del_acudiente del usuario actual
+  // // $query = \Drupal::entityQuery('user');
+  // // $query->condition('uid', $uid);
+  // // $entity_ids = $query->execute();
+  // // $user = \Drupal\user\Entity\User::load(array_shift($entity_ids));
+  // $password = '123456-' . $uid;
+  // // Numero random para el correo del 100 al 999.
+  // $random = rand(100, 999);
+  // $correo = 'correo-' . $uid . '-' . $random . '@correohijo.com';
+  // $nombre = $form_state->getValue('field_nombre_del_nino_a');
 
-  $user->activate();
-  $user->save();
-  $newidhijo = $user->id();
+  // // Create user account programmatically.
+  // $user = User::create();
+  // $user->setPassword($password);
+  // $user->enforceIsNew();
+  // $user->setEmail($correo);
+  // $user->setUsername($correo);
+  // $user->set("field_nombre_del_hijo", $nombre);
 
-  // Crear un nuevo nodo de tipo crear_hijos.
-  $node = Node::create([
-    'type'        => 'crear_hijos',
-    'title'       => $form_state->getValue('field_nombre_del_nino_a'),
-    'field_sexo'  => $sexo,
-    'field_fecha_nacimiento' => $form_state->getValue('field_fecha_nac'),
-    'field_hijo_relacionado' => $newidhijo,
-    'uid' => $uid,
-  ])->save();
+  // // Set field_padre entity reference to user padre.
+  // $user->set("field_padre", $uid);
+
+  // // Add role hijo.
+  // $user->addRole('hijo');
+  // $user->set("init", $correo_padre);
+
+  // $user->activate();
+  // $user->save();
+  // $newidhijo = $user->id();
+
+  // // Crear un nuevo nodo de tipo crear_hijos.
+  // $node = Node::create([
+  //   'type'        => 'crear_hijos',
+  //   'title'       => $form_state->getValue('field_nombre_del_nino_a'),
+  //   'field_sexo'  => $sexo,
+  //   'field_fecha_nacimiento' => $form_state->getValue('field_fecha_nac'),
+  //   'field_hijo_relacionado' => $newidhijo,
+  //   'uid' => $uid,
+  // ])->save();
+  
+
+  // $form_state establecer nuevos valores para  field_alumno_relacionado target id.
+
+ 
+
+
+  // $form_state->setValue('field_alumno_relacionado', $newidhijo);
+  // $form_state->setValue('field_id_texto_alumno', $newidhijo);
+
+    // $formObject = $form_state->getFormObject();
+    // if (!($formObject instanceof \Drupal\Core\Entity\EntityFormInterface)) {
+    //   // Not an entity form, nothin to alter.
+    //   return;
+    // }
+    //  $node = $formObject->getEntity();
+    //   $node->save();
+  
+    //   //$node = \Drupal::routeMatch()->getParameter('node');
+    //   $node = Node::load($form_state->getValue('nid'));
+  
+    // if ($node instanceof NodeInterface) {
+    //   try {
+    //     // $node->field_alumno_relacionado->target_id = $newidhijo;
+    //     // Campo de tipo texto field_id_texto_alumno con el id del hijo.
+    //     $node->set('field_id_texto_alumno', $newidhijo);
+    //     $node->field_alumno_relacionado->setValue([$newidhijo]);
+    //     $node->save();
+    //     \Drupal::messenger()->addMessage('Node saved successfully ID: '.$newidhijo);  
+    //   }
+    //   catch (\Exception $e) {
+    //     \Drupal::messenger()->addMessage($e->getMessage(), 'error');  
+    //     dump('myerrorid', $e);
+    //   }
+    // }
+  
+
 
   /**
    * Custom submit handler to assign email as username.
@@ -225,4 +269,34 @@ function callback_submit($form, &$form_state) {
   //  $url = Drupal\core\Url::fromUserInput('/padres');
   //  $form_state->setRedirectUrl($url);
   // $form_state->setRedirect('internal:/padres');
+}
+
+
+
+/**
+* Implements hook_views_pre_render().
+*/
+// function create_koalas_views_pre_render(ViewExecutable $view) {
+//   dump($view->storage->id());
+//   dump($view->storage->label());
+//   dump($view->storage->get('display'));
+//   // if (isset($view) && ($view->storage->id() == 'super_awesome_view')) {
+//   //   $view->element['#attached']['library'][] = 'custom/custom_view';
+//   // }
+// }
+
+// Crear un hook que al mostrar las vistas se muestre el id de la vista y el display.
+
+/**
+ * Implements hook_views_pre_view().
+ */
+function create_koalas_views_pre_view(ViewExecutable $view, $display_id, array &$args) {
+  // Obtener el ID de la vista y el nombre del display.
+  $view_id = $view->id();
+  
+  // Mostrar el ID de la vista y el nombre del display.
+  \Drupal::messenger()->addMessage(t('ID de la vista: @view_id, Nombre del display: @display_id', [
+    '@view_id' => $view_id,
+    '@display_id' => $display_id,
+  ]));
 }

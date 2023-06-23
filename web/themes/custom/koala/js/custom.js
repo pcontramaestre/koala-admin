@@ -10,6 +10,58 @@
     attach: function (context, settings) {},
   };
 
+  jQuery(document).ready(function ($) {
+    jQuery('input[name="field_profesor"]').on("click", function () {
+      console.log("Se ha seleccionado un profesor");
+      var selectedValue = $(this).val();
+      var linkUrl =
+        "/agendar_cita?id=" +
+        getLastParameterFromUrl() +
+        "&field_profesor=" +
+        selectedValue;
+      $("#boton-agendamos-clase").attr("href", linkUrl);
+    });
+
+    function getLastParameterFromUrl() {
+      var url = window.location.href;
+      var urlSegments = url.split("/");
+      var lastSegment = urlSegments[urlSegments.length - 1];
+      return lastSegment;
+    }
+  });
+
+  jQuery(document).ready(function ($) {
+    console.log("ready inicio");
+    $("input[id^='field_profesor']").on("change", function () {
+      console.log("Se ha seleccionado un profesor");
+      var selectedValue = $(this).val();
+      var linkUrl =
+        "/agendar_cita?id=" +
+        getLastParameterFromUrl() +
+        "&field_profesor=" +
+        selectedValue;
+      $("#boton-agendamos-clase").attr("href", linkUrl);
+    });
+  });
+  console.log("ready inicio");
+  $("input[id^='field_profesor']").on("click", function () {
+    console.log("Se ha seleccionado un profesor");
+    var selectedValue = $(this).val();
+    var linkUrl =
+      "/agendar_cita?id=" +
+      getLastParameterFromUrl() +
+      "&field_profesor=" +
+      selectedValue;
+    $("#boton-agendamos-clase").attr("href", linkUrl);
+  });
+
+  function getLastParameterFromUrl() {
+    var url = window.location.href;
+    var urlSegments = url.split("/");
+    var lastSegment = urlSegments[urlSegments.length - 1];
+    return lastSegment;
+  }
+
   jQuery("#edit-field-fecha-nac-0-value").datepicker({
     dateFormat: "dd-mm-yy", // 22-05-2019
     changeMonth: true,
