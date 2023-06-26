@@ -178,7 +178,8 @@
                                     background-color: #FAD580 !important;
                                     border          : none;
                                     border-radius   : 8px;
-                                    padding         : 16px;
+                                    padding         : 0.8rem;
+                                    margin-right: 0px!important;
 
                                     .fc-content {
                                       text-align    : center;
@@ -187,28 +188,33 @@
 
                                       .fc-time {
                                         color     : black;
-                                        text-align: initial;
-                                        order: 2;
+                                        order     : 2;
+                                        font-size: 13px;
                                       }
 
                                       .fc-title {
                                         font-weight: 700;
                                         font-size  : 16px;
                                         color      : black;
-                                        text-align : initial;
                                       }
 
                                       &:before {
-                                        content: url('http://localhost/koala/koala-admin/web/sites/default/files/2023-05/Frame-4260.png');
-                                        ;
+                                        content: url('');
+                                        background-image   : url('http://localhost/koala/koala-admin/web/sites/default/files/2023-05/Frame-4260.png');
+                                        height             : 46px;
+                                        background-size    : contain;
+                                        background-repeat  : no-repeat;
+                                        background-position: center;
                                       }
                                     }
                                   }
 
                                   .fc-time-grid-event:nth-child(2) {
                                     background-color: #D7EFF2 !important;
+
                                     &:before {
-                                      content: url('http://localhost/koala/koala-admin/web/sites/default/files/2023-05/Frame-426.png');
+                                      content         : url('');
+                                      background-image: url('http://localhost/koala/koala-admin/web/sites/default/files/2023-05/Frame-4260.png');
                                     }
                                   }
                                 }
@@ -296,64 +302,64 @@
                       }
                     }
 
-                    .fc-content-skeleton {
-                      table {
+                    // .fc-content-skeleton {
+                    //   table {
 
-                        tbody {
-                          tr {
-                            td {
-                              .fc-content-col {
-                                .fc-event-container {
-                                  .fc-time-grid-event {
-                                    background-color: #FAD580 !important;
-                                    border          : none;
-                                    border-radius   : 8px;
-                                    padding         : 16px;
+                    //     tbody {
+                    //       tr {
+                    //         td {
+                    //           .fc-content-col {
+                    //             .fc-event-container {
+                    //               .fc-time-grid-event {
+                    //                 background-color: #FAD580 !important;
+                    //                 border          : none;
+                    //                 border-radius   : 8px;
+                    //                 padding         : 16px;
 
-                                    .fc-content {
-                                      margin-left   : 0.5rem;
-                                      display       : flex;
-                                      align-items   : center;
-                                      text-align    : center;
-                                      flex-direction: column;
+                    //                 .fc-content {
+                    //                   margin-left   : 0.5rem;
+                    //                   display       : flex;
+                    //                   align-items   : center;
+                    //                   text-align    : center;
+                    //                   flex-direction: column;
 
-                                      .fc-time {
-                                        font-weight     : 500 !important;
-                                        background-color: white;
-                                        color           : #727F7F;
-                                        border          : none;
-                                        font-size       : 12px;
-                                        text-align      : initial;
-                                        order: 2;
-                                      }
+                    //                   .fc-time {
+                    //                     font-weight     : 500 !important;
+                    //                     background-color: white;
+                    //                     color           : #727F7F;
+                    //                     border          : none;
+                    //                     font-size       : 12px;
+                    //                     text-align      : initial;
+                    //                     order: 2;
+                    //                   }
 
-                                      .fc-title {
-                                        color      : black;
-                                        text-align : initial;
-                                        font-weight: 700;
-                                        font-size  : 16px;
-                                      }
+                    //                   .fc-title {
+                    //                     color      : black;
+                    //                     text-align : initial;
+                    //                     font-weight: 700;
+                    //                     font-size  : 16px;
+                    //                   }
 
-                                      &:before {
-                                        content: url('http://localhost/koala/koala-admin/web/sites/default/files/2023-05/Frame-4260.png');
-                                      }
-                                    }
-                                  }
+                    //                   &:before {
+                    //                     content: url('http://localhost/koala/koala-admin/web/sites/default/files/2023-05/Frame-4260.png');
+                    //                   }
+                    //                 }
+                    //               }
 
-                                  .fc-time-grid-event:nth-child(2) {
-                                    background-color: #D7EFF2 !important;
-                                    &:before {
-                                      content: url('http://localhost/koala/koala-admin/web/sites/default/files/2023-05/Frame-426.png');
-                                    }
-                                  }
-                                }
-                              }
-                            }
+                    //               .fc-time-grid-event:nth-child(2) {
+                    //                 background-color: #D7EFF2 !important;
+                    //                 &:before {
+                    //                   content: url('http://localhost/koala/koala-admin/web/sites/default/files/2023-05/Frame-426.png');
+                    //                 }
+                    //               }
+                    //             }
+                    //           }
+                    //         }
 
-                          }
-                        }
-                      }
-                    }
+                    //       }
+                    //     }
+                    //   }
+                    // }
                   }
                 }
 
