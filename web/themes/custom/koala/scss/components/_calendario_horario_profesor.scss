@@ -2,10 +2,11 @@
   position: relative;
   .view-footer{
     position: absolute;
-    top: 96px;
-    display: flex;
+    top: 72px;
+    display: grid;
     justify-content: center;
     width: 100%;
+    color: white;
     a{
       border: 2px solid #297E88;
       border-radius: 32px;
@@ -13,9 +14,7 @@
       font-weight: 700;
       color: black;
       text-decoration: none;
-      padding: 8px 16px 8px 16px;
-      width: 20%;
-      text-align: center;
+      padding: 0.3rem 4rem 0.3rem 4rem;
     }
   }
   .js-drupal-fullcalendar {
