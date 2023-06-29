@@ -1,4 +1,23 @@
 .view-horarios-de-trabajo-profesor {
+  position: relative;
+  .view-footer{
+    position: absolute;
+    top: 96px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    a{
+      border: 2px solid #297E88;
+      border-radius: 32px;
+      background-color: #2FF7EE;
+      font-weight: 700;
+      color: black;
+      text-decoration: none;
+      padding: 8px 16px 8px 16px;
+      width: 20%;
+      text-align: center;
+    }
+  }
   .js-drupal-fullcalendar {
     margin-top: 2rem;
 
@@ -16,7 +35,7 @@
     }
 
     .fc-header-toolbar {
-      margin-top: 1rem;
+      margin-top: 2rem;
 
       .fc-left {
         .fc-button-group {
@@ -175,7 +194,7 @@
                               .fc-content-col {
                                 .fc-event-container {
                                   .fc-time-grid-event {
-                                    background-color: #FAD580 !important;
+                                    background-color: #D7EFF2 !important;
                                     border          : none;
                                     border-radius   : 8px;
                                     padding         : 0.8rem;
@@ -190,12 +209,20 @@
                                         color     : black;
                                         order     : 2;
                                         font-size: 13px;
+                                        span{
+                                          display: grid;
+                                          text-align: initial;
+                                          &:before{
+                                            content: "Mi horario disponible";
+                                            font-weight: 700;
+                                            font-size  : 16px;
+                                            color      : black;
+                                          }
+                                        }
                                       }
 
                                       .fc-title {
-                                        font-weight: 700;
-                                        font-size  : 16px;
-                                        color      : black;
+                                        display: none;
                                       }
 
                                       &:before {
@@ -211,10 +238,12 @@
 
                                   .fc-time-grid-event:nth-child(2) {
                                     background-color: #D7EFF2 !important;
-
-                                    &:before {
-                                      content         : url('');
-                                      background-image: url('http://localhost/koala/koala-admin/web/sites/default/files/2023-05/Frame-4260.png');
+                                    .fc-content{
+                                      &:before {
+                                        content: url('');
+                                        background-image   : none;
+                                        height: 1px;
+                                      }
                                     }
                                   }
                                 }
