@@ -184,13 +184,13 @@
               .view-content {
                 width                : 63%;
                 margin-left          : 3%;
-                display              : grid;
-                grid-template-columns: 1fr 1fr 1fr 1fr;
+                display              : flex;
                 gap                  : 15px 15px;
                 justify-content      : center;
                 align-content        : center;
                 justify-items        : center;
                 align-items          : center;
+                white-space: nowrap;
 
                 .views-row {
                   height: 57px;
