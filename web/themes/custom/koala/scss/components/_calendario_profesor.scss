@@ -132,6 +132,28 @@
                                     }
                                   }
                                 }
+
+                                .fc-event-container:nth-child(3n) {
+                                  .fc-day-grid-event {
+                                    .fc-content {
+                                      .fc-title {
+                                        background-color: $RedK100;
+                                        color           : $RedK500;
+                                      }
+                                    }
+                                  }
+                                }
+
+                                .fc-event-container:nth-child(2n) {
+                                  .fc-day-grid-event {
+                                    .fc-content {
+                                      .fc-title {
+                                        background-color: #F5F8D8;
+                                        color           : #869021;
+                                      }
+                                    }
+                                  }
+                                }
                               }
                             }
                           }
@@ -310,7 +332,35 @@
                                   }
                                 }
                               }
+                              td:nth-child(2n) {
+                                .fc-content-col {
+                                  .fc-event-container {
+                                    .fc-time-grid-event {
+                                      .fc-content {
+                                        .fc-title {
+                                          background-color: #F5F8D8;
+                                          color           : #869021;
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
 
+                              td:nth-child(3n) {
+                                .fc-content-col {
+                                  .fc-event-container {
+                                    .fc-time-grid-event {
+                                      .fc-content {
+                                        .fc-title {
+                                          background-color: #FFE8E8;
+                                          color           : #FF6669;
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
                             }
                           }
                         }
@@ -369,13 +419,31 @@
                   .fc-list-item-title{
                     display: flex;
                     a{
-                      background-color: #F8E5DE;
+                      background-color: $RedK100;
                       border-radius: 12px;
-                      color: #AF654A;
+                      color: $RedK500;
                       font-weight: 700;
                       font-size: 12px;
                       padding: 0.2rem 0.2rem 0.2rem 0.4rem;
                       margin-top: 0.1rem;
+                    }
+                  }
+                }
+                .fc-list-item:nth-child(4n) {
+                  .fc-list-item-title {
+                    a {
+                      background-color: #F5F8D8;
+                      color           : #869021;
+                    }
+                  }
+                }
+
+                .fc-list-item:nth-child(6n) {
+                  .fc-list-item-title {
+
+                    a {
+                      background-color: #F8E5DE;
+                      color           : #AF654A;
                     }
                   }
                 }

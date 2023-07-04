@@ -42,13 +42,13 @@
               font-size    : 18px;
               font-weight  : 500;
               margin-bottom: 1.5rem;
-              color: black;
+              color        : black;
             }
 
             .field__items {
               margin-left: 6rem;
               font-weight: 500;
-              color: black;
+              color      : black;
             }
           }
         }
@@ -117,10 +117,10 @@
 
     .fc-header-toolbar {
       margin-top: 2rem;
-      z-index   : 100;
       position  : relative;
 
       .fc-left {
+        z-index   : 100;
         .fc-button-group {
           button {
             background-color: white;
@@ -148,6 +148,7 @@
       }
 
       .fc-right {
+        z-index   : 100;
         .fc-button-group {
           button {
             background-color: white;
@@ -237,7 +238,13 @@
                                     }
 
                                     .fc-title {
-                                      color: #AF654A;
+                                      background-color: #D7EFF2;
+                                      border-radius   : 12px;
+                                      color           : black;
+                                      font-weight     : 700;
+                                      font-size       : 0.75rem;
+                                      padding         : 0.2rem 0.2rem 0.2rem 0.4rem;
+                                      margin-top      : 0.1rem;
                                     }
                                   }
                                 }
@@ -312,7 +319,7 @@
 
                                       &:before {
                                         content            : url('');
-                                        background-image   : url('http://localhost/koala/koala-admin/web/sites/default/files/2023-05/Frame-4260.png');
+                                        background-image   : url('http://localhost/koala/koala-admin/web/themes/custom/koala/images/Frame-4260.png');
                                         height             : 46px;
                                         background-size    : contain;
                                         background-repeat  : no-repeat;
@@ -464,7 +471,7 @@
                                       }
 
                                       &:before {
-                                        content: url('http://localhost/koala/koala-admin/web/sites/default/files/2023-05/Frame-4260.png');
+                                        content: url('http://localhost/koala/koala-admin/web/themes/custom/koala/images/Frame-4260.png');
                                       }
                                     }
                                   }
@@ -473,13 +480,12 @@
                                     background-color: #D7EFF2 !important;
 
                                     &:before {
-                                      content: url('http://localhost/koala/koala-admin/web/sites/default/files/2023-05/Frame-426.png');
+                                      content: url('http://localhost/koala/koala-admin/web/themes/custom/koala/images/Frame-426.png');
                                     }
                                   }
                                 }
                               }
                             }
-
                           }
                         }
                       }
@@ -511,7 +517,7 @@
         }
       }
 
-      .fc-listYear-view {
+      .fc-listMonth-view {
         border: 2px solid #E6F1F1;
 
         .fc-scroller {
@@ -542,9 +548,9 @@
                   display: flex;
 
                   a {
-                    background-color: #F8E5DE;
+                    background-color: #D7EFF2;
                     border-radius   : 12px;
-                    color           : #AF654A;
+                    color           : black;
                     font-weight     : 700;
                     font-size       : 12px;
                     padding         : 0.2rem 0.2rem 0.2rem 0.4rem;
