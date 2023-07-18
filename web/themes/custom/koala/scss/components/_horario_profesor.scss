@@ -1,232 +1,637 @@
-// Horario profesor
-#block-koala-content {
-  .views-element-container {
-    .view-ver-horario-profesor {
-      margin-top: 2rem;
+.node--type-horarios-profesores {
+  .ui-dialog.ui-corner-all {
+    top             : 100px !important;
+    background-color: white;
+    padding-bottom  : 1rem;
 
-      .view-content {
-        .views-field {
-          border-radius: 20px;
-          padding      : 1rem 1.5rem;
-          width        : 90%;
-          margin       : 0 auto;
-          margin-bottom: 1rem;
+    .ui-dialog-titlebar {
+      background-color: white;
+      text-align      : center;
+      font-size       : 20px;
+      padding         : 1.5rem 0rem 0rem 0rem;
+    }
 
-          h2 {
-            font-weight: 700;
-            font-size  : 1.3rem;
+    .ui-dialog-content {
+      .table-responsive {
+        .responsive-enabled {
+          thead {
+            border-color: white;
+
+            tr {
+              color: black;
+
+              th:nth-child(1) {
+                text-align   : end;
+                font-weight  : 500;
+                padding-right: 4.5rem;
+              }
+
+              th:nth-child(2) {
+                font-weight  : 500;
+                text-align   : center;
+                padding-right: 6rem;
+              }
+            }
           }
 
-          .field-content {
-            .table-responsive {
-              table {
-                thead {
-                  border-style: none;
-                  border-color: transparent;
-                }
+          tbody {
+            tr {
+              --bs-table-striped-bg: none;
+              background-color     : white;
+              border               : none;
 
-                tbody {
-                  border-radius: 20px !important;
+              &:hover {
+                --bs-table-accent-bg: none !important;
+              }
 
-                  tr {
-                    border-style: none;
-                    border-color: transparent;
+              td:nth-child(1) {
+                padding-top: 1.2rem;
+              }
 
-                    td:nth-child(1) {
-                      border-bottom-left-radius: 20px;
-                      border-top-left-radius   : 20px;
+              td {
+                font-weight   : 500;
+                font-size     : 16px;
+                font-style    : normal;
+                border        : none;
+                padding-left  : 3.5rem;
+                padding-bottom: 1.5rem;
+                color         : black;
+
+                .dropbutton-wrapper {
+                  margin-bottom: -1rem;
+
+                  .dropbutton-widget {
+                    margin          : 0px;
+                    border          : 2px solid #BECACA;
+                    min-height      : 48px;
+                    width           : 290px;
+                    border-radius   : 32px;
+                    display         : flex;
+                    align-items     : center;
+                    padding-left    : 0.5rem;
+                    background-image: none;
+
+                    .dropbutton {
+                      width       : 100%;
+                      text-align  : initial;
+                      border-right: none;
+
+                      .dropbutton-action {
+                        .use-ajax {
+                          text-decoration: none;
+                          font-weight    : 500;
+                        }
+                      }
+
+                      .dropbutton-toggle {
+                        button {
+                          background-image: none;
+                          background-color: white;
+                        }
+                      }
                     }
+                  }
+                }
+              }
 
-                    td:nth-child(2) {
-                      border-bottom-right-radius: 20px;
-                      border-top-right-radius   : 20px;
+              .smart-date-instance--cancelled {
+                text-decoration: none !important;
+                color          : #727F7F;
+              }
+            }
+          }
+        }
+
+        #manage-instances {
+          .smart-date-recur-delete-override-ajaxform {
+            margin    : 1rem 5rem 2rem 0rem;
+            text-align: center;
+            color     : black;
+
+            p {
+              margin-bottom: 1.5rem;
+            }
+
+            a:nth-child(2) {
+              border          : 2px solid #297E88;
+              border-radius   : 32px;
+              background-color: white;
+              background-image: none;
+              color           : black;
+              font-weight     : 700;
+              padding         : 0.3rem 2rem;
+              font-size       : 20px;
+              margin-right    : 0.5rem;
+              &:hover{
+                color: white;
+                background-color: #297E88;
+              }
+            }
+
+            a:nth-child(3) {
+              border          : 2px solid #FF9294;
+              background-color: #FFC2C4;
+              background-image: none;
+              color           : black;
+              font-weight     : 700;
+              font-size       : 20px;
+              border-radius   : 32px;
+              padding         : 0.3rem 2rem;
+              margin-left     : 0.5rem;
+              &:hover{
+                color: white;
+                background-color: #FF9294;
+              }
+            }
+          }
+
+          .smart-date-recur-remove-form {
+            text-align  : center;
+            margin-top  : 1rem;
+            margin-right: 3rem;
+            color       : black;
+
+            .form-actions {
+              button {
+                border          : 2px solid #297E88;
+                border-radius   : 32px;
+                background-color: white;
+                background-image: none;
+                color           : black;
+                font-weight     : 700;
+                padding         : 0.3rem 2rem;
+                font-size       : 20px;
+                &:hover{
+                  color: white;
+                  background-color: #297E88;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .ui-dialog-buttonpane {
+      .ui-dialog-buttonset {
+        button {
+          border          : 2px solid #FF9294;
+          background-color: #FFC2C4;
+          background-image: none;
+          color           : black;
+          font-weight     : 700;
+          font-size       : 20px;
+          border-radius   : 32px;
+          padding         : 0.3rem 2rem;
+          &:hover{
+            color: white;
+            background-color: #FF9294;
+          }
+        }
+      }
+    }
+  }
+
+  #page-wrapper {
+    #main-wrapper {
+      #content {
+        .section {
+          #block-koala-content {
+            .content {
+              .node-horarios-profesores-editar-horarios-form {
+                .content {
+                  .layout-region {
+                    .layout--onecol {
+                      .layout__region {
+                        .field--name-field-fechas-laborables {
+                          div {
+                            .js-form-item {
+                              .table-responsive {
+                                .field-multiple-table {
+                                  border-color: white;
+
+                                  thead {
+                                    tr {
+                                      border-color: white;
+
+                                      .field-label {
+                                        &:before {
+                                          content        : "Programar mi agenda";
+                                          font-weight    : 700;
+                                          font-size      : 16px;
+                                          color          : #FF6669;
+                                          display        : flex;
+                                          justify-content: center;
+                                          border-bottom  : 2px solid black;
+                                          width          : 170px;
+                                          margin         : 0 auto;
+                                          padding-bottom : 0.8rem;
+                                          margin-top     : 1rem;
+                                        }
+
+                                        h4 {
+                                          text-align   : center;
+                                          font-weight  : 700;
+                                          margin-bottom: 1.2rem;
+                                          margin-top   : 1.7rem;
+                                          font-size    : 21px;
+                                        }
+                                      }
+                                    }
+                                  }
+
+                                  tbody {
+                                    display       : flex;
+                                    gap           : 15px;
+                                    flex-direction: column;
+
+                                    .draggable {
+                                      background-color: #E6F1F1 !important;
+                                      border-radius   : 24px;
+
+                                      .field-multiple-drag {
+                                        display: none;
+                                      }
+
+                                      .has-multiple-fields-remove-button {
+                                        border-radius       : 24px;
+                                        padding             : 4px 8px 0px 8px;
+                                        width               : 100vw;
+                                        --bs-table-accent-bg: none;
+
+                                        .smartdate--widget {
+                                          position     : relative;
+                                          margin-bottom: 0rem !important;
+
+                                          .fieldset-wrapper {
+                                            .multiple-fields-remove-button {
+                                              right: -14px !important;
+                                              top  : 10% !important;
+                                            }
+
+                                            .js-form-type-number {
+                                              float       : left;
+                                              margin-right: 0.6rem;
+
+                                              .field-interval--label {
+                                                display        : flex;
+                                                margin         : 0pc;
+                                                padding        : 0px;
+                                                justify-content: center;
+                                                font-weight    : 500;
+                                              }
+
+                                              .input-group {
+                                                display       : flex;
+                                                flex-direction: column-reverse;
+                                                align-items   : center;
+                                                margin-right  : 1rem;
+
+                                                .input-group-append {
+                                                  .input-group-text {
+                                                    background-color: transparent;
+                                                    border          : none;
+                                                    font-size       : 16px;
+                                                    font-weight     : 500;
+                                                    padding         : 0px;
+                                                  }
+                                                }
+                                              }
+                                            }
+
+                                            .repeat--label {
+                                              display: none;
+                                            }
+
+                                            input {
+                                              border-radius: 32px;
+                                              border       : 2px solid #BECACA;
+                                              color        : black;
+                                              font-weight  : 500;
+                                              padding      : 8px 16px 8px 16px;
+                                              gap          : 16px;
+                                              margin-top   : 0.3rem;
+                                            }
+
+                                            select {
+                                              border-radius: 32px;
+                                              border       : 2px solid #BECACA;
+                                              color        : black;
+                                              font-weight  : 500;
+                                              padding      : 8px 16px 8px 16px;
+                                              margin-right : 40px;
+                                              margin-top   : 0.3rem;
+                                            }
+
+                                            .manage-instances {
+                                              border          : 2px solid #297E88;
+                                              border-radius   : 32px;
+                                              background-color: white;
+                                              color           : black;
+                                              text-decoration : none;
+                                              font-weight     : 700;
+                                              font-size       : 18px;
+                                              padding         : 6px 15px;
+                                              margin-top      : 1.8rem;
+                                              float           : left;
+                                              margin-bottom   : 1rem;
+                                              &:hover{
+                                                color: white;
+                                                background-color: #297E88;
+                                              }
+                                            }
+
+                                            .smartdate--time-inline {
+                                              display      : flex;
+                                              float        : left;
+                                              margin-bottom: 0rem !important;
+
+                                              label {
+                                                display: none;
+                                              }
+
+                                              .smartdate--separator {
+                                                display: none;
+                                              }
+
+                                              .time-start {
+                                                .js-form-item:nth-child(1) {
+                                                  margin-right: 1rem;
+                                                }
+
+                                                .js-form-item:nth-child(1):before {
+                                                  content        : "Fecha de inicio";
+                                                  font-weight    : 500;
+                                                  color          : black;
+                                                  display        : flex;
+                                                  justify-content: center;
+
+                                                }
+
+                                                .js-form-item:nth-child(2) {
+                                                  margin-right: 1rem;
+                                                }
+
+                                                .js-form-item:nth-child(2):before {
+                                                  content        : "Hora de inicio";
+                                                  font-weight    : 500;
+                                                  color          : black;
+                                                  display        : flex;
+                                                  justify-content: center;
+
+                                                }
+                                              }
+
+                                              .time-end {
+                                                .js-form-item:nth-child(1) {
+                                                  display: none;
+                                                }
+
+                                                .js-form-item:nth-child(2) {
+                                                  margin-right: 1rem;
+                                                }
+
+                                                .js-form-item:nth-child(2):before {
+                                                  content        : "Hora de cierre";
+                                                  font-weight    : 500;
+                                                  color          : black;
+                                                  display        : flex;
+                                                  justify-content: center;
+                                                }
+                                              }
+                                            }
+
+                                            .form-item-field-fechas-laborables-0-repeat-end {
+                                              margin     : 0rem;
+                                              float      : left;
+                                              padding-top: 0em;
+
+                                              label {
+                                                font-weight: 500;
+                                                padding-top: 0em;
+                                              }
+                                            }
+
+                                            .js-form-type-select.form-no-label {
+                                              .form-select {
+                                                margin-top: 2rem;
+                                              }
+
+                                            }
+
+                                            .js-form-type-select {
+                                              margin      : 0px;
+                                              margin-right: 1rem;
+                                              float       : left;
+
+                                              label {
+                                                padding-top: 0em !important;
+                                                font-weight: 500;
+                                                min-width  : auto;
+                                                padding-top: 0em;
+                                                margin-left: 0.3rem
+                                              }
+
+                                              .recur-repeat.form-select {
+                                                margin-top: 1.8rem;
+
+                                              }
+                                            }
+
+                                            details {
+                                              width        : 70%;
+                                              display      : flow-root;
+                                              border       : none;
+                                              margin-bottom: 0rem;
+
+                                              summary {
+                                                border-radius   : 32px;
+                                                border          : 2px solid #BECACA;
+                                                color           : black;
+                                                font-weight     : 500;
+                                                padding         : 0.5rem 1rem 0.5rem 1rem;
+                                                gap             : 16px;
+                                                margin-top      : 0.3rem;
+                                                background-color: white;
+                                                width           : 20%;
+                                              }
+
+                                              .details-wrapper {
+                                                padding: 0em 0.5em 0em 0em;
+
+                                                fieldset {
+                                                  margin-bottom: 0rem !important;
+                                                  margin       : 0px;
+                                                  margin-top   : 0.8rem;
+
+                                                  legend {
+                                                    margin   : 0rem;
+                                                    font-size: 1.125rem;
+
+                                                    .fieldset-legend {
+                                                      font-size  : 18px;
+                                                      font-weight: 700;
+                                                      margin-left: 0.3rem;
+                                                    }
+                                                  }
+
+                                                  .fieldset-wrapper {
+                                                    height: 1rem;
+
+                                                    .checkbox {
+                                                      .js-form-type-checkbox {
+                                                        input {
+                                                          display: flex !important;
+                                                        }
+
+                                                        label {
+                                                          font-weight : 500;
+                                                          margin-top  : 0.3rem;
+                                                          margin-right: 1rem;
+
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+
+                                            .duration-wrapper {
+                                              margin: 0rem 1rem 0rem 0rem;
+                                              float : left;
+
+                                              label {
+                                                padding-top: 0em;
+                                                font-weight: 500;
+                                                color      : black;
+                                                width      : 100%;
+                                                text-align : center;
+                                              }
+                                            }
+
+                                            .clearfix {
+                                              display: none;
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+
+                                .tabledrag-toggle-weight-wrapper {
+                                  display: none;
+                                }
+                              }
+
+                              .text-muted {
+                                display        : flex;
+                                justify-content: center;
+                                margin-bottom  : 0.5rem;
+                              }
+
+                              .clearfix {
+                                display        : flex;
+                                justify-content: center;
+
+                                .field-add-more-submit {
+                                  border          : 2px solid #297E88;
+                                  border-radius   : 32px;
+                                  background-color: white;
+                                  font-size       : 20px;
+                                  color           : black;
+                                  font-weight     : 700;
+                                  display         : flex;
+                                  align-items     : center;
+                                  padding         : 0.2rem 0.4rem 0.2rem 0.8rem;
+
+                                  &:after {
+                                    content     : url('http://localhost/koala/koala-admin/web/themes/custom/koala/images/Frame-mas.png');
+                                    padding-left: 0.5rem;
+                                    position    : relative;
+                                    top         : 5px;
+                                  }
+                                  &:hover{
+                                    color: white;
+                                    background-color: #297E88;
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+
+                  .layout-region-node-footer {
+                    .form-actions {
+                      text-align: center;
+
+                      .button--primary {
+                        border          : 2px solid #297E88;
+                        background-color: #2FF7EE;
+                        color           : black;
+                        font-weight     : 700;
+                        font-size       : 20px;
+                        border-radius   : 32px;
+                        width           : 255px;
+                        margin-top      : 1rem;
+                        &:hover{
+                          color: white;
+                          background-color: #297E88;
+                        }
+                      }
                     }
                   }
                 }
               }
             }
           }
-        }
-
-        .views-field-nid {
-          .field-content {
-            a {
-              background     : #FFFFFF;
-              border         : 2px solid #297E88;
-              border-radius  : 28px;
-              color          : black !important;
-              padding        : 0.5rem 1.2rem 0.5rem 1.2rem;
-              text-decoration: none;
-              font-weight    : 700;
-              font-size      : 1.2rem;
-
-              &:hover {
-                background-color: #297E88;
-                color           : white !important;
-              }
-            }
-          }
-        }
-
-        .views-field-field-horario-de-trabajo-lunes {
-          background: $RedK100;
-        }
-
-        .views-field-field-horario-de-trabajo-martes {
-          background: $TurqK100;
-        }
-
-        .views-field-field-horario-de-trabajo-miercol {
-          background: $GreenK100;
-        }
-
-        .views-field-field-horario-de-trabajo-jueves {
-          background: $AguaK100;
-        }
-
-        .views-field-field-horario-de-trabajo-viernes {
-          background: $YellowK100;
-        }
-
-        .views-field-field-horario-de-trabajo-sabado {
-          background: $BrowmK100;
-        }
-
-        .views-field-field-horario-de-trabajo-domingo {
-          background: $AguaK100;
         }
       }
     }
   }
 }
 
-// Editar horario profesor
+@media only screen and (max-width: 1519px) and (min-width: 1000px) {
+  .node--type-horarios-profesores {
+    #page-wrapper {
+      #main-wrapper {
+        #content {
+          .section {
+            #block-koala-content {
+              .content {
+                .node-horarios-profesores-editar-horarios-form {
+                  .content {
+                    .layout-region {
+                      .layout--onecol {
+                        .layout__region {
+                          .field--name-field-fechas-laborables {
+                            div {
+                              .js-form-item {
+                                .table-responsive {
+                                  .field-multiple-table {
+                                    tbody {
+                                      .draggable {
+                                        .has-multiple-fields-remove-button {
+                                          .smartdate--widget {
+                                            .fieldset-wrapper {
+                                              .js-form-type-number.form-no-label {
+                                                float       : right;
+                                                margin-right: 2.5rem;
+                                              }
 
-.node-horarios-de-trabajo-editar-horarios-form {
-  width : 90%;
-  margin: 0 auto;
-
-  .btn-primary {
-    background     : #FFFFFF;
-    border         : 2px solid #297E88;
-    border-radius  : 28px;
-    color          : black !important;
-    padding        : 0.2rem 0.7rem 0.2rem 0.7rem;
-    text-decoration: none;
-    font-weight    : 700;
-    font-size      : 1.2rem;
-    margin-top     : 0.5rem;
-
-    &:hover {
-      background-color: #297E88;
-      color           : white !important;
-    }
-  }
-
-  .button--danger {
-    background     : #FFC2C4;
-    border         : 2px solid #FF9294;
-    border-radius  : 32px;
-    color          : black;
-    padding        : 0.3rem 1.1rem;
-    text-decoration: none;
-    font-weight    : 700;
-    font-size      : 1.2rem;
-    margin-top     : 0.5rem;
-  }
-
-
-  .link.tabledrag-toggle-weight {
-    font-weight  : 700;
-    border-radius: 20px;
-
-    &:hover {
-      background-color: $RedK100;
-    }
-  }
-
-  .content {
-    margin-top: 1.5rem;
-
-    .layout-region {
-      .layout--onecol {
-        .layout__region {
-          .field--name-title {
-            .js-form-item {
-              label {
-                font-weight  : 600;
-                margin-bottom: 0.5rem;
-              }
-
-              input {
-                border-radius   : 25px;
-                border          : 2px solid #BECACA;
-                background-color: white;
-                height          : 2.9rem;
-                color           : #BECACA;
-                margin-bottom   : 1rem;
-              }
-            }
-          }
-
-          .field--type-double-field {
-            .js-form-item {
-              .table-responsive {
-                border-radius: 20px;
-                padding      : 1rem 0rem 0rem 0rem;
-                border       : 2px solid #BECACA;
-                margin-bottom: 0.5rem;
-
-                .tabledrag-toggle-weight-wrapper {
-                  padding-right: 1rem;
-                }
-
-                table {
-                  thead {
-                    tr {
-                      th {
-                        h4 {
-                          font-weight: 700;
-                        }
-                      }
-
-                      .tabledrag-hide {
-                        padding-bottom: 1rem;
-                      }
-                    }
-                  }
-
-                  tbody {
-                    .draggable {
-                      .js-form-item {
-                        .double-field-elements {
-                          .double-field-subfield-form-item {
-                            label {
-                              font-weight  : 600;
-                              margin-bottom: 0.5rem;
-                            }
-
-                            .chosen-container {
-                              background-image: none;
-                              border          : none;
-                              padding         : 0;
-                              border-radius   : 32px;
-
-                              .chosen-single {
-                                height         : 48px;
-                                background     : #FFFFFF;
-                                border         : 2px solid #BECACA;
-                                border-radius  : 32px;
-                                display        : flex;
-                                flex-direction : row;
-                                justify-content: center;
-                                align-items    : center;
-                                font-weight    : 500;
-                                color          : black;
-
-                                div {
-                                  b {
-                                    background-position: -2px 11px !important;
+                                              .js-form-type-date {
+                                                float       : right;
+                                                margin-right: 2.5rem;
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
                                   }
                                 }
                               }
@@ -238,41 +643,55 @@
                   }
                 }
               }
-
-              small {
-                font-size: 1rem;
-              }
             }
           }
+        }
+      }
+    }
+  }
+}
 
-          .field--type-entity-reference {
-            .js-form-item {
-              label {
-                font-weight  : 600;
-                margin-bottom: 0.5rem;
-              }
-
-              .chosen-container {
-                background-image: none;
-                border          : none;
-                padding         : 0;
-                border-radius   : 32px;
-
-                .chosen-single {
-                  height         : 48px;
-                  background     : #FFFFFF;
-                  border         : 2px solid #BECACA;
-                  border-radius  : 32px;
-                  display        : flex;
-                  flex-direction : row;
-                  justify-content: center;
-                  align-items    : center;
-                  font-weight    : 500;
-                  color          : black;
-
-                  div {
-                    b {
-                      background-position: -2px 11px !important;
+@media only screen and (max-width: 2400px) and (min-width: 1520px) {
+  .node--type-horarios-profesores {
+    #page-wrapper {
+      #main-wrapper {
+        #content {
+          .section {
+            #block-koala-content {
+              .content {
+                .node-horarios-profesores-editar-horarios-form {
+                  .content {
+                    .layout-region {
+                      .layout--onecol {
+                        .layout__region {
+                          .field--name-field-fechas-laborables {
+                            div {
+                              .js-form-item {
+                                .table-responsive {
+                                  .field-multiple-table {
+                                    tbody {
+                                      .draggable {
+                                        .has-multiple-fields-remove-button {
+                                          .smartdate--widget {
+                                            .fieldset-wrapper {
+                                              .form-item-field-fechas-laborables-0-repeat-end-date {
+                                                margin-top : 1.5rem;
+                                                width      : auto;
+                                                text-align : initial;
+                                                margin-left: 1rem;
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
                     }
                   }
                 }
@@ -282,31 +701,54 @@
         }
       }
     }
+  }
+}
 
-    .layout-region-node-secondary {
-      .js-form-item {
-        .vertical-tabs {
-          border-radius: 20px;
-          border       : 2px solid #BECACA;
-          margin-top   : 2rem;
-
-          .vertical-tabs__menu {
-            border: none;
+@media only screen and (max-width: 2400px) and (min-width: 1920px) {
+  .node--type-horarios-profesores {
+    #page-wrapper {
+      #main-wrapper {
+        #content {
+          .section {
+            #block-koala-content {
+              .content {
+                .node-horarios-profesores-editar-horarios-form {
+                  .content {
+                    .layout-region {
+                      .layout--onecol {
+                        .layout__region {
+                          .field--name-field-fechas-laborables {
+                            div {
+                              .js-form-item {
+                                .table-responsive {
+                                  .field-multiple-table {
+                                    tbody {
+                                      .draggable {
+                                        .has-multiple-fields-remove-button {
+                                          .smartdate--widget {
+                                            .fieldset-wrapper {
+                                              .manage-instances {
+                                                top: 12%;
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
           }
-
-          .vertical-tabs__menu-item {
-            border       : none;
-            border-radius: 20px;
-          }
-
         }
-      }
-    }
-
-    .layout-region-node-footer {
-      .form-actions {
-        display: flex;
-        gap    : 8px;
       }
     }
   }

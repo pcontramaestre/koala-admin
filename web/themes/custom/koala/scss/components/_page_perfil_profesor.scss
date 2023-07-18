@@ -1,50 +1,222 @@
 .path-profesor {
+  padding-top: 2.3rem;
+
   #block-koala-content .content .layout--twocol-section--33-67 {
     width: 100%;
-  }
 
-  //Cuadro perfil del profesor
-  .perfil-general-profesor {
-    .cuadro-perfil-profesor {}
-  }
-}
+    .layout__region--first {
+      .block-views-blockdetalle-profesor-block-1 {
+        .content {
+          div {
 
-.field--type-entity-reference.field--name-field-avatar {
-  .fieldset-wrapper {
-    #edit-field-avatar {
-      .js-form-type-radio.form-item-field-avatar {
-        >input {
-          margin-left: 0.1rem;
+            //Cuadro perfil del profesor
+            .view-detalle-profesor {
+              width: 90%;
+              margin: 0 auto;
+              .perfil-general-profesor {
+                .views-field-nothing {
+                  border-top             : 2px solid $GreyK100;
+                  padding                : 1.5rem 1.5rem 1rem 1.5rem;
+                  border-left            : 2px solid $GreyK100;
+                  border-right           : 2px solid $GreyK100;
+                  border-top-left-radius : 24px;
+                  border-top-right-radius: 24px;
+
+                  .field-content {
+                    position: relative;
+
+                    .cuadro-perfil-profesor {
+                      .img-name {
+                        .imagen {
+                          width: 29% !important;
+
+                          .image-style-responsive-img {
+                            height       : 5.5rem;
+                            width        : 5.5rem;
+                            border-radius: 150px;
+                            border       : 2px solid white;
+                            box-shadow   : 0px 0px 5px 0px rgb(187, 183, 183);
+                          }
+                        }
+
+                        .nombre {
+                          h4 {
+                            font-size  : 22px;
+                            font-weight: 700;
+                          }
+                        }
+
+                        .flotante {
+                          position: absolute;
+                          top     : 0%;
+                          left    : 94%;
+                        }
+                      }
+
+                      .col-12 h4 {
+                        font-size  : 22px;
+                        font-weight: 700;
+                        margin-top : 1rem;
+                      }
+
+                      .presentacion {
+                        h6 {
+                          display: none;
+                        }
+
+                        p {
+                          font-weight: 500;
+                        }
+                      }
+                    }
+
+                    &:before {
+                      content        : "Mi perfil";
+                      color          : $GreyK500;
+                      font-weight    : 700;
+                      font-size      : 20px;
+                      display        : flex;
+                      justify-content: center;
+                    }
+                  }
+                }
+
+                .views-field-field-tu-video- {
+                  padding                   : 0rem 1.5rem 1.5rem 1.5rem;
+                  border-left               : 2px solid $GreyK100;
+                  border-right              : 2px solid $GreyK100;
+                  border-bottom             : 2px solid $GreyK100;
+                  border-bottom-left-radius : 24px;
+                  border-bottom-right-radius: 24px;
+
+                  .views-label {
+                    font-weight: 700;
+                    font-size  : 18px;
+                  }
+
+                  .field-content {
+                    .no-admin {
+                      .video-popup {
+                        div {
+                          a {
+                            .texto-enlace-video {
+                              color      : #297E88;
+                              font-weight: 700;
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+
+    }
+
+    .layout__region--second {
+
+      .views-element-container {
+        margin-top   : 0rem !important;
+        width        : 58%;
+        border       : 2px solid #E6F1F1;
+        border-radius: 24px;
+        padding      : 1.5rem;
+
+        h2 {
+          color      : #727F7F;
+          font-weight: 700;
+          font-size  : 1.25rem;
+          text-align : center;
         }
 
-        span.views-field.views-field-name {
-          display: none;
-        }
+        .content {
+          .view-clases-gratuitas-profesores {
+            .view-content {
+              .views-row {
+                border-radius   : 30px;
+                background-color: #F8E5DE;
+                margin-top      : 0.5rem;
+                padding         : 0px 20px 0px 20px;
+                margin-bottom   : 1rem;
 
-        img {
-          max-width      : 80%;
-          height         : auto;
-          border-radius  : 50%;
-          margin-top     : 1rem;
-          object-fit     : cover;
-          object-position: center;
-          padding        : 0.5rem;
-          border         : 1px solid;
+                .views-field-field-nombre-del-nino-a {
+                  .field-content {
+                    font-weight: 700;
+                  }
+                }
+
+                .views-field-title {
+                  display: none;
+                }
+
+                .views-field-field-fecha-de-la-cita {
+                  font-weight: 500;
+                  margin-top : 0.3rem;
+                }
+
+                .views-field-field-fecha-cita-oculta {
+                  display: none;
+                }
+              }
+
+              .views-row:nth-child(2n) {
+                background-color: $GreenK100;
+              }
+
+              .views-row:nth-child(3n) {
+                background-color: $RedK100;
+              }
+            }
+          }
         }
       }
     }
   }
-}
 
-.smartdate--widget .byday-checkboxes input {
-  display: unset;
-}
 
-.ui-dialog.ui-corner-all.ui-widget.ui-widget-content.ui-front {
-  top    : 7rem !important;
-  z-index: 20000 !important;
 
-  #drupal-modal {
-    max-height: 500px !important;
+  .field--type-entity-reference.field--name-field-avatar {
+    .fieldset-wrapper {
+      #edit-field-avatar {
+        .js-form-type-radio.form-item-field-avatar {
+          >input {
+            margin-left: 0.1rem;
+          }
+
+          span.views-field.views-field-name {
+            display: none;
+          }
+
+          img {
+            max-width      : 80%;
+            height         : auto;
+            border-radius  : 50%;
+            margin-top     : 1rem;
+            object-fit     : cover;
+            object-position: center;
+            padding        : 0.5rem;
+            border         : 1px solid;
+          }
+        }
+      }
+    }
+  }
+
+  .smartdate--widget .byday-checkboxes input {
+    display: unset;
+  }
+
+  .ui-dialog.ui-corner-all.ui-widget.ui-widget-content.ui-front {
+    top    : 7rem !important;
+    z-index: 20000 !important;
+
+    #drupal-modal {
+      max-height: 500px !important;
+    }
   }
 }
