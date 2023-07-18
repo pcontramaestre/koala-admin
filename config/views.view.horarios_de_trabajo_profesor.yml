@@ -1427,7 +1427,7 @@ display:
           title: title
           left_buttons: 'prev,next today'
           right_buttons: 'dayGridMonth,timeGridWeek,timeGridDay,listMonth'
-          default_view: timeGridWeek
+          default_view: listMonth
           firstDay: '1'
           minTime: '00:00:00'
           maxTime: '23:59:59'
