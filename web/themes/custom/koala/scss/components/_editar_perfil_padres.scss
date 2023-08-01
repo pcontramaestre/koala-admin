@@ -1,72 +1,72 @@
+.page-user-123{
+  background-image : url('../images/Group463.png');
+}
 #block-koala-content {
   .content {
     .user-editar-perfil-padre-form {
       .layout--twocol-section {
-        width : 90%;
+        width: 90%;
         margin: 0 auto;
 
         .layout__region--first {
-          display       : flex;
+          display: flex;
           flex-direction: column;
-
+          flex: 0 1 40% !important;
           padding: 0rem 1rem 1rem 1rem;
 
           .field--type-string {
             .js-form-item {
               input {
-                color        : #727F7F;
-                border       : 2px solid #BECACA;
+                color: #727f7f;
+                border: 2px solid #becaca;
                 border-radius: 32px;
-                height       : 3rem;
-                font-weight  : 600;
+                height: 3rem;
+                font-weight: 600;
               }
 
               label {
-                font-weight  : 600;
+                font-weight: 600;
                 margin-bottom: 0.5rem;
               }
             }
           }
 
           .field--name-user-picture {
-            order                     : 2;
-            background-color          : $GreyK100;
-            border-bottom-left-radius : 20px;
+            order: 2;
+            background-color: $GreyK100;
+            border-bottom-left-radius: 20px;
             border-bottom-right-radius: 20px;
-            padding                   : 0rem 1rem 1rem 1rem;
-
+            padding: 0rem 1rem 1rem 1rem;
 
             .js-form-item {
               label {
-                font-weight  : 600;
+                font-weight: 600;
                 margin-bottom: 0.5rem;
 
                 &:before {
-                  content: 'Subir ';
+                  content: "Subir ";
                 }
               }
 
               .image-widget {
-                height: 3.5rem;
-
                 .image-preview {
                   img {
-                    width : 3rem;
+                    width: 3rem;
                     height: 3rem;
                   }
                 }
 
                 .image-widget-data {
                   display: flex;
-                  float  : initial;
+                  float: initial;
 
                   input {
-                    background   : #D8FFFD;
-                    border       : 2px dashed #297E88;
+                    background: #d8fffd;
+                    border: 2px dashed #297e88;
                     border-radius: 32px;
-                    margin-top   : 0.3rem;
-                    font-size    : 0.9rem;
-                    font-weight  : 600;
+                    margin-top: 0.3rem;
+                    font-size: 0.9rem;
+                    font-weight: 600;
                     margin-top: 1rem;
                   }
                 }
@@ -75,49 +75,72 @@
               .description {
                 display: flex;
                 margin-top: 1rem;
-                padding-left: 0.75rem;
+                font-weight: 600;
+                color: black!important;
+                font-size: 16px;
               }
             }
 
             .js-form-item {
-              label{
-                font-weight  : 600;
+              label {
+                font-weight: 600;
                 margin-bottom: 0.5rem;
                 &:before {
-                  content: 'Subir ';
+                  content: "Subir ";
                 }
               }
               .image-widget {
+                flex-direction: column;
+                display: flex;
                 .image-preview {
+                  background-color: #becaca;
+                  border-radius: 16px;
+                  height: 112px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  padding: 0px;
                   img {
-                    height       : 4rem;
-                    width        : 4rem;
+                    height: 80px;
+                    width: 80px;
                     border-radius: 40px;
+                    border: 1px solid white;
+                    margin: 0px;
                   }
                 }
 
                 .image-widget-data {
-                  display       : flex;
+                  display: flex;
                   flex-direction: column;
+                  align-items: center;
 
                   .file {
+                    margin-bottom: 0.5rem;
+                    margin-top: 0.2rem;
                     a {
-                      color      : $GreyK500;
-                      font-size  : 14px;
+                      color: $GreyK500;
+                      font-size: 14px;
                       font-weight: 500;
                     }
                   }
 
                   .button {
-                    background     : #FFFFFF;
-                    border         : 2px solid #297E88;
-                    border-radius  : 28px;
-                    color          : black !important;
-                    padding        : 0.3rem 1.5rem 0.3rem 1.5rem;
+                    background: #ffffff;
+                    border: 2px solid #297e88;
+                    border-radius: 28px;
+                    color: black !important;
+                    padding: 0.3rem 1.5rem 0.3rem 1.5rem;
                     text-decoration: none;
-                    font-weight    : 700;
-                    font-size      : 1.2rem;
+                    font-weight: 700;
+                    font-size: 1.2rem;
                     width: 40%;
+                    &:before{
+                      display: none;
+                    }
+                    &:hover{
+                      background-color: #297e88;
+                      color: white!important;
+                    }
                   }
                 }
               }
@@ -125,12 +148,12 @@
           }
 
           .field--name-field-nombre-del-acudiente {
-            order                  : 1;
-            background-color       : $GreyK100;
-            border-top-left-radius : 20px;
+            order: 1;
+            background-color: $GreyK100;
+            border-top-left-radius: 20px;
             border-top-right-radius: 20px;
-            margin-bottom          : 0rem !important;
-            padding                : 1rem 1rem 0rem 1rem;
+            margin-bottom: 0rem !important;
+            padding: 1rem 1rem 0rem 1rem;
           }
         }
 
@@ -140,7 +163,7 @@
       }
 
       .layout__region--second {
-
+        flex: 0 1 58% !important;
         padding: 0rem 1rem 1rem 1rem;
 
         .field--name-field-pais {
@@ -149,20 +172,21 @@
 
             .chosen-container {
               background-image: none;
-              border          : none;
-              padding         : 0;
+              border: none;
+              padding: 0;
+              width: 100%!important;
 
               .chosen-single {
-                height         : 48px;
-                background     : #FFFFFF;
-                border         : 2px solid #BECACA;
-                border-radius  : 32px;
-                display        : flex;
-                flex-direction : row;
+                height: 48px;
+                background: #ffffff;
+                border: 2px solid #becaca;
+                border-radius: 32px;
+                display: flex;
+                flex-direction: row;
                 justify-content: center;
-                align-items    : center;
-                font-weight    : 500;
-                color          : black;
+                align-items: center;
+                font-weight: 500;
+                color: black;
 
                 div {
                   b {
@@ -184,110 +208,112 @@
           .js-form-item {
             .form-textarea-wrapper {
               textarea {
-                color        : black;
-                border       : 2px solid #BECACA;
+                color: black;
+                border: 2px solid #becaca;
                 border-radius: 32px;
-                height       : 3rem;
-
+                height: 3rem;
               }
             }
           }
         }
 
         .js-form-wrapper {
-          display       : flex;
+          display: flex;
           flex-direction: column;
 
           .js-form-type-password-confirm {
-            font-weight  : 500;
-            font-size    : 14px;
+            font-weight: 500;
+            font-size: 14px;
             margin-bottom: 0rem !important;
+            order: 3;
           }
 
           .js-form-item {
             input {
-              color        : black;
-              border       : 2px solid $GreyK200;
+              color: black;
+              border: 2px solid $GreyK200;
               border-radius: 32px;
-              height       : 3rem;
-              font-weight  : 600;
+              height: 3rem;
+              font-weight: 600;
             }
 
             label {
-              font-weight  : 600;
+              font-weight: 600;
               margin-bottom: 0.5rem;
             }
           }
 
           .js-form-type-password {
             margin-bottom: 0rem !important;
+            order: 2;
+            max-width: 100% !important;
 
             .password-strength {
-              font-weight   : 500;
-              font-size     : 14px;
-              color         : grey;
+              font-weight: 500;
+              font-size: 14px;
+              color: grey;
               padding-bottom: 1rem;
-              width         : 100%;
+              width: 100%;
             }
 
             .password-confirm-message {
               font-weight: 500;
-              font-size  : 14px;
-              color      : grey;
+              font-size: 14px;
+              color: grey;
             }
 
             .description {
               a {
-                color      : $TurqK600;
+                color: $TurqK600;
                 font-weight: 700;
-                font-size  : 16px;
+                font-size: 16px;
               }
             }
           }
 
           .password-suggestions {
-            border-radius   : 15px;
+            border-radius: 15px;
             background-color: grey;
-            color           : white;
-            padding         : 0.5rem 1rem;
-            font-size       : 0.9rem;
+            color: white;
+            padding: 0.5rem 1rem;
+            font-size: 0.9rem;
           }
         }
       }
 
       .form-actions {
-        width : 90%;
-        margin: 0 auto;
+        width: 21%;
+        margin: 0px 56%;
 
         .button {
-          padding        : 12px 16px;
-          gap            : 16px;
-          width          : 311px;
-          height         : 51px;
-          background     : #FFFFFF;
-          border         : 2px solid #BECACA;
-          border-radius  : 32px;
-          color          : #BECACA;
-          font-weight    : 700;
-          font-size      : 20px;
-          display        : flex;
+          padding: 12px 16px;
+          gap: 16px;
+          width: 311px;
+          height: 51px;
+          background: #ffffff;
+          border: 2px solid #becaca;
+          border-radius: 32px;
+          color: #becaca;
+          font-weight: 700;
+          font-size: 20px;
+          display: flex;
           justify-content: center;
-          align-items    : center;
+          align-items: center;
 
           &:hover {
             background-color: $TurqK500;
-            color           : white;
+            color: white;
           }
         }
       }
 
       &:before {
-        content        : "Tus datos";
-        font-size      : 1.3rem;
-        font-weight    : 700;
-        display        : flex;
+        content: "Tus datos";
+        font-size: 1.3rem;
+        font-weight: 700;
+        display: flex;
         justify-content: center;
-        padding        : 3rem 0rem 1.5rem 0rem;
+        padding: 3rem 0rem 1.5rem 0rem;
       }
     }
   }

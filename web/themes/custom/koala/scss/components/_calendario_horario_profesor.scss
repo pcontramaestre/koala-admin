@@ -319,7 +319,7 @@
 
                                       &:before {
                                         content            : url('');
-                                        background-image   : url('http://localhost/koala/koala-admin/web/themes/custom/koala/images/Frame-4260.png');
+                                        background-image   : url('../images/Frame-4260.png');
                                         height             : 46px;
                                         background-size    : contain;
                                         background-repeat  : no-repeat;
@@ -471,7 +471,7 @@
                                       }
 
                                       &:before {
-                                        content: url('http://localhost/koala/koala-admin/web/themes/custom/koala/images/Frame-4260.png');
+                                        content: url('../images/Frame-4260.png');
                                       }
                                     }
                                   }
@@ -480,7 +480,7 @@
                                     background-color: #D7EFF2 !important;
 
                                     &:before {
-                                      content: url('http://localhost/koala/koala-admin/web/themes/custom/koala/images/Frame-426.png');
+                                      content: url('../images/Frame-426.png');
                                     }
                                   }
                                 }

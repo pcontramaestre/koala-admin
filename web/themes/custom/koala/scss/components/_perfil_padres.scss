@@ -13,11 +13,11 @@
                 position: relative;
 
                 .texto {
-                  position   : absolute;
+                  position: absolute;
                   font-weight: 700;
-                  font-size  : 2rem;
-                  top        : 19%;
-                  left       : 18%;
+                  font-size: 2rem;
+                  top: 19%;
+                  left: 18%;
 
                   p {
                     line-height: 35px;
@@ -26,22 +26,22 @@
 
                 .boton-comprar {
                   position: absolute;
-                  top     : 48%;
-                  left    : 18%;
+                  top: 48%;
+                  left: 18%;
 
                   a {
-                    background     : #FFFFFF;
-                    border         : 2px solid #297E88;
-                    border-radius  : 28px;
-                    color          : black !important;
-                    padding        : 0.5rem 1.2rem 0.5rem 1.2rem;
+                    background: #ffffff;
+                    border: 2px solid #297e88;
+                    border-radius: 28px;
+                    color: black !important;
+                    padding: 0.5rem 1.2rem 0.5rem 1.2rem;
                     text-decoration: none;
-                    font-weight    : 700;
-                    font-size      : 1.2rem;
+                    font-weight: 700;
+                    font-size: 1.2rem;
 
                     &:hover {
-                      background-color: #297E88;
-                      color           : white !important;
+                      background-color: #297e88;
+                      color: white !important;
                     }
                   }
                 }
@@ -53,8 +53,8 @@
     }
 
     .layout--twocol-section--33-67 {
-      width      : 88%;
-      margin     : 0 auto;
+      width: 88%;
+      margin: 0 auto;
       padding-top: 1rem;
 
       .layout__region--first {
@@ -62,15 +62,15 @@
 
         .block-views-blockusuario-actual-block-1 {
           &:before {
-            content    : "Mi perfil";
-            font-size  : 1.3rem;
+            content: "Mi perfil";
+            font-size: 1.3rem;
             font-weight: 700;
           }
 
           .view-usuario-actual {
-            border       : 2px solid #E6F1F1;
+            border: 2px solid #e6f1f1;
             border-radius: 24px;
-            padding      : 16px 5px 16px 16px;
+            padding: 16px 5px 16px 16px;
 
             margin-top: 1.3rem;
 
@@ -79,33 +79,34 @@
                 margin-bottom: 1rem;
 
                 .avatar1 {
-                  width      : 3rem;
-                  padding    : 0px;
+                  width: 3rem;
+                  padding: 0px;
                   margin-left: 11px;
 
                   img {
-                    height       : 3rem;
-                    border-radius: 40px !important;
+                    height: 3rem;
+                    width: 3rem;
+                    border-radius: 100px !important;
                   }
                 }
 
                 .nombre-ac {
-                  display    : flex;
+                  display: flex;
                   align-items: center;
-                  font-size  : 1.2rem;
+                  font-size: 1.2rem;
                 }
 
                 .editar-usuario {
-                  display        : flex;
-                  align-items    : center;
+                  display: flex;
+                  align-items: center;
                   justify-content: end;
-                  margin-bottom  : 0.2rem;
+                  margin-bottom: 0.2rem;
                 }
               }
 
               .fila2 {
                 .correo {
-                  font-weight    : 700;
+                  font-weight: 700;
                   text-decoration: underline;
                 }
               }
@@ -114,15 +115,15 @@
         }
 
         .block-views-blockmis-koalas-block-1 {
-          border       : 2px solid #E6F1F1;
+          border: 2px solid #e6f1f1;
           border-radius: 24px;
 
-          padding      : 16px;
-          margin-top   : 1.5rem !important;
+          padding: 16px;
+          margin-top: 1.5rem !important;
           margin-bottom: 2rem;
 
           h2 {
-            font-size  : 1.3rem;
+            font-size: 1.3rem;
             font-weight: 700;
           }
 
@@ -131,19 +132,28 @@
               .view-content {
                 .views-row {
                   .views-field-title {
-
                     .field-content {
                       display: flex;
 
                       a {
-                        font-weight  : 700;
-                        font-size    : 1.3rem;
-                        color        : black;
-                        background   : $GreyK100;
+                        width: 100%;
+                        font-weight: 700;
+                        font-size: 1.3rem;
+                        color: black;
+                        background: $GreyK100;
                         border-radius: 40px;
-                        padding      : 0.5rem 1rem;
-                        min-height   : 56px;
-                        margin-top   : 0.8rem;
+                        padding: 0.5rem 1rem;
+                        min-height: 56px;
+                        margin-top: 0.8rem;
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        &:after {
+                          content: "\f054";
+                          font-family: "Font Awesome 5 Free";
+                          font-weight: 900;
+                          float: right;
+                        }
                       }
                     }
                   }
@@ -157,18 +167,26 @@
 
             .view-footer {
               a {
-                background     : #FFFFFF;
-                border         : 2px solid #297E88;
-                border-radius  : 28px;
-                color          : black !important;
-                padding        : 0.5rem 1.2rem 0.5rem 1.2rem;
+                background: #ffffff;
+                border: 2px solid #297e88;
+                border-radius: 28px;
+                color: black !important;
+                padding: 0.5rem 1.2rem 0.5rem 1.2rem;
                 text-decoration: none;
-                font-weight    : 700;
-                font-size      : 1.2rem;
+                font-weight: 700;
+                font-size: 1.2rem;
+                margin-bottom: 0rem !important;
+                margin-top: 1rem !important;
 
                 &:hover {
-                  background-color: #297E88;
-                  color           : white !important;
+                  background-color: #297e88;
+                  color: white !important;
+                }
+                &:before {
+                  font-family: "Font Awesome 5 Free";
+                  font-weight: 900;
+                  content: "\2b";
+                  margin-right: 0.5rem;
                 }
               }
             }
@@ -181,32 +199,41 @@
 
         .block-views-blockclases-gratuitas-block-1 {
           &:before {
-            content    : "Próximas clases";
-            font-size  : 1.3rem;
+            content: "Próximas clases";
+            font-size: 1.3rem;
             font-weight: 700;
             margin-left: 5.5rem;
           }
-
-          .view-clases-gratuitas {
+          .view-clases-gratuitas::-webkit-scrollbar
+          {
+            width: 6px;
+            color: black;
+          }
+           .view-clases-gratuitas {
             float: right;
-            width: 596px;
+            width: 97%;
+            overflow-y: scroll;
+            height: 669px;
+            margin-top: 1.3rem;
 
             .view-content {
+              width: 100%;
+              padding-left: 1.3rem;
               .views-row {
                 border-radius: 24px;
-                padding      : 16px;
-                height       : 320px;
-                margin-top   : 1.3rem;
+                padding: 16px;
+                height: 320px;
+                margin-bottom: 1.3rem;
 
                 .views-field-title {
                   text-align: center;
 
                   span {
                     a {
-                      color          : black;
-                      font-size      : 1.3rem;
+                      color: black;
+                      font-size: 1.3rem;
                       text-decoration: none;
-                      font-weight    : 600;
+                      font-weight: 600;
                     }
                   }
                 }
@@ -217,7 +244,7 @@
 
                 .views-field-field-fecha-de-la-cita,
                 .views-field-field-fecha-cita-oculta-2 {
-                  display        : flex;
+                  display: flex;
                   justify-content: end;
 
                   span.views-label-field-fecha-de-la-cita {
@@ -226,34 +253,36 @@
 
                   .field-content {
                     background-color: white;
-                    border-radius   : 15px;
-                    box-shadow      : 0px 1.67507px 8.37533px rgba(67, 67, 67, 0.15), 0px 4.18766px 16.7507px rgba(74, 74, 74, 0.08), 0px 8.37533px 67.0026px rgba(74, 74, 74, 0.02);
-                    font-weight     : 700;
-                    font-size       : 1.5rem;
-                    padding         : 1rem 1rem 1rem 1rem;
-                    width           : 60%;
-                    text-align      : center;
-                    margin-top      : 1rem;
+                    border-radius: 15px;
+                    box-shadow: 0px 1.67507px 8.37533px rgba(67, 67, 67, 0.15),
+                      0px 4.18766px 16.7507px rgba(74, 74, 74, 0.08),
+                      0px 8.37533px 67.0026px rgba(74, 74, 74, 0.02);
+                    font-weight: 700;
+                    font-size: 1.5rem;
+                    padding: 1rem 1rem 1rem 1rem;
+                    width: 60%;
+                    text-align: center;
+                    margin-top: 1rem;
                   }
                 }
 
                 .views-field-field-nombre-del-nino-a {
                   background-color: white;
-                  border-radius   : 15px;
-                  width           : 35%;
-                  float           : inline-start;
-                  position        : relative;
-                  top             : -109px;
-                  min-height      : 190px;
-                  display         : flex;
-                  align-items     : center;
-                  justify-content : center;
-                  float           : left;
-                  padding         : 1rem;
+                  border-radius: 15px;
+                  width: 35%;
+                  float: inline-start;
+                  position: relative;
+                  top: -116px;
+                  min-height: 190px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  float: left;
+                  padding: 1rem;
 
                   .field-content {
                     font-weight: 700;
-                    font-size  : 1.3rem;
+                    font-size: 1.3rem;
                   }
                 }
 
@@ -262,43 +291,43 @@
                 }
 
                 .views-field-field-hora-clase {
-                  margin     : 0.5rem 1rem;
-                  width      : 50%;
-                  text-align : center;
+                  margin: 0.5rem 1rem;
+                  width: 50%;
+                  text-align: center;
                   font-weight: 700;
                 }
 
                 .views-field-nid {
                   margin: 2rem 0rem;
-                  width : 100%;
+                  width: 100%;
 
                   .field-content {
-                    display       : flex;
+                    display: flex;
                     flex-direction: row;
-                    flex-wrap     : wrap;
-                    align-content : center;
-                    align-items   : center;
+                    flex-wrap: wrap;
+                    align-content: center;
+                    align-items: center;
 
                     a {
                       background-color: white;
-                      border          : 2px solid $GreyK200;
-                      font-weight     : 700;
-                      height          : 2.5rem;
-                      display         : flex;
-                      justify-content : center;
-                      align-items     : center;
-                      flex-direction  : column;
-                      color           : $GreyK200;
-                      border-radius   : 25px;
-                      margin-bottom   : 3rem;
-                      width           : 45%;
-                      margin          : 0 auto;
-                      text-decoration : none;
-                      font-size       : 0.8rem;
+                      border: 2px solid $GreyK200;
+                      font-weight: 700;
+                      height: 2.5rem;
+                      display: flex;
+                      justify-content: center;
+                      align-items: center;
+                      flex-direction: column;
+                      color: $GreyK200;
+                      border-radius: 25px;
+                      margin-bottom: 3rem;
+                      width: 45%;
+                      margin: 0 auto;
+                      text-decoration: none;
+                      font-size: 0.8rem;
 
                       &:hover {
-                        background-color: #297E88;
-                        color           : white !important;
+                        background-color: #297e88;
+                        color: white !important;
                       }
                     }
                   }
@@ -306,7 +335,7 @@
               }
 
               .views-row:nth-child(1) {
-                background: #E6F1F1;
+                background: #e6f1f1;
               }
 
               .views-row:nth-child(2) {
@@ -314,7 +343,7 @@
               }
 
               .views-row:nth-child(3) {
-                background: #E6F1F1;
+                background: #e6f1f1;
               }
 
               .views-row:nth-child(4) {
@@ -322,7 +351,7 @@
               }
 
               .views-row:nth-child(5) {
-                background: #E6F1F1;
+                background: #e6f1f1;
               }
 
               .views-row:nth-child(6) {
@@ -334,11 +363,7 @@
       }
     }
   }
-
-
 }
-
-
 
 @media only screen and (max-width: 700px) and (min-width: 374px) {
   #block-koala-content {
@@ -356,15 +381,14 @@
                       height: 244px;
 
                       img {
-                        height       : 100%;
-                        object-fit   : cover;
+                        height: 100%;
+                        object-fit: cover;
                         border-radius: 20px;
                       }
                     }
                   }
 
                   .texto {
-
                     font-size: 1.4rem;
 
                     p {
@@ -388,15 +412,15 @@
       }
 
       .layout--twocol-section--33-67 {
-        width      : 96%;
-        margin     : 0 auto;
+        width: 96%;
+        margin: 0 auto;
         padding-top: 1rem;
 
         .layout__region--first {
           flex: 0 1 100% !important;
 
           .block-views-blockusuario-actual-block-1 {
-            text-align   : center;
+            text-align: center;
             margin-bottom: 1rem;
 
             .view-usuario-actual {
@@ -406,7 +430,6 @@
                 .fila1 {
                   .avatar1 {
                     margin-left: 0px;
-
                   }
                 }
               }
@@ -425,19 +448,19 @@
             }
 
             .view-clases-gratuitas {
-              width  : 100%;
+              width: 100%;
               padding: 1rem;
 
               .view-content {
                 .views-row {
-                  display       : flex;
+                  display: flex;
                   flex-direction: column;
-                  height        : auto;
+                  height: auto;
 
                   .views-field-title {
                     text-align: center;
-                    order     : 2;
-                    margin    : 1rem 0.5rem 1rem 0.5rem;
+                    order: 2;
+                    margin: 1rem 0.5rem 1rem 0.5rem;
 
                     span a {
                       font-size: 1rem;
@@ -448,18 +471,18 @@
                     order: 3;
 
                     .field-content {
-                      width : 90%;
+                      width: 90%;
                       margin: 0 auto;
                     }
                   }
 
                   .views-field-field-nombre-del-nino-a {
-                    order        : 1;
+                    order: 1;
                     border-radius: 30px;
-                    width        : 85%;
-                    height       : 3.5rem;
-                    margin       : 0 auto;
-                    top          : 0px;
+                    width: 85%;
+                    height: 3.5rem;
+                    margin: 0 auto;
+                    top: 0px;
                   }
 
                   .views-field-field-hora-clase {
@@ -496,7 +519,6 @@
               .view-banner-perfil-padres {
                 .banner-padres-perfil {
                   .texto {
-
                     font-size: 1.2rem;
 
                     p {
