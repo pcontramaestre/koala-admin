@@ -45,7 +45,8 @@ class CustomRoleRedirectController extends ControllerBase
    */
   public function redirectToPadres()
   {
-    return new RedirectResponse('/padres');
+    //return new RedirectResponse('/padres');
+    return new RedirectResponse('/login-padre');
   }
 
   /**
