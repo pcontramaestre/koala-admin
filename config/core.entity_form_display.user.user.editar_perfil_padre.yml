@@ -18,6 +18,7 @@ dependencies:
     - field.field.user.user.user_picture
     - image.style.medium
   module:
+    - field_group
     - field_layout
     - layout_builder
     - svg_image
@@ -28,6 +29,26 @@ third_party_settings:
     settings:
       label: ''
       column_widths: 50-50
+  field_group:
+    group_terminos_y_condiciones:
+      children: {  }
+      label: 'Política de privacidad - Términos y condiciones'
+      region: second
+      parent_name: ''
+      weight: 6
+      format_type: html_element
+      format_settings:
+        classes: ''
+        show_empty_fields: true
+        id: ''
+        element: div
+        show_label: true
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+        required_fields: false
 _core:
   default_config_hash: FaQ9Ptcpxpg30AtiqRDtl_8zbJArHP1LPfug_s59TOA
 id: user.user.editar_perfil_padre
