@@ -30,6 +30,7 @@
         "composer/installers": "^2.0",
         "drupal/admin_toolbar": "^3.3",
         "drupal/advanced_text_formatter": "^3.0@RC",
+        "drupal/age_field_formatter": "^3.0",
         "drupal/asset_injector": "^2.16",
         "drupal/auto_username": "^1.4",
         "drupal/better_exposed_filters": "^6.0",

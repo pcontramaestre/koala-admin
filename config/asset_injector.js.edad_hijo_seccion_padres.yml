@@ -1,0 +1,47 @@
+uuid: 85d3ea3e-5b44-4751-8164-c60e06d505e5
+langcode: es
+status: true
+dependencies:
+  module:
+    - system
+id: edad_hijo_seccion_padres
+label: 'Edad Hijo Seccion Padres'
+code: |-
+  jQuery(document).ready(function($) {
+    // Obtener todos los elementos con la clase "datos"
+    var datosElements = $('.datos');
+
+    // Recorrer cada elemento con la clase "datos"
+    datosElements.each(function() {
+      // Obtener el contenido del div con la clase "fecha-nac"
+      var fechaNacimientoStr = $(this).find('.fecha-nac').text().trim();
+
+      // Separar la fecha en día, mes y año
+      var fechaPartes = fechaNacimientoStr.split('-');
+      var dia = parseInt(fechaPartes[0]);
+      var mes = parseInt(fechaPartes[1]);
+      var anio = parseInt(fechaPartes[2]);
+
+      // Crear un objeto de fecha en JavaScript
+      var fechaNacimiento = new Date(anio, mes - 1, dia);
+
+      // Calcular la edad
+      var hoy = new Date();
+      var edad = hoy.getFullYear() - fechaNacimiento.getFullYear();
+
+      // Reemplazar el texto del div con la edad calculada
+      $(this).find('.fecha-nac').text('Edad: ' + edad + ' años');
+    });
+  });
+noscript: ''
+noscriptRegion: {  }
+jquery: true
+header: false
+preprocess: false
+conditions:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /padres
+contexts: {  }
+conditions_require_all: true

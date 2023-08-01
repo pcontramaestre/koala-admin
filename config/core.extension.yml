@@ -8,6 +8,7 @@ module:
   admin_toolbar_search: 0
   admin_toolbar_tools: 0
   advanced_text_formatter: 0
+  age_field_formatter: 0
   agregar_profesores: 0
   asignar_profesor: 0
   asset_injector: 0
