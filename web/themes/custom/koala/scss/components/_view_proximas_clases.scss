@@ -1,0 +1,117 @@
+//Vista Proximas Clases 
+.block-views-blockclases-gratuitas-block-proximas-clases {
+  padding-left : 1rem;
+  padding-right: 1rem;
+
+  >h2 {
+    font-size    : 1.25rem;
+    font-weight  : 700;
+    margin-bottom: 0;
+  }
+
+  >.content {
+    margin-top: 1.8rem;
+
+    .view-display-id-block_proximas_clases {
+      .view-content {
+        margin: 0;
+
+        .views-row {
+          border       : 1px solid #E6F1F1;
+          border-radius: 16px;
+          padding      : 1rem;
+          background   : #E6F1F1;
+          margin-bottom: 1.5rem;
+
+          .views-field {
+            .clases-proximas {
+              padding-left : 1rem;
+              padding-right: 1rem;
+
+              .dato-del-nino {
+                flex-direction: row;
+                flex-wrap     : nowrap;
+                align-items   : center;
+                background    : white;
+                border-radius : 15px;
+                padding       : 0.5rem;
+
+                .imagen {
+                  max-width : 30%;
+                  width     : 30%;
+                  text-align: center;
+
+                  img {
+                    max-width    : 80%;
+                    height       : auto;
+                    border-radius: 50px;
+                  }
+                }
+              }
+
+              .datos-clase {
+                flex-direction : column;
+                flex-wrap      : nowrap;
+                align-items    : center;
+                justify-content: center;
+
+                .titulo {
+                  margin-bottom: 0.5rem;
+                }
+
+                .datos-fecha {
+                  display       : flex;
+                  flex-direction: column;
+                  flex-wrap     : nowrap;
+                  align-items   : center;
+                  font-size     : 1.5rem;
+                  font-weight   : 700;
+                  margin-bottom : 1rem;
+                }
+
+                .boton {
+                  text-align: center;
+
+                  a {
+                    background     : #2FF7EE;
+                    padding        : 8px 30px 8px 30px;
+                    border-radius  : 16px;
+                    font-size      : 1.25rem;
+                    text-decoration: none;
+                    color          : black;
+                    display        : block;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .view-footer {
+        a {
+          color        : #297E88;
+          font-size    : 1.25rem;
+          padding-right: 2rem;
+          margin-top   : 1rem;
+          display      : block;
+          position     : relative;
+
+          &::after {
+            display          : block;
+            top              : 50%;
+            left             : 99%;
+            -webkit-transform: translate(-50%, -50%);
+            -o-transform     : translate(-50%, -50%);
+            transform        : translate(-50%, -50%);
+            font-size        : 1.25rem;
+            font-weight      : 600;
+            position         : absolute;
+            content          : "\f285";
+            font-family      : "bootstrap-icons";
+          }
+        }
+      }
+    }
+  }
+}

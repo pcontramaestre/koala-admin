@@ -77,18 +77,18 @@ variant_settings:
             items_per_page: none
           weight: 0
           additional: {  }
-        cc4024f1-0a80-40f9-a896-384f4d4b2a7e:
-          uuid: cc4024f1-0a80-40f9-a896-384f4d4b2a7e
+        a405d2a4-67c5-4c8e-a59b-b5b289b803e5:
+          uuid: a405d2a4-67c5-4c8e-a59b-b5b289b803e5
           region: second
           configuration:
-            id: 'views_block:clases_gratuitas-block_1'
-            label: ''
-            label_display: '0'
+            id: 'views_block:clases_gratuitas-block_proximas_clases'
+            label: 'Próximas clases'
+            label_display: visible
             provider: views
             context_mapping: {  }
-            views_label: ''
+            views_label: 'Próximas clases'
             items_per_page: none
-          weight: 0
+          weight: 1
           additional:
             layout_builder_styles_style:
               separacion_superior_mt_5: 0
