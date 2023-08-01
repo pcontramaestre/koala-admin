@@ -107,6 +107,12 @@
                 .correo {
                   font-weight    : 700;
                   text-decoration: underline;
+
+                  a {
+                    font-weight    : 700;
+                    text-decoration: underline;
+                    color          : black;
+                  }
                 }
               }
             }
