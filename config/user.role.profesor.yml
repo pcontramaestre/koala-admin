@@ -99,6 +99,8 @@ permissions:
   - 'view any agendar_clase content'
   - 'view any horarios_de_trabajo content'
   - 'view any horarios_profesores content'
+  - 'view any mundos content'
+  - 'view any mundos_detalle content'
   - 'view any page content'
   - 'view field_hora_clase'
   - 'view field_logros'

@@ -1,0 +1,77 @@
+uuid: 0040d603-31c4-4461-b7c2-0f0229254a45
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.field.node.mundos_detalle.body
+    - field.field.node.mundos_detalle.field_categoria_principal_del_mu
+    - field.field.node.mundos_detalle.field_iframe_juego
+    - field.field.node.mundos_detalle.field_musica_o_audiolibros_
+    - field.field.node.mundos_detalle.field_seccion
+    - node.type.mundos_detalle
+  module:
+    - iframe
+    - text
+    - user
+id: node.mundos_detalle.default
+targetEntityType: node
+bundle: mundos_detalle
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_categoria_principal_del_mu:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  field_iframe_juego:
+    type: iframe_default
+    label: above
+    settings:
+      url: ''
+      title: ''
+      headerlevel: '3'
+      class: ''
+      frameborder: '0'
+      scrolling: ''
+      transparency: '0'
+      allowfullscreen: '0'
+      tokensupport: '0'
+      width: ''
+      height: ''
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  field_musica_o_audiolibros_:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 105
+    region: content
+  field_seccion:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  langcode: true

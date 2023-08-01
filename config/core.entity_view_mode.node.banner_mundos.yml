@@ -1,0 +1,10 @@
+uuid: 58a8cdc4-8878-450d-8422-cd082360322b
+langcode: es
+status: true
+dependencies:
+  module:
+    - node
+id: node.banner_mundos
+label: 'Banner mundos'
+targetEntityType: node
+cache: true

@@ -1,0 +1,90 @@
+.path-mis-mundos {
+  background: #ECF9FB;
+
+  .view-mis-mundos.view-display-id-block_1 {
+    .view-header {
+      margin-bottom: 1rem;
+
+      .titulo {
+        font-size: 1.5rem;
+        color    : black;
+
+        strong {
+          font-weight: 700;
+        }
+      }
+
+      .subtitulo {
+        font-size: 1rem;
+        color    : black;
+      }
+    }
+
+    .view-content.row {
+      .views-view-grid.horizontal {
+        .views-row {
+          display        : flex;
+          flex-wrap      : wrap;
+          align-content  : center;
+          align-items    : center;
+          justify-content: flex-start;
+
+          >div {
+            .views-field-nothing {
+              padding: 1rem;
+
+              .categoria {
+                border       : 1px solid #BECACA;
+                border-radius: 16px;
+
+                .imagen {
+                  img {
+                    width                  : 100%;
+                    object-fit             : cover;
+                    min-height             : 150px;
+                    border-top-right-radius: 16px;
+                    border-top-left-radius : 16px;
+                  }
+                }
+
+                .titulo-numero {
+                  a {
+                    display                   : block;
+                    font-size                 : 1rem;
+                    width                     : 100%;
+                    background                : white;
+                    border-bottom-left-radius : 16px;
+                    border-bottom-right-radius: 16px;
+                    padding                   : 8px 16px 8px 16px;
+                    color                     : black;
+                    text-decoration           : none;
+                    position                  : relative;
+
+                    &::before {
+                      display    : block;
+                      top        : 50%;
+                      left       : 93%;
+                      transform  : translate(-50%, -50%);
+                      font-size  : 2.5rem;
+                      font-weight: 600;
+                      position   : absolute;
+                      content    : "\F285";
+                      font-family: 'bootstrap-icons';
+                    }
+
+                    .titulo {
+                      font-weight: 700;
+                      font-size  : 1.5rem;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Vector */

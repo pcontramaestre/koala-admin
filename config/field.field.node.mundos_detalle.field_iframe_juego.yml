@@ -1,0 +1,31 @@
+uuid: 6b3b7481-35c5-4666-a737-3cec467267a1
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_iframe_juego
+    - node.type.mundos_detalle
+  module:
+    - iframe
+id: node.mundos_detalle.field_iframe_juego
+field_name: field_iframe_juego
+entity_type: node
+bundle: mundos_detalle
+label: 'Iframe juego'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: null
+  headerlevel: '3'
+  class: iframe-juego
+  frameborder: '0'
+  scrolling: 'no'
+  transparency: '1'
+  allowfullscreen: '1'
+  tokensupport: '2'
+  width: null
+  height: null
+field_type: iframe

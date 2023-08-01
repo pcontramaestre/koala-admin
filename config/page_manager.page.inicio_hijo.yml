@@ -1,0 +1,12 @@
+uuid: c8271058-af78-4366-80fe-bbac93e73f89
+langcode: es
+status: true
+dependencies: {  }
+id: inicio_hijo
+label: 'Inicio Hijo'
+description: ''
+use_admin_theme: false
+path: /hijo
+access_logic: and
+access_conditions: {  }
+parameters: {  }

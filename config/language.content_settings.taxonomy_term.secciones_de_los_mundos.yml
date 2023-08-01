@@ -1,0 +1,16 @@
+uuid: 784ce2b9-dc5f-4b35-a544-238f8d184412
+langcode: es
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.secciones_de_los_mundos
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+id: taxonomy_term.secciones_de_los_mundos
+target_entity_type_id: taxonomy_term
+target_bundle: secciones_de_los_mundos
+default_langcode: site_default
+language_alterable: false

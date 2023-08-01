@@ -1,0 +1,27 @@
+uuid: 340f7528-cfa9-4414-986a-322f63fcbe92
+langcode: es
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.mundos.field_imagen_ancha_banner_mundo
+    - field.field.node.mundos.field_imagen_del_mundo
+    - field.field.node.mundos.field_nro_de_juegos_incluidos
+    - node.type.mundos
+  module:
+    - user
+id: node.mundos.teaser
+targetEntityType: node
+bundle: mundos
+mode: teaser
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_imagen_ancha_banner_mundo: true
+  field_imagen_del_mundo: true
+  field_nro_de_juegos_incluidos: true
+  langcode: true

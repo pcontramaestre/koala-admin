@@ -169,3 +169,5 @@ modification+administrator+user+user: user.user.default
 modification+profesor+user+user: user.user.editar_profesor
 modification+padre+user+user: user.user.editar_perfil_padre
 modification+hijo+user+user: user.user.default
+'use  The form mode default linked to  node entity( mundos )': node.mundos.default
+'use  The form mode default linked to  node entity( mundos_detalle )': node.mundos_detalle.default

@@ -1,0 +1,12 @@
+uuid: 397c536a-eeb5-4664-a6a9-b949812b82a8
+langcode: es
+status: true
+dependencies: {  }
+id: mis_mundos
+label: 'Mis Mundos'
+description: ''
+use_admin_theme: false
+path: /mis-mundos
+access_logic: and
+access_conditions: {  }
+parameters: {  }
