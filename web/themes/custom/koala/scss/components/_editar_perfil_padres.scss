@@ -1,5 +1,5 @@
-.page-user-123{
-  background-image : url('../images/Group463.png');
+.page-user-123 {
+  background-image: url("../images/Group463.png");
 }
 #block-koala-content {
   .content {
@@ -17,11 +17,11 @@
           .field--type-string {
             .js-form-item {
               input {
-                color: #727f7f;
+                color: black;
                 border: 2px solid #becaca;
                 border-radius: 32px;
                 height: 3rem;
-                font-weight: 600;
+                font-weight: 700;
               }
 
               label {
@@ -76,7 +76,7 @@
                 display: flex;
                 margin-top: 1rem;
                 font-weight: 600;
-                color: black!important;
+                color: black !important;
                 font-size: 16px;
               }
             }
@@ -134,12 +134,12 @@
                     font-weight: 700;
                     font-size: 1.2rem;
                     width: 40%;
-                    &:before{
+                    &:before {
                       display: none;
                     }
-                    &:hover{
+                    &:hover {
                       background-color: #297e88;
-                      color: white!important;
+                      color: white !important;
                     }
                   }
                 }
@@ -159,11 +159,17 @@
 
         .field--name-field-celular {
           order: 3;
+          .js-form-item {
+            margin-bottom: 0rem !important;
+          }
+        }
+        .field--name-field-direccion {
+          margin-bottom: 0rem !important;
         }
       }
 
       .layout__region--second {
-        flex: 0 1 58% !important;
+        flex: 0 1 60% !important;
         padding: 0rem 1rem 1rem 1rem;
 
         .field--name-field-pais {
@@ -174,7 +180,7 @@
               background-image: none;
               border: none;
               padding: 0;
-              width: 100%!important;
+              width: 100% !important;
 
               .chosen-single {
                 height: 48px;
@@ -183,22 +189,47 @@
                 border-radius: 32px;
                 display: flex;
                 flex-direction: row;
-                justify-content: center;
                 align-items: center;
                 font-weight: 500;
                 color: black;
-
+                padding-left: 0.7rem;
+                span {
+                  width: 92%;
+                }
                 div {
                   b {
-                    background-position: -2px 11px !important;
+                    background-image: none;
                   }
+                }
+                &:after {
+                  content: "\f078";
+                  font-family: "Font Awesome 5 Free";
+                  font-weight: 900;
+                  float: right;
                 }
               }
             }
 
-            .chosen-container-active.chosen-with-drop.chosen-single.div {
-              b {
-                background-position: -19px 11px !important;
+            .chosen-container-active {
+              .chosen-drop {
+                border-radius: 15px;
+                border: 2px solid #becaca;
+                .chosen-search {
+                  .chosen-search-input {
+                    background-image: none !important;
+                  }
+                  &:after {
+                    content: "\f002";
+                    font-family: "Font Awesome 5 Free";
+                    font-weight: 900;
+                    position: relative;
+                    left: -33px;
+                  }
+                }
+                .chosen-results {
+                  font-weight: 600;
+                  color: black;
+                }
               }
             }
           }
@@ -226,6 +257,7 @@
             font-size: 14px;
             margin-bottom: 0rem !important;
             order: 3;
+            margin-top: 1rem;
           }
 
           .js-form-item {
@@ -291,9 +323,9 @@
           width: 311px;
           height: 51px;
           background: #ffffff;
-          border: 2px solid #becaca;
+          border: 2px solid #297e88;
           border-radius: 32px;
-          color: #becaca;
+          color: black;
           font-weight: 700;
           font-size: 20px;
           display: flex;
@@ -303,6 +335,9 @@
           &:hover {
             background-color: $TurqK500;
             color: white;
+          }
+          &:before {
+            display: none;
           }
         }
       }
