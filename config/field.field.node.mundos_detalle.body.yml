@@ -1,0 +1,23 @@
+uuid: 047cb015-9fd9-4b27-8380-9868ef42c1fa
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.mundos_detalle
+  module:
+    - text
+id: node.mundos_detalle.body
+field_name: body
+entity_type: node
+bundle: mundos_detalle
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary

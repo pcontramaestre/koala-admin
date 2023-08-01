@@ -1,0 +1,79 @@
+uuid: fb2ae8b3-e6ed-422f-a400-d4dd4c749862
+langcode: es
+status: true
+dependencies:
+  config:
+    - page_manager.page.inicio_hijo
+    - views.view.clase_hijo
+    - views.view.hijo
+    - views.view.mis_mundos_perfil
+  module:
+    - layout_builder
+    - views
+id: inicio_hijo-layout_builder-0
+label: 'Layout Builder'
+weight: 0
+variant: layout_builder
+variant_settings:
+  id: layout_builder
+  label: null
+  weight: 0
+  uuid: 3da7673b-9d9e-40d8-8d1c-0dbe2607e198
+  sections:
+    -
+      layout_id: layout_threecol_section
+      layout_settings:
+        label: ''
+        context_mapping: {  }
+        column_widths: 33-34-33
+      components:
+        4b5ad587-f5cb-457e-beb9-f5acc546c3ae:
+          uuid: 4b5ad587-f5cb-457e-beb9-f5acc546c3ae
+          region: first
+          configuration:
+            id: 'views_block:hijo-block_1'
+            label: ''
+            label_display: '0'
+            provider: views
+            context_mapping: {  }
+            views_label: ''
+            items_per_page: none
+          weight: 0
+          additional:
+            layout_builder_styles_style:
+              separacion_superior_mt_5: 0
+        17212c6a-efa0-45f5-8574-54d115473a26:
+          uuid: 17212c6a-efa0-45f5-8574-54d115473a26
+          region: first
+          configuration:
+            id: 'views_block:clase_hijo-block_1'
+            label: ''
+            label_display: '0'
+            provider: views
+            context_mapping: {  }
+            views_label: ''
+            items_per_page: none
+          weight: 1
+          additional:
+            layout_builder_styles_style:
+              separacion_superior_mt_5: 0
+        dbd4f2f3-1fb0-4f66-bd04-c0a4a2bf5237:
+          uuid: dbd4f2f3-1fb0-4f66-bd04-c0a4a2bf5237
+          region: first
+          configuration:
+            id: 'views_block:mis_mundos_perfil-block_1'
+            label: ''
+            label_display: '0'
+            provider: views
+            context_mapping: {  }
+            views_label: ''
+            items_per_page: none
+          weight: 2
+          additional:
+            layout_builder_styles_style:
+              separacion_superior_mt_5: separacion_superior_mt_5
+      third_party_settings: {  }
+page: inicio_hijo
+selection_criteria: {  }
+selection_logic: and
+static_context: {  }

@@ -1,0 +1,21 @@
+uuid: 5b1cf314-3eec-4935-bdff-576b599dd6bc
+langcode: es
+status: true
+dependencies:
+  module:
+    - user
+id: login_padres_select_user
+label: 'Login Padres Select User'
+description: 'Login del padre. Permite seleccionar con que usuario se va a loguear'
+use_admin_theme: false
+path: /login-padre
+access_logic: and
+access_conditions:
+  -
+    id: user_role
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+    roles:
+      padre: padre
+parameters: {  }

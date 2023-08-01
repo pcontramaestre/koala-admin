@@ -1,0 +1,65 @@
+.path-hijo {
+  background: #ECF9FB;
+
+  #page-wrapper #page #main-wrapper {
+    padding-top: 2rem;
+  }
+
+  .layout--threecol-section--33-34-33 {
+    >.layout__region--first:nth-child(1) {
+      >h1 {
+        display: none;
+      }
+    }
+  }
+
+  //Datos del nino, muestra el nombre y saluda
+  .view-hijo.view-display-id-block_1 {
+    .view-content {
+      .views-row {
+        display       : flex;
+        flex-direction: row;
+        align-items   : center;
+        flex-wrap     : wrap;
+
+        .views-field-user-picture {
+          max-width   : 11%;
+          margin-right: 2%;
+
+          img {
+            max-width: 100%;
+            height   : auto;
+          }
+        }
+
+        .views-field-field-nombre-del-hijo {
+          p {
+            margin: 0;
+          }
+        }
+
+        .views-field-nothing {
+          width: 100%;
+
+          p {
+            margin: 0;
+          }
+        }
+      }
+    }
+  }
+
+  //Muestra proxima clase
+  .view-clase-hijo.view-display-id-block_1 {
+    margin-top: 2rem;
+
+    .view-content {
+      .views-row {
+        background   : white;
+        border-radius: 15px;
+        padding      : 1rem;
+        text-align   : center;
+      }
+    }
+  }
+}

@@ -1,0 +1,7 @@
+custom_child_login.start_session:
+  path: '/custom-child-login/{uid}'
+  defaults:
+    _controller: '\Drupal\custom_child_login\Controller\CustomChildLoginController::startSession'
+    _title: 'Iniciar sesión como hijo'
+  requirements:
+    _access: 'TRUE'

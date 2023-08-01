@@ -1,0 +1,23 @@
+uuid: 213792a6-0102-426e-a418-a8e5e61f7746
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_nro_de_juegos_incluidos
+    - node.type.mundos
+id: node.mundos.field_nro_de_juegos_incluidos
+field_name: field_nro_de_juegos_incluidos
+entity_type: node
+bundle: mundos
+label: 'Nro de juegos incluidos'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: 0
+  max: null
+  prefix: ''
+  suffix: juegos
+field_type: integer

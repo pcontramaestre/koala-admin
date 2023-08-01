@@ -23,6 +23,8 @@ class CustomRoleRedirectController extends ControllerBase
       return $this->redirectToPadres();
     } elseif (in_array('profesor', $roles)) {
       return $this->redirectToProfesor();
+    } elseif (in_array('hijo', $roles)) {
+      return $this->redirectToHijo();
     } else {
       return $this->redirect('<front>');
     }
@@ -43,7 +45,8 @@ class CustomRoleRedirectController extends ControllerBase
    */
   public function redirectToPadres()
   {
-    return new RedirectResponse('/padres');
+    //return new RedirectResponse('/padres');
+    return new RedirectResponse('/login-padre');
   }
 
   /**
@@ -53,4 +56,12 @@ class CustomRoleRedirectController extends ControllerBase
   {
     return new RedirectResponse('/profesor');
   }
+
+  /**
+   * Redirige a la página '/hijo'.
+   */
+  public function redirectToHijo()
+  {
+    return new RedirectResponse('/hijo');
+  }  
 }

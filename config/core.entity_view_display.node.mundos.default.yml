@@ -1,0 +1,63 @@
+uuid: 76a55c2e-7bee-4902-898e-ebac5da318de
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.field.node.mundos.field_imagen_ancha_banner_mundo
+    - field.field.node.mundos.field_imagen_del_mundo
+    - field.field.node.mundos.field_nro_de_juegos_incluidos
+    - node.type.mundos
+  module:
+    - svg_image
+    - user
+id: node.mundos.default
+targetEntityType: node
+bundle: mundos
+mode: default
+content:
+  field_imagen_ancha_banner_mundo:
+    type: image
+    label: above
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_imagen_del_mundo:
+    type: image
+    label: above
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  field_nro_de_juegos_incluidos:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  langcode: true

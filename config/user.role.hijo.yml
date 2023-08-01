@@ -18,11 +18,15 @@ label: Hijo
 weight: 7
 is_admin: null
 permissions:
+  - 'access user profiles'
   - access_all_form_modes
   - 'date_recur_modular use sierra form'
   - 'rate content'
+  - 'view any agendar_clase content'
   - 'view any horarios_de_trabajo content'
   - 'view any horarios_profesores content'
+  - 'view any mundos content'
+  - 'view any mundos_detalle content'
   - 'view any page content'
   - 'view any profesores content'
   - 'view field_hora_clase'
@@ -35,3 +39,4 @@ permissions:
   - 'view own field_tu_presentacion'
   - 'view own horarios_de_trabajo content'
   - 'view own horarios_profesores content'
+  - 'view user email addresses'

@@ -1,0 +1,17 @@
+uuid: 8a28528e-82d8-4484-9d5e-387a42b470f5
+langcode: es
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Mundos
+type: mundos
+description: 'Categorías generales de los mundos'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: true

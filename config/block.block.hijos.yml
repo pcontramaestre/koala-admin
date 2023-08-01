@@ -1,0 +1,33 @@
+uuid: 27ea926a-5de6-451e-adb8-53f78d1d7afc
+langcode: es
+status: true
+dependencies:
+  config:
+    - system.menu.hijos
+  module:
+    - system
+    - user
+  theme:
+    - koala
+id: hijos
+theme: koala
+region: primary_menu
+weight: -5
+provider: null
+plugin: 'system_menu_block:hijos'
+settings:
+  id: 'system_menu_block:hijos'
+  label: Hijos
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility:
+  user_role:
+    id: user_role
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+    roles:
+      hijo: hijo

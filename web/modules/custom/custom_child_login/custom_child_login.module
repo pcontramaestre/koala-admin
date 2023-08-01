@@ -1,0 +1,30 @@
+<?php
+
+/**
+ * @file
+ * Custom module to allow parents to log in as their child.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function custom_child_login_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    case 'help.page.custom_child_login':
+      return '<p>' . t('Custom Child Login module allows parents to log in as their child.') . '</p>';
+  }
+}
+
+/**
+ * Implements hook_permission().
+ */
+function custom_child_login_permission() {
+  return [
+    'access custom child login' => [
+      'title' => t('Access Custom Child Login'),
+      'description' => t('Allows parents to log in as their child.'),
+    ],
+  ];
+}

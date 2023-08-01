@@ -1,0 +1,29 @@
+uuid: 16dd5d37-2261-438e-81c8-7ec1a9964a73
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_musica_o_audiolibros_
+    - media.type.audio
+    - node.type.mundos_detalle
+id: node.mundos_detalle.field_musica_o_audiolibros_
+field_name: field_musica_o_audiolibros_
+entity_type: node
+bundle: mundos_detalle
+label: 'Música o audiolibros '
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      audio: audio
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,33 @@
+uuid: 228b2316-f6d7-4712-baab-c631499e2221
+langcode: es
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:67659baa-ba1c-455b-a768-5ecae7bf7696'
+  module:
+    - block_content
+    - user
+  theme:
+    - koala
+id: textoderechafooterhijos
+theme: koala
+region: footer_third
+weight: 0
+provider: null
+plugin: 'block_content:67659baa-ba1c-455b-a768-5ecae7bf7696'
+settings:
+  id: 'block_content:67659baa-ba1c-455b-a768-5ecae7bf7696'
+  label: 'Texto derecha footer hijos'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  user_role:
+    id: user_role
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+    roles:
+      hijo: hijo

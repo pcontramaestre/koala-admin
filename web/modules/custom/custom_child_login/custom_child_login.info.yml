@@ -1,0 +1,8 @@
+name: 'Custom Child Login'
+type: module
+description: 'Permite que un padre inicie sesión automáticamente como uno de sus hijos seleccionados.'
+core_version_requirement: ^9
+package: Custom
+version: 1.0
+dependencies:
+  - views

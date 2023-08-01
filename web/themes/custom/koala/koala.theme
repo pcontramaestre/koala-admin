@@ -7,15 +7,15 @@
 
 use Drupal\Core\Form\FormStateInterface;
 use \Drupal\Core\StringTranslation\TranslatableMarkup;
-
+use Drupal\Core\Template\Attribute;
 
 
 /**
  * Implements hook_form_system_theme_settings_alter() for settings form.
  *
- * Replace Barrio setting options with subtheme ones.
+ * Replace Barrio setting options with sub theme ones.
  */
-function koala_form_system_theme_settings_alter(&$form, FormStateInterface $form_state) {
+function koala_form_system_theme_settings_alter(&$form, FormStateInterface $form_state): void {
   $form['components']['navbar']['bootstrap_barrio_navbar_top_background']['#options'] = array(
     'bg-primary' => new TranslatableMarkup('Primary'),
     'bg-secondary' => new TranslatableMarkup('Secondary'),
@@ -62,13 +62,13 @@ function koala_theme_suggestions_views_view_unformatted_alter(array &$suggestion
  *
  * @inheritdoc
  */
-function koala_theme_suggestions_views_view_field_alter(array &$suggestions, array $variables) {
+function koala_theme_suggestions_views_view_field_alter(array &$suggestions, array $variables): void {
   $suggestions[] = 'views_view_field__' . $variables['view']->id();
   // suggestion for field in view
   $suggestions[] = 'views_view_field__' . $variables['view']->id() . '__' . $variables['field']->field;
 }
 
-function koala_theme_suggestions_page_alter(&$suggestions, $variables) {
+function koala_theme_suggestions_page_alter(&$suggestions, $variables): void {
   //Get current node
   $node = \Drupal::request()->attributes->get('node');
 
@@ -102,7 +102,7 @@ function koala_theme_suggestions_alter(array &$suggestions, array &$variables, $
   } else {
     //Añadir la clase no-admin a la variable de sugerencia
     $variables['attributes']['class'][] = 'no-admin';
-  } 
+  }
 
 
   if ($hook == 'node_edit_form') {
@@ -174,7 +174,7 @@ function koala_generate_hours($start, $end, $interval = 30, $format = '12') {
 /**
  * Implements hook_theme_suggestions_HOOK_alter() for node_edit_form.
  */
-function koala_theme_suggestions_node_edit_form_alter(array &$suggestions, array $variables) {
+function koala_theme_suggestions_node_edit_form_alter(array &$suggestions, array $variables): array {
   $route_match = \Drupal::routeMatch();
   // get from $route_match the node_type and node view_mode
   // $node_view_mode = $route_match->getParameter('view_mode');
@@ -183,7 +183,7 @@ function koala_theme_suggestions_node_edit_form_alter(array &$suggestions, array
   // dump( $route_match->getParameter('node_type'));
 
   //   dump( $route_match->getRouteName());
-  
+
   if ($route_match->getRouteName() == 'node.add.agendando_clase') {
     // When a new node is created, the node type (object) is provided.
     $suggestions[] = 'node_edit_form__agendar_clase_agendando_clase';
@@ -200,7 +200,7 @@ function koala_theme_suggestions_node_edit_form_alter(array &$suggestions, array
     $suggestions[] = $variables['theme_hook_original'] . '__' . $node_type->id();
   }
 
-  // // Obtén el tipo de contenido y el modo de formulario del nodo actual.
+  // // Obtain el tipo de content y el modo de formulario del nodo actual.
   // $node = $variables['node'];
   // dump($node);
   // $bundle = $node->bundle();
@@ -224,10 +224,10 @@ function koala_theme_suggestions_node_edit_form_alter(array &$suggestions, array
  * Implements hook_theme_suggestions_HOOK().
  *
  * Add views field template suggestions.
- * 
+ *
  * @inheritdoc
  */
-function koala_theme_suggestions_views_view_field(array $variables) {
+function koala_theme_suggestions_views_view_field(array $variables): array {
   return [
     'views_view_field__' . $variables['field']->field
   ];
@@ -236,7 +236,7 @@ function koala_theme_suggestions_views_view_field(array $variables) {
 /**
  * Implements hook_theme().
  */
-function koala_theme($existing, $type, $theme, $path) {
+function koala_theme($existing, $type, $theme, $path): array {
   return [
     // form id (weather it's an edit node for or a new node form)
     'node_agendar_clase_edit_form' => [
@@ -246,5 +246,37 @@ function koala_theme($existing, $type, $theme, $path) {
 }
 
 
+/**
+ * Implements hook_preprocess_HOOK() for node templates.
+ */
+function koala_preprocess_node(&$variables) {
+  // Obtiene el idioma actual.
+  $current_language = \Drupal::languageManager()->getCurrentLanguage()->getId();
+  
+  // Almacena el idioma actual en una variable.
+  $variables['current_language'] = $current_language;
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for block templates.
+ */
+function koala_preprocess_block(&$variables) {
+  // Obtiene el idioma actual.
+  $current_language = \Drupal::languageManager()->getCurrentLanguage()->getId();
+  
+  // Almacena el idioma actual en una variable.
+  $variables['current_language'] = $current_language;
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for page templates.
+ */
+function koala_preprocess_page(&$variables) {
+  // Obtiene el idioma actual.
+  $current_language = \Drupal::languageManager()->getCurrentLanguage()->getId();
+  
+  // Almacena el idioma actual en una variable.
+  $variables['current_language'] = $current_language;
+}
 
 

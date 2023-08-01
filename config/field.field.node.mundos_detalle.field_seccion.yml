@@ -1,0 +1,29 @@
+uuid: 462268f1-8780-4b67-9c96-e0e569ef10d1
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_seccion
+    - node.type.mundos_detalle
+    - taxonomy.vocabulary.secciones_de_los_mundos
+id: node.mundos_detalle.field_seccion
+field_name: field_seccion
+entity_type: node
+bundle: mundos_detalle
+label: Sección
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      secciones_de_los_mundos: secciones_de_los_mundos
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

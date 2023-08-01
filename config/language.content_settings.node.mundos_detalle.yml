@@ -1,0 +1,16 @@
+uuid: 5f32b3db-ff53-4053-98f5-09e990a7aa91
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.mundos_detalle
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+id: node.mundos_detalle
+target_entity_type_id: node
+target_bundle: mundos_detalle
+default_langcode: site_default
+language_alterable: false

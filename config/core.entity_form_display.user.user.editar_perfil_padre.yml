@@ -36,14 +36,14 @@ bundle: user
 mode: editar_perfil_padre
 content:
   account:
-    weight: 3
+    weight: 2
     region: second
     settings: {  }
     third_party_settings: {  }
   field_celular:
     type: string_textfield
-    weight: 2
-    region: first
+    weight: 3
+    region: second
     settings:
       size: 60
       placeholder: ''

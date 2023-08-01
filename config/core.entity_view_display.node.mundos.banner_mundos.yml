@@ -1,0 +1,50 @@
+uuid: e6e9fa21-d407-4c88-9ea4-c184bff8ab59
+langcode: es
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.banner_mundos
+    - field.field.node.mundos.field_imagen_ancha_banner_mundo
+    - field.field.node.mundos.field_imagen_del_mundo
+    - field.field.node.mundos.field_nro_de_juegos_incluidos
+    - node.type.mundos
+  module:
+    - field_formatter_class
+    - formatter_suite
+    - layout_builder
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: node.mundos.banner_mundos
+targetEntityType: node
+bundle: mundos
+mode: banner_mundos
+content:
+  field_imagen_del_mundo:
+    type: formatter_suite_general_image
+    label: hidden
+    settings:
+      image_style: ''
+      classes: ''
+      image_link: ''
+      openLinkIn: _self
+      captionLocation: none
+      captionIncludeFilename: 0
+      captionIncludeSize: 0
+      captionIncludeDimensions: 0
+      captionIncludeMime: 0
+      captionIncludeTitle: false
+      image_loading:
+        attribute: lazy
+    third_party_settings:
+      field_formatter_class:
+        class: ''
+    weight: 0
+    region: content
+hidden:
+  field_imagen_ancha_banner_mundo: true
+  field_nro_de_juegos_incluidos: true
+  langcode: true
+  links: true

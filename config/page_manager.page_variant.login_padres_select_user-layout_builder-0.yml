@@ -1,0 +1,46 @@
+uuid: f340d34e-6ae5-4ef0-99bd-a8973af452ad
+langcode: es
+status: true
+dependencies:
+  config:
+    - page_manager.page.login_padres_select_user
+    - views.view.mis_koalas
+  module:
+    - layout_discovery
+    - views
+id: login_padres_select_user-layout_builder-0
+label: 'Layout Builder'
+weight: 0
+variant: layout_builder
+variant_settings:
+  id: layout_builder
+  label: null
+  weight: 0
+  uuid: 624d7480-778a-47a4-b7c3-c854c725b9bb
+  sections:
+    -
+      layout_id: layout_onecol
+      layout_settings:
+        label: ''
+        context_mapping: {  }
+      components:
+        21ef4f53-a79f-4762-82b9-3e723c8630bd:
+          uuid: 21ef4f53-a79f-4762-82b9-3e723c8630bd
+          region: content
+          configuration:
+            id: 'views_block:mis_koalas-block_4'
+            label: ''
+            label_display: '0'
+            provider: views
+            context_mapping: {  }
+            views_label: ''
+            items_per_page: none
+          weight: 0
+          additional:
+            layout_builder_styles_style:
+              separacion_superior_mt_5: 0
+      third_party_settings: {  }
+page: login_padres_select_user
+selection_criteria: {  }
+selection_logic: and
+static_context: {  }

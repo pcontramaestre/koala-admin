@@ -1,0 +1,66 @@
+.path-login-padre {
+  background: #ECF9FB;
+
+  .view-mis-koalas.view-display-id-block_4 {
+    .view-header {
+      text-align: center;
+
+      >a {
+        max-width: 340px;
+        margin   : 0 auto;
+
+
+      }
+    }
+
+    .view-content.row {
+      text-align     : center;
+      display        : flex;
+      flex-direction : column;
+      flex-wrap      : wrap;
+      justify-content: center;
+      align-items    : center;
+
+      .views-row {
+        max-width    : 340px;
+        margin       : 0 auto;
+        margin-bottom: 1.5rem;
+        padding      : 0;
+
+
+      }
+    }
+
+    .access-acudiente {
+      display        : flex;
+      flex-direction : row;
+      justify-content: flex-start;
+      align-items    : center;
+      flex-wrap      : nowrap;
+      background     : white;
+      padding        : 0.5rem;
+      border-radius  : 16px;
+
+      .imagen {
+        max-width: 70px;
+
+        img {
+          max-width: 64px;
+          height   : auto;
+        }
+      }
+
+      .nombre-datos {
+        width      : 100%;
+        text-align : left;
+        margin-left: 1rem;
+
+        a {
+          width  : 100%;
+          display: block;
+        }
+      }
+    }
+  }
+
+}
