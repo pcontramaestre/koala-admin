@@ -1,0 +1,22 @@
+uuid: 860045ad-33c2-4423-aa5b-f12058654d2b
+langcode: es
+status: true
+dependencies:
+  module:
+    - user
+id: mi_calendario
+label: 'Mi Calendario'
+description: ''
+use_admin_theme: false
+path: /padres/mi-calendario
+access_logic: and
+access_conditions:
+  -
+    id: user_role
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+    roles:
+      administrator: administrator
+      padre: padre
+parameters: {  }

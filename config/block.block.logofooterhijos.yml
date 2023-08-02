@@ -30,4 +30,8 @@ visibility:
     context_mapping:
       user: '@user.current_user_context:current_user'
     roles:
+      anonymous: anonymous
+      administrator: administrator
+      profesor: profesor
+      padre: padre
       hijo: hijo

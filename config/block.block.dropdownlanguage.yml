@@ -1,0 +1,21 @@
+uuid: 05b229be-cb09-4d7e-8a2b-ae3de5b9c0c3
+langcode: es
+status: true
+dependencies:
+  module:
+    - dropdown_language
+  theme:
+    - koala
+id: dropdownlanguage
+theme: koala
+region: primary_menu
+weight: -8
+provider: null
+plugin: 'dropdown_language:language_interface'
+settings:
+  id: 'dropdown_language:language_interface'
+  label: 'Dropdown Language'
+  label_display: '0'
+  provider: dropdown_language
+  labels: null
+visibility: {  }

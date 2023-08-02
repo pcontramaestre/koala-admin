@@ -1,0 +1,30 @@
+uuid: 088a3c6c-8b69-4c60-8f80-36f6111d41c7
+langcode: es
+status: true
+dependencies:
+  module:
+    - dropdown_language
+    - user
+  theme:
+    - koala
+id: dropdownlanguage_2
+theme: koala
+region: footer_third
+weight: -11
+provider: null
+plugin: 'dropdown_language:language_interface'
+settings:
+  id: 'dropdown_language:language_interface'
+  label: Idioma
+  label_display: visible
+  provider: dropdown_language
+  labels: null
+visibility:
+  user_role:
+    id: user_role
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+    roles:
+      profesor: profesor
+      padre: padre
