@@ -1,66 +1,135 @@
 .path-login-padre {
-  background: #ECF9FB;
-
-  .view-mis-koalas.view-display-id-block_4 {
-    .view-header {
-      text-align: center;
-
-      >a {
-        max-width: 340px;
-        margin   : 0 auto;
-
-
+  background-image: url("/themes/custom/koala/images/background.jpg");
+  a {
+    text-decoration: unset !important;
+  }
+  #header{
+    .navbar {
+      padding: 0rem 7.5rem!important;
+      .offcanvas{
+        align-items: end!important;
+        .offcanvas-body{
+          .block{
+            .nav{
+              gap: 0px!important;
+            }
+          }
+        }
       }
     }
-
+  }
+  .view-mis-koalas.view-display-id-block_4 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    .view-header {
+      text-align: center;
+      .text-center {
+        strong {
+          font-size: 24px;
+        }
+      }
+      a {
+        max-width: 340px;
+        margin: 0 auto;
+      }
+      .d-block {
+        margin-bottom: 1rem !important;
+        .access-acudiente {
+          border: 2px solid #727f7f;
+          &:after {
+            color: #727f7f;
+          }
+        }
+      }
+    }
     .view-content.row {
-      text-align     : center;
-      display        : flex;
-      flex-direction : column;
-      flex-wrap      : wrap;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
       justify-content: center;
-      align-items    : center;
+      align-items: center;
 
       .views-row {
-        max-width    : 340px;
-        margin       : 0 auto;
-        margin-bottom: 1.5rem;
-        padding      : 0;
-
-
+        max-width: 346px;
+        margin: 0 auto;
+        margin-bottom: 1rem;
+        padding: 0;
       }
     }
 
     .access-acudiente {
-      display        : flex;
-      flex-direction : row;
+      display: flex;
+      flex-direction: row;
       justify-content: flex-start;
-      align-items    : center;
-      flex-wrap      : nowrap;
-      background     : white;
-      padding        : 0.5rem;
-      border-radius  : 16px;
+      align-items: center;
+      flex-wrap: nowrap;
+      background: white;
+      padding: 0.5rem 1rem;
+      border-radius: 24px;
+      border: 2px solid #becaca;
+      width: 346px;
+      height: 96px;
+      &:hover {
+        border: 2px solid #727f7f;
+        &:after {
+          color: #727f7f;
+        }
+      }
+      &:after {
+        content: "\f054";
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        float: right;
+        color: #becaca;
+        font-size: 18px;
+      }
 
       .imagen {
         max-width: 70px;
 
         img {
-          max-width: 64px;
-          height   : auto;
+          width: 64px;
+          height: 64px;
+          object-fit: cover;
+          border-radius: 200px;
         }
       }
 
       .nombre-datos {
-        width      : 100%;
-        text-align : left;
+        width: 100%;
+        text-align: left;
         margin-left: 1rem;
-
+        .nombre {
+          color: black;
+          font-size: 20px;
+          font-weight: 700;
+          margin-bottom: 0.3rem;
+          a {
+            color: black;
+            font-size: 20px;
+            font-weight: 700;
+            text-decoration: none !important;
+          }
+        }
+        .tipo {
+          font-weight: 500;
+          font-size: 16px;
+          color: black;
+          a {
+            font-weight: 500;
+            font-size: 16px;
+            color: black;
+            text-decoration: none !important;
+          }
+        }
         a {
-          width  : 100%;
+          width: 100%;
           display: block;
         }
       }
     }
   }
-
 }

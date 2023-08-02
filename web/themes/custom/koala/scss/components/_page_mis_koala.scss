@@ -10,10 +10,10 @@
                   margin-top: 1rem;
 
                   h2 {
-                    text-align   : center;
-                    margin-top   : 3rem;
-                    font-weight  : 700;
-                    font-size    : 20px;
+                    text-align: center;
+                    margin-top: 3rem;
+                    font-weight: 700;
+                    font-size: 20px;
                     margin-bottom: 2rem;
                   }
 
@@ -23,68 +23,105 @@
 
                       .view-header {
                         position: absolute;
-                        right   : 0px;
-                        bottom  : 56%;
+                        right: 0px;
+                        bottom: 56%;
 
                         a {
-                          padding      : 16px;
-                          border       : none;
-                          color        : black;
-                          font-weight  : 700;
-                          font-size    : 16px;
-                          width        : 253px;
-                          height       : 54px;
-                          background   : #E6F1F1;
+                          padding: 16px;
+                          border: none;
+                          color: black;
+                          font-weight: 700;
+                          font-size: 16px;
+                          width: 253px;
+                          height: 54px;
+                          background: #e6f1f1;
                           border-radius: 24px;
+                          &:after {
+                            content: "";
+                            display: block;
+                            width: 25px;
+                            height: 20px;
+                            background-image: url("/themes/custom/koala/images/icon-koalas.png");
+                            position: absolute;
+                            top: 65px;
+                            left: 32px;
+                          }
                         }
                       }
 
                       .view-content {
                         #views-bootstrap-tab-views-bootstrap-mis-koalas-block-2 {
                           .nav-tabs {
-                            border-bottom: 2px solid #E6F1F1;
-                            width        : 78%;
+                            border-bottom: 2px solid #e6f1f1;
+                            width: 78%;
 
                             .nav-item {
-                              margin-right: 2rem;
+                              margin-right: 1.8rem;
 
                               button {
-                                border         : none;
-                                background     : #FFE8E8;
-                                border-radius  : 16px;
-                                color          : #FF6669;
-                                font-weight    : 700;
-                                font-size      : 16px;
-                                min-width      : 175px;
-                                height         : 24px;
-                                display        : flex;
+                                border: none;
+                                background: #ffe8e8;
+                                border-radius: 16px;
+                                color: #ff6669;
+                                font-weight: 700;
+                                font-size: 16px;
+                                min-width: 140px;
+                                height: 24px;
+                                display: flex;
                                 justify-content: center;
-                                align-items    : center;
-                                margin-bottom  : 1rem;
+                                align-items: center;
+                                margin-bottom: 1rem;
+                                padding: 0.5rem 0.5rem 0.5rem 0rem;
+                                &:before {
+                                  content: "";
+                                  display: block;
+                                  width: 24px;
+                                  height: 24px;
+                                  border-radius: 200px;
+                                  margin-right: 0.5rem;
+                                  background-image: url("/themes/custom/koala/images/Avatar1.jpg");
+                                }
                               }
 
                               .nav-link.active {
-
                                 &:after {
                                   border-bottom: 2px solid black;
-                                  content      : "";
-                                  top          : 40px;
-                                  width        : 14%;
-                                  position     : absolute;
+                                  content: "";
+                                  top: 40px;
+                                  width: 14%;
+                                  position: absolute;
                                 }
                               }
 
-                              &:nth-child(2) {
+                              &:nth-child(2n) {
                                 button {
-                                  background: #F5F8D8;
-                                  color     : #869021;
+                                  background: #f5f8d8;
+                                  color: #869021;
+                                  &:before {
+                                    content: "";
+                                    display: block;
+                                    width: 24px;
+                                    height: 24px;
+                                    border-radius: 200px;
+                                    margin-right: 0.5rem;
+                                    background-image: url("/themes/custom/koala/images/Avatar2.jpg");
+                                  }
                                 }
                               }
 
-                              &:nth-child(3) {
+                              &:nth-child(3n) {
                                 button {
-                                  background: #F8E5DE;
-                                  color     : #AF654A;
+                                  background: #f8e5de;
+                                  color: #af654a;
+                                  &:before {
+                                    content: "";
+                                    display: block;
+                                    width: 24px;
+                                    height: 24px;
+                                    border-radius: 200px;
+                                    margin-right: 0.5rem;
+                                    background-image: url("/themes/custom/koala/images/Avatar3.jpg");
+                                  }
                                 }
                               }
                             }
@@ -98,25 +135,27 @@
                                     text-align: center;
 
                                     .agendar-clase {
-                                      width        : 188px;
-                                      height       : 45px;
-                                      background   : #FFFFFF;
-                                      border       : 2px solid #297E88;
+                                      width: 188px;
+                                      height: 45px;
+                                      background: #ffffff;
+                                      border: 2px solid #297e88;
                                       border-radius: 32px;
-                                      color        : black;
-                                      font-weight  : 700;
-                                      font-size    : 20px;
+                                      color: black;
+                                      font-weight: 700;
+                                      font-size: 20px;
+                                      margin-top: 1.5rem!important;
+                                      margin-bottom: 2rem!important;
 
                                       &:hover {
-                                        background-color: #297E88;
-                                        color           : white;
+                                        background-color: #297e88;
+                                        color: white;
                                       }
                                     }
                                   }
 
                                   .texto-logros {
                                     font-weight: 600;
-                                    font-size  : 16px;
+                                    font-size: 16px;
                                   }
                                 }
                               }
@@ -128,80 +167,6 @@
                   }
                 }
               }
-            }
-          }
-        }
-      }
-    }
-  }
-
-  #views-bootstrap-tab-views-bootstrap-mis-koalas-block-2 {
-    .nav-tabs {
-      border-bottom: 2px solid #E6F1F1;
-      width        : 78%;
-
-      .nav-item {
-        margin-right: 2rem;
-
-        button,
-        a {
-          border         : none;
-          background     : #FFE8E8;
-          border-radius  : 16px;
-          color          : #FF6669;
-          font-weight    : 700;
-          font-size      : 16px;
-          min-width      : 175px;
-          height         : 24px;
-          display        : flex;
-          justify-content: center;
-          align-items    : center;
-          margin-bottom  : 1rem;
-          white-space: nowrap;
-        }
-        &:nth-child(2) {
-          button {
-            background: #F5F8D8;
-            color     : #869021;
-          }
-        }
-
-        &:nth-child(3) {
-          button {
-            background: #F8E5DE;
-            color     : #AF654A;
-          }
-        }
-      }
-    }
-
-    .tab-content {
-      .tab-pane {
-        .views-field {
-          .field-content {
-            .boton-agendar {
-              text-align: center;
-
-              .agendar-clase {
-                width        : 188px;
-                height       : 45px;
-                background   : #FFFFFF;
-                border       : 2px solid #297E88;
-                border-radius: 32px;
-                color        : black;
-                font-weight  : 700;
-                font-size    : 20px;
-
-                &:hover {
-                  background-color: #297E88;
-                  color           : white;
-                }
-              }
-            }
-
-            .texto-logros {
-              font-weight: 600;
-              font-size  : 16px;
             }
           }
         }

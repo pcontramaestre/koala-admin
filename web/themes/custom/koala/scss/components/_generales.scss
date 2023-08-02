@@ -651,10 +651,10 @@ body.mobile {
 }
 
 .radio.form-switch .form-check-input {
-  width: 1em;
+  background-image: none;
+  background-color: white;
+  border: 1px solid #BECACA;
+  width: 18px;
+  height: 18px;
 }
 
-.radio .form-check-input:checked[type=radio]:after {
-  width : 0.9rem;
-  height: 0.9rem;
-}
