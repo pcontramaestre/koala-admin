@@ -1,86 +1,137 @@
-//Vista Proximas Clases 
+@media (min-width: 768px) {
+  .block-views-blockclases-gratuitas-block-proximas-clases {
+    .content {
+      .view-display-id-block_proximas_clases {
+        .view-content {
+          .views-row {
+            .views-field {
+              .clases-proximas {
+                .dato-del-nino {
+                  width: 55% !important;
+                }
+                .datos-clase {
+                  width: 45% !important;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+//Vista Proximas Clases
 .block-views-blockclases-gratuitas-block-proximas-clases {
-  padding-left : 1rem;
+  padding-left: 1rem;
   padding-right: 1rem;
 
-  >h2 {
-    font-size    : 1.25rem;
-    font-weight  : 700;
+  > h2 {
+    font-size: 1.25rem;
+    font-weight: 700;
     margin-bottom: 0;
-    margin-top   : 3px;
+    margin-top: 3px;
   }
 
-  >.content {
+  > .content {
     margin-top: 1.6rem;
 
     .view-display-id-block_proximas_clases {
       .view-content {
         margin: 0;
 
+        .views-row:nth-child(2n) {
+          background: $AlgaK100;
+        }
+
         .views-row {
-          border       : 1px solid #E6F1F1;
-          border-radius: 16px;
-          padding      : 1rem;
-          background   : #E6F1F1;
+          border: 1px solid #e6f1f1;
+          border-radius: 24px;
+          padding: 1rem;
+          background: #e6f1f1;
           margin-bottom: 1.5rem;
 
           .views-field {
             .clases-proximas {
-              padding-left : 1rem;
+              padding-left: 1rem;
               padding-right: 1rem;
 
               .dato-del-nino {
                 flex-direction: row;
-                flex-wrap     : nowrap;
-                align-items   : center;
-                background    : white;
-                border-radius : 15px;
-                padding       : 0.5rem;
+                flex-wrap: nowrap;
+                align-items: center;
+                background: white;
+                border-radius: 16px;
+                padding: 0.5rem;
 
                 .imagen {
-                  max-width : 30%;
-                  width     : 30%;
+                  max-width: 30%;
+                  width: 30%;
                   text-align: center;
 
                   img {
-                    max-width    : 80%;
-                    height       : auto;
-                    border-radius: 50px;
+                    height: 80px;
+                    width: 80px;
+                    object-fit: cover;
+                    border-radius: 200px;
+                  }
+                }
+                .datos {
+                  font-weight: 700;
+                  font-size: 20px;
+                  text-align: center;
+                  margin-left: 0.5rem;
+                  .fecha-nac {
+                    font-weight: 500;
+                    font-size: 16px;
+                    margin-top: 0.5rem;
                   }
                 }
               }
 
               .datos-clase {
-                flex-direction : column;
-                flex-wrap      : nowrap;
-                align-items    : center;
+                flex-direction: column;
+                flex-wrap: nowrap;
+                align-items: center;
                 justify-content: center;
+                padding-right: 0px;
 
                 .titulo {
-                  margin-bottom: 0.5rem;
+                  margin-bottom: 0.1rem;
+                  font-weight: 500;
+                  color: black;
                 }
 
                 .datos-fecha {
-                  display       : flex;
+                  display: flex;
                   flex-direction: column;
-                  flex-wrap     : nowrap;
-                  align-items   : center;
-                  font-size     : 1.5rem;
-                  font-weight   : 700;
-                  margin-bottom : 1rem;
+                  flex-wrap: nowrap;
+                  align-items: center;
+                  font-size: 24px;
+                  font-weight: 700;
+                  margin-bottom: 0.7rem;
+                  text-align: center;
                 }
 
                 .boton {
                   text-align: center;
 
                   a {
-                    background     : #2FF7EE;
-                    padding        : 8px 30px 8px 30px;
-                    border-radius  : 16px;
-                    font-size      : 1.25rem;
+                    width: 230px;
+                    height: 51px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border-radius: 32px;
+                    font-size: 1.25rem;
                     text-decoration: none;
-                    color          : black;
-                    display        : block;
+                    color: black;
+                    border: 2px solid #297e88;
+                    font-weight: 700;
+                    background-color: #2ff7ee;
+                    &:hover {
+                      background-color: #297e88;
+                      color: white;
+                    }
                   }
                 }
               }
@@ -91,25 +142,30 @@
 
       .view-footer {
         a {
-          color        : #297E88;
-          font-size    : 1.25rem;
-          padding-right: 2rem;
-          margin-top   : 1rem;
-          display      : block;
-          position     : relative;
+          color: #297e88;
+          font-size: 20px;
+          font-weight: 700;
+          text-decoration: none;
+          padding-right: 1.7rem;
+          margin-top: 1rem;
+          display: block;
+          position: relative;
+          &:hover{
+            text-decoration: underline;
+          }
 
           &::after {
-            display          : block;
-            top              : 50%;
-            left             : 99%;
+            display: block;
+            top: 50%;
+            left: 99%;
             -webkit-transform: translate(-50%, -50%);
-            -o-transform     : translate(-50%, -50%);
-            transform        : translate(-50%, -50%);
-            font-size        : 1.25rem;
-            font-weight      : 600;
-            position         : absolute;
-            content          : "\f285";
-            font-family      : "bootstrap-icons";
+            -o-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            font-size: 1.25rem;
+            font-weight: 600;
+            position: absolute;
+            content: "\f285";
+            font-family: "bootstrap-icons";
           }
         }
       }

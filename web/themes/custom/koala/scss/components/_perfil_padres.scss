@@ -1,3 +1,10 @@
+// quitar iconos bootstrap
+.form-submit::before {
+  width: unset!important;
+  height: unset!important;
+  background-image: unset!important;
+}
+
 // banner principal padres
 
 #block-koala-content {
@@ -108,11 +115,12 @@
                 .correo {
                   font-weight: 700;
                   text-decoration: underline;
+                  width: 100%;
 
                   a {
-                    font-weight    : 700;
+                    font-weight: 700;
                     text-decoration: underline;
-                    color          : black;
+                    color: black;
                   }
                 }
               }
@@ -150,10 +158,10 @@
                         border-radius: 40px;
                         padding: 0.5rem 1rem;
                         min-height: 56px;
-                        margin-top: 0.8rem;
                         display: flex;
                         align-items: center;
                         justify-content: space-between;
+                        margin-bottom: 1rem;
                         &:after {
                           content: "\f054";
                           font-family: "Font Awesome 5 Free";
@@ -182,7 +190,7 @@
                 font-weight: 700;
                 font-size: 1.2rem;
                 margin-bottom: 0rem !important;
-                margin-top: 1rem !important;
+                margin-top: 0rem !important;
 
                 &:hover {
                   background-color: #297e88;
@@ -201,171 +209,170 @@
       }
 
       .layout__region--second {
-        flex: 0 1 60% !important;
+        flex: 0 1 62% !important;
 
-        .block-views-blockclases-gratuitas-block-1 {
-          &:before {
-            content: "Próximas clases";
-            font-size: 1.3rem;
-            font-weight: 700;
-            margin-left: 5.5rem;
-          }
-          .view-clases-gratuitas::-webkit-scrollbar
-          {
-            width: 6px;
-            color: black;
-          }
-           .view-clases-gratuitas {
-            float: right;
-            width: 97%;
-            overflow-y: scroll;
-            height: 669px;
-            margin-top: 1.3rem;
+        // .block-views-blockclases-gratuitas-block-1 {
+        //   &:before {
+        //     content: "Próximas clases";
+        //     font-size: 1.3rem;
+        //     font-weight: 700;
+        //     margin-left: 5.5rem;
+        //   }
+        //   .view-clases-gratuitas::-webkit-scrollbar {
+        //     width: 6px;
+        //     color: black;
+        //   }
+        //   .view-clases-gratuitas {
+        //     float: right;
+        //     width: 97%;
+        //     overflow-y: scroll;
+        //     height: 669px;
+        //     margin-top: 1.3rem;
 
-            .view-content {
-              width: 100%;
-              padding-left: 1.3rem;
-              .views-row {
-                border-radius: 24px;
-                padding: 16px;
-                height: 320px;
-                margin-bottom: 1.3rem;
+        //     .view-content {
+        //       width: 100%;
+        //       padding-left: 1.3rem;
+        //       .views-row {
+        //         border-radius: 24px;
+        //         padding: 16px;
+        //         height: 320px;
+        //         margin-bottom: 1.3rem;
 
-                .views-field-title {
-                  text-align: center;
+        //         .views-field-title {
+        //           text-align: center;
 
-                  span {
-                    a {
-                      color: black;
-                      font-size: 1.3rem;
-                      text-decoration: none;
-                      font-weight: 600;
-                    }
-                  }
-                }
+        //           span {
+        //             a {
+        //               color: black;
+        //               font-size: 1.3rem;
+        //               text-decoration: none;
+        //               font-weight: 600;
+        //             }
+        //           }
+        //         }
 
-                .views-field-field-fecha-de-la-cita {
-                  display: none !important;
-                }
+        //         .views-field-field-fecha-de-la-cita {
+        //           display: none !important;
+        //         }
 
-                .views-field-field-fecha-de-la-cita,
-                .views-field-field-fecha-cita-oculta-2 {
-                  display: flex;
-                  justify-content: end;
+        //         .views-field-field-fecha-de-la-cita,
+        //         .views-field-field-fecha-cita-oculta-2 {
+        //           display: flex;
+        //           justify-content: end;
 
-                  span.views-label-field-fecha-de-la-cita {
-                    display: none;
-                  }
+        //           span.views-label-field-fecha-de-la-cita {
+        //             display: none;
+        //           }
 
-                  .field-content {
-                    background-color: white;
-                    border-radius: 15px;
-                    box-shadow: 0px 1.67507px 8.37533px rgba(67, 67, 67, 0.15),
-                      0px 4.18766px 16.7507px rgba(74, 74, 74, 0.08),
-                      0px 8.37533px 67.0026px rgba(74, 74, 74, 0.02);
-                    font-weight: 700;
-                    font-size: 1.5rem;
-                    padding: 1rem 1rem 1rem 1rem;
-                    width: 60%;
-                    text-align: center;
-                    margin-top: 1rem;
-                  }
-                }
+        //           .field-content {
+        //             background-color: white;
+        //             border-radius: 15px;
+        //             box-shadow: 0px 1.67507px 8.37533px rgba(67, 67, 67, 0.15),
+        //               0px 4.18766px 16.7507px rgba(74, 74, 74, 0.08),
+        //               0px 8.37533px 67.0026px rgba(74, 74, 74, 0.02);
+        //             font-weight: 700;
+        //             font-size: 1.5rem;
+        //             padding: 1rem 1rem 1rem 1rem;
+        //             width: 60%;
+        //             text-align: center;
+        //             margin-top: 1rem;
+        //           }
+        //         }
 
-                .views-field-field-nombre-del-nino-a {
-                  background-color: white;
-                  border-radius: 15px;
-                  width: 35%;
-                  float: inline-start;
-                  position: relative;
-                  top: -116px;
-                  min-height: 190px;
-                  display: flex;
-                  align-items: center;
-                  justify-content: center;
-                  float: left;
-                  padding: 1rem;
+        //         .views-field-field-nombre-del-nino-a {
+        //           background-color: white;
+        //           border-radius: 15px;
+        //           width: 35%;
+        //           float: inline-start;
+        //           position: relative;
+        //           top: -116px;
+        //           min-height: 190px;
+        //           display: flex;
+        //           align-items: center;
+        //           justify-content: center;
+        //           float: left;
+        //           padding: 1rem;
 
-                  .field-content {
-                    font-weight: 700;
-                    font-size: 1.3rem;
-                  }
-                }
+        //           .field-content {
+        //             font-weight: 700;
+        //             font-size: 1.3rem;
+        //           }
+        //         }
 
-                .views-field-field-fecha-cita-oculta {
-                  display: none;
-                }
+        //         .views-field-field-fecha-cita-oculta {
+        //           display: none;
+        //         }
 
-                .views-field-field-hora-clase {
-                  margin: 0.5rem 1rem;
-                  width: 50%;
-                  text-align: center;
-                  font-weight: 700;
-                }
+        //         .views-field-field-hora-clase {
+        //           margin: 0.5rem 1rem;
+        //           width: 50%;
+        //           text-align: center;
+        //           font-weight: 700;
+        //         }
 
-                .views-field-nid {
-                  margin: 2rem 0rem;
-                  width: 100%;
+        //         .views-field-nid {
+        //           margin: 2rem 0rem;
+        //           width: 100%;
 
-                  .field-content {
-                    display: flex;
-                    flex-direction: row;
-                    flex-wrap: wrap;
-                    align-content: center;
-                    align-items: center;
+        //           .field-content {
+        //             display: flex;
+        //             flex-direction: row;
+        //             flex-wrap: wrap;
+        //             align-content: center;
+        //             align-items: center;
 
-                    a {
-                      background-color: white;
-                      border: 2px solid $GreyK200;
-                      font-weight: 700;
-                      height: 2.5rem;
-                      display: flex;
-                      justify-content: center;
-                      align-items: center;
-                      flex-direction: column;
-                      color: $GreyK200;
-                      border-radius: 25px;
-                      margin-bottom: 3rem;
-                      width: 45%;
-                      margin: 0 auto;
-                      text-decoration: none;
-                      font-size: 0.8rem;
+        //             a {
+        //               background-color: white;
+        //               border: 2px solid $GreyK200;
+        //               font-weight: 700;
+        //               height: 2.5rem;
+        //               display: flex;
+        //               justify-content: center;
+        //               align-items: center;
+        //               flex-direction: column;
+        //               color: $GreyK200;
+        //               border-radius: 25px;
+        //               margin-bottom: 3rem;
+        //               width: 45%;
+        //               margin: 0 auto;
+        //               text-decoration: none;
+        //               font-size: 0.8rem;
 
-                      &:hover {
-                        background-color: #297e88;
-                        color: white !important;
-                      }
-                    }
-                  }
-                }
-              }
+        //               &:hover {
+        //                 background-color: #297e88;
+        //                 color: white !important;
+        //               }
+        //             }
+        //           }
+        //         }
+        //       }
 
-              .views-row:nth-child(1) {
-                background: #e6f1f1;
-              }
+        //       .views-row:nth-child(1) {
+        //         background: #e6f1f1;
+        //       }
 
-              .views-row:nth-child(2) {
-                background: $AlgaK100;
-              }
+        //       .views-row:nth-child(2) {
+        //         background: $AlgaK100;
+        //       }
 
-              .views-row:nth-child(3) {
-                background: #e6f1f1;
-              }
+        //       .views-row:nth-child(3) {
+        //         background: #e6f1f1;
+        //       }
 
-              .views-row:nth-child(4) {
-                background: $AlgaK100;
-              }
+        //       .views-row:nth-child(4) {
+        //         background: $AlgaK100;
+        //       }
 
-              .views-row:nth-child(5) {
-                background: #e6f1f1;
-              }
+        //       .views-row:nth-child(5) {
+        //         background: #e6f1f1;
+        //       }
 
-              .views-row:nth-child(6) {
-                background: $AlgaK100;
-              }
-            }
-          }
-        }
+        //       .views-row:nth-child(6) {
+        //         background: $AlgaK100;
+        //       }
+        //     }
+        //   }
+        // }
       }
     }
   }

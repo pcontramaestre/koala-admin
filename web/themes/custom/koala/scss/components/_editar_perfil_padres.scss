@@ -182,6 +182,43 @@
         flex   : 0 1 60% !important;
         padding: 0rem 1rem 1rem 1rem;
 
+        div:nth-child(5) {
+          border: 2px solid #ff9294;
+          border-radius: 16px;
+          color: black;
+          font-weight: 500;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 52px;
+          position: absolute;
+          left: 22%;
+          margin-top: 1rem;
+          line-height: 1rem;
+          width: 32%;
+          text-align: center;
+          padding: 0rem 1rem;
+          &:before {
+            content: "\f00c";
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            color: #ff9294;
+            border: 1px solid #ff6669;
+            background-color: #ffe8e8;
+            border-radius: 6px;
+            font-size: 10px;
+            margin-right: 0.5rem;
+            width: 20px;
+            padding: 0.1rem 0.3rem;
+          }
+          p {
+            margin-bottom: 0rem !important;
+            a {
+              color: black;
+              font-weight: 700;
+            }
+          }
+        }
         .field--name-field-pais {
           .js-form-item {
             margin-bottom: 0rem !important;
@@ -199,18 +236,18 @@
                 border-radius : 32px;
                 display       : flex;
                 flex-direction: row;
-                align-items   : center;
-                font-weight   : 500;
-                color         : black;
-                padding-left  : 0.7rem;
-
+                align-items: center;
+                font-weight: 500;
+                color: black;
+                padding-left: 0.7rem;
+                font-size: 16px;
                 span {
                   width: 92%;
                 }
 
                 div {
                   b {
-                    background-image: none;
+                    background-image: none!important;
                   }
                 }
 
@@ -226,7 +263,6 @@
             .chosen-container-active {
               .chosen-drop {
                 border-radius: 15px;
-                border       : 2px solid #becaca;
 
                 .chosen-search {
                   .chosen-search-input {
@@ -244,7 +280,8 @@
 
                 .chosen-results {
                   font-weight: 600;
-                  color      : black;
+                  color: black;
+                  font-size: 16px;
                 }
               }
             }
@@ -272,8 +309,11 @@
             font-weight  : 500;
             font-size    : 14px;
             margin-bottom: 0rem !important;
-            order        : 3;
-            margin-top   : 1rem;
+            order: 3;
+            margin-top: 1rem;
+            .js-form-item-pass-pass1{
+              margin-bottom: 1rem!important;
+            }
           }
 
           .js-form-item {
