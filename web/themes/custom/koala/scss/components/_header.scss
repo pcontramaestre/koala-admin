@@ -120,6 +120,16 @@ body #main-wrapper{
     }
   }
 }
+@media (min-width: 300px) and (max-width: 800px){
+  #header {
+    #navbar-main {
+      padding: 0rem 1rem;
+      .navbar-toggler{
+        padding-right: 0px;
+      }
+    }
+  }
+}
 @media (min-width: 1400px) {
   body #main-wrapper #main{
     max-width: 80%!important;

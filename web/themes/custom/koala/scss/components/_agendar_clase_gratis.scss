@@ -41,7 +41,8 @@
                         border-radius: 25px;
                         border: 2px solid #becaca;
                         height: 2.8rem;
-                        color: #becaca;
+                        color: black;
+                        font-weight: 500;
                       }
                     }
                   }
@@ -79,7 +80,8 @@
                         border-radius: 25px;
                         border: 2px solid #becaca;
                         height: 2.8rem;
-                        color: #becaca;
+                        color: black;
+                        font-weight: 500;
                       }
                     }
                   }
@@ -89,11 +91,14 @@
                     width           : 80%;
                     margin-left     : 10%;
                     border-radius   : 13px;
-                    height          : 3.4rem;
                     background-color: white;
 
                     .js-form-item {
                       margin: 0.9rem 1rem 0rem 1rem;
+                      label{
+                        font-weight: 500;
+                        color: black;
+                      }
 
                       .form-check-label {
                         a {
@@ -237,6 +242,7 @@
                   }
 
                   .layout__region--content {
+
                     .field--name-field-nombre-del-nino-a {
                       width           : 100%;
                       padding         : 0rem;
@@ -271,6 +277,7 @@
                     .field--type-boolean {
                       // order: 6;
                       width: 100%;
+                      margin-left: 0rem!important;
                     }
                   }
                 }
