@@ -36,8 +36,14 @@
     margin-top: 1.6rem;
 
     .view-display-id-block_proximas_clases {
+      .view-content::-webkit-scrollbar {
+            width: 6px;
+            color: black;
+          }
       .view-content {
         margin: 0;
+        overflow-y: scroll;
+        height: 505px;
 
         .views-row:nth-child(2n) {
           background: $AlgaK100;
@@ -150,7 +156,7 @@
           margin-top: 1rem;
           display: block;
           position: relative;
-          &:hover{
+          &:hover {
             text-decoration: underline;
           }
 
