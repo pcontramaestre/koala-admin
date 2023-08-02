@@ -1,0 +1,97 @@
+.path-padres {
+  .block-quicktabs-blockcalendario-agendar {
+    margin-top: 2rem;
+
+    //TABs
+    .item-list {
+      >.quicktabs-tabs {
+        display        : flex;
+        flex-direction : row;
+        flex-wrap      : nowrap;
+        justify-content: center;
+        align-items    : center;
+
+        >li {
+          border    : unset;
+          background: unset;
+
+          >a {
+            text-align     : center;
+            color          : #000;
+            text-decoration: none;
+            background     : unset;
+            border         : unset;
+            border-bottom  : 2px solid #E6F1F1;
+            padding        : 1rem 2rem 0.5rem 2rem;
+          }
+
+          &.active {
+            a {
+              color        : #FF6669;
+              border-bottom: 2px solid black;
+            }
+          }
+        }
+      }
+    }
+
+    //Contenido
+    .quicktabs-main {
+      .quicktabs-tabpage {
+        border: unset;
+      }
+    }
+  }
+
+  //VISTA MIS KOALAS - AGENDAR CITA
+  .view-mis-koalas.view-display-id-block_6 {
+    .view-header {
+      font-weight: 700;
+      font-size  : 1rem;
+    }
+
+    .view-content.row {
+      .views-view-grid {
+        .vistas-fila {
+          display              : grid;
+          grid-template-columns: 1fr 1fr 1fr;
+          gap                  : 16px;
+
+          >div {
+            background   : #E6F1F1;
+            width        : 100% !important;
+            border-radius: 32px;
+
+            .access-acudiente {
+              display       : flex;
+              flex-direction: row;
+              flex-wrap     : wrap;
+              align-items   : center;
+              gap           : 16px;
+              padding       : 1rem;
+
+              .imagen {
+                flex : 0 20%;
+                width: 20%;
+
+                img {
+                  max-width: 100%;
+                  height   : auto;
+                }
+              }
+
+              .nombre-datos {
+                a {
+                  color          : black;
+                  text-decoration: none;
+                  font-weight    : 700;
+                  font-size      : 1.25rem;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

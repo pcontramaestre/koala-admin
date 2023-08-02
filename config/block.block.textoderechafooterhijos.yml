@@ -12,7 +12,7 @@ dependencies:
 id: textoderechafooterhijos
 theme: koala
 region: footer_third
-weight: 0
+weight: -12
 provider: null
 plugin: 'block_content:67659baa-ba1c-455b-a768-5ecae7bf7696'
 settings:

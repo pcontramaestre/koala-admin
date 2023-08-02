@@ -1,0 +1,34 @@
+uuid: 87c2e7a3-c5be-4cb5-a099-36bd97fdc465
+langcode: es
+status: true
+dependencies:
+  config:
+    - system.menu.legal
+  module:
+    - system
+    - user
+  theme:
+    - koala
+id: legal
+theme: koala
+region: footer_second
+weight: -11
+provider: null
+plugin: 'system_menu_block:legal'
+settings:
+  id: 'system_menu_block:legal'
+  label: Legal
+  label_display: visible
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility:
+  user_role:
+    id: user_role
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+    roles:
+      profesor: profesor
+      padre: padre

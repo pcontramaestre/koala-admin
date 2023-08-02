@@ -1,0 +1,43 @@
+uuid: 503317ce-0265-4830-be76-4a045026fefd
+langcode: es
+status: true
+dependencies:
+  config:
+    - page_manager.page.mi_calendario
+  module:
+    - layout_discovery
+    - quicktabs
+id: mi_calendario-layout_builder-0
+label: 'Layout Builder'
+weight: 0
+variant: layout_builder
+variant_settings:
+  id: layout_builder
+  label: null
+  weight: 0
+  uuid: 0acf52fd-0b17-461a-b841-f71b60542f42
+  sections:
+    -
+      layout_id: layout_onecol
+      layout_settings:
+        label: ''
+        context_mapping: {  }
+      components:
+        9b3acafb-bd27-41b1-af5b-5da0e70e6279:
+          uuid: 9b3acafb-bd27-41b1-af5b-5da0e70e6279
+          region: content
+          configuration:
+            id: 'quicktabs_block:calendario_agendar'
+            label: 'QuickTabs - Calendario / Agendar'
+            label_display: '0'
+            provider: quicktabs
+            context_mapping: {  }
+          weight: 0
+          additional:
+            layout_builder_styles_style:
+              separacion_superior_mt_5: 0
+      third_party_settings: {  }
+page: mi_calendario
+selection_criteria: {  }
+selection_logic: and
+static_context: {  }

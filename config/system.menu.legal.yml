@@ -1,0 +1,8 @@
+uuid: 94d04fc6-8502-49fc-ad25-000bbf01cac4
+langcode: es
+status: true
+dependencies: {  }
+id: legal
+label: Legal
+description: ''
+locked: false

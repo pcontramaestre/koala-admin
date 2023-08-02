@@ -1,0 +1,34 @@
+uuid: 8c06bf10-61cf-4a36-9bd2-706c4db332a3
+langcode: es
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:f3c95a62-eabf-43fc-9b2a-3ce974918c95'
+  module:
+    - block_content
+    - user
+  theme:
+    - koala
+id: correo
+theme: koala
+region: footer_second
+weight: -10
+provider: null
+plugin: 'block_content:f3c95a62-eabf-43fc-9b2a-3ce974918c95'
+settings:
+  id: 'block_content:f3c95a62-eabf-43fc-9b2a-3ce974918c95'
+  label: 'Escríbenos a'
+  label_display: visible
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  user_role:
+    id: user_role
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+    roles:
+      profesor: profesor
+      padre: padre
