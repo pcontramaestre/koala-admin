@@ -85,8 +85,8 @@ h2 {
     }
 
     #CollapsingNavbar {
-      display    : flex;
-      align-items: center;
+      display         : flex;
+      align-items     : center;
       background-color: white;
 
       .offcanvas-body {
@@ -104,6 +104,7 @@ h2 {
         align-items   : center;
         padding       : 0px;
         gap           : 8px;
+
         .nav-item {
           .nav-link {
             color      : black !important;
@@ -147,6 +148,7 @@ h2 {
             border-radius   : 20px;
           }
         }
+
         .nav-item:nth-child(6) {
           margin-left: 1rem;
 
@@ -640,4 +642,19 @@ body.mobile {
     justify-content: space-evenly;
     align-items    : center;
   }
+}
+
+.js-form-submit.form-submit::before {
+  width           : unset;
+  height          : unset;
+  background-image: unset;
+}
+
+.radio.form-switch .form-check-input {
+  width: 1em;
+}
+
+.radio .form-check-input:checked[type=radio]:after {
+  width : 0.9rem;
+  height: 0.9rem;
 }
