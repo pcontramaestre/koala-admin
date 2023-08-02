@@ -1,29 +1,29 @@
 .node-agendar-clases {
-  background-image : url('../images/background.jpg');
+  background-image: url("../images/background.jpg");
   background-repeat: no-repeat;
-  background-size  : cover;
+  background-size: cover;
   #main-wrapper {
     .main-content {
       .section {
         #block-koala-content {
           .content {
             form {
-              width     : 70%;
-              margin    : 0 auto;
+              width: 70%;
+              margin: 0 auto;
               margin-top: 3rem;
 
               .formulario {
                 .title-1 {
-                  text-align : center;
-                  font-size  : 1.2rem;
+                  text-align: center;
+                  font-size: 1.2rem;
                   font-weight: 700;
                 }
 
                 .title-2 {
-                  text-align : center;
-                  font-size  : 1.6rem;
+                  text-align: center;
+                  font-size: 1.6rem;
                   font-weight: 700;
-                  margin-top : 3rem;
+                  margin-top: 3rem;
                 }
 
                 .layout__region--content {
@@ -36,36 +36,36 @@
                       }
 
                       input {
-                        width        : 100%;
+                        width: 100%;
                         border-radius: 25px;
-                        border       : 2px solid #BECACA;
-                        height       : 2.8rem;
-                        color        : #BECACA;
+                        border: 2px solid #becaca;
+                        height: 2.8rem;
+                        color: #becaca;
                       }
                     }
                   }
 
                   .field--name-field-nombre-del-nino-a {
-                    width  : 50%;
-                    float  : left;
+                    width: 50%;
+                    float: left;
                     padding: 1rem 0.5rem 0rem 0rem;
                   }
 
                   .field--name-field-fecha-nac {
-                    width  : 50%;
-                    float  : left;
+                    width: 50%;
+                    float: left;
                     padding: 1rem 0rem 0rem 0.5rem;
                   }
 
                   .field--name-field-fecha-de-la-cita {
-                    width  : 50%;
-                    float  : left;
+                    width: 50%;
+                    float: left;
                     padding: 0rem 0.5rem 0rem 0rem;
                   }
 
                   .field--name-field-hora-clase {
-                    width  : 50%;
-                    float  : left;
+                    width: 50%;
+                    float: left;
                     padding: 0rem 0rem 0rem 0.5rem;
 
                     .js-form-item {
@@ -74,35 +74,39 @@
                       }
 
                       input {
-                        width        : 100%;
+                        width: 100%;
                         border-radius: 25px;
-                        border       : 2px solid #BECACA;
-                        height       : 2.8rem;
-                        color        : #BECACA;
+                        border: 2px solid #becaca;
+                        height: 2.8rem;
+                        color: #becaca;
                       }
                     }
                   }
 
                   .field--type-boolean {
-                    float           : left;
-                    width           : 80%;
+                    float: left;
+                    width: 80%;
                     margin-left: 10%;
-                    border-radius   : 13px;
-                    height          : 3.4rem;
+                    border-radius: 13px;
+                    height: 3.4rem;
                     background-color: white;
 
                     .js-form-item {
                       margin: 0.9rem 1rem 0rem 1rem;
+                      label {
+                        color: black;
+                        font-weight: 500;
+                      }
                     }
                   }
 
-                  .field--name-field-hora-cita-oculta{
-                    .js-form-item{
-                      label{
+                  .field--name-field-hora-cita-oculta {
+                    .js-form-item {
+                      label {
                         display: none;
                         position: absolute;
                       }
-                      input{
+                      input {
                         display: none;
                       }
                     }
@@ -122,11 +126,11 @@
 
                           .js-form-item {
                             display: flex;
-                            margin : 0rem 1.1rem;
+                            margin: 0rem 1.1rem;
 
                             label {
                               margin-left: 0.5rem;
-                              margin-top : 0.15rem;
+                              margin-top: 0.15rem;
                               font-weight: 600;
                             }
                           }
@@ -140,24 +144,24 @@
 
             .form-actions {
               button {
-                background-color: white;
-                border          : 2px solid $GreyK200;
-                padding         : 0rem 1rem;
-                font-size       : 1.2rem;
-                font-weight     : 700;
-                height          : 3rem;
-                display         : flex;
-                justify-content : center;
-                align-items     : center;
-                flex-direction  : column;
-                margin          : 0 auto;
-                color           : $GreyK200;
-                border-radius   : 25px;
-                margin-bottom   : 3rem;
+                background-color: #2FF7EE;
+                border: 2px solid #297E88;
+                padding: 0rem 1rem;
+                font-size: 1.2rem;
+                font-weight: 700;
+                height: 3rem;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                margin: 0 auto;
+                color: black;
+                border-radius: 25px;
+                margin-bottom: 3rem;
 
                 &:hover {
                   background-color: $TurqK500;
-                  color           : white;
+                  color: white;
                 }
               }
             }
@@ -170,35 +174,35 @@
 
 .form-switch .form-check-input {
   background-color: $RedK100;
-  border-color    : $RedK100;
+  border-color: $RedK100;
 }
 
 .form-switch .form-check-input:checked {
   background-color: $RedK500;
-  border-color    : $RedK500;
+  border-color: $RedK500;
 }
 
-.form-check-input:checked[type=radio] {
+.form-check-input:checked[type="radio"] {
   background-color: $RedK100 !important;
-  border-color    : $RedK500 !important;
+  border-color: $RedK500 !important;
   background-image: none !important;
 }
 
-.form-check-input:checked[type=radio]:after {
-  content         : '';
-  width           : 0.5rem;
-  height          : 0.5rem;
+.form-check-input:checked[type="radio"]:after {
+  content: "";
+  width: 0.5rem;
+  height: 0.5rem;
   background-color: $RedK500;
-  position        : absolute;
-  border-radius   : 10px;
+  position: absolute;
+  border-radius: 10px;
 }
 
 .path-node .form-radio.form-control.form-check-input {
-  display        : flex;
-  align-items    : center;
+  display: flex;
+  align-items: center;
   justify-content: center;
-  width          : 18px;
-  height         : 18px;
+  width: 18px;
+  height: 18px;
 }
 
 @media only screen and (max-width: 700px) and (min-width: 340px) {
@@ -209,8 +213,8 @@
           #block-koala-content {
             .content {
               form {
-                width     : 90%;
-                margin    : 0 auto;
+                width: 90%;
+                margin: 0 auto;
                 margin-top: 3rem;
 
                 .formulario {
@@ -224,27 +228,27 @@
 
                   .layout__region--content {
                     .field--name-field-nombre-del-nino-a {
-                      width        : 100%;
-                      padding      : 0rem;
+                      width: 100%;
+                      padding: 0rem;
                       margin-bottom: 0rem !important;
                       // order        : 1;
                     }
 
                     .field--name-field-fecha-nac {
-                      width        : 100%;
-                      padding      : 0rem;
+                      width: 100%;
+                      padding: 0rem;
                       margin-bottom: 0rem !important;
                       // order        : 3;
                     }
 
                     .field--name-field-fecha-de-la-cita {
-                      width        : 50%;
+                      width: 50%;
                       margin-bottom: 0rem !important;
                       // order        : 4;
                     }
 
                     .field--name-field-hora-clase {
-                      width        : 50%;
+                      width: 50%;
                       margin-bottom: 0rem !important;
                       // order        : 5;
                     }
