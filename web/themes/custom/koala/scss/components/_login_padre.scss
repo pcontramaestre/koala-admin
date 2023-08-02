@@ -1,5 +1,7 @@
 .path-login-padre {
   background-image: url("/themes/custom/koala/images/background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
   a {
     text-decoration: unset !important;
   }
@@ -22,7 +24,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 100vh;
+    min-height: 100vh;
     .view-header {
       text-align: center;
       .text-center {
