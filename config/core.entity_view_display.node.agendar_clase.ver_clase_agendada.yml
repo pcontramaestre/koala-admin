@@ -1,0 +1,166 @@
+uuid: 007c5e3f-ddf6-4ed4-a93d-92ce36f0fcec
+langcode: es
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.ver_clase_agendada
+    - field.field.node.agendar_clase.field_alumno_relacionado
+    - field.field.node.agendar_clase.field_asignar_profesor
+    - field.field.node.agendar_clase.field_fecha_cita_oculta
+    - field.field.node.agendar_clase.field_fecha_de_la_cita
+    - field.field.node.agendar_clase.field_fecha_nac
+    - field.field.node.agendar_clase.field_he_leido_y_estoy_de_acuerd
+    - field.field.node.agendar_clase.field_hora_cita_oculta
+    - field.field.node.agendar_clase.field_hora_clase
+    - field.field.node.agendar_clase.field_id_texto_alumno
+    - field.field.node.agendar_clase.field_nombre_del_nino_a
+    - field.field.node.agendar_clase.field_otra_hora
+    - field.field.node.agendar_clase.field_sexo_n
+    - node.type.agendar_clase
+  module:
+    - datetime
+    - layout_builder
+    - options
+    - time_field
+    - time_picker
+    - timefield
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: node.agendar_clase.ver_clase_agendada
+targetEntityType: node
+bundle: agendar_clase
+mode: ver_clase_agendada
+content:
+  computed_fecha_nueva:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 109
+    region: content
+  computed_prueba:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 113
+    region: content
+  content_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: -20
+    region: content
+  field_alumno_relacionado:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 115
+    region: content
+  field_asignar_profesor:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 112
+    region: content
+  field_fecha_cita_oculta:
+    type: datetime_default
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: medium
+    third_party_settings: {  }
+    weight: 110
+    region: content
+  field_fecha_de_la_cita:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_fecha_nac:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  field_he_leido_y_estoy_de_acuerd:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 108
+    region: content
+  field_hora_cita_oculta:
+    type: time_formatter
+    label: above
+    settings:
+      time_format: 'h:i a'
+    third_party_settings: {  }
+    weight: 111
+    region: content
+  field_hora_clase:
+    type: timefield_default_formatter
+    label: above
+    settings:
+      display_format:
+        hour: g
+        minute: i
+        separator: ':'
+        period: a
+        periodSeparator: ''
+    third_party_settings: {  }
+    weight: 106
+    region: content
+  field_id_texto_alumno:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 116
+    region: content
+  field_nombre_del_nino_a:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_otra_hora:
+    type: time_picker_formatter
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 114
+    region: content
+  field_sexo_n:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 105
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  langcode: true
