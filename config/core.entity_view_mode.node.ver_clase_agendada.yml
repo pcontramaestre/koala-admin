@@ -1,0 +1,10 @@
+uuid: fd97a3b8-87aa-4ee3-809e-0f33dedc0264
+langcode: es
+status: true
+dependencies:
+  module:
+    - node
+id: node.ver_clase_agendada
+label: 'Ver clase agendada'
+targetEntityType: node
+cache: true

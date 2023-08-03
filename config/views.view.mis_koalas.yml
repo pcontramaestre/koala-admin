@@ -3,6 +3,7 @@ langcode: es
 status: true
 dependencies:
   config:
+    - field.storage.node.field_asignar_profesor
     - field.storage.node.field_fecha_cita_oculta
     - field.storage.node.field_fecha_nacimiento
     - field.storage.node.field_fechas_laborables
@@ -382,6 +383,11 @@ display:
           entity_field: uid
           plugin_id: standard
           required: true
+        field_asignar_profesor:
+          id: field_asignar_profesor
+          table: node__field_asignar_profesor
+          field: field_asignar_profesor
+          plugin_id: standard
       css_class: ''
       use_ajax: true
       header: {  }
@@ -3142,7 +3148,7 @@ display:
           exclude: false
           alter:
             alter_text: false
-            text: ''
+            text: '<a href="/node/{{ arguments.uid }}?plantilla=1">{{ title__value }}</a>'
             make_link: false
             path: ''
             absolute: false
@@ -3182,7 +3188,7 @@ display:
           click_sort_column: value
           type: string
           settings:
-            link_to_entity: true
+            link_to_entity: false
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -3320,6 +3326,250 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
+        field_asignar_profesor:
+          id: field_asignar_profesor
+          table: node__field_asignar_profesor
+          field: field_asignar_profesor
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: formatter_suite_general_entity_reference
+          settings:
+            entityReferenceStyle: custom
+            titleCustomText: '[user:mail]'
+            classes: ''
+            showLink: 0
+            openLinkIn: _self
+            linkTopic: any
+          group_column: target_id
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        field_fecha_cita_oculta_1:
+          id: field_fecha_cita_oculta_1
+          table: node__field_fecha_cita_oculta
+          field: field_fecha_cita_oculta
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: datetime_default
+          settings:
+            timezone_override: ''
+            format_type: medium
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        field_nombres_y_apellidos_del_pr:
+          id: field_nombres_y_apellidos_del_pr
+          table: user__field_nombres_y_apellidos_del_pr
+          field: field_nombres_y_apellidos_del_pr
+          relationship: field_asignar_profesor
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: false
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        nothing:
+          id: nothing
+          table: views
+          field: nothing
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: custom
+          label: ''
+          exclude: false
+          alter:
+            alter_text: true
+            text: "<div class=\"datos-clase\">\r\n  <div class=\"imagen\">\r\n    <img src=\"/themes/custom/koala/images/fondo-calendario-horario.png\" class=\"mw-100\">\r\n  </div>\r\n  <div class=\"alumno text-center\">\r\n    <p>Alumno</p>\r\n    <div class=\"datos-alumno\">\r\n      {{ field_nombre_del_nino_a }} \r\n    </div>\r\n  </div>\r\n  <div class=\"profesor text-center\">\r\n    <p>Profesor</p>\r\n   {{ field_nombres_y_apellidos_del_pr }} \r\n  </div>\r\n  <div class=\"fecha text-center\">\r\n    <p>Fecha</p>\r\n    <div class=\"fecha\">{{ field_fecha_cita_oculta_1 }}</div>\r\n  </div>\r\n  <div class=\"boton\"><a href=\"\">Entrar a clase</a></div>\r\n  <div class=\"editar-horario\">Editar horario</div>\r\n</div>"
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: false
       filters:
         status:
           id: status
@@ -3402,7 +3652,7 @@ display:
           updateConfirm: 0
           defaultLanguage: es-us
           languageSelector: 0
-          dialogWindow: 0
+          dialogWindow: 1
           openEntityInNewTab: 1
           dialogModal: 0
           createEventLink: 0
@@ -3415,7 +3665,11 @@ display:
             agendar_clase_no_gratis: '#3a87ad'
             article: '#3a87ad'
             crear_hijos: '#3a87ad'
+            event: '#3a87ad'
             horarios_de_trabajo: '#3a87ad'
+            horarios_profesores: '#3a87ad'
+            mundos: '#3a87ad'
+            mundos_detalle: '#3a87ad'
             page: '#3a87ad'
             profesores: '#3a87ad'
           rrule: ''
@@ -3435,10 +3689,32 @@ display:
         title: false
         style: false
         row: false
+        relationships: false
         fields: false
         filters: false
         filter_groups: false
         footer: false
+      relationships:
+        uid:
+          id: uid
+          table: node_field_data
+          field: uid
+          relationship: none
+          group_type: group
+          admin_label: Usuario
+          entity_type: node
+          entity_field: uid
+          plugin_id: standard
+          required: true
+        field_asignar_profesor:
+          id: field_asignar_profesor
+          table: node__field_asignar_profesor
+          field: field_asignar_profesor
+          relationship: none
+          group_type: group
+          admin_label: 'field_asignar_profesor: Usuario'
+          plugin_id: standard
+          required: false
       display_description: ''
       footer: {  }
       display_extenders: {  }
@@ -3453,8 +3729,10 @@ display:
         - 'user.node_grants:view'
         - user.roles
       tags:
+        - 'config:field.storage.node.field_asignar_profesor'
         - 'config:field.storage.node.field_fecha_cita_oculta'
         - 'config:field.storage.node.field_nombre_del_nino_a'
+        - 'config:field.storage.user.field_nombres_y_apellidos_del_pr'
   block_6:
     id: block_6
     display_title: 'Mis Koalas - Agendar Clase'

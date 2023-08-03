@@ -94,4 +94,61 @@
       }
     }
   }
+
+  //POPUP ALUMNOS
+  div[id^="windowManager_"] {
+    //width           : 100% !important;
+    //height          : 100% !important;
+    //background-color: #000000b0 !important;
+
+    >span[id^="htmlElement_"] {
+      position      : absolute;
+      //left        : 42% !important;
+      //top         : 20% !important;
+      width         : 300px !important;
+      height        : max-content !important;
+      border-color  : rgb(1 1 1 / 0%) !important;
+
+      div.jsframe-titlebar-focused {
+        background: #FBAF00 !important;
+        color     : black !important;
+        width     : 300px !important;
+        height    : 30px !important;
+
+        >span {
+          left      : 4px !important;
+          top       : 2px !important;
+          display   : block !important;
+          max-width : 260px !important;
+          word-wrap : break-word !important;
+          word-break: break-all !important;
+          font-size : 1rem !important;
+        }
+      }
+
+      div[id^="window_"]:not(.jsframe-titlebar-focused) {
+        left            : 0px !important;
+        top             : 30px !important;
+        width           : 300px !important;
+        height          : 500px !important;
+        background-color: #E6F1F1 !important;
+
+        >div {
+          background-color: #E6F1F1 !important;
+        }
+
+        >div:nth-of-type(1) {
+          left            : 278px !important;
+          background-color: transparent !important;
+          top             : -22px !important;
+
+          >span {
+            font-size: 19px !important;
+            color    : black !important;
+          }
+        }
+
+      }
+    }
+  }
 }

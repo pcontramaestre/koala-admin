@@ -120,13 +120,19 @@
 
 
 	{# <div class="botones-edicion">
-									    <a href="{{ path('entity.node.edit_form', {'node': node.id}) }}/agendar_clases" class="boton-editar">Editar clase</a>
-									    <a href="{{ path('entity.node.delete_form', {'node': node.id}) }}" class="boton-eliminar">Eliminar clase gratuita</a>
-									  </div> #}
+			<a href="{{ path('entity.node.edit_form', {'node': node.id}) }}/agendar_clases" class="boton-editar">Editar clase</a>
+			<a href="{{ path('entity.node.delete_form', {'node': node.id}) }}" class="boton-eliminar">Eliminar clase gratuita</a>
+		</div> #}
+
+	<div class="ir-a-cuenta">
+		<a href="/node/add/agendar_clase/agendar_clases" class="boton-ir-a-cuenta">Agregar otro niño +</a>
+	</div>
+
 
 	<div class="ir-a-cuenta">
 		<a href="/padres" class="boton-ir-a-cuenta">Ir a mi cuenta</a>
 	</div>
+
 
 	{# {{ fecha|date("Ymd",'utc') }} #}
 

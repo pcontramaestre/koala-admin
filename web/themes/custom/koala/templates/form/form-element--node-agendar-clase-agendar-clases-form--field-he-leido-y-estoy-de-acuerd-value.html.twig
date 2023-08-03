@@ -104,7 +104,7 @@
 		{% endif %}
 		{% if label_display in ['before', 'invisible'] %}
 			<label {{ label_attributes.addClass(labelclass).setAttribute('for', input_attributes.id) }}>
-				{{ input_title | raw }}&nbsp;&nbsp;<a href="#" target="_blank">Política de privacidad</a>&nbsp;&nbsp;<a href="#" target="_blank">Términos y condiciones</a>
+				{{ input_title | raw }}&nbsp;&nbsp;<a href="https://koalaotro.icreativadigital.com/politicas" target="_blank">Política de privacidad</a>&nbsp;&nbsp;<a href="https://koalaotro.icreativadigital.com/terminos" target="_blank">Términos y condiciones</a>
 			</label>
 		{% endif %}
 		{% if checkbox_style == 'form-button' %}
@@ -114,7 +114,7 @@
 				{% endif %}
 				{% if label_display == 'after' %}
 					<label {{ label_attributes.addClass(labelclass).setAttribute('for', input_attributes.id) }}>
-						{{ input_title | raw }}&nbsp;&nbsp;<a href="#" target="_blank">Política de privacidad</a>&nbsp;&nbsp;<a href="#" target="_blank">Términos y condiciones</a>
+						{{ input_title | raw }}&nbsp;&nbsp;<a href="https://koalaotro.icreativadigital.com/politicas" target="_blank">Política de privacidad</a>&nbsp;&nbsp;<a href="https://koalaotro.icreativadigital.com/terminos" target="_blank">Términos y condiciones</a>
 					</label>
 				{% endif %}
 				{% if suffix is not empty %}

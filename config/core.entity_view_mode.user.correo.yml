@@ -1,0 +1,10 @@
+uuid: 775a76f3-5e34-491f-bc3a-c47c4f49fafd
+langcode: es
+status: true
+dependencies:
+  module:
+    - user
+id: user.correo
+label: 'Correo electrónico'
+targetEntityType: user
+cache: true
