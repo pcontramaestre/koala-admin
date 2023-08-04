@@ -3,6 +3,7 @@
     .content {
       .view-display-id-block_proximas_clases {
         .view-content {
+          margin-right: -6px;
           .views-row {
             .views-field {
               .clases-proximas {
@@ -15,6 +16,53 @@
               }
             }
           }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 767px) and (min-width: 300px) {
+  .block-views-blockclases-gratuitas-block-proximas-clases {
+    .content {
+      .view-clases-gratuitas{
+        .view-content {
+          margin-right: -7px!important;
+          .views-row {
+            .views-field {
+              .clases-proximas {
+                .dato-del-nino {
+                  border-radius: 32px!important;
+                  height: 56px;
+                  .imagen {
+                    max-width: 17%!important;
+                    img {
+                      height: 40px!important;
+                      width: 40px!important;
+                    }
+                  }
+                  .datos{
+                    width: 76%;
+                    .fecha-nac{
+                      display: none;
+                    }
+                  }
+                }
+                .datos-clase {
+                  padding: 0px!important;
+                  .titulo{
+                    margin: 1rem 0rem 0.5rem 0rem;
+                  }
+                  .datos-fecha{
+                    margin-left: -6px;
+                    margin-right: -6px;
+                  }
+                }
+              }
+            }
+          }
+        }
+        .view-footer{
+          margin-bottom: 1.5rem;
         }
       }
     }
@@ -37,13 +85,13 @@
 
     .view-display-id-block_proximas_clases {
       .view-content::-webkit-scrollbar {
-            width: 6px;
-            color: black;
-          }
+        width: 6px;
+        color: black;
+      }
       .view-content {
         margin: 0;
         overflow-y: scroll;
-        height: 505px;
+        max-height: 505px;
 
         .views-row:nth-child(2n) {
           background: $AlgaK100;

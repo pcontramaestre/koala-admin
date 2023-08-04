@@ -39,7 +39,7 @@
   }
 }
 
-@media only screen and (max-width: 800px) and (min-width: 374px) {
+@media only screen and (max-width: 800px) and (min-width: 340px) {
   .paragraph--type--bp-columns {
     width: 100%;
 
@@ -50,7 +50,7 @@
         border-radius   : 10px;
         width           : 2.5rem;
         background-color: $AguaK500;
-        left            : 13%;        
+        left            : 13%;
         left: 9%;
         position: absolute;
         top: 94%;

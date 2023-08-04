@@ -1,5 +1,8 @@
 .path-user.rol-authenticated.rol-padre {
   background-image: url("/themes/custom/koala/images/Group463.png");
+  a {
+    text-decoration: unset !important;
+  }
 }
 
 #block-koala-content {
@@ -241,6 +244,7 @@
                 color: black;
                 padding-left: 0.7rem;
                 font-size: 16px;
+                padding-right: 1rem;
                 span {
                   width: 92%;
                 }
@@ -405,7 +409,45 @@
         font-weight    : 700;
         display        : flex;
         justify-content: center;
-        padding        : 3rem 0rem 1.5rem 0rem;
+        padding        : 2rem 0rem 1rem 0rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) and (min-width: 300px) {
+  #block-koala-content {
+    .content {
+      .user-editar-perfil-padre-form {
+        .layout--twocol-section {
+          display: block!important;
+          width: 100%!important;
+          .layout__region--first{
+            padding: 0rem!important;
+          }
+          .layout__region--second {
+            div:nth-child(5) {
+              margin-top: 0rem!important;
+              width: auto!important;
+              position: initial!important;
+              height: 92px!important;
+              padding: 5px!important;
+              p{
+                line-height: 1.5rem;
+              }
+              &:before{
+                margin-bottom: 2rem;
+              }
+            }
+          }
+        }
+        .form-actions{
+          width: 100%!important;
+          margin: 0!important;
+          button{
+            width: 100%!important;
+          }
+        }
       }
     }
   }

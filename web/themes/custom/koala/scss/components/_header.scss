@@ -1,4 +1,4 @@
-body #main-wrapper{
+body #main-wrapper {
   min-height: 95vh;
 }
 // header profesor
@@ -12,22 +12,22 @@ body #main-wrapper{
 
           .nav-item {
             .nav-link {
-              color      : black !important;
-              font-size  : 1rem;
+              color: black !important;
+              font-size: 1rem;
               font-weight: 700;
-              padding    : 0 0.5rem;
-              position   : relative;
-              transition : all 0.3s ease-in-out;
+              padding: 0 0.5rem;
+              position: relative;
+              transition: all 0.3s ease-in-out;
 
               &:hover {
-                background-color: #C6F5F2;
-                border-radius   : 20px;
+                background-color: #c6f5f2;
+                border-radius: 20px;
               }
             }
 
             .nav-link.active {
-              background-color: #C6F5F2;
-              border-radius   : 20px;
+              background-color: #c6f5f2;
+              border-radius: 20px;
             }
           }
         }
@@ -38,25 +38,24 @@ body #main-wrapper{
           gap: 30px;
 
           .nav-link {
-            color      : black !important;
-            font-size  : 1rem;
+            color: black !important;
+            font-size: 1rem;
             font-weight: 700;
-            padding    : 0 0.5rem;
-            position   : relative;
-            transition : all 0.3s ease-in-out;
+            padding: 0 0.5rem;
+            position: relative;
+            transition: all 0.3s ease-in-out;
 
             &:hover {
-              background-color: #C6F5F2;
-              border-radius   : 20px;
+              background-color: #c6f5f2;
+              border-radius: 20px;
             }
           }
 
           .nav-link.active {
-            background-color: #C6F5F2;
-            border-radius   : 20px;
+            background-color: #c6f5f2;
+            border-radius: 20px;
           }
         }
-
       }
     }
   }
@@ -68,50 +67,49 @@ body #main-wrapper{
     padding: 0rem 4rem;
     #CollapsingNavbar {
       align-items: initial;
-      .offcanvas-body{
+      .offcanvas-body {
         justify-content: space-between;
-        #block-padres{
+        #block-padres {
+          display: flex;
+          align-items: center;
+          margin-left: 2.5rem;
           .nav {
             gap: 50px;
 
             .nav-item {
               .nav-link {
-                color      : black !important;
-                font-size  : 1rem;
+                color: black !important;
+                font-size: 1rem;
                 font-weight: 700;
-                padding    : 0 0.5rem;
-                position   : relative;
-                transition : all 0.3s ease-in-out;
+                padding: 0 0.5rem;
+                position: relative;
+                transition: all 0.3s ease-in-out;
 
                 &:hover {
-                  background-color: #C6F5F2;
-                  border-radius   : 20px;
+                  background-color: #c6f5f2;
+                  border-radius: 20px;
                 }
               }
 
               .nav-link.active {
-                background-color: #C6F5F2;
-                border-radius   : 20px;
+                background-color: #c6f5f2;
+                border-radius: 20px;
                 padding: 0rem 1.5rem;
-              }
-              &:nth-child(3){
-                order: 1;
-              }
-              &:nth-child(2){
-                order: 2;
-              }
-              &:nth-child(1){
-                order: 2;
               }
             }
           }
         }
-        #block-koala-account-menu{
-          .no-admin{
-            .nav-link{
+        #block-koala-account-menu {
+          display: flex;
+          align-items: center;
+          margin-right: 3rem;
+          min-width: 30%;
+          justify-content: end;
+          .no-admin {
+            .nav-link {
               font-size: 1rem;
               font-weight: 700;
-              color: $TurqK500!important;
+              color: $TurqK500 !important;
               text-decoration: underline;
             }
           }
@@ -120,9 +118,19 @@ body #main-wrapper{
     }
   }
 }
+@media (min-width: 300px) and (max-width: 800px) {
+  #header {
+    #navbar-main {
+      padding: 0rem 1rem;
+      .navbar-toggler {
+        padding-right: 0px;
+      }
+    }
+  }
+}
 @media (min-width: 1400px) {
-  body #main-wrapper #main{
-    max-width: 80%!important;
+  body #main-wrapper #main {
+    max-width: 80% !important;
   }
 }
 // media mayor a 1200px
@@ -132,10 +140,10 @@ body #main-wrapper{
       #page {
         header#header {
           position: fixed;
-          width   : 100vw;
-          top     : 0;
-          z-index : 10000;
-          left    : 0;
+          width: 100vw;
+          top: 0;
+          z-index: 10000;
+          left: 0;
         }
 
         #main-wrapper {
@@ -153,10 +161,10 @@ body #main-wrapper{
       #page {
         header#header {
           position: fixed;
-          width   : 100vw;
-          top     : 0;
-          z-index : 10000;
-          left    : 0;
+          width: 100vw;
+          top: 0;
+          z-index: 10000;
+          left: 0;
         }
 
         #main-wrapper {
@@ -168,16 +176,16 @@ body #main-wrapper{
 
   header#header {
     .probar-ahora.nav-link {
-      background   : #FFFFFF;
-      border       : 2px solid #297E88;
+      background: #ffffff;
+      border: 2px solid #297e88;
       border-radius: 28px;
-      color        : #297E88 !important;
-      padding      : 0.2rem 1rem 0.2rem 1rem;
-      margin-left  : 2rem;
+      color: #297e88 !important;
+      padding: 0.2rem 1rem 0.2rem 1rem;
+      margin-left: 2rem;
 
       &:hover {
-        background-color: #297E88;
-        color           : white !important;
+        background-color: #297e88;
+        color: white !important;
       }
     }
 
@@ -191,14 +199,14 @@ body #main-wrapper{
       .content {
         .view-redes-sociales-p {
           .view-content {
-            display    : flex;
-            flex-wrap  : nowrap;
+            display: flex;
+            flex-wrap: nowrap;
             margin-left: 0.1rem;
 
             .views-row {
-              width  : 15%;
+              width: 15%;
               padding: 0;
-              margin : 0;
+              margin: 0;
             }
           }
         }
@@ -213,30 +221,26 @@ body #main-wrapper{
       }
 
       ul {
-        list-style  : none;
+        list-style: none;
         padding-left: 0rem;
 
         li {
           margin-bottom: 2rem;
 
           a {
-            color          : black;
+            color: black;
             text-decoration: none;
-            font-size      : 1.1rem;
-            letter-spacing : 0.0625rem;
-            font-weight    : 800;
+            font-size: 1.1rem;
+            letter-spacing: 0.0625rem;
+            font-weight: 800;
           }
         }
       }
     }
-
   }
-
-
 }
 
 @media (min-width: 1200px) {
-
   header#header {
     #block-legal-2 {
       display: none;
