@@ -1,0 +1,18 @@
+uuid: 27825faa-3526-401b-a9d3-ef0af9d49904
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.agendar_clase
+id: node.agendar_clase.changed
+field_name: changed
+entity_type: node
+bundle: agendar_clase
+label: Modificado
+description: 'La fecha en que el nodo fue editado por última vez.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

@@ -258,6 +258,14 @@ function koala_preprocess_node(&$variables) {
 }
 
 /**
+ * Implements hook_preprocess_HOOK().
+ */
+function koala_boostrap_subtheme_preprocess_links(&$variables) {
+  $variables['current_language'] = \Drupal::languageManager()->getCurrentLanguage()->getName();
+}
+
+
+/**
  * Implements hook_preprocess_HOOK() for block templates.
  */
 function koala_preprocess_block(&$variables) {

@@ -1,0 +1,38 @@
+uuid: 6658d426-a50d-4181-b5fe-ff3ab603f1f1
+langcode: es
+status: true
+dependencies:
+  module:
+    - system
+id: datepicker_agendar_clase
+label: 'DatePicker Agendar Clase'
+code: |-
+  (function ($) {
+    $(document).ready(function () {
+      // Inicializar el Datepicker en el campo de entrada
+      $('#datepicker-seleccionar-fecha').datepicker({
+        inline: true, // Mostrar el Datepicker en línea
+        dateFormat: 'dd-mm-yy', // Formato de la fecha
+        changeMonth: true, //Cambiar mes
+        defaultDate: "+1D",
+        minDate: "+1D",
+        maxDate: "+1M +10D",
+        onSelect: function (dateText) {
+          // Actualizar el valor del campo de entrada cuando se selecciona una fecha
+          $('#datepicker-input').val(dateText);
+        }
+      });
+    });
+  })(jQuery);
+noscript: ''
+noscriptRegion: {  }
+jquery: false
+header: false
+preprocess: true
+conditions:
+  request_path:
+    id: request_path
+    negate: false
+    pages: "/padres/mis-koalas/agendar_clase/*\r\n/padres/mis-koalas/agendar_clase/*/*"
+contexts: {  }
+conditions_require_all: true

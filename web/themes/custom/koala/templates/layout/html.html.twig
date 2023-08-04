@@ -29,6 +29,8 @@
 #}
 {% set lang = language.getId() %}
 {% set roles = user.getRoles() %}
+{% set language = current_language %}
+
 
 {%
   set body_classes = [
@@ -38,6 +40,7 @@
     db_offline ? 'db-offline',
     lang ? 'lang-' ~ lang,
     roles ? 'rol-' ~ roles|join(' rol-'),
+    language ? 'language-' ~ language,
   ]
 %}
 <!DOCTYPE html>
@@ -49,6 +52,7 @@
     <js-placeholder token="{{ placeholder_token|raw }}">
   </head>
   <body{{ attributes.addClass(body_classes) }}>
+
     <a href="#main-content" class="visually-hidden-focusable">
       {{ 'Skip to main content'|t }}
     </a>

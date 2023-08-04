@@ -1,0 +1,22 @@
+uuid: 876f246e-d30c-419d-9047-54acf57cad78
+langcode: es
+status: true
+dependencies:
+  config:
+    - media.type.avatares_profesores
+id: media.avatares_profesores.status
+field_name: status
+entity_type: media
+bundle: avatares_profesores
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: Activado
+  off_label: Desactivado
+field_type: boolean
