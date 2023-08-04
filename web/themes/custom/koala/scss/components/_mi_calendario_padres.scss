@@ -147,8 +147,8 @@
         top: -9px !important;
 
         > span {
-          left: 4px !important;
-          top: 2px !important;
+          left: 16px !important;
+          top: 16px !important;
           display: block !important;
           max-width: 260px !important;
           word-wrap: break-word !important;
@@ -184,8 +184,8 @@
               font-size: 20px;
               display: flex;
               align-items: center;
-              justify-content: center;
               margin: 0 auto;
+              padding: 1rem;
               a {
                 color: black;
                 text-decoration: none;
@@ -201,49 +201,49 @@
                 background-image: url("/themes/custom/koala/images/Alumno-info.jpg");
               }
             }
-            .profesor {
-              font-weight: 500;
-              color: black;
-              margin-top: 1rem;
-            }
-            .fecha.text-center {
-              font-weight: 500;
-              color: black;
-              .fecha {
-                font-size: 20px;
-                font-weight: 700;
-              }
-            }
-            .boton {
-              background-color: #2ff7ee;
-              border: 2px solid #297e88;
-              border-radius: 32px;
-              width: 260px;
-              height: 51px;
-              display: flex;
-              justify-content: center;
-              align-items: center;
-              margin: 0 auto;
-              margin-top: 1rem;
-              &:hover {
-                background-color: #297e88;
-                a {
-                  color: white;
-                }
-              }
-              a {
-                color: black;
-                text-decoration: none;
-                font-weight: 700;
-                font-size: 20px;
-              }
-            }
-            .editar-horario {
+          }
+          .profesor {
+            font-weight: 500;
+            color: black;
+            margin-top: 1rem;
+          }
+          .fecha.text-center {
+            font-weight: 500;
+            color: black;
+            .fecha {
+              font-size: 20px;
               font-weight: 700;
-              text-decoration: underline;
-              text-align: center;
-              margin-top: 1rem;
             }
+          }
+          .boton {
+            background-color: #2ff7ee;
+            border: 2px solid #297e88;
+            border-radius: 32px;
+            width: 260px;
+            height: 51px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto;
+            margin-top: 1rem;
+            &:hover {
+              background-color: #297e88;
+              a {
+                color: white;
+              }
+            }
+            a {
+              color: black;
+              text-decoration: none;
+              font-weight: 700;
+              font-size: 20px;
+            }
+          }
+          .editar-horario {
+            font-weight: 700;
+            text-decoration: underline;
+            text-align: center;
+            margin-top: 1rem;
           }
         }
       }
