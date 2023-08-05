@@ -17,6 +17,7 @@
       .subtitulo {
         font-size: 1rem;
         color    : black;
+        font-weight: 500;
       }
     }
 
@@ -36,6 +37,7 @@
               .categoria {
                 border       : 1px solid #BECACA;
                 border-radius: 16px;
+                width: 290px;
 
                 .imagen {
                   img {
@@ -65,7 +67,7 @@
                       top        : 50%;
                       left       : 93%;
                       transform  : translate(-50%, -50%);
-                      font-size  : 2.5rem;
+                      font-size  : 1.2rem;
                       font-weight: 600;
                       position   : absolute;
                       content    : "\F285";
@@ -74,7 +76,11 @@
 
                     .titulo {
                       font-weight: 700;
-                      font-size  : 1.5rem;
+                      font-size  : 24px;
+                    }
+                    .nro{
+                      font-weight: 500;
+                      color: black;
                     }
                   }
                 }
