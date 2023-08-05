@@ -1,33 +1,34 @@
 body #main-wrapper {
   min-height: 95vh;
 }
+
 // header profesor
 #header {
   #navbar-main {
     #CollapsingNavbar {
       #block-profesor {
         .nav {
-          gap: 30px;
+          gap        : 30px;
           margin-left: 2rem;
 
           .nav-item {
             .nav-link {
-              color: black !important;
-              font-size: 1rem;
+              color      : black !important;
+              font-size  : 1rem;
               font-weight: 700;
-              padding: 0 0.5rem;
-              position: relative;
-              transition: all 0.3s ease-in-out;
+              padding    : 0 0.5rem;
+              position   : relative;
+              transition : all 0.3s ease-in-out;
 
               &:hover {
                 background-color: #c6f5f2;
-                border-radius: 20px;
+                border-radius   : 20px;
               }
             }
 
             .nav-link.active {
               background-color: #c6f5f2;
-              border-radius: 20px;
+              border-radius   : 20px;
             }
           }
         }
@@ -38,35 +39,38 @@ body #main-wrapper {
           gap: 30px;
 
           .nav-link {
-            color: black !important;
-            font-size: 1rem;
+            color      : black !important;
+            font-size  : 1rem;
             font-weight: 700;
-            padding: 0 0.5rem;
-            position: relative;
-            transition: all 0.3s ease-in-out;
+            padding    : 0 0.5rem;
+            position   : relative;
+            transition : all 0.3s ease-in-out;
 
             &:hover {
               background-color: #c6f5f2;
-              border-radius: 20px;
+              border-radius   : 20px;
             }
           }
 
           .nav-link.active {
             background-color: #c6f5f2;
-            border-radius: 20px;
+            border-radius   : 20px;
           }
         }
       }
     }
   }
 }
+
 // header padres
 
 #header {
   #navbar-main {
-    padding: 0rem 4rem;
+    padding: 0rem 0rem;
+
     #CollapsingNavbar {
       align-items: initial;
+
       .offcanvas-body {
         justify-content: space-between;
         #block-dropdownlanguage {
@@ -83,47 +87,53 @@ body #main-wrapper {
             }
           }
         }
+
         #block-padres {
-          display: flex;
+          display    : flex;
           align-items: center;
-          margin-left: 2.5rem;
+          margin-left: 1.5rem;
+
           .nav {
             .nav-item {
               margin-right: 2.5rem;
               .nav-link {
-                color: black !important;
-                font-size: 1rem;
+                color      : black !important;
+                font-size  : 1rem;
                 font-weight: 700;
-                padding: 0 0.5rem;
-                position: relative;
-                transition: all 0.3s ease-in-out;
+                padding    : 0 0.5rem;
+                position   : relative;
+                transition : all 0.3s ease-in-out;
 
                 &:hover {
                   background-color: #c6f5f2;
-                  border-radius: 20px;
+                  border-radius   : 20px;
                 }
               }
 
               .nav-link.active {
                 background-color: #c6f5f2;
-                border-radius: 20px;
-                padding: 0rem 1.5rem;
+                border-radius   : 20px;
+                padding         : 0rem 1.5rem;
               }
             }
           }
         }
+
         #block-koala-account-menu {
-          display: flex;
-          align-items: center;
-          margin-right: 3rem;
-          min-width: 30%;
-          justify-content: end;
+          display              : flex;
+          align-items          : center;
+          // margin-right      : 3rem;
+          // min-width      : 30%;
+          justify-content      : end;
+
           .no-admin {
             .nav-link {
-              font-size: 1rem;
-              font-weight: 700;
-              color: $TurqK500 !important;
-              text-decoration: underline;
+              font-size      : 1rem;
+              font-weight    : 700;
+              color          : $TurqK500 !important;
+              &:before{
+                display: none;
+              }
             }
           }
         }
@@ -131,10 +141,12 @@ body #main-wrapper {
     }
   }
 }
+
 @media (min-width: 300px) and (max-width: 800px) {
   #header {
     #navbar-main {
       padding: 0rem 1rem;
+
       .navbar-toggler {
         padding-right: 0px;
       }
@@ -164,7 +176,7 @@ body #main-wrapper {
             justify-content: center !important;
             margin-right: 0rem !important;
             .no-admin {
-              gap: 0px;
+              // gap: 0px;
               .nav-link {
                 font-size: 20px;
               }
@@ -175,11 +187,7 @@ body #main-wrapper {
     }
   }
 }
-@media (min-width: 1400px) {
-  body #main-wrapper #main {
-    max-width: 80% !important;
-  }
-}
+
 // media mayor a 1200px
 @media (min-width: 1200px) {
   body {
@@ -187,10 +195,10 @@ body #main-wrapper {
       #page {
         header#header {
           position: fixed;
-          width: 100vw;
-          top: 0;
-          z-index: 10000;
-          left: 0;
+          width   : 100vw;
+          top     : 0;
+          z-index : 10000;
+          left    : 0;
         }
 
         #main-wrapper {
@@ -208,10 +216,10 @@ body #main-wrapper {
       #page {
         header#header {
           position: fixed;
-          width: 100vw;
-          top: 0;
-          z-index: 10000;
-          left: 0;
+          width   : 100vw;
+          top     : 0;
+          z-index : 10000;
+          left    : 0;
         }
 
         #main-wrapper {
@@ -223,16 +231,16 @@ body #main-wrapper {
 
   header#header {
     .probar-ahora.nav-link {
-      background: #ffffff;
-      border: 2px solid #297e88;
+      background   : #ffffff;
+      border       : 2px solid #297e88;
       border-radius: 28px;
-      color: #297e88 !important;
-      padding: 0.2rem 1rem 0.2rem 1rem;
-      margin-left: 2rem;
+      color        : #297e88 !important;
+      padding      : 0.2rem 1rem 0.2rem 1rem;
+      margin-left  : 2rem;
 
       &:hover {
         background-color: #297e88;
-        color: white !important;
+        color           : white !important;
       }
     }
 
@@ -246,14 +254,14 @@ body #main-wrapper {
       .content {
         .view-redes-sociales-p {
           .view-content {
-            display: flex;
-            flex-wrap: nowrap;
+            display    : flex;
+            flex-wrap  : nowrap;
             margin-left: 0.1rem;
 
             .views-row {
-              width: 15%;
+              width  : 15%;
               padding: 0;
-              margin: 0;
+              margin : 0;
             }
           }
         }
@@ -268,18 +276,18 @@ body #main-wrapper {
       }
 
       ul {
-        list-style: none;
+        list-style  : none;
         padding-left: 0rem;
 
         li {
           margin-bottom: 2rem;
 
           a {
-            color: black;
+            color          : black;
             text-decoration: none;
-            font-size: 1.1rem;
-            letter-spacing: 0.0625rem;
-            font-weight: 800;
+            font-size      : 1.1rem;
+            letter-spacing : 0.0625rem;
+            font-weight    : 800;
           }
         }
       }
