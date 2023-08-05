@@ -1,0 +1,25 @@
+uuid: 1219851a-6a72-42a4-9bd4-86c192d60c71
+langcode: es
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:7101f525-7341-4627-94d2-b2e1254c04d5'
+  module:
+    - block_content
+  theme:
+    - koala
+id: footerbanderas
+theme: koala
+region: footer_bottom
+weight: 0
+provider: null
+plugin: 'block_content:7101f525-7341-4627-94d2-b2e1254c04d5'
+settings:
+  id: 'block_content:7101f525-7341-4627-94d2-b2e1254c04d5'
+  label: 'Footer Banderas'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }
