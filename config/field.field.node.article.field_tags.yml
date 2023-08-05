@@ -15,7 +15,7 @@ bundle: article
 label: Etiquetas
 description: 'Especifique una lista separada por comas. Por ejemplo: Amsterdam, Mexico City, "Cleveland, Ohio"'
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:

@@ -11,7 +11,7 @@ bundle: horarios_profesores
 label: 'Promocionado a la página principal'
 description: ''
 required: false
-translatable: false
+translatable: true
 default_value:
   -
     value: 0

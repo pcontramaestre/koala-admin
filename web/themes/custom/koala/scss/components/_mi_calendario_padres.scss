@@ -64,7 +64,7 @@
           grid-template-columns: 1fr 1fr 1fr;
           gap: 16px;
 
-          > div {
+          .views-field {
             background: #e6f1f1;
             width: 390px !important;
             border-radius: 32px;
@@ -92,17 +92,20 @@
 
               .nombre-datos {
                 margin-left: 1rem;
-                a {
-                  color: black;
-                  text-decoration: none;
-                  font-weight: 700;
-                  font-size: 20px;
-                  &:hover{
-                    text-decoration: underline;
+                width: 56%;
+                .nombre {
+                  a {
+                    color: black;
+                    text-decoration: none;
+                    font-weight: 700;
+                    font-size: 20px;
+                    &:hover {
+                      text-decoration: underline;
+                    }
                   }
                 }
               }
-              &:after{
+              &:after {
                 content: "\f054";
                 font-family: "Font Awesome 5 Free";
                 font-weight: 900;
@@ -113,7 +116,6 @@
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                margin-left: 4.5rem;
               }
             }
           }
@@ -185,7 +187,7 @@
               display: flex;
               align-items: center;
               margin: 0 auto;
-              padding: 1rem;
+              padding: 0.5rem;
               a {
                 color: black;
                 text-decoration: none;
@@ -196,8 +198,9 @@
               &:before {
                 content: "";
                 display: block;
-                width: 25px;
-                height: 20px;
+                width: 40px;
+                height: 40px;
+                margin-right: 1rem;
                 background-image: url("/themes/custom/koala/images/Alumno-info.jpg");
               }
             }
@@ -272,6 +275,35 @@
           > span {
             font-size: 19px !important;
             color: black !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 300px) and (max-width: 800px) {
+  .path-padres {
+    .view-mis-koalas.view-display-id-block_6 {
+      .view-header {
+        font-size: 20px;
+        .text-center {
+          margin-bottom: 2rem !important;
+        }
+      }
+      .view-content.row {
+        .views-view-grid {
+          .vistas-fila {
+            display: block !important;
+            .views-field {
+              width: 342px !important;
+              margin-bottom: 1rem;
+              .access-acudiente {
+                .nombre-datos {
+                  width: 52%;
+                }
+              }
+            }
           }
         }
       }

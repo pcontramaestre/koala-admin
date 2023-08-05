@@ -110,7 +110,6 @@
         "drupal/smart_date": "^4.0",
         "drupal/smart_date_calendar_kit": "^2.1",
         "drupal/smtp": "^1.2",
-        "drupal/structure_sync": "^2.0",
         "drupal/svg_image": "^3.0",
         "drupal/taxonomy_manager": "^2.0",
         "drupal/themable_forms": "^1.0",

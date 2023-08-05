@@ -292,7 +292,8 @@ h2 {
         }
 
         .secondary-action {
-          border-top-color: none;
+          border-top: none;
+          margin-top: 0.3rem;
         }
 
         .dropbutton-toggle {
@@ -394,6 +395,8 @@ h2 {
 
       .dropbutton-widget {
         width: 50%;
+        margin: 0 auto;
+        margin-top: 2rem;
         .dropdown-language-item {
           .dropbutton-action {
             font-size: 1.2rem;

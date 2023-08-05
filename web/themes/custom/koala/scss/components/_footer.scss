@@ -216,22 +216,43 @@ footer.site-footer {
     footer.site-footer {
       .container {
         .site-footer__top {
+          .region-footer-first {
+            #block-logofooterhijos {
+              margin-left: 0rem;
+            }
+          }
           .region-footer-second {
+            #block-correo {
+              .field--name-body {
+                .field--name-field-correo-electronico-footer {
+                  margin-left: 0rem;
+                }
+              }
+            }
             margin-top: 0rem;
+            .no-admin {
+              .nav-item {
+                a {
+                  padding-right: 0rem;
+                }
+              }
+            }
           }
           .region-footer-third {
             margin-top: 0rem;
-            margin: 0rem;
+            margin: 0rem -1rem;
             .block-dropdown-language {
               .dropbutton-multiple {
                 .dropbutton-widget {
-                  margin-bottom: 0rem!important;
+                  margin-bottom: 0rem !important;
                 }
               }
             }
             #block-siguenosen {
               .view-content.row {
                 margin-bottom: 2rem;
+                display: flex;
+                justify-content: center;
               }
             }
           }
