@@ -6,7 +6,7 @@
 
     img {
       max-width: 100px;
-      height: auto;
+      height   : auto;
     }
   }
 }
@@ -19,18 +19,19 @@ footer.site-footer {
     padding: 0;
 
     .site-footer__top {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
+      display        : flex;
+      flex-direction : row;
+      flex-wrap      : wrap;
       justify-content: space-between;
       width: 100%;
 
-      > section.region {
+
+      >section.region {
         max-width: 33%;
       }
 
       a {
-        color: black;
+        color          : black;
         text-decoration: none;
 
         &:hover {
@@ -39,9 +40,9 @@ footer.site-footer {
       }
 
       .menu {
-        list-style: none;
+        list-style : none;
         font-weight: 700;
-        font-size: 1.2rem;
+        font-size  : 1.2rem;
 
         .menu-item {
           margin-bottom: 1.7rem;
@@ -51,7 +52,7 @@ footer.site-footer {
       .block-config-pages {
         .field--name-field-texto-footer-derechos-rese {
           font-weight: 600;
-          margin: 1rem 0rem 1rem 2rem;
+          margin     : 1rem 0rem 1rem 2rem;
         }
       }
 
@@ -60,12 +61,12 @@ footer.site-footer {
       }
 
       .region-footer-second {
-        width: 27%;
+        width : 27%;
         height: 16rem;
 
         h2 {
-          font-size: 1rem;
-          font-weight: 600;
+          font-size    : 1rem;
+          font-weight  : 600;
           margin-bottom: 0.5rem;
         }
 
@@ -75,15 +76,15 @@ footer.site-footer {
 
         .config_pages--view-mode--correo- {
           .field--name-field-correo-electronico-footer {
-            font-weight: 700;
-            font-size: 1.2rem;
+            font-weight    : 700;
+            font-size      : 1.2rem;
             text-decoration: underline;
-            padding-left: 1rem;
+            padding-left   : 1rem;
 
             &:before {
-              content: url("EnvelopeOpen.png");
-              position: relative;
-              top: 6px;
+              content     : url("EnvelopeOpen.png");
+              position    : relative;
+              top         : 6px;
               margin-right: 0.5rem;
             }
           }
@@ -91,42 +92,48 @@ footer.site-footer {
       }
 
       .region-footer-third {
-        width: 15%;
+        width : 15%;
         height: auto;
 
         h2 {
-          font-size: 1rem;
-          font-weight: 600;
+          font-size    : 1rem;
+          font-weight  : 600;
           margin-bottom: 0.5rem;
         }
       }
     }
   }
 }
+
 .rol-padre {
   footer.site-footer {
     .container {
       .site-footer__top {
         .no-admin.nav {
-          list-style: none;
+          list-style : none;
           font-weight: 700;
-          font-size: 1.2rem;
-          display: block;
+          font-size  : 1.2rem;
+          display    : block;
+
           .nav-item {
             margin-bottom: 0.7rem;
           }
         }
+
         .region-footer-first {
           #block-logofooterhijos {
-            margin-top: 2rem;
+            margin-top : 2rem;
             margin-left: 1.1rem;
           }
+
           #block-padres-2 {
             margin-top: -5rem;
           }
         }
+
         .region-footer-second {
           margin-top: 5.2rem;
+
           .no-admin {
             .nav-item {
               a {
@@ -134,43 +141,48 @@ footer.site-footer {
               }
             }
           }
+
           #block-correo {
             .field--name-body {
               .field--name-field-correo-electronico-footer {
-                margin-left: 1rem;
-                font-weight: 700;
-                font-size: 1.2rem;
+                margin-left    : 1rem;
+                font-weight    : 700;
+                font-size      : 1.2rem;
                 text-decoration: underline;
+
                 &:before {
-                  content: url("EnvelopeOpen.png");
-                  position: relative;
-                  top: 6px;
+                  content     : url("EnvelopeOpen.png");
+                  position    : relative;
+                  top         : 6px;
                   margin-right: 0.5rem;
                 }
               }
             }
           }
         }
+
         .region-footer-third {
           margin: 5.2rem;
+
           #block-siguenosen {
             .view-content.row {
-              display: flex;
+              display       : flex;
               flex-direction: row;
-              flex-wrap: nowrap;
-              max-width: 100%;
+              flex-wrap     : nowrap;
+              max-width     : 100%;
 
               .views-row {
-                width: auto;
+                width        : auto;
                 padding-right: 0;
               }
             }
           }
+
           #block-hablemos {
             .content {
               .views-field-field-enlace-live-chat {
                 a.boton-chat {
-                  display: flex;
+                  display       : flex;
                   flex-direction: row;
                   flex-wrap: nowrap;
                   align-content: center;
@@ -188,20 +200,23 @@ footer.site-footer {
                     text-decoration: none;
                   }
 
+
                   //Pantallas menores a 1200px
                   @media (max-width: 1200px) {
-                    margin: 0 auto;
+                    margin       : 0 auto;
                     margin-bottom: 2rem;
                   }
 
-                  > div {
+                  >div {
                     padding-left: 1rem;
                   }
+
                   &:before {
                     content: "\f4ad";
                     font-family: "Font Awesome 5 Free";
                     font-weight: 100;
                     margin-right: 0.5rem;
+
                   }
                 }
               }
@@ -226,6 +241,7 @@ footer.site-footer {
               margin-top: 2rem;
             }
           }
+
           .region-footer-second {
             #block-correo {
               .field--name-body {
@@ -236,6 +252,7 @@ footer.site-footer {
             }
 
             margin-top: 0rem;
+
             .no-admin {
               .nav-item {
                 a {
@@ -244,9 +261,11 @@ footer.site-footer {
               }
             }
           }
+
           .region-footer-third {
             margin-top: 0rem;
-            margin: 0rem -1rem;
+            margin    : 0rem -1rem;
+
             .block-dropdown-language {
               .dropbutton-multiple {
                 .dropbutton-widget {
@@ -254,10 +273,11 @@ footer.site-footer {
                 }
               }
             }
+
             #block-siguenosen {
               .view-content.row {
-                margin-bottom: 2rem;
-                display: flex;
+                margin-bottom  : 2rem;
+                display        : flex;
                 justify-content: center;
               }
             }
@@ -272,7 +292,7 @@ footer.site-footer {
 
     .container {
       .site-footer__top {
-        > section.region {
+        >section.region {
           max-width: 100%;
         }
 
@@ -303,11 +323,11 @@ footer.site-footer {
 
           .block-dropdown-language {
             margin-top: 1.7rem;
-            padding: 0;
+            padding   : 0;
 
             .dropbutton-multiple {
               .dropbutton-widget {
-                margin: 0 auto;
+                margin       : 0 auto;
                 margin-bottom: 2rem;
               }
             }
@@ -319,7 +339,7 @@ footer.site-footer {
 
   .featured-bottom {
     .field--name-field-logo-footer {
-      text-align: center;
+      text-align : center;
       margin-left: 0rem;
     }
   }
@@ -336,13 +356,41 @@ footer.site-footer {
 
         section.region {
           max-width: 50%;
-          width: 50%;
+          width    : 50%;
 
           &.region-footer-third {
             text-align: right;
           }
         }
       }
+    }
+  }
+}
+
+.site-footer {
+  .container {
+    max-width: 1400px !important;
+    width    : 90%;
+  }
+}
+
+#block-footerbanderas {
+  .footer-banderas {
+    display  : flex;
+    flex-wrap: wrap;
+
+    .texto1 {
+      margin-right: 1rem;
+      padding-top : 3px;
+    }
+
+    .texto2 {
+      margin-right: 1rem;
+    }
+
+    .imagen {
+      max-width: 100%;
+      height   : auto;
     }
   }
 }

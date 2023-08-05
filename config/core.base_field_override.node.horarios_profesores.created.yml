@@ -1,0 +1,18 @@
+uuid: ed2e90b7-64a8-4fb0-a8ec-34ed087f371f
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.horarios_profesores
+id: node.horarios_profesores.created
+field_name: created
+entity_type: node
+bundle: horarios_profesores
+label: 'Fecha de autoría'
+description: 'La fecha en que el nodo fue creado.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created

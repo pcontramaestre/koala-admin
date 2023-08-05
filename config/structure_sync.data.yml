@@ -1,0 +1,840 @@
+blocks:
+  -
+    info: 'Logo Footer Hijos'
+    langcode: es
+    uuid: d2f77bf8-d75f-485b-8a60-e5e9b62a72de
+    bundle: basic
+    revision_id: null
+    rev_id_current: null
+    fields:
+      body:
+        -
+          value: '<img src="/themes/custom/koala/images/logo-footer.svg">'
+          summary: ''
+          format: full_html
+  -
+    info: 'Texto derecha footer hijos'
+    langcode: es
+    uuid: 67659baa-ba1c-455b-a768-5ecae7bf7696
+    bundle: basic
+    revision_id: null
+    rev_id_current: null
+    fields:
+      body:
+        -
+          value: '<p>© 2023 Hola Koala. All rights reserved.</p>'
+          summary: ''
+          format: full_html
+  -
+    info: Correo
+    langcode: es
+    uuid: f3c95a62-eabf-43fc-9b2a-3ce974918c95
+    bundle: basic
+    revision_id: null
+    rev_id_current: null
+    fields:
+      body:
+        -
+          value: '<div class="field field--name-field-correo-electronico-footer field--type-email field--label-hidden field__item">info@holakoala.com</div>'
+          summary: ''
+          format: full_html
+  -
+    info: Hablemos
+    langcode: es
+    uuid: 0dfd99d7-e682-4d86-95b3-4f582930a4f5
+    bundle: basic
+    revision_id: null
+    rev_id_current: null
+    fields:
+      body:
+        -
+          value: '<div class="views-field views-field-field-enlace-live-chat"><div class="field-content"><div><a class="boton-chat" href="#" target="_blank">Live chat</a></div></div></div>'
+          summary: ''
+          format: full_html
+  -
+    info: 'Síguenos en'
+    langcode: es
+    uuid: 62d6a463-8d32-41c1-9582-56a4e5e6687d
+    bundle: basic
+    revision_id: null
+    rev_id_current: null
+    fields:
+      body:
+        -
+          value: '<div class="view view-redes-sociales-p view-id-redes_sociales_p view-display-id-block_1 js-view-dom-id-2073b37e50662981abd31d0b9a8361249db58c2da7b4679a68a98d0397183793"><div class="view-content row"><div class="views-row"><div class="views-field views-field-field-icono-red-social"><div class="field-content"><a href="https://www.facebook.com" target="_blank"><img src="/themes/custom/koala/images/facebook.svg" alt="FACEBOOK" width="40" height="40" title="FACEBOOK" loading="lazy"></a></div></div></div><div class="views-row"><div class="views-field views-field-field-icono-red-social"><div class="field-content"><a href="https://www.tiktok.com" target="_blank"><img src="/themes/custom/koala/images/tiktok.svg" alt="tiktok" width="40" height="40" title="tiktok" loading="lazy"></a></div></div></div><div class="views-row"><div class="views-field views-field-field-icono-red-social"><div class="field-content"><a href="https://www.instagram.com" target="_blank"><img src="/themes/custom/koala/images/instagram.svg" alt="https://www.instagram.com" width="40" height="40" title="https://www.instagram.com" loading="lazy"></a></div></div></div><div class="views-row"><div class="views-field views-field-field-icono-red-social"><div class="field-content"><a href="https://www.linkedin.com" target="_blank"><img src="/themes/custom/koala/images/facebook.svg" alt="https://www.linkedin.com" width="40" height="40" title="https://www.linkedin.com" loading="lazy"></a></div></div></div></div></div>'
+          summary: ''
+          format: full_html
+  -
+    info: 'Zona de Pagos'
+    langcode: es
+    uuid: 01a40942-62a1-4cbe-b0b4-05e6737e6e46
+    bundle: basic
+    revision_id: null
+    rev_id_current: null
+    fields:
+      body:
+        -
+          value: '<p>&nbsp;</p><p><strong>Zona de Pagos</strong></p><p>&nbsp;</p>'
+          summary: ''
+          format: basic_html
+  -
+    info: 'Footer Banderas'
+    langcode: es
+    uuid: 7101f525-7341-4627-94d2-b2e1254c04d5
+    bundle: basic
+    revision_id: null
+    rev_id_current: null
+    fields:
+      body:
+        -
+          value: '<div class="footer-banderas"><div class="texto1">© 2023 Hola Koala. All rights reserved.</div><div class="texto2">Made with <span>♡</span> in</div><div class="imagen"><img src="/themes/custom/koala/images/banderas.png"></div></div>'
+          summary: ''
+          format: full_html
+menus:
+  -
+    menu_name: main
+    title: 'Quienes somos'
+    parent: null
+    uri: 'internal:#'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: -49
+    langcode: es
+    uuid: e5764c4d-3a47-47a4-bc81-687e7f302365
+  -
+    menu_name: main
+    title: Precios
+    parent: null
+    uri: 'internal:#'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: -48
+    langcode: es
+    uuid: ff4e9894-3a10-45da-ab1e-ed850fbebb15
+  -
+    menu_name: main
+    title: 'Quiero ser profesor'
+    parent: null
+    uri: 'internal:#'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: -47
+    langcode: es
+    uuid: 120de1de-e604-4ae7-a395-500a67dcf55d
+  -
+    menu_name: main
+    title: 'Para escuelas'
+    parent: null
+    uri: 'internal:#'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: -46
+    langcode: es
+    uuid: f2b942fd-9753-4dcc-b757-9982ff9c622e
+  -
+    menu_name: main
+    title: Pruebame
+    parent: null
+    uri: 'internal:/user/register'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: -45
+    langcode: es
+    uuid: 37df3b52-346e-4268-97c7-e9c3142bc9f3
+  -
+    menu_name: main
+    title: 'Regístrate / Iniciar'
+    parent: null
+    uri: 'internal:/user/login'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: -44
+    langcode: es
+    uuid: a4384f5b-d6e2-4e87-88c5-8c39436d8687
+  -
+    menu_name: profesor
+    title: 'Mi perfil'
+    parent: null
+    uri: 'internal:/user/[current-user:uid]/edit/editar_profesor'
+    link_title: ''
+    description: 'Mi perfil'
+    enabled: true
+    expanded: false
+    weight: 0
+    langcode: es
+    uuid: 6d98dbae-cc40-447d-9808-4928039e5f85
+  -
+    menu_name: profesor
+    title: 'Agora Conection'
+    parent: null
+    uri: 'internal:/agora'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: 0
+    langcode: es
+    uuid: e430f844-63c3-4fea-92af-3c68cfb67497
+  -
+    menu_name: profesor
+    title: 'Mis horarios'
+    parent: null
+    uri: 'internal:/horarios-de-trabajo-profesor'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: 0
+    langcode: es
+    uuid: de6e8dc8-9b80-4ce2-967c-bf4468f0dde5
+  -
+    menu_name: profesor
+    title: Calendario
+    parent: null
+    uri: 'internal:/calendario_profesor'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: 0
+    langcode: es
+    uuid: 51e0ad53-2e3b-4ca2-95e7-928c48d25685
+  -
+    menu_name: padres
+    title: 'Mis niños'
+    parent: null
+    uri: 'internal:/padres/mis-koalas'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: -49
+    langcode: es
+    uuid: f50b0bbd-cda0-4d42-90b9-bdc4ff49ee3d
+  -
+    menu_name: padres
+    title: Calendario
+    parent: null
+    uri: 'internal:/padres/mi-calendario'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: -48
+    langcode: es
+    uuid: fc4af4e1-195a-4436-8c76-5b80806e2573
+  -
+    menu_name: padres
+    title: Perfil
+    parent: null
+    uri: 'internal:/padres'
+    link_title: ''
+    description: Perfil
+    enabled: true
+    expanded: false
+    weight: -50
+    langcode: es
+    uuid: 4297dfa6-2fcf-4d25-a6e2-3f1950b815ac
+  -
+    menu_name: hijos
+    title: Home
+    parent: null
+    uri: 'internal:/hijo'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: -50
+    langcode: es
+    uuid: 99824dcb-2ba0-4f9f-9ae1-587a83063145
+  -
+    menu_name: hijos
+    title: 'Mi perfil'
+    parent: null
+    uri: 'internal:/hijo'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: -49
+    langcode: es
+    uuid: 5aa496b6-e94f-4945-b710-a1b43f694c42
+  -
+    menu_name: hijos
+    title: 'Mi Koala'
+    parent: null
+    uri: 'internal:/mi-koala'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: -48
+    langcode: es
+    uuid: 9a78b780-662f-43a7-bcdd-7f47d5f19fed
+  -
+    menu_name: hijos
+    title: 'Mis Mundos'
+    parent: null
+    uri: 'internal:/mis-mundos'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: 0
+    langcode: es
+    uuid: 1cee8acf-0efe-419f-bacb-c23882e75a54
+  -
+    menu_name: legal
+    title: 'Políticas de privacidad'
+    parent: null
+    uri: 'internal:#'
+    link_title: ''
+    description: 'Políticas de privacidad'
+    enabled: true
+    expanded: false
+    weight: 0
+    langcode: es
+    uuid: a0469282-c314-40ec-8ba0-7cbfe11b3c73
+  -
+    menu_name: legal
+    title: 'Términos de uso'
+    parent: null
+    uri: 'internal:#'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: 0
+    langcode: es
+    uuid: d9976da5-b79e-4041-8831-b56e77a64c8d
+  -
+    menu_name: legal
+    title: 'Política de cookies'
+    parent: null
+    uri: 'internal:/politicas'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: 0
+    langcode: es
+    uuid: c324acc9-2783-47a9-9ccd-c42f81a9aa66
+  -
+    menu_name: padres
+    title: 'Zona de pagos'
+    parent: null
+    uri: 'internal:/zona-pagos'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: 0
+    langcode: es
+    uuid: a03a668c-2d55-435d-9ed9-241344f23f52
+taxonomies:
+  avatar_profesor:
+    -
+      vid: avatar_profesor
+      tid: '4'
+      langcode: es
+      name: Koala
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: d28aff9d-7a34-42d7-9111-39f916cc63b0
+    -
+      vid: avatar_profesor
+      tid: '1'
+      langcode: es
+      name: 'Koala con guitarra'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: d1f3c891-70ce-45ce-992a-970eb7360f42
+    -
+      vid: avatar_profesor
+      tid: '2'
+      langcode: es
+      name: 'Koala con guitarra 2'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 88b65c74-9149-46f2-b42f-cbf897719b9e
+    -
+      vid: avatar_profesor
+      tid: '3'
+      langcode: es
+      name: 'Koala con guitarra 3'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 86c22d51-eca8-460f-a74b-7ed881205b31
+  logros:
+    -
+      vid: logros
+      tid: '56'
+      langcode: es
+      name: 'Completar diálogos: familia y casa'
+      description__value: null
+      description__format: null
+      weight: '42'
+      parent: '37'
+      uuid: 16697b0c-9a38-4546-9f76-04e1f7c26b44
+    -
+      vid: logros
+      tid: '49'
+      langcode: es
+      name: 'Hacer oraciones con ''está'' y las preposiciones de lugar'
+      description__value: null
+      description__format: null
+      weight: '35'
+      parent: '37'
+      uuid: 4bf1b266-528e-4c64-b283-ae0d1aa709eb
+    -
+      vid: logros
+      tid: '15'
+      langcode: es
+      name: 'Hola, soy  Koala'
+      description__value: null
+      description__format: null
+      weight: '1'
+      parent: '0'
+      uuid: 27b6ec40-8cb4-48b8-b313-3f03ab775bf6
+    -
+      vid: logros
+      tid: '47'
+      langcode: es
+      name: 'Identificar el uso de ''son'' ''los'' ''las'
+      description__value: null
+      description__format: null
+      weight: '33'
+      parent: '37'
+      uuid: 60aa58ad-a1f9-40b4-b1d6-502b187e86b6
+    -
+      vid: logros
+      tid: '51'
+      langcode: es
+      name: 'Identificar femenino y masculino en nacionalidades'
+      description__value: null
+      description__format: null
+      weight: '37'
+      parent: '37'
+      uuid: 9cb92a12-3e72-408d-af64-eb33f3faeecc
+    -
+      vid: logros
+      tid: '33'
+      langcode: es
+      name: 'Identificar y nombrar adjetivos: grande (s), pequeña(s)'
+      description__value: null
+      description__format: null
+      weight: '19'
+      parent: '15'
+      uuid: ce48c2e6-ebff-4277-b908-36f0fe9e6cd6
+    -
+      vid: logros
+      tid: '36'
+      langcode: es
+      name: 'Identificar y nombrar el verbo  ''lleva'''
+      description__value: null
+      description__format: null
+      weight: '22'
+      parent: '15'
+      uuid: ad27a3d7-df14-4456-b574-e13cfd5bff20
+    -
+      vid: logros
+      tid: '46'
+      langcode: es
+      name: 'Identificar y nombrar las partes de la casa usando ''el'' ''la'
+      description__value: null
+      description__format: null
+      weight: '32'
+      parent: '37'
+      uuid: ad7ed77e-3da2-413b-adea-489efb4b0165
+    -
+      vid: logros
+      tid: '40'
+      langcode: es
+      name: 'Identificar y nombrar las partes de la casa usando un/una'
+      description__value: null
+      description__format: null
+      weight: '26'
+      parent: '37'
+      uuid: cb3275cb-3871-4fdf-83ad-eb638c2d812f
+    -
+      vid: logros
+      tid: '53'
+      langcode: es
+      name: 'Identificar y nombrar las partes del cuerpo.'
+      description__value: null
+      description__format: null
+      weight: '39'
+      parent: '37'
+      uuid: 1acab11c-717c-4d8f-957d-bdb37b2f899c
+    -
+      vid: logros
+      tid: '50'
+      langcode: es
+      name: 'Identificar y nombrar los miembros de la familia'
+      description__value: null
+      description__format: null
+      weight: '36'
+      parent: '37'
+      uuid: 689fb0b8-5f03-4907-88b7-6834e41b33da
+    -
+      vid: logros
+      tid: '44'
+      langcode: es
+      name: 'Identificar y nombrar los nùmeros del 15 al 30'
+      description__value: null
+      description__format: null
+      weight: '30'
+      parent: '37'
+      uuid: bc27c36e-5084-4624-8f2f-d10f5fccd910
+    -
+      vid: logros
+      tid: '35'
+      langcode: es
+      name: 'Identificar y nombrar los verbos ''(No) tengo'' y ''soy'''
+      description__value: null
+      description__format: null
+      weight: '21'
+      parent: '15'
+      uuid: c4fc0663-4f0f-496f-9e29-2c5e040f9bea
+    -
+      vid: logros
+      tid: '55'
+      langcode: es
+      name: 'Identificar y nombrar los verbos ''(No) tengo'' y ''soy'''
+      description__value: null
+      description__format: null
+      weight: '41'
+      parent: '37'
+      uuid: d6a75c97-76f3-4dbc-88db-b5126d5493ca
+    -
+      vid: logros
+      tid: '34'
+      langcode: es
+      name: 'Identificar y nombrar los verbos ''tiene''  ''es'''
+      description__value: null
+      description__format: null
+      weight: '20'
+      parent: '15'
+      uuid: 736c7d22-9b09-44b1-ace3-6dde6a8b62e9
+    -
+      vid: logros
+      tid: '54'
+      langcode: es
+      name: 'Identificar y nombrar los verbos ''tiene''  ''es'' '
+      description__value: null
+      description__format: null
+      weight: '40'
+      parent: '37'
+      uuid: f25bc730-74fa-4cb5-a213-d10c21646216
+    -
+      vid: logros
+      tid: '32'
+      langcode: es
+      name: 'Identificar y nombrar partes del cuerpo'
+      description__value: null
+      description__format: null
+      weight: '18'
+      parent: '15'
+      uuid: fb32257f-e867-45e6-a528-8b5a23000d10
+    -
+      vid: logros
+      tid: '37'
+      langcode: es
+      name: 'La familia de Koala'
+      description__value: null
+      description__format: null
+      weight: '23'
+      parent: '0'
+      uuid: ca0fc3b2-8d38-486e-bd39-582cd5a257fc
+    -
+      vid: logros
+      tid: '18'
+      langcode: es
+      name: 'Nombrar los personajes de Hola Koala.'
+      description__value: null
+      description__format: null
+      weight: '4'
+      parent: '15'
+      uuid: ddcc6aa3-6438-4007-9bc1-d0718ecd7f12
+    -
+      vid: logros
+      tid: '24'
+      langcode: es
+      name: 'Nombrar objetos de la clase'
+      description__value: null
+      description__format: null
+      weight: '10'
+      parent: '15'
+      uuid: c51de837-0be0-479c-9c3e-73895bbb7c10
+    -
+      vid: logros
+      tid: '43'
+      langcode: es
+      name: 'Nombrar tamaño de partes de la casa.'
+      description__value: null
+      description__format: null
+      weight: '29'
+      parent: '37'
+      uuid: 7787a3c2-a155-4988-a4f2-71a13f957cbd
+    -
+      vid: logros
+      tid: '23'
+      langcode: es
+      name: 'Nombrar y preguntar por números del 1 al 15'
+      description__value: null
+      description__format: null
+      weight: '9'
+      parent: '15'
+      uuid: 1c2ed98c-5a72-4a66-ba54-05ea5175da88
+    -
+      vid: logros
+      tid: '21'
+      langcode: es
+      name: 'Preguntar  y responder por el nombre'
+      description__value: null
+      description__format: null
+      weight: '7'
+      parent: '15'
+      uuid: 96a681a7-16b7-4cc3-a132-3423b342b928
+    -
+      vid: logros
+      tid: '52'
+      langcode: es
+      name: 'Preguntar y describir fisicamente los miembros de la familia.'
+      description__value: null
+      description__format: null
+      weight: '38'
+      parent: '37'
+      uuid: 70c4f61b-64c8-4447-bdee-8ff5537c6f7b
+    -
+      vid: logros
+      tid: '20'
+      langcode: es
+      name: 'Preguntar y nombrar los colores'
+      description__value: null
+      description__format: null
+      weight: '6'
+      parent: '15'
+      uuid: 79252827-fe39-45f0-b6d7-483e250b8942
+    -
+      vid: logros
+      tid: '39'
+      langcode: es
+      name: 'Preguntar y nombrar los colores'
+      description__value: null
+      description__format: null
+      weight: '25'
+      parent: '37'
+      uuid: 19000689-7a6a-47e5-a48b-2a8f193710cc
+    -
+      vid: logros
+      tid: '22'
+      langcode: es
+      name: 'Preguntar y responder por  la edad '
+      description__value: null
+      description__format: null
+      weight: '8'
+      parent: '15'
+      uuid: eff6375f-a4a7-42fa-bd8d-07ed5464a667
+    -
+      vid: logros
+      tid: '27'
+      langcode: es
+      name: 'Preguntar y responder por cantidad  usando ''tengo'' '
+      description__value: null
+      description__format: null
+      weight: '13'
+      parent: '15'
+      uuid: 33ace922-cb79-4b02-b4ab-12dcd5cc3f9f
+    -
+      vid: logros
+      tid: '28'
+      langcode: es
+      name: 'Preguntar y responder por cantidad  usando ''tiene'' '
+      description__value: null
+      description__format: null
+      weight: '14'
+      parent: '15'
+      uuid: 2287009c-75a4-4997-a892-a2059193d47d
+    -
+      vid: logros
+      tid: '26'
+      langcode: es
+      name: 'Preguntar y responder por el color de los objetos.'
+      description__value: null
+      description__format: null
+      weight: '12'
+      parent: '15'
+      uuid: 39ba4600-badc-4f5e-8956-2c4d9c8abc62
+    -
+      vid: logros
+      tid: '41'
+      langcode: es
+      name: 'Preguntar y responder por existencia: hay dos alcobas'
+      description__value: null
+      description__format: null
+      weight: '27'
+      parent: '37'
+      uuid: 5a6f01c1-df26-4f22-8049-8125d958b24c
+    -
+      vid: logros
+      tid: '25'
+      langcode: es
+      name: 'Preguntar y responder por objetos de la clase'
+      description__value: null
+      description__format: null
+      weight: '11'
+      parent: '15'
+      uuid: 615cea7d-a84a-40ca-8b6b-e2b706a6b881
+    -
+      vid: logros
+      tid: '45'
+      langcode: es
+      name: 'Preguntar y responder por país y nacionalidad '
+      description__value: null
+      description__format: null
+      weight: '31'
+      parent: '37'
+      uuid: a699d5eb-b262-453e-8841-3b347a122b77
+    -
+      vid: logros
+      tid: '42'
+      langcode: es
+      name: 'Preguntar y responder por ubicación de la familia en la casa.'
+      description__value: null
+      description__format: null
+      weight: '28'
+      parent: '37'
+      uuid: c79aeacf-3e85-4dff-88d3-f6e9e3346848
+    -
+      vid: logros
+      tid: '30'
+      langcode: es
+      name: 'Presentar: me llamo___, tengo+años. '
+      description__value: null
+      description__format: null
+      weight: '16'
+      parent: '15'
+      uuid: 76e3bc9f-cdd6-4e13-832f-0da6ac986cea
+    -
+      vid: logros
+      tid: '31'
+      langcode: es
+      name: 'Presentar: Se llama__. Tiene+años'
+      description__value: null
+      description__format: null
+      weight: '17'
+      parent: '15'
+      uuid: 3c21f53f-7f62-45f7-8e23-2aaf901df6f2
+    -
+      vid: logros
+      tid: '17'
+      langcode: es
+      name: Presentarse
+      description__value: null
+      description__format: null
+      weight: '3'
+      parent: '15'
+      uuid: a867a02b-e2ee-42cb-a934-0cf898c0bd35
+    -
+      vid: logros
+      tid: '19'
+      langcode: es
+      name: 'Responder la pregunta: ¿Y tú?'
+      description__value: null
+      description__format: null
+      weight: '5'
+      parent: '15'
+      uuid: bedc20d2-f282-4a5b-adee-1590074a890d
+    -
+      vid: logros
+      tid: '29'
+      langcode: es
+      name: 'Saludar y despedirse de acuerdo al momento del día'
+      description__value: null
+      description__format: null
+      weight: '15'
+      parent: '15'
+      uuid: d33b0337-c794-4c82-8a39-941cc0c104ea
+    -
+      vid: logros
+      tid: '16'
+      langcode: es
+      name: 'Saludar y despedirse.'
+      description__value: null
+      description__format: null
+      weight: '2'
+      parent: '15'
+      uuid: 42b6d6b5-2cb2-401e-b402-06608a8a599b
+    -
+      vid: logros
+      tid: '38'
+      langcode: es
+      name: 'Saludar y despedirse.'
+      description__value: null
+      description__format: null
+      weight: '24'
+      parent: '37'
+      uuid: 2e40d11a-b284-472c-ac1a-a863ea3e6f60
+    -
+      vid: logros
+      tid: '48'
+      langcode: es
+      name: 'Señalar y nombrar los objetos de cada habitación.'
+      description__value: null
+      description__format: null
+      weight: '34'
+      parent: '37'
+      uuid: ced914f5-8316-4cbd-9620-86c52ef2cf65
+  secciones_de_los_mundos:
+    -
+      vid: secciones_de_los_mundos
+      tid: '63'
+      langcode: es
+      name: Audiolibros
+      description__value: '<p>Loremp ipsum text example</p>'
+      description__format: basic_html
+      weight: '0'
+      parent: '0'
+      uuid: 12cfca7f-aac2-45f5-9a7d-7dac56c1dd65
+    -
+      vid: secciones_de_los_mundos
+      tid: '61'
+      langcode: es
+      name: Juegos
+      description__value: '<p>Loremp ipsum text example</p>'
+      description__format: basic_html
+      weight: '0'
+      parent: '0'
+      uuid: 1d20d4ba-abc9-4b70-b8d9-48a7ced3c38a
+    -
+      vid: secciones_de_los_mundos
+      tid: '62'
+      langcode: es
+      name: Música
+      description__value: '<p>Loremp ipsum text example</p>'
+      description__format: basic_html
+      weight: '0'
+      parent: '0'
+      uuid: a0153208-a6e2-420b-9466-450677f9290b
+  tags: {  }

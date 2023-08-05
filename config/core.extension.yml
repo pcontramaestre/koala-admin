@@ -145,6 +145,7 @@ module:
   smart_date_recur: 0
   smart_date_starter_kit: 0
   smtp: 0
+  structure_sync: 0
   svg_image: 0
   svg_image_responsive: 0
   syslog: 0

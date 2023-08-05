@@ -68,20 +68,23 @@ body #main-wrapper {
   #navbar-main {
     padding: 0rem 0rem;
 
+
     #CollapsingNavbar {
       align-items: initial;
 
       .offcanvas-body {
         justify-content: space-between;
+
         #block-dropdownlanguage {
           .dropbutton-wrapper {
-            .dropbutton-widget{
-              .dropdown-language-item{
-                .dropbutton-action{
-                  height: 2.2rem!important;
+            .dropbutton-widget {
+              .dropdown-language-item {
+                .dropbutton-action {
+                  height: 2.2rem !important;
                 }
-                .dropbutton-toggle{
-                  height: 2.2rem!important;
+
+                .dropbutton-toggle {
+                  height: 2.2rem !important;
                 }
               }
             }
@@ -93,9 +96,11 @@ body #main-wrapper {
           align-items: center;
           margin-left: 1.5rem;
 
+
           .nav {
             .nav-item {
               margin-right: 2.5rem;
+
               .nav-link {
                 color      : black !important;
                 font-size  : 1rem;
@@ -126,6 +131,7 @@ body #main-wrapper {
           // min-width      : 30%;
           justify-content      : end;
 
+
           .no-admin {
             .nav-link {
               font-size      : 1rem;
@@ -134,6 +140,7 @@ body #main-wrapper {
               &:before{
                 display: none;
               }
+
             }
           }
         }
@@ -152,31 +159,39 @@ body #main-wrapper {
       }
     }
   }
+
   #header {
     #navbar-main {
       #CollapsingNavbar {
         .offcanvas-body {
           #block-padres {
             margin-left: 0rem;
+
             .nav {
-              display: block;
-              width: 100%;
+              display   : block;
+              width     : 100%;
               text-align: center;
               margin-top: 1rem;
+
               .nav-item {
                 margin-bottom: 2rem;
-                margin-right: 0rem;
+                margin-right : 0rem;
+
                 .nav-link {
                   font-size: 20px;
                 }
               }
             }
           }
+
           #block-koala-account-menu {
             justify-content: center !important;
-            margin-right: 0rem !important;
+            margin-right   : 0rem !important;
+
             .no-admin {
               // gap: 0px;
+              gap: 0px;
+
               .nav-link {
                 font-size: 20px;
               }
@@ -187,6 +202,7 @@ body #main-wrapper {
     }
   }
 }
+
 
 // media mayor a 1200px
 @media (min-width: 1200px) {

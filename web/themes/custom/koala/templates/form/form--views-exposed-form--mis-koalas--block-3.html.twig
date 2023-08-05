@@ -1,0 +1,25 @@
+{#
+/**
+ * @file
+ * Theme override for a 'form' element.
+ *
+ * Available variables
+ * - attributes: A list of HTML attributes for the wrapper element.
+ * - children: The child elements of the form.
+ *
+ * @see template_preprocess_form()
+ */
+#}
+{{ attach_library('bootstrap_barrio/form') }}
+
+<div class="texto-desde">Seleccione el mes</div>
+<div id="datepicker-seleccionar-fecha"></div>
+<div id="datepicker-seleccionar-fecha2"></div>
+
+
+<div class="datepicker-container">
+	<input type="text" id="datepicker-input" readonly="readonly">
+</div>
+<form{{attributes}}>
+	{{ children }}
+</form>

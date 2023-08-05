@@ -93,36 +93,38 @@
           </nav>
         {% endif %}
         <nav{{ navbar_attributes }}>
-          {% if container_navbar %}
-          <div class="container">
-          {% endif %}
-            {{ page.header }}
-            {% if page.primary_menu or page.header_form %}
-              <button class="navbar-toggler collapsed" type="button" data-bs-toggle="{{ navbar_collapse_btn_data }}" data-bs-target="#CollapsingNavbar" aria-controls="CollapsingNavbar" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-              <div class="{{ navbar_collapse_class }}" id="CollapsingNavbar">
-                {% if navbar_offcanvas %}
-                  <div class="offcanvas-header">
-                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                  </div>
-                  <div class="offcanvas-body">
-                {% endif %}
-                {{ page.primary_menu }}
-                {% if page.header_form %}
-                  <div class="form-inline navbar-form justify-content-end">
-                    {{ page.header_form }}
-                  </div>
-                {% endif %}
-                {% if navbar_offcanvas %}
-                  </div>
-                {% endif %}
-	            </div>
+          <div>
+            {% if container_navbar %}
+            <div class="container">
             {% endif %}
-            {% if sidebar_collapse %}
-              <button class="navbar-toggler navbar-toggler-left collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#CollapsingLeft" aria-controls="CollapsingLeft" aria-expanded="false" aria-label="Toggle navigation"></button>
+              {{ page.header }}
+              {% if page.primary_menu or page.header_form %}
+                <button class="navbar-toggler collapsed" type="button" data-bs-toggle="{{ navbar_collapse_btn_data }}" data-bs-target="#CollapsingNavbar" aria-controls="CollapsingNavbar" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="{{ navbar_collapse_class }}" id="CollapsingNavbar">
+                  {% if navbar_offcanvas %}
+                    <div class="offcanvas-header">
+                      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                  {% endif %}
+                  {{ page.primary_menu }}
+                  {% if page.header_form %}
+                    <div class="form-inline navbar-form justify-content-end">
+                      {{ page.header_form }}
+                    </div>
+                  {% endif %}
+                  {% if navbar_offcanvas %}
+                    </div>
+                  {% endif %}
+                </div>
+              {% endif %}
+              {% if sidebar_collapse %}
+                <button class="navbar-toggler navbar-toggler-left collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#CollapsingLeft" aria-controls="CollapsingLeft" aria-expanded="false" aria-label="Toggle navigation"></button>
+              {% endif %}
+            {% if container_navbar %}
+            </div>
             {% endif %}
-          {% if container_navbar %}
           </div>
-          {% endif %}
         </nav>
       {% endblock %}
     </header>
@@ -190,6 +192,9 @@
               {{ page.footer_third }}
             </div>
           {% endif %}
+            <div class="footer-bottom">
+              {{ page.footer_bottom }}
+            </div>            
         </div>
       {% endblock %}
     </footer>
