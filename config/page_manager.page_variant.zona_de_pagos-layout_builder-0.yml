@@ -1,0 +1,47 @@
+uuid: 6582f884-6514-41f3-b182-b221e4d7d99a
+langcode: es
+status: true
+dependencies:
+  config:
+    - block_content.type.basic
+    - page_manager.page.zona_de_pagos
+  module:
+    - layout_builder
+    - layout_discovery
+id: zona_de_pagos-layout_builder-0
+label: 'Layout Builder'
+weight: 0
+variant: layout_builder
+variant_settings:
+  id: layout_builder
+  label: null
+  weight: 0
+  uuid: e4d22234-9ccb-44b1-8b47-4a44d8a8898f
+  sections:
+    -
+      layout_id: layout_onecol
+      layout_settings:
+        label: ''
+        context_mapping: {  }
+      components:
+        9db4cfe9-c4f0-4673-9ce0-aeef13210199:
+          uuid: 9db4cfe9-c4f0-4673-9ce0-aeef13210199
+          region: content
+          configuration:
+            id: 'inline_block:basic'
+            label: 'Zona de Pagos'
+            label_display: visible
+            provider: layout_builder
+            view_mode: full
+            context_mapping: {  }
+            block_revision_id: 8
+            block_serialized: null
+          weight: 0
+          additional:
+            layout_builder_styles_style:
+              separacion_superior_mt_5: separacion_superior_mt_5
+      third_party_settings: {  }
+page: zona_de_pagos
+selection_criteria: {  }
+selection_logic: and
+static_context: {  }

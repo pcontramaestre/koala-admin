@@ -1,0 +1,18 @@
+uuid: db2d24ce-d9f5-425e-b985-4b90c50a90de
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.horarios_de_trabajo
+id: node.horarios_de_trabajo.created
+field_name: created
+entity_type: node
+bundle: horarios_de_trabajo
+label: 'Fecha de autoría'
+description: 'La fecha en que el nodo fue creado.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created

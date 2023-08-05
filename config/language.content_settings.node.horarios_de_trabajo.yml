@@ -4,6 +4,13 @@ status: true
 dependencies:
   config:
     - node.type.horarios_de_trabajo
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: false
+    bundle_settings:
+      untranslatable_fields_hide: '0'
 id: node.horarios_de_trabajo
 target_entity_type_id: node
 target_bundle: horarios_de_trabajo

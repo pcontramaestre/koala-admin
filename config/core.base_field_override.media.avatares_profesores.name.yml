@@ -1,0 +1,20 @@
+uuid: 2ec3b56f-a2d7-4206-9800-6b1db6eadd0a
+langcode: es
+status: true
+dependencies:
+  config:
+    - media.type.avatares_profesores
+id: media.avatares_profesores.name
+field_name: name
+entity_type: media
+bundle: avatares_profesores
+label: Name
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: ''
+default_value_callback: ''
+settings: {  }
+field_type: string

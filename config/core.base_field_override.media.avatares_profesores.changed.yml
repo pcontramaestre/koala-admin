@@ -1,0 +1,18 @@
+uuid: a2080969-41d8-4f9e-8895-3640d288f7a4
+langcode: es
+status: true
+dependencies:
+  config:
+    - media.type.avatares_profesores
+id: media.avatares_profesores.changed
+field_name: changed
+entity_type: media
+bundle: avatares_profesores
+label: Modificado
+description: 'El momento en el cual el elemento multimedia fue editado por última vez.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

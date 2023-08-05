@@ -1,3 +1,42 @@
+#header {
+  #navbar-main {
+    #CollapsingNavbar {
+      .offcanvas-body {
+        #block-hijos {
+          display    : flex;
+          align-items: center;
+
+          .nav {
+            .nav-item {
+              margin-right: 2.5rem;
+
+              .nav-link {
+                color      : black !important;
+                font-size  : 1rem;
+                font-weight: 700;
+                padding    : 0 0.5rem;
+                position   : relative;
+                transition : all 0.3s ease-in-out;
+
+                &:hover {
+                  background-color: #c6f5f2;
+                  border-radius   : 20px;
+                }
+              }
+
+              .nav-link.active {
+                background-color: #c6f5f2;
+                border-radius   : 20px;
+                padding         : 0rem 1.5rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
 .path-hijo {
   background: #ECF9FB;
 
@@ -14,51 +53,193 @@
   }
 
   //Datos del nino, muestra el nombre y saluda
-  .view-hijo.view-display-id-block_1 {
-    .view-content {
-      .views-row {
-        display       : flex;
-        flex-direction: row;
-        align-items   : center;
-        flex-wrap     : wrap;
+  #main-wrapper {
+    #block-koala-content {
+      .layout__region--first {
+        .block-views-blockhijo-block-1 {
+          .view-hijo {
+            .views-row {
+              display       : flex;
+              flex-direction: row;
+              align-items   : center;
+              flex-wrap     : wrap;
 
-        .views-field-user-picture {
-          max-width   : 11%;
-          margin-right: 2%;
+              .views-field-user-picture {
+                margin-right: 2%;
 
-          img {
-            max-width: 100%;
-            height   : auto;
+                .field-content {
+                  img {
+                    width        : 48px;
+                    height       : 48px;
+                    border-radius: 200px;
+                    border       : 1px solid white;
+                    object-fit   : cover;
+                  }
+                }
+              }
+
+              .views-field-field-nombre-del-hijo {
+                .field-content {
+                  p {
+                    margin: 0;
+
+                    strong {
+                      font-size  : 24px;
+                      line-height: 27px;
+                    }
+                  }
+                }
+              }
+
+              .views-field-nothing {
+                width: 100%;
+
+                .field-content {
+                  p {
+                    font-weight: 500;
+                    color      : black;
+                    margin     : 0;
+                  }
+                }
+              }
+            }
           }
         }
 
-        .views-field-field-nombre-del-hijo {
-          p {
-            margin: 0;
+        .block-views-blockclase-hijo-block-1 {
+          .view-clase-hijo {
+            margin-top: 1rem;
+
+            .views-row {
+              border       : 2px solid #becaca;
+              background   : white;
+              border-radius: 24px;
+              padding      : 1rem;
+              text-align   : center;
+
+              .views-field {
+                .field-content {
+                  .titulo {
+                    font-weight: 500;
+                    color      : black;
+                  }
+
+                  .fecha {
+                    font-weight: 700;
+                    color      : black;
+                  }
+
+                  .enlace {
+                    background-color: #2ff7ee;
+                    border          : 2px solid #297e88;
+                    border-radius   : 32px;
+                    width           : 225px;
+                    height          : 51px;
+                    display         : flex;
+                    justify-content : center;
+                    align-items     : center;
+                    margin          : 0 auto;
+
+                    &:hover {
+                      background-color: #297e88;
+
+                      a {
+                        color: white;
+                      }
+                    }
+
+                    a {
+                      color          : black;
+                      text-decoration: none;
+                      font-weight    : 700;
+                      font-size      : 20px;
+                    }
+                  }
+                }
+              }
+            }
           }
         }
 
-        .views-field-nothing {
-          width: 100%;
+        .block-views-blockmis-mundos-perfil-block-1 {
+          margin-top: 1rem !important;
 
-          p {
-            margin: 0;
+          .view-mis-mundos-perfil {
+            .view-header {
+              .titulo {
+                text-align: initial !important;
+
+                strong {
+                  font-size      : 24px;
+                  text-decoration: underline 1px;
+                }
+              }
+
+              .subtitulo {
+                text-align : initial !important;
+                font-weight: 500;
+                color      : black;
+              }
+            }
+
+            .view-content {
+              .horizontal {
+                .views-row {
+                  .col-lg-6 {
+                    width: 45% !important;
+                  }
+
+                  .field-content {
+                    .categoria {
+                      margin-top   : 1rem;
+                      margin-bottom: 1.5rem;
+
+                      .imagen {
+                        img {
+                          height                 : 126px;
+                          width                  : 161px;
+                          object-fit             : cover;
+                          border-top-left-radius : 16px;
+                          border-top-right-radius: 16px;
+                          border-top             : 1px solid #becaca;
+                          border-right           : 1px solid #becaca;
+                          border-left            : 1px solid #becaca;
+                        }
+                      }
+
+                      .titulo-numero {
+                        background-color          : white;
+                        width                     : 161px;
+                        min-height                : 60px;
+                        border-bottom-left-radius : 16px;
+                        border-bottom-right-radius: 16px;
+                        border-bottom             : 1px solid #becaca;
+                        border-right              : 1px solid #becaca;
+                        border-left               : 1px solid #becaca;
+                        padding                   : 0.5rem;
+
+                        a {
+                          text-decoration: none;
+                          color          : black;
+
+                          .titulo {
+                            font-size  : 24px;
+                            font-weight: 700;
+                          }
+
+                          .nro {
+                            font-weight: 500;
+                            color      : black;
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
           }
         }
-      }
-    }
-  }
-
-  //Muestra proxima clase
-  .view-clase-hijo.view-display-id-block_1 {
-    margin-top: 2rem;
-
-    .view-content {
-      .views-row {
-        background   : white;
-        border-radius: 15px;
-        padding      : 1rem;
-        text-align   : center;
       }
     }
   }

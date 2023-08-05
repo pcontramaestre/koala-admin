@@ -1,0 +1,20 @@
+uuid: 8249544c-f652-439f-bd2e-3d7d1bec5d9b
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.horarios_de_trabajo
+  module:
+    - path
+id: node.horarios_de_trabajo.path
+field_name: path
+entity_type: node
+bundle: horarios_de_trabajo
+label: 'Alias de URL'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

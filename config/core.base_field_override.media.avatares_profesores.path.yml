@@ -1,0 +1,20 @@
+uuid: 6129abb8-fd54-40bc-9c9d-065cec7624db
+langcode: es
+status: true
+dependencies:
+  config:
+    - media.type.avatares_profesores
+  module:
+    - path
+id: media.avatares_profesores.path
+field_name: path
+entity_type: media
+bundle: avatares_profesores
+label: 'Alias de URL'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path
