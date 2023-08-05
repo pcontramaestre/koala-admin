@@ -64,7 +64,7 @@
           grid-template-columns: 1fr 1fr 1fr;
           gap: 16px;
 
-          .views-field{
+          .views-field {
             background: #e6f1f1;
             width: 390px !important;
             border-radius: 32px;
@@ -92,8 +92,8 @@
 
               .nombre-datos {
                 margin-left: 1rem;
-                .nombre{
-                  width: 164px;
+                width: 56%;
+                .nombre {
                   a {
                     color: black;
                     text-decoration: none;
@@ -288,23 +288,21 @@
       .view-header {
         font-size: 20px;
         .text-center {
-          margin-bottom: 2rem!important;
+          margin-bottom: 2rem !important;
         }
       }
       .view-content.row {
         .views-view-grid {
           .vistas-fila {
-            display: block!important;
-            .views-field{
+            display: block !important;
+            .views-field {
               width: 342px !important;
               margin-bottom: 1rem;
-              // .access-acudiente {
-              //   .nombre-datos {
-              //     .nombre{
-                    
-              //     }
-              //   }
-              // }
+              .access-acudiente {
+                .nombre-datos {
+                  width: 52%;
+                }
+              }
             }
           }
         }
