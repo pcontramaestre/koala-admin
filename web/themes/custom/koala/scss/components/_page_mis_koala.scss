@@ -143,8 +143,8 @@
                                       color: black;
                                       font-weight: 700;
                                       font-size: 20px;
-                                      margin-top: 1.5rem!important;
-                                      margin-bottom: 2rem!important;
+                                      margin-top: 1.5rem !important;
+                                      margin-bottom: 2rem !important;
 
                                       &:hover {
                                         background-color: #297e88;
@@ -156,6 +156,67 @@
                                   .texto-logros {
                                     font-weight: 600;
                                     font-size: 16px;
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 300px) and (max-width: 800px) {
+  .path-padres {
+    #page-wrapper {
+      #main-wrapper {
+        .container {
+          #block-koala-content {
+            .content {
+              .layout--onecol {
+                .layout__region--content {
+                  .block-views-blockmis-koalas-block-2 {
+                    h2 {
+                      margin-top: 24px !important;
+                    }
+                    .content {
+                      .view-display-id-block_2 {
+                        .view-header {
+                          right: 0% !important;
+                          left: 0%;
+                          bottom: 91% !important;
+                          margin: 0 auto;
+                          width: 335px;
+                          a {
+                            width: 100% !important;
+                            &:after {
+                              left: 65px !important;
+                            }
+                          }
+                        }
+                        .view-content {
+                          margin-top: 6.5rem;
+                          #views-bootstrap-tab-views-bootstrap-mis-koalas-block-2 {
+                            .nav-tabs {
+                              width: 100% !important;
+                              display: flex;
+                              .nav-item {
+                                margin-right: 1rem;
+                                button {
+                                  margin-bottom: 2.2rem !important;
+                                }
+                                .nav-link.active {
+                                  &:after {
+                                    width: 40%!important;
                                   }
                                 }
                               }

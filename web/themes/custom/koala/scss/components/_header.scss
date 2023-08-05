@@ -69,14 +69,27 @@ body #main-wrapper {
       align-items: initial;
       .offcanvas-body {
         justify-content: space-between;
+        #block-dropdownlanguage {
+          .dropbutton-wrapper {
+            .dropbutton-widget{
+              .dropdown-language-item{
+                .dropbutton-action{
+                  height: 2.2rem!important;
+                }
+                .dropbutton-toggle{
+                  height: 2.2rem!important;
+                }
+              }
+            }
+          }
+        }
         #block-padres {
           display: flex;
           align-items: center;
           margin-left: 2.5rem;
           .nav {
-            gap: 50px;
-
             .nav-item {
+              margin-right: 2.5rem;
               .nav-link {
                 color: black !important;
                 font-size: 1rem;
@@ -124,6 +137,40 @@ body #main-wrapper {
       padding: 0rem 1rem;
       .navbar-toggler {
         padding-right: 0px;
+      }
+    }
+  }
+  #header {
+    #navbar-main {
+      #CollapsingNavbar {
+        .offcanvas-body {
+          #block-padres {
+            margin-left: 0rem;
+            .nav {
+              display: block;
+              width: 100%;
+              text-align: center;
+              margin-top: 1rem;
+              .nav-item {
+                margin-bottom: 2rem;
+                margin-right: 0rem;
+                .nav-link {
+                  font-size: 20px;
+                }
+              }
+            }
+          }
+          #block-koala-account-menu {
+            justify-content: center !important;
+            margin-right: 0rem !important;
+            .no-admin {
+              gap: 0px;
+              .nav-link {
+                font-size: 20px;
+              }
+            }
+          }
+        }
       }
     }
   }
