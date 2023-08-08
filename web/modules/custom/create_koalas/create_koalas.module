@@ -12,6 +12,7 @@ use Drupal\Core\StringTranslation\TranslatableMarkup;
 use Drupal\views\ViewExecutable;
 use \Drupal\node\NodeInterface;
 use Symfony\Component\HttpFoundation\RequestStack;
+use Drupal\Core\Datetime\DrupalDateTime;
 
 
 
@@ -97,10 +98,24 @@ function create_koalas_form_alter(&$form, FormStateInterface $form_state, $form_
 
     // Cambiar el titulo a mostrar del campo field_fecha_cita_oculta
     $form['field_fecha_cita_oculta']['widget'][0]['value']['#title'] = 'Fecha de la clase';
+    //$form['field_fecha_cita_oculta']['widget'][0]['value']['#attributes']['type']="text";
+    //$form['field_fecha_cita_oculta']['widget'][0]['value']['date']['#default_value'] = "31/05/1980";
+    //$form['field_fecha_cita_oculta']['widget'][0]['value']['#date_date_format'] = "d/m/Y";
+    #date_date_format
+
+        $fecha_texto = "31/05/1980";
+    $fecha_obj = DrupalDateTime::createFromFormat('d/m/Y', $fecha_texto);
+
+    // Asignar el valor al campo field_fecha_cita_oculta (fecha y hora).
+    $form['field_fecha_cita_oculta'][0]['value']['date']['#default_value'] = $fecha_obj;
+    $form['field_fecha_cita_oculta'][0]['value']['time']['#default_value'] = $fecha_obj->format('H:i');
+    $form['field_fecha_cita_oculta']['#prefix'] = '<div>Texto o contenido del div que deseas agregar</div>';
+    //dump($form['field_fecha_cita_oculta']);
+
 
     // Agregar atributos min y max al campo field_fecha_cita_oculta
-    $form['field_fecha_cita_oculta']['widget'][0]['value']['#attributes']['min'] = date('Y-m-d', strtotime('+1 day'));
-    $form['field_fecha_cita_oculta']['widget'][0]['value']['#attributes']['max'] = date('Y-m-d', strtotime('+1 month'));
+    // $form['field_fecha_cita_oculta']['widget'][0]['value']['#attributes']['min'] = date('Y-m-d', strtotime('+1 day'));
+    // $form['field_fecha_cita_oculta']['widget'][0]['value']['#attributes']['max'] = date('Y-m-d', strtotime('+1 month'));
 
 
     $title_value = \Drupal::translation()->translate('Agendar clase al Koala ') . $field_nombre_del_hijo;

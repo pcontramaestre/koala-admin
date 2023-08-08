@@ -62,12 +62,71 @@ body #main-wrapper {
   }
 }
 
+// header niños
+
+#header {
+  #navbar-main {
+    #CollapsingNavbar {
+      .offcanvas-body {
+        #block-hijos {
+          display    : flex;
+          align-items: center;
+
+          .nav {
+            display    : flex;
+            align-items: center;
+
+            .nav-item {
+              &:nth-child(1) {
+                a {
+                  opacity: 0;
+                }
+
+                &::before {
+                  content          : "";
+                  display          : block;
+                  background-image : url("/themes/custom/koala/images/logo-koala.png");
+                  height           : 27px;
+                  width            : 97px;
+                  background-repeat: no-repeat;
+                  position         : absolute;
+                }
+              }
+
+              margin-right: 2.5rem;
+
+              .nav-link {
+                color      : black !important;
+                font-size  : 1rem;
+                font-weight: 700;
+                padding    : 0 0.5rem;
+                position   : relative;
+                transition : all 0.3s ease-in-out;
+
+                &:hover {
+                  background-color: #c6f5f2;
+                  border-radius   : 20px;
+                }
+              }
+
+              .nav-link.active {
+                background-color: #c6f5f2;
+                border-radius   : 20px;
+                padding         : 0rem 1.5rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
 // header padres
 
 #header {
   #navbar-main {
     padding: 0rem 0rem;
-
 
     #CollapsingNavbar {
       align-items: initial;
@@ -95,7 +154,6 @@ body #main-wrapper {
           display    : flex;
           align-items: center;
           margin-left: 1.5rem;
-
 
           .nav {
             .nav-item {
@@ -131,16 +189,15 @@ body #main-wrapper {
           // min-width      : 30%;
           justify-content      : end;
 
-
           .no-admin {
             .nav-link {
-              font-size      : 1rem;
-              font-weight    : 700;
-              color          : $TurqK500 !important;
-              &:before{
+              font-size  : 1rem;
+              font-weight: 700;
+              color      : $TurqK500 !important;
+
+              &:before {
                 display: none;
               }
-
             }
           }
         }
@@ -160,40 +217,108 @@ body #main-wrapper {
     }
   }
 
-  #header {
-    #navbar-main {
-      #CollapsingNavbar {
-        .offcanvas-body {
-          #block-padres {
-            margin-left: 0rem;
+  .path-padres {
+    #header {
+      #navbar-main {
+        div {
+          justify-content: space-between;
+        }
 
-            .nav {
-              display   : block;
-              width     : 100%;
-              text-align: center;
-              margin-top: 1rem;
+        #CollapsingNavbar {
+          #block-koala-account-menu .nav {
+            gap: 0px;
+          }
 
-              .nav-item {
-                margin-bottom: 2rem;
-                margin-right : 0rem;
+          .offcanvas-body {
+            #block-padres {
+              margin-left: 0rem;
 
+              .nav {
+                display   : block;
+                width     : 100%;
+                text-align: center;
+                margin-top: 1rem;
+
+                .nav-item {
+                  margin-bottom: 2rem;
+                  margin-right : 16px;
+
+                  .nav-link {
+                    font-size: 20px;
+                  }
+                }
+              }
+            }
+
+            #block-koala-account-menu {
+              justify-content: center !important;
+              margin-right   : 0rem !important;
+
+              .no-admin {
+
+                // gap: 0px;
                 .nav-link {
                   font-size: 20px;
                 }
               }
             }
           }
+        }
+      }
+    }
+  }
 
-          #block-koala-account-menu {
-            justify-content: center !important;
-            margin-right   : 0rem !important;
+  .rol-hijo {
+    #header {
+      #navbar-main {
+        .navbar-toggler {
+          display        : flex;
+          width          : 100%;
+          justify-content: end;
 
-            .no-admin {
-              // gap: 0px;
-              gap: 0px;
+          &:before {
+            content          : "";
+            display          : block;
+            background-image : url("/themes/custom/koala/images/logo-koala.png");
+            height           : 27px;
+            width            : 97px;
+            background-repeat: no-repeat;
+            position         : absolute;
+            left             : 16px;
+          }
+        }
 
-              .nav-link {
-                font-size: 20px;
+        #CollapsingNavbar {
+          .offcanvas-body {
+            #block-koala-account-menu {
+              .nav {
+                gap: 0px !important;
+              }
+            }
+
+            #block-hijos {
+              margin-left: 0rem;
+
+              .nav {
+                display   : block;
+                width     : 100%;
+                text-align: center;
+                margin-top: 1rem;
+
+                .nav-item {
+                  &:nth-child(1) {
+                    &::before {
+                      top: 19px;
+                    }
+                  }
+
+                  margin-bottom: 2rem;
+                  margin-right : 0rem;
+
+                  .nav-link {
+                    font-size: 20px;
+                  }
+                }
               }
             }
           }
@@ -202,7 +327,6 @@ body #main-wrapper {
     }
   }
 }
-
 
 // media mayor a 1200px
 @media (min-width: 1200px) {

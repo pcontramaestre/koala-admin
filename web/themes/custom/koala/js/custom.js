@@ -203,15 +203,40 @@
     // Inicializar el Datepicker en el campo de entrada
     $("#datepicker-seleccionar-fecha").datepicker({
       inline: true, // Mostrar el Datepicker en línea
-      dateFormat: "dd-mm-yy", // Formato de la fecha
+      dateFormat: "mm/dd/yy", // Formato de la fecha
       changeMonth: true, //Cambiar mes
       defaultDate: "+1D",
       minDate: "+1D",
       maxDate: "+1M +10D",
       onSelect: function (dateText) {
+        var fechaInput = dateText;
+        var fechaJS = new Date(fechaInput);
+        // Sumamos un día a la fecha.
+        fechaJS.setDate(fechaJS.getDate() + 1);
+        // Obtenemos los componentes de la nueva fecha (mes, día, año).
+        var nuevoMes = fechaJS.getMonth() + 1;
+        var nuevoDia = fechaJS.getDate();
+        var nuevoAnio = fechaJS.getFullYear();
+        // Formateamos la nueva fecha al formato "mm/dd/yyyy".
+        var nuevaFecha = nuevoMes + "/" + nuevoDia + "/" + nuevoAnio;
         // Actualizar el valor del campo de entrada cuando se selecciona una fecha
         $("#datepicker-input").val(dateText);
+        $('input[id^="edit-field-fechas-laborables-value-min"]').val(dateText);
+        $('input[id^="edit-field-fechas-laborables-value-max"]').val(
+          nuevaFecha
+        );
+        console.log("Seleccionado");
       },
     });
+    $(
+      ".filtro-agendar .ui-datepicker-calendar .ui-datepicker-current-day a"
+    ).removeClass("ui-state-active");
+    var fechaseleccionada = $(
+      'input[id^="edit-field-fechas-laborables-value-min"]'
+    ).val();
+    var fechaJS = new Date(fechaseleccionada);
+    var nuevoDia = fechaJS.getDate();
+    console.log("Dia seleccionado " + nuevoDia);
+    $("a[data-date='" + nuevoDia + "']").addClass("ui-state-active");
   });
 })(jQuery);

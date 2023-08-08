@@ -12,8 +12,9 @@ code: |-
       
         var idbuscar = $(this).attr("id");
         var idusuario2 = jQuery('label[for="' + idbuscar + '"] > div.idusuario').html();
+        var fecha_usar = $("input[id^='edit-field-fechas-laborables-value-min']").val();
 
-      var linkUrl = '/node/add/agendar_clase/agendando_clase?id=' + getLastParameterFromUrl() + '&field_profesor=' + idusuario2;
+      var linkUrl = '/node/add/agendar_clase/agendando_clase?id=' + getLastParameterFromUrl() + '&field_profesor=' + idusuario2  + '&fecha='+fecha_usar;
       $('#boton-agendamos-clase').attr('href', linkUrl);
     });
 
@@ -31,11 +32,76 @@ code: |-
       // Activar el evento si los radios están presentes inicialmente
       $('input[name="field_profesor"]').on('click', function() {
         var selectedValue = $(this).val();
-        var linkUrl = '/agendar_cita?id=' + getLastParameterFromUrl() + '&field_profesor=' + selectedValue;
+        var fecha_usar = $("input[id^='edit-field-fechas-laborables-value-min']").val();
+        var linkUrl = '/agendar_cita?id=' + getLastParameterFromUrl() + '&field_profesor=' + selectedValue + '&fecha='+fecha_usar;
         $('#boton-agendamos-clase').attr('href', linkUrl);
       });
     }
+    
+    
+    
+    // Ruta de la pagina
+    // Obtener la ruta relativa
+  	var rutaRelativa = window.location.pathname;
+  	
+  	// Obtener los parámetros de la URL en un objeto
+  	var parametros = {};
+  	window.location.search.substr(1).split("&").forEach(function(item) {
+  	  var partes = item.split("=");
+  	  parametros[partes[0]] = decodeURIComponent(partes[1]);
+  	});
+  	
+  	// Acceder a los valores de los parámetros individuales
+  	var id = parametros.id;
+  	var idcontenido = parametros.idcontenido;
+  	var field_profesor = parametros.field_profesor;
+  	var fecha = parametros.fecha;
+  	
+  	// Imprimir los resultados en la consola
+  	console.log('Ruta Relativa: ', rutaRelativa);
+  	console.log('ID: ', id);
+  	console.log('ID Contenido: ', idcontenido);
+  	console.log('Field Profesor: ', field_profesor);
+  	console.log('Fecha: ', fecha);
   });
+
+  	var listaFechasHoras = "03/07/2023, 12:57pm - 8:57pm|07/08/2023, 10:00am - 6:00pm|11/08/2023, 10:00am - 6:00pm|14/08/2023, 10:00am - 6:00pm|18/08/2023, 10:00am - 6:00pm|21/08/2023, 10:00am - 6:00pm|23/08/2023, 10:00am - 6:00pm|25/08/2023, 10:00am - 6:00pm|28/08/2023, 10:00am - 6:00pm|30/08/2023, 10:00am - 6:00pm|30/06/2023, 4:19pm - 01/07/2023, 11:19pm|06/09/2023, 3:00pm - 11:00pm|08/09/2023, 3:00pm - 11:00pm|11/09/2023, 3:00pm - 11:00pm|13/09/2023, 3:00pm - 11:00pm|15/09/2023, 3:00pm - 11:00pm|18/09/2023, 3:00pm - 11:00pm|20/09/2023, 3:00pm - 11:00pm|22/09/2023, 3:00pm - 11:00pm|25/09/2023, 3:00pm - 11:00pm|27/09/2023, 3:00pm - 11:00pm|29/09/2023, 3:00pm - 11:00pm"; // Tu lista completa aquí
+
+  var elementos = listaFechasHoras.split('|');
+  var resultados = [];
+
+  elementos.forEach(function(elemento) {
+    var partes = elemento.trim().split('-');
+    var fechaHora = partes[0].trim().split(', ');
+    var horas = partes[1].trim().split(' - ');
+
+    var fecha = fechaHora[0];
+    var horaInicio12 = horas[0];
+    var horaFin12 = horas[1];
+
+    var horaInicio24 = convertirHora12a24(horaInicio12);
+    var horaFin24 = convertirHora12a24(horaFin12);
+
+    resultados.push({
+      fecha: fecha,
+      horaInicio: horaInicio24,
+      horaFin: horaFin24
+    });
+  });
+
+  function convertirHora12a24(hora12) {
+    var horas = parseInt(hora12);
+    var minutos = parseInt(hora12.split(':')[1]);
+    if (hora12.indexOf('pm') !== -1 && horas !== 12) {
+      horas += 12;
+    }
+    if (hora12.indexOf('am') !== -1 && horas === 12) {
+      horas = 0;
+    }
+    return ('0' + horas).slice(-2) + ':' + ('0' + minutos).slice(-2);
+  }
+
+  console.log(resultados);
 noscript: ''
 noscriptRegion: {  }
 jquery: true
