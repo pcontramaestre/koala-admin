@@ -9,16 +9,16 @@
             .fc-button-group {
               button {
                 background-color: white;
-                color           : black;
-                border          : none;
+                color: black;
+                border: none;
               }
             }
 
             .fc-today-button {
               background-color: white;
-              color           : #FF6669;
-              border          : none;
-              font-weight     : 700;
+              color: #ff6669;
+              border: none;
+              font-weight: 700;
             }
           }
 
@@ -27,8 +27,8 @@
 
             h2 {
               font-weight: 700;
-              font-size  : 20px;
-              color      : #727F7F;
+              font-size: 20px;
+              color: #727f7f;
             }
           }
 
@@ -36,10 +36,9 @@
             .fc-button-group {
               button {
                 background-color: white;
-                color           : #FF6669;
-                border          : none;
-                font-weight     : 700;
-
+                color: #ff6669;
+                border: none;
+                font-weight: 700;
               }
 
               .fc-button-active {
@@ -51,17 +50,16 @@
         }
 
         .fc-view-container {
-
           .fc-dayGridMonth-view,
           .fc-timeGridWeek-view {
-            border: 1px solid #E6F1F1;
+            border: 1px solid #e6f1f1;
 
             table {
               .fc-head {
                 tr {
                   .fc-head-container {
-                    color : $GreyK500;
-                    border: 2px solid #E6F1F1;
+                    color: $GreyK500;
+                    border: 2px solid #e6f1f1;
                   }
                 }
               }
@@ -81,7 +79,7 @@
                               tbody {
                                 tr {
                                   td {
-                                    border: 2px solid #E6F1F1;
+                                    border: 2px solid #e6f1f1;
                                   }
                                 }
                               }
@@ -93,12 +91,12 @@
                               thead {
                                 .fc-day-top {
                                   .fc-day-number {
-                                    color          : #727F7F;
+                                    color: #727f7f;
                                     text-decoration: none;
-                                    float          : left !important;
-                                    margin-left    : 0.5rem;
-                                    font-weight    : 600;
-                                    font-size      : 14px;
+                                    float: left !important;
+                                    margin-left: 0.5rem;
+                                    font-weight: 600;
+                                    font-size: 14px;
                                   }
                                 }
                               }
@@ -109,8 +107,8 @@
                                     .fc-day-grid-event {
                                       .fc-content {
                                         .fc-title {
-                                          background-color: #F8E5DE;
-                                          color           : #AF654A;
+                                          background-color: #f8e5de;
+                                          color: #af654a;
                                         }
                                       }
                                     }
@@ -120,8 +118,8 @@
                                     .fc-day-grid-event {
                                       .fc-content {
                                         .fc-title {
-                                          background-color: #F5F8D8;
-                                          color           : #869021;
+                                          background-color: #f5f8d8;
+                                          color: #869021;
                                         }
                                       }
                                     }
@@ -131,8 +129,8 @@
                                     .fc-day-grid-event {
                                       .fc-content {
                                         .fc-title {
-                                          background-color: #F8E5DE;
-                                          color           : #AF654A;
+                                          background-color: #f8e5de;
+                                          color: #af654a;
                                         }
                                       }
                                     }
@@ -142,8 +140,8 @@
                                     .fc-day-grid-event {
                                       .fc-content {
                                         .fc-title {
-                                          background-color: #F5F8D8;
-                                          color           : #869021;
+                                          background-color: #f5f8d8;
+                                          color: #869021;
                                         }
                                       }
                                     }
@@ -152,28 +150,27 @@
                                   .fc-event-container {
                                     .fc-day-grid-event {
                                       background-color: transparent !important;
-                                      border          : none;
+                                      border: none;
 
                                       .fc-content {
                                         margin-left: 0.5rem;
 
                                         .fc-time {
-                                          font-weight     : 500 !important;
+                                          font-weight: 500 !important;
                                           background-color: white;
-                                          color           : #727F7F;
-                                          border          : none;
-                                          font-size       : 12px;
+                                          color: #727f7f;
+                                          border: none;
+                                          font-size: 12px;
                                         }
 
                                         .fc-title {
-                                          background-color: #FFE8E8;
-                                          border-radius   : 12px;
-                                          color           : #FF6669;
-                                          font-weight     : 700;
-                                          font-size       : 12px;
-                                          padding         : 0.2rem 0.2rem 0.2rem 0.4rem;
-                                          margin-top      : 0.1rem;
-
+                                          background-color: #ffe8e8;
+                                          border-radius: 12px;
+                                          color: #ff6669;
+                                          font-weight: 700;
+                                          font-size: 12px;
+                                          padding: 0.2rem 0.2rem 0.2rem 0.4rem;
+                                          margin-top: 0.1rem;
                                         }
                                       }
                                     }
@@ -192,11 +189,11 @@
                           table {
                             tbody {
                               tr {
-                                border: 2px solid #E6F1F1;
+                                border: 2px solid #e6f1f1;
 
                                 .fc-axis {
                                   span {
-                                    color    : #727F7F;
+                                    color: #727f7f;
                                     font-size: 14px;
                                   }
                                 }
@@ -214,7 +211,7 @@
                                     .fc-event-container {
                                       .fc-time-grid-event {
                                         background-color: transparent !important;
-                                        border          : none;
+                                        border: none;
 
                                         .fc-content {
                                           .fc-time {
@@ -222,14 +219,13 @@
                                           }
 
                                           .fc-title {
-
-                                            background-color: #FFE8E8;
-                                            color           : #FF6669;
-                                            border-radius   : 12px;
-                                            font-weight     : 700;
-                                            font-size       : 12px;
-                                            padding         : 0.2rem 0.2rem 0.2rem 0.4rem;
-                                            margin-top      : 0.1rem;
+                                            background-color: #ffe8e8;
+                                            color: #ff6669;
+                                            border-radius: 12px;
+                                            font-weight: 700;
+                                            font-size: 12px;
+                                            padding: 0.2rem 0.2rem 0.2rem 0.4rem;
+                                            margin-top: 0.1rem;
                                           }
                                         }
                                       }
@@ -243,9 +239,8 @@
                                       .fc-time-grid-event {
                                         .fc-content {
                                           .fc-title {
-                                            background-color: #F5F8D8;
-                                            color           : #869021;
-
+                                            background-color: #f5f8d8;
+                                            color: #869021;
                                           }
                                         }
                                       }
@@ -259,8 +254,8 @@
                                       .fc-time-grid-event {
                                         .fc-content {
                                           .fc-title {
-                                            background-color: #F8E5DE;
-                                            color           : #AF654A;
+                                            background-color: #f8e5de;
+                                            color: #af654a;
                                           }
                                         }
                                       }
@@ -274,8 +269,8 @@
                                       .fc-time-grid-event {
                                         .fc-content {
                                           .fc-title {
-                                            background-color: #FFE8E8;
-                                            color           : #FF6669;
+                                            background-color: #ffe8e8;
+                                            color: #ff6669;
                                           }
                                         }
                                       }
@@ -289,8 +284,8 @@
                                       .fc-time-grid-event {
                                         .fc-content {
                                           .fc-title {
-                                            background-color: #F5F8D8;
-                                            color           : #869021;
+                                            background-color: #f5f8d8;
+                                            color: #869021;
                                           }
                                         }
                                       }
@@ -303,8 +298,8 @@
                                       .fc-time-grid-event {
                                         .fc-content {
                                           .fc-title {
-                                            background-color: #F8E5DE;
-                                            color           : #AF654A;
+                                            background-color: #f8e5de;
+                                            color: #af654a;
                                           }
                                         }
                                       }
@@ -326,7 +321,7 @@
                               tr {
                                 .fc-axis {
                                   span {
-                                    color    : #727F7F;
+                                    color: #727f7f;
                                     font-size: 14px;
                                   }
                                 }
@@ -343,23 +338,21 @@
           }
 
           .fc-timeGridDay-view {
-            border: 1px solid #E6F1F1;
+            border: 1px solid #e6f1f1;
 
             table {
               .fc-head {
-
                 tr {
                   .fc-head-container {
                     .fc-row {
-                      border: 1px solid #E6F1F1;
+                      border: 1px solid #e6f1f1;
 
                       table {
                         thead {
                           tr {
                             .fc-day-header {
-
                               span {
-                                color    : #727F7F;
+                                color: #727f7f;
                                 font-size: 14px;
                               }
                             }
@@ -380,11 +373,11 @@
                           table {
                             tbody {
                               tr {
-                                border: 2px solid #E6F1F1;
+                                border: 2px solid #e6f1f1;
 
                                 .fc-axis {
                                   span {
-                                    color    : #727F7F;
+                                    color: #727f7f;
                                     font-size: 14px;
                                   }
                                 }
@@ -395,7 +388,6 @@
 
                         .fc-content-skeleton {
                           table {
-
                             tbody {
                               tr {
                                 td {
@@ -403,31 +395,30 @@
                                     .fc-event-container {
                                       .fc-time-grid-event {
                                         background-color: transparent !important;
-                                        border          : none;
+                                        border: none;
 
                                         .fc-content {
                                           margin-left: 0.5rem;
-                                          display    : flex;
+                                          display: flex;
                                           align-items: center;
 
                                           .fc-time {
-                                            font-weight     : 500 !important;
+                                            font-weight: 500 !important;
                                             background-color: white;
-                                            color           : #727F7F;
-                                            border          : none;
-                                            font-size       : 12px;
+                                            color: #727f7f;
+                                            border: none;
+                                            font-size: 12px;
                                           }
 
                                           .fc-title {
-                                            background-color: #F8E5DE;
-                                            border-radius   : 12px;
-                                            color           : #AF654A;
-                                            font-weight     : 700;
-                                            font-size       : 12px;
-                                            padding         : 0.2rem 0.2rem 0.2rem 0.4rem;
+                                            background-color: #f8e5de;
+                                            border-radius: 12px;
+                                            color: #af654a;
+                                            font-weight: 700;
+                                            font-size: 12px;
+                                            padding: 0.2rem 0.2rem 0.2rem 0.4rem;
 
                                             margin-top: 0.1rem;
-
                                           }
                                         }
                                       }
@@ -441,8 +432,8 @@
                                       .fc-time-grid-event {
                                         .fc-content {
                                           .fc-title {
-                                            background-color: #F5F8D8;
-                                            color           : #869021;
+                                            background-color: #f5f8d8;
+                                            color: #869021;
                                           }
                                         }
                                       }
@@ -456,8 +447,8 @@
                                       .fc-time-grid-event {
                                         .fc-content {
                                           .fc-title {
-                                            background-color: #FFE8E8;
-                                            color           : #FF6669;
+                                            background-color: #ffe8e8;
+                                            color: #ff6669;
                                           }
                                         }
                                       }
@@ -471,8 +462,8 @@
                                       .fc-time-grid-event {
                                         .fc-content {
                                           .fc-title {
-                                            background-color: #F5F8D8;
-                                            color           : #869021;
+                                            background-color: #f5f8d8;
+                                            color: #869021;
                                           }
                                         }
                                       }
@@ -486,8 +477,8 @@
                                       .fc-time-grid-event {
                                         .fc-content {
                                           .fc-title {
-                                            background-color: #FFE8E8;
-                                            color           : #FF6669;
+                                            background-color: #ffe8e8;
+                                            color: #ff6669;
                                           }
                                         }
                                       }
@@ -509,7 +500,7 @@
                               tr {
                                 .fc-axis {
                                   span {
-                                    color    : #727F7F;
+                                    color: #727f7f;
                                     font-size: 14px;
                                   }
                                 }
@@ -526,7 +517,7 @@
           }
 
           .fc-listYear-view {
-            border: 2px solid #E6F1F1;
+            border: 2px solid #e6f1f1;
 
             .fc-scroller {
               .fc-list-table {
@@ -534,18 +525,18 @@
                   .fc-list-heading {
                     .fc-widget-header {
                       a {
-                        color: #727F7F;
+                        color: #727f7f;
                       }
                     }
                   }
 
                   tr {
                     .fc-list-item-time {
-                      font-weight     : 500 !important;
+                      font-weight: 500 !important;
                       background-color: white;
-                      color           : #727F7F;
-                      border          : none;
-                      font-size       : 14px;
+                      color: #727f7f;
+                      border: none;
+                      font-size: 14px;
                     }
 
                     .fc-list-item-marker {
@@ -556,13 +547,13 @@
                       display: flex;
 
                       a {
-                        background-color: #FFE8E8;
-                        border-radius   : 12px;
-                        color           : #FF6669;
-                        font-weight     : 700;
-                        font-size       : 12px;
-                        padding         : 0.2rem 0.2rem 0.2rem 0.4rem;
-                        margin-top      : 0.1rem;
+                        background-color: #ffe8e8;
+                        border-radius: 12px;
+                        color: #ff6669;
+                        font-weight: 700;
+                        font-size: 12px;
+                        padding: 0.2rem 0.2rem 0.2rem 0.4rem;
+                        margin-top: 0.1rem;
                       }
                     }
                   }
@@ -570,18 +561,17 @@
                   tr:nth-child(4) {
                     .fc-list-item-title {
                       a {
-                        background-color: #F5F8D8;
-                        color           : #869021;
+                        background-color: #f5f8d8;
+                        color: #869021;
                       }
                     }
                   }
 
                   tr:nth-child(6) {
                     .fc-list-item-title {
-
                       a {
-                        background-color: #F8E5DE;
-                        color           : #AF654A;
+                        background-color: #f8e5de;
+                        color: #af654a;
                       }
                     }
                   }
@@ -589,8 +579,8 @@
                   tr:nth-child(10) {
                     .fc-list-item-title {
                       a {
-                        background-color: #F5F8D8;
-                        color           : #869021;
+                        background-color: #f5f8d8;
+                        color: #869021;
                       }
                     }
                   }
@@ -598,8 +588,64 @@
                   tr:nth-child(12) {
                     .fc-list-item-title {
                       a {
-                        background-color: #FFE8E8;
-                        color           : #FF6669;
+                        background-color: #ffe8e8;
+                        color: #ff6669;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 800px) and (min-width: 192px) {
+  #block-koala-content .content {
+    .view-mis-koalas {
+      .no-admin {
+        .js-drupal-fullcalendar {
+          .fc-header-toolbar {
+            .fc-center {
+              h2{
+                font-size: 1rem!important;
+              }
+            }
+            .fc-left {
+              .fc-today-button{
+                display: none;
+              }
+            }
+            .fc-right {
+              .fc-button-group {
+                .fc-timeGridWeek-button {
+                  display: none;
+                }
+                .fc-timeGridDay-button{
+                  display: none;
+                }
+              }
+            }
+          }
+          .fc-view-container {
+            .fc-dayGridMonth-view,
+            .fc-timeGridWeek-view {
+              table {
+                .fc-body {
+                  tr {
+                    .fc-widget-content {
+                      .fc-day-grid-container {
+                        height: 300px !important;
+
+                        .fc-day-grid {
+                          .fc-week {
+                            height: 50px !important;
+                            min-height: 3em!important;
+                          }
+                        }
                       }
                     }
                   }
