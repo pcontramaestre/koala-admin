@@ -1,0 +1,54 @@
+.node--type-mundos-detalle {
+  #page-wrapper {
+    background: #ECF9FB;
+
+    .mis-mundos-detalle {
+      max-height: 84vh;
+
+      .ventana {
+        border       : 1px solid #BECACA;
+        border-radius: 8px;
+
+        .header-ventana {
+          background             : white;
+          border-bottom          : 1px solid #BECACA;
+          border-top-left-radius : 8px;
+          border-top-right-radius: 8px;
+          padding-left           : 1rem;
+          padding-right          : 1rem;
+          display                : flex;
+          flex-direction         : row;
+          justify-content        : space-between;
+          font-size              : 1.25rem;
+          font-weight            : 700;
+          padding-top            : 5px;
+          padding-bottom         : 5px;
+
+          >div {
+            cursor: pointer;
+          }
+        }
+
+        .contenido-ventana {
+          border-bottom-left-radius : 8px;
+          border-bottom-right-radius: 8px;
+          padding                   : 0.1rem;
+          background                : #297E88;
+
+          iframe {
+            border-bottom-left-radius : 8px;
+            border-bottom-right-radius: 8px;
+          }
+        }
+      }
+
+      .field--name-body {
+        >div {
+          >div {
+            padding-bottom: 80vh !important;
+          }
+        }
+      }
+    }
+  }
+}
