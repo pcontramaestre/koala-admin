@@ -27,19 +27,24 @@
         <a href="#" onclick="history.back();"><span> < </span> Volver</a>
     </div>
     <div class="col-md-4 izquierda">
-      {{ drupal_view('profesor_agendar_clase', 'block_1') }}
-      {{ drupal_view('profesor_agendar_clase', 'block_2') }}
+      {{ drupal_view('profesor_agendar_clase', 'block_1') }}     
       {{ drupal_view('mis_koalas', 'profesor_detalle_horario') }}
-
-
-
     </div>
     <div class="col-md-8 derecha">
       <div class="formulario">
+        <div id="select-horario">
+        <div class="titulo"><h2>{{ 'Selecciona hora de clase'|t }}</h2></div>
+          <div class="horario"></div>
+        </div>
         {{ form|without('advanced', 'actions') }}
       </div>
       <div class="col layout-region-node-footer">
-        {{ form.actions }}
+        <div class="alumno-seleccionado">
+          {{ drupal_view('profesor_agendar_clase', 'block_2') }}
+        </div>
+        <div class="form-actions">
+          {{ form.actions }}
+        </div>
       </div>
     </div>
   </div>

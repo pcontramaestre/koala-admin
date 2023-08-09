@@ -5502,7 +5502,7 @@ display:
           admin_label: ''
           plugin_id: field
           label: ''
-          exclude: false
+          exclude: true
           alter:
             alter_text: true
             text: '{{ user_picture }}{{ field_nombres_y_apellidos_del_pr__value }} <div class="idusuario">{{ uid }}</div>'
@@ -5629,7 +5629,7 @@ display:
           admin_label: ''
           plugin_id: field
           label: ''
-          exclude: false
+          exclude: true
           alter:
             alter_text: false
             text: ''
@@ -5672,13 +5672,13 @@ display:
           click_sort_column: value
           type: smartdate_custom
           settings:
-            separator: ' - '
+            separator: '-'
             date_format: d/m/Y
             custom_date_format: ''
             timezone: ''
-            join: ', '
-            time_format: 'g:ia'
-            time_hour_format: 'g:ia'
+            join: ','
+            time_format: 'G:i'
+            time_hour_format: 'G:i'
             allday_label: 'All day'
             date_first: '1'
             ampm_reduce: 0
@@ -5730,7 +5730,7 @@ display:
             trim: false
             preserve_tags: ''
             html: false
-          element_type: h2
+          element_type: ''
           element_class: ''
           element_label_type: ''
           element_label_class: ''
@@ -5742,8 +5742,8 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          date_format: short
-          custom_date_format: ''
+          date_format: custom
+          custom_date_format: 'G:i'
           timezone: ''
         field_fechas_laborables_duration:
           id: field_fechas_laborables_duration
@@ -5839,11 +5839,11 @@ display:
             trim: false
             preserve_tags: ''
             html: false
-          element_type: h2
+          element_type: ''
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: true
+          element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
@@ -5851,8 +5851,8 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          date_format: fallback
-          custom_date_format: ''
+          date_format: custom
+          custom_date_format: 'G:i'
           timezone: ''
       pager:
         type: none
@@ -6123,8 +6123,8 @@ display:
           admin_label: ''
           plugin_id: text_custom
           empty: false
-          content: "<div class=\"titulo-profesores\">Profesores recomendados</div>\r\n<div>Selecciona a tu profesor para agendar y ver más información sobre su perfil </div>"
-          tokenize: true
+          content: ''
+          tokenize: false
       footer: {  }
       display_extenders: {  }
       block_description: 'Profesor Detalle Horario'

@@ -81,6 +81,87 @@
       .derecha {
         padding-left: 2rem;
 
+        .formulario {
+          #select-horario {
+            margin-bottom: 2rem;
+            border       : 2px solid #E6F1F1;
+            border-radius: 24px;
+            padding      : 1rem;
+
+            .titulo {
+              h2 {
+                font-size    : 1.25rem;
+                font-weight  : 700;
+                margin-bottom: 0.5rem;
+                padding-left : 1.5rem;
+              }
+
+              &::before {
+                content    : '\f017';
+                font-family: 'Font Awesome 5 Free';
+                display    : inline-block;
+                position   : absolute;
+              }
+            }
+
+            .horario {
+              display              : grid;
+              grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+              gap                  : 16px;
+              justify-items        : start;
+              margin-top           : 1rem;
+
+              a {
+                text-decoration: none;
+                padding        : 8px 16px 5px 16px;
+                border         : 1px solid #BECACA;
+                border-radius  : 32px;
+                color          : black;
+                font-size      : 1rem;
+
+                &.active {
+                  background: #2FF7EE;
+                }
+              }
+            }
+          }
+
+          //Formulario
+          div[data-drupal-selector^="edit-field-layout"] {
+            .layout__region--content {
+
+              .field--name-title,
+              .field--name-field-nombre-del-nino-a,
+              .field--name-field-fecha-nac,
+              .field--name-field-asignar-profesor,
+              .field--name-field-alumno-relacionado {
+                display: none;
+              }
+            }
+          }
+        }
+
+        .layout-region-node-footer {
+          width                : 100%;
+          display              : grid;
+          grid-template-columns: 1fr 1fr;
+
+          @media (max-width: 800px) {
+            grid-template-columns: 1fr;
+          }
+
+          align-items   : center;
+          align-content : center;
+          justify-items : center;
+          padding       : 0;
+
+          .alumno-seleccionado {}
+
+          .form-actions {
+            align-self: unset;
+          }
+        }
+
         .field--name-field-fecha-cita-oculta {
           fieldset {
             legend {
