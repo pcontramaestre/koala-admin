@@ -63,14 +63,14 @@
 
 	{% if rows %}
 		<div class="view-content row">
-			<div>Pablo Antonio Contramaestre Barragan</div>
+			{{ drupal_view('mis_koalas', 'block_7_cuadro_koala') }}
 			<div class="view-content-detail">
 				{{ rows }}
 			</div>
 		</div>
 	{% elseif empty %}
 		<div class="view-empty">
-			<div>Pablo Antonio Contramaestre Barragan</div>
+			{{ drupal_view('mis_koalas', 'block_7_cuadro_koala') }}
 			<div class="view-empty-detail">
 				{{ empty }}
 			</div>
