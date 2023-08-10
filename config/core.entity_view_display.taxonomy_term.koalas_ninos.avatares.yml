@@ -1,0 +1,45 @@
+uuid: c57bf2aa-5861-4560-ac9e-fe60e443c25c
+langcode: es
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.taxonomy_term.avatares
+    - field.field.taxonomy_term.koalas_ninos.field_categoria_del_koala
+    - field.field.taxonomy_term.koalas_ninos.field_imagen_del_koala
+    - field.field.taxonomy_term.koalas_ninos.field_puntos_requeridos
+    - taxonomy.vocabulary.koalas_ninos
+  module:
+    - field_formatter_class
+    - layout_builder
+    - svg_image
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: taxonomy_term.koalas_ninos.avatares
+targetEntityType: taxonomy_term
+bundle: koalas_ninos
+mode: avatares
+content:
+  field_imagen_del_koala:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+      svg_attributes:
+        width: 300
+        height: 356
+      svg_render_as_image: true
+    third_party_settings:
+      field_formatter_class:
+        class: image-koala-nino
+    weight: 0
+    region: content
+hidden:
+  description: true
+  field_categoria_del_koala: true
+  field_puntos_requeridos: true
+  langcode: true

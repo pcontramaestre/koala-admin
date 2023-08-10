@@ -1,0 +1,25 @@
+uuid: f2b02bcc-b8d6-4338-99c4-cb9a2ea8bec6
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_puntos_requeridos
+    - taxonomy.vocabulary.koalas_ninos
+id: taxonomy_term.koalas_ninos.field_puntos_requeridos
+field_name: field_puntos_requeridos
+entity_type: taxonomy_term
+bundle: koalas_ninos
+label: 'Puntos requeridos'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  min: 1
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

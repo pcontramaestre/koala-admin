@@ -1,0 +1,46 @@
+uuid: 8703d228-1bf2-4dd6-84a6-e2c656112f89
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.field.node.koala_ninos.field_describe_tu_koala
+    - field.field.node.koala_ninos.field_hijo_relacionado
+    - field.field.node.koala_ninos.field_selecc
+    - node.type.koala_ninos
+  module:
+    - user
+id: node.koala_ninos.default
+targetEntityType: node
+bundle: koala_ninos
+mode: default
+content:
+  field_describe_tu_koala:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_hijo_relacionado:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  field_selecc:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  langcode: true

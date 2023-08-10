@@ -1,0 +1,10 @@
+uuid: 1177cd6e-5aaf-4de8-a58a-3bdeb76cbdbd
+langcode: es
+status: true
+dependencies:
+  module:
+    - node
+id: node.mis_mundos_detalle
+label: 'Mis mundos detalle'
+targetEntityType: node
+cache: true

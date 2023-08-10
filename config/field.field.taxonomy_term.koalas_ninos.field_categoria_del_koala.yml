@@ -1,0 +1,21 @@
+uuid: 0e980e02-34cb-4bf7-8af9-843415daaffb
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_categoria_del_koala
+    - taxonomy.vocabulary.koalas_ninos
+  module:
+    - options
+id: taxonomy_term.koalas_ninos.field_categoria_del_koala
+field_name: field_categoria_del_koala
+entity_type: taxonomy_term
+bundle: koalas_ninos
+label: 'Categoría del koala'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

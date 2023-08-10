@@ -1,0 +1,16 @@
+uuid: bc693568-2c23-4444-822a-4b0872cbbc7a
+langcode: es
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.koalas_ninos
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+id: taxonomy_term.koalas_ninos
+target_entity_type_id: taxonomy_term
+target_bundle: koalas_ninos
+default_langcode: site_default
+language_alterable: false

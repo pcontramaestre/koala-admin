@@ -1,0 +1,15 @@
+uuid: 24f6bda8-22b0-4cb1-ae15-546455d546c1
+langcode: es
+status: true
+dependencies: {  }
+name: 152x209
+label: 152X209
+effects:
+  5a96e162-47a1-4a33-9a4e-b26bf409c455:
+    uuid: 5a96e162-47a1-4a33-9a4e-b26bf409c455
+    id: image_scale
+    weight: 1
+    data:
+      width: 152
+      height: 209
+      upscale: false

@@ -1,4 +1,4 @@
-.path-hijo {
+.path-hijo:not(.page-view-koalas-avatares-ninos) {
   background: #ECF9FB;
 
   #page-wrapper #page #main-wrapper {
@@ -71,6 +71,10 @@
           .view-clase-hijo {
             margin-top: 1rem;
 
+            .view-content.row {
+              max-width: 100%;
+            }
+
             .views-row {
               border       : 2px solid #becaca;
               background   : white;
@@ -124,6 +128,7 @@
 
         .block-views-blockmis-mundos-perfil-block-1 {
           margin-top: 1rem !important;
+          position  : relative;
 
           .view-mis-mundos-perfil {
             .view-header {
@@ -198,6 +203,120 @@
                   }
                 }
               }
+            }
+
+            .view-footer {
+              position: absolute;
+              right   : 0;
+              bottom  : 33%;
+
+              a {
+                img {
+                  background   : white;
+                  border       : 1px solid gray;
+                  border-radius: 8px;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .layout__region--second {
+        display            : flex;
+        flex-direction     : column;
+        justify-content    : center;
+        align-items        : center;
+        //Arreglar este background
+        background-image   : url(/themes/custom/koala/images/background-hijos.png);
+        background-position: center;
+        background-size    : contain;
+        background-repeat  : no-repeat;
+
+        .vocabulary-koalas-ninos {
+          >h2 {
+            display: none;
+          }
+
+          img {
+            width : 350px !important;
+            height: auto;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+//PAGINA EDITAR AVATARES - MI KOALA
+.page-view-koalas-avatares-ninos {
+  background: #ECF9FB;
+
+  .ocultar {
+    display: none;
+  }
+
+  #page-wrapper #page #main-wrapper {
+    padding-top: 2rem;
+  }
+
+  .layout__region--first {
+    padding-right: 1rem;
+
+    .vocabulary-koalas-ninos {
+      >h2 {
+        display: none;
+      }
+
+      img {
+        width : 200px !important;
+        height: auto;
+      }
+
+      >div.content {
+        text-align   : center;
+        margin-bottom: 1rem;
+      }
+    }
+
+  }
+
+  .layout__region--second {
+    padding-left: 1rem;
+
+    .form-switch .form-check-input {
+      margin-left: -1.5em;
+    }
+
+    #edit-field-selecc--wrapper {
+      >legend {
+        display: none;
+      }
+    }
+
+    #edit-field-selecc {
+      display              : grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      gap                  : 16px;
+
+      .form-check-label {
+        .views-field-nothing {
+          .field-content {
+            display      : block;
+            font-weight  : 700;
+            text-align   : center;
+            background   : white;
+            padding      : 0.5rem;
+            border-radius: 16px;
+
+            p {
+              font-weight: 400;
+            }
+
+            img {
+              width : 100%;
+              height: auto;
             }
           }
         }

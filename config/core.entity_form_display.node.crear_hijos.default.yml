@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.crear_hijos.field_fecha_nacimiento
     - field.field.node.crear_hijos.field_hijo_relacionado
     - field.field.node.crear_hijos.field_logros
+    - field.field.node.crear_hijos.field_puntos_acumulados
     - field.field.node.crear_hijos.field_sexo
     - node.type.crear_hijos
   module:
@@ -64,6 +65,13 @@ content:
     weight: 101
     region: content
     settings: {  }
+    third_party_settings: {  }
+  field_puntos_acumulados:
+    type: number
+    weight: 102
+    region: content
+    settings:
+      placeholder: ''
     third_party_settings: {  }
   field_sexo:
     type: options_select

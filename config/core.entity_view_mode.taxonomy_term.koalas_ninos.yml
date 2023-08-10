@@ -1,0 +1,10 @@
+uuid: d04ed6b8-53b2-480a-9fc6-5b7b9bff53f2
+langcode: es
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: taxonomy_term.koalas_ninos
+label: 'Koalas niños'
+targetEntityType: taxonomy_term
+cache: true

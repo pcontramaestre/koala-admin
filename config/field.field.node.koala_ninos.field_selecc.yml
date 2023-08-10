@@ -1,0 +1,29 @@
+uuid: 549dfd6e-14cf-48c3-8eb9-cc0106948a27
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_selecc
+    - node.type.koala_ninos
+  content:
+    - 'taxonomy_term:koalas_ninos:f234daf3-1ff3-4926-a550-289657fb8082'
+id: node.koala_ninos.field_selecc
+field_name: field_selecc
+entity_type: node
+bundle: koala_ninos
+label: 'Seleccionar Koala'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    target_uuid: f234daf3-1ff3-4926-a550-289657fb8082
+default_value_callback: ''
+settings:
+  handler: views
+  handler_settings:
+    view:
+      view_name: avatares_koalas_ninos
+      display_name: entity_reference_1
+      arguments: {  }
+field_type: entity_reference

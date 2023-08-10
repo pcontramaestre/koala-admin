@@ -1,0 +1,17 @@
+uuid: 4a21a4e4-e1ba-4fa3-8f2a-ac5c1cc6428a
+langcode: es
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: 'Koala Niños'
+type: koala_ninos
+description: 'Koalas seleccionados por los niños'
+help: ''
+new_revision: false
+preview_mode: 0
+display_submitted: true
