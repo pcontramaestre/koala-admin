@@ -13,6 +13,12 @@ use Drupal\views\ViewExecutable;
 use \Drupal\node\NodeInterface;
 use Symfony\Component\HttpFoundation\RequestStack;
 use Drupal\Core\Datetime\DrupalDateTime;
+use Symfony\Component\HttpFoundation\RedirectResponse;
+use Drupal\Core\Url;
+use Drupal\Component\Utility\StringHelper;
+use Drupal\Component\Utility\Unicode;
+
+
 
 
 
@@ -170,7 +176,28 @@ function create_koalas_form_alter(&$form, FormStateInterface $form_state, $form_
       }
     }
   }
+
+
+  // node_koala_ninos_form $routeName == 'view.koalas_avatares_ninos.page_1'. Koalas avatares ninos.
+  // dump($routeName);
+  // dump($form_id);
+  if ($form_id == 'node_koala_ninos_form' || $routeName == 'view.koalas_avatares_ninos.page_1') {
+    $form['actions']['submit']['#value'] = new TranslatableMarkup('Actualizar información');
+    foreach (array_keys($form['actions']) as $action) {
+      if ($action != 'preview' && isset($form['actions'][$action]['#type']) && $form['actions'][$action]['#type'] === 'submit') {
+        $form['actions'][$action]['#submit'][] = 'callback_submit_koala_ninos';
+      }
+    }
+  }
 }
+
+function callback_submit_koala_ninos(&$form, FormStateInterface $form_state) {
+  \Drupal::messenger()->addMessage(\Drupal::translation()->translate('Información actualizada'));
+  $form_state->setRedirect('view.koalas_avatares_ninos.page_1');
+}
+
+
+
 
 /**
  * Implements hook_form_FORM_ID_alter() for the user_register_form.
@@ -220,6 +247,7 @@ function callback_submit_crear_hijo($form, &$form_state) {
   $node = Node::load($form_state->getValue('nid'));
   $node->set('field_hijo_relacionado', $newid);
   $node->save();
+
 
 }
 

@@ -122,7 +122,9 @@ function koala_theme_suggestions_alter(array &$suggestions, array &$variables, $
     } else {
       $current_path = \Drupal::service('path.current')->getPath();
       $path_args = explode('/', $current_path);
-      $content_type = $path_args[3];
+      if ( $path_args[3]) {
+        $content_type = $path_args[3];
+      }
     }
     $route_match = \Drupal::routeMatch();
     if ($route_match->getRouteName() == 'node.add.agendando_clase') {

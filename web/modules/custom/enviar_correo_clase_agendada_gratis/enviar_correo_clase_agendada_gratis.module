@@ -135,7 +135,33 @@ function enviar_correo_clase_agendada_gratis_send_email(array &$form, FormStateI
     'uid' => $uid,
   ])->save();
 
+  // Crear un nuevo nodo de tipo koala_ninos. con los campos 
+  // field_describe_tu_koala, field_hijo_relacionado
+  // Crea un nodo de tipo "horarios_profesores".
 
+
+  $title = 'Mi primer Koala';
+  $description = 'Mi primer Koala descripción';
+
+
+  $nodekoalas = Node::create([
+    'type' => 'koala_ninos',
+    'title' => $title,
+    'field_describe_tu_koala' => $description,
+    'field_hijo_relacionado' => $newidhijo,
+    'uid' => $newidhijo,
+  ]);
+
+
+  // Guarda el nodo creado.
+  if ($nodekoalas->save()) {
+  // Node saved successfully.
+    // Mensaje de exito. "El koala del niñ@ se ha creado correctamente".
+    \Drupal::messenger()->addMessage(\Drupal::translation()->translate('El koala del niñ@ se ha creado correctamente'));
+  } else {
+    // Mensaje de error. "El koala del niñ@ no se ha creado correctamente".
+    \Drupal::messenger()->addMessage(\Drupal::translation()->translate('El koala del niñ@ no se ha creado correctamente'));
+  }
 
 
 

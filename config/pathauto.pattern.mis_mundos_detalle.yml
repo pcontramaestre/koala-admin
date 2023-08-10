@@ -1,0 +1,34 @@
+uuid: 9937d733-511c-4e25-93fb-e56d005a7a85
+langcode: es
+status: true
+dependencies:
+  module:
+    - language
+    - node
+id: mis_mundos_detalle
+label: 'Mis Mundos - Detalle'
+type: 'canonical_entities:node'
+pattern: 'hijo/mis-mundos/[node:title]'
+selection_criteria:
+  33837a37-211e-48bc-a8dc-7363bedb7f6c:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: 33837a37-211e-48bc-a8dc-7363bedb7f6c
+    context_mapping:
+      node: node
+    bundles:
+      mundos_detalle: mundos_detalle
+  c5fae5f2-ce9f-4798-b49c-24ad0a81cded:
+    id: language
+    negate: false
+    uuid: c5fae5f2-ce9f-4798-b49c-24ad0a81cded
+    context_mapping:
+      language: 'node:langcode:language'
+    langcodes:
+      es: es
+      en: en
+selection_logic: and
+weight: -10
+relationships:
+  'node:langcode:language':
+    label: Language

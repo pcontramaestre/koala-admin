@@ -1,0 +1,58 @@
+uuid: 6bf637dc-26c0-421c-8d17-0b4a6020efa5
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.koalas_ninos.field_categoria_del_koala
+    - field.field.taxonomy_term.koalas_ninos.field_imagen_del_koala
+    - field.field.taxonomy_term.koalas_ninos.field_puntos_requeridos
+    - taxonomy.vocabulary.koalas_ninos
+  module:
+    - options
+    - svg_image
+    - text
+id: taxonomy_term.koalas_ninos.default
+targetEntityType: taxonomy_term
+bundle: koalas_ninos
+mode: default
+content:
+  description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_categoria_del_koala:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_imagen_del_koala:
+    type: image
+    label: above
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_puntos_requeridos:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 3
+    region: content
+hidden:
+  langcode: true

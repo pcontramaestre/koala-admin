@@ -1,0 +1,27 @@
+uuid: 53cead52-27b8-4dc8-b282-80aadacf4371
+langcode: es
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.koala_ninos.field_describe_tu_koala
+    - field.field.node.koala_ninos.field_hijo_relacionado
+    - field.field.node.koala_ninos.field_selecc
+    - node.type.koala_ninos
+  module:
+    - user
+id: node.koala_ninos.teaser
+targetEntityType: node
+bundle: koala_ninos
+mode: teaser
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_describe_tu_koala: true
+  field_hijo_relacionado: true
+  field_selecc: true
+  langcode: true

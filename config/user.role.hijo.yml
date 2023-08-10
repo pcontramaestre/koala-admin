@@ -2,11 +2,14 @@ uuid: 0106bdbd-c33b-4836-a83a-104042d89edc
 langcode: es
 status: true
 dependencies:
+  config:
+    - node.type.koala_ninos
   module:
     - date_recur_modular
     - field_permissions
     - fivestar
     - form_mode_control
+    - node
     - node_view_permissions
     - user_view_mode
 third_party_settings:
@@ -21,6 +24,7 @@ permissions:
   - 'access user profiles'
   - access_all_form_modes
   - 'date_recur_modular use sierra form'
+  - 'edit own koala_ninos content'
   - 'rate content'
   - 'view any agendar_clase content'
   - 'view any horarios_de_trabajo content'
@@ -39,4 +43,5 @@ permissions:
   - 'view own field_tu_presentacion'
   - 'view own horarios_de_trabajo content'
   - 'view own horarios_profesores content'
+  - 'view own koala_ninos content'
   - 'view user email addresses'

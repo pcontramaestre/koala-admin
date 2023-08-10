@@ -1,0 +1,16 @@
+uuid: 9ed0c0b7-cefb-4fc5-b79e-d8ac0b376c16
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.koala_ninos
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+id: node.koala_ninos
+target_entity_type_id: node
+target_bundle: koala_ninos
+default_langcode: site_default
+language_alterable: false

@@ -1,0 +1,23 @@
+uuid: bfb91b71-f511-4102-8c44-47e56460fd3d
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_puntos_acumulados
+    - node.type.crear_hijos
+id: node.crear_hijos.field_puntos_acumulados
+field_name: field_puntos_acumulados
+entity_type: node
+bundle: crear_hijos
+label: 'Puntos acumulados'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: 0
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

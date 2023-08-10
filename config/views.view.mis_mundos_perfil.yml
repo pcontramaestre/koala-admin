@@ -439,7 +439,18 @@ display:
           empty: false
           content: "<div class=\"text-center titulo\"><strong>Mis mundos</strong></div>\r\n<div class=\"text-center subtitulo\">Disfrutemos juntos de juegos, música y audiolibros. Practica mucho español </div>"
           tokenize: false
-      footer: {  }
+      footer:
+        area_text_custom:
+          id: area_text_custom
+          table: views
+          field: area_text_custom
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text_custom
+          empty: false
+          content: "<a href=\"/mis-mundos\">\r\n  <img src=\"/themes/custom/koala/images/boton-mas.svg\" width=\"40\" height=\"40>\r\n</a>"
+          tokenize: false
       display_extenders: {  }
     cache_metadata:
       max-age: -1

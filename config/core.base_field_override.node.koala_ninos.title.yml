@@ -1,0 +1,18 @@
+uuid: 8d373300-decb-49d5-8a4f-450a5615a35a
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.koala_ninos
+id: node.koala_ninos.title
+field_name: title
+entity_type: node
+bundle: koala_ninos
+label: 'Nombre de tu Koala'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,77 @@
+uuid: b9887910-2778-46cd-94f7-23391536a7bf
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.koalas_ninos.field_categoria_del_koala
+    - field.field.taxonomy_term.koalas_ninos.field_imagen_del_koala
+    - field.field.taxonomy_term.koalas_ninos.field_puntos_requeridos
+    - image.style.thumbnail
+    - taxonomy.vocabulary.koalas_ninos
+  module:
+    - field_layout
+    - layout_discovery
+    - svg_image
+    - text
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+id: taxonomy_term.koalas_ninos.default
+targetEntityType: taxonomy_term
+bundle: koalas_ninos
+mode: default
+content:
+  description:
+    type: text_textarea
+    weight: 1
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_categoria_del_koala:
+    type: options_buttons
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_imagen_del_koala:
+    type: image_image
+    weight: 5
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+  field_puntos_requeridos:
+    type: number
+    weight: 6
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 4
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  translation:
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  langcode: true
+  path: true
