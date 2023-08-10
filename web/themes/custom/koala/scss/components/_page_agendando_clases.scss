@@ -3,78 +3,63 @@
     .content {
       .volver {
         a {
-          color          : #000;
+          color: #000;
           text-decoration: none;
-          color          : black;
-          border-bottom  : 1px solid;
+          color: black;
+          border-bottom: 1px solid;
         }
       }
 
       .izquierda {
         .view-content {
           .views-row {
-
-            .datos-profesor,
-            .datos-del-koala {
+            .datos-profesor {
               align-content: center;
-              align-items  : center;
-
-              &.datos-del-koala {
-                margin-top: 2rem;
-
-                .titulo-bloque {
-                  font-size    : 1.5rem;
-                  background   : #80808036;
-                  padding      : 1rem;
-                  margin-bottom: 1rem;
-
-                  h3 {
-                    font-size: 1.4rem;
-                  }
-                }
-              }
-
+              align-items: center;
               .titulo-bloque {
-                font-size    : 1.5rem;
-                background   : #80808036;
-                padding      : 1rem;
-                margin-bottom: 1rem;
-
-                h3 {
-                  font-size: 1.4rem;
-                  margin   : 0;
-                }
+                display: none;
               }
 
               .imagen-profesor {
                 img {
                   border-radius: 50%;
-                  width        : 100px;
-                  height       : 100px;
-                  object-fit   : cover;
-                  border       : 1px solid #8080803d;
+                  width: 100px;
+                  height: 100px;
+                  object-fit: cover;
+                  border: 2px solid white;
+                  box-shadow: 0px 0px 4px 1px #b8b3b3;
                 }
               }
 
               .nombres-profesor {
-                padding-right: 1rem;
-
                 h2 {
-                  margin     : 0;
-                  font-size  : 1.5rem;
+                  font-size: 24px;
+                  font-weight: 700;
                   line-height: 1.6rem;
+                  margin-left: 1.2rem;
+                }
+              }
+              .presentacion-profesor {
+                margin-top: 2rem;
+                p {
+                  font-weight: 500;
+                  line-height: 21px;
                 }
               }
             }
-
-            .views-field-field-tu-video- {
-              iframe {
-                width     : 100%;
-                min-height: 250px;
-                height    : auto;
-              }
+          }
+        }
+        .view-profesor-agendar-clase {
+          .views-field-field-tu-video- {
+            iframe {
+              width: 176px;
+              height: 104px;
+              border-radius: 15px;
             }
           }
+        }
+        .view-display-id-profesor_detalle_horario {
+          display: none;
         }
       }
 
@@ -84,52 +69,56 @@
         .formulario {
           #select-horario {
             margin-bottom: 2rem;
-            border       : 2px solid #E6F1F1;
+            border: 2px solid #e6f1f1;
             border-radius: 24px;
-            padding      : 1rem;
+            padding: 1rem;
 
             .titulo {
               h2 {
-                font-size    : 1.25rem;
-                font-weight  : 700;
+                font-size: 1.25rem;
+                font-weight: 700;
                 margin-bottom: 0.5rem;
-                padding-left : 1.5rem;
+                padding-left: 1.5rem;
               }
 
               &::before {
-                content    : '\f017';
-                font-family: 'Font Awesome 5 Free';
-                display    : inline-block;
-                position   : absolute;
+                content: "\f017";
+                font-family: "Font Awesome 5 Free";
+                display: inline-block;
+                position: absolute;
               }
             }
 
             .horario {
-              display              : grid;
+              display: grid;
               grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-              gap                  : 16px;
-              justify-items        : start;
-              margin-top           : 1rem;
+              gap: 16px;
+              justify-items: start;
+              margin-top: 1rem;
 
               a {
                 text-decoration: none;
-                padding        : 8px 16px 5px 16px;
-                border         : 1px solid #BECACA;
-                border-radius  : 32px;
-                color          : black;
-                font-size      : 1rem;
+                padding: 8px 16px 5px 16px;
+                border: 1px solid #becaca;
+                border-radius: 32px;
+                color: black;
+                font-size: 1rem;
 
                 &.active {
-                  background: #2FF7EE;
+                  background: #2ff7ee;
                 }
               }
+            }
+          }
+          .layout--onecol {
+            .field--name-field-fecha-cita-oculta {
+              display: none;
             }
           }
 
           //Formulario
           div[data-drupal-selector^="edit-field-layout"] {
             .layout__region--content {
-
               .field--name-title,
               .field--name-field-nombre-del-nino-a,
               .field--name-field-fecha-nac,
@@ -142,23 +131,82 @@
         }
 
         .layout-region-node-footer {
-          width                : 100%;
-          display              : grid;
+          width: 100%;
+          display: grid;
           grid-template-columns: 1fr 1fr;
 
           @media (max-width: 800px) {
             grid-template-columns: 1fr;
           }
 
-          align-items   : center;
-          align-content : center;
-          justify-items : center;
-          padding       : 0;
+          align-items: center;
+          align-content: center;
+          justify-items: center;
+          padding: 0;
 
-          .alumno-seleccionado {}
+          .alumno-seleccionado {
+            .datos-del-koala {
+              width: 75%;
+              margin-left: 0rem;
+              border: 2px solid #e6f1f1;
+              border-radius: 24px;
+              padding: 1rem;
+              .titulo-bloque {
+                h3 {
+                  font-size: 20px;
+                  font-weight: 700;
+                }
+              }
+              .imagen-profesor {
+                width: 44px;
+                background-color: #f5f8d8;
+                padding: 0.5rem 0rem 0.5rem 0.5rem;
+                border-bottom-left-radius: 24px;
+                border-top-left-radius: 24px;
+                height: 42px;
+                img {
+                  width: 28px;
+                  height: 28px;
+                  border: 2px solid white;
+                  border-radius: 130px;
+                }
+              }
+              .nombres-profesor {
+                height: 42px;
+                background-color: #f5f8d8;
+                padding: 0.5rem 0.5rem 0.5rem 0rem;
+                display: flex;
+                align-items: center;
+                border-bottom-right-radius: 24px;
+                border-top-right-radius: 24px;
+                h2 {
+                  font-size: 16px;
+                  font-weight: 700;
+                  margin-bottom: 0rem !important;
+                }
+              }
+            }
+          }
 
           .form-actions {
             align-self: unset;
+            .button {
+              border: 2px solid #297e88;
+              border-radius: 32px;
+              width: 192px;
+              height: 51px;
+              padding: 0.75rem 1rem;
+              color: #000000;
+              font-weight: 700;
+              font-size: 1.25rem;
+              background-color: #2ff7ee;
+              display: flex;
+              align-items: center;
+              &:hover{
+                background-color: #297e88;
+                color: white;
+              }
+            }
           }
         }
 
