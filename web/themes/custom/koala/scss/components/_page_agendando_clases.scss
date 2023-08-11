@@ -2,15 +2,23 @@
   form.node-agendar-clase-agendando-clase-form.node-form {
     .content {
       .volver {
+        position: absolute;
         a {
           color: #000;
           text-decoration: none;
           color: black;
           border-bottom: 1px solid;
+          font-weight: 700;
+          font-size: 20px;
+          span {
+            font-size: 20px;
+          }
         }
       }
 
-      .izquierda {
+      .izquierda
+      {
+        margin-top: 4rem;
         .view-content {
           .views-row {
             .datos-profesor {
@@ -40,7 +48,7 @@
                 }
               }
               .presentacion-profesor {
-                margin-top: 2rem;
+                margin-top: 1rem;
                 p {
                   font-weight: 500;
                   line-height: 21px;
@@ -74,6 +82,8 @@
             padding: 1rem;
 
             .titulo {
+              position: relative;
+              margin-left: 0.8rem;
               h2 {
                 font-size: 1.25rem;
                 font-weight: 700;
@@ -86,6 +96,9 @@
                 font-family: "Font Awesome 5 Free";
                 display: inline-block;
                 position: absolute;
+                font-size: 24px;
+                top: -7px;
+                left: -13px;
               }
             }
 
@@ -99,7 +112,7 @@
               a {
                 text-decoration: none;
                 padding: 8px 16px 5px 16px;
-                border: 1px solid #becaca;
+                border: 2px solid #becaca;
                 border-radius: 32px;
                 color: black;
                 font-size: 1rem;
@@ -202,7 +215,7 @@
               background-color: #2ff7ee;
               display: flex;
               align-items: center;
-              &:hover{
+              &:hover {
                 background-color: #297e88;
                 color: white;
               }
