@@ -336,8 +336,72 @@
   }
 
   .layout__region--first {
-    padding-right: 1rem;
-
+    .texto-perfil {
+      h3 {
+        font-size: 24px;
+        font-weight: 700;
+        text-align: center;
+      }
+      .text-center {
+        font-weight: 500;
+      }
+      .estrella {
+        background-color: #ff6669;
+        color: white;
+        height: 56px;
+        border-radius: 16px;
+        width: 210px;
+        justify-content: center;
+        border: 2px dotted white;
+        display: flex;
+        align-items: center;
+        margin: 0 auto;
+        img {
+          height: 35px;
+          margin-right: 0.5rem;
+        }
+        .texto {
+          font-weight: 700;
+          font-size: 1.5rem;
+          span {
+            font-size: 1rem;
+          }
+        }
+      }
+    }
+    .field--name-title {
+      .js-form-type-textfield {
+        text-align: center;
+        label {
+          font-weight: 500;
+          margin-bottom: 0.5rem;
+        }
+        input {
+          height: 46px;
+          border-radius: 32px;
+          border: 2px solid #becaca;
+          color: black;
+          font-weight: 500;
+        }
+      }
+    }
+    .field--name-field-describe-tu-koala{
+      text-align: center;
+      margin-bottom: 0.5rem!important;
+      label {
+        font-weight: 500;
+        margin-bottom: 0.5rem;
+      }
+      .form-textarea-wrapper {
+        textarea {
+          border-radius: 16px;
+          border: 2px solid #becaca;
+          color: black;
+          font-weight: 500;
+          height: 123px;
+        }
+      }
+    }
     .vocabulary-koalas-ninos {
       > h2 {
         display: none;
@@ -352,6 +416,29 @@
         text-align: center;
         margin-bottom: 1rem;
       }
+    }
+  }
+  .form-actions{
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    button{
+      border: 2px solid #297E88;
+      background-color: white;
+      color: black;
+      font-weight: 700;
+      font-size: 20px;
+      border-radius: 32px;
+      &:hover{
+        background-color: #297E88;
+        color: white;
+      }
+    }
+    &:before{
+      content: "Escribe un máximo de 150 caractéres";
+      font-weight: 400;
+      font-size: 12px;
+      margin-bottom: 0.5rem;
     }
   }
 
