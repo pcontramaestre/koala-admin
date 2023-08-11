@@ -386,6 +386,8 @@ footer.site-footer {
   footer.site-footer {
     .container {
       max-width: 1400px !important;
+      width         : 90%;
+      margin        : 0 auto;
 
       .site-footer__top {
         padding-top: 1rem;
@@ -396,6 +398,11 @@ footer.site-footer {
 
           &.region-footer-third {
             text-align: right;
+            .layout__region{
+              .field--name-body{
+                font-weight: 500;
+              }
+            }
           }
         }
       }
