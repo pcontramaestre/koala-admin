@@ -16,8 +16,7 @@
         }
       }
 
-      .izquierda
-      {
+      .izquierda {
         margin-top: 4rem;
         .view-content {
           .views-row {
@@ -168,6 +167,22 @@
                 h3 {
                   font-size: 20px;
                   font-weight: 700;
+                  display: flex;
+                  &:before {
+                    content: "";
+                    display: block;
+                    width: 40px;
+                    height: 23px;
+                    background-image: url(/themes/custom/koala/images/Profile-icon-Koala.png);
+                    display: -webkit-inline-box;
+                    margin-right: 0.5rem;
+                  }
+                  &:after {
+                    content: "\f078";
+                    font-family: "Font Awesome 5 Free";
+                    font-weight: 900;
+                    margin-left: 0.4rem;
+                  }
                 }
               }
               .imagen-profesor {
