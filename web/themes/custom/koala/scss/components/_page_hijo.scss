@@ -1,13 +1,13 @@
 .path-hijo:not(.page-view-koalas-avatares-ninos) {
-  background: #ECF9FB;
+  background: #ecf9fb;
 
   #page-wrapper #page #main-wrapper {
     padding-top: 2rem;
   }
 
   .layout--threecol-section--33-34-33 {
-    >.layout__region--first:nth-child(1) {
-      >h1 {
+    > .layout__region--first:nth-child(1) {
+      > h1 {
         display: none;
       }
     }
@@ -17,35 +17,39 @@
   #main-wrapper {
     #block-koala-content {
       .layout__region--first {
+        padding-left: 0.5rem;
         .block-views-blockhijo-block-1 {
           .view-hijo {
             .views-row {
-              display       : flex;
+              display: flex;
               flex-direction: row;
-              align-items   : center;
-              flex-wrap     : wrap;
+              align-items: center;
+              flex-wrap: wrap;
+              width: 100%;
 
               .views-field-user-picture {
                 margin-right: 2%;
+                width: 12%;
 
                 .field-content {
                   img {
-                    width        : 48px;
-                    height       : 48px;
+                    width: 48px;
+                    height: 48px;
                     border-radius: 200px;
-                    border       : 1px solid white;
-                    object-fit   : cover;
+                    border: 1px solid white;
+                    object-fit: cover;
                   }
                 }
               }
 
               .views-field-field-nombre-del-hijo {
+                width: 86%;
                 .field-content {
                   p {
                     margin: 0;
 
                     strong {
-                      font-size  : 24px;
+                      font-size: 24px;
                       line-height: 27px;
                     }
                   }
@@ -54,12 +58,13 @@
 
               .views-field-nothing {
                 width: 100%;
+                margin-top: 1rem;
 
                 .field-content {
                   p {
                     font-weight: 500;
-                    color      : black;
-                    margin     : 0;
+                    color: black;
+                    margin: 0;
                   }
                 }
               }
@@ -72,38 +77,38 @@
             margin-top: 1rem;
 
             .view-content.row {
-              max-width: 100%;
+              padding: 0px 12px;
             }
 
             .views-row {
-              border       : 2px solid #becaca;
-              background   : white;
+              border: 2px solid #becaca;
+              background: white;
               border-radius: 24px;
-              padding      : 1rem;
-              text-align   : center;
+              padding: 1rem;
+              text-align: center;
 
               .views-field {
                 .field-content {
                   .titulo {
                     font-weight: 500;
-                    color      : black;
+                    color: black;
                   }
 
                   .fecha {
                     font-weight: 700;
-                    color      : black;
+                    color: black;
                   }
 
                   .enlace {
                     background-color: #2ff7ee;
-                    border          : 2px solid #297e88;
-                    border-radius   : 32px;
-                    width           : 225px;
-                    height          : 51px;
-                    display         : flex;
-                    justify-content : center;
-                    align-items     : center;
-                    margin          : 0 auto;
+                    border: 2px solid #297e88;
+                    border-radius: 32px;
+                    width: 225px;
+                    height: 51px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin: 0 auto;
 
                     &:hover {
                       background-color: #297e88;
@@ -114,10 +119,10 @@
                     }
 
                     a {
-                      color          : black;
+                      color: black;
                       text-decoration: none;
-                      font-weight    : 700;
-                      font-size      : 20px;
+                      font-weight: 700;
+                      font-size: 20px;
                     }
                   }
                 }
@@ -128,7 +133,7 @@
 
         .block-views-blockmis-mundos-perfil-block-1 {
           margin-top: 1rem !important;
-          position  : relative;
+          position: relative;
 
           .view-mis-mundos-perfil {
             .view-header {
@@ -136,66 +141,57 @@
                 text-align: initial !important;
 
                 strong {
-                  font-size      : 24px;
+                  font-size: 24px;
                   text-decoration: underline 1px;
                 }
               }
 
               .subtitulo {
-                text-align : initial !important;
+                text-align: initial !important;
                 font-weight: 500;
-                color      : black;
+                color: black;
               }
             }
 
             .view-content {
               .horizontal {
                 .views-row {
-                  .col-lg-6 {
-                    width: 45% !important;
-                  }
-
                   .field-content {
                     .categoria {
-                      margin-top   : 1rem;
+                      margin-top: 1rem;
                       margin-bottom: 1.5rem;
+                      border-radius: 16px;
+                      border: 1px solid #becaca;
+                      margin-right: 1rem;
 
                       .imagen {
                         img {
-                          height                 : 126px;
-                          width                  : 161px;
-                          object-fit             : cover;
-                          border-top-left-radius : 16px;
-                          border-top-right-radius: 16px;
-                          border-top             : 1px solid #becaca;
-                          border-right           : 1px solid #becaca;
-                          border-left            : 1px solid #becaca;
+                          height: 126px;
+                          width: 100%;
+                          object-fit: cover;
                         }
                       }
 
                       .titulo-numero {
-                        background-color          : white;
-                        width                     : 161px;
-                        min-height                : 60px;
-                        border-bottom-left-radius : 16px;
+                        background-color: white;
+                        width: 100%;
+                        min-height: 60px;
+                        padding: 0.5rem;
+                        border-bottom-left-radius: 16px;
                         border-bottom-right-radius: 16px;
-                        border-bottom             : 1px solid #becaca;
-                        border-right              : 1px solid #becaca;
-                        border-left               : 1px solid #becaca;
-                        padding                   : 0.5rem;
 
                         a {
                           text-decoration: none;
-                          color          : black;
+                          color: black;
 
                           .titulo {
-                            font-size  : 24px;
+                            font-size: 24px;
                             font-weight: 700;
                           }
 
                           .nro {
                             font-weight: 500;
-                            color      : black;
+                            color: black;
                           }
                         }
                       }
@@ -207,13 +203,13 @@
 
             .view-footer {
               position: absolute;
-              right   : 0;
-              bottom  : 33%;
+              right: -11%;
+              bottom: 33%;
 
               a {
                 img {
-                  background   : white;
-                  border       : 1px solid gray;
+                  background: white;
+                  box-shadow: 0px 0px 7px 0px #becaca;
                   border-radius: 8px;
                 }
               }
@@ -223,24 +219,103 @@
       }
 
       .layout__region--second {
-        display            : flex;
-        flex-direction     : column;
-        justify-content    : center;
-        align-items        : center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
         //Arreglar este background
-        background-image   : url(/themes/custom/koala/images/background-hijos.png);
+        background-image: url(/themes/custom/koala/images/background-hijos.png);
         background-position: center;
-        background-size    : contain;
-        background-repeat  : no-repeat;
+        background-size: contain;
+        background-repeat: no-repeat;
 
         .vocabulary-koalas-ninos {
-          >h2 {
+          > h2 {
             display: none;
           }
 
           img {
-            width : 350px !important;
+            width: 350px !important;
             height: auto;
+          }
+        }
+      }
+      .layout__region--third {
+        .block-views {
+          .view-id-koalas_avatares_ninos {
+            .views-field-nothing {
+              .estrella {
+                background-color: #ff6669;
+                color: white;
+                height: 56px;
+                border-radius: 16px;
+                width: 210px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: 2px dotted white;
+                img {
+                  height: 35px;
+                  margin-right: 0.5rem;
+                }
+                .texto {
+                  font-weight: 700;
+                  font-size: 24px;
+                  span {
+                    font-size: 16px;
+                  }
+                }
+              }
+            }
+            .views-field-title {
+              margin-top: 1rem;
+              h2 {
+                font-weight: 700;
+                font-size: 40px;
+              }
+            }
+            .views-field-field-describe-tu-koala {
+              font-weight: 500;
+              line-height: 21px;
+              margin-bottom: 1rem;
+            }
+            .views-field-nothing-1 {
+              height: 34px;
+              border-radius: 28px;
+              border: 2px solid #297e88;
+              background-color: white;
+              width: 223px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              margin-bottom: 1rem;
+              &:hover {
+                background-color: #297e88;
+                .enlace-personalizar {
+                  a {
+                    color: white;
+                  }
+                }
+              }
+              .enlace-personalizar {
+                a {
+                  color: black;
+                  text-decoration: none;
+                  font-weight: 700;
+                }
+              }
+            }
+            .views-field-nothing-2 {
+              .avances-poderes {
+                .titulo {
+                  font-weight: 500;
+                }
+                img {
+                  width: 343px;
+                  object-fit: contain;
+                }
+              }
+            }
           }
         }
       }
@@ -248,10 +323,9 @@
   }
 }
 
-
 //PAGINA EDITAR AVATARES - MI KOALA
 .page-view-koalas-avatares-ninos {
-  background: #ECF9FB;
+  background: #ecf9fb;
 
   .ocultar {
     display: none;
@@ -265,21 +339,20 @@
     padding-right: 1rem;
 
     .vocabulary-koalas-ninos {
-      >h2 {
+      > h2 {
         display: none;
       }
 
       img {
-        width : 200px !important;
+        width: 200px !important;
         height: auto;
       }
 
-      >div.content {
-        text-align   : center;
+      > div.content {
+        text-align: center;
         margin-bottom: 1rem;
       }
     }
-
   }
 
   .layout__region--second {
@@ -290,24 +363,24 @@
     }
 
     #edit-field-selecc--wrapper {
-      >legend {
+      > legend {
         display: none;
       }
     }
 
     #edit-field-selecc {
-      display              : grid;
+      display: grid;
       grid-template-columns: 1fr 1fr 1fr 1fr;
-      gap                  : 16px;
+      gap: 16px;
 
       .form-check-label {
         .views-field-nothing {
           .field-content {
-            display      : block;
-            font-weight  : 700;
-            text-align   : center;
-            background   : white;
-            padding      : 0.5rem;
+            display: block;
+            font-weight: 700;
+            text-align: center;
+            background: white;
+            padding: 0.5rem;
             border-radius: 16px;
 
             p {
@@ -315,7 +388,7 @@
             }
 
             img {
-              width : 100%;
+              width: 100%;
               height: auto;
             }
           }
