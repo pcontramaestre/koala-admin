@@ -1,0 +1,50 @@
+uuid: e32583f5-f528-4b48-9054-ee00c5f43a8d
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_direcc
+  module:
+    - address
+    - multiple_registration
+    - user
+third_party_settings:
+  multiple_registration:
+    user_additional_register_form_required:
+      authenticated: 0
+      profesor: 0
+      padre: 0
+      hijo: 0
+    user_additional_register_form:
+      authenticated: 0
+      profesor: 0
+      padre: 0
+      hijo: 0
+id: user.user.field_direcc
+field_name: field_direcc
+entity_type: user
+bundle: user
+label: Dirección
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  available_countries: {  }
+  langcode_override: ''
+  field_overrides:
+    givenName:
+      override: hidden
+    additionalName:
+      override: hidden
+    familyName:
+      override: hidden
+    organization:
+      override: hidden
+    addressLine2:
+      override: hidden
+    sortingCode:
+      override: hidden
+  fields: {  }
+field_type: address

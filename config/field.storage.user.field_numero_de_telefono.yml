@@ -1,0 +1,24 @@
+uuid: 592b1e99-e373-455e-8b43-9d971784af43
+langcode: es
+status: true
+dependencies:
+  module:
+    - field_permissions
+    - phone_number
+    - user
+third_party_settings:
+  field_permissions:
+    permission_type: public
+id: user.field_numero_de_telefono
+field_name: field_numero_de_telefono
+entity_type: user
+type: phone_number
+settings:
+  unique: 1
+module: phone_number
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

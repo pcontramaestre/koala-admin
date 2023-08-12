@@ -6,10 +6,13 @@ dependencies:
     - field.field.user.user.field_apodo
     - field.field.user.user.field_avatar
     - field.field.user.user.field_celular
+    - field.field.user.user.field_direcc
     - field.field.user.user.field_direccion
+    - field.field.user.user.field_nacionalidad
     - field.field.user.user.field_nombre_del_acudiente
     - field.field.user.user.field_nombre_del_hijo
     - field.field.user.user.field_nombres_y_apellidos_del_pr
+    - field.field.user.user.field_numero_de_telefono
     - field.field.user.user.field_padre
     - field.field.user.user.field_pais
     - field.field.user.user.field_tu_presentacion
@@ -17,9 +20,12 @@ dependencies:
     - field.field.user.user.user_picture
     - image.style.thumbnail
   module:
+    - address
+    - country
     - field_layout
     - layout_builder
     - options
+    - phone_number
     - show_email
     - svg_image
     - text
@@ -63,12 +69,26 @@ content:
     third_party_settings: {  }
     weight: 3
     region: content
+  field_direcc:
+    type: address_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 15
+    region: content
   field_direccion:
     type: basic_string
     label: above
     settings: {  }
     third_party_settings: {  }
     weight: 8
+    region: content
+  field_nacionalidad:
+    type: country_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 14
     region: content
   field_nombre_del_acudiente:
     type: string
@@ -93,6 +113,14 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     weight: 9
+    region: content
+  field_numero_de_telefono:
+    type: phone_number_international
+    label: above
+    settings:
+      as_link: false
+    third_party_settings: {  }
+    weight: 16
     region: content
   field_padre:
     type: entity_reference_label
@@ -154,6 +182,10 @@ content:
       image_style: thumbnail
       image_loading:
         attribute: lazy
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
     third_party_settings: {  }
     weight: 0
     region: content

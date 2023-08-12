@@ -64,6 +64,12 @@
 	{% if rows %}
 		<div class="view-content row">
 			{{ drupal_view('mis_koalas', 'block_7_cuadro_koala') }}
+			<div class="view-header-resultados">
+				<div class="titulo-profesores">Profesores recomendados</div>
+				<div>Selecciona a tu profesor para agendar y ver más información sobre su perfil
+				</div>
+			</div>
+
 			<div class="view-content-detail">
 				{{ rows }}
 			</div>

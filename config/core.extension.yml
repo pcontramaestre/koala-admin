@@ -3,6 +3,7 @@ _core:
 langcode: es
 module:
   add_content_by_bundle: 0
+  address: 0
   admin_toolbar: 0
   admin_toolbar_links_access_filter: 0
   admin_toolbar_search: 0
@@ -34,6 +35,7 @@ module:
   contact: 0
   content_moderation: 0
   contextual: 0
+  country: 0
   create_koalas: 0
   ctools: 0
   ctools_entity_mask: 0
@@ -68,6 +70,9 @@ module:
   filefield_paths: 0
   filter: 0
   fivestar: 0
+  flags: 0
+  flags_country: 0
+  flags_ui: 0
   flatpickr_datepicker: 0
   form_mode_control: 0
   form_mode_manager: 0
@@ -88,6 +93,7 @@ module:
   jquery_ui_controlgroup: 0
   jquery_ui_datepicker: 0
   jquery_ui_menu: 0
+  jquery_ui_selectmenu: 0
   jquery_ui_slider: 0
   jquery_ui_tabs: 0
   jquery_ui_touch_punch: 0
@@ -121,6 +127,7 @@ module:
   page_manager_ui: 0
   path: 0
   path_alias: 0
+  phone_number: 0
   quicktabs: 0
   quicktabs_accordion: 0
   quicktabs_jqueryui: 0
@@ -135,6 +142,7 @@ module:
   rest: 0
   rules: 0
   search: 0
+  select_icons: 0
   serialization: 0
   shortcut: 0
   show_email: 0

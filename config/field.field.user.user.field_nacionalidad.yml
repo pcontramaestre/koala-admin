@@ -1,0 +1,35 @@
+uuid: e98af073-28f1-47dc-9383-3aec41080a28
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_nacionalidad
+  module:
+    - country
+    - multiple_registration
+    - user
+third_party_settings:
+  multiple_registration:
+    user_additional_register_form_required:
+      authenticated: 0
+      profesor: 0
+      padre: 0
+      hijo: 0
+    user_additional_register_form:
+      authenticated: 0
+      profesor: 0
+      padre: 0
+      hijo: 0
+id: user.user.field_nacionalidad
+field_name: field_nacionalidad
+entity_type: user
+bundle: user
+label: Nacionalidad
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  selectable_countries: {  }
+field_type: country

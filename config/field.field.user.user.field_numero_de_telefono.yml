@@ -1,0 +1,37 @@
+uuid: f4b0c6cb-7986-4401-9759-2ad6e194df2c
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_numero_de_telefono
+  module:
+    - multiple_registration
+    - phone_number
+    - user
+third_party_settings:
+  multiple_registration:
+    user_additional_register_form_required:
+      authenticated: 0
+      profesor: 0
+      padre: 0
+      hijo: 0
+    user_additional_register_form:
+      authenticated: 0
+      profesor: 0
+      padre: 0
+      hijo: 0
+id: user.user.field_numero_de_telefono
+field_name: field_numero_de_telefono
+entity_type: user
+bundle: user
+label: 'Número de teléfono'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_countries: {  }
+  allowed_types: {  }
+  extension_field: false
+field_type: phone_number
