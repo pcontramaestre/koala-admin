@@ -32,7 +32,7 @@ h2 {
       margin: 0;
 
       img {
-        max-width: 112px;
+        max-width: 97px;
         height: auto;
 
         @media (max-width: 1200px) {
@@ -327,7 +327,8 @@ h2 {
   .container-md,
   .container-sm,
   .container-xl {
-    max-width: 1240px !important;
+    max-width: 1400px !important;
+    width: 90%!important;
   }
 }
 

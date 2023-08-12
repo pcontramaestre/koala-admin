@@ -104,6 +104,20 @@ footer.site-footer {
         }
       }
     }
+    .footer-bottom{
+      #block-footerbanderas{
+        .field--name-body{
+          .footer-banderas{
+            display: flex;
+            font-weight: 500;
+            margin-bottom: 2rem;
+            .texto1{
+              margin-right: 0.5rem;
+            }
+          }
+        }
+      }
+    }
   }
 }
 
@@ -221,6 +235,15 @@ footer.site-footer {
                   }
                 }
               }
+            }
+          }
+        }
+      }
+      .footer-bottom{
+        #block-footerbanderas{
+          .field--name-body{
+            .footer-banderas{
+              margin-top: -2rem;
             }
           }
         }

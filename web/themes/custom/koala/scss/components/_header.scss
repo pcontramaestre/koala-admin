@@ -71,12 +71,15 @@ body #main-wrapper {
         #block-hijos {
           display: flex;
           align-items: center;
+          width: 73%;
 
           .nav {
             display: flex;
             align-items: center;
 
             .nav-item {
+              min-width: 95px;
+              justify-content: center;
               &:nth-child(1) {
                 a {
                   opacity: 0;
@@ -96,7 +99,7 @@ body #main-wrapper {
               height: 30px;
               display: flex;
               align-items: center;
-              margin-right: 2.5rem;
+              margin-right: 1.5rem;
 
               .nav-link {
                 color: black !important;
@@ -154,6 +157,7 @@ body #main-wrapper {
         }
 
         #block-padres {
+          width: 73%;
           display: flex;
           align-items: center;
           margin-left: 1.5rem;
@@ -188,7 +192,6 @@ body #main-wrapper {
         #block-koala-account-menu {
           display: flex;
           align-items: center;
-          width: 47%;
           // margin-right      : 3rem;
           // min-width      : 30%;
           justify-content: end;

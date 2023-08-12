@@ -8,10 +8,10 @@
             .views-field {
               .clases-proximas {
                 .dato-del-nino {
-                  width: 55% !important;
+                  width: 45% !important;
                 }
                 .datos-clase {
-                  width: 45% !important;
+                  width: 55% !important;
                 }
               }
             }
@@ -110,8 +110,7 @@
               padding-right: 1rem;
 
               .dato-del-nino {
-                flex-direction: row;
-                flex-wrap: nowrap;
+                flex-direction: column;
                 align-items: center;
                 background: white;
                 border-radius: 16px;
