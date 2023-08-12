@@ -10,6 +10,12 @@ body #main-wrapper {
     transition        : all 1s;
     animation-name    : fade;
     animation-duration: 2s;
+
+    .dropbutton-wrapper.dropbutton-multiple {
+      background   : #d7f0f2;
+      border-radius: 16px;
+      width        : 9.5rem;
+    }
   }
 }
 
