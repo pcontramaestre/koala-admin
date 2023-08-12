@@ -2,33 +2,44 @@ body #main-wrapper {
   min-height: 95vh;
 }
 
+
+#header {
+  #block-dropdownlanguage {
+    min-width         : 128px;
+    max-height        : 50px;
+    transition        : all 1s;
+    animation-name    : fade;
+    animation-duration: 2s;
+  }
+}
+
 // header profesor
 #header {
   #navbar-main {
     #CollapsingNavbar {
       #block-profesor {
         .nav {
-          gap: 30px;
+          gap        : 30px;
           margin-left: 2rem;
 
           .nav-item {
             .nav-link {
-              color: black !important;
-              font-size: 1rem;
+              color      : black !important;
+              font-size  : 1rem;
               font-weight: 700;
-              padding: 0 0.5rem;
-              position: relative;
-              transition: all 0.3s ease-in-out;
+              padding    : 0 0.5rem;
+              position   : relative;
+              transition : all 0.3s ease-in-out;
 
               &:hover {
                 background-color: #c6f5f2;
-                border-radius: 20px;
+                border-radius   : 20px;
               }
             }
 
             .nav-link.active {
               background-color: #c6f5f2;
-              border-radius: 20px;
+              border-radius   : 20px;
             }
           }
         }
@@ -39,22 +50,22 @@ body #main-wrapper {
           gap: 30px;
 
           .nav-link {
-            color: black !important;
-            font-size: 1rem;
+            color      : black !important;
+            font-size  : 1rem;
             font-weight: 700;
-            padding: 0 0.5rem;
-            position: relative;
-            transition: all 0.3s ease-in-out;
+            padding    : 0 0.5rem;
+            position   : relative;
+            transition : all 0.3s ease-in-out;
 
             &:hover {
               background-color: #c6f5f2;
-              border-radius: 20px;
+              border-radius   : 20px;
             }
           }
 
           .nav-link.active {
             background-color: #c6f5f2;
-            border-radius: 20px;
+            border-radius   : 20px;
           }
         }
       }
@@ -69,56 +80,58 @@ body #main-wrapper {
     #CollapsingNavbar {
       .offcanvas-body {
         #block-hijos {
-          display: flex;
+          display    : flex;
           align-items: center;
-          width: 73%;
+          width      : 73%;
 
           .nav {
-            display: flex;
+            display    : flex;
             align-items: center;
 
             .nav-item {
-              min-width: 95px;
+              min-width      : 95px;
               justify-content: center;
+
               &:nth-child(1) {
                 a {
                   opacity: 0;
                 }
 
                 &::before {
-                  content: "";
-                  display: block;
-                  background-image: url("/themes/custom/koala/images/logo-koala.png");
-                  height: 30px;
-                  width: 97px;
+                  content          : "";
+                  display          : block;
+                  background-image : url("/themes/custom/koala/images/logo-koala.png");
+                  height           : 30px;
+                  width            : 97px;
                   background-repeat: no-repeat;
-                  position: absolute;
+                  position         : absolute;
                   background-repeat: no-repeat;
                 }
               }
-              height: 30px;
-              display: flex;
-              align-items: center;
+
+              height      : 30px;
+              display     : flex;
+              align-items : center;
               margin-right: 1.5rem;
 
               .nav-link {
-                color: black !important;
-                font-size: 1rem;
+                color      : black !important;
+                font-size  : 1rem;
                 font-weight: 700;
-                padding: 0 0.5rem;
-                position: relative;
-                transition: all 0.3s ease-in-out;
+                padding    : 0 0.5rem;
+                position   : relative;
+                transition : all 0.3s ease-in-out;
 
                 &:hover {
                   background-color: #c6f5f2;
-                  border-radius: 20px;
+                  border-radius   : 20px;
                 }
               }
 
               .nav-link.active {
                 background-color: #c6f5f2;
-                border-radius: 20px;
-                padding: 0rem 1.5rem;
+                border-radius   : 20px;
+                padding         : 0rem 1.5rem;
               }
             }
           }
@@ -157,8 +170,8 @@ body #main-wrapper {
         }
 
         #block-padres {
-          width: 73%;
-          display: flex;
+          width      : 73%;
+          display    : flex;
           align-items: center;
           margin-left: 1.5rem;
 
@@ -167,40 +180,40 @@ body #main-wrapper {
               margin-right: 2.5rem;
 
               .nav-link {
-                color: black !important;
-                font-size: 1rem;
+                color      : black !important;
+                font-size  : 1rem;
                 font-weight: 700;
-                padding: 0 0.5rem;
-                position: relative;
-                transition: all 0.3s ease-in-out;
+                padding    : 0 0.5rem;
+                position   : relative;
+                transition : all 0.3s ease-in-out;
 
                 &:hover {
                   background-color: #c6f5f2;
-                  border-radius: 20px;
+                  border-radius   : 20px;
                 }
               }
 
               .nav-link.active {
                 background-color: #c6f5f2;
-                border-radius: 20px;
-                padding: 0rem 1.5rem;
+                border-radius   : 20px;
+                padding         : 0rem 1.5rem;
               }
             }
           }
         }
 
         #block-koala-account-menu {
-          display: flex;
-          align-items: center;
+          display              : flex;
+          align-items          : center;
           // margin-right      : 3rem;
           // min-width      : 30%;
-          justify-content: end;
+          justify-content      : end;
 
           .no-admin {
             .nav-link {
-              font-size: 1rem;
-              font-weight: 700;
-              color: $TurqK500 !important;
+              font-size      : 1rem;
+              font-weight    : 700;
+              color          : $TurqK500 !important;
               text-decoration: underline;
 
               &:before {
@@ -242,14 +255,14 @@ body #main-wrapper {
               margin-left: 0rem;
 
               .nav {
-                display: block;
-                width: 100%;
+                display   : block;
+                width     : 100%;
                 text-align: center;
                 margin-top: 1rem;
 
                 .nav-item {
                   margin-bottom: 2rem;
-                  margin-right: 16px;
+                  margin-right : 16px;
 
                   .nav-link {
                     font-size: 20px;
@@ -260,9 +273,10 @@ body #main-wrapper {
 
             #block-koala-account-menu {
               justify-content: center !important;
-              margin-right: 0rem !important;
+              margin-right   : 0rem !important;
 
               .no-admin {
+
                 // gap: 0px;
                 .nav-link {
                   font-size: 20px;
@@ -279,19 +293,19 @@ body #main-wrapper {
     #header {
       #navbar-main {
         .navbar-toggler {
-          display: flex;
-          width: 100%;
+          display        : flex;
+          width          : 100%;
           justify-content: end;
 
           &:before {
-            content: "";
-            display: block;
-            background-image: url("/themes/custom/koala/images/logo-koala.png");
-            height: 27px;
-            width: 97px;
+            content          : "";
+            display          : block;
+            background-image : url("/themes/custom/koala/images/logo-koala.png");
+            height           : 27px;
+            width            : 97px;
             background-repeat: no-repeat;
-            position: absolute;
-            left: 16px;
+            position         : absolute;
+            left             : 16px;
           }
         }
 
@@ -307,8 +321,8 @@ body #main-wrapper {
               margin-left: 0rem;
 
               .nav {
-                display: block;
-                width: 100%;
+                display   : block;
+                width     : 100%;
                 text-align: center;
                 margin-top: 1rem;
 
@@ -320,7 +334,7 @@ body #main-wrapper {
                   }
 
                   margin-bottom: 2rem;
-                  margin-right: 0rem;
+                  margin-right : 0rem;
 
                   .nav-link {
                     font-size: 20px;
@@ -342,10 +356,10 @@ body #main-wrapper {
       #page {
         header#header {
           position: fixed;
-          width: 100vw;
-          top: 0;
-          z-index: 10000;
-          left: 0;
+          width   : 100vw;
+          top     : 0;
+          z-index : 10000;
+          left    : 0;
         }
 
         #main-wrapper {
@@ -363,10 +377,10 @@ body #main-wrapper {
       #page {
         header#header {
           position: fixed;
-          width: 100vw;
-          top: 0;
-          z-index: 10000;
-          left: 0;
+          width   : 100vw;
+          top     : 0;
+          z-index : 10000;
+          left    : 0;
         }
 
         #main-wrapper {
@@ -378,16 +392,16 @@ body #main-wrapper {
 
   header#header {
     .probar-ahora.nav-link {
-      background: #ffffff;
-      border: 2px solid #297e88;
+      background   : #ffffff;
+      border       : 2px solid #297e88;
       border-radius: 28px;
-      color: #297e88 !important;
-      padding: 0.2rem 1rem 0.2rem 1rem;
-      margin-left: 2rem;
+      color        : #297e88 !important;
+      padding      : 0.2rem 1rem 0.2rem 1rem;
+      margin-left  : 2rem;
 
       &:hover {
         background-color: #297e88;
-        color: white !important;
+        color           : white !important;
       }
     }
 
@@ -401,14 +415,14 @@ body #main-wrapper {
       .content {
         .view-redes-sociales-p {
           .view-content {
-            display: flex;
-            flex-wrap: nowrap;
+            display    : flex;
+            flex-wrap  : nowrap;
             margin-left: 0.1rem;
 
             .views-row {
-              width: 15%;
+              width  : 15%;
               padding: 0;
-              margin: 0;
+              margin : 0;
             }
           }
         }
@@ -423,18 +437,18 @@ body #main-wrapper {
       }
 
       ul {
-        list-style: none;
+        list-style  : none;
         padding-left: 0rem;
 
         li {
           margin-bottom: 2rem;
 
           a {
-            color: black;
+            color          : black;
             text-decoration: none;
-            font-size: 1.1rem;
-            letter-spacing: 0.0625rem;
-            font-weight: 800;
+            font-size      : 1.1rem;
+            letter-spacing : 0.0625rem;
+            font-weight    : 800;
           }
         }
       }
