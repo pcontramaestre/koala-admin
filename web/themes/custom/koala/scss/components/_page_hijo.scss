@@ -156,42 +156,49 @@
             .view-content {
               .horizontal {
                 .views-row {
-                  .field-content {
-                    .categoria {
-                      margin-top: 1rem;
-                      margin-bottom: 1.5rem;
-                      border-radius: 16px;
-                      border: 1px solid #becaca;
-                      margin-right: 1rem;
+                  .views-col {
+                    margin-right: 3%;
+                    width: 48.5% !important;
 
-                      .imagen {
-                        img {
-                          height: 126px;
-                          width: 100%;
-                          object-fit: cover;
-                        }
-                      }
+                    &:last-child {
+                      margin-right: 0rem;
+                    }
+                    .field-content {
+                      .categoria {
+                        margin-top: 1rem;
+                        margin-bottom: 1.5rem;
+                        border-radius: 16px;
+                        border: 1px solid #becaca;
 
-                      .titulo-numero {
-                        background-color: white;
-                        width: 100%;
-                        min-height: 60px;
-                        padding: 0.5rem;
-                        border-bottom-left-radius: 16px;
-                        border-bottom-right-radius: 16px;
-
-                        a {
-                          text-decoration: none;
-                          color: black;
-
-                          .titulo {
-                            font-size: 24px;
-                            font-weight: 700;
+                        .imagen {
+                          img {
+                            height: 126px;
+                            width: 100%;
+                            object-fit: cover;
                           }
+                        }
 
-                          .nro {
-                            font-weight: 500;
+                        .titulo-numero {
+                          background-color: white;
+                          width: 100%;
+                          min-height: 60px;
+                          padding: 0.5rem;
+                          border-bottom-left-radius: 16px;
+                          border-bottom-right-radius: 16px;
+
+                          a {
+                            text-decoration: none;
                             color: black;
+
+                            .titulo {
+                              font-size: 24px;
+                              font-weight: 700;
+                            }
+
+                            .nro {
+                              font-weight: 500;
+                              color: black;
+                            }
                           }
                         }
                       }
@@ -203,7 +210,7 @@
 
             .view-footer {
               position: absolute;
-              right: -11%;
+              right: -15%;
               bottom: 33%;
 
               a {
@@ -385,9 +392,9 @@
         }
       }
     }
-    .field--name-field-describe-tu-koala{
+    .field--name-field-describe-tu-koala {
       text-align: center;
-      margin-bottom: 0.5rem!important;
+      margin-bottom: 0.5rem !important;
       label {
         font-weight: 500;
         margin-bottom: 0.5rem;
@@ -418,23 +425,24 @@
       }
     }
   }
-  .form-actions{
+
+  .form-actions {
     width: 25%;
     display: flex;
     flex-direction: column;
-    button{
-      border: 2px solid #297E88;
+    button {
+      border: 2px solid #297e88;
       background-color: white;
       color: black;
       font-weight: 700;
       font-size: 20px;
       border-radius: 32px;
-      &:hover{
-        background-color: #297E88;
+      &:hover {
+        background-color: #297e88;
         color: white;
       }
     }
-    &:before{
+    &:before {
       content: "Escribe un máximo de 150 caractéres";
       font-weight: 400;
       font-size: 12px;
@@ -454,11 +462,40 @@
         display: none;
       }
     }
+    .field--type-entity-reference {
+      fieldset {
+        .fieldset-wrapper {
+          background-color: #d7eff2;
+          padding: 1rem;
+          border-radius: 16px;
+          margin-left: 1.5rem;
+          &:before {
+            content: "Profesiones";
+            font-weight: 700;
+            font-size: 16px;
+            color: black;
+          }
+        }
+      }
+    }
 
     #edit-field-selecc {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr 1fr;
       gap: 16px;
+      margin-top: 1rem;
+      .radio {
+        position: relative;
+        padding-left: 0em!important;
+        input {
+          position: absolute;
+          left: 16%;
+          top: 6%;
+          &:after {
+            margin-top: 0.25rem !important;
+          }
+        }
+      }
 
       .form-check-label {
         .views-field-nothing {
@@ -469,9 +506,11 @@
             background: white;
             padding: 0.5rem;
             border-radius: 16px;
+            font-size: 20px;
 
             p {
-              font-weight: 400;
+              font-weight: 500;
+              font-size: 16px;
             }
 
             img {
