@@ -1,0 +1,43 @@
+uuid: 40aabe7e-473b-4492-b18b-9557b011a285
+langcode: es
+status: true
+dependencies:
+  config:
+    - page_manager.page.calendario
+  module:
+    - layout_discovery
+    - quicktabs
+id: calendario-layout_builder-0
+label: 'Layout Builder'
+weight: 0
+variant: layout_builder
+variant_settings:
+  id: layout_builder
+  label: null
+  weight: 0
+  uuid: 7084ddf8-5afa-4fa2-9322-6adb3172ea2f
+  sections:
+    -
+      layout_id: layout_onecol
+      layout_settings:
+        label: ''
+        context_mapping: {  }
+      components:
+        a7e54730-1e91-45c6-aaa4-0bbe3c96f0f5:
+          uuid: a7e54730-1e91-45c6-aaa4-0bbe3c96f0f5
+          region: content
+          configuration:
+            id: 'quicktabs_block:profesores_calendario_horarios'
+            label: 'QuickTabs - Profesores / Calendario - Horarios'
+            label_display: '0'
+            provider: quicktabs
+            context_mapping: {  }
+          weight: 0
+          additional:
+            layout_builder_styles_style:
+              separacion_superior_mt_5: separacion_superior_mt_5
+      third_party_settings: {  }
+page: calendario
+selection_criteria: {  }
+selection_logic: and
+static_context: {  }

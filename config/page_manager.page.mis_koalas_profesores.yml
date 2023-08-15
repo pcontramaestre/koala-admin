@@ -1,0 +1,22 @@
+uuid: 660341c3-61af-4807-9254-7dd05198db31
+langcode: es
+status: true
+dependencies:
+  module:
+    - user
+id: mis_koalas_profesores
+label: 'Mis Koalas - Profesores'
+description: ''
+use_admin_theme: false
+path: /profesor/mis-koalas
+access_logic: and
+access_conditions:
+  -
+    id: user_role
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+    roles:
+      administrator: administrator
+      profesor: profesor
+parameters: {  }

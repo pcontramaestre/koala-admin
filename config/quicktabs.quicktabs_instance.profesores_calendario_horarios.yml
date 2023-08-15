@@ -1,0 +1,65 @@
+uuid: 474a2410-2998-4a53-9a5f-d1cb7ce3a72c
+langcode: es
+status: true
+dependencies: {  }
+id: profesores_calendario_horarios
+label: 'Profesores / Calendario - Horarios'
+renderer: quick_tabs
+hide_empty_tabs: false
+default_tab: 9999
+options:
+  quick_tabs:
+    ajax: false
+    class: ''
+    style: on-the-gray
+  accordion_tabs:
+    jquery_ui:
+      collapsible: false
+      heightStyle: auto
+configuration_data:
+  -
+    title: 'Mi Calendario'
+    weight: 0
+    type: view_content
+    content:
+      view_content:
+        options:
+          vid: clases_gratuitas_profesores
+          display: block_2
+          args: ''
+      node_content:
+        options:
+          nid: ''
+          view_mode: full
+          hide_title: true
+      block_content:
+        options:
+          bid: 'inline_block:basic'
+          block_title: ''
+          display_title: false
+      qtabs_content:
+        options:
+          machine_name: calendario_agendar
+  -
+    title: 'Programar mi agenda'
+    weight: 0
+    type: view_content
+    content:
+      view_content:
+        options:
+          vid: horarios_de_trabajo_profesor
+          display: block_3
+          args: ''
+      node_content:
+        options:
+          nid: ''
+          view_mode: full
+          hide_title: true
+      block_content:
+        options:
+          bid: 'inline_block:basic'
+          block_title: ''
+          display_title: false
+      qtabs_content:
+        options:
+          machine_name: calendario_agendar

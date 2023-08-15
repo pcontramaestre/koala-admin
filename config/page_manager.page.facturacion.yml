@@ -1,0 +1,22 @@
+uuid: fdb92fbe-784a-43e5-abfd-fa0f6e9428f0
+langcode: es
+status: true
+dependencies:
+  module:
+    - user
+id: facturacion
+label: Facturación
+description: ''
+use_admin_theme: false
+path: /profesor/facturacion
+access_logic: and
+access_conditions:
+  -
+    id: user_role
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+    roles:
+      administrator: administrator
+      profesor: profesor
+parameters: {  }

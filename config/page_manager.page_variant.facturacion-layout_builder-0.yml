@@ -1,0 +1,47 @@
+uuid: 715e2a9b-a8bd-40fe-85de-c1f5c01605cd
+langcode: es
+status: true
+dependencies:
+  config:
+    - block_content.type.basic
+    - page_manager.page.facturacion
+  module:
+    - layout_builder
+    - layout_discovery
+id: facturacion-layout_builder-0
+label: 'Layout Builder'
+weight: 0
+variant: layout_builder
+variant_settings:
+  id: layout_builder
+  label: null
+  weight: 0
+  uuid: dd242923-e494-46be-8d5d-a48b8aeb12ed
+  sections:
+    -
+      layout_id: layout_onecol
+      layout_settings:
+        label: ''
+        context_mapping: {  }
+      components:
+        4df211cb-cee8-4dca-a604-3d7150a8a7c8:
+          uuid: 4df211cb-cee8-4dca-a604-3d7150a8a7c8
+          region: content
+          configuration:
+            id: 'inline_block:basic'
+            label: Facturación
+            label_display: visible
+            provider: layout_builder
+            view_mode: full
+            context_mapping: {  }
+            block_revision_id: 11
+            block_serialized: null
+          weight: 0
+          additional:
+            layout_builder_styles_style:
+              separacion_superior_mt_5: separacion_superior_mt_5
+      third_party_settings: {  }
+page: facturacion
+selection_criteria: {  }
+selection_logic: and
+static_context: {  }
