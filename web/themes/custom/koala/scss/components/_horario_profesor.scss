@@ -255,7 +255,7 @@
 
                                       .has-multiple-fields-remove-button {
                                         border-radius       : 24px;
-                                        padding             : 4px 8px 0px 8px;
+                                        padding             : 4px 8px 16px 8px;
                                         width               : 100vw;
                                         --bs-table-accent-bg: none;
 
@@ -332,9 +332,8 @@
                                               font-weight     : 700;
                                               font-size       : 18px;
                                               padding         : 6px 15px;
-                                              margin-top      : 1.8rem;
+                                              margin-top      : 1rem;
                                               float           : left;
-                                              margin-bottom   : 1rem;
                                               &:hover{
                                                 color: white;
                                                 background-color: #297E88;
@@ -675,10 +674,15 @@
                                           .smartdate--widget {
                                             .fieldset-wrapper {
                                               .form-item-field-fechas-laborables-0-repeat-end-date {
-                                                margin-top : 1.5rem;
                                                 width      : auto;
                                                 text-align : initial;
                                                 margin-left: 1rem;
+                                              }
+                                              >.js-form-type-date {
+                                                margin-top: 1.5rem;
+                                              }
+                                              .manage-instances{
+                                                margin-top: 2rem;
                                               }
                                             }
                                           }
