@@ -7,16 +7,20 @@ dependencies:
     - field.storage.node.field_fecha_cita_oculta
     - field.storage.node.field_fecha_de_la_cita
     - field.storage.node.field_nombre_del_nino_a
+    - field.storage.user.field_nombre_del_hijo
+    - field.storage.user.user_picture
     - node.type.agendar_clase
+    - node.type.crear_hijos
     - user.role.administrator
     - user.role.profesor
   module:
     - datetime
     - fullcalendar_view
     - node
+    - svg_image
     - user
 id: clases_gratuitas_profesores
-label: 'Clases Gratuitas Profesores'
+label: 'Clases Profesores'
 module: views
 description: ''
 tag: ''
@@ -499,21 +503,39 @@ display:
           entity_field: title
           plugin_id: field
           label: ''
-          exclude: false
+          exclude: true
           alter:
             alter_text: false
+            text: ''
             make_link: false
+            path: ''
             absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
             word_boundary: false
             ellipsis: false
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
             strip_tags: false
             trim: false
+            preserve_tags: ''
             html: false
           element_type: ''
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: true
+          element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
@@ -674,7 +696,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<a href=\"https://www.plugnmeet.cloud/es/join?roomId=1f1ec020-e099-4cce-9a50-79e8715c156c&role=moderator\" target=\"_blank\">Entrar a la clase</a>\r\n"
+            text: "<a href=\"https://www.plugnmeet.cloud/es/join?roomId=1f1ec020-e099-4cce-9a50-79e8715c156c&role=moderator\" target=\"_blank\">Entrar</a>\r\n"
             make_link: false
             path: ''
             absolute: false

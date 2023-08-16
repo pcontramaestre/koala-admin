@@ -1,18 +1,23 @@
 .path-profesor {
   // padding-top: 2.3rem;
 
-  #block-koala-content .content .layout--twocol-section--33-67 {
+  .front-profesor #block-koala-content .content {
     width: 100%;
 
     .layout__region--first {
+      >h1:nth-child(1) {
+        display: none;
+      }
+
       .block-views-blockdetalle-profesor-block-1 {
         .content {
           div {
 
             //Cuadro perfil del profesor
             .view-detalle-profesor {
-              width: 90%;
+              width : 90%;
               margin: 0 auto;
+
               .perfil-general-profesor {
                 .views-field-nothing {
                   border-top             : 2px solid $GreyK100;
@@ -28,11 +33,12 @@
                     .cuadro-perfil-profesor {
                       .img-name {
                         .imagen {
-                          width: 29% !important;
+                          width: 25% !important;
 
                           .image-style-responsive-img {
-                            height       : 5.5rem;
+                            height       : auto;
                             width        : 5.5rem;
+                            max-width    : 90%;
                             border-radius: 150px;
                             border       : 2px solid white;
                             box-shadow   : 0px 0px 5px 0px rgb(187, 183, 183);
@@ -68,6 +74,15 @@
                           font-weight: 500;
                         }
                       }
+
+                      .email {
+                        a {
+                          color          : black;
+                          font-weight    : bold;
+                          margin-left    : 0.5rem;
+                          text-decoration: none;
+                        }
+                      }
                     }
 
                     &:before {
@@ -88,14 +103,24 @@
                   border-bottom             : 2px solid $GreyK100;
                   border-bottom-left-radius : 24px;
                   border-bottom-right-radius: 24px;
+                  position                  : relative;
 
                   .views-label {
                     font-weight: 700;
                     font-size  : 18px;
+                    display    : none;
                   }
 
                   .field-content {
                     .no-admin {
+
+                      .field--name-thumbnail {
+                        img {
+                          max-width: 70%;
+                          height   : auto;
+                        }
+                      }
+
                       .video-popup {
                         div {
                           a {
@@ -104,6 +129,15 @@
                               font-weight: 700;
                             }
                           }
+                        }
+
+                        a.myButton {
+                          position: absolute;
+                          top     : 0;
+                          display : block;
+                          width   : 60%;
+                          height  : 84%;
+                          opacity : 0;
                         }
                       }
                     }
@@ -121,11 +155,11 @@
     .layout__region--second {
 
       .views-element-container {
-        margin-top   : 0rem !important;
-        width        : 58%;
+        // width        : 58%;
         border       : 2px solid #E6F1F1;
         border-radius: 24px;
         padding      : 1.5rem;
+        max-width    : 90%;
 
         h2 {
           color      : #727F7F;
@@ -176,47 +210,139 @@
         }
       }
     }
-  }
 
+    .layout__region--third {
+      .views-element-container {
+        border       : 2px solid #E6F1F1;
+        border-radius: 24px;
+        padding      : 1.5rem;
+        max-width    : 90%;
 
-
-  .field--type-entity-reference.field--name-field-avatar {
-    .fieldset-wrapper {
-      #edit-field-avatar {
-        .js-form-type-radio.form-item-field-avatar {
-          >input {
-            margin-left: 0.1rem;
+        .view-header {
+          .titulo-vista {
+            color        : #727F7F;
+            font-weight  : 700;
+            font-size    : 1.25rem;
+            text-align   : center;
+            margin-bottom: 1rem;
           }
 
-          span.views-field.views-field-name {
-            display: none;
+          .descripcion-vista {
+            text-align   : center;
+            margin-bottom: 1rem;
           }
+        }
 
-          img {
-            max-width      : 80%;
-            height         : auto;
-            border-radius  : 50%;
-            margin-top     : 1rem;
-            object-fit     : cover;
-            object-position: center;
-            padding        : 0.5rem;
-            border         : 1px solid;
+        .view-content.row {
+          .view-grouping {
+            .view-grouping-header {
+              display: none;
+            }
+
+            .view-grouping-content {
+              >h3 {
+                display: none;
+              }
+
+              .views-row {
+                display     : none;
+                margin-right: 0;
+
+                &:nth-of-type(1) {
+                  display: flex;
+                }
+
+                .views-field-nothing {
+                  .koalas-profes {
+                    flex-direction: row;
+                    flex-wrap     : nowrap;
+                    align-items   : center;
+                    margin-bottom : 1rem;
+
+                    .imagen {
+                      max-width: 32px;
+                      flex     : 0 25%;
+
+                      img {
+                        max-width: 100%;
+                        height   : auto;
+                      }
+                    }
+
+                    .nombre-koala {
+                      text-decoration-line: underline;
+                      margin-left         : 0.5rem;
+                      cursor              : pointer;
+                      font-weight         : 700;
+
+                      a {
+                        color      : black;
+                        font-weight: 700;
+                      }
+                    }
+                  }
+                }
+              }
+
+            }
+          }
+        }
+
+        .view-footer {
+          .ver-todos-koalas {
+            text-align   : right;
+            padding-right: 2rem;
+
+            a {
+              color      : #297E88;
+              font-weight: 700;
+              font-size  : 1.25rem;
+            }
           }
         }
       }
     }
   }
+}
 
-  .smartdate--widget .byday-checkboxes input {
-    display: unset;
-  }
 
-  .ui-dialog.ui-corner-all.ui-widget.ui-widget-content.ui-front {
-    top    : 7rem !important;
-    z-index: 20000 !important;
 
-    #drupal-modal {
-      max-height: 500px !important;
+.field--type-entity-reference.field--name-field-avatar {
+  .fieldset-wrapper {
+    #edit-field-avatar {
+      .js-form-type-radio.form-item-field-avatar {
+        >input {
+          margin-left: 0.1rem;
+        }
+
+        span.views-field.views-field-name {
+          display: none;
+        }
+
+        img {
+          max-width      : 80%;
+          height         : auto;
+          border-radius  : 50%;
+          margin-top     : 1rem;
+          object-fit     : cover;
+          object-position: center;
+          padding        : 0.5rem;
+          border         : 1px solid;
+        }
+      }
     }
+  }
+}
+
+.smartdate--widget .byday-checkboxes input {
+  display: unset;
+}
+
+.ui-dialog.ui-corner-all.ui-widget.ui-widget-content.ui-front {
+  top    : 7rem !important;
+  z-index: 20000 !important;
+
+  #drupal-modal {
+    max-height: 500px !important;
   }
 }

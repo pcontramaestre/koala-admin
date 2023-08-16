@@ -10,6 +10,7 @@ dependencies:
     - field_formatter_class
     - layout_builder
     - media_video_micromodal
+    - svg_image
 third_party_settings:
   layout_builder:
     enabled: false
@@ -28,15 +29,29 @@ content:
       string_classes: texto-enlace-video
       link_text: 'Ver video'
       thumbnail_image_style: ''
-      caption_swap: 0
+      caption_swap: '0'
     third_party_settings:
       field_formatter_class:
         class: video-popup
+    weight: 1
+    region: content
+  thumbnail:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+    third_party_settings: {  }
     weight: 0
     region: content
 hidden:
   created: true
   langcode: true
   name: true
-  thumbnail: true
   uid: true

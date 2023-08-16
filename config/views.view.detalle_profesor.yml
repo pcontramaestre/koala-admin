@@ -10,6 +10,7 @@ dependencies:
     - field.storage.user.user_picture
     - image.style.responsive_img
   module:
+    - address
     - svg_image
     - text
     - user
@@ -352,6 +353,120 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
+        mail:
+          id: mail
+          table: users_field_data
+          field: mail
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: user
+          entity_field: mail
+          plugin_id: field
+          label: Email
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: email_mailto
+          settings: {  }
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        field_direcc_country_code:
+          id: field_direcc_country_code
+          table: user__field_direcc
+          field: field_direcc_country_code
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: country
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          display_name: true
         nothing:
           id: nothing
           table: views
@@ -364,7 +479,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<div class=\"row cuadro-perfil-profesor\">\r\n  <div class=\"col-12 img-name d-flex align-items-center\">\r\n    <div class=\"col-md-12 col-lg-4 imagen\">\r\n      {{ user_picture }}\r\n    </div>\r\n    <div class=\"col-md-12 col-lg-7 nombre\">\r\n      <h4>{{ field_apodo }}</h4>\r\n    </div>\r\n    <div class=\"flotante editar col\">\r\n      {{ uid }}\r\n    </div>\r\n  </div>\r\n  <div class=\"col-12\">\r\n      <h4>{{ field_nombres_y_apellidos_del_pr }}</h4>\r\n  </div>\r\n  <div class=\"col-12 presentacion\">\r\n    <h6>Presentación</h6>\r\n    <p>{{ field_tu_presentacion }}</p>\r\n  </div>\r\n</div>"
+            text: "<div class=\"row cuadro-perfil-profesor\">\r\n  <div class=\"col-12 img-name d-flex align-items-center\">\r\n    <div class=\"col-md-12 col-lg-4 imagen\">\r\n      {{ user_picture }}\r\n    </div>\r\n    <div class=\"col-md-12 col-lg-7 nombre\">\r\n      <h4>{{ field_apodo }}</h4>\r\n     <div class=\"pais\">{{ field_direcc_country_code }} </div>\r\n    </div>\r\n    <div class=\"flotante editar col\">\r\n      {{ uid }}\r\n    </div>\r\n  </div>\r\n  <div class=\"col-12\">\r\n      <h4>{{ field_nombres_y_apellidos_del_pr }}</h4>\r\n  </div>\r\n  <div class=\"col-12 presentacion\">\r\n    <h6>Presentación</h6>\r\n    <p>{{ field_tu_presentacion }}</p>\r\n  </div>\r\n  <div class=\"email\">Email: {{ mail }}</div>\r\n</div>"
             make_link: false
             path: ''
             absolute: false
