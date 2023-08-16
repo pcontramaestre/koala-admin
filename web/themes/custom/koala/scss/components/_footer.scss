@@ -6,34 +6,34 @@
 
     img {
       max-width: 100px;
-      height   : auto;
+      height: auto;
     }
   }
 }
 
 footer.site-footer {
-  background : $GreyK200 !important;
-  margin-top : 1rem;
-  min-height : 100px;
-  display    : flex;
+  background: $GreyK200 !important;
+  margin-top: 1rem;
+  min-height: 100px;
+  display: flex;
   align-items: center;
 
   .container {
     padding: 0;
 
     .site-footer__top {
-      display        : flex;
-      flex-direction : row;
-      flex-wrap      : wrap;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
       justify-content: space-between;
-      width          : 100%;
+      width: 100%;
 
-      >section.region {
+      > section.region {
         max-width: 33%;
       }
 
       a {
-        color          : black;
+        color: black;
         text-decoration: none;
 
         &:hover {
@@ -42,9 +42,9 @@ footer.site-footer {
       }
 
       .menu {
-        list-style : none;
+        list-style: none;
         font-weight: 700;
-        font-size  : 1.2rem;
+        font-size: 1.2rem;
 
         .menu-item {
           margin-bottom: 1.7rem;
@@ -54,7 +54,7 @@ footer.site-footer {
       .block-config-pages {
         .field--name-field-texto-footer-derechos-rese {
           font-weight: 600;
-          margin     : 1rem 0rem 1rem 2rem;
+          margin: 1rem 0rem 1rem 2rem;
         }
       }
 
@@ -63,12 +63,12 @@ footer.site-footer {
       }
 
       .region-footer-second {
-        width : 27%;
+        width: 27%;
         height: 16rem;
 
         h2 {
-          font-size    : 1rem;
-          font-weight  : 600;
+          font-size: 1rem;
+          font-weight: 600;
           margin-bottom: 0.5rem;
         }
 
@@ -78,15 +78,15 @@ footer.site-footer {
 
         .config_pages--view-mode--correo- {
           .field--name-field-correo-electronico-footer {
-            font-weight    : 700;
-            font-size      : 1.2rem;
+            font-weight: 700;
+            font-size: 1.2rem;
             text-decoration: underline;
-            padding-left   : 1rem;
+            padding-left: 1rem;
 
             &:before {
-              content     : url("EnvelopeOpen.png");
-              position    : relative;
-              top         : 6px;
+              content: url("EnvelopeOpen.png");
+              position: relative;
+              top: 6px;
               margin-right: 0.5rem;
             }
           }
@@ -94,24 +94,24 @@ footer.site-footer {
       }
 
       .region-footer-third {
-        width : 15%;
+        width: 15%;
         height: auto;
 
         h2 {
-          font-size    : 1rem;
-          font-weight  : 600;
+          font-size: 1rem;
+          font-weight: 600;
           margin-bottom: 0.5rem;
         }
       }
     }
-    .footer-bottom{
-      #block-footerbanderas{
-        .field--name-body{
-          .footer-banderas{
+    .footer-bottom {
+      #block-footerbanderas {
+        .field--name-body {
+          .footer-banderas {
             display: flex;
             font-weight: 500;
             margin-bottom: 2rem;
-            .texto1{
+            .texto1 {
               margin-right: 0.5rem;
             }
           }
@@ -121,15 +121,47 @@ footer.site-footer {
   }
 }
 
+// .rol-profesor {
+//   footer.site-footer {
+//     .container {
+//       .site-footer__top {
+//         .no-admin.nav {
+//           list-style: none;
+//           font-weight: 700;
+//           font-size: 1.2rem;
+//           display: block;
+
+//           .nav-item {
+//             margin-bottom: 0.7rem;
+//           }
+//         }
+
+//         .region-footer-first {
+//           #block-logofooterhijos {
+//             .field--name-body {
+//               img {
+//                 margin-top: 2rem;
+//                 margin-left: 1.1rem;
+//               }
+//             }
+//           }
+//         }
+
+//         margin-top: 5.2rem;
+//       }
+//     }
+//   }
+// }
+.rol-profesor,
 .rol-padre {
   footer.site-footer {
     .container {
       .site-footer__top {
         .no-admin.nav {
-          list-style : none;
+          list-style: none;
           font-weight: 700;
-          font-size  : 1.2rem;
-          display    : block;
+          font-size: 1.2rem;
+          display: block;
 
           .nav-item {
             margin-bottom: 0.7rem;
@@ -138,7 +170,7 @@ footer.site-footer {
 
         .region-footer-first {
           #block-logofooterhijos {
-            margin-top : 2rem;
+            margin-top: 2rem;
             margin-left: 1.1rem;
           }
 
@@ -161,15 +193,15 @@ footer.site-footer {
           #block-correo {
             .field--name-body {
               .field--name-field-correo-electronico-footer {
-                margin-left    : 1rem;
-                font-weight    : 700;
-                font-size      : 1.2rem;
+                margin-left: 1rem;
+                font-weight: 700;
+                font-size: 1.2rem;
                 text-decoration: underline;
 
                 &:before {
-                  content     : url("EnvelopeOpen.png");
-                  position    : relative;
-                  top         : 6px;
+                  content: url("EnvelopeOpen.png");
+                  position: relative;
+                  top: 6px;
                   margin-right: 0.5rem;
                 }
               }
@@ -182,13 +214,13 @@ footer.site-footer {
 
           #block-siguenosen {
             .view-content.row {
-              display       : flex;
+              display: flex;
               flex-direction: row;
-              flex-wrap     : nowrap;
-              max-width     : 100%;
+              flex-wrap: nowrap;
+              max-width: 100%;
 
               .views-row {
-                width        : auto;
+                width: auto;
                 padding-right: 0;
               }
             }
@@ -198,39 +230,35 @@ footer.site-footer {
             .content {
               .views-field-field-enlace-live-chat {
                 a.boton-chat {
-                  display       : flex;
+                  display: flex;
                   flex-direction: row;
-                  flex-wrap     : nowrap;
-                  align-content : center;
-                  align-items   : center;
-                  padding       : 0.4rem 1rem 0.4rem 1rem;
-                  border        : 2px solid #ff9294;
-                  width         : max-content;
-                  border-radius : 32px;
-                  background    : #ffc2c4;
-                  color         : black;
-                  font-size     : 20px;
-                  font-weight   : 700;
-                  margin-bottom : 0.5rem;
-
-                  &:hover {
-                    text-decoration: none;
-                  }
+                  flex-wrap: nowrap;
+                  align-content: center;
+                  align-items: center;
+                  padding: 0.4rem 1rem 0.4rem 1rem;
+                  border: 2px solid #ff9294;
+                  width: max-content;
+                  border-radius: 32px;
+                  background: #ffc2c4;
+                  color: black;
+                  font-size: 20px;
+                  font-weight: 700;
+                  margin-bottom: 0.5rem;
 
                   //Pantallas menores a 1200px
                   @media (max-width: 1200px) {
-                    margin       : 0 auto;
+                    margin: 0 auto;
                     margin-bottom: 2rem;
                   }
 
-                  >div {
+                  > div {
                     padding-left: 1rem;
                   }
 
                   &:before {
-                    content     : "\f4ad";
-                    font-family : "Font Awesome 5 Free";
-                    font-weight : 100;
+                    content: "\f4ad";
+                    font-family: "Font Awesome 5 Free";
+                    font-weight: 100;
                     margin-right: 0.5rem;
                   }
                 }
@@ -239,10 +267,10 @@ footer.site-footer {
           }
         }
       }
-      .footer-bottom{
-        #block-footerbanderas{
-          .field--name-body{
-            .footer-banderas{
+      .footer-bottom {
+        #block-footerbanderas {
+          .field--name-body {
+            .footer-banderas {
               margin-top: -2rem;
             }
           }
@@ -297,7 +325,7 @@ footer.site-footer {
 
           .region-footer-third {
             margin-top: 0rem;
-            margin    : 0rem -1rem;
+            margin: 0rem -1rem;
 
             .block-dropdown-language {
               .dropbutton-multiple {
@@ -309,8 +337,8 @@ footer.site-footer {
 
             #block-siguenosen {
               .view-content.row {
-                margin-bottom  : 2rem;
-                display        : flex;
+                margin-bottom: 2rem;
+                display: flex;
                 justify-content: center;
               }
             }
@@ -323,22 +351,22 @@ footer.site-footer {
   .rol-hijo {
     footer {
       .site-footer__top {
-        display       : flex;
+        display: flex;
         flex-direction: column;
-        align-items   : center;
-        width         : 100% !important;
-        padding-left  : 0px;
-        margin-left   : 0px;
+        align-items: center;
+        width: 100% !important;
+        padding-left: 0px;
+        margin-left: 0px;
 
         .region-footer-first {
-          max-width : 100% !important;
-          width     : 100% !important;
+          max-width: 100% !important;
+          width: 100% !important;
           text-align: center !important;
         }
 
         .region-footer-third {
-          max-width : 100% !important;
-          width     : 100% !important;
+          max-width: 100% !important;
+          width: 100% !important;
           text-align: center !important;
           margin-top: 1rem;
         }
@@ -351,7 +379,7 @@ footer.site-footer {
 
     .container {
       .site-footer__top {
-        >section.region {
+        > section.region {
           max-width: 100%;
         }
 
@@ -382,11 +410,11 @@ footer.site-footer {
 
           .block-dropdown-language {
             margin-top: 1.7rem;
-            padding   : 0;
+            padding: 0;
 
             .dropbutton-multiple {
               .dropbutton-widget {
-                margin       : 0 auto;
+                margin: 0 auto;
                 margin-bottom: 2rem;
               }
             }
@@ -398,7 +426,7 @@ footer.site-footer {
 
   .featured-bottom {
     .field--name-field-logo-footer {
-      text-align : center;
+      text-align: center;
       margin-left: 0rem;
     }
   }
@@ -409,20 +437,20 @@ footer.site-footer {
   footer.site-footer {
     .container {
       max-width: 1400px !important;
-      width         : 90%;
-      margin        : 0 auto;
+      width: 90%;
+      margin: 0 auto;
 
       .site-footer__top {
         padding-top: 1rem;
 
         section.region {
           max-width: 50%;
-          width    : 50%;
+          width: 50%;
 
           &.region-footer-third {
             text-align: right;
-            .layout__region{
-              .field--name-body{
+            .layout__region {
+              .field--name-body {
                 font-weight: 500;
               }
             }

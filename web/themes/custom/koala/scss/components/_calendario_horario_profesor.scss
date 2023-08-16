@@ -1,15 +1,15 @@
 .page-view-horarios-de-trabajo-profesor {
   .ui-dialog.ui-corner-all {
-    top             : 100px !important;
-    background-color: #E6F1F1;
-    padding-bottom  : 2rem;
-    color           : black;
+    top: 100px !important;
+    background-color: #e6f1f1;
+    padding-bottom: 2rem;
+    color: black;
 
     .ui-dialog-titlebar {
-      background-color: #E6F1F1;
-      text-align      : center;
-      font-size       : 20px;
-      padding         : 1.5rem 0rem 1rem 0rem;
+      background-color: #e6f1f1;
+      text-align: center;
+      font-size: 20px;
+      padding: 1.5rem 0rem 1rem 0rem;
     }
 
     .ui-dialog-content {
@@ -23,10 +23,10 @@
                     .field--name-user-picture {
                       img {
                         border-radius: 50px;
-                        object-fit   : cover;
-                        height       : 4rem;
-                        width        : 4rem;
-                        margin-right : 1.5rem;
+                        object-fit: cover;
+                        height: 4rem;
+                        width: 4rem;
+                        margin-right: 1.5rem;
                       }
                     }
                   }
@@ -39,16 +39,16 @@
         .node__content {
           .field--name-field-fechas-laborables {
             .field__label {
-              font-size    : 18px;
-              font-weight  : 500;
+              font-size: 18px;
+              font-weight: 500;
               margin-bottom: 1.5rem;
-              color        : black;
+              color: black;
             }
 
             .field__items {
               margin-left: 6rem;
               font-weight: 500;
-              color      : black;
+              color: black;
             }
           }
         }
@@ -58,18 +58,18 @@
     .ui-dialog-buttonpane {
       .ui-dialog-buttonset {
         button {
-          border          : 2px solid #FF9294;
-          background-color: #FFC2C4;
+          border: 2px solid #ff9294;
+          background-color: #ffc2c4;
           background-image: none;
-          color           : black;
-          font-weight     : 700;
-          font-size       : 20px;
-          border-radius   : 32px;
-          padding         : 0.3rem 2rem;
+          color: black;
+          font-weight: 700;
+          font-size: 20px;
+          border-radius: 32px;
+          padding: 0.3rem 2rem;
 
           &:hover {
-            color           : white;
-            background-color: #FF9294;
+            color: white;
+            background-color: #ff9294;
           }
         }
       }
@@ -77,63 +77,100 @@
   }
 }
 
+.rol-profesor {
+  section {
+    .layout__region {
+      .block-quicktabs-blockprofesores-calendario-horarios{
+        margin-top: 1.7rem!important;
+        .content {
+          #quicktabs-profesores_calendario_horarios {
+            .item-list {
+              .quicktabs-tabs {
+                width: 30%;
+                margin: 0 auto;
+                border-radius: 0px;
+                .list-group-item {
+                  border: none;
+                  border-radius: 0px;
+                  border-bottom: 2px solid #E6F1F1;
+                  &.active {
+                    border-bottom: 2px solid black;
+                    a {
+                      border: none;
+                      color: #ff6669;
+                    }
+                  }
+                  a {
+                    font-weight: 700;
+                    font-size: 16px;
+                    color: black;
+                    border: none;
+                    background-color: white;
+                  }
+                }
+              }
+            }
+            .quicktabs-main {
+              .quicktabs-tabpage {
+                border: none !important;
+                padding: 0rem !important;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
 .view-horarios-de-trabajo-profesor {
   position: relative;
-
-  .view-footer {
-    position       : absolute;
-    top            : 72px;
-    display        : grid;
+  .view-header {
+    position: absolute;
+    display: grid;
     justify-content: center;
-    width          : 100%;
-    color          : white;
-
+    width: 100%;
+    z-index: 2;
     a {
-      border          : 2px solid #297E88;
-      border-radius   : 32px;
-      background-color: #2FF7EE;
-      font-weight     : 700;
-      color           : black;
-      text-decoration : none;
-      padding         : 0.3rem 4rem 0.3rem 4rem;
+      border: 2px solid #297e88;
+      border-radius: 32px;
+      background-color: #2ff7ee;
+      font-weight: 700;
+      color: black;
+      text-decoration: none;
+      padding: 0.3rem 4rem 0.3rem 4rem;
+      margin-top: 2rem;
+      &:hover {
+        background-color: #297e88;
+        color: white;
+      }
     }
+  }
+  .view-footer {
+    display: none;
   }
 
   .js-drupal-fullcalendar {
     margin-top: 2rem;
 
-    &:before {
-      content        : "Programar mi agenda";
-      font-weight    : 700;
-      font-size      : 16px;
-      color          : #FF6669;
-      display        : flex;
-      justify-content: center;
-      border-bottom  : 2px solid black;
-      width          : 170px;
-      margin         : 0 auto;
-      padding-bottom : 0.8rem;
-    }
-
     .fc-header-toolbar {
       margin-top: 2rem;
-      position  : relative;
+      position: relative;
 
       .fc-left {
-        z-index   : 100;
+        z-index: 100;
         .fc-button-group {
           button {
             background-color: white;
-            color           : black;
-            border          : none;
+            color: black;
+            border: none;
           }
         }
 
         .fc-today-button {
           background-color: white;
-          color           : #FF6669;
-          border          : none;
-          font-weight     : 700;
+          color: #ff6669;
+          border: none;
+          font-weight: 700;
         }
       }
 
@@ -142,20 +179,19 @@
 
         h2 {
           font-weight: 700;
-          font-size  : 20px;
-          color      : #727F7F;
+          font-size: 20px;
+          color: #727f7f;
         }
       }
 
       .fc-right {
-        z-index   : 100;
+        z-index: 100;
         .fc-button-group {
           button {
             background-color: white;
-            color           : #FF6669;
-            border          : none;
-            font-weight     : 700;
-
+            color: #ff6669;
+            border: none;
+            font-weight: 700;
           }
 
           .fc-button-active {
@@ -167,17 +203,16 @@
     }
 
     .fc-view-container {
-
       .fc-dayGridMonth-view,
       .fc-timeGridWeek-view {
-        border: 1px solid #E6F1F1;
+        border: 1px solid #e6f1f1;
 
         table {
           .fc-head {
             tr {
               .fc-head-container {
-                color : $GreyK500;
-                border: 2px solid #E6F1F1;
+                color: $GreyK500;
+                border: 2px solid #e6f1f1;
               }
             }
           }
@@ -197,7 +232,7 @@
                           tbody {
                             tr {
                               td {
-                                border: 2px solid #E6F1F1;
+                                border: 2px solid #e6f1f1;
                               }
                             }
                           }
@@ -209,12 +244,12 @@
                           thead {
                             .fc-day-top {
                               .fc-day-number {
-                                color          : #727F7F;
+                                color: #727f7f;
                                 text-decoration: none;
-                                float          : left !important;
-                                margin-left    : 0.5rem;
-                                font-weight    : 600;
-                                font-size      : 14px;
+                                float: left !important;
+                                margin-left: 0.5rem;
+                                font-weight: 600;
+                                font-size: 14px;
                               }
                             }
                           }
@@ -224,27 +259,27 @@
                               .fc-event-container {
                                 .fc-day-grid-event {
                                   background-color: transparent !important;
-                                  border          : none;
+                                  border: none;
 
                                   .fc-content {
                                     margin-left: 0.5rem;
 
                                     .fc-time {
-                                      font-weight     : 500 !important;
+                                      font-weight: 500 !important;
                                       background-color: white;
-                                      color           : #727F7F;
-                                      border          : none;
-                                      font-size       : 12px;
+                                      color: #727f7f;
+                                      border: none;
+                                      font-size: 12px;
                                     }
 
                                     .fc-title {
-                                      background-color: #D7EFF2;
-                                      border-radius   : 12px;
-                                      color           : black;
-                                      font-weight     : 700;
-                                      font-size       : 0.75rem;
-                                      padding         : 0.2rem 0.2rem 0.2rem 0.4rem;
-                                      margin-top      : 0.1rem;
+                                      background-color: #d7eff2;
+                                      border-radius: 12px;
+                                      color: black;
+                                      font-weight: 700;
+                                      font-size: 0.75rem;
+                                      padding: 0.2rem 0.2rem 0.2rem 0.4rem;
+                                      margin-top: 0.1rem;
                                     }
                                   }
                                 }
@@ -263,11 +298,11 @@
                       table {
                         tbody {
                           tr {
-                            border: 2px solid #E6F1F1;
+                            border: 2px solid #e6f1f1;
 
                             .fc-axis {
                               span {
-                                color    : #727F7F;
+                                color: #727f7f;
                                 font-size: 14px;
                               }
                             }
@@ -284,31 +319,31 @@
                               .fc-content-col {
                                 .fc-event-container {
                                   .fc-time-grid-event {
-                                    background-color: #D7EFF2 !important;
-                                    border          : none;
-                                    border-radius   : 8px;
-                                    padding         : 0.8rem;
-                                    margin-right    : 0px !important;
+                                    background-color: #d7eff2 !important;
+                                    border: none;
+                                    border-radius: 8px;
+                                    padding: 0.8rem;
+                                    margin-right: 0px !important;
 
                                     .fc-content {
-                                      text-align    : center;
-                                      display       : flex;
+                                      text-align: center;
+                                      display: flex;
                                       flex-direction: column;
 
                                       .fc-time {
-                                        color    : black;
-                                        order    : 2;
+                                        color: black;
+                                        order: 2;
                                         font-size: 13px;
 
                                         span {
-                                          display   : grid;
+                                          display: grid;
                                           text-align: initial;
 
                                           &:before {
-                                            content    : "Mi horario disponible";
+                                            content: "Mi horario disponible";
                                             font-weight: 700;
-                                            font-size  : 16px;
-                                            color      : black;
+                                            font-size: 16px;
+                                            color: black;
                                           }
                                         }
                                       }
@@ -318,24 +353,24 @@
                                       }
 
                                       &:before {
-                                        content            : url('');
-                                        background-image   : url('../images/Frame-4260.png');
-                                        height             : 46px;
-                                        background-size    : contain;
-                                        background-repeat  : no-repeat;
+                                        content: url("");
+                                        background-image: url("../images/Frame-4260.png");
+                                        height: 46px;
+                                        background-size: contain;
+                                        background-repeat: no-repeat;
                                         background-position: center;
                                       }
                                     }
                                   }
 
                                   .fc-time-grid-event:nth-child(2) {
-                                    background-color: #D7EFF2 !important;
+                                    background-color: #d7eff2 !important;
 
                                     .fc-content {
                                       &:before {
-                                        content         : url('');
+                                        content: url("");
                                         background-image: none;
-                                        height          : 1px;
+                                        height: 1px;
                                       }
                                     }
                                   }
@@ -357,7 +392,7 @@
                           tr {
                             .fc-axis {
                               span {
-                                color    : #727F7F;
+                                color: #727f7f;
                                 font-size: 14px;
                               }
                             }
@@ -374,23 +409,21 @@
       }
 
       .fc-timeGridDay-view {
-        border: 1px solid #E6F1F1;
+        border: 1px solid #e6f1f1;
 
         table {
           .fc-head {
-
             tr {
               .fc-head-container {
                 .fc-row {
-                  border: 1px solid #E6F1F1;
+                  border: 1px solid #e6f1f1;
 
                   table {
                     thead {
                       tr {
                         .fc-day-header {
-
                           span {
-                            color    : #727F7F;
+                            color: #727f7f;
                             font-size: 14px;
                           }
                         }
@@ -411,11 +444,11 @@
                       table {
                         tbody {
                           tr {
-                            border: 2px solid #E6F1F1;
+                            border: 2px solid #e6f1f1;
 
                             .fc-axis {
                               span {
-                                color    : #727F7F;
+                                color: #727f7f;
                                 font-size: 14px;
                               }
                             }
@@ -426,61 +459,60 @@
 
                     .fc-content-skeleton {
                       table {
-
                         tbody {
                           tr {
                             td {
                               .fc-content-col {
                                 .fc-event-container {
                                   .fc-time-grid-event {
-                                    background-color: #D7EFF2 !important;
-                                    border          : none;
-                                    border-radius   : 8px;
-                                    padding         : 16px;
+                                    background-color: #d7eff2 !important;
+                                    border: none;
+                                    border-radius: 8px;
+                                    padding: 16px;
 
                                     .fc-content {
-                                      margin-left   : 0.5rem;
-                                      display       : flex;
-                                      align-items   : center;
-                                      text-align    : center;
+                                      margin-left: 0.5rem;
+                                      display: flex;
+                                      align-items: center;
+                                      text-align: center;
                                       flex-direction: column;
 
                                       .fc-time {
-                                        color    : black;
-                                        order    : 2;
+                                        color: black;
+                                        order: 2;
                                         font-size: 13px;
 
                                         span {
-                                          display   : grid;
+                                          display: grid;
                                           text-align: center;
 
                                           &:before {
-                                            content    : "Mi horario disponible";
+                                            content: "Mi horario disponible";
                                             font-weight: 700;
-                                            font-size  : 16px;
-                                            color      : black;
+                                            font-size: 16px;
+                                            color: black;
                                           }
                                         }
                                       }
 
                                       .fc-title {
-                                        color      : black;
-                                        text-align : initial;
+                                        color: black;
+                                        text-align: initial;
                                         font-weight: 700;
-                                        font-size  : 16px;
+                                        font-size: 16px;
                                       }
 
                                       &:before {
-                                        content: url('../images/Frame-4260.png');
+                                        content: url("../images/Frame-4260.png");
                                       }
                                     }
                                   }
 
                                   .fc-time-grid-event:nth-child(2) {
-                                    background-color: #D7EFF2 !important;
+                                    background-color: #d7eff2 !important;
 
                                     &:before {
-                                      content: url('../images/Frame-426.png');
+                                      content: url("../images/Frame-426.png");
                                     }
                                   }
                                 }
@@ -501,7 +533,7 @@
                           tr {
                             .fc-axis {
                               span {
-                                color    : #727F7F;
+                                color: #727f7f;
                                 font-size: 14px;
                               }
                             }
@@ -518,7 +550,7 @@
       }
 
       .fc-listMonth-view {
-        border: 2px solid #E6F1F1;
+        border: 2px solid #e6f1f1;
 
         .fc-scroller {
           .fc-list-table {
@@ -526,18 +558,18 @@
               .fc-list-heading {
                 .fc-widget-header {
                   a {
-                    color: #727F7F;
+                    color: #727f7f;
                   }
                 }
               }
 
               .fc-list-item {
                 .fc-list-item-time {
-                  font-weight     : 500 !important;
+                  font-weight: 500 !important;
                   background-color: white;
-                  color           : #727F7F;
-                  border          : none;
-                  font-size       : 14px;
+                  color: #727f7f;
+                  border: none;
+                  font-size: 14px;
                 }
 
                 .fc-list-item-marker {
@@ -548,13 +580,13 @@
                   display: flex;
 
                   a {
-                    background-color: #D7EFF2;
-                    border-radius   : 12px;
-                    color           : black;
-                    font-weight     : 700;
-                    font-size       : 12px;
-                    padding         : 0.2rem 0.2rem 0.2rem 0.4rem;
-                    margin-top      : 0.1rem;
+                    background-color: #d7eff2;
+                    border-radius: 12px;
+                    color: black;
+                    font-weight: 700;
+                    font-size: 12px;
+                    padding: 0.2rem 0.2rem 0.2rem 0.4rem;
+                    margin-top: 0.1rem;
                   }
                 }
               }
