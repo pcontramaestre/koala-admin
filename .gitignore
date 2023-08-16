@@ -92,3 +92,4 @@ koala/css/style.css
 *.code-workspace
 web/themes/custom/koala/css/style.min.css
 web/themes/custom/koala/css/style.css
+drush.sh
