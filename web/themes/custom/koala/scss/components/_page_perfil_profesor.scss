@@ -5,26 +5,26 @@
     width: 100%;
 
     .layout__region--first {
-      >h1:nth-child(1) {
+      margin-bottom: 2rem;
+      > h1:nth-child(1) {
         display: none;
       }
 
       .block-views-blockdetalle-profesor-block-1 {
         .content {
           div {
-
             //Cuadro perfil del profesor
             .view-detalle-profesor {
-              width : 90%;
+              width: 90%;
               margin: 0 auto;
 
               .perfil-general-profesor {
                 .views-field-nothing {
-                  border-top             : 2px solid $GreyK100;
-                  padding                : 1.5rem 1.5rem 1rem 1.5rem;
-                  border-left            : 2px solid $GreyK100;
-                  border-right           : 2px solid $GreyK100;
-                  border-top-left-radius : 24px;
+                  border-top: 2px solid $GreyK100;
+                  padding: 1.5rem 1.5rem 1rem 1.5rem;
+                  border-left: 2px solid $GreyK100;
+                  border-right: 2px solid $GreyK100;
+                  border-top-left-radius: 24px;
                   border-top-right-radius: 24px;
 
                   .field-content {
@@ -36,33 +36,36 @@
                           width: 25% !important;
 
                           .image-style-responsive-img {
-                            height       : auto;
-                            width        : 5.5rem;
-                            max-width    : 90%;
+                            height: auto;
+                            width: 5.5rem;
+                            max-width: 90%;
                             border-radius: 150px;
-                            border       : 2px solid white;
-                            box-shadow   : 0px 0px 5px 0px rgb(187, 183, 183);
+                            border: 2px solid white;
+                            box-shadow: 0px 0px 5px 0px rgb(187, 183, 183);
                           }
                         }
 
                         .nombre {
                           h4 {
-                            font-size  : 22px;
+                            font-size: 22px;
                             font-weight: 700;
+                          }
+                          .pais {
+                            font-weight: 500;
                           }
                         }
 
                         .flotante {
                           position: absolute;
-                          top     : 0%;
-                          left    : 94%;
+                          top: 0%;
+                          left: 94%;
                         }
                       }
 
                       .col-12 h4 {
-                        font-size  : 22px;
+                        font-size: 22px;
                         font-weight: 700;
-                        margin-top : 1rem;
+                        margin-top: 1rem;
                       }
 
                       .presentacion {
@@ -77,48 +80,51 @@
 
                       .email {
                         a {
-                          color          : black;
-                          font-weight    : bold;
-                          margin-left    : 0.5rem;
+                          color: black;
+                          font-weight: bold;
+                          margin-left: 0.5rem;
                           text-decoration: none;
                         }
+                      }
+                      .col-12:nth-child(2) {
+                        display: none;
                       }
                     }
 
                     &:before {
-                      content        : "Mi perfil";
-                      color          : $GreyK500;
-                      font-weight    : 700;
-                      font-size      : 20px;
-                      display        : flex;
+                      content: "Mi perfil";
+                      color: $GreyK500;
+                      font-weight: 700;
+                      font-size: 20px;
+                      display: flex;
                       justify-content: center;
                     }
                   }
                 }
 
                 .views-field-field-tu-video- {
-                  padding                   : 0rem 1.5rem 1.5rem 1.5rem;
-                  border-left               : 2px solid $GreyK100;
-                  border-right              : 2px solid $GreyK100;
-                  border-bottom             : 2px solid $GreyK100;
-                  border-bottom-left-radius : 24px;
+                  padding: 0rem 1.5rem 1.5rem 1.5rem;
+                  border-left: 2px solid $GreyK100;
+                  border-right: 2px solid $GreyK100;
+                  border-bottom: 2px solid $GreyK100;
+                  border-bottom-left-radius: 24px;
                   border-bottom-right-radius: 24px;
-                  position                  : relative;
+                  position: relative;
 
                   .views-label {
                     font-weight: 700;
-                    font-size  : 18px;
-                    display    : none;
+                    font-size: 18px;
+                    display: none;
                   }
 
                   .field-content {
                     .no-admin {
-
                       .field--name-thumbnail {
                         img {
-                          max-width    : 65%;
-                          height       : auto;
+                          max-width: 65%;
+                          height: auto;
                           border-radius: 16px;
+                          margin: 0;
                         }
                       }
 
@@ -126,7 +132,7 @@
                         div {
                           a {
                             .texto-enlace-video {
-                              color      : #297E88;
+                              color: #297e88;
                               font-weight: 700;
                             }
                           }
@@ -134,11 +140,11 @@
 
                         a.myButton {
                           position: absolute;
-                          top     : 0;
-                          display : block;
-                          width   : 60%;
-                          height  : 84%;
-                          opacity : 0;
+                          top: 0;
+                          display: block;
+                          width: 60%;
+                          height: 84%;
+                          opacity: 0;
                         }
                       }
                     }
@@ -149,42 +155,42 @@
           }
         }
       }
-
-
     }
 
     .layout__region--second {
-
       .views-element-container {
         // width        : 58%;
-        border       : 2px solid #E6F1F1;
+        border: 2px solid #e6f1f1;
         border-radius: 24px;
-        padding      : 1.5rem;
-        max-width    : 90%;
+        padding: 1.5rem 1.5rem 1rem 1.5rem;
+        max-width: 95%;
 
         h2 {
-          color      : #727F7F;
+          color: #727f7f;
           font-weight: 700;
-          font-size  : 1.25rem;
-          text-align : center;
+          font-size: 1.25rem;
+          text-align: center;
         }
 
         .content {
+          margin-top: 1.5rem;
           .view-clases-gratuitas-profesores {
             .view-content {
+              width: 100%;
+              margin: 0 auto;
               .views-row {
-                border-radius   : 30px;
-                background-color: #F8E5DE;
-                margin-top      : 0.5rem;
-                padding         : 0px 20px 0px 20px;
-                margin-bottom   : 1rem;
+                border-radius: 30px;
+                background-color: #f8e5de;
+                padding: 1px 3px;
+                margin-bottom: 1rem;
+                height: 57px;
 
                 .koala {
-                  flex-direction : row;
-                  flex-wrap      : nowrap;
-                  align-items    : center;
-                  padding-top    : 0.2rem;
-                  padding-bottom : 0.2rem;
+                  flex-direction: row;
+                  flex-wrap: nowrap;
+                  align-items: center;
+                  padding-top: 0.2rem;
+                  padding-bottom: 0.2rem;
                   justify-content: space-around;
 
                   .imagen {
@@ -192,7 +198,7 @@
 
                     img {
                       max-width: 100%;
-                      height   : auto;
+                      height: auto;
                     }
                   }
 
@@ -200,20 +206,34 @@
                     .nombre {
                       font-weight: 700;
                     }
+                    .fecha {
+                      .time {
+                        font-weight: 500;
+                      }
+                    }
                   }
 
                   .enlace {
-                    display      : flex;
-                    padding      : 8px 16px;
-                    align-items  : flex-start;
-                    gap          : 10px;
+                    display: flex;
+                    padding: 8px 16px;
                     border-radius: 32px;
-                    border       : 2px solid var(--turq-k-500, #297E88);
-                    background   : var(--white, #FFF);
+                    border: 2px solid var(--turq-k-500, #297e88);
+                    background: var(--white, #fff);
+                    height: 38px;
+                    width: 79px;
+                    align-items: center;
+                    justify-content: center;
 
                     a {
-                      color          : black;
+                      color: black;
                       text-decoration: none;
+                      font-weight: 700;
+                    }
+                    &:hover {
+                      background-color: #297e88;
+                      a {
+                        color: white;
+                      }
                     }
                   }
                 }
@@ -230,7 +250,7 @@
 
                 .views-field-field-fecha-de-la-cita {
                   font-weight: 500;
-                  margin-top : 0.3rem;
+                  margin-top: 0.3rem;
                 }
 
                 .views-field-field-fecha-cita-oculta {
@@ -249,13 +269,23 @@
 
             .view-footer {
               .ver-todos-koalas {
-                text-align   : right;
-                padding-right: 2rem;
-
+                text-align: right;
+                margin-top: 0.5rem;
                 a {
-                  color      : #297E88;
+                  color: #297e88;
                   font-weight: 700;
-                  font-size  : 1.25rem;
+                  font-size: 1.25rem;
+                  text-decoration: none;
+                  &:hover {
+                    text-decoration: underline 1px;
+                  }
+                  &:after {
+                    content: "\f054";
+                    font-family: "Font Awesome 5 Free";
+                    font-weight: 900;
+                    float: right;
+                    margin-left: 1rem;
+                  }
                 }
               }
             }
@@ -266,39 +296,43 @@
 
     .layout__region--third {
       .views-element-container {
-        border       : 2px solid #E6F1F1;
+        border: 2px solid #e6f1f1;
         border-radius: 24px;
-        padding      : 1.5rem;
-        max-width    : 90%;
+        padding: 1.5rem 1.5rem 1rem 1.5rem;
+        max-width: 90%;
 
         .view-header {
           .titulo-vista {
-            color        : #727F7F;
-            font-weight  : 700;
-            font-size    : 1.25rem;
-            text-align   : center;
+            color: #727f7f;
+            font-weight: 700;
+            font-size: 1.25rem;
+            text-align: center;
             margin-bottom: 1rem;
           }
 
           .descripcion-vista {
-            text-align   : center;
+            text-align: center;
             margin-bottom: 1rem;
+            font-weight: 500;
           }
         }
 
         .view-content.row {
+          margin: 0px;
+          margin-top: 1.8rem;
           .view-grouping {
+            padding: 0px;
             .view-grouping-header {
               display: none;
             }
 
             .view-grouping-content {
-              >h3 {
+              > h3 {
                 display: none;
               }
 
               .views-row {
-                display     : none;
+                display: none;
                 margin-right: 0;
 
                 &:nth-of-type(1) {
@@ -308,48 +342,66 @@
                 .views-field-nothing {
                   .koalas-profes {
                     flex-direction: row;
-                    flex-wrap     : nowrap;
-                    align-items   : center;
-                    margin-bottom : 1rem;
+                    flex-wrap: nowrap;
+                    align-items: center;
+                    margin-bottom: 1.8rem;
+                    position: relative;
 
                     .imagen {
                       max-width: 32px;
-                      flex     : 0 25%;
+                      flex: 0 25%;
 
                       img {
                         max-width: 100%;
-                        height   : auto;
+                        height: auto;
                       }
                     }
 
                     .nombre-koala {
                       text-decoration-line: underline;
-                      margin-left         : 0.5rem;
-                      cursor              : pointer;
-                      font-weight         : 700;
+                      margin-left: 1rem;
+                      cursor: pointer;
+                      font-weight: 700;
 
                       a {
-                        color      : black;
+                        color: black;
                         font-weight: 700;
                       }
+                    }
+                    &:after {
+                      content: "\f054";
+                      font-family: "Font Awesome 5 Free";
+                      font-weight: 900;
+                      position: absolute;
+                      left: 95%;
+                      margin-left: 1rem;
                     }
                   }
                 }
               }
-
             }
           }
         }
 
         .view-footer {
           .ver-todos-koalas {
-            text-align   : right;
-            padding-right: 2rem;
+            text-align: right;
 
             a {
-              color      : #297E88;
+              color: #297e88;
               font-weight: 700;
-              font-size  : 1.25rem;
+              font-size: 1.25rem;
+              text-decoration: none;
+              &:hover {
+                text-decoration: underline 1px;
+              }
+              &:after {
+                content: "\f054";
+                font-family: "Font Awesome 5 Free";
+                font-weight: 900;
+                float: right;
+                margin-left: 1rem;
+              }
             }
           }
         }
@@ -364,13 +416,11 @@
   }
 }
 
-
-
 .field--type-entity-reference.field--name-field-avatar {
   .fieldset-wrapper {
     #edit-field-avatar {
       .js-form-type-radio.form-item-field-avatar {
-        >input {
+        > input {
           margin-left: 0.1rem;
         }
 
@@ -379,14 +429,14 @@
         }
 
         img {
-          max-width      : 80%;
-          height         : auto;
-          border-radius  : 50%;
-          margin-top     : 1rem;
-          object-fit     : cover;
+          max-width: 80%;
+          height: auto;
+          border-radius: 50%;
+          margin-top: 1rem;
+          object-fit: cover;
           object-position: center;
-          padding        : 0.5rem;
-          border         : 1px solid;
+          padding: 0.5rem;
+          border: 1px solid;
         }
       }
     }
@@ -398,7 +448,7 @@
 }
 
 .ui-dialog.ui-corner-all.ui-widget.ui-widget-content.ui-front {
-  top    : 7rem !important;
+  top: 5rem !important;
   z-index: 20000 !important;
 
   #drupal-modal {
