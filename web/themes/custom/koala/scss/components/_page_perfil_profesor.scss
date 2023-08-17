@@ -116,8 +116,9 @@
 
                       .field--name-thumbnail {
                         img {
-                          max-width: 70%;
-                          height   : auto;
+                          max-width    : 65%;
+                          height       : auto;
+                          border-radius: 16px;
                         }
                       }
 
@@ -178,6 +179,45 @@
                 padding         : 0px 20px 0px 20px;
                 margin-bottom   : 1rem;
 
+                .koala {
+                  flex-direction : row;
+                  flex-wrap      : nowrap;
+                  align-items    : center;
+                  padding-top    : 0.2rem;
+                  padding-bottom : 0.2rem;
+                  justify-content: space-around;
+
+                  .imagen {
+                    max-width: 45px;
+
+                    img {
+                      max-width: 100%;
+                      height   : auto;
+                    }
+                  }
+
+                  .nombre-fecha {
+                    .nombre {
+                      font-weight: 700;
+                    }
+                  }
+
+                  .enlace {
+                    display      : flex;
+                    padding      : 8px 16px;
+                    align-items  : flex-start;
+                    gap          : 10px;
+                    border-radius: 32px;
+                    border       : 2px solid var(--turq-k-500, #297E88);
+                    background   : var(--white, #FFF);
+
+                    a {
+                      color          : black;
+                      text-decoration: none;
+                    }
+                  }
+                }
+
                 .views-field-field-nombre-del-nino-a {
                   .field-content {
                     font-weight: 700;
@@ -204,6 +244,19 @@
 
               .views-row:nth-child(3n) {
                 background-color: $RedK100;
+              }
+            }
+
+            .view-footer {
+              .ver-todos-koalas {
+                text-align   : right;
+                padding-right: 2rem;
+
+                a {
+                  color      : #297E88;
+                  font-weight: 700;
+                  font-size  : 1.25rem;
+                }
               }
             }
           }

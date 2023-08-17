@@ -7,10 +7,10 @@ dependencies:
     - field.storage.node.field_fecha_cita_oculta
     - field.storage.node.field_fecha_de_la_cita
     - field.storage.node.field_nombre_del_nino_a
-    - field.storage.user.field_nombre_del_hijo
+    - field.storage.user.field_nombres_y_apellidos_del_pr
     - field.storage.user.user_picture
+    - image.style.thumbnail
     - node.type.agendar_clase
-    - node.type.crear_hijos
     - user.role.administrator
     - user.role.profesor
   module:
@@ -438,7 +438,7 @@ display:
           admin_label: ''
           plugin_id: field
           label: ''
-          exclude: false
+          exclude: true
           alter:
             alter_text: false
             text: ''
@@ -456,14 +456,14 @@ display:
             suffix: ''
             target: ''
             nl2br: false
-            max_length: 0
-            word_boundary: true
+            max_length: 18
+            word_boundary: false
             ellipsis: true
             more_link: false
             more_link_text: ''
             more_link_path: ''
             strip_tags: false
-            trim: false
+            trim: true
             preserve_tags: ''
             html: false
           element_type: ''
@@ -629,7 +629,7 @@ display:
           admin_label: ''
           plugin_id: field
           label: ''
-          exclude: false
+          exclude: true
           alter:
             alter_text: false
             text: ''
@@ -684,6 +684,76 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
+        user_picture:
+          id: user_picture
+          table: user__user_picture
+          field: user_picture
+          relationship: field_alumno_relacionado
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: image
+          settings:
+            image_link: ''
+            image_style: thumbnail
+            image_loading:
+              attribute: lazy
+            svg_attributes:
+              width: null
+              height: null
+            svg_render_as_image: true
+          group_column: ''
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
         nothing:
           id: nothing
           table: views
@@ -696,7 +766,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<a href=\"https://www.plugnmeet.cloud/es/join?roomId=1f1ec020-e099-4cce-9a50-79e8715c156c&role=moderator\" target=\"_blank\">Entrar</a>\r\n"
+            text: "<div class=\"d-flex koala\">\r\n  <div class=\"imagen\">{{ user_picture }}</div>\r\n  <div class=\"nombre-fecha\">\r\n    <div class=\"nombre\">{{ field_nombre_del_nino_a }}</div>\r\n    <div class=\"fecha\">{{ field_fecha_cita_oculta }}</div>\r\n  </div>\r\n  <div class=\"enlace\">\r\n    <a href=\"https://www.plugnmeet.cloud/es/join?roomId=1f1ec020-e099-4cce-9a50-79e8715c156c&role=moderator\"\r\n      target=\"_blank\">Entrar</a>\r\n  </div>\r\n</div>"
             make_link: false
             path: ''
             absolute: false
@@ -842,10 +912,34 @@ display:
           1: AND
       defaults:
         title: false
+        relationships: false
         fields: false
         sorts: false
         filters: false
         filter_groups: false
+        footer: false
+      relationships:
+        field_alumno_relacionado:
+          id: field_alumno_relacionado
+          table: node__field_alumno_relacionado
+          field: field_alumno_relacionado
+          relationship: none
+          group_type: group
+          admin_label: 'field_alumno_relacionado: Usuario'
+          plugin_id: standard
+          required: false
+      footer:
+        area_text_custom:
+          id: area_text_custom
+          table: views
+          field: area_text_custom
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text_custom
+          empty: true
+          content: '<div class="ver-todos-koalas"><a href="/profesor/calendario">Ir a calendario de clases</a></div>'
+          tokenize: false
       display_extenders: {  }
       block_description: 'Clases Gratuitas'
     cache_metadata:
@@ -862,6 +956,7 @@ display:
         - 'config:field.storage.node.field_fecha_cita_oculta'
         - 'config:field.storage.node.field_fecha_de_la_cita'
         - 'config:field.storage.node.field_nombre_del_nino_a'
+        - 'config:field.storage.user.user_picture'
   block_2:
     id: block_2
     display_title: 'Calendario Bloque Profesores'
@@ -1250,6 +1345,118 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
+        field_nombres_y_apellidos_del_pr:
+          id: field_nombres_y_apellidos_del_pr
+          table: user__field_nombres_y_apellidos_del_pr
+          field: field_nombres_y_apellidos_del_pr
+          relationship: field_asignar_profesor
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: false
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        nothing:
+          id: nothing
+          table: views
+          field: nothing
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: custom
+          label: ''
+          exclude: false
+          alter:
+            alter_text: true
+            text: "<div class=\"datos-clase\">\r\n  <div class=\"imagen\">\r\n    <img src=\"/themes/custom/koala/images/fondo-calendario-horario.png\" class=\"mw-100\">\r\n  </div>\r\n  <div class=\"alumno text-center\">\r\n    <p>Alumno</p>\r\n    <div class=\"datos-alumno\">\r\n      {{ field_nombre_del_nino_a }} \r\n    </div>\r\n  </div>\r\n  <div class=\"profesor text-center\">\r\n    <p>Profesor</p>\r\n   {{ field_nombres_y_apellidos_del_pr }} \r\n  </div>\r\n  <div class=\"fecha text-center\">\r\n    <p>Fecha</p>\r\n    <div class=\"fecha\">{{ field_fecha_cita_oculta }}</div>\r\n  </div>\r\n  <div class=\"boton\"><a href=\"\">Entrar a clase</a></div>\r\n</div>"
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: false
       arguments:
         field_asignar_profesor_target_id:
           id: field_asignar_profesor_target_id
@@ -1306,9 +1513,9 @@ display:
           updateConfirm: 0
           defaultLanguage: es
           languageSelector: 0
-          dialogWindow: 0
+          dialogWindow: 1
           openEntityInNewTab: 0
-          dialogModal: 1
+          dialogModal: 0
           createEventLink: 0
           eventLimit: '5'
           slotDuration: '00:30:00'
@@ -1319,7 +1526,12 @@ display:
             agendar_clase_no_gratis: '#3a87ad'
             article: '#3a87ad'
             crear_hijos: '#3a87ad'
+            event: '#3a87ad'
             horarios_de_trabajo: '#3a87ad'
+            horarios_profesores: '#3a87ad'
+            koala_ninos: '#3a87ad'
+            mundos: '#3a87ad'
+            mundos_detalle: '#3a87ad'
             page: '#3a87ad'
             profesores: '#3a87ad'
           rrule: ''
@@ -1332,8 +1544,19 @@ display:
       defaults:
         style: false
         row: false
+        relationships: false
         fields: false
         arguments: false
+      relationships:
+        field_asignar_profesor:
+          id: field_asignar_profesor
+          table: node__field_asignar_profesor
+          field: field_asignar_profesor
+          relationship: none
+          group_type: group
+          admin_label: 'field_asignar_profesor: Usuario'
+          plugin_id: standard
+          required: false
       display_description: ''
       display_extenders: {  }
     cache_metadata:
@@ -1351,6 +1574,7 @@ display:
         - 'config:field.storage.node.field_fecha_cita_oculta'
         - 'config:field.storage.node.field_fecha_de_la_cita'
         - 'config:field.storage.node.field_nombre_del_nino_a'
+        - 'config:field.storage.user.field_nombres_y_apellidos_del_pr'
   page_1:
     id: page_1
     display_title: Calendario

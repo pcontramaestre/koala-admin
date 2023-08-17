@@ -127,7 +127,7 @@
                                         font-weight     : 700;
                                         font-size       : 12px;
                                         padding         : 0.2rem 0.2rem 0.2rem 0.4rem;
-                                        margin-top: 0.1rem;
+                                        margin-top      : 0.1rem;
                                       }
                                     }
                                   }
@@ -204,7 +204,7 @@
                                           font-weight     : 700;
                                           font-size       : 12px;
                                           padding         : 0.2rem 0.2rem 0.2rem 0.4rem;
-                                          margin-top: 0.1rem;
+                                          margin-top      : 0.1rem;
                                         }
                                       }
                                     }
@@ -325,13 +325,14 @@
                                           font-weight     : 700;
                                           font-size       : 12px;
                                           padding         : 0.2rem 0.2rem 0.2rem 0.4rem;
-                                          margin-top: 0.1rem;
+                                          margin-top      : 0.1rem;
                                         }
                                       }
                                     }
                                   }
                                 }
                               }
+
                               td:nth-child(2n) {
                                 .fc-content-col {
                                   .fc-event-container {
@@ -394,6 +395,7 @@
 
         .fc-listYear-view {
           border: 2px solid #E6F1F1;
+
           .fc-scroller {
             .fc-list-table {
               tbody {
@@ -413,22 +415,26 @@
                     border          : none;
                     font-size       : 14px;
                   }
-                  .fc-list-item-marker{
+
+                  .fc-list-item-marker {
                     padding: 8px 0px !important;
                   }
-                  .fc-list-item-title{
+
+                  .fc-list-item-title {
                     display: flex;
-                    a{
+
+                    a {
                       background-color: $RedK100;
-                      border-radius: 12px;
-                      color: $RedK500;
-                      font-weight: 700;
-                      font-size: 12px;
-                      padding: 0.2rem 0.2rem 0.2rem 0.4rem;
-                      margin-top: 0.1rem;
+                      border-radius   : 12px;
+                      color           : $RedK500;
+                      font-weight     : 700;
+                      font-size       : 12px;
+                      padding         : 0.2rem 0.2rem 0.2rem 0.4rem;
+                      margin-top      : 0.1rem;
                     }
                   }
                 }
+
                 .fc-list-item:nth-child(4n) {
                   .fc-list-item-title {
                     a {
@@ -450,6 +456,206 @@
               }
             }
           }
+        }
+      }
+    }
+  }
+}
+
+//POPUP ALUMNOS
+div[id^="windowManager_"] {
+  //width           : 100% !important;
+  //height          : 100% !important;
+  //background-color: #000000b0 !important;
+
+  >span[id^="htmlElement_"] {
+    position      : absolute;
+    //left        : 42% !important;
+    //top         : 20% !important;
+    position      : fixed !important;
+    left          : 42% !important;
+    top           : 18% !important;
+    width         : 340px !important;
+    height        : max-content !important;
+    border-color  : rgb(1 1 1 / 0%) !important;
+
+    div.jsframe-titlebar-focused {
+      background             : #e6f1f1 !important;
+      color                  : black !important;
+      width                  : 340px !important;
+      height                 : 50px !important;
+      border-top-left-radius : 16px !important;
+      border-top-right-radius: 16px !important;
+      border-bottom          : none !important;
+      top                    : -9px !important;
+
+      >span {
+        left      : 16px !important;
+        top       : 16px !important;
+        display   : block !important;
+        max-width : 260px !important;
+        word-wrap : break-word !important;
+        word-break: break-all !important;
+        font-size : 1rem !important;
+      }
+    }
+
+    div {
+      .datos-clase {
+        display        : flex;
+        flex-direction : column;
+        flex-wrap      : nowrap;
+        align-content  : center;
+        justify-content: space-between;
+        height         : 100%;
+        padding-bottom : 1rem;
+
+        .imagen {
+          img {
+            padding: 1rem;
+          }
+        }
+
+        .alumno {
+          font-weight: 500;
+          color      : black;
+
+          p {
+            margin-bottom: 0.5rem !important;
+          }
+
+          .datos-alumno {
+            background-color: white;
+            width           : 90%;
+            border-radius   : 32px;
+            height          : max-content;
+            font-weight     : 700;
+            font-size       : 20px;
+            display         : flex;
+            align-items     : center;
+            margin          : 0 auto;
+            padding         : 0.5rem;
+            margin-bottom   : 1rem;
+
+            a {
+              color          : black;
+              text-decoration: none;
+              max-width      : 79%;
+
+              &:hover {
+                text-decoration: underline;
+              }
+            }
+
+            &:before {
+              content         : "";
+              display         : block;
+              width           : 40px;
+              height          : 40px;
+              margin-right    : 1rem;
+              background-image: url("/themes/custom/koala/images/Alumno-info.jpg");
+            }
+          }
+        }
+
+        .profesor {
+          margin-bottom   : 1rem !important;
+          background-color: white;
+          width           : 90%;
+          margin          : 0 auto;
+          border-radius   : 32px;
+          position        : relative;
+          margin-top      : 2rem;
+          height          : 56px;
+          display         : flex;
+          justify-content : center;
+          align-items     : center;
+          font-weight     : 700;
+          font-size       : 20px;
+
+          p {
+            position   : absolute;
+            bottom     : 115%;
+            left       : 0;
+            right      : 0;
+            margin     : 0 auto;
+            font-weight: 500;
+            font-size  : 16px;
+          }
+        }
+
+        .fecha.text-center {
+          font-weight: 500;
+          color      : black;
+
+          .fecha {
+            font-size  : 20px;
+            font-weight: 700;
+          }
+        }
+
+        .boton {
+          background-color: #2ff7ee;
+          border          : 2px solid #297e88;
+          border-radius   : 32px;
+          width           : 260px;
+          height          : 51px;
+          display         : flex;
+          justify-content : center;
+          align-items     : center;
+          margin          : 0 auto;
+          margin-top      : 1rem;
+
+          &:hover {
+            background-color: #297e88;
+
+            a {
+              color: white;
+            }
+          }
+
+          a {
+            color          : black;
+            text-decoration: none;
+            font-weight    : 700;
+            font-size      : 20px;
+          }
+        }
+
+        .editar-horario {
+          font-weight    : 700;
+          text-decoration: underline;
+          text-align     : center;
+          margin-top     : 1rem;
+        }
+      }
+    }
+
+    div[id^="window_"]:not(.jsframe-titlebar-focused) {
+      left                      : 0px !important;
+      top                       : 30px !important;
+      width                     : 340px !important;
+      min-height                : 600px !important;
+      background-color          : #e6f1f1 !important;
+      border-radius             : 16px !important;
+      border-bottom-right-radius: 0px;
+      border-bottom-left-radius : 0px;
+
+      >div {
+        background-color          : #e6f1f1 !important;
+        border-bottom-right-radius: 16px !important;
+        border-bottom-left-radius : 16px !important;
+        height                    : auto !important;
+      }
+
+      >div:nth-of-type(1) {
+        left            : 310px !important;
+        background-color: transparent !important;
+        top             : -22px !important;
+
+        >span {
+          font-size: 19px !important;
+          color    : black !important;
         }
       }
     }
