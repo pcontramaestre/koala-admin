@@ -1901,7 +1901,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<div class=\"row clases-proximas\">\r\n  <div class=\"dato-del-nino d-flex col-md-6\">\r\n    <div class=\"imagen\">{{ user_picture }}</div>\r\n    <div class=\"datos\"> \r\n         {{ field_nombre_del_nino_a }} \r\n         <div class=\"fecha-nac\">{{ field_fecha_nac }} </div>\r\n     </div>\r\n  </div>\r\n  <div class=\"datos-clase d-flex col-md-6\">\r\n    <div class=\"titulo\">Fecha</div>\r\n    <div class=\"datos-fecha\">\r\n      <div>{{ field_fecha_cita_oculta }}</div>\r\n      <div>{{ field_fecha_cita_oculta_1 }}</div>\r\n    </div>\r\n    <div class=\"boton\">\r\n      <a href=\"https://www.plugnmeet.cloud/es/join?roomId=1f1ec020-e099-4cce-9a50-79e8715c156c\" class=\"editar-clase\"target=\"_blank\">Entrar a Clase</a>\r\n    </div>\r\n  </div>\r\n</div>"
+            text: "<div class=\"row clases-proximas\">\r\n  <div class=\"dato-del-nino d-flex col-md-6\">\r\n    <div class=\"imagen\">{{ user_picture }}</div>\r\n    <div class=\"datos\"> \r\n         {{ field_nombre_del_nino_a }} \r\n         <div class=\"fecha-nac\">{{ field_fecha_nac }} </div>\r\n     </div>\r\n  </div>\r\n  <div class=\"datos-clase d-flex col-md-6\">\r\n    <div class=\"titulo\">Fecha</div>\r\n    <div class=\"datos-fecha\">\r\n      <div>{{ field_fecha_cita_oculta }}</div>\r\n      <div>{{ field_fecha_cita_oculta_1 }}</div>\r\n    </div>\r\n    <div class=\"boton\">\r\n      <a href=\"https://koalaconecta.icreativadigital.com/login.html?name={{ field_nombre_del_nino_a }}\" class=\"editar-clase\"target=\"_blank\">Entrar a Clase</a>\r\n    </div>\r\n  </div>\r\n</div>"
             make_link: false
             path: ''
             absolute: false

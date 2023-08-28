@@ -174,3 +174,4 @@ modification+hijo+user+user: user.user.default
 'use  The form mode default linked to  node entity( koala_ninos )': node.koala_ninos.default
 'use  The form mode default linked to  taxonomy_term entity( koalas_ninos )': taxonomy_term.koalas_ninos.default
 'use  The form mode administrador linked to  node entity( koala_ninos )': node.koala_ninos.administrador
+'use  The form mode agregar_padre linked to  user entity( user )': user.user.agregar_padre

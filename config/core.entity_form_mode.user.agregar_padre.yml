@@ -1,0 +1,10 @@
+uuid: 7101c994-2fd4-463a-85e9-161761c50454
+langcode: es
+status: true
+dependencies:
+  module:
+    - user
+id: user.agregar_padre
+label: 'Agregar padre'
+targetEntityType: user
+cache: true

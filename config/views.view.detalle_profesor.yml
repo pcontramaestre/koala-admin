@@ -479,7 +479,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<div class=\"row cuadro-perfil-profesor\">\r\n  <div class=\"col-12 img-name d-flex align-items-center\">\r\n    <div class=\"col-md-12 col-lg-4 imagen\">\r\n      {{ user_picture }}\r\n    </div>\r\n    <div class=\"col-md-12 col-lg-7 nombre\">\r\n      <h4>{{ field_apodo }}</h4>\r\n     <div class=\"pais\">{{ field_direcc_country_code }} </div>\r\n    </div>\r\n    <div class=\"flotante editar col\">\r\n      {{ uid }}\r\n    </div>\r\n  </div>\r\n  <div class=\"col-12\">\r\n      <h4>{{ field_nombres_y_apellidos_del_pr }}</h4>\r\n  </div>\r\n  <div class=\"col-12 presentacion\">\r\n    <h6>Presentación</h6>\r\n    <p>{{ field_tu_presentacion }}</p>\r\n  </div>\r\n  <div class=\"email\">Email: {{ mail }}</div>\r\n</div>"
+            text: "<div class=\"row cuadro-perfil-profesor\">\r\n  <div class=\"col-12 img-name d-flex align-items-center\">\r\n    <div class=\"col-md-12 col-lg-4 imagen\">\r\n      {{ user_picture }}\r\n    </div>\r\n    <div class=\"col-md-12 col-lg-7 nombre\">\r\n      <h4>{{ field_nombres_y_apellidos_del_pr }}</h4>\r\n     <div class=\"pais\">{{ field_direcc_country_code }} </div>\r\n    </div>\r\n    <div class=\"flotante editar col\">\r\n      {{ uid }}\r\n    </div>\r\n  </div>\r\n  <div class=\"col-12\">\r\n      <h4>{{ field_nombres_y_apellidos_del_pr }}</h4>\r\n  </div>\r\n  <div class=\"col-12 presentacion\">\r\n    <h6>Presentación</h6>\r\n    <p>{{ field_tu_presentacion }}</p>\r\n  </div>\r\n  <div class=\"email\">Email: {{ mail }}</div>\r\n</div>"
             make_link: false
             path: ''
             absolute: false

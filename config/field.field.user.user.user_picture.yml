@@ -6,22 +6,42 @@ dependencies:
     - field.storage.user.user_picture
   module:
     - content_translation
+    - filefield_paths
     - image
     - multiple_registration
     - user
 third_party_settings:
+  filefield_paths:
+    enabled: true
+    file_path:
+      value: 'pictures/[date:custom:Y]-[date:custom:m]'
+      options:
+        slashes: false
+        pathauto: false
+        transliterate: false
+    file_name:
+      value: '[file:ffp-name-only-original].[file:ffp-extension-original]'
+      options:
+        slashes: false
+        pathauto: false
+        transliterate: false
+    redirect: false
+    retroactive_update: false
+    active_updating: false
   content_translation:
     translation_sync:
-      alt: alt
-      title: title
       file: '0'
+      alt: '0'
+      title: '0'
   multiple_registration:
     user_additional_register_form_required:
       authenticated: 0
+      profesor: 0
       padre: 0
       hijo: 0
     user_additional_register_form:
       authenticated: 0
+      profesor: 0
       padre: 0
       hijo: 0
 _core:
@@ -40,7 +60,7 @@ settings:
   handler: 'default:file'
   handler_settings: {  }
   file_directory: 'pictures/[date:custom:Y]-[date:custom:m]'
-  file_extensions: 'png gif jpg jpeg'
+  file_extensions: 'png gif jpg jpeg svg'
   max_filesize: ''
   max_resolution: ''
   min_resolution: ''
@@ -49,9 +69,9 @@ settings:
   title_field: false
   title_field_required: false
   default_image:
-    uuid: a35b8f54-6cac-4246-8e68-f467e9e43a0e
+    uuid: b9c2c95b-1b58-4bb8-9ac4-8f5a5cdde272
     alt: Usuario
     title: Usuario
-    width: 2240
-    height: 2240
+    width: 175
+    height: 177
 field_type: image

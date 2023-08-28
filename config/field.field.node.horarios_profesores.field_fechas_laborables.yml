@@ -23,10 +23,10 @@ translatable: false
 default_value:
   -
     default_duration: 60
-    default_duration_increments: "30\r\n60|1 hour\r\n90\r\n120|2 hours\r\n240|4 hours\r\n480|8 hours\r\ncustom"
+    default_duration_increments: "30\r\n60|1 hora\r\n90\r\n120|2 horas\r\n240|4 horas\r\n480|8 horas\r\ncustom"
     default_date_type: ''
     default_date: ''
-    min: '[current-date:html_date]'
+    min: ''
     max: ''
 default_value_callback: ''
 settings: {  }

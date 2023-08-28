@@ -1,9 +1,9 @@
-uuid: b41b1fd5-c201-47f3-9095-28a7964f94a7
+uuid: 4048ee65-e6c5-4422-bd60-63b930fa6e61
 langcode: es
 status: true
 dependencies:
   config:
-    - core.entity_form_mode.user.registro_de_profesores
+    - core.entity_form_mode.user.agregar_padre
     - field.field.user.user.field_apodo
     - field.field.user.user.field_avatar
     - field.field.user.user.field_celular
@@ -25,43 +25,52 @@ dependencies:
     - country
     - field_layout
     - layout_builder
+    - media_library
     - phone_number
     - svg_image
     - text
     - user
 third_party_settings:
   field_layout:
-    id: layout_threecol_section
+    id: layout_twocol_section
     settings:
       label: ''
-      column_widths: 25-50-25
+      column_widths: 50-50
 _core:
   default_config_hash: FaQ9Ptcpxpg30AtiqRDtl_8zbJArHP1LPfug_s59TOA
-id: user.user.registro_de_profesores
+id: user.user.agregar_padre
 targetEntityType: user
 bundle: user
-mode: registro_de_profesores
+mode: agregar_padre
 content:
   account:
-    weight: 1
+    weight: 0
+    region: first
+    settings: {  }
+    third_party_settings: {  }
+  contact:
+    weight: 3
     region: first
     settings: {  }
     third_party_settings: {  }
   field_direcc:
     type: address_default
-    weight: 8
-    region: third
+    weight: 9
+    region: second
     settings: {  }
     third_party_settings: {  }
   field_nacionalidad:
-    type: country_default
-    weight: 9
-    region: third
-    settings: {  }
+    type: country_autocomplete
+    weight: 7
+    region: first
+    settings:
+      size: '60'
+      placeholder: 'Start typing a country name ...'
+      autocomplete_route_name: country.autocomplete
     third_party_settings: {  }
   field_nombres_y_apellidos_del_pr:
     type: string_textfield
-    weight: 0
+    weight: 4
     region: first
     settings:
       size: 60
@@ -69,8 +78,8 @@ content:
     third_party_settings: {  }
   field_numero_de_telefono:
     type: phone_number_default
-    weight: 7
-    region: third
+    weight: 8
+    region: second
     settings:
       default_country: US
       placeholder: null
@@ -79,42 +88,47 @@ content:
     third_party_settings: {  }
   field_tu_presentacion:
     type: text_textarea
-    weight: 3
-    region: second
+    weight: 5
+    region: first
     settings:
       rows: 5
       placeholder: ''
     third_party_settings: {  }
   field_tu_video_:
-    type: entity_reference_autocomplete
-    weight: 4
+    type: media_library_widget
+    weight: 6
     region: first
     settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+      media_types:
+        - remote_video
+        - video
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 10
+    region: second
+    settings:
+      include_locked: true
     third_party_settings: {  }
   language:
-    weight: 5
-    region: second
+    weight: 2
+    region: first
     settings: {  }
     third_party_settings: {  }
   timezone:
-    weight: 6
+    weight: 11
     region: second
     settings: {  }
     third_party_settings: {  }
   user_picture:
     type: image_image
-    weight: 2
+    weight: 1
     region: first
     settings:
       progress_indicator: throbber
       preview_image_style: thumbnail
     third_party_settings: {  }
 hidden:
-  contact: true
   field_apodo: true
   field_avatar: true
   field_celular: true
@@ -123,6 +137,5 @@ hidden:
   field_nombre_del_hijo: true
   field_padre: true
   field_pais: true
-  langcode: true
   path: true
   translation: true
