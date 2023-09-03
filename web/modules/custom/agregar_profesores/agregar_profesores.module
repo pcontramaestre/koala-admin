@@ -40,23 +40,18 @@ use Drupal\node\Entity\Node;
 /**
  * Implements hook_entity_insert().
  * Create node after register user role profesor.
+ *  - Verifica si la entidad es un usuario y tiene el rol "profesor".
+ *  - Obtener el field_nombres_y_apellidos_del_pr
+ *  - Crea un nodo de tipo "horarios_profesores".
  */
 function agregar_profesores_entity_insert(EntityInterface $entity) {
-  // Verifica si la entidad es un usuario y tiene el rol "profesor".
   if ($entity instanceof User && in_array('profesor', $entity->getRoles())) {
-
-    //Obtener el field_nombres_y_apellidos_del_pr
     $nombres_y_apellidos = $entity->get('field_nombres_y_apellidos_del_pr')->value;
-
-    // Crea un nodo de tipo "horarios_profesores".
-    $node = Node::create([
+    Node::create([
       'type' => 'horarios_profesores',
       'title' => 'Horario de trabajo de '.$nombres_y_apellidos,
       'field_profesor' => $entity->id(),
       'uid' => $entity->id(),
-    ]);
-
-    // Guarda el nodo creado.
-    $node->save();
+    ])->save();
   }
 }
