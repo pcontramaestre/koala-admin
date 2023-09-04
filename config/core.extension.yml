@@ -9,6 +9,7 @@ module:
   admin_toolbar_search: 0
   admin_toolbar_tools: 0
   advanced_text_formatter: 0
+  advancedqueue: 0
   age_field_formatter: 0
   agregar_profesores: 0
   asignar_profesor: 0
@@ -28,6 +29,21 @@ module:
   chosen_lib: 0
   ckeditor5: 0
   comment: 0
+  commerce: 0
+  commerce_cart: 0
+  commerce_checkout: 0
+  commerce_log: 0
+  commerce_number_pattern: 0
+  commerce_order: 0
+  commerce_payment: 0
+  commerce_payment_example: 0
+  commerce_price: 0
+  commerce_pricelist: 0
+  commerce_product: 0
+  commerce_promotion: 0
+  commerce_recurring: 0
+  commerce_store: 0
+  commerce_stripe: 0
   computed_field: 0
   config: 0
   config_pages: 0
@@ -54,6 +70,7 @@ module:
   dynamic_page_cache: 0
   editor: 0
   entity: 0
+  entity_reference_revisions: 0
   entity_usage: 0
   enviar_correo_clase_agendada_gratis: 0
   fecha_widget: 0
@@ -128,6 +145,7 @@ module:
   path: 0
   path_alias: 0
   phone_number: 0
+  profile: 0
   quicktabs: 0
   quicktabs_accordion: 0
   quicktabs_jqueryui: 0
@@ -153,6 +171,7 @@ module:
   smart_date_recur: 0
   smart_date_starter_kit: 0
   smtp: 0
+  state_machine: 0
   structure_sync: 0
   svg_image: 0
   svg_image_responsive: 0

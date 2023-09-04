@@ -4,45 +4,16 @@ use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\user\Entity\User;
 use Drupal\node\Entity\Node;
-
-/**
- * Implements hook_entity_presave().
- */
-// function agregar_profesores_entity_presave(EntityInterface $entity) {
-//   // Verifica si la entidad es un usuario y tiene el rol "profesor".
-//   if ($entity instanceof User && in_array('profesor', $entity->getRoles())) {
-
-//     //Obtener el id del usuario que se esta guardando.
-//     $id = $entity->id();
-//     var_dump("id del usuario:");
-//     var_dump($id);
-//     var_dump("Roles:");
-//     var_dump($entity->getRoles());
-//     var_dump("Nombre:");
-//     var_dump($entity->get('name')->value);
-//     var_dump("Correo:");
-//     var_dump($entity->get('mail')->value);
-//     exit;
-
-//     // Crea un nodo de tipo "horarios_de_trabajo".
-//     $node = Node::create([
-//       'type' => 'horarios_de_trabajo',
-//       'title' => 'Horarios de trabajo',
-//       'field_profesor' => $entity->id(),
-//       'uid' => $entity->id(),
-//     ]);
-
-//     // Guarda el nodo creado.
-//     $node->save();
-//   }
-// }
+use Symfony\Component\HttpFoundation\RedirectResponse;
+use Drupal\Core\Form\FormStateInterface;
 
 /**
  * Implements hook_entity_insert().
- * Create node after register user role profesor.
+ * Create node horarios_profesor after register user role profesor.
  *  - Verifica si la entidad es un usuario y tiene el rol "profesor".
  *  - Obtener el field_nombres_y_apellidos_del_pr
  *  - Crea un nodo de tipo "horarios_profesores".
+ *  - Create node metodos_de_pago after register user role profesor.
  */
 function agregar_profesores_entity_insert(EntityInterface $entity) {
   if ($entity instanceof User && in_array('profesor', $entity->getRoles())) {
@@ -53,5 +24,31 @@ function agregar_profesores_entity_insert(EntityInterface $entity) {
       'field_profesor' => $entity->id(),
       'uid' => $entity->id(),
     ])->save();
+
+    Node::create([
+      'type' => 'metodos_de_pago',
+      'title' => 'de '.$nombres_y_apellidos,
+      'field_profesor' => $entity->id(),
+      'uid' => $entity->id(),
+    ])->save();
   }
+}
+
+// Implementar un hook que cuando se entre al editar el formulario metodos_de_pago se oculte el campo field_profesor y title
+function agregar_profesores_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  if ($form_id == 'node_metodos_de_pago_edit_form') {
+    $form['field_profesor']['#access'] = FALSE;
+    $form['title']['#access'] = FALSE;
+    $form['actions']['submit']['#value'] =  Drupal::translation()->translate('Actualizar información');
+    foreach (array_keys($form['actions']) as $action) {
+      if ($action != 'preview' && isset($form['actions'][$action]['#type']) && $form['actions'][$action]['#type'] === 'submit') {
+        $form['actions'][$action]['#submit'][] = 'callback_submit_agregar_profesores_metodos_de_pago_submit';
+      }
+    }
+  }
+}
+
+function callback_submit_agregar_profesores_metodos_de_pago_submit(&$form, FormStateInterface $form_state) {
+  $response = new RedirectResponse('/profesor');
+  $response->send();
 }

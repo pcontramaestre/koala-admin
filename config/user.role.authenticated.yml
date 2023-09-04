@@ -6,6 +6,11 @@ dependencies:
     - filter.format.basic_html
   module:
     - comment
+    - commerce_checkout
+    - commerce_order
+    - commerce_payment
+    - commerce_product
+    - commerce_recurring
     - contact
     - date_recur_modular
     - field_permissions
@@ -24,22 +29,29 @@ label: 'Usuario autenticado'
 weight: 1
 is_admin: false
 permissions:
+  - 'access checkout'
   - 'access comments'
   - 'access content'
   - 'access shortcuts'
   - 'access site-wide contact form'
   - access_all_form_modes
+  - 'cancel own commerce_subscription'
+  - 'create commerce_subscription'
   - 'date_recur_modular use sierra form'
+  - 'manage own commerce_payment_method'
   - 'post comments'
   - 'rate content'
   - 'search content'
   - 'skip comment approval'
+  - 'update own commerce_subscription'
   - 'use text format basic_html'
   - 'view any horarios_de_trabajo content'
   - 'view any horarios_profesores content'
   - 'view any mundos content'
   - 'view any mundos_detalle content'
   - 'view any page content'
+  - 'view commerce_billing_schedule'
+  - 'view commerce_product'
   - 'view field_apodo'
   - 'view field_avatar'
   - 'view field_nombres_y_apellidos_del_pr'
@@ -47,6 +59,8 @@ permissions:
   - 'view field_tu_video_'
   - 'view media'
   - 'view own article content'
+  - 'view own commerce_order'
+  - 'view own commerce_subscription'
   - 'view own field_tu_presentacion'
   - 'view own field_tu_video_'
   - 'view own horarios_de_trabajo content'

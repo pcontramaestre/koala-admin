@@ -1,0 +1,63 @@
+uuid: e45f360f-9261-43e5-8993-2cb7cf8874fe
+langcode: es
+status: true
+dependencies:
+  module:
+    - commerce_payment
+    - commerce_promotion
+    - commerce_stripe
+_core:
+  default_config_hash: 1BxQSpt9FMh77dg9LMMrriQ4JRWHwnBKzywwOwSpQ04
+label: Default
+id: default
+plugin: multistep_default
+configuration:
+  display_checkout_progress: true
+  display_checkout_progress_breadcrumb_links: true
+  guest_order_assign: false
+  guest_new_account: false
+  guest_new_account_notify: false
+  panes:
+    login:
+      step: login
+      weight: 0
+      allow_guest_checkout: true
+      allow_registration: true
+      registration_form_mode: register
+    contact_information:
+      step: order_information
+      weight: 1
+      double_entry: false
+    payment_information:
+      step: order_information
+      weight: 2
+    review:
+      step: review
+      weight: 3
+    stripe_review:
+      step: review
+      weight: 4
+      button_id: edit-actions-next
+      auto_submit_review_form: false
+      setup_future_usage: ''
+    payment_process:
+      step: payment
+      weight: 5
+      capture: true
+    completion_message:
+      step: complete
+      weight: 6
+      message:
+        value: "Your order number is [commerce_order:order_number].\r\nYou can view your order on your account page when logged in."
+        format: plain_text
+    completion_register:
+      step: complete
+      weight: 7
+    order_summary:
+      step: complete
+      weight: 8
+      view: commerce_checkout_order_summary
+    coupon_redemption:
+      step: _sidebar
+      weight: 9
+      allow_multiple: false

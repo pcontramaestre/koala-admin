@@ -1,0 +1,24 @@
+uuid: 6d1ead46-8a81-4d2b-ba77-4910f3750441
+langcode: es
+status: true
+dependencies: {  }
+id: 4_semanas
+label: '4 Semanas'
+displayLabel: '4 semanas'
+billingType: prepaid
+combineSubscriptions: false
+retrySchedule:
+  - 1
+  - 3
+  - 5
+unpaidSubscriptionState: canceled
+plugin: fixed
+configuration:
+  trial_interval: {  }
+  interval:
+    number: 4
+    unit: week
+  start_month: 1
+  start_day: 1
+prorater: full_price
+proraterConfiguration: {  }

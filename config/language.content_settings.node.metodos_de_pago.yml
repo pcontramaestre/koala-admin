@@ -1,0 +1,11 @@
+uuid: 8cc4e72f-44e0-44e0-ac3e-f189534d21d9
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.metodos_de_pago
+id: node.metodos_de_pago
+target_entity_type_id: node
+target_bundle: metodos_de_pago
+default_langcode: site_default
+language_alterable: false

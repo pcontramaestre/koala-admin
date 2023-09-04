@@ -1,0 +1,28 @@
+uuid: c46bd43d-eeac-4bc1-b793-ba785f3fa2b8
+langcode: es
+status: true
+dependencies:
+  module:
+    - commerce_cart
+    - commerce_recurring
+third_party_settings:
+  commerce_cart:
+    cart_block_view: commerce_cart_block
+    cart_form_view: commerce_cart_form
+    cart_expiration:
+      number: 2
+      unit: day
+    enable_cart_message: true
+_core:
+  default_config_hash: alBtcl93cZUqOuWKBA9ltV1C-XnMEvXgiagdjOkpj2Y
+id: recurring
+label: Recurring
+traits: {  }
+locked: true
+workflow: order_recurring
+numberPattern: order_default
+refresh_mode: customer
+refresh_frequency: 300
+sendReceipt: true
+receiptBcc: pablo@icreativadigital.com
+receiptSubject: ''

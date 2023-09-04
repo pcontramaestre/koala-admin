@@ -1,0 +1,17 @@
+uuid: 4758ea12-cd01-40be-859b-0df03efe9f61
+langcode: es
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: 'Métodos de pago'
+type: metodos_de_pago
+description: 'Agregar metodos de pago para el profesor'
+help: ''
+new_revision: false
+preview_mode: 0
+display_submitted: true

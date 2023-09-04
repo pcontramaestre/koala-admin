@@ -1,0 +1,54 @@
+uuid: 5796bf6e-1620-4886-a0c4-f523c755a0a2
+langcode: es
+status: true
+dependencies:
+  module:
+    - commerce_order
+    - commerce_price
+    - commerce_pricelist
+    - field_layout
+    - layout_discovery
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+id: commerce_pricelist_item.commerce_product_variation.default
+targetEntityType: commerce_pricelist_item
+bundle: commerce_product_variation
+mode: default
+content:
+  list_price:
+    type: commerce_list_price
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  price:
+    type: commerce_price_default
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  purchasable_entity:
+    type: options_select
+    weight: -1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  quantity:
+    type: commerce_quantity
+    weight: 0
+    region: content
+    settings:
+      placeholder: ''
+      step: '1'
+    third_party_settings: {  }
+  status:
+    type: options_buttons
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  price_list_id: true

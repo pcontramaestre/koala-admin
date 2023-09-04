@@ -1,0 +1,35 @@
+uuid: a4bad31e-014f-4b67-89d4-33a1aef0f662
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_profesor
+    - node.type.metodos_de_pago
+id: node.metodos_de_pago.field_profesor
+field_name: field_profesor
+entity_type: node
+bundle: metodos_de_pago
+label: Profesor
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:user'
+  handler_settings:
+    target_bundles: null
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    filter:
+      type: role
+      role:
+        profesor: profesor
+        content_editor: '0'
+        administrator: '0'
+        padre: '0'
+        hijo: '0'
+    include_anonymous: false
+field_type: entity_reference

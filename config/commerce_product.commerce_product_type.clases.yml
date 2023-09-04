@@ -1,0 +1,14 @@
+uuid: bb43753b-d28e-4d40-806d-377af25a4c44
+langcode: es
+status: true
+dependencies: {  }
+id: clases
+label: Clases
+traits: {  }
+locked: false
+description: ''
+variationType: null
+variationTypes:
+  - 4_semanas_mes
+multipleVariations: true
+injectVariationFields: true

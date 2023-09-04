@@ -1,0 +1,18 @@
+uuid: 365af901-785e-428b-b2b6-307e779fbd67
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.metodos_de_pago
+id: node.metodos_de_pago.title
+field_name: title
+entity_type: node
+bundle: metodos_de_pago
+label: 'Título de referencia'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

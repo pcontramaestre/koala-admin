@@ -25,6 +25,7 @@ dependencies:
   module:
     - admin_toolbar_search
     - comment
+    - commerce_pricelist
     - config_pages
     - content_moderation
     - content_translation
@@ -68,6 +69,7 @@ permissions:
   - 'access tour'
   - 'access user profiles'
   - access_all_form_modes
+  - 'administer commerce_pricelist'
   - 'administer media'
   - 'administer media types'
   - 'administer menu'

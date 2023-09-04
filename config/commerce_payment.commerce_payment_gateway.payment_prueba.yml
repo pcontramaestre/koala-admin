@@ -1,0 +1,25 @@
+uuid: af751015-edd8-4490-b6e7-4762c5f0fc84
+langcode: es
+status: true
+dependencies:
+  module:
+    - commerce_payment_example
+id: payment_prueba
+label: 'payment prueba'
+weight: null
+plugin: example_stored_offsite_redirect
+configuration:
+  display_label: 'Example Stored Offsite'
+  mode: test
+  payment_method_types:
+    - credit_card
+  collect_billing_information: true
+  redirect_method: post
+conditions:
+  -
+    plugin: order_customer_role
+    configuration:
+      roles:
+        - administrator
+        - padre
+conditionOperator: AND

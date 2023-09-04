@@ -12,6 +12,7 @@ dependencies:
     - media.type.video
     - node.type.horarios_de_trabajo
     - node.type.horarios_profesores
+    - node.type.metodos_de_pago
     - node.type.profesores
   module:
     - comment
@@ -79,6 +80,7 @@ permissions:
   - 'edit own horarios_de_trabajo content'
   - 'edit own horarios_profesores content'
   - 'edit own image media'
+  - 'edit own metodos_de_pago content'
   - 'edit own profesores content'
   - 'edit own remote_video media'
   - 'edit own video media'
@@ -89,8 +91,13 @@ permissions:
   - 'translate profesores node'
   - 'update media'
   - 'use  The form mode default linked to  node entity( horarios_de_trabajo )'
+  - 'use  The form mode default linked to  node entity( metodos_de_pago )'
   - 'use  The form mode editar_horarios linked to  node entity( horarios_de_trabajo )'
+  - 'use  The form mode editar_metodos_de_pago linked to  node entity( metodos_de_pago )'
+  - 'use media.default form mode'
+  - 'use node.default form mode'
   - 'use node.editar_horarios form mode'
+  - 'use node.editar_metodos_de_pago form mode'
   - 'use text format basic_html'
   - 'use text format restricted_html'
   - 'use user.default form mode'
@@ -99,6 +106,7 @@ permissions:
   - 'view any agendar_clase content'
   - 'view any horarios_de_trabajo content'
   - 'view any horarios_profesores content'
+  - 'view any metodos_de_pago content'
   - 'view any mundos content'
   - 'view any mundos_detalle content'
   - 'view any page content'
@@ -115,5 +123,6 @@ permissions:
   - 'view own field_tu_presentacion'
   - 'view own horarios_de_trabajo content'
   - 'view own horarios_profesores content'
+  - 'view own metodos_de_pago content'
   - 'view own profesores content'
   - 'view user email addresses'

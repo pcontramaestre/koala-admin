@@ -1,0 +1,17 @@
+uuid: cf62c839-e1f1-442f-b8ee-9c040b6edc3e
+langcode: es
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: hwJoqnxqBS0fPM3s6FccZ2bWaq9LneRYLzFk-wlJWjs
+id: default
+label: Default
+traits: {  }
+locked: false
+description: ''
+variationType: default
+variationTypes:
+  - 4_semanas
+  - default
+multipleVariations: true
+injectVariationFields: true

@@ -1,0 +1,45 @@
+uuid: fe14d0c3-1234-4e14-a6f4-275fca511bb6
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_cuentas_virtuales
+    - node.type.metodos_de_pago
+  module:
+    - double_field
+id: node.metodos_de_pago.field_cuentas_virtuales
+field_name: field_cuentas_virtuales
+entity_type: node
+bundle: metodos_de_pago
+label: 'Cuentas virtuales'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  first:
+    label: 'Tipo de cuenta'
+    list: true
+    allowed_values:
+      -
+        label: Payoneer
+        value: Payoneer
+      -
+        label: Paypal
+        value: Paypal
+    max: null
+    min: null
+    required: true
+    on_label: Activado
+    off_label: Desactivado
+  second:
+    label: Email
+    list: false
+    allowed_values: {  }
+    max: null
+    min: null
+    required: true
+    on_label: Activado
+    off_label: Desactivado
+field_type: double_field

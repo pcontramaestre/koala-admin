@@ -1,0 +1,10 @@
+uuid: 2b5fd59e-e1e9-4470-8544-6d3ff83d6244
+langcode: es
+status: true
+dependencies: {  }
+id: 4_semanas_mes
+label: 'Suscripción de 4 Semanas'
+traits: {  }
+locked: false
+orderItemType: default
+generateTitle: true

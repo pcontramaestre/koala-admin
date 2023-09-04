@@ -1,0 +1,11 @@
+uuid: 9aef10d3-d043-4207-bf08-2c56740fef8a
+langcode: es
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.clases
+id: commerce_product.clases
+target_entity_type_id: commerce_product
+target_bundle: clases
+default_langcode: site_default
+language_alterable: false

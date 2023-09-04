@@ -1,0 +1,25 @@
+uuid: b3c6124f-ec11-4a82-9217-66111e5bcf9b
+langcode: es
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.metodos_de_pago.field_cuentas_virtuales
+    - field.field.node.metodos_de_pago.field_profesor
+    - node.type.metodos_de_pago
+  module:
+    - user
+id: node.metodos_de_pago.teaser
+targetEntityType: node
+bundle: metodos_de_pago
+mode: teaser
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_cuentas_virtuales: true
+  field_profesor: true
+  langcode: true

@@ -1,0 +1,22 @@
+uuid: e131c3be-95ed-49b4-b2d9-666cc50ad4b5
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.metodos_de_pago
+id: node.metodos_de_pago.promote
+field_name: promote
+entity_type: node
+bundle: metodos_de_pago
+label: 'Promocionado a la página principal'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: Activado
+  off_label: Desactivado
+field_type: boolean

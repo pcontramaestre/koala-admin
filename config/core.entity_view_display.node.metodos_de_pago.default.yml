@@ -1,0 +1,55 @@
+uuid: 84777368-bcd0-4222-98ef-1f1cfce61704
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.field.node.metodos_de_pago.field_cuentas_virtuales
+    - field.field.node.metodos_de_pago.field_profesor
+    - node.type.metodos_de_pago
+  module:
+    - double_field
+    - user
+id: node.metodos_de_pago.default
+targetEntityType: node
+bundle: metodos_de_pago
+mode: default
+content:
+  field_cuentas_virtuales:
+    type: double_field_unformatted_list
+    label: above
+    settings:
+      first:
+        format_type: medium
+        link: false
+        hidden: false
+        key: false
+        decimal_separator: .
+        thousand_separator: ''
+        scale: 2
+      second:
+        format_type: medium
+        link: false
+        hidden: false
+        key: false
+        decimal_separator: .
+        thousand_separator: ''
+        scale: 2
+      inline: true
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  field_profesor:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  langcode: true

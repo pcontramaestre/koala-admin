@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_form_mode.user.agregar_padre
+    - field.field.user.user.commerce_remote_id
     - field.field.user.user.field_apodo
     - field.field.user.user.field_avatar
     - field.field.user.user.field_celular
@@ -129,6 +130,8 @@ content:
       preview_image_style: thumbnail
     third_party_settings: {  }
 hidden:
+  commerce_remote_id: true
+  customer_profiles: true
   field_apodo: true
   field_avatar: true
   field_celular: true

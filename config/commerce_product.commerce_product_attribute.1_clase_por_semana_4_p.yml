@@ -1,0 +1,7 @@
+uuid: c8e15a7b-9d4d-4270-a77c-0264a9e386ad
+langcode: es
+status: true
+dependencies: {  }
+id: 1_clase_por_semana_4_p
+label: 'Clases por semana / Mes'
+elementType: select

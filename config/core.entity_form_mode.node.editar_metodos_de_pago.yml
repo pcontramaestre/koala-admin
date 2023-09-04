@@ -1,0 +1,10 @@
+uuid: 39413651-fa59-4056-ace4-9b94c3b53355
+langcode: es
+status: true
+dependencies:
+  module:
+    - node
+id: node.editar_metodos_de_pago
+label: 'Editar métodos de pago'
+targetEntityType: node
+cache: true
