@@ -1,0 +1,157 @@
+uuid: 3bc65f13-740b-4d10-a9bc-ee34678699b2
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.field.node.asignar_clase_a_estudiante.field_clase_a_asignar
+    - field.field.node.asignar_clase_a_estudiante.field_el_nino_no_asistio_a_la_cl
+    - field.field.node.asignar_clase_a_estudiante.field_logros_cumplidos
+    - field.field.node.asignar_clase_a_estudiante.field_mensaje_para_el_nino
+    - field.field.node.asignar_clase_a_estudiante.field_observaciones_del_profesor
+    - field.field.node.asignar_clase_a_estudiante.field_seleccionar_clase_agendada
+    - node.type.asignar_clase_a_estudiante
+  module:
+    - chosen_field
+    - content_moderation
+    - field_group
+    - field_layout
+    - layout_discovery
+    - path
+third_party_settings:
+  field_layout:
+    id: layout_twocol
+    settings:
+      label: ''
+  field_group:
+    group_superior:
+      children:
+        - title
+        - field_clase_a_asignar
+        - field_seleccionar_clase_agendada
+      label: Superior
+      region: top
+      parent_name: ''
+      weight: 0
+      format_type: fieldset
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: parte-superio-no-mostrar
+        description: ''
+        required_fields: false
+id: node.asignar_clase_a_estudiante.default
+targetEntityType: node
+bundle: asignar_clase_a_estudiante
+mode: default
+content:
+  created:
+    type: datetime_timestamp
+    weight: 4
+    region: first
+    settings: {  }
+    third_party_settings: {  }
+  field_clase_a_asignar:
+    type: options_select
+    weight: 2
+    region: top
+    settings: {  }
+    third_party_settings: {  }
+  field_el_nino_no_asistio_a_la_cl:
+    type: boolean_checkbox
+    weight: 14
+    region: bottom
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  field_logros_cumplidos:
+    type: options_select
+    weight: 11
+    region: second
+    settings: {  }
+    third_party_settings: {  }
+  field_mensaje_para_el_nino:
+    type: string_textarea
+    weight: 12
+    region: bottom
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_observaciones_del_profesor:
+    type: string_textarea
+    weight: 13
+    region: bottom
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_seleccionar_clase_agendada:
+    type: chosen_select
+    weight: 3
+    region: top
+    settings: {  }
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 1
+    region: first
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  moderation_state:
+    type: moderation_state_default
+    weight: 9
+    region: first
+    settings: {  }
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 7
+    region: first
+    settings: {  }
+    third_party_settings: {  }
+  promote:
+    type: boolean_checkbox
+    weight: 5
+    region: first
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 10
+    region: first
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  sticky:
+    type: boolean_checkbox
+    weight: 6
+    region: first
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 1
+    region: top
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 2
+    region: first
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  url_redirects:
+    weight: 8
+    region: first
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

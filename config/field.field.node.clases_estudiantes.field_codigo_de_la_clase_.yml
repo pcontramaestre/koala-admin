@@ -1,0 +1,19 @@
+uuid: fa7d9e08-10e6-4329-82a0-d7c7910f48bb
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_codigo_de_la_clase_
+    - node.type.clases_estudiantes
+id: node.clases_estudiantes.field_codigo_de_la_clase_
+field_name: field_codigo_de_la_clase_
+entity_type: node
+bundle: clases_estudiantes
+label: 'Código de la clase'
+description: '<b>Este código se genera solo. Se usa el nivel y el número de la clase</b>'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

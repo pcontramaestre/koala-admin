@@ -25,6 +25,7 @@ dependencies:
   module:
     - admin_toolbar_search
     - comment
+    - commerce_order
     - commerce_pricelist
     - config_pages
     - content_moderation
@@ -171,6 +172,9 @@ permissions:
   - 'edit terms in tags'
   - 'load twig templates from file system'
   - 'make smart dates recur'
+  - 'manage default commerce_order_item'
+  - 'manage recurring_product_variation commerce_order_item'
+  - 'manage recurring_standalone commerce_order_item'
   - 'post comments'
   - 'rate content'
   - 'reschedule smart date recur instances'

@@ -1,0 +1,21 @@
+uuid: 7e2d6a66-77cf-4a36-a284-0ce2b0876d6f
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_nombre_largo_del_nivel
+    - taxonomy.vocabulary.niveles_de_clases
+id: taxonomy_term.niveles_de_clases.field_nombre_largo_del_nivel
+field_name: field_nombre_largo_del_nivel
+entity_type: taxonomy_term
+bundle: niveles_de_clases
+label: 'Nombre largo del nivel'
+description: ''
+required: true
+translatable: true
+default_value:
+  -
+    value: 'Nivel 01'
+default_value_callback: ''
+settings: {  }
+field_type: string

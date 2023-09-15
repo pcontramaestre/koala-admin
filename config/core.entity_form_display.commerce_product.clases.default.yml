@@ -5,11 +5,14 @@ dependencies:
   config:
     - commerce_product.commerce_product_type.clases
     - field.field.commerce_product.clases.body
+    - field.field.commerce_product.clases.field_imagen_de_suscripcion
+    - image.style.thumbnail
   module:
     - commerce
     - field_layout
     - layout_discovery
     - path
+    - svg_image
     - text
 third_party_settings:
   field_layout:
@@ -36,6 +39,14 @@ content:
     weight: 10
     region: content
     settings: {  }
+    third_party_settings: {  }
+  field_imagen_de_suscripcion:
+    type: image_image
+    weight: 91
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
     third_party_settings: {  }
   langcode:
     type: language_select

@@ -8,6 +8,7 @@ dependencies:
   module:
     - layout_builder
     - layout_discovery
+    - quicktabs
 id: zona_de_pagos-layout_builder-0
 label: 'Layout Builder'
 weight: 0
@@ -37,6 +38,19 @@ variant_settings:
             block_revision_id: 8
             block_serialized: null
           weight: 0
+          additional:
+            layout_builder_styles_style:
+              separacion_superior_mt_5: separacion_superior_mt_5
+        8756018c-4805-44ee-82c7-9936f642e75a:
+          uuid: 8756018c-4805-44ee-82c7-9936f642e75a
+          region: content
+          configuration:
+            id: 'quicktabs_block:zona_de_pagos'
+            label: 'QuickTabs - Zona de pagos'
+            label_display: '0'
+            provider: quicktabs
+            context_mapping: {  }
+          weight: 4
           additional:
             layout_builder_styles_style:
               separacion_superior_mt_5: separacion_superior_mt_5

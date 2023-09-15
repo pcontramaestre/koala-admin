@@ -5,9 +5,149 @@ dependencies:
   config:
     - commerce_product.commerce_product_type.clases
     - field.field.commerce_product.clases.body
+    - field.field.commerce_product.clases.field_imagen_de_suscripcion
   module:
     - commerce_product
+    - layout_builder
+    - layout_discovery
+    - svg_image
     - text
+third_party_settings:
+  layout_builder:
+    enabled: true
+    allow_custom: false
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components:
+          265dc79a-f866-42d4-b820-97ce1cf7147a:
+            uuid: 265dc79a-f866-42d4-b820-97ce1cf7147a
+            region: content
+            configuration:
+              id: 'field_block:commerce_product:clases:title'
+              label: Título
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: string
+                label: hidden
+                settings:
+                  link_to_entity: false
+                third_party_settings:
+                  field_formatter_class:
+                    class: ''
+            weight: 1
+            additional:
+              layout_builder_styles_style:
+                separacion_superior_mt_5: 0
+          8c74a195-97a8-4f55-badb-da825f128959:
+            uuid: 8c74a195-97a8-4f55-badb-da825f128959
+            region: content
+            configuration:
+              id: 'field_block:commerce_product:clases:body'
+              label: Descripción
+              label_display: visible
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: html
+                label: hidden
+                settings:
+                  allowed_tags: ''
+                third_party_settings:
+                  field_formatter_class:
+                    class: ''
+                  field_formatter_filter:
+                    format: basic_html
+            weight: 2
+            additional:
+              layout_builder_styles_style:
+                separacion_superior_mt_5: 0
+          625b23c3-f520-4313-b520-4b70aa5a6328:
+            uuid: 625b23c3-f520-4313-b520-4b70aa5a6328
+            region: content
+            configuration:
+              id: 'field_block:commerce_product:clases:variations'
+              label: Variations
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: commerce_add_to_cart
+                label: hidden
+                settings:
+                  combine: true
+                third_party_settings:
+                  field_formatter_class:
+                    class: ''
+            weight: 4
+            additional:
+              layout_builder_styles_style:
+                separacion_superior_mt_5: 0
+          3d96d139-29ca-4b4f-bed4-4aaffcfa6dec:
+            uuid: 3d96d139-29ca-4b4f-bed4-4aaffcfa6dec
+            region: content
+            configuration:
+              id: 'field_block:commerce_product_variation:4_semanas_mes:price'
+              label: Precio
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: '@commerce_product.product_variation_route_context:commerce_product_variation'
+                view_mode: view_mode
+              formatter:
+                type: commerce_price_default
+                label: above
+                settings:
+                  strip_trailing_zeroes: false
+                  currency_display: symbol
+                third_party_settings:
+                  field_formatter_class:
+                    class: ''
+            weight: 3
+            additional:
+              layout_builder_styles_style:
+                separacion_superior_mt_5: 0
+          bc4154d8-cf6b-45d0-ae8e-91e44804c29a:
+            uuid: bc4154d8-cf6b-45d0-ae8e-91e44804c29a
+            region: content
+            configuration:
+              id: 'field_block:commerce_product:clases:field_imagen_de_suscripcion'
+              label: 'Imagen de suscripción'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: image
+                label: hidden
+                settings:
+                  image_link: ''
+                  image_style: media_library
+                  image_loading:
+                    attribute: lazy
+                  svg_attributes:
+                    width: null
+                    height: null
+                  svg_render_as_image: true
+                third_party_settings:
+                  field_formatter_class:
+                    class: ''
+            weight: 0
+            additional:
+              layout_builder_styles_style:
+                separacion_superior_mt_5: separacion_superior_mt_5
+        third_party_settings: {  }
 id: commerce_product.clases.default
 targetEntityType: commerce_product
 bundle: clases
@@ -19,6 +159,21 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 11
+    region: content
+  field_imagen_de_suscripcion:
+    type: image
+    label: above
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+    third_party_settings: {  }
+    weight: 12
     region: content
   title:
     type: string

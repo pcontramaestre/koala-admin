@@ -829,7 +829,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<div class=\"d-flex koala\">\r\n  <div class=\"imagen\">{{ user_picture }}</div>\r\n  <div class=\"nombre-fecha\">\r\n    <div class=\"nombre\">{{ field_nombre_del_nino_a }}</div>\r\n    <div class=\"fecha\">{{ field_fecha_cita_oculta }}</div>\r\n  </div>\r\n  <div class=\"enlace\">\r\n    <a href=\"https://koalaconecta.icreativadigital.com/login-profesor.html?name={{ field_nombres_y_apellidos_del_pr }}\"\r\n      target=\"_blank\">Entrar</a>\r\n  </div>\r\n</div>"
+            text: "<div class=\"d-flex koala\">\r\n  <div class=\"imagen\">{{ user_picture }}</div>\r\n  <div class=\"nombre-fecha\">\r\n    <div class=\"nombre\">{{ field_nombre_del_nino_a }}</div>\r\n    <div class=\"fecha\">{{ field_fecha_cita_oculta }}</div>\r\n  </div>\r\n  <div class=\"enlace\">\r\n    <a href=\"https://koalaconecta.icreativadigital.com/login-profesor.html?name={{ field_nombres_y_apellidos_del_pr }}\"\r\n      target=\"_blank\" data1=\"enlace2\">Entrar</a>\r\n  </div>\r\n</div>"
             make_link: false
             path: ''
             absolute: false

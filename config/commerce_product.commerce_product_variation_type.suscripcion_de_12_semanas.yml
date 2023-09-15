@@ -1,0 +1,10 @@
+uuid: 11f61136-c7db-4b16-8266-7d627250c9e5
+langcode: es
+status: true
+dependencies: {  }
+id: suscripcion_de_12_semanas
+label: 'Suscripción de 12 Semanas'
+traits: {  }
+locked: false
+orderItemType: default
+generateTitle: true

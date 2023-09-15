@@ -1,0 +1,29 @@
+uuid: e1a7b0fa-7d32-43b2-92ae-633aaf00b8dc
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_nivel_principal
+    - taxonomy.vocabulary.niveles_de_clases
+    - taxonomy.vocabulary.nombres_de_niveles_principales
+id: taxonomy_term.niveles_de_clases.field_nivel_principal
+field_name: field_nivel_principal
+entity_type: taxonomy_term
+bundle: niveles_de_clases
+label: 'Nivel Principal'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      nombres_de_niveles_principales: nombres_de_niveles_principales
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

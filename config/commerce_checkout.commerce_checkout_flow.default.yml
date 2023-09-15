@@ -3,6 +3,7 @@ langcode: es
 status: true
 dependencies:
   module:
+    - commerce_checkout_order_fields
     - commerce_payment
     - commerce_promotion
     - commerce_stripe
@@ -54,10 +55,15 @@ configuration:
       step: complete
       weight: 7
     order_summary:
-      step: complete
+      step: _sidebar
       weight: 8
       view: commerce_checkout_order_summary
     coupon_redemption:
       step: _sidebar
       weight: 9
       allow_multiple: false
+    'order_fields:checkout':
+      step: _disabled
+      weight: 10
+      wrapper_element: container
+      display_label: 'Order fields'

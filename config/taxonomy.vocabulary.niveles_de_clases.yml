@@ -1,0 +1,8 @@
+uuid: bbd1f990-b38e-4bc5-a451-a3cb5dbfecf7
+langcode: es
+status: true
+dependencies: {  }
+name: 'Niveles de clases'
+vid: niveles_de_clases
+description: ''
+weight: 0

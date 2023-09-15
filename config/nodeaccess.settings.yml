@@ -435,6 +435,72 @@ bundles_roles_grants:
       grant_view: 0
       grant_update: 0
       grant_delete: 0
+  clases_estudiantes:
+    anonymous:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    authenticated:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    content_editor:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    administrator:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    profesor:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    padre:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    hijo:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    author:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+  asignar_clase_a_estudiante:
+    anonymous:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    authenticated:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    content_editor:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    administrator:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    profesor:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    padre:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    hijo:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    author:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
 grants_tab_availability:
   agendar_clase: false
   profesores: false
@@ -446,6 +512,8 @@ grants_tab_availability:
   mundos_detalle: false
   koala_ninos: false
   metodos_de_pago: false
+  clases_estudiantes: false
+  asignar_clase_a_estudiante: false
 map_rid_gid:
   anonymous: 0
   authenticated: 1

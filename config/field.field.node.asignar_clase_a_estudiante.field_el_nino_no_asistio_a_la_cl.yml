@@ -1,0 +1,23 @@
+uuid: 3e0c582e-ec68-4f5f-a1eb-2eab1e9df7e0
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_el_nino_no_asistio_a_la_cl
+    - node.type.asignar_clase_a_estudiante
+id: node.asignar_clase_a_estudiante.field_el_nino_no_asistio_a_la_cl
+field_name: field_el_nino_no_asistio_a_la_cl
+entity_type: node
+bundle: asignar_clase_a_estudiante
+label: 'El niño no asistió a la clase'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: Activado
+  off_label: Desactivado
+field_type: boolean

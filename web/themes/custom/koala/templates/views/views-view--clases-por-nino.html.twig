@@ -1,0 +1,149 @@
+{#
+/**
+ * @file
+ * Theme override for a main view template.
+ *
+ * Available variables:
+ * - attributes: Remaining HTML attributes for the element.
+ * - css_name: A css-safe version of the view name.
+ * - css_class: The user-specified classes names, if any.
+ * - header: The optional header.
+ * - footer: The optional footer.
+ * - rows: The results of the view query, if any.
+ * - empty: The content to display if there are no rows.
+ * - pager: The optional pager next/prev links to display.
+ * - exposed: Exposed widget form/info to display.
+ * - feed_icons: Optional feed icons to display.
+ * - more: An optional link to the next page of results.
+ * - title: Title of the view, only used when displaying in the admin preview.
+ * - title_prefix: Additional output populated by modules, intended to be
+ *   displayed in front of the view title.
+ * - title_suffix: Additional output populated by modules, intended to be
+ *   displayed after the view title.
+ * - attachment_before: An optional attachment view to be displayed before the
+ *   view content.
+ * - attachment_after: An optional attachment view to be displayed after the
+ *   view content.
+ * - dom_id: Unique id for every view being printed to give unique class for
+ *   Javascript.
+ *
+ * @see template_preprocess_views_view()
+ */
+#}
+{%
+  set classes = [
+    'view',
+    'view-' ~ id|clean_class,
+    'view-id-' ~ id,
+    'view-display-id-' ~ display_id,
+    dom_id ? 'js-view-dom-id-' ~ dom_id,
+  ]
+%}
+<div{{ attributes.addClass(classes) }}>
+  <div class="vista-izquierda">
+    <div class="vista-ninos">
+      <div class="title-section">Clases por niño </div>
+      {% if header %}
+        <div class="view-header">
+          {{ header }}
+        </div>
+      {% endif %}
+      {% if rows %}
+        <div class="view-content row">
+          {{ rows }}
+        </div>
+      {% elseif empty %}
+        <div class="view-empty">
+          {{ empty }}
+        </div>
+      {% endif %}
+
+      {% if pager %}
+        {{ pager }}
+      {% endif %}
+      {% if attachment_after %}
+        <div class="attachment attachment-after">
+          {{ attachment_after }}
+        </div>
+      {% endif %}
+      {% if more %}
+        {{ more }}
+      {% endif %}
+      {% if footer %}
+        <div class="view-footer">
+          {{ footer }}
+        </div>
+      {% endif %}
+    </div>
+
+  <div class="select-suscription">
+    <div class="form-item form-type-radios form-item-suscription">
+      <label for="edit-suscription">Ciclo de facturación {{current_language}} </label>
+      <div id="edit-suscription" class="form-radios">
+        <div class="form-item form-type-radio form-item-suscription">
+          <input type="radio" id="edit-suscription-0" name="suscription" value="4" texto="4 semanas" class="form-radio" checked="checked">  <label class="option" for="edit-suscription-0">4 semanas </label>
+        </div>
+        <div class="form-item form-type-radio form-item-suscription">
+          <input type="radio" id="edit-suscription-1" name="suscription" value="12" texto="12 semanas" class="form-radio">  <label class="option" for="edit-suscription-1">12 semanas </label>
+        </div>
+        <div class="form-item form-type-radio form-item-suscription">
+          <input type="radio" id="edit-suscription-2" name="suscription" value="24" texto="24 semanas" class="form-radio">  <label class="option" for="edit-suscription-2">24 semanas </label>
+        </div>
+      </div>
+    </div>
+  </div>
+    
+  </div>
+  <div class="vista-derecha">
+    <div class="title-section">Resumen</div>
+
+    <div class="valores row">
+      <div class="col-8 texto texto-clases-semana">Clases por semana</div>
+      <div class="col-4 clase-por-semana">0</div>
+      <div class="col-8 texto texto-duracion">Duración</div>
+      <div class="col-4 duracion" semanas="4">4 semanas</div>
+      <div class="col-8 texto texto-total-clases">Número total de clases</div>
+      <div class="col-4 total-clases">0</div>
+      <div class="col-8 texto texto-precio-clase">Precio por clase</div>
+      <div class="col-4 precio-clase" precio="17.50">$ 17.50</div>
+      <div class="col-8 texto texto-descuento">Descuento</div>
+      <div class="col-4 descuento">$ 0</div>
+      <div class="col-8 texto texto-valor-total">Valor total</div>
+      <div class="col-4 valor-total">$ 240.000</div>
+      <div class="col-8 texto texto-ahorro">Tu ahorro</div>
+      <div class="col-4 ahorro">$ 0</div>
+    </div>
+  </div>
+
+</div>
+
+<div class="metdos-pago">
+  <div class="titulo">Conoce nuestros métodos de pago</div>
+  <div class="imagen d-flex">
+    <div class="metodo-pago-img-svg">
+      <img src="/themes/custom/koala/images/metodos/paypal.svg" alt="">
+    </div>
+    <div class="metodo-pago-img-svg">
+      <img src="/themes/custom/koala/images/metodos/pay.svg" alt="">
+    </div>
+    <div class="metodo-pago-img-svg">
+      <img src="/themes/custom/koala/images/metodos/google.svg" alt="">
+    </div>
+    <div class="metodo-pago-img-svg">
+      <img src="/themes/custom/koala/images/metodos/visa.svg" alt="">
+    </div>
+    <div class="metodo-pago-img-svg">
+      <img src="/themes/custom/koala/images/metodos/mastercard.svg" alt="">
+    </div>
+    <div class="metodo-pago-img-svg">
+      <img src="/themes/custom/koala/images/metodos/dinners.svg" alt="">
+    </div>
+  </div>
+
+  <div class="boton-comprar">
+    <a href="/checkout" class="btn btn-comprar">Confirmar y pagar</a>
+  </div>
+</div>
+
+
+

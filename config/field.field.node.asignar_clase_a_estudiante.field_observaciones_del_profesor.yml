@@ -1,0 +1,19 @@
+uuid: 912bf5e3-740b-4bfb-9c09-b767edca0599
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_observaciones_del_profesor
+    - node.type.asignar_clase_a_estudiante
+id: node.asignar_clase_a_estudiante.field_observaciones_del_profesor
+field_name: field_observaciones_del_profesor
+entity_type: node
+bundle: asignar_clase_a_estudiante
+label: 'Observaciones del profesor'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

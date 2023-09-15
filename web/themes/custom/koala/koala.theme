@@ -280,4 +280,15 @@ function koala_preprocess_page(&$variables) {
   $variables['current_language'] = $current_language;
 }
 
+/**
+ * Implements hook_preprocess_HOOK() for views templates.
+ */
+function koala_preprocess_views_view(&$variables) {
+  // Obtiene el idioma actual.
+  $current_language = \Drupal::languageManager()->getCurrentLanguage()->getId();
+  
+  // Almacena el idioma actual en una variable.
+  $variables['current_language'] = $current_language;
+}
+
 

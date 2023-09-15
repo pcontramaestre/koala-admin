@@ -1,0 +1,26 @@
+uuid: 0d7d7e48-5d1c-4f5a-8e0a-bb322011d8d0
+langcode: es
+status: true
+dependencies:
+  module:
+    - commerce_cart
+    - system
+  theme:
+    - koala
+id: cart
+theme: koala
+region: primary_menu
+weight: 0
+provider: null
+plugin: commerce_cart
+settings:
+  id: commerce_cart
+  label: Cart
+  label_display: '0'
+  provider: commerce_cart
+  dropdown: true
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: "/zona-pagos\r\n/cart\r\n/product/*"

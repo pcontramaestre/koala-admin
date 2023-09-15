@@ -1,0 +1,24 @@
+uuid: 0858f6fa-0f75-4601-a5f2-6e58d4604926
+langcode: es
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_attribute.clases_24_semanas_3_me
+    - commerce_product.commerce_product_variation_type.suscripcion_de_24_semanas_
+    - field.storage.commerce_product_variation.attribute_clases_24_semanas_3_me
+id: commerce_product_variation.suscripcion_de_24_semanas_.attribute_clases_24_semanas_3_me
+field_name: attribute_clases_24_semanas_3_me
+entity_type: commerce_product_variation
+bundle: suscripcion_de_24_semanas_
+label: "Clases 24 semanas / 3 meses\t"
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:commerce_product_attribute_value'
+  handler_settings:
+    target_bundles:
+      - clases_24_semanas_3_me
+field_type: entity_reference

@@ -1,0 +1,45 @@
+uuid: f5273def-ed52-4b41-9b04-fc9631d5a458
+langcode: es
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.clases_estudiantes.body
+    - field.field.node.clases_estudiantes.field_codigo_de_la_clase_
+    - field.field.node.clases_estudiantes.field_genially_de_la_clase
+    - field.field.node.clases_estudiantes.field_genially_extra
+    - field.field.node.clases_estudiantes.field_logros_de_la_clase
+    - field.field.node.clases_estudiantes.field_nivel_de_la_clase
+    - field.field.node.clases_estudiantes.field_numero_de_clase
+    - field.field.node.clases_estudiantes.field_pdf_de_la_clase
+    - node.type.clases_estudiantes
+  module:
+    - text
+    - user
+id: node.clases_estudiantes.teaser
+targetEntityType: node
+bundle: clases_estudiantes
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_codigo_de_la_clase_: true
+  field_genially_de_la_clase: true
+  field_genially_extra: true
+  field_logros_de_la_clase: true
+  field_nivel_de_la_clase: true
+  field_numero_de_clase: true
+  field_pdf_de_la_clase: true
+  langcode: true

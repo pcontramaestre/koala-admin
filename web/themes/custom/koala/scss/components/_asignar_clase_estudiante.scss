@@ -1,0 +1,53 @@
+.node--type-asignar-clase-a-estudiante {
+  #page-wrapper {
+
+    //Formulario
+    .node-asignar-clase-a-estudiante-edit-form {
+
+      //Layout 
+      .layout.layout--twocol {
+        .layout__region.layout__region--top {
+          flex: 0 1 auto;
+          max-width: 100%;
+          width: 100%;
+        }
+        .layout__region.layout__region--first {
+          flex: 0 1 auto;
+          max-width: 33%;
+          width: 33%;
+        }
+        .layout__region.layout__region--second {
+          flex: 0 1 auto;
+          max-width: 66%;
+          width: 66%;
+        }
+        .layout__region.layout__region--bottom {
+          flex: 0 1 auto;
+          max-width: 100%;
+          width: 100%;
+        }
+      }
+
+      // Bloque izquierda estudiante
+      .block-estudiante {
+        max-width: 70%;
+
+        padding: 1rem 1.5rem 1rem 1rem;
+        gap: 1rem;
+        border-radius: 2rem;
+        background: var(--Yellow-K100, #FFF0CC);
+
+        .block-estudiante__img {
+          img {
+            max-height: 80px;
+            max-width: 80px;
+            border-radius: 50%;
+            border: 2px solid var(--White, #FFF);
+            background: url(<path-to-image>), lightgray 50% / cover no-repeat;
+          }
+        }
+      }
+
+    }
+  }
+}

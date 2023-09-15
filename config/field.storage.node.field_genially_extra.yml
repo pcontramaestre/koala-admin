@@ -1,0 +1,23 @@
+uuid: c55f0056-61e1-44f7-8e6d-0d3c4531185e
+langcode: es
+status: true
+dependencies:
+  module:
+    - field_permissions
+    - link
+    - node
+third_party_settings:
+  field_permissions:
+    permission_type: public
+id: node.field_genially_extra
+field_name: field_genially_extra
+entity_type: node
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

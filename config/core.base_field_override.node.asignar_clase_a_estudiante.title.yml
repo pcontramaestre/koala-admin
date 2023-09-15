@@ -1,0 +1,18 @@
+uuid: 767eeedb-7d9e-49bf-906c-cd6ef20106c0
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.asignar_clase_a_estudiante
+id: node.asignar_clase_a_estudiante.title
+field_name: title
+entity_type: node
+bundle: asignar_clase_a_estudiante
+label: 'Título de referencia'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

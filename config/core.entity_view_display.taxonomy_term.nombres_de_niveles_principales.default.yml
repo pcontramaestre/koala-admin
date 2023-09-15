@@ -1,0 +1,32 @@
+uuid: 29710460-8e88-4d74-8d40-ecd26f23efd2
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.nombres_de_niveles_principales.field_numero_del_nivel
+    - taxonomy.vocabulary.nombres_de_niveles_principales
+  module:
+    - text
+id: taxonomy_term.nombres_de_niveles_principales.default
+targetEntityType: taxonomy_term
+bundle: nombres_de_niveles_principales
+mode: default
+content:
+  description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_numero_del_nivel:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  langcode: true

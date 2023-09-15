@@ -1,0 +1,17 @@
+uuid: e362c409-547b-410b-84c8-3a535953b564
+langcode: es
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: 'Asignar clase a estudiante'
+type: asignar_clase_a_estudiante
+description: 'Asignación de clases a estudiantes. '
+help: ''
+new_revision: true
+preview_mode: 0
+display_submitted: true

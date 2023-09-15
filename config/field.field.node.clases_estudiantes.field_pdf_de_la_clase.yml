@@ -1,0 +1,46 @@
+uuid: c85b28b0-eff3-4bcf-9263-0da8399acd18
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_pdf_de_la_clase
+    - node.type.clases_estudiantes
+  module:
+    - file
+    - filefield_paths
+third_party_settings:
+  filefield_paths:
+    enabled: true
+    file_path:
+      value: '[date:custom:Y]-[date:custom:m]'
+      options:
+        slashes: false
+        pathauto: false
+        transliterate: false
+    file_name:
+      value: '[file:ffp-name-only-original].[file:ffp-extension-original]'
+      options:
+        slashes: false
+        pathauto: false
+        transliterate: false
+    redirect: false
+    retroactive_update: false
+    active_updating: false
+id: node.clases_estudiantes.field_pdf_de_la_clase
+field_name: field_pdf_de_la_clase
+entity_type: node
+bundle: clases_estudiantes
+label: 'PDF de la clase'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'pdf doc docx zip ppt pptx xls xlsx'
+  max_filesize: ''
+  description_field: true
+field_type: file

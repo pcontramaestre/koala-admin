@@ -1,0 +1,65 @@
+uuid: 7568a0e7-163f-45ed-a43e-fe44547ea772
+langcode: es
+status: true
+dependencies: {  }
+id: zona_de_pagos
+label: 'Zona de pagos'
+renderer: quick_tabs
+hide_empty_tabs: false
+default_tab: 9999
+options:
+  quick_tabs:
+    ajax: false
+    class: zona-de-pagos
+    style: on-the-gray
+  accordion_tabs:
+    jquery_ui:
+      collapsible: false
+      heightStyle: auto
+configuration_data:
+  -
+    title: 'Comprar clases'
+    weight: 0
+    type: view_content
+    content:
+      view_content:
+        options:
+          vid: clases_por_nino
+          display: default
+          args: ''
+      node_content:
+        options:
+          nid: ''
+          view_mode: full
+          hide_title: true
+      block_content:
+        options:
+          bid: 'inline_block:basic'
+          block_title: ''
+          display_title: false
+      qtabs_content:
+        options:
+          machine_name: calendario_agendar
+  -
+    title: 'Resumen de pago'
+    weight: 0
+    type: view_content
+    content:
+      view_content:
+        options:
+          vid: commerce_user_orders
+          display: block_1
+          args: ''
+      node_content:
+        options:
+          nid: ''
+          view_mode: full
+          hide_title: true
+      block_content:
+        options:
+          bid: 'inline_block:basic'
+          block_title: ''
+          display_title: false
+      qtabs_content:
+        options:
+          machine_name: calendario_agendar

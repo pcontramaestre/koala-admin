@@ -1,0 +1,29 @@
+uuid: d680c98c-f2a8-47ea-95f8-a76f8e58bd4a
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_nivel_de_la_clase
+    - node.type.clases_estudiantes
+    - taxonomy.vocabulary.niveles_de_clases
+id: node.clases_estudiantes.field_nivel_de_la_clase
+field_name: field_nivel_de_la_clase
+entity_type: node
+bundle: clases_estudiantes
+label: 'Nivel de la clase'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      niveles_de_clases: niveles_de_clases
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

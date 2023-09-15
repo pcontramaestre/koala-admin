@@ -1,0 +1,74 @@
+uuid: 8d5a3579-34e5-4c68-839d-24a038f993d3
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.field.node.asignar_clase_a_estudiante.field_clase_a_asignar
+    - field.field.node.asignar_clase_a_estudiante.field_el_nino_no_asistio_a_la_cl
+    - field.field.node.asignar_clase_a_estudiante.field_logros_cumplidos
+    - field.field.node.asignar_clase_a_estudiante.field_mensaje_para_el_nino
+    - field.field.node.asignar_clase_a_estudiante.field_observaciones_del_profesor
+    - field.field.node.asignar_clase_a_estudiante.field_seleccionar_clase_agendada
+    - node.type.asignar_clase_a_estudiante
+  module:
+    - user
+id: node.asignar_clase_a_estudiante.default
+targetEntityType: node
+bundle: asignar_clase_a_estudiante
+mode: default
+content:
+  field_clase_a_asignar:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_el_nino_no_asistio_a_la_cl:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 106
+    region: content
+  field_logros_cumplidos:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 105
+    region: content
+  field_mensaje_para_el_nino:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  field_observaciones_del_profesor:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_seleccionar_clase_agendada:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  langcode: true

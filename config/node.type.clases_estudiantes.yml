@@ -1,0 +1,17 @@
+uuid: 2322bc6a-a7db-4bb0-8566-91bd560a8ce2
+langcode: es
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: 'Clases estudiantes'
+type: clases_estudiantes
+description: 'Agregar clases'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: true

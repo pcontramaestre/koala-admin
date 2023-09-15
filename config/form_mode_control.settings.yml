@@ -190,3 +190,9 @@ modification+hijo+user+user: user.user.default
 'use  The form mode default linked to  commerce_pricelist_item entity( commerce_product_variation )': commerce_pricelist_item.commerce_product_variation.default
 'use  The form mode default linked to  commerce_product entity( clases )': commerce_product.clases.default
 'use  The form mode default linked to  commerce_product_variation entity( 4_semanas_mes )': commerce_product_variation.4_semanas_mes.default
+'use  The form mode default linked to  commerce_product_variation entity( suscripcion_de_12_semanas )': commerce_product_variation.suscripcion_de_12_semanas.default
+'use  The form mode default linked to  commerce_product_variation entity( suscripcion_de_24_semanas_ )': commerce_product_variation.suscripcion_de_24_semanas_.default
+'use  The form mode default linked to  node entity( clases_estudiantes )': node.clases_estudiantes.default
+'use  The form mode default linked to  taxonomy_term entity( niveles_de_clases )': taxonomy_term.niveles_de_clases.default
+'use  The form mode default linked to  taxonomy_term entity( nombres_de_niveles_principales )': taxonomy_term.nombres_de_niveles_principales.default
+'use  The form mode default linked to  node entity( asignar_clase_a_estudiante )': node.asignar_clase_a_estudiante.default

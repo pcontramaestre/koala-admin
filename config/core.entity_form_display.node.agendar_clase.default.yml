@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.agendar_clase.field_alumno_relacionado
     - field.field.node.agendar_clase.field_asignar_profesor
+    - field.field.node.agendar_clase.field_clase_asignada
     - field.field.node.agendar_clase.field_fecha_cita_oculta
     - field.field.node.agendar_clase.field_fecha_de_la_cita
     - field.field.node.agendar_clase.field_fecha_nac
@@ -52,6 +53,12 @@ content:
   field_asignar_profesor:
     type: chosen_select
     weight: 18
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_clase_asignada:
+    type: chosen_select
+    weight: 27
     region: content
     settings: {  }
     third_party_settings: {  }

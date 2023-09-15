@@ -1,0 +1,23 @@
+uuid: f990888f-fc06-4218-ac62-1969d103d668
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_numero_de_clase
+    - node.type.clases_estudiantes
+id: node.clases_estudiantes.field_numero_de_clase
+field_name: field_numero_de_clase
+entity_type: node
+bundle: clases_estudiantes
+label: 'Número de clase'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: -4
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

@@ -1,0 +1,25 @@
+uuid: 677714ba-baa4-4f0c-842d-56fda3b725b4
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_clase_a_asignar
+    - node.type.asignar_clase_a_estudiante
+id: node.asignar_clase_a_estudiante.field_clase_a_asignar
+field_name: field_clase_a_asignar
+entity_type: node
+bundle: asignar_clase_a_estudiante
+label: 'Clase a asignar'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: views
+  handler_settings:
+    view:
+      view_name: listado_de_clases
+      display_name: entity_reference_1
+      arguments: {  }
+field_type: entity_reference

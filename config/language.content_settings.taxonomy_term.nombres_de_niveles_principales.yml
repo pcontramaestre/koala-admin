@@ -1,0 +1,16 @@
+uuid: e3fb131c-a423-429e-bd1d-01abd8eaa5be
+langcode: es
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.nombres_de_niveles_principales
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+id: taxonomy_term.nombres_de_niveles_principales
+target_entity_type_id: taxonomy_term
+target_bundle: nombres_de_niveles_principales
+default_langcode: site_default
+language_alterable: false

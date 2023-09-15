@@ -1,0 +1,8 @@
+name: Filtro Logros Clases
+type: module
+description: Modulo personalizado para filtrar taxonomías en el formulario de asignar clase a estudiante.
+core_version_requirement: ^9 || ^8
+package: Custom
+dependencies:
+  - taxonomy
+  - node

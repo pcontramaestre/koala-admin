@@ -1,0 +1,18 @@
+uuid: 58b5c577-5aa3-4e2e-a9e4-7e11a0c25d31
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.clases_estudiantes
+id: node.clases_estudiantes.title
+field_name: title
+entity_type: node
+bundle: clases_estudiantes
+label: 'Título de referencia'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

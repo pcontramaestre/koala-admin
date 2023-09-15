@@ -10,6 +10,7 @@ dependencies:
     - media.type.image
     - media.type.remote_video
     - media.type.video
+    - node.type.asignar_clase_a_estudiante
     - node.type.horarios_de_trabajo
     - node.type.horarios_profesores
     - node.type.metodos_de_pago
@@ -65,8 +66,10 @@ permissions:
   - 'delete own image media'
   - 'delete own remote_video media'
   - 'delete own video media'
+  - 'edit any asignar_clase_a_estudiante content'
   - 'edit field_hora_clase'
   - 'edit field_logros'
+  - 'edit own asignar_clase_a_estudiante content'
   - 'edit own audio media'
   - 'edit own comments'
   - 'edit own document media'
@@ -104,6 +107,8 @@ permissions:
   - 'use user.editar_profesor form mode'
   - 'use user.registro_de_profesores form mode'
   - 'view any agendar_clase content'
+  - 'view any asignar_clase_a_estudiante content'
+  - 'view any clases_estudiantes content'
   - 'view any horarios_de_trabajo content'
   - 'view any horarios_profesores content'
   - 'view any metodos_de_pago content'
@@ -115,6 +120,7 @@ permissions:
   - 'view media'
   - 'view own agendar_clase content'
   - 'view own article content'
+  - 'view own clases_estudiantes content'
   - 'view own field_apodo'
   - 'view own field_avatar'
   - 'view own field_hora_clase'

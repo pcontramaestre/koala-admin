@@ -1,0 +1,29 @@
+uuid: 66999e17-5492-4c02-88e4-6789a5876ab2
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_clase_asignada
+    - node.type.agendar_clase
+    - node.type.asignar_clase_a_estudiante
+id: node.agendar_clase.field_clase_asignada
+field_name: field_clase_asignada
+entity_type: node
+bundle: agendar_clase
+label: 'Clase asignada'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      asignar_clase_a_estudiante: asignar_clase_a_estudiante
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

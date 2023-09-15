@@ -1,0 +1,23 @@
+uuid: e71ae8c2-ea64-45df-9f6b-42c5d534b089
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_numero_del_nivel
+    - taxonomy.vocabulary.nombres_de_niveles_principales
+id: taxonomy_term.nombres_de_niveles_principales.field_numero_del_nivel
+field_name: field_numero_del_nivel
+entity_type: taxonomy_term
+bundle: nombres_de_niveles_principales
+label: 'Número del nivel'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: 1
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

@@ -1,0 +1,12 @@
+uuid: 7022592f-a12b-4445-885b-4325a060983a
+langcode: es
+status: true
+dependencies:
+  module:
+    - commerce_order
+_core:
+  default_config_hash: hI6zHs0P9XxjpjIYYZxrfjMIf2F5sOACOkwiyD6zRp0
+id: commerce_order.checkout
+label: 'Tramitar compra'
+targetEntityType: commerce_order
+cache: true

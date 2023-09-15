@@ -1,0 +1,7 @@
+uuid: b8e57910-2ea2-4455-a6b9-d9617362fa0f
+langcode: es
+status: true
+dependencies: {  }
+id: clases_12_semanas_3_me
+label: 'Clases 12 semanas / 3 meses'
+elementType: select

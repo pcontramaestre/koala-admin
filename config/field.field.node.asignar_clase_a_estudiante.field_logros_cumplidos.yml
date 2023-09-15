@@ -1,0 +1,34 @@
+uuid: 643fe960-feed-45f0-b7fb-add0f31e0133
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_logros_cumplidos
+    - node.type.asignar_clase_a_estudiante
+    - taxonomy.vocabulary.logros
+  module:
+    - field_display_label
+third_party_settings:
+  field_display_label:
+    display_label: 'Selecciona los logros cumplidos por el Koala en la clase de hoy'
+id: node.asignar_clase_a_estudiante.field_logros_cumplidos
+field_name: field_logros_cumplidos
+entity_type: node
+bundle: asignar_clase_a_estudiante
+label: 'Logros cumplidos'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      logros: logros
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

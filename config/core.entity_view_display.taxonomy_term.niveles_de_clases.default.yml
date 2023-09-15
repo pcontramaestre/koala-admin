@@ -1,0 +1,57 @@
+uuid: 5be54c43-ecf6-4352-ba80-8bbc765f55fa
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.niveles_de_clases.field_nivel_principal
+    - field.field.taxonomy_term.niveles_de_clases.field_nombre_de_la_unidad
+    - field.field.taxonomy_term.niveles_de_clases.field_nombre_largo_del_nivel
+    - taxonomy.vocabulary.niveles_de_clases
+  module:
+    - text
+id: taxonomy_term.niveles_de_clases.default
+targetEntityType: taxonomy_term
+bundle: niveles_de_clases
+mode: default
+content:
+  computed_computed_field:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_nivel_principal:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_nombre_de_la_unidad:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_nombre_largo_del_nivel:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 4
+    region: content
+hidden:
+  langcode: true

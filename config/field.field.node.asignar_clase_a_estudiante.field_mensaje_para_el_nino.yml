@@ -1,0 +1,19 @@
+uuid: 93154b3f-4dd2-420d-8e33-5a6f1519e88f
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_mensaje_para_el_nino
+    - node.type.asignar_clase_a_estudiante
+id: node.asignar_clase_a_estudiante.field_mensaje_para_el_nino
+field_name: field_mensaje_para_el_nino
+entity_type: node
+bundle: asignar_clase_a_estudiante
+label: 'Mensaje para el niño'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

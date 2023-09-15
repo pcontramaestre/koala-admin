@@ -6,12 +6,16 @@ dependencies:
     - commerce_product.commerce_product_type.clases
     - field.storage.commerce_product.body
   module:
+    - field_display_label
     - text
+third_party_settings:
+  field_display_label:
+    display_label: Descripción
 id: commerce_product.clases.body
 field_name: body
 entity_type: commerce_product
 bundle: clases
-label: Body
+label: 'Descripción de la suscripción'
 description: ''
 required: false
 translatable: true

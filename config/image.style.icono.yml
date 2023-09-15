@@ -1,0 +1,15 @@
+uuid: 3b96d2df-b8f8-48d4-87aa-be5c3a5778ef
+langcode: es
+status: true
+dependencies: {  }
+name: icono
+label: 'Icono 48x48'
+effects:
+  718d23c6-e899-4b12-9691-c94a19ef0c42:
+    uuid: 718d23c6-e899-4b12-9691-c94a19ef0c42
+    id: image_scale
+    weight: 1
+    data:
+      width: 48
+      height: 48
+      upscale: false

@@ -4,10 +4,17 @@ status: true
 dependencies:
   config:
     - node.type.agendar_clase
+    - node.type.asignar_clase_a_estudiante
     - node.type.crear_hijos
     - node.type.koala_ninos
     - workflows.workflow.asignar_profesor
   module:
+    - commerce_order
+    - commerce_payment
+    - commerce_product
+    - commerce_promotion
+    - commerce_recurring
+    - commerce_store
     - config_pages
     - content_moderation
     - date_recur_modular
@@ -18,30 +25,44 @@ dependencies:
     - node
     - node_view_permissions
     - nodeaccess
+    - profile
 id: padre
 label: Padre
 weight: 5
 is_admin: null
 permissions:
+  - 'access commerce_order overview'
   - 'access user profiles'
   - access_all_form_modes
   - 'create agendar_clase content'
+  - 'create asignar_clase_a_estudiante content'
   - 'create crear_hijos content'
+  - 'create default commerce_order'
   - 'create field_hora_clase'
   - 'create koala_ninos content'
   - 'date_recur_modular use sierra form'
   - 'delete own agendar_clase content'
+  - 'delete own asignar_clase_a_estudiante content'
   - 'delete own crear_hijos content'
   - 'edit field_hora_clase'
   - 'edit own agendar_clase content'
+  - 'edit own asignar_clase_a_estudiante content'
   - 'edit own crear_hijos content'
   - 'edit own field_hora_clase'
   - 'edit own koala_ninos content'
+  - 'manage default commerce_order_item'
+  - 'manage own commerce_payment_method'
+  - 'manage recurring_product_variation commerce_order_item'
+  - 'manage recurring_standalone commerce_order_item'
   - 'nodeaccess grant agendar_clase permissions'
   - 'nodeaccess grant crear_hijos permissions'
   - 'rate content'
   - 'revert crear_hijos revisions'
+  - 'update default commerce_order'
+  - 'use  The form mode add_to_cart linked to  commerce_order_item entity( default )'
   - 'use  The form mode agendando_clase linked to  node entity( agendar_clase )'
+  - 'use  The form mode default linked to  commerce_order entity( default )'
+  - 'use  The form mode default linked to  commerce_order_item entity( default )'
   - 'use asignar_profesor transition publish'
   - 'use node.agendando_clase form mode'
   - 'use node.agendar_clases form mode'
@@ -50,19 +71,34 @@ permissions:
   - 'use user.default form mode'
   - 'use user.editar_perfil_padre form mode'
   - 'use user.registro_de_hijos form mode'
+  - 'view any clases_estudiantes content'
   - 'view any horarios_de_trabajo content'
   - 'view any horarios_profesores content'
   - 'view any mundos content'
   - 'view any mundos_detalle content'
   - 'view any page content'
   - 'view any profesores content'
+  - 'view clases commerce_product'
+  - 'view commerce_order'
+  - 'view commerce_product'
+  - 'view commerce_product_attribute'
+  - 'view commerce_promotion'
+  - 'view commerce_store'
   - 'view crear_hijos revisions'
+  - 'view default commerce_order'
+  - 'view default commerce_product'
   - 'view field_hora_clase'
   - 'view field_logros'
   - 'view home_padres config page entity'
+  - 'view online commerce_store'
   - 'view own agendar_clase content'
   - 'view own article content'
+  - 'view own asignar_clase_a_estudiante content'
+  - 'view own clases_estudiantes content'
+  - 'view own commerce_order'
+  - 'view own commerce_subscription'
   - 'view own crear_hijos content'
+  - 'view own customer profile'
   - 'view own field_apodo'
   - 'view own field_hora_clase'
   - 'view own field_logros'
@@ -71,4 +107,6 @@ permissions:
   - 'view own horarios_de_trabajo content'
   - 'view own horarios_profesores content'
   - 'view own koala_ninos content'
+  - 'view own profile'
+  - 'view recurring commerce_order'
   - 'view user email addresses'

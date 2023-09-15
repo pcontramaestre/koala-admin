@@ -1,0 +1,7 @@
+uuid: 5b533114-3daa-419d-b096-0902427d2a4b
+langcode: es
+status: true
+dependencies: {  }
+id: clases_24_semanas_3_me
+label: "Clases 24 semanas / 3 meses\t"
+elementType: select

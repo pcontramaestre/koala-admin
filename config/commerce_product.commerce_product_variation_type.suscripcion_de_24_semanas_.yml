@@ -1,0 +1,10 @@
+uuid: 60a2434d-ca81-43ba-bc14-7eade3361a99
+langcode: es
+status: true
+dependencies: {  }
+id: suscripcion_de_24_semanas_
+label: "Suscripción de 24 Semanas\t"
+traits: {  }
+locked: false
+orderItemType: default
+generateTitle: true

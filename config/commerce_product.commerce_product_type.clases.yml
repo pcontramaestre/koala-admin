@@ -10,5 +10,7 @@ description: ''
 variationType: null
 variationTypes:
   - 4_semanas_mes
+  - suscripcion_de_12_semanas
+  - suscripcion_de_24_semanas_
 multipleVariations: true
 injectVariationFields: true

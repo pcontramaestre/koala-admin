@@ -1,0 +1,11 @@
+uuid: 55fd643f-ba2b-4270-b29a-ea0b60b96d3f
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.asignar_clase_a_estudiante
+id: node.asignar_clase_a_estudiante
+target_entity_type_id: node
+target_bundle: asignar_clase_a_estudiante
+default_langcode: site_default
+language_alterable: false

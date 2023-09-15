@@ -63,6 +63,7 @@ function create_koalas_form_alter(&$form, FormStateInterface $form_state, $form_
   $routeName = $routeMatch->getRouteName();  
 
   if ($routeName == 'node.add.agendando_clase') {
+
     // Obtener el objeto RequestStack.
     $request_stack = \Drupal::service('request_stack');
     // Obtener el objeto Request de la solicitud actual.
@@ -131,6 +132,12 @@ function create_koalas_form_alter(&$form, FormStateInterface $form_state, $form_
 
     
     $form['actions']['submit']['#value'] = new TranslatableMarkup('Confirmar clase');
+
+    foreach (array_keys($form['actions']) as $action) {
+      if ($action != 'preview' && isset($form['actions'][$action]['#type']) && $form['actions'][$action]['#type'] === 'submit') {
+        $form['actions'][$action]['#submit'][] = 'callback_submit_agendar_clase';
+      }
+    }
   }
 
 
@@ -189,6 +196,71 @@ function create_koalas_form_alter(&$form, FormStateInterface $form_state, $form_
       }
     }
   }
+}
+
+
+/**
+ * Funcion callback_submit_agendar_clase para crear un nuevo nodo de tipo agendar_clase.
+ */
+function callback_submit_agendar_clase(&$form, FormStateInterface $form_state) {
+  // Get field_nombre_del_nino_a value.
+  $field_nombre_del_nino_a = $form_state->getValue('field_nombre_del_nino_a');
+  $field_nombre_del_nino_a = $field_nombre_del_nino_a[0]['value'];
+  
+
+  //Get id of the node agendando_clase.
+  $nid = $form_state->getValue('nid');
+  
+  // Titulo del nodo asignar_clase_a_estudiante. Asignar clase a estudiante + nombre del niño.
+  $titulo_nodo_asignar_clase_a_estudiante = \Drupal::translation()->translate('Asignar clase a estudiante ') . $field_nombre_del_nino_a;
+
+  //$titulo_nodo_asignar_clase_a_estudiante = \Drupal::translation()->translate('Asignar clase a estudiante');
+
+  // Create node asignar_clase_a_estudiante
+  // Fields title, field_seleccionar_clase_agendada
+  // $node = Node::create([
+  //   'type' => 'asignar_clase_a_estudiante',
+  //   'title' => $titulo_nodo_asignar_clase_a_estudiante,
+  //   'field_seleccionar_clase_agendada' => $nid,
+  // ])->save();
+  
+
+  try {
+    // Crear un nuevo nodo
+    $new_node = Node::create([
+      'type' => 'asignar_clase_a_estudiante',
+      'title' => $titulo_nodo_asignar_clase_a_estudiante,
+    ]);
+  
+    // Establecer el valor del campo 'field_seleccionar_clase_agendada'
+    $new_node->set('field_seleccionar_clase_agendada', $nid);
+  
+    // Guardar el nodo
+    $new_node->save();
+  
+    // Obtener el ID del nodo recién creado
+    $new_node_id = $new_node->id();
+  
+    // Hacer algo con el ID del nuevo nodo...
+    \Drupal::messenger()->addMessage( \Drupal::translation()->translate('The new node has been created with ID: @nid', ['@nid' => $new_node_id]));
+
+    // Agregar id del nuevo nodo al campo field_clase_asignada del nodo agendando_clase.
+    $node = Node::load($nid);
+    $node->set('field_clase_asignada', $new_node_id);
+    $node->save();
+    
+  }
+  catch (\Exception $e) {
+    // Mostrar un mensaje de error utilizando el servicio 'messenger'
+    \Drupal::messenger()->addError( \Drupal::translation()->translate('An error occurred while creating the new node: @error', ['@error' => $e->getMessage()]));
+  }
+
+
+  
+
+  
+
+
 }
 
 function callback_submit_koala_ninos(&$form, FormStateInterface $form_state) {

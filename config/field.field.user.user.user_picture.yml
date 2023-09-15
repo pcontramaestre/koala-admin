@@ -69,9 +69,9 @@ settings:
   title_field: false
   title_field_required: false
   default_image:
-    uuid: b9c2c95b-1b58-4bb8-9ac4-8f5a5cdde272
+    uuid: 4d277d6e-867d-4711-8dda-2b237a57758b
     alt: Usuario
     title: Usuario
-    width: 175
-    height: 177
+    width: 386
+    height: 354
 field_type: image

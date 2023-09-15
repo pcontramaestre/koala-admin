@@ -1,0 +1,130 @@
+<?php
+
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Ajax\AjaxResponse;
+use Drupal\Core\Ajax\ReplaceCommand;
+use Drupal\Core\Render\Markup;
+use Drupal\Core\Render\RendererInterface;
+use Drupal\Core\Ajax\InvokeCommand;
+// Drupal::service('renderer')->render
+use Drupal\Core\Ajax\HtmlCommand;
+use Drupal\Core\Render\Element;
+
+/**
+ * Implements hook_form_alter().
+ */
+function filtro_logros_clases_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  //if ($form_id == 'node_asignar_clase_a_estudiante_form') {
+  if (in_array($form_id, ['node_asignar_clase_a_estudiante_form', 'node_asignar_clase_a_estudiante_edit_form'])) {
+    // dump($form['field_clase_a_asignar']);
+    $form['field_logros_cumplidos']['#prefix'] = '<div id="edit-field-logros-cumplidos-wrapper">';
+    $form['field_logros_cumplidos']['#suffix'] = '</div>';
+
+    $form['field_clase_a_asignar']['widget']['#ajax'] = [
+      'callback' => 'filtro_logros_clases_update_taxonomy_options',
+      'disable-refocus' => FALSE,
+      'event' => 'change',
+      'wrapper' => 'edit-field-logros-cumplidos-wrapper',      
+      'progress' => [
+        'type' => 'throbber',
+        'message' => 'Loading...',
+      ],
+    ];
+
+    
+  }
+
+  
+  //$form['field_logros_cumplidos']['widget']['#options'] =[];
+  //dump($form['field_logros_cumplidos']['widget']);
+}
+
+/**
+ * AJAX callback function to update taxonomy options.
+ */
+function filtro_logros_clases_update_taxonomy_options(array &$form, FormStateInterface $form_state) {
+  $class_id = $form_state->getValue('field_clase_a_asignar');
+  $options = [];
+  
+    $class_id = $class_id[0]['target_id'];
+    $class_node = \Drupal\node\Entity\Node::load($class_id);
+    
+    $taxonomy_ids = $class_node->get('field_logros_de_la_clase')->getValue();    
+
+    $options = getOptions($taxonomy_ids);
+
+    // Actualizar el campo field_logros_cumplidos
+    $form['field_logros_cumplidos']['widget']['#options'] = $options;
+
+
+  // Crear un nuevo div para contener el campo actualizado
+  // Actualizar el campo field_logros_cumplidos
+  $form['field_logros_cumplidos']['widget']['#options'] = $options;
+  //dump($form['field_logros_cumplidos']['widget']);
+ 
+  $new_field_rendered = \Drupal::service('renderer')->render($form['field_logros_cumplidos']['widget']);
+  //dump($new_field_rendered);
+  $new_div = '<div id="edit-field-logros-cumplidos-wrapper">' . $new_field_rendered . '</div>';
+  //dump($new_div);
+
+
+
+  // Crear una respuesta AJAX
+
+  $response = new AjaxResponse();
+
+  // Reemplazar el contenido del wrapper con el nuevo div
+  $response->addCommand(new ReplaceCommand('#edit-field-logros-cumplidos-wrapper', Markup::create($new_div) ));
+
+  return $response;
+
+    //return $form['field_logros_cumplidos'];
+
+    // // Renderizar el campo actualizado
+    //$rendered_field = \Drupal::service('renderer')->render($form['field_logros_cumplidos']);
+  
+
+    // // Crear una respuesta AJAX
+    // $response = new AjaxResponse();
+
+    // // Reemplazar el contenido del wrapper con el nuevo campo actualizado
+    // $response->addCommand(new ReplaceCommand('#edit-field-logros-cumplidos-wrapper', Markup::create($rendered_field)));
+
+    // return $response;
+}
+
+function getOptions ($taxonomy_ids) {
+  $options = [];
+  if (!empty($taxonomy_ids)) {
+    $taxonomy_ids = array_column($taxonomy_ids, 'target_id');        
+    $taxonomy_storage = \Drupal::entityTypeManager()->getStorage('taxonomy_term');
+    $taxonomy_terms = $taxonomy_storage->loadMultiple($taxonomy_ids);
+    
+    foreach ($taxonomy_terms as $taxonomy_term) {
+      $options[$taxonomy_term->id()] = $taxonomy_term->getName();
+    }
+  }
+  return $options;
+}
+
+function getOption2(array &$form, FormStateInterface $form_state) {
+  $field_clase_a_asignar_value = $form_state->getValue('field_clase_a_asignar');
+  $options = [];
+  if (!empty($field_clase_a_asignar_value)) {
+    $class_id = $field_clase_a_asignar_value[0]['target_id'];
+    $class_node = \Drupal\node\Entity\Node::load($class_id);
+    
+    $taxonomy_ids = $class_node->get('field_logros_de_la_clase')->getValue();    
+    if (!empty($taxonomy_ids)) {
+      $taxonomy_ids = array_column($taxonomy_ids, 'target_id');        
+      $taxonomy_storage = \Drupal::entityTypeManager()->getStorage('taxonomy_term');
+      $taxonomy_terms = $taxonomy_storage->loadMultiple($taxonomy_ids);
+      
+      foreach ($taxonomy_terms as $taxonomy_term) {
+        $options[$taxonomy_term->id()] = $taxonomy_term->getName();
+      }
+    }
+  }
+  $form['field_logros_cumplidos']['widget']['#options'] = $options;
+  return $form['field_logros_cumplidos'];
+}
