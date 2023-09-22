@@ -1,4 +1,194 @@
 .path-zona-pagos {
+
+  //Cuadro de suscripciones activas
+  .view-id-suscripciones {
+    .view-header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+      width: 100%;
+      justify-content: center;
+
+      .suscripcion-title {
+        h1 {
+          font-size: 1.25rem;
+          font-weight: 700;
+          margin-bottom: 0rem;
+        }
+      }
+
+      .suscripciones {
+        margin: 0 auto;
+        width: 80%;
+        padding: 1rem;
+        align-items: center;
+        gap: 1.5rem;
+        border-radius: 1.5rem;
+        background: var(--Grey-K100, #E6F1F1);
+        max-width: 1024px;
+
+        .izquierda {
+          width: 25%;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          align-items: center;
+          flex-shrink: 0;
+
+          .imagenes-ninos {
+            position: relative;
+            margin-bottom: 0.5rem;
+
+            img:nth-child(1) {
+              z-index: 1;
+              position: relative;
+              margin-right: -1rem;
+            }
+            img:nth-child(2) {
+              z-index: 2;
+              position: relative;
+              margin-right: -1rem;
+            }  
+            img:nth-child(3) {
+              z-index: 3;
+              position: relative;
+            }                      
+          }
+
+          .clases-restantes {
+            width: 100%;
+            text-align: center;
+
+            .titulo {
+              font-size: 1.25rem;
+              font-weight: 700;                        
+            }
+
+            .numero-clases {
+              display: flex;
+              flex-direction: row;
+              flex-wrap: nowrap;
+              justify-content: center;
+              align-items: center;
+              font-size: 3rem;
+              font-weight: 700;
+
+              .restantes {
+                margin-right: 8px;
+              }
+              .compradas {
+                margin-left: 8px;
+              }
+            }
+
+          }
+        }
+
+        .centro {
+          width: 50%;
+          display: flex;
+          flex-direction: column;
+          flex-wrap: wrap;
+          justify-content: space-evenly;
+
+          .fila1 {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            flex-wrap: wrap;
+
+            .cuadro-blanco {
+              border-radius: 0.5rem;
+              background: var(--White, #FFF);
+              display: flex;
+              padding: 0.25rem 0.5rem;
+              align-items: center;
+              gap: 0.5rem;
+              max-width: 48%;
+              width: 48%;
+              justify-content: space-between;
+
+              .texto {
+                color: #000;
+                font-size: 1rem;
+                font-style: normal;
+                font-weight: 500;
+              }
+              .valor {
+                font-size: 1.5rem;
+                font-style: normal;
+                font-weight: 700;
+              }
+            }
+          }
+
+          .fila2.fechas-inicio-fin {
+            > div {
+              display: flex;
+              justify-content: space-between;
+              align-items: flex-start;
+
+              &.inicio {
+                padding-top: 1rem;
+                padding-bottom: 1rem;
+              }
+            }
+          }
+        }
+
+        .derecha {
+          width: 20%;
+          display: flex;
+          align-items: center;
+          justify-content: space-around;
+          flex-direction: column;
+          align-items: center;
+          flex-wrap: nowrap;
+          gap: 0.5rem;
+
+          .suscripciones-activas {
+            text-align: center;
+
+            span {
+              font-weight: 700;
+              font-size: 1.1rem;
+            }
+          }
+
+          .ver-suscripciones {
+            a {
+              display: flex;
+              height: 3rem;
+              padding: 0.375rem 1rem;
+              justify-content: center;
+              align-items: center;
+              gap: 0.75rem;
+              flex: 1 0 0;
+              border-radius: 1.75rem;
+              border: 2px solid var(--Turq-K500, #297E88);
+              background: var(--Agua-K500, #2FF7EE);
+              text-align: center;              
+              text-decoration: none;
+              color: black;
+
+              &:hover {
+                border-radius: 1.75rem;
+                border: 2px solid var(--Turq-K500, #297E88);
+                background: var(--White, #FFF);
+                color: var(--Turq-K600, #165F68);
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .view-content.row {
+      display: none;
+    }
+  }
+
   .view-clases-por-nino {
     flex-direction: row;
     flex-wrap: wrap;
@@ -160,7 +350,59 @@
         border-radius: 2.5rem;
         border: 2px solid var(--Turq-K500, #297E88);
         background: var(--Agua-K500, #2FF7EE);
+
+        &.disabled {
+          border: 2px solid var(--Grey-K200, #BECACA);
+          background: var(--White, #FFF);
+          color: var(--Grey-K200, #BECACA);
+          font-weight: 700;
+        }
       }
+    }
+  }
+}
+
+.path-suscripciones {
+  .view-id-suscripciones {
+    .view-header {
+      .titulo {
+        h2 {
+          font-size: 1.25rem;
+          font-weight: 700;
+          margin-bottom: 0rem;
+        }
+      }
+    }
+  }
+}
+
+.boton-imprimir {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  .imprimir {
+    display: flex;
+    height: 3rem;
+    padding: 0.375rem 1rem;
+    justify-content: center;
+    align-items: center;
+    gap: 0.75rem;
+    flex: 1 0 0;
+    border-radius: 1.75rem;
+    border: 2px solid var(--Turq-K500, #297E88);
+    background: var(--Agua-K500, #2FF7EE);
+    text-align: center;              
+    text-decoration: none;
+    color: black;
+    max-width: 200px;
+
+    &:hover {
+      border-radius: 1.75rem;
+      border: 2px solid var(--Turq-K500, #297E88);
+      background: var(--White, #FFF);
+      color: var(--Turq-K600, #165F68);
     }
   }
 }

@@ -1,0 +1,9 @@
+name: 'Suscriptions Events'
+type: module
+description: 'Módulo para reaccionar a la transición de estado de una orden en Drupal Commerce 2.'
+package: Personalizado
+core_version_requirement: ^9 || ^10
+dependencies:
+  - drupal:commerce_order
+libraries:
+  - suscriptions_events/suscriptions_events
