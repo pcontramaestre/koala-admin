@@ -1,0 +1,39 @@
+uuid: cd053eb7-1e35-42e2-a19e-3dbd7ef96f2e
+langcode: es
+status: true
+dependencies:
+  module:
+    - system
+id: imprimir_orden
+label: 'Imprimir orden'
+code: |-
+  // Obtener el botón de imprimir
+  var botonImprimir = document.querySelector('.imprimir');
+
+  // Agregar un evento de clic al botón de imprimir
+  botonImprimir.addEventListener('click', function() {
+    // Obtener el contenido del div con la clase ".informacion-orden"
+    var contenido = document.querySelector('.informacion-orden').innerHTML;
+    
+    // Crear un elemento temporal para contener el contenido a imprimir
+    var elementoTemporal = document.createElement('div');
+    elementoTemporal.innerHTML = contenido;
+
+    // Abrir la ventana de impresión y colocar el contenido a imprimir
+    var ventanaImpresion = window.open('', '_blank');
+    ventanaImpresion.document.write('<html><head><title>Impresión</title></head><body>' + elementoTemporal.innerHTML + '</body></html>');
+    ventanaImpresion.document.close();
+    ventanaImpresion.print();
+  });
+noscript: ''
+noscriptRegion: {  }
+jquery: false
+header: false
+preprocess: true
+conditions:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '/user/*/orders/*'
+contexts: {  }
+conditions_require_all: true

@@ -1,0 +1,37 @@
+uuid: ee0d5971-1ea3-48e1-aa7e-52b13d85fded
+langcode: es
+status: true
+dependencies:
+  module:
+    - system
+id: pay_and_complete_purchace
+label: 'pay and complete purchace'
+code: |2-
+    console.log('Suscriptions Events');
+    // Leer valor del localStorage
+    var semanas = localStorage.getItem('semanas');
+    var totalClases = localStorage.getItem('totalClases');
+        
+    if (semanas) {
+      console.log(semanas);
+      // Crear cookie con el valor del localStorage
+      document.cookie = "numerosemanas=" + semanas + "; path=/";
+    } 
+    // Si no hay valor, se crea el objeto
+    if (totalClases) {
+      console.log(totalClases);
+      // Crear cookie con el valor del localStorage
+      document.cookie = "totalclases=" + totalClases + "; path=/";
+    }
+noscript: ''
+noscriptRegion: {  }
+jquery: true
+header: false
+preprocess: true
+conditions:
+  request_path:
+    id: request_path
+    negate: false
+    pages: "*/checkout/*/review\r\n/checkout/*/review"
+contexts: {  }
+conditions_require_all: true

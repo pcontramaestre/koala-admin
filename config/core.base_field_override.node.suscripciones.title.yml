@@ -1,0 +1,18 @@
+uuid: 2831c5e8-f794-4856-866a-1b5321929622
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.suscripciones
+id: node.suscripciones.title
+field_name: title
+entity_type: node
+bundle: suscripciones
+label: 'Título de referencia'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

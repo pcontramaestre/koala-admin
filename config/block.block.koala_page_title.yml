@@ -23,4 +23,4 @@ visibility:
   request_path:
     id: request_path
     negate: true
-    pages: "/user/*\r\n<front>\r\n/node/add/agendar_clase/*\r\n/checkout\r\n/checkout/*\r\n/orders/*\r\n/orders\r\n/product/*\r\n/product"
+    pages: "/user/*\r\n<front>\r\n/node/add/agendar_clase/*\r\n/checkout\r\n/checkout/*\r\n/orders/*\r\n/orders\r\n/product/*\r\n/product\r\n/suscripciones"

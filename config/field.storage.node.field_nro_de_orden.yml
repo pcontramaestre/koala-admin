@@ -1,0 +1,24 @@
+uuid: d5580716-6c00-48fa-8b79-0ce982f1e0fe
+langcode: es
+status: true
+dependencies:
+  module:
+    - commerce_order
+    - field_permissions
+    - node
+third_party_settings:
+  field_permissions:
+    permission_type: public
+id: node.field_nro_de_orden
+field_name: field_nro_de_orden
+entity_type: node
+type: entity_reference
+settings:
+  target_type: commerce_order
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

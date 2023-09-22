@@ -1,0 +1,21 @@
+uuid: 9f1fe901-aff8-4db9-a8d9-3051d462b4ca
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_fecha_de_finalizacion_de_l
+    - node.type.suscripciones
+  module:
+    - datetime
+id: node.suscripciones.field_fecha_de_finalizacion_de_l
+field_name: field_fecha_de_finalizacion_de_l
+entity_type: node
+bundle: suscripciones
+label: 'Fecha de finalización de la suscripción'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

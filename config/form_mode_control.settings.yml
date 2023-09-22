@@ -196,3 +196,4 @@ modification+hijo+user+user: user.user.default
 'use  The form mode default linked to  taxonomy_term entity( niveles_de_clases )': taxonomy_term.niveles_de_clases.default
 'use  The form mode default linked to  taxonomy_term entity( nombres_de_niveles_principales )': taxonomy_term.nombres_de_niveles_principales.default
 'use  The form mode default linked to  node entity( asignar_clase_a_estudiante )': node.asignar_clase_a_estudiante.default
+'use  The form mode default linked to  node entity( suscripciones )': node.suscripciones.default

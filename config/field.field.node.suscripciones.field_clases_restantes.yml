@@ -1,0 +1,23 @@
+uuid: 6c131b32-0577-47b7-97b8-32330599b8b2
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_clases_restantes
+    - node.type.suscripciones
+id: node.suscripciones.field_clases_restantes
+field_name: field_clases_restantes
+entity_type: node
+bundle: suscripciones
+label: 'Clases restantes'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: 0
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

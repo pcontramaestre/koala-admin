@@ -1,0 +1,23 @@
+uuid: 8843ee7c-b5d6-435c-aacc-31dd8608f483
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_clases_compradas
+    - node.type.suscripciones
+id: node.suscripciones.field_clases_compradas
+field_name: field_clases_compradas
+entity_type: node
+bundle: suscripciones
+label: 'Clases compradas'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: 0
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

@@ -1,0 +1,17 @@
+uuid: 9ee81a90-9d8e-4cd1-a026-86a0a30602fa
+langcode: es
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Suscripciones
+type: suscripciones
+description: 'Guarda el registro de las clases compradas por los padres. La información se actualiza por programación, no se debe agregar info manualmente.'
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: true

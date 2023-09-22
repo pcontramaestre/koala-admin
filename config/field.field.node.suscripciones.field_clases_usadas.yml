@@ -1,0 +1,23 @@
+uuid: 3661aa2f-3b6a-4242-bca0-b8ffbd05fec6
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_clases_usadas
+    - node.type.suscripciones
+id: node.suscripciones.field_clases_usadas
+field_name: field_clases_usadas
+entity_type: node
+bundle: suscripciones
+label: 'Clases usadas'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: 0
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

@@ -1,0 +1,37 @@
+uuid: 870ff4f0-c4c8-49bf-9f7d-4f5bc31ed90d
+langcode: es
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.suscripciones.field_clases_compradas
+    - field.field.node.suscripciones.field_clases_restantes
+    - field.field.node.suscripciones.field_clases_usadas
+    - field.field.node.suscripciones.field_fecha_de_finalizacion_de_l
+    - field.field.node.suscripciones.field_fecha_de_inicio_de_la_susc
+    - field.field.node.suscripciones.field_nro_de_orden
+    - field.field.node.suscripciones.field_plan_comprado
+    - field.field.node.suscripciones.field_usuario_padre
+    - node.type.suscripciones
+  module:
+    - user
+id: node.suscripciones.teaser
+targetEntityType: node
+bundle: suscripciones
+mode: teaser
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_clases_compradas: true
+  field_clases_restantes: true
+  field_clases_usadas: true
+  field_fecha_de_finalizacion_de_l: true
+  field_fecha_de_inicio_de_la_susc: true
+  field_nro_de_orden: true
+  field_plan_comprado: true
+  field_usuario_padre: true
+  langcode: true

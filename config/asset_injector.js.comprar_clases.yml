@@ -7,6 +7,50 @@ dependencies:
 id: comprar_clases
 label: 'Comprar clases'
 code: |-
+  // Crear arreglo de cantidad de clases por semana, seria con estos datos:
+  // total de clases, clases por semana, cantidad de semanas, id del curso
+  // Ejemplo: 20 clases, 2 clases por semana, 10 semanas, id del curso 1
+
+  const clasesComprar4Semanas = [
+    {clases: 4,id: 9},
+    {clases: 8,id: 10},
+    {clases: 12,id: 11},
+    {clases: 16,id: 12},
+    {clases: 20,id: 21},
+    {clases: 24,id: 22},
+    {clases: 28,id: 23},
+    {clases: 32,id: 24},
+    {clases: 36,id: 25},
+    {clases: 40,id: 26},
+  ]
+
+  const clasesComprar12Semanas = [
+    {clases: 12,id: 13},
+    {clases: 24,id: 14},
+    {clases: 36,id: 15},
+    {clases: 48,id: 16},
+    {clases: 60,id: 27},
+    {clases: 72,id: 28},
+    {clases: 84,id: 29},
+    {clases: 96,id: 30},
+    {clases: 108,id: 31},
+    {clases: 120,id: 32},
+  ]
+
+  const clasesComprar24Semanas = [
+    {clases: 24,id: 17},
+    {clases: 48,id: 18},
+    {clases: 72,id: 19},
+    {clases: 96,id: 20},
+    {clases: 120,id: 33},
+    {clases: 144,id: 34},
+    {clases: 168,id: 35},
+    {clases: 192,id: 36},
+    {clases: 216,id: 37},
+    {clases: 240,id: 38},
+  ]
+
+
   const datosCosteClases = [
     { clases: 4, coste: 70.00, costePorClase: 17.50000 },
     { clases: 8, coste: 120.00, costePorClase: 15.00000 },
@@ -319,10 +363,10 @@ code: |-
 
 
 
-      precioClase.textContent = precio + ' €';
+      precioClase.textContent = precio + ' $';
       precioClase.setAttribute('precio', precio);
       redondeoTotal = Math.round(parseInt(totalClases.textContent) * parseFloat(precioClase.getAttribute('precio')) * 100) / 100;
-      valorTotal.textContent = redondeoTotal + ' €';
+      valorTotal.textContent = redondeoTotal + ' $';
       
       // Agregar valor a descuento ".descuento". Se obtiene de restar el valor del atributo precio de ".precio-clase" menos el primer valor del arreglo clases4Semanas
       const descuento = document.querySelector('.descuento');
@@ -334,7 +378,7 @@ code: |-
       
       // Agregar valor a ahorro ".ahorro". Se obtiene (total-clases * primer-valor-del-arreglo-clases4Semanas) - (total-clases * precio-clase)
       const ahorro = document.querySelector('.ahorro');
-      ahorro.textContent = Math.round((parseInt(totalClases.textContent) * datosCosteClases[0].costePorClase) - (parseInt(totalClases.textContent) * parseFloat(precioClase.getAttribute('precio')))) + ' €';
+      ahorro.textContent = Math.round((parseInt(totalClases.textContent) * datosCosteClases[0].costePorClase) - (parseInt(totalClases.textContent) * parseFloat(precioClase.getAttribute('precio')))) + ' $';
 
     }
 
@@ -354,15 +398,53 @@ code: |-
       let enlace = '';
       if (suscription.value == 4) {
         enlace = '/product/3';
+        // Buscar en el arreglo clasesComprar4Semanas el valor de totalClases, y guardar el valor de id en una variable
+        clasesComprar4Semanas.forEach((clase) => {
+          if (clase.clases == parseInt(totalClases.textContent)) {
+            id_producto = clase.id;
+          }
+        });
       } else if (suscription.value == 12) {
         enlace = '/product/4';
+        // Buscar en el arreglo clasesComprar12Semanas el valor de totalClases, y guardar el valor de id en una variable
+        clasesComprar12Semanas.forEach((clase) => {
+          if (clase.clases == parseInt(totalClases.textContent)) {
+            id_producto = clase.id;
+          }
+        });
+
       } else if (suscription.value == 24) {
         enlace = '/product/5';
+        // Buscar en el arreglo clasesComprar24Semanas el valor de totalClases, y guardar el valor de id en una variable
+        clasesComprar24Semanas.forEach((clase) => {
+          if (clase.clases == parseInt(totalClases.textContent)) {
+            id_producto = clase.id;
+          }
+        });
+
       }
-      enlace += '?clases=' + totalClases.textContent;
+      enlace += '?clases=' + totalClases.textContent + '&v=' + id_producto;
       botonComprar.setAttribute('href', enlace);
+
+      // Comprobar que el total de clases sea mayor que 0, si es asi
+      // remover la clase .disabled del boton .btn-comprar de lo contrario agregar la clase .disabled
+      if (parseInt(totalClases.textContent) > 0) {
+        botonComprar.classList.remove('disabled');
+      } else {
+        botonComprar.classList.add('disabled');
+      }    
     }
 
+
+    function guardarLocalstorage() {
+      //Guardar en localstorage el valor de .total-de-clases, numero de semanas y el valor de .precio-clase
+      const totalClases = document.querySelector('.total-clases');
+      const duracion = document.querySelector('.duracion');
+      // duracion atributo semanas
+      const semanas = duracion.getAttribute('semanas');
+      localStorage.setItem('totalClases', totalClases.textContent);
+      localStorage.setItem('semanas', semanas);
+    }
     
     // Crear una funcion para actualizar todos los valores
     function actualizarValores() {
@@ -371,6 +453,7 @@ code: |-
       actualizarDuracion();
       actualizarPrecioPorClase();
       actualizarEnlace()
+      guardarLocalstorage();
     }
 
 
@@ -382,6 +465,7 @@ code: |-
     decrementaButtons.forEach((button) => {
       button.addEventListener('click', decrementarTotal);
     });
+    
 noscript: ''
 noscriptRegion: {  }
 jquery: true

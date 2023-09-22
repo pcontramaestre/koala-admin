@@ -1,0 +1,21 @@
+uuid: c007ac07-e430-4def-8325-097e79e2d4d6
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_plan_comprado
+    - node.type.suscripciones
+  module:
+    - options
+id: node.suscripciones.field_plan_comprado
+field_name: field_plan_comprado
+entity_type: node
+bundle: suscripciones
+label: 'Plan comprado'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

@@ -1,0 +1,186 @@
+uuid: 8e1d770d-98a3-43d6-b11c-dd24d8d46f7e
+langcode: es
+status: true
+dependencies:
+  module:
+    - system
+id: comprar_clases_cuadro_de_suscripciones_activas
+label: 'Comprar clases - Cuadro de suscripciones activas'
+code: |
+  // 1) Guardar en una variable la cantidad de filas encontradas
+  var filas = document.querySelectorAll('.view-clases-por-nino .vista-ninos .view-content.row .views-row').length;
+
+  // 2) Obtener el elemento del div
+  var divElement = document.querySelector('.suscripciones .cuadro-blanco.ninos > .valor');
+
+  // 3) Actualizar el contenido del div con el valor de filas
+  divElement.textContent = filas.toString();
+
+  // 4) Obtener el valor del div con la clase .valor-clases-compradas
+  var valorClasesCompradas = document.querySelector('.valor-clases-compradas').textContent;
+  // Limpiar el valor de la variable, eliminar todos los espacios en blanco
+  valorClasesCompradas = valorClasesCompradas.replace(/\s/g, '');
+
+  console.log(valorClasesCompradas);
+
+  // 1) Obtener todos los divs con la clase .views-row dentro de .view-suscripciones .view-content.row
+  var divsRows = document.querySelectorAll('.view-suscripciones .view-content.row .views-row');
+
+  // 2) Obtener el último div con la clase .views-row
+  var lastDivRow = divsRows[divsRows.length - 1];
+
+  // 3) Obtener el valor del div .valor-clases-compradas dentro del último div .views-row
+  var valorClasesCompradas = lastDivRow.querySelector('.valor-clases-compradas').textContent;
+
+  var valorClasesRestantes = lastDivRow.querySelector('.valor-clases-restantes').textContent;
+
+  // Obtener las suscripciones activa .views-field-counte > .field-content
+  var suscripcionesActivas = lastDivRow.querySelector('.view-suscripciones .views-field-counter > .field-content').textContent;
+
+  // 4) Guardar el valor en una variable
+  var valorGuardadoCompras = valorClasesCompradas.replace(/\s/g, '');
+  var valorGuardadoRestantes = valorClasesRestantes.replace(/\s/g, '');
+  var valorGuardadoSuscripciones = suscripcionesActivas.replace(/\s/g, '');
+
+
+  // Obtener el elemento del div que contiene el valor de las clases compradas
+  var divElement = document.querySelector('.suscripciones .izquierda > .clases-restantes .numero-clases .compradas');
+  divElement.textContent = valorGuardadoCompras;
+
+  // Obtener el elemento del div que contiene el valor de las clases restantes
+  var divElement = document.querySelector('.suscripciones .izquierda > .clases-restantes .numero-clases .restantes');
+  divElement.textContent = valorGuardadoRestantes;
+
+  // Obtener el elemento del div que contiene el valor de las suscripciones activas .derecha .suscripciones-activas span
+  var divElement = document.querySelector('.suscripciones .derecha .suscripciones-activas span');
+  divElement.textContent = valorGuardadoSuscripciones;
+
+
+
+  // 5) Mostrar el valor guardado en la consola
+  console.log(valorGuardadoCompras);
+  console.log(valorGuardadoRestantes);
+
+
+
+
+  // 1) Obtener todos los divs que contienen la clase .semanas-del-plan
+  var divsPlan = document.querySelectorAll('.view-suscripciones .view-content.row .views-row .semanas-del-plan');
+
+  // 2) Crear un arreglo para guardar los valores de las semanas del plan
+  var valoresSemanas = [];
+
+  // Recorrer los divs y guardar los valores eliminando espacios en blanco y convirtiéndolos en números
+  for (var i = 0; i < divsPlan.length; i++) {
+    var valor = divsPlan[i].textContent.trim();
+    var numero = Number(valor);
+    
+    // Agregar el número al arreglo
+    valoresSemanas.push(numero);
+  }
+
+  // 3) Encontrar el número más grande en el arreglo
+  var mayorNumero = Math.max.apply(null, valoresSemanas);
+
+  // 4) Mostrar el número más grande en la consola
+  console.log("Número más grande: " + mayorNumero);
+
+  var divElement = document.querySelector('.suscripciones .centro .semanas .valor');
+  divElement.textContent = mayorNumero.toString();
+
+
+
+
+  //FECHAS MINIMA .views-field-field-fecha-de-inicio-de-la-susc > field-content
+  // 1) Obtener todos los divs que contienen la clase .views-field-field-fecha-de-inicio-de-la-susc > field-content
+  var divsFechas = document.querySelectorAll('.view-suscripciones .view-content.row .views-row .views-field-field-fecha-de-inicio-de-la-susc .field-content');
+
+  // 2) Crear un arreglo para guardar las fechas
+  var fechas = [];
+
+  // Recorrer los divs y guardar las fechas eliminando espacios en blanco y convirtiéndolas en objetos Date
+  for (var i = 0; i < divsFechas.length; i++) {
+    var valor = divsFechas[i].textContent.trim();
+    var partes = valor.split('/'); // Dividir el valor en partes utilizando "/" como separador
+
+    // Obtener los componentes de la fecha
+    var dia = partes[0];
+    var mes = partes[1] - 1; // Restar 1 al mes porque los meses en JavaScript son indexados desde 0
+    var anio = partes[2];
+
+    // Crear el objeto Date con los componentes de la fecha
+    var fecha = new Date(anio, mes, dia);
+    
+    // Agregar la fecha al arreglo
+    fechas.push(fecha);
+  }
+
+  // 3) Encontrar la fecha más temprana en el arreglo
+  var fechaMasTemprana = new Date(Math.min.apply(null, fechas));
+
+  // CONVERTIR fechaMasTemprana A FORMATO DD/MM/YYYY
+  var dia = fechaMasTemprana.getDate().toString().padStart(2, '0');
+  var mes = (fechaMasTemprana.getMonth() + 1).toString().padStart(2, '0');
+  var anio = fechaMasTemprana.getFullYear();
+  fechaMasTemprana = dia + "/" + mes + "/" + anio;
+
+
+  // AGREGAR fechaMasTemprana AL DIV .suscripciones .centro .fechas-inicio-fin .inicio .valor
+  var divElement = document.querySelector('.suscripciones .centro .fechas-inicio-fin .inicio .valor');
+  divElement.textContent = fechaMasTemprana;
+
+  // 4) Mostrar la fecha más temprana en la consola
+  console.log("Fecha más temprana: " + fechaMasTemprana);
+
+
+  //FECHAS MAXIMA .views-field-field-fecha-de-finalizacion-de-l field-content
+  // 1) Obtener todos los divs que contienen la clase .views-field-field-fecha-de-finalizacion-de-l field-content
+  var divsFechas = document.querySelectorAll('.view-suscripciones .view-content.row .views-row .views-field-field-fecha-de-finalizacion-de-l .field-content');
+  var fechas2 = [];
+
+  // Recorrer los divs y guardar las fechas eliminando espacios en blanco y convirtiéndolas en objetos Date
+  for (var i = 0; i < divsFechas.length; i++) {
+    var valor = divsFechas[i].textContent.trim();
+    var partes = valor.split('/'); // Dividir el valor en partes utilizando "/" como separador
+
+    // Obtener los componentes de la fecha
+    var dia = partes[0];
+    var mes = partes[1] - 1; // Restar 1 al mes porque los meses en JavaScript son indexados desde 0
+    var anio = partes[2];
+
+    // Crear el objeto Date con los componentes de la fecha
+    var fecha = new Date(anio, mes, dia);
+    
+    // Agregar la fecha al arreglo
+    fechas2.push(fecha);
+  }
+
+  // 3) Encontrar la fecha más temprana en el arreglo
+  var fechaMasTemprana2 = new Date(Math.max.apply(null, fechas2));
+
+  // CONVERTIR fechaMasTemprana A FORMATO DD/MM/YYYY. dias con 0 al inicio, meses con 0 al inicio
+  var dia = fechaMasTemprana2.getDate().toString().padStart(2, '0');
+  var mes = (fechaMasTemprana2.getMonth() + 1).toString().padStart(2, '0');
+  var anio = fechaMasTemprana2.getFullYear();
+  fechaMasTemprana2 = dia + "/" + mes + "/" + anio;
+
+
+
+  // AGREGAR fechaMasTemprana2 AL DIV .suscripciones .centro .fechas-inicio-fin .fin .valor
+  var divElement = document.querySelector('.suscripciones .centro .fechas-inicio-fin .fin .valor');
+  divElement.textContent = fechaMasTemprana2;
+
+  // 4) Mostrar la fecha más tarde en la consola
+  console.log("Fecha más temprana: " + fechaMasTemprana2);
+noscript: ''
+noscriptRegion: {  }
+jquery: true
+header: false
+preprocess: true
+conditions:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /zona-pagos
+contexts: {  }
+conditions_require_all: true

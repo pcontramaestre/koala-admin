@@ -3,12 +3,12 @@ langcode: es
 status: true
 dependencies:
   config:
-    - block_content.type.basic
     - page_manager.page.zona_de_pagos
+    - views.view.suscripciones
   module:
-    - layout_builder
     - layout_discovery
     - quicktabs
+    - views
 id: zona_de_pagos-layout_builder-0
 label: 'Layout Builder'
 weight: 0
@@ -25,22 +25,6 @@ variant_settings:
         label: ''
         context_mapping: {  }
       components:
-        9db4cfe9-c4f0-4673-9ce0-aeef13210199:
-          uuid: 9db4cfe9-c4f0-4673-9ce0-aeef13210199
-          region: content
-          configuration:
-            id: 'inline_block:basic'
-            label: 'Zona de Pagos'
-            label_display: visible
-            provider: layout_builder
-            view_mode: full
-            context_mapping: {  }
-            block_revision_id: 8
-            block_serialized: null
-          weight: 0
-          additional:
-            layout_builder_styles_style:
-              separacion_superior_mt_5: separacion_superior_mt_5
         8756018c-4805-44ee-82c7-9936f642e75a:
           uuid: 8756018c-4805-44ee-82c7-9936f642e75a
           region: content
@@ -50,7 +34,23 @@ variant_settings:
             label_display: '0'
             provider: quicktabs
             context_mapping: {  }
-          weight: 4
+          weight: 2
+          additional:
+            layout_builder_styles_style:
+              separacion_superior_mt_5: separacion_superior_mt_5
+        baf31ebb-4caa-49f2-82e9-85cce85add58:
+          uuid: baf31ebb-4caa-49f2-82e9-85cce85add58
+          region: content
+          configuration:
+            id: 'views_block:suscripciones-block_1'
+            label: ''
+            label_display: '0'
+            provider: views
+            context_mapping: {  }
+            views_label: ''
+            items_per_page: none
+            exposed: {  }
+          weight: 1
           additional:
             layout_builder_styles_style:
               separacion_superior_mt_5: separacion_superior_mt_5

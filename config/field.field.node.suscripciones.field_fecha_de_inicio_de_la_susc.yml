@@ -1,0 +1,24 @@
+uuid: 63234140-a16f-4e5f-93bb-2468f3bd83a7
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_fecha_de_inicio_de_la_susc
+    - node.type.suscripciones
+  module:
+    - datetime
+id: node.suscripciones.field_fecha_de_inicio_de_la_susc
+field_name: field_fecha_de_inicio_de_la_susc
+entity_type: node
+bundle: suscripciones
+label: 'Fecha de inicio de la suscripción'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    default_date_type: now
+    default_date: now
+default_value_callback: ''
+settings: {  }
+field_type: datetime
