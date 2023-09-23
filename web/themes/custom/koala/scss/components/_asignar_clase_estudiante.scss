@@ -3,6 +3,46 @@
 
     //Formulario
     .node-asignar-clase-a-estudiante-edit-form {
+      #parte-superio-no-mostrar {
+        display: none;
+      }
+
+      .titulo-pagina {
+        color: #000;
+        text-align: center;
+        font-family: Nunito;
+        font-size: 1.25rem;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        margin-bottom: 1rem;
+      }
+      .form-switch .form-check-input:checked {
+        background-color: #297e88;
+        border-color: #297e88;      
+      }
+
+      .form-switch .form-check-input {
+        background-color: #297e8852;
+        border-color: #297e8852;
+      }
+      
+      .form-actions {
+        display: flex;
+        justify-content: center;
+
+        button {
+          border-radius: 2.5rem;
+          border: 2px solid var(--Turq-K500, #297E88);
+          background: var(--Agua-K500, #2FF7EE);
+          color: black;
+
+          &:hover {
+            background: var(--Turq-K500, #297E88);
+            color: white;
+          }
+        }
+      }
 
       //Layout 
       .layout.layout--twocol {
@@ -20,11 +60,82 @@
           flex: 0 1 auto;
           max-width: 66%;
           width: 66%;
+
+          .field--name-field-logros-cumplidos {
+            .fieldgroup {
+              margin-top: 1rem;
+              legend {
+                display: none;
+              }
+
+              .fieldset-wrapper {
+                > .checkbox {
+                  display: grid;
+                  grid-template-columns: 1fr 1fr;
+                  align-items: center;
+                  justify-items: stretch;
+                  align-content: center;
+                }
+              }
+            }
+          }
+
         }
         .layout__region.layout__region--bottom {
           flex: 0 1 auto;
           max-width: 100%;
           width: 100%;
+
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 2rem;
+          margin-top: 1rem;
+
+          .field--widget-string-textarea {
+            margin-bottom: 0 !important;
+            > .form-type-textarea  {
+              display: grid;
+              gap: 1rem;
+              margin-bottom: 0 !important;
+
+              label {
+                align-self: stretch;
+                color: #000;
+                font-family: Nunito;
+                font-size: 1.25rem;
+                font-style: normal;
+                font-weight: 700;
+                line-height: normal;
+              }
+
+              textarea {
+                border-radius: 0.5rem;
+                border: 2px solid var(--Grey-K200, #BECACA);
+                background: var(--White, #FFF);
+              }
+
+            }
+          }
+
+          .field--type-boolean {
+            > .js-form-type-checkbox {
+              width: auto;
+              display: flex;
+              background: gray;
+              max-width: max-content;
+              justify-content: space-evenly;
+              padding-left: 3rem;
+              padding-right: 1rem;
+              border-radius: 1rem;
+              background: var(--Grey-K100, #E6F1F1);
+              padding-top: 1rem;
+              padding-bottom: 1rem;
+
+              label {
+                margin-left: 0.4rem;
+              }
+            }
+          }
         }
       }
 

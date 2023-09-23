@@ -23,4 +23,4 @@ visibility:
   request_path:
     id: request_path
     negate: false
-    pages: "/zona-pagos\r\n/cart\r\n/product/*"
+    pages: /cart

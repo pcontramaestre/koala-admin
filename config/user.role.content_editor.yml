@@ -33,6 +33,7 @@ dependencies:
     - contextual
     - date_recur
     - date_recur_modular
+    - entity_print
     - field_permissions
     - file
     - filter
@@ -170,6 +171,7 @@ permissions:
   - 'edit own video media'
   - 'edit terms in avatar_profesor'
   - 'edit terms in tags'
+  - 'entity print access type commerce_product'
   - 'load twig templates from file system'
   - 'make smart dates recur'
   - 'manage default commerce_order_item'

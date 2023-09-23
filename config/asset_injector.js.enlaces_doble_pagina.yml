@@ -1,0 +1,33 @@
+uuid: bb0dd199-d669-44da-aa6a-8557ceaafe4b
+langcode: es
+status: true
+dependencies: {  }
+id: enlaces_doble_pagina
+label: 'Enlaces doble pagina'
+code: |2-
+    // Seleccionar los elementos con la clase .enlace .doble-clic
+    var enlaces = document.querySelectorAll('.enlace .doble-clic');
+
+    // Verificar si existen elementos
+    if (enlaces.length > 0) {
+      // Agregar evento de clic a cada enlace
+      enlaces.forEach(function(enlace) {
+        enlace.addEventListener('click', function(event) {
+          event.preventDefault();
+          
+          var href = this.getAttribute('href');
+          var data1 = this.getAttribute('data1');
+
+          window.open(href, '_blank');
+          window.location.href = window.location.origin + data1;
+        });
+      });
+    }
+noscript: ''
+noscriptRegion: {  }
+jquery: true
+header: false
+preprocess: true
+conditions: {  }
+contexts: {  }
+conditions_require_all: true

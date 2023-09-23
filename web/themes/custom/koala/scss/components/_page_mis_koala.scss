@@ -24,7 +24,7 @@
                       .view-header {
                         position: absolute;
                         right: 0px;
-                        bottom: 56%;
+                        top: -4%;
 
                         a {
                           padding: 16px;
@@ -132,6 +132,9 @@
 
                           .tab-content {
                             .tab-pane {
+                              .views-field.views-field-uid {
+                                display: none;
+                              }
                               .views-field {
                                 .field-content {
                                   .boton-agendar {
@@ -176,6 +179,252 @@
       }
     }
   }
+
+  // Acordeon de logros
+  .view-id-logros_taxonomia.view-display-id-block_1 {
+    .view-content.row {
+      border-radius: 1.5rem;
+      background: var(--Grey-K100, #E6F1F1);
+      padding: 2rem 5rem 2rem 5rem;
+      margin-bottom: 3rem;
+
+      .texto-logros {
+        margin-top: 1rem;
+        margin-bottom: 3rem;
+        color: #000;
+        font-family: Nunito;
+        font-size: 1rem;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+      }
+
+    }
+    .item-list-accordeon {
+      margin-bottom: 1rem;
+      border-radius: 1rem;
+      background: var(--White, #FFF);
+      padding: 1rem 1rem 1rem 1rem;
+
+      > h3 {
+        font-size: 1rem;
+        font-weight: 500;
+        margin-bottom: 0rem;
+        cursor: pointer;
+        display: block;
+        position: relative;
+        color: black;
+
+        &:before {
+          content: '+';
+          color: black;
+          position: absolute;
+          top: 50%;
+          right: -5px;
+          font-size: 30px;
+          transform: translateY(-50%);
+        }
+      }
+
+      ul.listado-de-logros {
+        display: none;
+        //display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 1rem;
+        list-style-type: none;
+        padding: 0;
+        //crear transicion para que se despliegue
+        transition: 0.5s;
+
+        li {
+          display: flex;
+          align-items: center;
+          border-radius: 1rem;
+          padding: 0.5rem 1rem 0.5rem 2rem;
+          background: white;
+
+          a {
+            font-size: 0.75rem;
+            font-style: normal;
+            font-weight: 700;
+            color: var(--Grey-K500, #727F7F);
+            text-decoration: none;
+            pointer-events: none;
+            position: relative;
+            line-height: 1.2;
+            display: block;
+
+            //Agregar ☆	antes del enlace
+            &:before {
+              content: "★";
+              margin-right: 0.5rem;
+              font-size: 1.2rem;
+              position: absolute;
+              left: -24px;
+              font-weight: 300;
+              color: #727F7F;
+              text-shadow: 0px 1px 1px #00000052;
+              top: -4px;
+            }
+          }
+
+
+          &.habilitado {
+            background: var(--Red-K100, #FFE8E8);
+
+            a {
+              font-size: 0.75rem;
+              font-style: normal;
+              font-weight: 700;
+              color: black;
+              text-decoration: none;
+              pointer-events: none;
+              position: relative;
+              line-height: 1.2;
+              display: block;
+  
+              //Agregar ☆	antes del enlace
+              &:before {
+                content: "★";
+                margin-right: 0.5rem;
+                font-size: 1.2rem;
+                position: absolute;
+                left: -24px;
+                font-weight: 300;
+                color: white;
+                text-shadow: 0px 1px 1px #00000052;
+                top: -4px;
+              }
+            }
+          }
+          
+
+
+        }
+        // Seleccionar cada 3 elementos
+        li:nth-child(2n) {
+          &.habilitado {
+            background: var(--Yellow-K100, #FFF0CC);
+          }
+          
+        }
+        li:nth-child(4n) {
+          &.habilitado {
+            background: var(--Turq-K100, #D7EFF2);
+          }          
+        }
+
+      }
+
+      &.activa {
+        > h3 {
+          margin-bottom: 0.8rem;
+
+          &:before {
+            content: '-';
+          }
+        }
+        ul.listado-de-logros {
+          display: grid;
+          // Transicion para que se despliegue        
+        }
+      }
+    }
+
+
+  }
+
+  // Resumen de la clase.
+
+  .view-resumen-de-clases {
+    .no-mostrar {
+      display: none;
+    }
+    // si .resumen-clase no contiene la clase .mostrar, ocultar
+    .resumen-clase:not(.mostrar) {
+      display: none;
+    }
+    .resumen-clase {
+      border-radius: 1.5rem;
+      border: 2px solid var(--Grey-K100, #E6F1F1);
+      display: flex;
+      padding: 1rem;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 1.5rem;
+      margin-bottom: 1rem;
+
+      .header {
+        justify-content: space-between;
+        flex-direction: row;
+        width: 100%;
+
+        div:nth-child(1) {
+          color: #000;
+          font-family: Nunito;
+          font-size: 1rem;
+          font-style: normal;
+          font-weight: 700;
+          line-height: normal;
+        }
+        div:nth-child(2) {
+          color: var(--Grey-K500, #727F7F);
+          font-family: Nunito;
+          font-size: 1rem;
+          font-style: normal;
+          font-weight: 700;
+          line-height: normal;
+        }
+      }
+
+      .resumen-video {
+        img {
+          max-width: 100%;
+          height: auto;
+        }
+      }
+
+      .profesor-clase {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        width: 100%;
+        flex-wrap: nowrap;
+
+        .avatar {
+          margin-right: 0.5rem;
+          img {
+            border-radius: 8.25963rem;
+            background: url(<path-to-image>), lightgray 50% / cover no-repeat;
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+          }
+        }
+        .nombre {
+          color: var(--Black, #000);
+          font-family: Nunito;
+          font-size: 1rem;
+          font-style: normal;
+          font-weight: 700;
+          line-height: normal;
+        }        
+      }
+
+      .comentarios-profesor {
+        color: var(--Black, #000);
+        font-family: Nunito;
+        font-size: 1rem;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+      }
+
+    }
+  }
+
 }
 
 @media (min-width: 300px) and (max-width: 800px) {

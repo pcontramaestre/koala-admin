@@ -1,0 +1,23 @@
+uuid: 1b3415dd-a27f-4dd3-8dce-ee56f414e8c8
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_marcar_clase_como_finaliza
+    - node.type.asignar_clase_a_estudiante
+id: node.asignar_clase_a_estudiante.field_marcar_clase_como_finaliza
+field_name: field_marcar_clase_como_finaliza
+entity_type: node
+bundle: asignar_clase_a_estudiante
+label: 'Marcar clase como finalizada'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: Activado
+  off_label: Desactivado
+field_type: boolean

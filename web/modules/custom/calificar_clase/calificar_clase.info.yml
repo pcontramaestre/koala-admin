@@ -1,0 +1,5 @@
+name: 'Alterar formulario Asignar clase a estudiante'
+type: module
+description: 'Modulo de Drupal para alterar el formulario Asignar clase a estudiante y calificar clase con sus logros'
+core_version_requirement: ^9
+package: Custom

@@ -49,8 +49,8 @@ configuration:
       step: complete
       weight: 6
       message:
-        value: "Your order number is [commerce_order:order_number].\r\nYou can view your order on your account page when logged in."
-        format: plain_text
+        value: '<div class="text-center"><h3 class="text-align-center">[commerce_order:order_items:0:entity]</h3></div><p>&nbsp;</p><p>¡Muchas gracias<strong> [commerce_order:uid:entity:field_nombre_del_acudiente] </strong>por la adquisición de un plan<strong> [commerce_order:order_items:0:entity]</strong>! Estamos encantados de que te hayas unido a nuestra comunidad y estamos seguros de que te encantará todo lo que tenemos para ofrecerte.</p><p>Como suscriptor, tendrás acceso a contenido exclusivo, descuentos especiales y muchas otras ventajas. Estamos constantemente agregando nuevos materiales y actualizando nuestro contenido para asegurarnos de que siempre tengas algo nuevo y emocionante para disfrutar.</p><p>Recuerda que tu satisfacción es nuestra máxima prioridad. Si tienes alguna pregunta, sugerencia o simplemente quieres decir hola, no dudes en contactarnos en cualquier momento. Estamos aquí para ayudarte y asegurarnos de que tengas la mejor experiencia posible con Hola Koala.</p><p>Una vez más, gracias por elegirnos y esperamos que disfrutes de todo lo que este plan de suscripción tiene para ofrecerte. ¡Bienvenido a la comunidad de Hola Koala!</p><p>Un abrazo y hasta pronto, El equipo de Hola Koala</p><div class="opciones d-flex"><a href="[commerce_order:url]" target="blank">Ver factura</a> <a href="/padres">Ir a mi perfil</a></div>'
+        format: full_html
     completion_register:
       step: complete
       weight: 7

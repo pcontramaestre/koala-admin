@@ -18,6 +18,7 @@ dependencies:
     - config_pages
     - content_moderation
     - date_recur_modular
+    - entity_print
     - field_permissions
     - fivestar
     - form_mode_control
@@ -50,6 +51,7 @@ permissions:
   - 'edit own crear_hijos content'
   - 'edit own field_hora_clase'
   - 'edit own koala_ninos content'
+  - 'entity print access type commerce_product'
   - 'manage default commerce_order_item'
   - 'manage own commerce_payment_method'
   - 'manage recurring_product_variation commerce_order_item'

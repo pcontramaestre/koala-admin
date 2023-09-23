@@ -22,36 +22,13 @@ third_party_settings:
         layout_settings:
           label: ''
         components:
-          265dc79a-f866-42d4-b820-97ce1cf7147a:
-            uuid: 265dc79a-f866-42d4-b820-97ce1cf7147a
-            region: content
-            configuration:
-              id: 'field_block:commerce_product:clases:title'
-              label: Título
-              label_display: '0'
-              provider: layout_builder
-              context_mapping:
-                entity: layout_builder.entity
-                view_mode: view_mode
-              formatter:
-                type: string
-                label: hidden
-                settings:
-                  link_to_entity: false
-                third_party_settings:
-                  field_formatter_class:
-                    class: ''
-            weight: 1
-            additional:
-              layout_builder_styles_style:
-                separacion_superior_mt_5: 0
           8c74a195-97a8-4f55-badb-da825f128959:
             uuid: 8c74a195-97a8-4f55-badb-da825f128959
             region: content
             configuration:
               id: 'field_block:commerce_product:clases:body'
               label: Descripción
-              label_display: visible
+              label_display: '0'
               provider: layout_builder
               context_mapping:
                 entity: layout_builder.entity
@@ -98,7 +75,7 @@ third_party_settings:
             region: content
             configuration:
               id: 'field_block:commerce_product_variation:4_semanas_mes:price'
-              label: Precio
+              label: 'Precio del plan seleccionado:'
               label_display: '0'
               provider: layout_builder
               context_mapping:
@@ -106,7 +83,7 @@ third_party_settings:
                 view_mode: view_mode
               formatter:
                 type: commerce_price_default
-                label: above
+                label: inline
                 settings:
                   strip_trailing_zeroes: false
                   currency_display: symbol
@@ -143,10 +120,33 @@ third_party_settings:
                 third_party_settings:
                   field_formatter_class:
                     class: ''
-            weight: 0
+            weight: 1
             additional:
               layout_builder_styles_style:
                 separacion_superior_mt_5: separacion_superior_mt_5
+          265dc79a-f866-42d4-b820-97ce1cf7147a:
+            uuid: 265dc79a-f866-42d4-b820-97ce1cf7147a
+            region: content
+            configuration:
+              id: 'field_block:commerce_product:clases:title'
+              label: Título
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: string
+                label: hidden
+                settings:
+                  link_to_entity: false
+                third_party_settings:
+                  field_formatter_class:
+                    class: ''
+            weight: 0
+            additional:
+              layout_builder_styles_style:
+                separacion_superior_mt_5: 0
         third_party_settings: {  }
 id: commerce_product.clases.default
 targetEntityType: commerce_product

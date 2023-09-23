@@ -6,6 +6,8 @@ dependencies:
     - field.field.node.asignar_clase_a_estudiante.field_clase_a_asignar
     - field.field.node.asignar_clase_a_estudiante.field_el_nino_no_asistio_a_la_cl
     - field.field.node.asignar_clase_a_estudiante.field_logros_cumplidos
+    - field.field.node.asignar_clase_a_estudiante.field_logros_cumplidos2
+    - field.field.node.asignar_clase_a_estudiante.field_marcar_clase_como_finaliza
     - field.field.node.asignar_clase_a_estudiante.field_mensaje_para_el_nino
     - field.field.node.asignar_clase_a_estudiante.field_observaciones_del_profesor
     - field.field.node.asignar_clase_a_estudiante.field_seleccionar_clase_agendada
@@ -46,7 +48,7 @@ mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 4
+    weight: 3
     region: first
     settings: {  }
     third_party_settings: {  }
@@ -64,14 +66,21 @@ content:
       display_label: true
     third_party_settings: {  }
   field_logros_cumplidos:
-    type: options_select
-    weight: 11
+    type: options_buttons
+    weight: 10
     region: second
     settings: {  }
     third_party_settings: {  }
+  field_marcar_clase_como_finaliza:
+    type: boolean_checkbox
+    weight: 13
+    region: bottom
+    settings:
+      display_label: true
+    third_party_settings: {  }
   field_mensaje_para_el_nino:
     type: string_textarea
-    weight: 12
+    weight: 11
     region: bottom
     settings:
       rows: 5
@@ -79,7 +88,7 @@ content:
     third_party_settings: {  }
   field_observaciones_del_profesor:
     type: string_textarea
-    weight: 13
+    weight: 12
     region: bottom
     settings:
       rows: 5
@@ -100,33 +109,33 @@ content:
     third_party_settings: {  }
   moderation_state:
     type: moderation_state_default
-    weight: 9
+    weight: 8
     region: first
     settings: {  }
     third_party_settings: {  }
   path:
     type: path
-    weight: 7
+    weight: 6
     region: first
     settings: {  }
     third_party_settings: {  }
   promote:
     type: boolean_checkbox
-    weight: 5
+    weight: 4
     region: first
     settings:
       display_label: true
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 10
+    weight: 9
     region: first
     settings:
       display_label: true
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
-    weight: 6
+    weight: 5
     region: first
     settings:
       display_label: true
@@ -150,8 +159,9 @@ content:
       placeholder: ''
     third_party_settings: {  }
   url_redirects:
-    weight: 8
+    weight: 7
     region: first
     settings: {  }
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  field_logros_cumplidos2: true

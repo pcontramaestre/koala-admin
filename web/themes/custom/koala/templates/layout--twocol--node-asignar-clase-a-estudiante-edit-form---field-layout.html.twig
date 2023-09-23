@@ -1,0 +1,63 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a two-column layout.
+ *
+ * Available variables:
+ * - in_preview: Whether the plugin is being rendered in preview mode.
+ * - content: The content for this layout.
+ * - attributes: HTML attributes for the layout <div>.
+ *
+ * @ingroup themeable
+ */
+#}
+{%
+  set classes = [
+    'layout',
+    'layout--twocol',
+  ]
+%}
+{% if content %}
+
+<div style="width: 100%;margin-top:2rem;margin-bottom:2rem; height: 64px; padding: 16px; background: #FFC2C4; border-radius: 16px; flex-direction: column; justify-content: center; align-items: flex-start; gap: 16px; display: inline-flex">
+  <div style="align-self: stretch; justify-content: flex-start; align-items: center; gap: 16px; display: inline-flex;margin-left: 1rem;">
+    <div style="flex: 1 1 0; height: 22px; justify-content: flex-start; align-items: flex-start; gap: 8px; display: flex">
+      <div style="flex: 1 1 0; color: black; font-size: 16px; font-family: Nunito; font-weight: 700; word-wrap: break-word">Finaliza la calificación de tu Koala para que la clase se cargue a tu facturación</div>
+      <div style="justify-content: flex-start; align-items: center; gap: 4px; display: flex">
+        <div style="color: black; font-size: 16px; font-family: Nunito; font-weight: 700; text-decoration: underline; word-wrap: break-word">Entendido</div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+  <div class="titulo-pagina text-center">Mi Koala</div>
+  <div{{ attributes.addClass(classes) }}>
+    {% if content.top %}
+      <div {{ region_attributes.top.addClass('layout__region', 'layout__region--top') }}>
+        {{ content.top }}
+      </div>
+    {% endif %}
+
+    {% if content.first %}
+      <div {{ region_attributes.first.addClass('layout__region', 'layout__region--first') }}>
+        {{ content.first }}
+        
+        {{ drupal_view('bloques_evaluaciones_de_estudiantes', 'block_1') }}
+
+      </div>
+    {% endif %}
+
+    {% if content.second %}
+      <div {{ region_attributes.second.addClass('layout__region', 'layout__region--second') }}>
+        Selecciona los logros cumplidos por el Koala en la clase de hoy
+        {{ content.second }}
+      </div>
+    {% endif %}
+
+    {% if content.bottom %}
+      <div {{ region_attributes.bottom.addClass('layout__region', 'layout__region--bottom') }}>
+        {{ content.bottom }}
+      </div>
+    {% endif %}
+  </div>
+{% endif %}

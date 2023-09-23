@@ -1,0 +1,23 @@
+uuid: dc76490c-6f94-4ce0-b454-a68fe1231afb
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_marcar_clase_como_finaliza
+    - node.type.agendar_clase
+id: node.agendar_clase.field_marcar_clase_como_finaliza
+field_name: field_marcar_clase_como_finaliza
+entity_type: node
+bundle: agendar_clase
+label: 'Marcar clase como finalizada'
+description: 'Selecciona esta opción para que la clase quede finalizada '
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: Activado
+  off_label: Desactivado
+field_type: boolean

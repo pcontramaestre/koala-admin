@@ -14,6 +14,7 @@ dependencies:
     - field.field.node.agendar_clase.field_hora_cita_oculta
     - field.field.node.agendar_clase.field_hora_clase
     - field.field.node.agendar_clase.field_id_texto_alumno
+    - field.field.node.agendar_clase.field_marcar_clase_como_finaliza
     - field.field.node.agendar_clase.field_nombre_del_nino_a
     - field.field.node.agendar_clase.field_otra_hora
     - field.field.node.agendar_clase.field_sexo_n
@@ -152,6 +153,7 @@ hidden:
   field_clase_asignada: true
   field_he_leido_y_estoy_de_acuerd: true
   field_id_texto_alumno: true
+  field_marcar_clase_como_finaliza: true
   field_otra_hora: true
   langcode: true
   path: true

@@ -360,6 +360,58 @@
       }
     }
   }
+
+  //TABs
+  .quicktabs-tabs.list-group {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    
+    > li {
+      border: unset;
+      background: unset;
+
+      a {
+        text-align: center;
+        color: #000;
+        text-decoration: none;
+        background: unset;
+        border: unset;
+        border-bottom: 2px solid #e6f1f1;
+        padding: 1rem 2rem 0.5rem 2rem;
+        font-weight: 700;
+      }
+
+      &.active {
+        a {
+          color: #ff6669;
+        border-bottom: 2px solid black;
+        font-weight: 700;
+        }
+      }
+
+    }
+  }
+
+  .quicktabs-main {
+    .quicktabs-tabpage {
+      border: unset;
+      margin-top: 1rem;
+    }
+  }
+
+  .view-commerce-user-orders {
+    .table-responsive {
+      max-width: 1024px;
+      margin: 0 auto;
+      margin-top: 1rem;
+      border-radius: 20px;
+      padding: 0rem;
+      border: 1px solid var(--Grey-K200, #BECACA);
+    }
+  }
 }
 
 .path-suscripciones {

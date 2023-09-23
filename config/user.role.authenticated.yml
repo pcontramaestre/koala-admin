@@ -13,6 +13,7 @@ dependencies:
     - commerce_recurring
     - contact
     - date_recur_modular
+    - entity_print
     - field_permissions
     - filter
     - fivestar
@@ -38,6 +39,24 @@ permissions:
   - 'cancel own commerce_subscription'
   - 'create commerce_subscription'
   - 'date_recur_modular use sierra form'
+  - 'entity print access bundle 1_clase_por_semana_4_p'
+  - 'entity print access bundle 4_semanas'
+  - 'entity print access bundle 4_semanas_mes'
+  - 'entity print access bundle clases_12_semanas_3_me'
+  - 'entity print access bundle clases_24_semanas_3_me'
+  - 'entity print access bundle default'
+  - 'entity print access bundle payment_default'
+  - 'entity print access bundle product_variation'
+  - 'entity print access bundle suscripcion_de_12_semanas'
+  - 'entity print access bundle suscripcion_de_24_semanas_'
+  - 'entity print access bundle suscripciones'
+  - 'entity print access type commerce_order'
+  - 'entity print access type commerce_order_item'
+  - 'entity print access type commerce_payment'
+  - 'entity print access type commerce_payment_method'
+  - 'entity print access type commerce_product'
+  - 'entity print access type commerce_product_variation'
+  - 'entity print access type node'
   - 'manage own commerce_payment_method'
   - 'post comments'
   - 'rate content'

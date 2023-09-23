@@ -13,6 +13,7 @@ dependencies:
     - field.field.node.agendar_clase.field_hora_cita_oculta
     - field.field.node.agendar_clase.field_hora_clase
     - field.field.node.agendar_clase.field_id_texto_alumno
+    - field.field.node.agendar_clase.field_marcar_clase_como_finaliza
     - field.field.node.agendar_clase.field_nombre_del_nino_a
     - field.field.node.agendar_clase.field_otra_hora
     - field.field.node.agendar_clase.field_sexo_n
@@ -138,6 +139,16 @@ content:
     third_party_settings: {  }
     weight: 116
     region: content
+  field_marcar_clase_como_finaliza:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 118
+    region: content
   field_nombre_del_nino_a:
     type: string
     label: above
@@ -166,4 +177,7 @@ content:
     weight: 100
     region: content
 hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
   langcode: true
