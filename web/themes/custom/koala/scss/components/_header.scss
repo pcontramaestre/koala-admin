@@ -26,6 +26,7 @@ body #main-wrapper {
         display: flex;
         align-items: center;
         #block-profesor {
+          width: 73%;
           .nav {
             gap: 30px;
             margin-left: 2rem;
@@ -56,8 +57,6 @@ body #main-wrapper {
 
       #block-koala-account-menu {
         .nav {
-          gap: 30px;
-
           .nav-link {
             color: black !important;
             font-size: 1rem;
