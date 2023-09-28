@@ -1,0 +1,167 @@
+uuid: 37784b55-44f7-4dff-bcc0-1f60459c6553
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.field.node.facturacion_profesor.field_asignar_profesor
+    - field.field.node.facturacion_profesor.field_clases_impartidas
+    - field.field.node.facturacion_profesor.field_escribe_el_numero_de_tu_fa
+    - field.field.node.facturacion_profesor.field_fecha_de_la_clase
+    - field.field.node.facturacion_profesor.field_inasistencias_del_estudian
+    - field.field.node.facturacion_profesor.field_inasistencias_del_profesor
+    - field.field.node.facturacion_profesor.field_mes_de_la_clase
+    - field.field.node.facturacion_profesor.field_sube_o_arrastra_tu_factura
+    - field.field.node.facturacion_profesor.field_total_horas_a_pagar
+    - node.type.facturacion_profesor
+  module:
+    - content_moderation
+    - datetime
+    - field_layout
+    - file
+    - layout_discovery
+    - path
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+id: node.facturacion_profesor.default
+targetEntityType: node
+bundle: facturacion_profesor
+mode: default
+content:
+  created:
+    type: datetime_timestamp
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_asignar_profesor:
+    type: entity_reference_autocomplete
+    weight: 121
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_clases_impartidas:
+    type: number
+    weight: 124
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_escribe_el_numero_de_tu_fa:
+    type: string_textfield
+    weight: 127
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_fecha_de_la_clase:
+    type: datetime_default
+    weight: 122
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_inasistencias_del_estudian:
+    type: number
+    weight: 125
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_inasistencias_del_profesor:
+    type: number
+    weight: 126
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_mes_de_la_clase:
+    type: options_select
+    weight: 123
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_sube_o_arrastra_tu_factura:
+    type: file_generic
+    weight: 128
+    region: content
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+  field_total_horas_a_pagar:
+    type: number
+    weight: 129
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  moderation_state:
+    type: moderation_state_default
+    weight: 100
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 30
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  promote:
+    type: boolean_checkbox
+    weight: 15
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 120
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  sticky:
+    type: boolean_checkbox
+    weight: 16
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: -5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 5
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  url_redirects:
+    weight: 50
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

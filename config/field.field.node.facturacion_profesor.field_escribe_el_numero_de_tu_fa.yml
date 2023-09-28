@@ -1,0 +1,19 @@
+uuid: d1625743-d581-459f-8311-fe90a1457b00
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_escribe_el_numero_de_tu_fa
+    - node.type.facturacion_profesor
+id: node.facturacion_profesor.field_escribe_el_numero_de_tu_fa
+field_name: field_escribe_el_numero_de_tu_fa
+entity_type: node
+bundle: facturacion_profesor
+label: 'Escribe el número de tu factura actual'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

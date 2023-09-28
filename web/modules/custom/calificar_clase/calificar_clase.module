@@ -85,8 +85,9 @@ function callback_submit_asignar_clase_a_estudiante_submit(&$form, FormStateInte
     $node = Node::load(reset($nids));
     //dump($node);
     // obtener los valores numericos de los campos field_clases_restantes, field_clases_usadas    
-    $field_clases_restantes = $node->get('field_clases_restantes')->getValue();
-    $field_clases_restantes = $field_clases_restantes[0]['value'];
+    // $field_clases_restantes = $node->get('field_clases_restantes')->getValue();
+    // $field_clases_restantes = $field_clases_restantes[0]['value'];
+    $field_clases_restantes = 0;
     //dump($field_clases_restantes);
     if ($field_clases_restantes > 0) {
       $field_clases_usadas = $node->get('field_clases_usadas')->getValue();

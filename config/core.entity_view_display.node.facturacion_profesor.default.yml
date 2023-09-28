@@ -1,0 +1,111 @@
+uuid: ba2ade85-e44b-4c3d-8c4b-d5618b63c79a
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.field.node.facturacion_profesor.field_asignar_profesor
+    - field.field.node.facturacion_profesor.field_clases_impartidas
+    - field.field.node.facturacion_profesor.field_escribe_el_numero_de_tu_fa
+    - field.field.node.facturacion_profesor.field_fecha_de_la_clase
+    - field.field.node.facturacion_profesor.field_inasistencias_del_estudian
+    - field.field.node.facturacion_profesor.field_inasistencias_del_profesor
+    - field.field.node.facturacion_profesor.field_mes_de_la_clase
+    - field.field.node.facturacion_profesor.field_sube_o_arrastra_tu_factura
+    - field.field.node.facturacion_profesor.field_total_horas_a_pagar
+    - node.type.facturacion_profesor
+  module:
+    - datetime
+    - file
+    - options
+    - user
+id: node.facturacion_profesor.default
+targetEntityType: node
+bundle: facturacion_profesor
+mode: default
+content:
+  field_asignar_profesor:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_clases_impartidas:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  field_escribe_el_numero_de_tu_fa:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 107
+    region: content
+  field_fecha_de_la_clase:
+    type: datetime_default
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: medium
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  field_inasistencias_del_estudian:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 105
+    region: content
+  field_inasistencias_del_profesor:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 106
+    region: content
+  field_mes_de_la_clase:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_sube_o_arrastra_tu_factura:
+    type: file_default
+    label: above
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    weight: 108
+    region: content
+  field_total_horas_a_pagar:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 109
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  langcode: true

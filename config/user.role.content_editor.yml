@@ -15,6 +15,7 @@ dependencies:
     - node.type.agendar_clase
     - node.type.article
     - node.type.crear_hijos
+    - node.type.facturacion_profesor
     - node.type.horarios_de_trabajo
     - node.type.horarios_profesores
     - node.type.page
@@ -86,6 +87,7 @@ permissions:
   - 'create content translations'
   - 'create crear_hijos content'
   - 'create document media'
+  - 'create facturacion_profesor content'
   - 'create field_apodo'
   - 'create field_avatar'
   - 'create field_hora_clase'
@@ -116,6 +118,7 @@ permissions:
   - 'delete any remote_video media'
   - 'delete any video media'
   - 'delete article revisions'
+  - 'delete facturacion_profesor revisions'
   - 'delete horarios_de_trabajo revisions'
   - 'delete horarios_profesores revisions'
   - 'delete media'
@@ -123,6 +126,7 @@ permissions:
   - 'delete own audio media'
   - 'delete own avatares_profesores media'
   - 'delete own document media'
+  - 'delete own facturacion_profesor content'
   - 'delete own horarios_de_trabajo content'
   - 'delete own horarios_profesores content'
   - 'delete own image media'
@@ -138,6 +142,7 @@ permissions:
   - 'edit any avatares_profesores media'
   - 'edit any crear_hijos content'
   - 'edit any document media'
+  - 'edit any facturacion_profesor content'
   - 'edit any horarios_de_trabajo content'
   - 'edit any horarios_profesores content'
   - 'edit any image media'
@@ -157,6 +162,7 @@ permissions:
   - 'edit own avatares_profesores media'
   - 'edit own comments'
   - 'edit own document media'
+  - 'edit own facturacion_profesor content'
   - 'edit own field_apodo'
   - 'edit own field_avatar'
   - 'edit own field_hora_clase'
@@ -218,6 +224,7 @@ permissions:
   - 'view any agendar_clase content'
   - 'view any article content'
   - 'view any crear_hijos content'
+  - 'view any facturacion_profesor content'
   - 'view any horarios_de_trabajo content'
   - 'view any horarios_profesores content'
   - 'view any mundos content'
@@ -240,6 +247,7 @@ permissions:
   - 'view own agendar_clase content'
   - 'view own article content'
   - 'view own crear_hijos content'
+  - 'view own facturacion_profesor content'
   - 'view own field_apodo'
   - 'view own field_avatar'
   - 'view own field_hora_clase'

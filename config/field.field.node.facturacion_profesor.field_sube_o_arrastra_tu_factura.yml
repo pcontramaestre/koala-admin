@@ -1,0 +1,46 @@
+uuid: 388e24f9-e39b-413c-8562-b87e5566416f
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_sube_o_arrastra_tu_factura
+    - node.type.facturacion_profesor
+  module:
+    - file
+    - filefield_paths
+third_party_settings:
+  filefield_paths:
+    enabled: true
+    file_path:
+      value: '[date:custom:Y]-[date:custom:m]'
+      options:
+        slashes: true
+        pathauto: true
+        transliterate: true
+    file_name:
+      value: '[file:ffp-name-only-original].[file:ffp-extension-original]'
+      options:
+        slashes: true
+        pathauto: true
+        transliterate: true
+    redirect: false
+    retroactive_update: false
+    active_updating: false
+id: node.facturacion_profesor.field_sube_o_arrastra_tu_factura
+field_name: field_sube_o_arrastra_tu_factura
+entity_type: node
+bundle: facturacion_profesor
+label: 'Sube o arrastra tu factura'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: pdf
+  max_filesize: '1 MB'
+  description_field: false
+field_type: file

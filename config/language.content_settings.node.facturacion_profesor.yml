@@ -1,0 +1,11 @@
+uuid: cf4c0e06-9026-4967-ba89-d8044b5b4c77
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.facturacion_profesor
+id: node.facturacion_profesor
+target_entity_type_id: node
+target_bundle: facturacion_profesor
+default_langcode: site_default
+language_alterable: false

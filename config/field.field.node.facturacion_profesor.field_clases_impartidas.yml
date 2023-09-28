@@ -1,0 +1,23 @@
+uuid: 1eea3ad7-8994-4400-b1ee-c12b739565c4
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_clases_impartidas
+    - node.type.facturacion_profesor
+id: node.facturacion_profesor.field_clases_impartidas
+field_name: field_clases_impartidas
+entity_type: node
+bundle: facturacion_profesor
+label: 'Clases impartidas'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: 0
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

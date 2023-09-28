@@ -1,0 +1,18 @@
+uuid: 83ac6eb6-bc89-49bc-b998-84f28dbd27b4
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.facturacion_profesor
+id: node.facturacion_profesor.title
+field_name: title
+entity_type: node
+bundle: facturacion_profesor
+label: 'Título de referencia'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
