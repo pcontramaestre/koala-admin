@@ -20,6 +20,7 @@ dependencies:
     - node.type.horarios_profesores
     - node.type.page
     - node.type.profesores
+    - node.type.suscripciones
     - taxonomy.vocabulary.avatar_profesor
     - taxonomy.vocabulary.tags
     - workflows.workflow.asignar_profesor
@@ -148,6 +149,7 @@ permissions:
   - 'edit any image media'
   - 'edit any profesores content'
   - 'edit any remote_video media'
+  - 'edit any suscripciones content'
   - 'edit any video media'
   - 'edit config_pages entity'
   - 'edit field_apodo'
@@ -196,6 +198,7 @@ permissions:
   - 'use  The form mode agendando_clase linked to  node entity( agendar_clase )'
   - 'use  The form mode asignar_profesor linked to  node entity( agendar_clase )'
   - 'use  The form mode default linked to  node entity( horarios_de_trabajo )'
+  - 'use  The form mode default linked to  node entity( suscripciones )'
   - 'use  The form mode editar_horarios linked to  node entity( horarios_de_trabajo )'
   - 'use admin toolbar search'
   - 'use asignar_profesor transition asignacion_de_profesor'

@@ -21,6 +21,7 @@ dependencies:
     - smart_date
     - user
     - views_bootstrap
+    - views_custom_cache_tag
 id: horarios_de_trabajo_profesor
 label: 'Horarios de trabajo profesor'
 module: views
@@ -1709,12 +1710,21 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
+      pager:
+        type: some
+        options:
+          offset: 0
+          items_per_page: 60
       access:
         type: role
         options:
           role:
             administrator: administrator
             profesor: profesor
+      cache:
+        type: custom_tag
+        options:
+          custom_tag: "{{ arguments.field_profesor_target_id }}\r\n{{ raw_arguments.field_profesor_target_id }} "
       filters:
         status:
           id: status
@@ -1823,12 +1833,16 @@ display:
         options: {  }
       defaults:
         access: false
+        cache: false
+        use_ajax: false
+        pager: false
         style: false
         row: false
         fields: false
         filters: false
         filter_groups: false
         footer: false
+      use_ajax: true
       footer:
         area_text_custom:
           id: area_text_custom

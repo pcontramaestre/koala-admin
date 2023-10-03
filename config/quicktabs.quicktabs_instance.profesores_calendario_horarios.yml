@@ -40,26 +40,3 @@ configuration_data:
       qtabs_content:
         options:
           machine_name: calendario_agendar
-  -
-    title: 'Programar mi agenda'
-    weight: 0
-    type: view_content
-    content:
-      view_content:
-        options:
-          vid: horarios_de_trabajo_profesor
-          display: block_3
-          args: ''
-      node_content:
-        options:
-          nid: ''
-          view_mode: full
-          hide_title: true
-      block_content:
-        options:
-          bid: 'inline_block:basic'
-          block_title: ''
-          display_title: false
-      qtabs_content:
-        options:
-          machine_name: calendario_agendar
