@@ -102,6 +102,7 @@ module:
   form_mode_manager: 0
   form_mode_manager_theme_switcher: 0
   formatter_suite: 0
+  formblock: 0
   fpa: 0
   fullcalendar_view: 0
   gdoc_field: 0
