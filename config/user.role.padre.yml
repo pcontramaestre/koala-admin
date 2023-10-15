@@ -7,6 +7,7 @@ dependencies:
     - node.type.asignar_clase_a_estudiante
     - node.type.crear_hijos
     - node.type.koala_ninos
+    - node.type.suscripciones
     - workflows.workflow.asignar_profesor
   module:
     - commerce_order
@@ -41,16 +42,19 @@ permissions:
   - 'create default commerce_order'
   - 'create field_hora_clase'
   - 'create koala_ninos content'
+  - 'create suscripciones content'
   - 'date_recur_modular use sierra form'
   - 'delete own agendar_clase content'
   - 'delete own asignar_clase_a_estudiante content'
   - 'delete own crear_hijos content'
+  - 'delete own suscripciones content'
   - 'edit field_hora_clase'
   - 'edit own agendar_clase content'
   - 'edit own asignar_clase_a_estudiante content'
   - 'edit own crear_hijos content'
   - 'edit own field_hora_clase'
   - 'edit own koala_ninos content'
+  - 'edit own suscripciones content'
   - 'entity print access type commerce_product'
   - 'manage default commerce_order_item'
   - 'manage own commerce_payment_method'
@@ -65,6 +69,7 @@ permissions:
   - 'use  The form mode agendando_clase linked to  node entity( agendar_clase )'
   - 'use  The form mode default linked to  commerce_order entity( default )'
   - 'use  The form mode default linked to  commerce_order_item entity( default )'
+  - 'use  The form mode default linked to  node entity( suscripciones )'
   - 'use asignar_profesor transition publish'
   - 'use node.agendando_clase form mode'
   - 'use node.agendar_clases form mode'
