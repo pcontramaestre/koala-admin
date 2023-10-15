@@ -22,6 +22,81 @@ h2 {
   max-width: 1240px;
 }
 
+.toast-container {
+  [role="status"] {
+    background-color: #f5f8d8;
+    border-radius: 24px;
+    .toast-header {
+      background-color: #f5f8d8;
+      color: black;
+      border: none;
+      border-top: 2px solid #869021;
+      border-left: 2px solid #869021;
+      border-right: 2px solid #282921;
+      border-top-right-radius: 24px;
+      border-top-left-radius: 24px;
+      &:before {
+        content: "";
+        background-image: url(../images/error-message.png);
+        display: block;
+        width: 30px;
+        height: 30px;
+        background-size: contain;
+        margin-right: 1rem;
+      }
+      .bd-placeholder-img {
+        display: none;
+      }
+    }
+    .toast-body {
+      color: black;
+      background-color: #f5f8d8;
+      border-bottom: 2px solid #869021;
+      border-left: 2px solid #869021;
+      border-right: 2px solid #869021;
+      border-bottom-right-radius: 24px;
+      border-bottom-left-radius: 24px;
+    }
+  }
+}
+.toast-container {
+  [role="alert"] {
+    background-color: #FFC2C4;
+    border-radius: 24px;
+    .toast-header {
+      background-color: #FFC2C4;
+      color: black;
+      border: none;
+      border-top: 2px solid #FF6669;
+      border-left: 2px solid #FF6669;
+      border-right: 2px solid #FF6669;
+      border-top-right-radius: 24px;
+      border-top-left-radius: 24px;
+      &:before {
+        content: "";
+        background-image: url(../images/error-message.png);
+        display: block;
+        width: 30px;
+        height: 30px;
+        background-size: contain;
+        margin-right: 1rem;
+      }
+      .bd-placeholder-img {
+        display: none;
+      }
+    }
+    .toast-body {
+      color: black;
+      background-color: #FFC2C4;
+      border-bottom: 2px solid #FF6669;
+      border-left: 2px solid #FF6669;
+      border-right: 2px solid #FF6669;
+      border-bottom-right-radius: 24px;
+      border-bottom-left-radius: 24px;
+    }
+  }
+}
+
 #header {
   #navbar-main {
     background: white !important;
@@ -325,7 +400,7 @@ h2 {
   .container-sm,
   .container-xl {
     max-width: 1400px !important;
-    width: 90%!important;
+    width: 90% !important;
   }
 }
 
