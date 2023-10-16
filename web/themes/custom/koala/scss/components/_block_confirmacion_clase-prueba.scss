@@ -1,7 +1,7 @@
 body.node--type-agendar-clase {
-  background-image : url('../images/background.jpg');
+  background-image: url("../images/background.jpg");
   background-repeat: no-repeat;
-  background-size  : cover;
+  background-size: cover;
   #block-koala-content {
     .node--type-agendar-clase {
       margin-top: 3rem;
@@ -10,16 +10,17 @@ body.node--type-agendar-clase {
         .superior {
           h2 {
             font-weight: 700;
-            margin-top : 0.7rem;
+            margin-top: 0.7rem;
           }
         }
 
         .cuadro {
-          width        : 70%;
-          margin       : 0 auto;
+          width: 70%;
+          margin: 0 auto;
           border-radius: 15px;
-          padding      : 1rem 1rem 1.5rem 1rem;
-          box-shadow   : 0px 2px 10px rgba(67, 67, 67, 0.15),
+          position: relative;
+          padding: 1rem 1rem 3.5rem 1rem;
+          box-shadow: 0px 2px 10px rgba(67, 67, 67, 0.15),
             0px 5px 20px rgba(74, 74, 74, 0.08),
             0px 10px 80px rgba(74, 74, 74, 0.02);
           margin-top: 1rem;
@@ -30,65 +31,87 @@ body.node--type-agendar-clase {
 
             h3 {
               font-weight: 700;
-              font-size  : 1.3rem;
+              font-size: 1.3rem;
             }
           }
 
           .col-md-12 {
             h4 {
-              font-size : 1rem;
+              font-size: 1rem;
               margin-top: 0.5rem;
             }
 
             p {
-              font-size   : 1.6rem;
-              font-weight : 700;
-              display     : flex;
-              float       : left;
+              font-size: 1.6rem;
+              font-weight: 700;
+              display: flex;
+              float: left;
               margin-right: 0.5rem;
             }
 
             .field--name- {
               .field__label {
                 display: none;
-
               }
 
               .field--type- {
-                font-size  : 1.6rem;
+                font-size: 1.6rem;
                 font-weight: 700;
               }
             }
 
             a {
-              background-color: $RedK100;
-              border-radius   : 25px;
-              padding         : 0.5rem 3rem;
-              text-decoration : none;
-              color           : black;
-              font-weight     : 500;
+              background: #2ff7ee;
+              border: 2px solid #297e88;
+              border-radius: 28px;
+              color: black;
+              padding: 0.3rem 1rem 0.3rem 1rem;
+              text-decoration: none;
+              font-weight: 700;
+              display: flex;
+              justify-content: center;
+              &:hover{
+                background-color: #297e88;
+                color: white;
+              }
             }
+          }
+          .col-md-12:nth-child(4) {
+            position: absolute;
+            top: 10vw;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            width: 40%;
           }
         }
       }
 
+      .ir-a-cuenta:nth-child(2) {
+        text-align: end;
+      }
+      .ir-a-cuenta:nth-child(3) {
+        padding-left: 1rem;
+      }
+
       .ir-a-cuenta {
-        height     : 6rem;
+        height: 6rem;
         padding-top: 2rem;
-        text-align : center;
+        display: inline-block;
+        width: 49%;
 
         .boton-ir-a-cuenta {
-          background     : #FFFFFF;
-          border         : 2px solid #297E88;
-          border-radius  : 28px;
-          color          : #297E88 !important;
-          padding        : 0.3rem 1rem 0.3rem 1rem;
+          background: #ffffff;
+          border: 2px solid #297e88;
+          border-radius: 28px;
+          color: #297e88 !important;
+          padding: 0.3rem 1rem 0.3rem 1rem;
           text-decoration: none;
-          font-weight    : 700;
+          font-weight: 700;
 
           &:hover {
-            background-color: #297E88;
-            color           : white !important;
+            background-color: #297e88;
+            color: white !important;
           }
         }
       }
@@ -98,7 +121,7 @@ body.node--type-agendar-clase {
 
 @media only screen and (max-width: 700px) and (min-width: 340px) {
   #block-koala-content .node--type-agendar-clase .node__content .cuadro {
-    width  : 90%;
+    width: 90%;
     padding: 1rem 0rem 1.5rem 0rem;
 
     .col-md-12 {
