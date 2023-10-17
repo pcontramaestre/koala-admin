@@ -1,18 +1,155 @@
 .path-facturacion {
-
+  .section {
+    #block-koala-content {
+      .tab-content {
+        #nav-profile {
+          .view-resumen-de-pagos {
+            .table-responsive {
+              margin-bottom: 3rem!important;
+              margin: 0 auto;
+              margin-top: 1rem;
+              border-top-left-radius: 20px;
+              border-top-right-radius: 20px;
+              padding: 0rem;
+              border-right: 1px solid var(--Grey-K200, #becaca);
+              border-left: 1px solid var(--Grey-K200, #becaca);
+              border-top: 1px solid var(--Grey-K200, #becaca);
+              table {
+                margin-bottom: 0rem;
+                thead {
+                  background-color: #e6f1f1;
+                  tr {
+                    vertical-align: middle;
+                    th {
+                      font-weight: 500;
+                      color: #727f7f;
+                      padding: 1rem;
+                      border-right: 1px solid #becaca;
+                      line-height: 18px;
+                    }
+                    #view-field-fecha-de-la-clase-table-column {
+                      width: 16%;
+                    }
+                    .views-field-field-sube-o-arrastra-tu-factura {
+                      width: 14%;
+                    }
+                  }
+                }
+                tbody {
+                  tr {
+                    --bs-table-striped-bg: white;
+                    td {
+                      border-right: 1px solid #becaca;
+                      padding: 1rem 0.5rem;
+                      vertical-align: middle;
+                    }
+                    .views-field-field-estado-de-la-factura {
+                      --bs-table-accent-bg: #ffe8e8;
+                      color: #ff6669;
+                      font-weight: 700;
+                    }
+                    .views-field-field-sube-o-arrastra-tu-factura {
+                      a {
+                        padding-left: 0px;
+                        font-weight: 700;
+                        color: black;
+                      }
+                    }
+                    .views-field-field-escribe-el-numero-de-tu-fa {
+                      font-weight: 700;
+                      color: #000;
+                      text-decoration: underline;
+                      padding-left: 1rem;
+                    }
+                    .views-field-field-fecha-de-la-clase,
+                    .views-field-title,
+                    .views-field-field-clases-impartidas,
+                    .views-field-field-inasistencias-del-estudian,
+                    .views-field-field-inasistencias-del-profesor {
+                      font-weight: 500;
+                      color: black;
+                    }
+                    .views-field-field-clases-impartidas,
+                    .views-field-field-inasistencias-del-estudian,
+                    .views-field-field-inasistencias-del-profesor {
+                      padding-left: 1rem;
+                    }
+                    .views-field-field-cuentas-virtuales {
+                      color: black;
+                      .double-field-first {
+                        font-weight: 700;
+                      }
+                      .double-field-second {
+                        text-decoration: underline;
+                        font-weight: 500;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      .block-views-blockfacturacion-profesor-block-1 {
+        h2 {
+          text-align: center;
+          font-size: 20px !important;
+          font-weight: 700;
+        }
+        .content {
+          .nav-tabs {
+            border-bottom: 2px solid #e6f1f1;
+            width: 30%;
+            margin: 0 auto;
+            border: none;
+            margin-bottom: 2rem;
+            .nav-link {
+              font-weight: 500;
+              color: black;
+              border: none;
+              width: 50%;
+            }
+            .nav-link.active {
+              color: #ff6669;
+              border-bottom: 2px solid black;
+              font-weight: 700;
+            }
+          }
+        }
+      }
+    }
+  }
   .vista-facturacion-formulario {
     display: flex;
     flex-direction: row;
     gap: 1rem;
 
     > .izquierda {
-      width: 25%;
+      width: 39%;
+    }
+    .derecha {
+      .form-actions {
+        position: absolute;
+        width: 15%;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        top: 630px;
+        .button--primary {
+          font-size: 20px;
+          font-weight: 700;
+          padding: 0.5rem 2rem;
+          &:hover {
+            background-color: #297e88 !important;
+            color: white !important;
+          }
+        }
+      }
     }
   }
 
   .view-facturacion-profesor {
- 
-
     .izquierda {
       max-width: 100%;
       flex: 0 100%;
@@ -21,7 +158,7 @@
       flex-direction: column;
       gap: 1rem;
       border-radius: 1.5rem;
-      background: var(--Grey-K100, #E6F1F1);
+      background: var(--Grey-K100, #e6f1f1);
 
       .view-header {
         text-align: center;
@@ -50,9 +187,11 @@
 
               select {
                 border-radius: 1rem;
-                border: 2px solid var(--White, #FFF);
-                background-color: #FFE8E8;
-                box-shadow: 0px 10px 80px 0px rgba(74, 74, 74, 0.02), 0px 5px 20px 0px rgba(74, 74, 74, 0.08), 0px 2px 10px 0px rgba(67, 67, 67, 0.15);
+                border: 2px solid var(--White, #fff);
+                background-color: #ffe8e8;
+                box-shadow: 0px 10px 80px 0px rgba(74, 74, 74, 0.02),
+                  0px 5px 20px 0px rgba(74, 74, 74, 0.08),
+                  0px 2px 10px 0px rgba(67, 67, 67, 0.15);
 
                 //Fuente
                 color: #000;
@@ -90,12 +229,12 @@
               align-items: center;
               align-self: stretch;
               border-radius: 0.5rem;
-              background: var(--White, #FFF);
+              background: var(--White, #fff);
               justify-content: space-between;
               color: #000;
 
               .texto {
-                font-size: 0.9rem;
+                font-size: 1rem;
                 font-weight: 500;
               }
 
@@ -109,14 +248,13 @@
               display: flex;
               padding: 0.25rem 0.5rem;
               justify-content: space-between;
-              font-size: 0.9rem;
+              font-size: 1rem;
               font-weight: 500;
               color: black;
             }
           }
         }
       }
-
     }
     .derecha {
       max-width: 70%;
@@ -129,76 +267,132 @@
 
     button {
       border-radius: 2.5rem;
-      border: 2px solid var(--Turq-K500, #297E88) !important;
-      background: var(--Agua-K500, #2FF7EE) !important;
+      border: 2px solid var(--Turq-K500, #297e88) !important;
+      background: var(--Agua-K500, #2ff7ee) !important;
       color: black !important;
     }
-
   }
 
   //Formulario
   //.formulario-facturacion {
-    .div-formulario {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: nowrap;
-      align-items: flex-start;
-      gap: 2rem;
+  .div-formulario {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    gap: 2rem;
+    fieldset:nth-child(1) {
+      margin-left: 1.5rem;
+      width: 80%;
+    }
+    fieldset.field-group-fieldset {
+      > legend {
+        display: none;
+      }
+    }
 
-      fieldset.field-group-fieldset {
-        > legend {
+    input,
+    select {
+      border-radius: 2rem;
+      border: 2px solid var(--Grey-K200, #becaca);
+      background-color: var(--White, #fff);
+    }
+
+    .field--name-title,
+    .field--name-field-asignar-profesor,
+    .field--name-field-mes-de-la-clase,
+    .field--name-field-fecha-de-la-clase,
+    .field--name-field-estado-de-la-factura {
+      display: none;
+    }
+
+    label {
+      font-size: 1rem;
+      color: black;
+      font-weight: 500;
+      width: 115%;
+      margin-bottom: 0.5rem;
+    }
+
+    .doble-columna {
+      display: flex;
+      gap: 1rem;
+      flex-direction: row;
+      justify-content: space-between;
+      pointer-events: none;
+
+      label {
+        font-size: 1rem;
+        font-weight: 500;
+        width: 115%;
+        margin-bottom: 0.5rem;
+
+        &::after {
           display: none;
         }
       }
 
-      input, select {
-        border-radius: 2rem;
-        border: 2px solid var(--Grey-K200, #BECACA);
-        background-color: var(--White, #FFF);
-      }
-
-      .field--name-title,
-      .field--name-field-asignar-profesor,
-      .field--name-field-mes-de-la-clase,
-      .field--name-field-fecha-de-la-clase,
-      .field--name-field-estado-de-la-factura {
-        display: none;
-      }
-
-      label {
-        font-size: 0.9rem;
-        color: black;
-      }
-
-      .doble-columna {
+      .separator {
         display: flex;
-        gap: 1rem;
-        flex-direction: row;
-        justify-content: space-between;
+        align-items: center;
+        font-size: 2rem;
+        padding-top: 1rem;
+      }
+
+      input {
         pointer-events: none;
-
-        label {
-          font-size: 0.9rem;
-
-          &::after {
-            display: none;
-          }
-        }
-
-        .separator {
-          display: flex;
-          align-items: center;
-          font-size: 2rem;
-          padding-top: 1rem;
-        }
-
+      }
+      .dos-columnas-izquierda {
         input {
-          pointer-events: none;
+          font-weight: 500;
+        }
+      }
+      .dos-columnas-derecha {
+        input {
+          font-weight: 700;
         }
       }
     }
-    div[input^="edit-field-total-horas-a-pagar-0-value"],.js-form-item-field-total-horas-a-pagar-0-value {
-      pointer-events: none;
+    .field--name-field-horas-a-pagar {
+      .js-form-item {
+        input {
+          font-weight: 700;
+        }
+      }
     }
+    .field--name-field-escribe-el-numero-de-tu-fa {
+      .js-form-item {
+        input {
+          font-weight: 700;
+        }
+      }
+    }
+    .field--name-field-metodo-de-pago {
+      background-color: #e6f1f1;
+      border-radius: 8px;
+      padding: 1.5rem;
+      .form-select {
+        font-weight: 700;
+        height: 84px;
+        border-radius: 16px;
+        border: none;
+      }
+    }
+    .form-type-managed-file {
+      .js-form-managed-file {
+        input {
+          background: #d8fffd;
+          border: 2px dashed #297e88;
+          border-radius: 32px;
+          margin-bottom: 0.5rem;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+  div[input^="edit-field-total-horas-a-pagar-0-value"],
+  .js-form-item-field-total-horas-a-pagar-0-value {
+    pointer-events: none;
+  }
   //}
 }

@@ -283,6 +283,28 @@ footer.site-footer {
     }
   }
 }
+.rol-profesor {
+  footer.site-footer {
+    .container {
+      .site-footer__top {
+        .region-footer-first {
+          #block-profesor-2{
+            margin-top: 1rem!important;
+          }
+        }
+      }
+      .footer-bottom {
+        #block-footerbanderas {
+          .field--name-body {
+            .footer-banderas {
+              margin-top: 0rem!important;
+            }
+          }
+        }
+      }
+    }
+  }
+}
 
 .rol-hijo {
   footer {
