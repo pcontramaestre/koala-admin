@@ -1,11 +1,11 @@
-uuid: 6b809756-b0f1-4f99-9838-9a38475c73d8
+uuid: fa207f51-7c29-4b1c-9779-d54220543c64
 langcode: es
 status: true
 dependencies:
   module:
     - system
-id: accordeon_logros
-label: 'Accordeon Logros'
+id: acordeon_logros_profesores
+label: 'Acordeon logros - Profesores'
 code: |+
   // Togle accordeon
   const acordeon = document.getElementsByClassName('item-list-accordeon');
@@ -17,10 +17,10 @@ code: |+
   }
 
   // Get value div with class  .views-field-uid > .id-del-nino, and trim the value
-  const idNino = document.querySelector('.views-field-uid .id-del-nino').innerHTML.trim();
+  //const idNino = document.querySelector('.views-field-uid .id-del-nino').innerHTML.trim();
 
   // Seleccionar los elementos con la clase .view-id-mis_koalas.view-display-id-block_2 .tab-content .tab-pane
-  const tabs = document.querySelectorAll('.view-id-mis_koalas.view-display-id-block_2 .tab-content .tab-pane');
+  const tabs = document.querySelectorAll('.tab-content .tab-pane');
 
   /* 
     Recorrer los elementos seleccionados y buscar el elemento con la clase .views-field-uid > .field-content > id-del-nino
@@ -28,7 +28,8 @@ code: |+
   var logrosCumplidos = [];
   var logrosCumplidosTemp = new Array();
   for (i=0; i<tabs.length; i++) {
-    const idNino = tabs[i].querySelector('.views-field-uid > .id-del-nino').innerText.trim();
+    const idNino = tabs[i].querySelector('.views-field-uid-1 > .field-content').innerText.trim();
+    console.log("Id del nino:"+idNino);
     // Buscar el elemento con la clase .resumen-clase[user="'+idNino+'"] y agregar la clase .mostrar
     const resumenClase = tabs[i].querySelectorAll('.resumen-clase[user="'+idNino+'"]');
     for (j=0; j<resumenClase.length; j++) {
@@ -72,6 +73,6 @@ conditions:
   request_path:
     id: request_path
     negate: false
-    pages: /padres/mis-koalas
+    pages: /profesor/mis-koalas
 contexts: {  }
 conditions_require_all: true

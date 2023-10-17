@@ -79,6 +79,7 @@ module:
   entity_reference_revisions: 0
   entity_usage: 0
   enviar_correo_clase_agendada_gratis: 0
+  facturacion_profes: 0
   fecha_widget: 0
   field: 0
   field_display_label: 0

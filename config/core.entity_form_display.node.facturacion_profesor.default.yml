@@ -6,49 +6,80 @@ dependencies:
     - field.field.node.facturacion_profesor.field_asignar_profesor
     - field.field.node.facturacion_profesor.field_clases_impartidas
     - field.field.node.facturacion_profesor.field_escribe_el_numero_de_tu_fa
+    - field.field.node.facturacion_profesor.field_estado_de_la_factura
     - field.field.node.facturacion_profesor.field_fecha_de_la_clase
+    - field.field.node.facturacion_profesor.field_horas_a_pagar
     - field.field.node.facturacion_profesor.field_inasistencias_del_estudian
     - field.field.node.facturacion_profesor.field_inasistencias_del_profesor
     - field.field.node.facturacion_profesor.field_mes_de_la_clase
+    - field.field.node.facturacion_profesor.field_metodo_de_pago
     - field.field.node.facturacion_profesor.field_sube_o_arrastra_tu_factura
-    - field.field.node.facturacion_profesor.field_total_horas_a_pagar
     - node.type.facturacion_profesor
   module:
-    - content_moderation
     - datetime
+    - field_group
     - field_layout
     - file
     - layout_discovery
-    - path
 third_party_settings:
   field_layout:
     id: layout_onecol
     settings:
       label: ''
+  field_group:
+    group_izquierda:
+      children:
+        - title
+        - field_asignar_profesor
+        - field_mes_de_la_clase
+        - field_fecha_de_la_clase
+        - field_clases_impartidas
+        - field_inasistencias_del_estudian
+        - field_inasistencias_del_profesor
+        - field_total_horas_a_pagar
+        - field_horas_a_pagar
+      label: Izquierda
+      region: content
+      parent_name: ''
+      weight: 0
+      format_type: fieldset
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: parte-izquierda
+        description: ''
+        required_fields: true
+    group_derecha:
+      children:
+        - field_escribe_el_numero_de_tu_fa
+        - field_metodo_de_pago
+        - field_sube_o_arrastra_tu_factura
+        - field_estado_de_la_factura
+      label: Derecha
+      region: content
+      parent_name: ''
+      weight: 1
+      format_type: fieldset
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: parte-derecha
+        description: ''
+        required_fields: true
 id: node.facturacion_profesor.default
 targetEntityType: node
 bundle: facturacion_profesor
 mode: default
 content:
-  created:
-    type: datetime_timestamp
-    weight: 10
+  field_asignar_profesor:
+    type: options_select
+    weight: -4
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_asignar_profesor:
-    type: entity_reference_autocomplete
-    weight: 121
-    region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
   field_clases_impartidas:
     type: number
-    weight: 124
+    weight: -1
     region: content
     settings:
       placeholder: ''
@@ -59,84 +90,65 @@ content:
     region: content
     settings:
       size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  field_fecha_de_la_clase:
-    type: datetime_default
-    weight: 122
+      placeholder: F-9999
+    third_party_settings:
+      advanced_text_formatter:
+        show_token_tree: 0
+  field_estado_de_la_factura:
+    type: options_select
+    weight: 131
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_fecha_de_la_clase:
+    type: datetime_default
+    weight: -2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_horas_a_pagar:
+    type: number
+    weight: 3
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
   field_inasistencias_del_estudian:
     type: number
-    weight: 125
+    weight: 0
     region: content
     settings:
       placeholder: ''
     third_party_settings: {  }
   field_inasistencias_del_profesor:
     type: number
-    weight: 126
+    weight: 1
     region: content
     settings:
       placeholder: ''
     third_party_settings: {  }
   field_mes_de_la_clase:
     type: options_select
-    weight: 123
+    weight: -3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_metodo_de_pago:
+    type: options_select
+    weight: 128
     region: content
     settings: {  }
     third_party_settings: {  }
   field_sube_o_arrastra_tu_factura:
     type: file_generic
-    weight: 128
+    weight: 130
     region: content
     settings:
       progress_indicator: throbber
     third_party_settings: {  }
-  field_total_horas_a_pagar:
-    type: number
-    weight: 129
-    region: content
-    settings:
-      placeholder: ''
-    third_party_settings: {  }
-  langcode:
-    type: language_select
-    weight: 2
-    region: content
-    settings:
-      include_locked: true
-    third_party_settings: {  }
-  moderation_state:
-    type: moderation_state_default
-    weight: 100
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  path:
-    type: path
-    weight: 30
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  promote:
-    type: boolean_checkbox
-    weight: 15
-    region: content
-    settings:
-      display_label: true
-    third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 120
-    region: content
-    settings:
-      display_label: true
-    third_party_settings: {  }
-  sticky:
-    type: boolean_checkbox
-    weight: 16
+    weight: 4
     region: content
     settings:
       display_label: true
@@ -151,7 +163,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 5
+    weight: 3
     region: content
     settings:
       match_operator: CONTAINS
@@ -159,9 +171,11 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  url_redirects:
-    weight: 50
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-hidden: {  }
+hidden:
+  created: true
+  langcode: true
+  moderation_state: true
+  path: true
+  promote: true
+  sticky: true
+  url_redirects: true

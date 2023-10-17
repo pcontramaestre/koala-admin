@@ -1,20 +1,16 @@
-uuid: bfa986c1-d254-42da-b625-d8996535524c
+uuid: 97675354-786d-4ed7-a21d-a2744e812508
 langcode: es
 status: true
 dependencies:
   config:
-    - field.storage.node.field_when
-    - node.type.event
+    - field.storage.user.field_nombre_del_hijo
+    - node.type.crear_hijos
   module:
-    - add_content_by_bundle
-    - fullcalendar_view
     - node
-    - smart_date
     - user
-_core:
-  default_config_hash: jQp_UiShPgNeRASYj0aK6JOvBJciIU75z1F_rSX18sg
-id: events_calendar
-label: 'Events Calendar'
+    - views_bootstrap
+id: mis_ninos_profesores
+label: 'Mis niños - Profesores'
 module: views
 description: ''
 tag: ''
@@ -23,11 +19,11 @@ base_field: nid
 display:
   default:
     id: default
-    display_title: Máster
+    display_title: Default
     display_plugin: default
     position: 0
     display_options:
-      title: 'Events Calendar'
+      title: 'Mis niños - Profesores'
       fields:
         title:
           id: title
@@ -76,11 +72,11 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        field_when:
-          id: field_when
-          table: node__field_when
-          field: field_when
-          relationship: none
+        field_nombre_del_hijo:
+          id: field_nombre_del_hijo
+          table: user__field_nombre_del_hijo
+          field: field_nombre_del_hijo
+          relationship: field_hijo_relacionado
           group_type: group
           admin_label: ''
           plugin_id: field
@@ -126,11 +122,75 @@ display:
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: value
-          type: smartdate_default
+          type: string
           settings:
-            timezone_override: ''
-            format: default
-            force_chronological: false
+            link_to_entity: false
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        uid:
+          id: uid
+          table: users_field_data
+          field: uid
+          relationship: field_hijo_relacionado
+          group_type: group
+          admin_label: ''
+          entity_type: user
+          entity_field: uid
+          plugin_id: field
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: number_integer
+          settings:
+            thousand_separator: ''
+            prefix_suffix: true
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -145,7 +205,7 @@ display:
         type: none
         options:
           offset: 0
-          items_per_page: 0
+          items_per_page: null
       exposed_form:
         type: basic
         options:
@@ -164,7 +224,23 @@ display:
         type: tag
         options: {  }
       empty: {  }
-      sorts: {  }
+      sorts:
+        created:
+          id: created
+          table: node_field_data
+          field: created
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: node
+          entity_field: created
+          plugin_id: date
+          order: DESC
+          expose:
+            label: ''
+            field_identifier: ''
+          exposed: false
+          granularity: second
       arguments: {  }
       filters:
         status:
@@ -184,43 +260,50 @@ display:
           id: type
           table: node_field_data
           field: type
+          relationship: none
+          group_type: group
+          admin_label: ''
           entity_type: node
           entity_field: type
           plugin_id: bundle
+          operator: in
           value:
-            event: event
+            crear_hijos: crear_hijos
+          group: 1
+          exposed: false
           expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
             operator_limit_selection: false
             operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
       style:
-        type: fullcalendar_view_display
+        type: views_bootstrap_tab
         options:
-          default_date_source: now
-          defaultDate: ''
-          start: field_when
-          end: field_when
-          title: title
-          left_buttons: 'prev,next today'
-          right_buttons: 'dayGridMonth,timeGridWeek,timeGridDay,listYear'
-          default_view: dayGridMonth
-          firstDay: '0'
-          nav_links: 1
-          timeFormat: ''
-          allowEventOverlap: 1
-          updateAllowed: 1
-          updateConfirm: 1
-          defaultLanguage: en
-          languageSelector: 0
-          dialogWindow: 0
-          openEntityInNewTab: 1
-          createEventLink: 0
-          tax_field: ''
-          vocabularies: ''
-          color_bundle: ''
-          rrule: ''
-          duration: ''
-          bundle_type: event
-          classes: ''
+          tab_field: field_nombre_del_hijo
+          tab_type: tabs
+          justified: 0
       row:
         type: fields
       query:
@@ -228,25 +311,20 @@ display:
         options:
           query_comment: ''
           disable_sql_rewrite: false
-          distinct: false
+          distinct: true
           replica: false
           query_tags: {  }
-      relationships: {  }
-      header:
-        add_content_by_bundle:
-          id: add_content_by_bundle
-          table: views
-          field: add_content_by_bundle
+      relationships:
+        field_hijo_relacionado:
+          id: field_hijo_relacionado
+          table: node__field_hijo_relacionado
+          field: field_hijo_relacionado
           relationship: none
           group_type: group
-          admin_label: ''
-          plugin_id: add_content_by_bundle
-          label: 'Add an Event'
-          empty: false
-          bundle: event
-          class: button
-          target: ''
-          width: 600
+          admin_label: 'field_hijo_relacionado: Usuario'
+          plugin_id: standard
+          required: false
+      header: {  }
       footer: {  }
       display_extenders: {  }
     cache_metadata:
@@ -257,24 +335,14 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
-        - 'config:field.storage.node.field_when'
-  page_1:
-    id: page_1
-    display_title: Page
-    display_plugin: page
+        - 'config:field.storage.user.field_nombre_del_hijo'
+  block_1:
+    id: block_1
+    display_title: Block
+    display_plugin: block
     position: 1
     display_options:
       display_extenders: {  }
-      path: events/calendar
-      menu:
-        type: tab
-        title: Calendario
-        description: ''
-        weight: 0
-        expanded: false
-        menu_name: main
-        parent: ''
-        context: '0'
     cache_metadata:
       max-age: -1
       contexts:
@@ -283,4 +351,4 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
-        - 'config:field.storage.node.field_when'
+        - 'config:field.storage.user.field_nombre_del_hijo'

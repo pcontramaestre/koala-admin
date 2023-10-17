@@ -3,11 +3,10 @@ langcode: es
 status: true
 dependencies:
   config:
-    - block_content.type.basic
     - page_manager.page.facturacion
   module:
-    - layout_builder
     - layout_discovery
+    - quicktabs
 id: facturacion-layout_builder-0
 label: 'Layout Builder'
 weight: 0
@@ -24,19 +23,16 @@ variant_settings:
         label: ''
         context_mapping: {  }
       components:
-        4df211cb-cee8-4dca-a604-3d7150a8a7c8:
-          uuid: 4df211cb-cee8-4dca-a604-3d7150a8a7c8
+        4c96c580-fbe8-404b-8e98-53b2669d3e6b:
+          uuid: 4c96c580-fbe8-404b-8e98-53b2669d3e6b
           region: content
           configuration:
-            id: 'inline_block:basic'
+            id: 'quicktabs_block:facturacion'
             label: Facturación
             label_display: visible
-            provider: layout_builder
-            view_mode: full
+            provider: quicktabs
             context_mapping: {  }
-            block_revision_id: 11
-            block_serialized: null
-          weight: 0
+          weight: 3
           additional:
             layout_builder_styles_style:
               separacion_superior_mt_5: separacion_superior_mt_5

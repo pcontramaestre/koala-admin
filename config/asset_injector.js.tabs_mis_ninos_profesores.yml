@@ -1,0 +1,132 @@
+uuid: ad404674-4183-471b-aa2e-751035adaa79
+langcode: es
+status: true
+dependencies:
+  module:
+    - system
+id: tabs_mis_ninos_profesores
+label: 'Tabs Mis Niños - Profesores'
+code: |+
+  // Jquery load page
+  jQuery(document).ready(function($){
+
+    // Seleccionar todos los elementos con la clase .tab-pane
+    const elementos = document.querySelectorAll('.tab-pane');
+
+    // Array para almacenar los valores de los atributos
+    const valores = [];
+
+    // Recorrer los elementos y almacenar los valores de los atributos en el array
+    elementos.forEach(elemento => {
+      const idAlumno = elemento.getAttribute('id-alumno');
+      const keyTab = elemento.getAttribute('key-tab');
+      
+      valores.push({ idAlumno, keyTab });
+    });
+
+    console.log(valores);
+
+    const valoresSinRepetidos = valores.reduce((uniqueValores, valor) => {
+      const existe = uniqueValores.find(item => item.idAlumno === valor.idAlumno);
+      if (!existe) {
+        uniqueValores.push(valor);
+      }
+      return uniqueValores;
+    }, []);
+
+    console.log(valoresSinRepetidos);
+
+    // Obtener el ul con la clase .nav-tabs
+    const ulNavTabs = document.querySelector('.nav-tabs');
+
+    // Obtener todos los li dentro del ul
+    const lis = ulNavTabs.querySelectorAll('li');
+
+    // Recorrer los li y verificar si el valor de key-tab coincide con algún keyTab en valoresSinRepetidos
+    lis.forEach(li => {
+      const keyTab = li.getAttribute('key-tab');
+      const existe = valoresSinRepetidos.find(valor => valor.keyTab === keyTab);
+      
+      if (existe) {
+        li.classList.add('mostrar');
+        console.log("Exite un valor");
+      }
+    });
+
+    // Obtener todos los li dentro del ulNavTabs
+    const lismostrar = ulNavTabs.querySelectorAll('li');
+
+    // Recorrer los li y ocultar aquellos que no tengan la clase .mostrar
+    lismostrar.forEach(li => {
+      if (!li.classList.contains('mostrar')) {
+        li.style.display = 'none';
+      }
+    });
+
+    // Leer el parametro de la url ID
+    const urlParams = new URLSearchParams(window.location.search);
+    const id = urlParams.get('id');
+    if (id) {
+      console.log(id);
+        // Recorrer los elementos .tab-pane
+      $('.tab-content .tab-pane').each(function() {
+        // Obtener el valor del atributo id-alumno
+        var idAlumno = $(this).attr('id-alumno');
+        console.log(idAlumno);
+        // Comparar con el id deseado
+        if (idAlumno === id) {
+          // Hacer algo si se encuentra el div con el atributo id-alumno="id"
+          console.log('Se encontró el div con el atributo id-alumno="' + id + '"');
+
+          // Obtener el valor del atributo key-tab
+          var keyTab = $(this).attr('key-tab');
+          console.log(keyTab + ' key-tab');
+          // Recorrer los li dentro del ulNavTabs
+
+          $('.nav-tabs > li').each(function() {
+            // Obtener el valor del atributo key-tab
+            var keyTabLi = $(this).attr('key-tab');
+            console.log(keyTabLi);
+            // Comparar con el keyTab deseado
+            if (keyTabLi === keyTab) {
+              // Hacer algo si se encuentra el li con el atributo key-tab="keyTab"
+              console.log('Se encontró el li con el atributo key-tab="' + keyTab + '"');
+
+              // Buscar el elemento a dentro del li y hacer click usando javascript para activar el tab deseado
+              enlace = $(this).find('a');
+              // click usando javascript
+              enlace[0].click();
+              
+
+              
+
+
+
+              // Detener el bucle si ya se encuentra el li deseado
+              return false;
+            }
+          });
+
+          // Detener el bucle si ya se encuentra el div deseado
+          return false;
+        }
+      });
+    }
+
+
+
+  });
+
+
+noscript: ''
+noscriptRegion: {  }
+jquery: true
+header: false
+preprocess: true
+conditions:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /profesor/mis-koalas
+contexts: {  }
+conditions_require_all: true

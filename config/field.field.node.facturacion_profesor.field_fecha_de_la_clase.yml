@@ -11,9 +11,9 @@ id: node.facturacion_profesor.field_fecha_de_la_clase
 field_name: field_fecha_de_la_clase
 entity_type: node
 bundle: facturacion_profesor
-label: 'Fecha de la clase'
+label: 'Fecha del envío de la factura'
 description: ''
-required: false
+required: true
 translatable: false
 default_value:
   -

@@ -1,0 +1,28 @@
+uuid: 080ed659-889b-4349-8299-e68bfe9fd244
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_horas_a_pagar
+    - node.type.facturacion_profesor
+  module:
+    - field_display_label
+third_party_settings:
+  field_display_label:
+    display_label: 'Total horas a pagar'
+id: node.facturacion_profesor.field_horas_a_pagar
+field_name: field_horas_a_pagar
+entity_type: node
+bundle: facturacion_profesor
+label: 'Total horas a pagar'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: !!float 1
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: decimal

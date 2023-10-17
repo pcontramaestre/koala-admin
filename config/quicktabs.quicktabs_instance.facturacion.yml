@@ -1,0 +1,65 @@
+uuid: 44f3ca4b-7a93-4b32-b3e2-7201581b2748
+langcode: es
+status: true
+dependencies: {  }
+id: facturacion
+label: Facturación
+renderer: quick_tabs
+hide_empty_tabs: false
+default_tab: 9999
+options:
+  quick_tabs:
+    ajax: false
+    class: ''
+    style: on-the-gray
+  accordion_tabs:
+    jquery_ui:
+      collapsible: false
+      heightStyle: auto
+configuration_data:
+  -
+    title: 'Carga tu factura'
+    weight: 0
+    type: view_content
+    content:
+      view_content:
+        options:
+          vid: facturacion_profesor
+          display: block_1
+          args: ''
+      node_content:
+        options:
+          nid: ''
+          view_mode: full
+          hide_title: true
+      block_content:
+        options:
+          bid: 'inline_block:basic'
+          block_title: ''
+          display_title: false
+      qtabs_content:
+        options:
+          machine_name: calendario_agendar
+  -
+    title: 'Resumen de pagos'
+    weight: 0
+    type: view_content
+    content:
+      view_content:
+        options:
+          vid: resumen_de_pagos
+          display: block_1
+          args: ''
+      node_content:
+        options:
+          nid: ''
+          view_mode: full
+          hide_title: true
+      block_content:
+        options:
+          bid: 'inline_block:basic'
+          block_title: ''
+          display_title: false
+      qtabs_content:
+        options:
+          machine_name: calendario_agendar

@@ -11,12 +11,14 @@ entity_type: node
 bundle: facturacion_profesor
 label: 'Clases impartidas'
 description: ''
-required: false
+required: true
 translatable: false
-default_value: {  }
+default_value:
+  -
+    value: 0
 default_value_callback: ''
 settings:
-  min: 0
+  min: 1
   max: null
   prefix: ''
   suffix: ''

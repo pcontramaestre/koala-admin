@@ -1,0 +1,25 @@
+uuid: 00b68d0b-766c-4ac7-9da1-1fec6a524c94
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_metodo_de_pago
+    - node.type.facturacion_profesor
+id: node.facturacion_profesor.field_metodo_de_pago
+field_name: field_metodo_de_pago
+entity_type: node
+bundle: facturacion_profesor
+label: 'Método de pago'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: views
+  handler_settings:
+    view:
+      view_name: tu_metodo_de_pago
+      display_name: entity_reference_1
+      arguments: {  }
+field_type: entity_reference

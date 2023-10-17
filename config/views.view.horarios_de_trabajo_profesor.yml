@@ -21,7 +21,6 @@ dependencies:
     - smart_date
     - user
     - views_bootstrap
-    - views_custom_cache_tag
 id: horarios_de_trabajo_profesor
 label: 'Horarios de trabajo profesor'
 module: views
@@ -718,8 +717,6 @@ display:
           right_buttons: 'dayGridMonth,timeGridWeek,timeGridDay,listYear'
           default_view: dayGridMonth
           firstDay: '0'
-          minTime: '00:00:00'
-          maxTime: '23:59:59'
           nav_links: 1
           timeFormat: 'hh:mm a'
           allowEventOverlap: 1
@@ -729,10 +726,8 @@ display:
           languageSelector: 0
           dialogWindow: 0
           openEntityInNewTab: 1
-          dialogModal: 0
           createEventLink: 0
           eventLimit: '2'
-          slotDuration: '00:30:00'
           tax_field: ''
           vocabularies: ''
           color_bundle:
@@ -749,6 +744,10 @@ display:
           duration: ''
           bundle_type: ''
           classes: ''
+          minTime: '00:00:00'
+          maxTime: '23:59:59'
+          dialogModal: 0
+          slotDuration: '00:30:00'
       row:
         type: fields
         options: {  }
@@ -1430,8 +1429,6 @@ display:
           right_buttons: 'dayGridMonth,timeGridWeek,timeGridDay,listMonth'
           default_view: dayGridMonth
           firstDay: '1'
-          minTime: '00:00:00'
-          maxTime: '23:59:59'
           nav_links: 1
           timeFormat: 'hh:mm a'
           allowEventOverlap: 1
@@ -1441,10 +1438,8 @@ display:
           languageSelector: 0
           dialogWindow: 0
           openEntityInNewTab: 1
-          dialogModal: 1
           createEventLink: 0
           eventLimit: '5'
-          slotDuration: '00:30:00'
           tax_field: ''
           vocabularies: ''
           color_bundle:
@@ -1464,6 +1459,10 @@ display:
           duration: ''
           bundle_type: ''
           classes: ''
+          minTime: '00:00:00'
+          maxTime: '23:59:59'
+          dialogModal: 1
+          slotDuration: '00:30:00'
       row:
         type: fields
         options: {  }
@@ -1722,9 +1721,8 @@ display:
             administrator: administrator
             profesor: profesor
       cache:
-        type: custom_tag
-        options:
-          custom_tag: "{{ arguments.field_profesor_target_id }}\r\n{{ raw_arguments.field_profesor_target_id }} "
+        type: tag
+        options: {  }
       filters:
         status:
           id: status
@@ -1797,8 +1795,6 @@ display:
           right_buttons: 'dayGridMonth,timeGridWeek,timeGridDay,listMonth'
           default_view: listMonth
           firstDay: '1'
-          minTime: '00:00:00'
-          maxTime: '23:59:59'
           nav_links: 1
           timeFormat: 'hh:mm a'
           allowEventOverlap: 1
@@ -1808,10 +1804,8 @@ display:
           languageSelector: 0
           dialogWindow: 0
           openEntityInNewTab: 1
-          dialogModal: 1
           createEventLink: 0
           eventLimit: '5'
-          slotDuration: '00:30:00'
           tax_field: ''
           vocabularies: ''
           color_bundle:
@@ -1828,6 +1822,10 @@ display:
           duration: ''
           bundle_type: ''
           classes: ''
+          minTime: '00:00:00'
+          maxTime: '23:59:59'
+          dialogModal: 1
+          slotDuration: '00:30:00'
       row:
         type: fields
         options: {  }

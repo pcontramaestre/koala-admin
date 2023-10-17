@@ -7,12 +7,14 @@ dependencies:
     - field.field.node.facturacion_profesor.field_asignar_profesor
     - field.field.node.facturacion_profesor.field_clases_impartidas
     - field.field.node.facturacion_profesor.field_escribe_el_numero_de_tu_fa
+    - field.field.node.facturacion_profesor.field_estado_de_la_factura
     - field.field.node.facturacion_profesor.field_fecha_de_la_clase
+    - field.field.node.facturacion_profesor.field_horas_a_pagar
     - field.field.node.facturacion_profesor.field_inasistencias_del_estudian
     - field.field.node.facturacion_profesor.field_inasistencias_del_profesor
     - field.field.node.facturacion_profesor.field_mes_de_la_clase
+    - field.field.node.facturacion_profesor.field_metodo_de_pago
     - field.field.node.facturacion_profesor.field_sube_o_arrastra_tu_factura
-    - field.field.node.facturacion_profesor.field_total_horas_a_pagar
     - node.type.facturacion_profesor
   module:
     - user
@@ -33,10 +35,12 @@ hidden:
   field_asignar_profesor: true
   field_clases_impartidas: true
   field_escribe_el_numero_de_tu_fa: true
+  field_estado_de_la_factura: true
   field_fecha_de_la_clase: true
+  field_horas_a_pagar: true
   field_inasistencias_del_estudian: true
   field_inasistencias_del_profesor: true
   field_mes_de_la_clase: true
+  field_metodo_de_pago: true
   field_sube_o_arrastra_tu_factura: true
-  field_total_horas_a_pagar: true
   langcode: true
