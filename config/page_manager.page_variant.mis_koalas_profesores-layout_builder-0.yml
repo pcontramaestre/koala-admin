@@ -3,11 +3,11 @@ langcode: es
 status: true
 dependencies:
   config:
-    - block_content.type.basic
     - page_manager.page.mis_koalas_profesores
+    - views.view.mis_koalas_profesores
   module:
-    - layout_builder
     - layout_discovery
+    - views
 id: mis_koalas_profesores-layout_builder-0
 label: 'Layout Builder'
 weight: 0
@@ -24,22 +24,22 @@ variant_settings:
         label: ''
         context_mapping: {  }
       components:
-        8de96d41-0528-4e68-9187-0123bad08c18:
-          uuid: 8de96d41-0528-4e68-9187-0123bad08c18
+        352e33a6-d08e-409b-b194-322e81749bea:
+          uuid: 352e33a6-d08e-409b-b194-322e81749bea
           region: content
           configuration:
-            id: 'inline_block:basic'
-            label: 'Mis koalas'
-            label_display: visible
-            provider: layout_builder
-            view_mode: full
+            id: 'views_block:mis_koalas_profesores-block_2'
+            label: ''
+            label_display: '0'
+            provider: views
             context_mapping: {  }
-            block_revision_id: 10
-            block_serialized: null
-          weight: 0
+            views_label: ''
+            items_per_page: none
+            exposed: {  }
+          weight: 1
           additional:
             layout_builder_styles_style:
-              separacion_superior_mt_5: separacion_superior_mt_5
+              separacion_superior_mt_5: 0
       third_party_settings: {  }
 page: mis_koalas_profesores
 selection_criteria: {  }

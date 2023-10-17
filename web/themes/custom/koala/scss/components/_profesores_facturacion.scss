@@ -1,0 +1,204 @@
+.path-facturacion {
+
+  .vista-facturacion-formulario {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+
+    > .izquierda {
+      width: 25%;
+    }
+  }
+
+  .view-facturacion-profesor {
+ 
+
+    .izquierda {
+      max-width: 100%;
+      flex: 0 100%;
+      display: flex;
+      padding: 1rem;
+      flex-direction: column;
+      gap: 1rem;
+      border-radius: 1.5rem;
+      background: var(--Grey-K100, #E6F1F1);
+
+      .view-header {
+        text-align: center;
+        font-size: 1.25rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        color: black;
+        font-weight: 700;
+      }
+
+      .view-filters {
+        .views-exposed-form {
+          > div {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+
+            > .form-type-select {
+              width: 100%;
+              margin-bottom: 0 !important;
+
+              label {
+                display: none;
+              }
+
+              select {
+                border-radius: 1rem;
+                border: 2px solid var(--White, #FFF);
+                background-color: #FFE8E8;
+                box-shadow: 0px 10px 80px 0px rgba(74, 74, 74, 0.02), 0px 5px 20px 0px rgba(74, 74, 74, 0.08), 0px 2px 10px 0px rgba(67, 67, 67, 0.15);
+
+                //Fuente
+                color: #000;
+                text-align: center;
+                font-family: Nunito;
+                font-size: 1.5rem;
+                font-style: normal;
+                font-weight: 700;
+                line-height: 1.6875rem;
+              }
+            }
+          }
+        }
+      }
+
+      .view-content.row {
+        display: none;
+      }
+
+      .view-footer {
+        .reporte-clases {
+          .imagen {
+            display: none;
+          }
+
+          .reporte {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            gap: 0.5rem;
+
+            .cuadro {
+              display: flex;
+              padding: 0.25rem 0.5rem;
+              align-items: center;
+              align-self: stretch;
+              border-radius: 0.5rem;
+              background: var(--White, #FFF);
+              justify-content: space-between;
+              color: #000;
+
+              .texto {
+                font-size: 0.9rem;
+                font-weight: 500;
+              }
+
+              .valor {
+                font-size: 1.5rem;
+                font-weight: 700;
+              }
+            }
+
+            .cuadro2 {
+              display: flex;
+              padding: 0.25rem 0.5rem;
+              justify-content: space-between;
+              font-size: 0.9rem;
+              font-weight: 500;
+              color: black;
+            }
+          }
+        }
+      }
+
+    }
+    .derecha {
+      max-width: 70%;
+      flex: 0 70%;
+    }
+  }
+
+  div[id^="edit-actions"] {
+    text-align: center;
+
+    button {
+      border-radius: 2.5rem;
+      border: 2px solid var(--Turq-K500, #297E88) !important;
+      background: var(--Agua-K500, #2FF7EE) !important;
+      color: black !important;
+    }
+
+  }
+
+  //Formulario
+  //.formulario-facturacion {
+    .div-formulario {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      align-items: flex-start;
+      gap: 2rem;
+
+      fieldset.field-group-fieldset {
+        > legend {
+          display: none;
+        }
+      }
+
+      input, select {
+        border-radius: 2rem;
+        border: 2px solid var(--Grey-K200, #BECACA);
+        background-color: var(--White, #FFF);
+      }
+
+      .field--name-title,
+      .field--name-field-asignar-profesor,
+      .field--name-field-mes-de-la-clase,
+      .field--name-field-fecha-de-la-clase,
+      .field--name-field-estado-de-la-factura {
+        display: none;
+      }
+
+      label {
+        font-size: 0.9rem;
+        color: black;
+      }
+
+      .doble-columna {
+        display: flex;
+        gap: 1rem;
+        flex-direction: row;
+        justify-content: space-between;
+        pointer-events: none;
+
+        label {
+          font-size: 0.9rem;
+
+          &::after {
+            display: none;
+          }
+        }
+
+        .separator {
+          display: flex;
+          align-items: center;
+          font-size: 2rem;
+          padding-top: 1rem;
+        }
+
+        input {
+          pointer-events: none;
+        }
+      }
+    }
+    div[input^="edit-field-total-horas-a-pagar-0-value"],.js-form-item-field-total-horas-a-pagar-0-value {
+      pointer-events: none;
+    }
+  //}
+}

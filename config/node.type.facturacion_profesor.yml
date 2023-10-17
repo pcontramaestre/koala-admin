@@ -1,0 +1,17 @@
+uuid: b36e7e11-3503-47f8-bc40-c5a66e30b53b
+langcode: es
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: 'Facturación profesor'
+type: facturacion_profesor
+description: 'Facturación de profesores'
+help: ''
+new_revision: false
+preview_mode: 0
+display_submitted: true

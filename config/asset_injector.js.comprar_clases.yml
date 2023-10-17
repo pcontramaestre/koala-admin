@@ -340,6 +340,7 @@ code: |-
             precio = clase.valorPorClase;
           }
         });
+
       } else if (suscription.value == 12) {
         clases12Semanas.forEach((clase) => {
           if (clase.clasesPorSemana == clasesPorSemana) {
@@ -363,10 +364,10 @@ code: |-
 
 
 
-      precioClase.textContent = precio + ' $';
+      precioClase.textContent = '$ ' + precio;
       precioClase.setAttribute('precio', precio);
       redondeoTotal = Math.round(parseInt(totalClases.textContent) * parseFloat(precioClase.getAttribute('precio')) * 100) / 100;
-      valorTotal.textContent = redondeoTotal + ' $';
+      valorTotal.textContent = '$ ' + redondeoTotal ;
       
       // Agregar valor a descuento ".descuento". Se obtiene de restar el valor del atributo precio de ".precio-clase" menos el primer valor del arreglo clases4Semanas
       const descuento = document.querySelector('.descuento');
@@ -378,7 +379,7 @@ code: |-
       
       // Agregar valor a ahorro ".ahorro". Se obtiene (total-clases * primer-valor-del-arreglo-clases4Semanas) - (total-clases * precio-clase)
       const ahorro = document.querySelector('.ahorro');
-      ahorro.textContent = Math.round((parseInt(totalClases.textContent) * datosCosteClases[0].costePorClase) - (parseInt(totalClases.textContent) * parseFloat(precioClase.getAttribute('precio')))) + ' $';
+      ahorro.textContent = ' $ ' + Math.round((parseInt(totalClases.textContent) * datosCosteClases[0].costePorClase) - (parseInt(totalClases.textContent) * parseFloat(precioClase.getAttribute('precio'))));
 
     }
 
@@ -400,10 +401,47 @@ code: |-
         enlace = '/product/3';
         // Buscar en el arreglo clasesComprar4Semanas el valor de totalClases, y guardar el valor de id en una variable
         clasesComprar4Semanas.forEach((clase) => {
+          // posicion del array
           if (clase.clases == parseInt(totalClases.textContent)) {
             id_producto = clase.id;
           }
         });
+
+                    //ocultar linea 1
+                    document.querySelector('.linea1').style.display = 'block';
+                    //ocultar linea 2
+                    document.querySelector('.linea2').style.display = 'block';
+
+        //Buscar el total de clases en el arreglo datosCosteClases, tomando en cuenta el total de clases
+        totalclasesSeleccionadas = document.querySelector('.total-de-clases');
+        precio12Semanas = parseInt(totalclasesSeleccionadas.textContent) * 12;
+        console.log('precio12Semanas', precio12Semanas);
+
+        precio24Semanas = parseInt(totalclasesSeleccionadas.textContent) * 24;
+        console.log('precio24Semanas', precio24Semanas);
+
+        datosCosteClases.forEach((clase) => {
+          if (clase.clases == precio12Semanas) {
+            precioClase12 = clase.costePorClase;
+            precioCoste12 = clase.coste;
+            ahorro = (17.5 * precio12Semanas) - precioCoste12;
+            texto = "Si seleccionas 12 semanas, te saldrá por $" + precioCoste12 + " y ahorrarás $" + ahorro;
+            document.querySelector('.linea1').textContent = texto;          
+          }
+        });
+
+        datosCosteClases.forEach((clase) => {
+          if (clase.clases == precio24Semanas) {
+            precioClase24 = clase.costePorClase;
+            precioCoste24 = clase.coste;
+            ahorro = (17.5 * precio24Semanas) - precioCoste24;
+            texto = "Si seleccionas 24 semanas, te saldrá por $" + precioCoste24 + " y ahorrarás $" + ahorro;
+            document.querySelector('.linea2').textContent = texto;          
+          }
+        });
+        
+
+
       } else if (suscription.value == 12) {
         enlace = '/product/4';
         // Buscar en el arreglo clasesComprar12Semanas el valor de totalClases, y guardar el valor de id en una variable
@@ -413,6 +451,22 @@ code: |-
           }
         });
 
+        precio24Semanas = parseInt(totalclasesSeleccionadas.textContent) * 24;
+        console.log('precio24Semanas', precio24Semanas);
+
+        datosCosteClases.forEach((clase) => {
+          if (clase.clases == precio24Semanas) {
+            precioClase24 = clase.costePorClase;
+            precioCoste24 = clase.coste;
+            ahorro = (17.5 * precio24Semanas) - precioCoste24;
+            texto = "Si seleccionas 24 semanas, te saldrá por $" + precioCoste24 + " y ahorrarás $" + ahorro;
+            document.querySelector('.linea2').textContent = texto;          
+          }
+        });
+
+        //ocultar linea 1
+        document.querySelector('.linea1').style.display = 'none';
+
       } else if (suscription.value == 24) {
         enlace = '/product/5';
         // Buscar en el arreglo clasesComprar24Semanas el valor de totalClases, y guardar el valor de id en una variable
@@ -421,6 +475,10 @@ code: |-
             id_producto = clase.id;
           }
         });
+              //ocultar linea 1
+              document.querySelector('.linea1').style.display = 'none';
+              //ocultar linea 2
+              document.querySelector('.linea2').style.display = 'none';
 
       }
       enlace += '?clases=' + totalClases.textContent + '&v=' + id_producto;

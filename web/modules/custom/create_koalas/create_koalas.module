@@ -257,7 +257,7 @@ function callback_submit_agendar_clase(&$form, FormStateInterface $form_state) {
     $alumno_relacionado = $node->get('field_alumno_relacionado')->getValue();
     $node->save();
 
-    dump($alumno_relacionado);
+    //dump($alumno_relacionado);
 
     // Buscar los nodos de tipo agendar_clase que tengan el campo field_alumno_relacionado con el id del alumno.
     // Get the EntityTypeManager.
@@ -280,7 +280,7 @@ function callback_submit_agendar_clase(&$form, FormStateInterface $form_state) {
     dump("Numero de nodos encontrados: $numero_nodos");
 
     $numero_clase = $numero_nodos ? $numero_nodos : 1;
-    
+    dump($numero_clase);
       // Buscar en el tipo de contenido clases_estudiantes el campo field_numero_de_clase y que sea igual al numero de nodos encontrados. (Ambos son numeros).
       // Get the EntityTypeManager.
       $entityTypeManager = \Drupal::service('entity_type.manager');
@@ -311,8 +311,10 @@ function callback_submit_agendar_clase(&$form, FormStateInterface $form_state) {
       if ($node) {
         dump("Se guardo el nodo asignar_clase_a_estudiante correctamente con id $new_node_id con el numero de clase $nid_clases_estudiantes" );
       }
-
-    // exit;
+      else {
+        dump("No se guardo el nodo asignar_clase_a_estudiante correctamente");
+        \Drupal::messenger()->addError( \Drupal::translation()->translate('No se guardo el nodo asignar_clase_a_estudiante correctamente con ID @error', ['@error' => $new_node_id ]));
+      }
   }
   catch (\Exception $e) {
     // Mostrar un mensaje de error utilizando el servicio 'messenger'

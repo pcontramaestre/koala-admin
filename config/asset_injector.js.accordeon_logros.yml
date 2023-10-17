@@ -7,7 +7,6 @@ dependencies:
 id: accordeon_logros
 label: 'Accordeon Logros'
 code: |+
-
   // Togle accordeon
   const acordeon = document.getElementsByClassName('item-list-accordeon');
 

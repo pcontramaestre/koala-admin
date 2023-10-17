@@ -1,0 +1,24 @@
+uuid: 2c1ef819-ce07-4168-89d8-356e4b15e7cd
+langcode: es
+status: true
+dependencies:
+  module:
+    - field_permissions
+    - node
+third_party_settings:
+  field_permissions:
+    permission_type: public
+id: node.field_inasistencias_del_profesor
+field_name: field_inasistencias_del_profesor
+entity_type: node
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

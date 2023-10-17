@@ -11,23 +11,30 @@
  /**
  * Implements hook_form_FORM_ID_alter() for the node_asignar_clase_a_estudiante_form.
  */
-function calificar_clase_form_alter(&$form, FormStateInterface $form_state, $form_id) {
-  //dump($form_id);
+function calificar_clase_form_alter(&$form, FormStateInterface $form_state, $form_id) {  
   if ($form_id == 'node_asignar_clase_a_estudiante_edit_form') {
     $form['title']['#access'] = FALSE;
     $form['actions']['submit']['#value'] =  Drupal::translation()->translate('Cargar calificación');
 
     // Obtener el id del nodo actual
     $nid = $form_state->getFormObject()->getEntity()->id();
+    if ($form_state->getFormObject() instanceOf EntityFormInterface) {
+      $nid = $form_state->getformObject()->getEntity()->id();
+    }
+
     // Cargo el nodo actual y obtener el valor del campo field_clase_a_asignar
-    $node = Node::load($nid);
-    $field_clase_a_asignar = $node->get('field_clase_a_asignar')->getValue();
-    $field_clase_a_asignar = $field_clase_a_asignar[0]['target_id'];
-    
+    $node = Node::load($nid);  
+    if ($node) {
+      $field_clase_a_asignar = $node->get('field_clase_a_asignar')->getValue();
+      $field_clase_a_asignar = $field_clase_a_asignar[0]['target_id'];
+    } else {
+      // Mensaje de error
+      \Drupal::messenger()->addMessage( \Drupal::translation()->translate('No se pudo cargar el nodo del formulario Asignar Clase a Estudiante con ID: @nid', ['@nid' => $nid] ), 'error');
+    }
+    //$field_clase_a_asignar   = 0;
     // Cargar el nodo con el id $field_clase_a_asignar y obtener los valores del campo referencia de entidad field_logros_de_la_clase
     $node = Node::load($field_clase_a_asignar);
-    $field_logros_de_la_clase = $node->get('field_logros_de_la_clase')->getValue();
-    
+    $field_logros_de_la_clase = $node->get('field_logros_de_la_clase')->getValue();    
     /* 
       Del nodo node_asignar_clase_a_estudiante_edit_form editar el campo field_logros_cumplidos para que solo muestre los tid de los logros que no han sido cumplidos
     */
@@ -40,12 +47,6 @@ function calificar_clase_form_alter(&$form, FormStateInterface $form_state, $for
     }
 
     //dump($form['field_logros_cumplidos']['widget']['#options']);
-    
-    
-
-
-    
-
     foreach (array_keys($form['actions']) as $action) {
       if ($action != 'preview' && isset($form['actions'][$action]['#type']) && $form['actions'][$action]['#type'] === 'submit') {
         $form['actions'][$action]['#submit'][] = 'callback_submit_asignar_clase_a_estudiante_submit';
@@ -67,39 +68,64 @@ function callback_submit_asignar_clase_a_estudiante_submit(&$form, FormStateInte
     $node->set('field_marcar_clase_como_finaliza', 1);
     // Obtener el uid del usuario creador de la clase
     $uid = $node->get('uid')->getValue();
-    
+    $uid = $uid[0]['target_id'];
+    // convertir uid a entero
+    $uid = (int)$uid;
     $node->save();
 
     /* 
       Usar $uid para buscar los nodos de tipo "suscripciones" que tengan el uid del padre, tambien filtrar por el campo "field_fecha_de_finalizacion_de_l" que sea mayor a la fecha actual,
       y ordenar de menor a mayor por el id del nodo, y obtener el primer elemento.
     */
-    $query = \Drupal::entityQuery('node')
-      ->condition('type', 'suscripciones')
-      ->condition('uid', $uid[0]['target_id'])
-      ->sort('nid', 'ASC')
-      ->range(0, 1);
+    // $uid = 150;
+    // $query = \Drupal::entityQuery('node')
+    //   ->condition('type', 'suscripciones')
+    //   ->condition('uid', $uid)
+    //   ->sort('nid', 'ASC')
+    //   ->range(0, 1);
+
+    // $nids = $query->execute();
+    // dump($nids);
+
+
+    //$uid = 150; // Reemplazar por el valor correcto del uid del padre
+
+    $query = \Drupal::entityTypeManager()->getStorage('node')->getQuery();
+    $query->condition('type', 'suscripciones')
+    ->condition('uid', $uid)
+    ->sort('nid', 'ASC')
+    ->range(0, 1);
     $nids = $query->execute();
-    
+   
+    $node = NULL;
+    if (!empty($nids)) {
+      $nid = reset($nids);
+      $node = Node::load($nid);
+    }
     // Obtener el nodo de tipo "suscripciones" con el id obtenido
     $node = Node::load(reset($nids));
-    //dump($node);
-    // obtener los valores numericos de los campos field_clases_restantes, field_clases_usadas    
-    $field_clases_restantes = $node->get('field_clases_restantes')->getValue();
-    $field_clases_restantes = $field_clases_restantes[0]['value'];
-    //dump($field_clases_restantes);
-    if ($field_clases_restantes > 0) {
-      $field_clases_usadas = $node->get('field_clases_usadas')->getValue();
-      // Sumar 1 al valor numerico de field_clases_usadas, convertir $field_clases_usadas[0]['value'] a entero
-      $field_clases_usadas = (int)$field_clases_usadas[0]['value'] + 1;      
-      // Restar 1 al valor numerico de field_clases_restantes
+    if ($node ){ 
+      // obtener los valores numericos de los campos field_clases_restantes, field_clases_usadas    
       $field_clases_restantes = $node->get('field_clases_restantes')->getValue();
-      $field_clases_restantes = (int)$field_clases_restantes[0]['value'] - 1;
-      // Actualizar los valores numericos de los campos field_clases_restantes, field_clases_usadas
-      $node->set('field_clases_restantes', $field_clases_restantes);
-      $node->set('field_clases_usadas', $field_clases_usadas);
-      $node->save();
-    }    
+      $field_clases_restantes = $field_clases_restantes[0]['value'];
+      //$field_clases_restantes = 0;
+      //dump($field_clases_restantes);
+      if ($field_clases_restantes > 0) {
+        $field_clases_usadas = $node->get('field_clases_usadas')->getValue();
+        // Sumar 1 al valor numerico de field_clases_usadas, convertir $field_clases_usadas[0]['value'] a entero
+        $field_clases_usadas = (int)$field_clases_usadas[0]['value'] + 1;      
+        // Restar 1 al valor numerico de field_clases_restantes
+        $field_clases_restantes = $node->get('field_clases_restantes')->getValue();
+        $field_clases_restantes = (int)$field_clases_restantes[0]['value'] - 1;
+        // Actualizar los valores numericos de los campos field_clases_restantes, field_clases_usadas
+        $node->set('field_clases_restantes', $field_clases_restantes);
+        $node->set('field_clases_usadas', $field_clases_usadas);
+        $node->save();
+      }
+    } else {
+      // Mensaje de error
+      \Drupal::messenger()->addMessage( \Drupal::translation()->translate('No se pudo cargar el nodo de tipo "suscripciones" con el uid: @uid', ['@uid' => $uid] ), 'error');
+    }
   }
 
   // Redireccionar a la pagina del profesor /profesor

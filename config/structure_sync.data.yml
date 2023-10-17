@@ -92,6 +92,234 @@ blocks:
           format: full_html
 menus:
   -
+    menu_name: legal
+    title: 'Políticas de privacidad'
+    parent: null
+    uri: 'internal:#'
+    link_title: ''
+    description: 'Políticas de privacidad'
+    enabled: true
+    expanded: false
+    weight: 0
+    langcode: es
+    uuid: a0469282-c314-40ec-8ba0-7cbfe11b3c73
+  -
+    menu_name: legal
+    title: 'Términos de uso'
+    parent: null
+    uri: 'internal:#'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: 0
+    langcode: es
+    uuid: d9976da5-b79e-4041-8831-b56e77a64c8d
+  -
+    menu_name: legal
+    title: 'Política de cookies'
+    parent: null
+    uri: 'internal:/politicas'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: 0
+    langcode: es
+    uuid: c324acc9-2783-47a9-9ccd-c42f81a9aa66
+  -
+    menu_name: hijos
+    title: Home
+    parent: null
+    uri: 'internal:/hijo'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: -50
+    langcode: es
+    uuid: 99824dcb-2ba0-4f9f-9ae1-587a83063145
+  -
+    menu_name: hijos
+    title: 'Mi perfil'
+    parent: null
+    uri: 'internal:/hijo'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: -49
+    langcode: es
+    uuid: 5aa496b6-e94f-4945-b710-a1b43f694c42
+  -
+    menu_name: hijos
+    title: 'Mi Koala'
+    parent: null
+    uri: 'internal:/hijo/mis-koalas-avatares'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: -48
+    langcode: es
+    uuid: 9a78b780-662f-43a7-bcdd-7f47d5f19fed
+  -
+    menu_name: hijos
+    title: 'Mis Mundos'
+    parent: null
+    uri: 'internal:/mis-mundos'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: 0
+    langcode: es
+    uuid: 1cee8acf-0efe-419f-bacb-c23882e75a54
+  -
+    menu_name: padres
+    title: 'Mis niños'
+    parent: null
+    uri: 'internal:/padres/mis-koalas'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: -49
+    langcode: es
+    uuid: f50b0bbd-cda0-4d42-90b9-bdc4ff49ee3d
+  -
+    menu_name: padres
+    title: Calendario
+    parent: null
+    uri: 'internal:/padres/mi-calendario'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: -48
+    langcode: es
+    uuid: fc4af4e1-195a-4436-8c76-5b80806e2573
+  -
+    menu_name: padres
+    title: Perfil
+    parent: null
+    uri: 'internal:/padres'
+    link_title: ''
+    description: Perfil
+    enabled: true
+    expanded: false
+    weight: -50
+    langcode: es
+    uuid: 4297dfa6-2fcf-4d25-a6e2-3f1950b815ac
+  -
+    menu_name: padres
+    title: 'Zona de pagos'
+    parent: null
+    uri: 'internal:/zona-pagos'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: -47
+    langcode: es
+    uuid: a03a668c-2d55-435d-9ed9-241344f23f52
+  -
+    menu_name: padres
+    title: Calificar
+    parent: null
+    uri: 'internal:/calificar-clases'
+    link_title: ''
+    description: null
+    enabled: false
+    expanded: false
+    weight: -46
+    langcode: es
+    uuid: 462c88dd-ef21-4c6f-8ac7-9b267622f765
+  -
+    menu_name: profesor
+    title: 'Mi perfil'
+    parent: null
+    uri: 'internal:/profesor'
+    link_title: ''
+    description: 'Mi perfil'
+    enabled: true
+    expanded: false
+    weight: -50
+    langcode: es
+    uuid: 6d98dbae-cc40-447d-9808-4928039e5f85
+  -
+    menu_name: profesor
+    title: 'Mi Horario'
+    parent: null
+    uri: 'internal:/horarios-de-trabajo-profesor'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: -48
+    langcode: es
+    uuid: de6e8dc8-9b80-4ce2-967c-bf4468f0dde5
+  -
+    menu_name: profesor
+    title: Calendario
+    parent: null
+    uri: 'internal:/profesor/calendario'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: -49
+    langcode: es
+    uuid: 51e0ad53-2e3b-4ca2-95e7-928c48d25685
+  -
+    menu_name: profesor
+    title: 'Mis Koalas'
+    parent: null
+    uri: 'internal:/profesor/mis-koalas'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: -46
+    langcode: es
+    uuid: f96fbe36-5a47-46d1-b46e-118aa8dd7830
+  -
+    menu_name: profesor
+    title: Facturación
+    parent: null
+    uri: 'internal:/profesor/facturacion'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: -45
+    langcode: es
+    uuid: 63df35c2-f04d-41d0-9611-2863ed560714
+  -
+    menu_name: profesor
+    title: Calificar
+    parent: null
+    uri: 'internal:/calificar-clases'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: -44
+    langcode: es
+    uuid: 1705eba1-5509-4de5-aa97-f23accaffc04
+  -
+    menu_name: profesor
+    title: 'Mi Horario'
+    parent: null
+    uri: 'internal:#'
+    link_title: ''
+    description: null
+    enabled: false
+    expanded: false
+    weight: -47
+    langcode: es
+    uuid: 401790c6-1ccf-4aa4-8574-b955b1b11c32
+  -
     menu_name: main
     title: 'Quienes somos'
     parent: null
@@ -163,186 +391,6 @@ menus:
     weight: -44
     langcode: es
     uuid: a4384f5b-d6e2-4e87-88c5-8c39436d8687
-  -
-    menu_name: profesor
-    title: 'Mi perfil'
-    parent: null
-    uri: 'internal:/user/[current-user:uid]/edit/editar_profesor'
-    link_title: ''
-    description: 'Mi perfil'
-    enabled: true
-    expanded: false
-    weight: 0
-    langcode: es
-    uuid: 6d98dbae-cc40-447d-9808-4928039e5f85
-  -
-    menu_name: profesor
-    title: 'Agora Conection'
-    parent: null
-    uri: 'internal:/agora'
-    link_title: ''
-    description: null
-    enabled: true
-    expanded: false
-    weight: 0
-    langcode: es
-    uuid: e430f844-63c3-4fea-92af-3c68cfb67497
-  -
-    menu_name: profesor
-    title: 'Mis horarios'
-    parent: null
-    uri: 'internal:/horarios-de-trabajo-profesor'
-    link_title: ''
-    description: null
-    enabled: true
-    expanded: false
-    weight: 0
-    langcode: es
-    uuid: de6e8dc8-9b80-4ce2-967c-bf4468f0dde5
-  -
-    menu_name: profesor
-    title: Calendario
-    parent: null
-    uri: 'internal:/calendario_profesor'
-    link_title: ''
-    description: null
-    enabled: true
-    expanded: false
-    weight: 0
-    langcode: es
-    uuid: 51e0ad53-2e3b-4ca2-95e7-928c48d25685
-  -
-    menu_name: padres
-    title: 'Mis niños'
-    parent: null
-    uri: 'internal:/padres/mis-koalas'
-    link_title: ''
-    description: null
-    enabled: true
-    expanded: false
-    weight: -49
-    langcode: es
-    uuid: f50b0bbd-cda0-4d42-90b9-bdc4ff49ee3d
-  -
-    menu_name: padres
-    title: Calendario
-    parent: null
-    uri: 'internal:/padres/mi-calendario'
-    link_title: ''
-    description: null
-    enabled: true
-    expanded: false
-    weight: -48
-    langcode: es
-    uuid: fc4af4e1-195a-4436-8c76-5b80806e2573
-  -
-    menu_name: padres
-    title: Perfil
-    parent: null
-    uri: 'internal:/padres'
-    link_title: ''
-    description: Perfil
-    enabled: true
-    expanded: false
-    weight: -50
-    langcode: es
-    uuid: 4297dfa6-2fcf-4d25-a6e2-3f1950b815ac
-  -
-    menu_name: hijos
-    title: Home
-    parent: null
-    uri: 'internal:/hijo'
-    link_title: ''
-    description: null
-    enabled: true
-    expanded: false
-    weight: -50
-    langcode: es
-    uuid: 99824dcb-2ba0-4f9f-9ae1-587a83063145
-  -
-    menu_name: hijos
-    title: 'Mi perfil'
-    parent: null
-    uri: 'internal:/hijo'
-    link_title: ''
-    description: null
-    enabled: true
-    expanded: false
-    weight: -49
-    langcode: es
-    uuid: 5aa496b6-e94f-4945-b710-a1b43f694c42
-  -
-    menu_name: hijos
-    title: 'Mi Koala'
-    parent: null
-    uri: 'internal:/mi-koala'
-    link_title: ''
-    description: null
-    enabled: true
-    expanded: false
-    weight: -48
-    langcode: es
-    uuid: 9a78b780-662f-43a7-bcdd-7f47d5f19fed
-  -
-    menu_name: hijos
-    title: 'Mis Mundos'
-    parent: null
-    uri: 'internal:/mis-mundos'
-    link_title: ''
-    description: null
-    enabled: true
-    expanded: false
-    weight: 0
-    langcode: es
-    uuid: 1cee8acf-0efe-419f-bacb-c23882e75a54
-  -
-    menu_name: legal
-    title: 'Políticas de privacidad'
-    parent: null
-    uri: 'internal:#'
-    link_title: ''
-    description: 'Políticas de privacidad'
-    enabled: true
-    expanded: false
-    weight: 0
-    langcode: es
-    uuid: a0469282-c314-40ec-8ba0-7cbfe11b3c73
-  -
-    menu_name: legal
-    title: 'Términos de uso'
-    parent: null
-    uri: 'internal:#'
-    link_title: ''
-    description: null
-    enabled: true
-    expanded: false
-    weight: 0
-    langcode: es
-    uuid: d9976da5-b79e-4041-8831-b56e77a64c8d
-  -
-    menu_name: legal
-    title: 'Política de cookies'
-    parent: null
-    uri: 'internal:/politicas'
-    link_title: ''
-    description: null
-    enabled: true
-    expanded: false
-    weight: 0
-    langcode: es
-    uuid: c324acc9-2783-47a9-9ccd-c42f81a9aa66
-  -
-    menu_name: padres
-    title: 'Zona de pagos'
-    parent: null
-    uri: 'internal:/zona-pagos'
-    link_title: ''
-    description: null
-    enabled: true
-    expanded: false
-    weight: 0
-    langcode: es
-    uuid: a03a668c-2d55-435d-9ed9-241344f23f52
 taxonomies:
   avatar_profesor:
     -
@@ -385,6 +433,145 @@ taxonomies:
       weight: '0'
       parent: '0'
       uuid: 86c22d51-eca8-460f-a74b-7ed881205b31
+  koalas_ninos:
+    -
+      vid: koalas_ninos
+      tid: '65'
+      langcode: es
+      name: Astronauta
+      description__value: '<p>Explorador / Alegre&nbsp;</p>'
+      description__format: basic_html
+      weight: '0'
+      parent: '0'
+      uuid: f20f4fb6-5964-4eda-96e9-d877c740c160
+      field_categoria_del_koala:
+        -
+          value: p01
+      field_imagen_del_koala:
+        -
+          target_id: '49'
+          alt: ''
+          title: ''
+          width: '152'
+          height: '209'
+      field_puntos_requeridos:
+        -
+          value: '2'
+    -
+      vid: koalas_ninos
+      tid: '64'
+      langcode: es
+      name: Bombero
+      description__value: '<p>Intrépido / Audaz</p>'
+      description__format: basic_html
+      weight: '0'
+      parent: '0'
+      uuid: f234daf3-1ff3-4926-a550-289657fb8082
+      field_categoria_del_koala:
+        -
+          value: p01
+      field_imagen_del_koala:
+        -
+          target_id: '48'
+          alt: ''
+          title: ''
+          width: '152'
+          height: '209'
+      field_puntos_requeridos:
+        -
+          value: '1'
+    -
+      vid: koalas_ninos
+      tid: '67'
+      langcode: es
+      name: Científico
+      description__value: '<p>Curioso / Creador&nbsp;</p>'
+      description__format: basic_html
+      weight: '0'
+      parent: '0'
+      uuid: a313a74c-4a55-4381-9c66-a8fc7bac1161
+      field_categoria_del_koala:
+        -
+          value: p01
+      field_imagen_del_koala:
+        -
+          target_id: '53'
+          alt: ''
+          title: ''
+          width: '152'
+          height: '209'
+      field_puntos_requeridos:
+        -
+          value: '4'
+    -
+      vid: koalas_ninos
+      tid: '69'
+      langcode: es
+      name: Futbolista
+      description__value: '<p>Rápido / Ganador</p>'
+      description__format: basic_html
+      weight: '0'
+      parent: '0'
+      uuid: 92103363-1ea0-45b4-a8f8-37829217e63e
+      field_categoria_del_koala:
+        -
+          value: p02
+      field_imagen_del_koala:
+        -
+          target_id: '52'
+          alt: ''
+          title: ''
+          width: '152'
+          height: '209'
+      field_puntos_requeridos:
+        -
+          value: '12'
+    -
+      vid: koalas_ninos
+      tid: '68'
+      langcode: es
+      name: Militar
+      description__value: '<p>Valiente / Tenaz</p>'
+      description__format: basic_html
+      weight: '0'
+      parent: '0'
+      uuid: 77a8a1d5-09d0-4f16-8453-41a43197ca62
+      field_categoria_del_koala:
+        -
+          value: p02
+      field_imagen_del_koala:
+        -
+          target_id: '51'
+          alt: ''
+          title: ''
+          width: '152'
+          height: '209'
+      field_puntos_requeridos:
+        -
+          value: '10'
+    -
+      vid: koalas_ninos
+      tid: '66'
+      langcode: es
+      name: Policía
+      description__value: '<p>Valiente / Servicial</p>'
+      description__format: basic_html
+      weight: '0'
+      parent: '0'
+      uuid: 752b4bf9-012c-4ab0-9cb0-da665a374ec6
+      field_categoria_del_koala:
+        -
+          value: p01
+      field_imagen_del_koala:
+        -
+          target_id: '50'
+          alt: ''
+          title: ''
+          width: '152'
+          height: '209'
+      field_puntos_requeridos:
+        -
+          value: '1'
   logros:
     -
       vid: logros
@@ -416,6 +603,16 @@ taxonomies:
       weight: '1'
       parent: '0'
       uuid: 27b6ec40-8cb4-48b8-b313-3f03ab775bf6
+    -
+      vid: logros
+      tid: '78'
+      langcode: es
+      name: 'Identificar actividades al aire libre'
+      description__value: null
+      description__format: null
+      weight: '32'
+      parent: '70'
+      uuid: 1a80aa3c-3145-42de-840a-72334e6e2fad
     -
       vid: logros
       tid: '47'
@@ -468,6 +665,16 @@ taxonomies:
       uuid: ad7ed77e-3da2-413b-adea-489efb4b0165
     -
       vid: logros
+      tid: '83'
+      langcode: es
+      name: 'Identificar y nombrar las partes de la casa usando ''el'' ''la'
+      description__value: null
+      description__format: null
+      weight: '37'
+      parent: '70'
+      uuid: d7de8e20-412e-4bd4-8829-9ffc4725b637
+    -
+      vid: logros
       tid: '40'
       langcode: es
       name: 'Identificar y nombrar las partes de la casa usando un/una'
@@ -488,6 +695,26 @@ taxonomies:
       uuid: 1acab11c-717c-4d8f-957d-bdb37b2f899c
     -
       vid: logros
+      tid: '74'
+      langcode: es
+      name: 'Identificar y nombrar los días de la semana.'
+      description__value: null
+      description__format: null
+      weight: '28'
+      parent: '70'
+      uuid: 7c6e56f0-b936-49c1-9b76-c9174c2e40fa
+    -
+      vid: logros
+      tid: '72'
+      langcode: es
+      name: 'Identificar y nombrar los meses del año.'
+      description__value: null
+      description__format: null
+      weight: '26'
+      parent: '70'
+      uuid: 17bb180b-166d-4f54-8b0f-7a3a64c5e750
+    -
+      vid: logros
       tid: '50'
       langcode: es
       name: 'Identificar y nombrar los miembros de la familia'
@@ -506,6 +733,16 @@ taxonomies:
       weight: '30'
       parent: '37'
       uuid: bc27c36e-5084-4624-8f2f-d10f5fccd910
+    -
+      vid: logros
+      tid: '73'
+      langcode: es
+      name: 'Identificar y nombrar los números del 30 al 50.'
+      description__value: null
+      description__format: null
+      weight: '27'
+      parent: '70'
+      uuid: 84d7ab2b-9f83-44b7-ab90-40c96fa7feab
     -
       vid: logros
       tid: '35'
@@ -558,6 +795,16 @@ taxonomies:
       uuid: fb32257f-e867-45e6-a528-8b5a23000d10
     -
       vid: logros
+      tid: '80'
+      langcode: es
+      name: 'Identificar y nombrar verbos de rutina: infinitivo'
+      description__value: null
+      description__format: null
+      weight: '34'
+      parent: '70'
+      uuid: 35f244cc-b5e4-4212-a8f3-8a42a635500e
+    -
+      vid: logros
       tid: '37'
       langcode: es
       name: 'La familia de Koala'
@@ -566,6 +813,16 @@ taxonomies:
       weight: '23'
       parent: '0'
       uuid: ca0fc3b2-8d38-486e-bd39-582cd5a257fc
+    -
+      vid: logros
+      tid: '82'
+      langcode: es
+      name: 'Nombrar los miembros de la familia'
+      description__value: null
+      description__format: null
+      weight: '36'
+      parent: '70'
+      uuid: 02d31e53-ef1b-4da0-ad30-2ad9d497b49c
     -
       vid: logros
       tid: '18'
@@ -616,6 +873,36 @@ taxonomies:
       weight: '7'
       parent: '15'
       uuid: 96a681a7-16b7-4cc3-a132-3423b342b928
+    -
+      vid: logros
+      tid: '81'
+      langcode: es
+      name: 'Preguntar por acciones y responder : él/ella'
+      description__value: null
+      description__format: null
+      weight: '35'
+      parent: '70'
+      uuid: e665f764-8453-4826-8c47-f8e59d924737
+    -
+      vid: logros
+      tid: '84'
+      langcode: es
+      name: 'Preguntar por acciones y responder : yo'
+      description__value: null
+      description__format: null
+      weight: '38'
+      parent: '70'
+      uuid: 44ed4c68-a51c-4145-8211-cf9b31c25ed6
+    -
+      vid: logros
+      tid: '75'
+      langcode: es
+      name: 'Preguntar y decir la hora en punto: ‘es la /son las’'
+      description__value: null
+      description__format: null
+      weight: '29'
+      parent: '70'
+      uuid: 52743ca0-e1dc-4fa0-8714-d17dafd6bb9b
     -
       vid: logros
       tid: '52'
@@ -758,6 +1045,26 @@ taxonomies:
       uuid: a867a02b-e2ee-42cb-a934-0cf898c0bd35
     -
       vid: logros
+      tid: '79'
+      langcode: es
+      name: 'Reconocer actividades en casa'
+      description__value: null
+      description__format: null
+      weight: '33'
+      parent: '70'
+      uuid: a9e6426a-5094-4c1a-baae-1cf3c89d1e76
+    -
+      vid: logros
+      tid: '77'
+      langcode: es
+      name: 'Reconocer verbos de comida'
+      description__value: null
+      description__format: null
+      weight: '31'
+      parent: '70'
+      uuid: 910454da-a13f-46bf-9382-af07f2ee6c0e
+    -
+      vid: logros
       tid: '19'
       langcode: es
       name: 'Responder la pregunta: ¿Y tú?'
@@ -776,6 +1083,16 @@ taxonomies:
       weight: '15'
       parent: '15'
       uuid: d33b0337-c794-4c82-8a39-941cc0c104ea
+    -
+      vid: logros
+      tid: '71'
+      langcode: es
+      name: 'Saludar y despedirse de acuerdo al momento del día'
+      description__value: null
+      description__format: null
+      weight: '25'
+      parent: '70'
+      uuid: 1f0b7ffc-278d-4faa-9fa7-0151ffaf97da
     -
       vid: logros
       tid: '16'
@@ -806,6 +1123,253 @@ taxonomies:
       weight: '34'
       parent: '37'
       uuid: ced914f5-8316-4cbd-9620-86c52ef2cf65
+    -
+      vid: logros
+      tid: '76'
+      langcode: es
+      name: 'Usar ''del'' ''de la'' y la parte del día'
+      description__value: null
+      description__format: null
+      weight: '30'
+      parent: '70'
+      uuid: 6ac90863-c75e-4bee-973a-a2f9c16cdcad
+    -
+      vid: logros
+      tid: '70'
+      langcode: es
+      name: '¿Y tú que haces hoy?'
+      description__value: null
+      description__format: null
+      weight: '24'
+      parent: '0'
+      uuid: 0649cf7d-ad4d-465a-a734-546856b3f1ff
+  niveles_de_clases:
+    -
+      vid: niveles_de_clases
+      tid: '85'
+      langcode: es
+      name: A1.1
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 0446ebac-0252-4529-aec1-58377d3edb68
+      field_nivel_principal:
+        -
+          name: 'Bienvenido amigo Koala'
+          vid: nombres_de_niveles_principales
+      field_nombre_de_la_unidad:
+        -
+          value: 'Hola, soy  Koala'
+      field_nombre_largo_del_nivel:
+        -
+          value: 'Nivel 01'
+    -
+      vid: niveles_de_clases
+      tid: '86'
+      langcode: es
+      name: A1.2
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 99504cfe-3550-458a-b36e-1b98ff5fac09
+      field_nivel_principal:
+        -
+          name: 'Bienvenido amigo Koala'
+          vid: nombres_de_niveles_principales
+      field_nombre_de_la_unidad:
+        -
+          value: 'La familia de Koala'
+      field_nombre_largo_del_nivel:
+        -
+          value: 'Nivel 01'
+    -
+      vid: niveles_de_clases
+      tid: '87'
+      langcode: es
+      name: A1.3
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: c989d2ea-0254-413c-a31d-5bc1c2745236
+      field_nivel_principal:
+        -
+          name: 'Bienvenido amigo Koala'
+          vid: nombres_de_niveles_principales
+      field_nombre_de_la_unidad:
+        -
+          value: '¿Y tú que haces hoy?'
+      field_nombre_largo_del_nivel:
+        -
+          value: 'Nivel 01'
+    -
+      vid: niveles_de_clases
+      tid: '88'
+      langcode: es
+      name: A1.4
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: a8953d4c-75d1-4d48-9b52-c06d56e9cece
+      field_nivel_principal:
+        -
+          name: 'Bienvenido amigo Koala'
+          vid: nombres_de_niveles_principales
+      field_nombre_de_la_unidad:
+        -
+          value: 'A mi me gustan las frutas'
+      field_nombre_largo_del_nivel:
+        -
+          value: 'Nivel 01'
+    -
+      vid: niveles_de_clases
+      tid: '89'
+      langcode: es
+      name: A1.5
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 32ea4a2a-f0ff-4436-acd5-d67208d1abd0
+      field_nivel_principal:
+        -
+          name: 'Bienvenido amigo Koala'
+          vid: nombres_de_niveles_principales
+      field_nombre_de_la_unidad:
+        -
+          value: ' ¿Dónde está el abuelo?'
+      field_nombre_largo_del_nivel:
+        -
+          value: 'Nivel 01'
+    -
+      vid: niveles_de_clases
+      tid: '90'
+      langcode: es
+      name: A1.6
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: dbd33d78-ff81-400b-ba87-32fb2f5fd2ff
+      field_nivel_principal:
+        -
+          name: 'Bienvenido amigo Koala'
+          vid: nombres_de_niveles_principales
+      field_nombre_de_la_unidad:
+        -
+          value: 'En mi casa'
+      field_nombre_largo_del_nivel:
+        -
+          value: 'Nivel 01'
+    -
+      vid: niveles_de_clases
+      tid: '96'
+      langcode: es
+      name: A1.7
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 6f33251f-2486-4af4-ab61-1c087681d04f
+      field_nivel_principal:
+        -
+          name: 'Bienvenido amigo Koala'
+          vid: nombres_de_niveles_principales
+      field_nombre_de_la_unidad:
+        -
+          value: 'Hola, soy  Koala'
+      field_nombre_largo_del_nivel:
+        -
+          value: 'Nivel 01'
+    -
+      vid: niveles_de_clases
+      tid: '97'
+      langcode: es
+      name: A1.8
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: f855ddd1-b908-42cf-9c2c-2611ded45601
+      field_nivel_principal:
+        -
+          name: 'Bienvenido amigo Koala'
+          vid: nombres_de_niveles_principales
+      field_nombre_de_la_unidad:
+        -
+          value: 'Hola, soy  Koala'
+      field_nombre_largo_del_nivel:
+        -
+          value: 'Nivel 01'
+  nombres_de_niveles_principales:
+    -
+      vid: nombres_de_niveles_principales
+      tid: '91'
+      langcode: es
+      name: 'Bienvenido amigo Koala'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: eeb128a7-66ae-4c36-8ad5-cb53a56e5c35
+      field_numero_del_nivel:
+        -
+          value: '1'
+    -
+      vid: nombres_de_niveles_principales
+      tid: '94'
+      langcode: es
+      name: 'El Koala y sus tesos'
+      description__value: null
+      description__format: null
+      weight: '3'
+      parent: '0'
+      uuid: fb30ba7d-afb8-4467-a7da-0ca2f90b6e95
+      field_numero_del_nivel:
+        -
+          value: '4'
+    -
+      vid: nombres_de_niveles_principales
+      tid: '93'
+      langcode: es
+      name: 'El universo Koala'
+      description__value: null
+      description__format: null
+      weight: '2'
+      parent: '0'
+      uuid: a7951ad7-5349-4e17-aba3-52e720eacf52
+      field_numero_del_nivel:
+        -
+          value: '1'
+    -
+      vid: nombres_de_niveles_principales
+      tid: '92'
+      langcode: es
+      name: 'Koalas juveniles'
+      description__value: null
+      description__format: null
+      weight: '1'
+      parent: '0'
+      uuid: efa69502-0844-4959-a129-8ca1b6cacae5
+      field_numero_del_nivel:
+        -
+          value: '2'
+    -
+      vid: nombres_de_niveles_principales
+      tid: '95'
+      langcode: es
+      name: 'Un gran salto Koala'
+      description__value: null
+      description__format: null
+      weight: '4'
+      parent: '0'
+      uuid: 9078e08f-5dec-4ca9-bac1-5d6bb00e7b97
+      field_numero_del_nivel:
+        -
+          value: '5'
   secciones_de_los_mundos:
     -
       vid: secciones_de_los_mundos

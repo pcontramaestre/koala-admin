@@ -1,0 +1,25 @@
+uuid: 6a530379-9f59-4b2d-a41d-3dddd9c8e244
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_inasistencias_del_profesor
+    - node.type.facturacion_profesor
+id: node.facturacion_profesor.field_inasistencias_del_profesor
+field_name: field_inasistencias_del_profesor
+entity_type: node
+bundle: facturacion_profesor
+label: 'Inasistencias del profesor'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  min: 0
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

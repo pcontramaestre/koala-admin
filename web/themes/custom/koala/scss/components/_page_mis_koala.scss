@@ -24,7 +24,7 @@
                       .view-header {
                         position: absolute;
                         right: 0px;
-                        top: -4%;
+                        top: -11%;
 
                         a {
                           padding: 16px;
@@ -46,7 +46,7 @@
                             top: 65px;
                             left: 32px;
                           }
-                          &:hover{
+                          &:hover {
                             text-decoration: underline;
                           }
                         }
@@ -60,8 +60,8 @@
 
                             .nav-item {
                               margin-right: 1.8rem;
-
-                              a,button {
+                              a,
+                              button {
                                 border: none;
                                 background: #ffe8e8;
                                 border-radius: 16px;
@@ -184,27 +184,27 @@
   .view-id-logros_taxonomia.view-display-id-block_1 {
     .view-content.row {
       border-radius: 1.5rem;
-      background: var(--Grey-K100, #E6F1F1);
-      padding: 2rem 5rem 2rem 5rem;
+      background: var(--Grey-K100, #e6f1f1);
+      padding: 1rem 3rem 2rem 3rem;
       margin-bottom: 3rem;
+      margin-left: 0rem;
 
       .texto-logros {
         margin-top: 1rem;
-        margin-bottom: 3rem;
+        margin-bottom: 2rem;
         color: #000;
         font-family: Nunito;
         font-size: 1rem;
         font-style: normal;
-        font-weight: 500;
+        font-weight: 600;
         line-height: normal;
       }
-
     }
     .item-list-accordeon {
-      margin-bottom: 1rem;
+      margin-bottom: 0.5rem;
       border-radius: 1rem;
-      background: var(--White, #FFF);
-      padding: 1rem 1rem 1rem 1rem;
+      background: var(--White, #fff);
+      padding: 1rem;
 
       > h3 {
         font-size: 1rem;
@@ -216,7 +216,7 @@
         color: black;
 
         &:before {
-          content: '+';
+          content: "+";
           color: black;
           position: absolute;
           top: 50%;
@@ -244,10 +244,10 @@
           background: white;
 
           a {
-            font-size: 0.75rem;
+            font-size: 0.80rem;
             font-style: normal;
             font-weight: 700;
-            color: var(--Grey-K500, #727F7F);
+            color: var(--Grey-K500, #727f7f);
             text-decoration: none;
             pointer-events: none;
             position: relative;
@@ -256,24 +256,23 @@
 
             //Agregar ☆	antes del enlace
             &:before {
-              content: "★";
+              content: "";
+              background-image: url("../images/icon-star-disable.svg");
               margin-right: 0.5rem;
-              font-size: 1.2rem;
+              width: 19px;
+                height: 19px;
               position: absolute;
               left: -24px;
               font-weight: 300;
-              color: #727F7F;
-              text-shadow: 0px 1px 1px #00000052;
               top: -4px;
             }
           }
 
-
           &.habilitado {
-            background: var(--Red-K100, #FFE8E8);
+            background: var(--Red-K100, #ffe8e8);
 
             a {
-              font-size: 0.75rem;
+              font-size: 0.80rem;
               font-style: normal;
               font-weight: 700;
               color: black;
@@ -282,38 +281,33 @@
               position: relative;
               line-height: 1.2;
               display: block;
-  
+
               //Agregar ☆	antes del enlace
               &:before {
-                content: "★";
+                content: "";
+                background-image: url("../images/icon-start.svg");
                 margin-right: 0.5rem;
-                font-size: 1.2rem;
+                width: 19px;
+                height: 19px;
                 position: absolute;
                 left: -24px;
-                font-weight: 300;
                 color: white;
-                text-shadow: 0px 1px 1px #00000052;
                 top: -4px;
               }
             }
           }
-          
-
-
         }
         // Seleccionar cada 3 elementos
         li:nth-child(2n) {
           &.habilitado {
-            background: var(--Yellow-K100, #FFF0CC);
+            background: var(--Yellow-K100, #fff0cc);
           }
-          
         }
         li:nth-child(4n) {
           &.habilitado {
-            background: var(--Turq-K100, #D7EFF2);
-          }          
+            background: var(--Turq-K100, #d7eff2);
+          }
         }
-
       }
 
       &.activa {
@@ -321,17 +315,15 @@
           margin-bottom: 0.8rem;
 
           &:before {
-            content: '-';
+            content: "-";
           }
         }
         ul.listado-de-logros {
           display: grid;
-          // Transicion para que se despliegue        
+          // Transicion para que se despliegue
         }
       }
     }
-
-
   }
 
   // Resumen de la clase.
@@ -346,7 +338,7 @@
     }
     .resumen-clase {
       border-radius: 1.5rem;
-      border: 2px solid var(--Grey-K100, #E6F1F1);
+      border: 2px solid var(--Grey-K100, #e6f1f1);
       display: flex;
       padding: 1rem;
       flex-direction: column;
@@ -369,7 +361,7 @@
           line-height: normal;
         }
         div:nth-child(2) {
-          color: var(--Grey-K500, #727F7F);
+          color: var(--Grey-K500, #727f7f);
           font-family: Nunito;
           font-size: 1rem;
           font-style: normal;
@@ -410,7 +402,7 @@
           font-style: normal;
           font-weight: 700;
           line-height: normal;
-        }        
+        }
       }
 
       .comentarios-profesor {
@@ -421,10 +413,8 @@
         font-weight: 500;
         line-height: normal;
       }
-
     }
   }
-
 }
 
 @media (min-width: 300px) and (max-width: 800px) {
@@ -463,12 +453,13 @@
                               display: flex;
                               .nav-item {
                                 margin-right: 1rem;
+
                                 button {
                                   margin-bottom: 2.2rem !important;
                                 }
                                 .nav-link.active {
                                   &:after {
-                                    width: 40%!important;
+                                    width: 40% !important;
                                   }
                                 }
                               }

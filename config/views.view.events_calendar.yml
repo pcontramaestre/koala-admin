@@ -200,8 +200,8 @@ display:
           start: field_when
           end: field_when
           title: title
-          right_buttons: 'dayGridMonth,timeGridWeek,timeGridDay,listYear'
           left_buttons: 'prev,next today'
+          right_buttons: 'dayGridMonth,timeGridWeek,timeGridDay,listYear'
           default_view: dayGridMonth
           firstDay: '0'
           nav_links: 1
@@ -212,8 +212,8 @@ display:
           defaultLanguage: en
           languageSelector: 0
           dialogWindow: 0
-          createEventLink: 0
           openEntityInNewTab: 1
+          createEventLink: 0
           tax_field: ''
           vocabularies: ''
           color_bundle: ''

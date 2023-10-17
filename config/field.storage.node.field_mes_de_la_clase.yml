@@ -1,0 +1,61 @@
+uuid: ab2f99e1-2763-483d-a5ed-f3cc1ed17ba9
+langcode: es
+status: true
+dependencies:
+  module:
+    - field_permissions
+    - node
+    - options
+third_party_settings:
+  field_permissions:
+    permission_type: public
+id: node.field_mes_de_la_clase
+field_name: field_mes_de_la_clase
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: '01'
+      label: Enero
+    -
+      value: '02'
+      label: Febrero
+    -
+      value: '03'
+      label: Marzo
+    -
+      value: '04'
+      label: Abril
+    -
+      value: '05'
+      label: Mayo
+    -
+      value: '06'
+      label: Junio
+    -
+      value: '07'
+      label: Julio
+    -
+      value: '08'
+      label: Agosto
+    -
+      value: '09'
+      label: Septiembre
+    -
+      value: '10'
+      label: Octubre
+    -
+      value: '11'
+      label: Noviembre
+    -
+      value: '12'
+      label: Diciembre
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

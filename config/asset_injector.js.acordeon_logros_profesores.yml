@@ -1,0 +1,78 @@
+uuid: fa207f51-7c29-4b1c-9779-d54220543c64
+langcode: es
+status: true
+dependencies:
+  module:
+    - system
+id: acordeon_logros_profesores
+label: 'Acordeon logros - Profesores'
+code: |+
+  // Togle accordeon
+  const acordeon = document.getElementsByClassName('item-list-accordeon');
+
+  for (i=0; i<acordeon.length; i++) {
+    acordeon[i].addEventListener('click', function () {
+      this.classList.toggle('activa')
+    })
+  }
+
+  // Get value div with class  .views-field-uid > .id-del-nino, and trim the value
+  //const idNino = document.querySelector('.views-field-uid .id-del-nino').innerHTML.trim();
+
+  // Seleccionar los elementos con la clase .view-id-mis_koalas.view-display-id-block_2 .tab-content .tab-pane
+  const tabs = document.querySelectorAll('.tab-content .tab-pane');
+
+  /* 
+    Recorrer los elementos seleccionados y buscar el elemento con la clase .views-field-uid > .field-content > id-del-nino
+  */
+  var logrosCumplidos = [];
+  var logrosCumplidosTemp = new Array();
+  for (i=0; i<tabs.length; i++) {
+    const idNino = tabs[i].querySelector('.views-field-uid-1 > .field-content').innerText.trim();
+    console.log("Id del nino:"+idNino);
+    // Buscar el elemento con la clase .resumen-clase[user="'+idNino+'"] y agregar la clase .mostrar
+    const resumenClase = tabs[i].querySelectorAll('.resumen-clase[user="'+idNino+'"]');
+    for (j=0; j<resumenClase.length; j++) {
+      resumenClase[j].classList.add('mostrar');
+      /*
+        Buscar logros cumplidos en la clase .ids-logros-cumplidos
+      */
+      logrosCumplidos = resumenClase[j].querySelector('.ids-logros-cumplidos').innerText.trim().split('|'); 
+      // Recorrer el array logrosCumplidos y agregar los elementos al array logrosCumplidosTemp
+      for (k=0; k<logrosCumplidos.length; k++) {
+        logrosCumplidosTemp.push(logrosCumplidos[k]);
+      }
+    
+    }
+
+    //Recorrer logrosCumplidosTemp
+    for (k = 0; k < logrosCumplidosTemp.length; k++) {
+      var logro = logrosCumplidosTemp[k];
+      const logrosCumplidosElements = tabs[i].querySelectorAll('div[data-logro="' + logro + '"]');
+      for (l = 0; l < logrosCumplidosElements.length; l++) {
+        const logroCumplidoElement = logrosCumplidosElements[l];
+        const parentElement = logroCumplidoElement.parentElement.parentElement.parentElement;
+        if (parentElement.tagName === 'LI') {
+          parentElement.classList.add('habilitado');
+        }
+      }
+    }
+  }
+
+
+
+
+
+
+noscript: ''
+noscriptRegion: {  }
+jquery: true
+header: false
+preprocess: true
+conditions:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /profesor/mis-koalas
+contexts: {  }
+conditions_require_all: true

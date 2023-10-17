@@ -1,0 +1,24 @@
+uuid: bcdc138e-050b-4e50-bb87-bdcb167b1ad6
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_fecha_de_la_clase
+    - node.type.facturacion_profesor
+  module:
+    - datetime
+id: node.facturacion_profesor.field_fecha_de_la_clase
+field_name: field_fecha_de_la_clase
+entity_type: node
+bundle: facturacion_profesor
+label: 'Fecha del envío de la factura'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    default_date_type: now
+    default_date: now
+default_value_callback: ''
+settings: {  }
+field_type: datetime

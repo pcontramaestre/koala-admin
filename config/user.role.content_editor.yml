@@ -15,10 +15,12 @@ dependencies:
     - node.type.agendar_clase
     - node.type.article
     - node.type.crear_hijos
+    - node.type.facturacion_profesor
     - node.type.horarios_de_trabajo
     - node.type.horarios_profesores
     - node.type.page
     - node.type.profesores
+    - node.type.suscripciones
     - taxonomy.vocabulary.avatar_profesor
     - taxonomy.vocabulary.tags
     - workflows.workflow.asignar_profesor
@@ -86,6 +88,7 @@ permissions:
   - 'create content translations'
   - 'create crear_hijos content'
   - 'create document media'
+  - 'create facturacion_profesor content'
   - 'create field_apodo'
   - 'create field_avatar'
   - 'create field_hora_clase'
@@ -116,6 +119,7 @@ permissions:
   - 'delete any remote_video media'
   - 'delete any video media'
   - 'delete article revisions'
+  - 'delete facturacion_profesor revisions'
   - 'delete horarios_de_trabajo revisions'
   - 'delete horarios_profesores revisions'
   - 'delete media'
@@ -123,6 +127,7 @@ permissions:
   - 'delete own audio media'
   - 'delete own avatares_profesores media'
   - 'delete own document media'
+  - 'delete own facturacion_profesor content'
   - 'delete own horarios_de_trabajo content'
   - 'delete own horarios_profesores content'
   - 'delete own image media'
@@ -138,11 +143,13 @@ permissions:
   - 'edit any avatares_profesores media'
   - 'edit any crear_hijos content'
   - 'edit any document media'
+  - 'edit any facturacion_profesor content'
   - 'edit any horarios_de_trabajo content'
   - 'edit any horarios_profesores content'
   - 'edit any image media'
   - 'edit any profesores content'
   - 'edit any remote_video media'
+  - 'edit any suscripciones content'
   - 'edit any video media'
   - 'edit config_pages entity'
   - 'edit field_apodo'
@@ -157,6 +164,7 @@ permissions:
   - 'edit own avatares_profesores media'
   - 'edit own comments'
   - 'edit own document media'
+  - 'edit own facturacion_profesor content'
   - 'edit own field_apodo'
   - 'edit own field_avatar'
   - 'edit own field_hora_clase'
@@ -190,6 +198,7 @@ permissions:
   - 'use  The form mode agendando_clase linked to  node entity( agendar_clase )'
   - 'use  The form mode asignar_profesor linked to  node entity( agendar_clase )'
   - 'use  The form mode default linked to  node entity( horarios_de_trabajo )'
+  - 'use  The form mode default linked to  node entity( suscripciones )'
   - 'use  The form mode editar_horarios linked to  node entity( horarios_de_trabajo )'
   - 'use admin toolbar search'
   - 'use asignar_profesor transition asignacion_de_profesor'
@@ -218,6 +227,7 @@ permissions:
   - 'view any agendar_clase content'
   - 'view any article content'
   - 'view any crear_hijos content'
+  - 'view any facturacion_profesor content'
   - 'view any horarios_de_trabajo content'
   - 'view any horarios_profesores content'
   - 'view any mundos content'
@@ -240,6 +250,7 @@ permissions:
   - 'view own agendar_clase content'
   - 'view own article content'
   - 'view own crear_hijos content'
+  - 'view own facturacion_profesor content'
   - 'view own field_apodo'
   - 'view own field_avatar'
   - 'view own field_hora_clase'

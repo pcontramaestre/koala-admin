@@ -1,0 +1,7 @@
+name: 'Facturacion Profes'
+type: module
+description: 'Módulo para personalizar la facturación de profesionales.'
+core_version_requirement: ^8 || ^9
+package: Custom
+dependencies:
+  - views

@@ -1,0 +1,21 @@
+uuid: 96019708-154f-4258-8842-e6bd79076350
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_mes_de_la_clase
+    - node.type.facturacion_profesor
+  module:
+    - options
+id: node.facturacion_profesor.field_mes_de_la_clase
+field_name: field_mes_de_la_clase
+entity_type: node
+bundle: facturacion_profesor
+label: 'Mes de la clase'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string
