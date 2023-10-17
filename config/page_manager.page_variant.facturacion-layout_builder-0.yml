@@ -4,9 +4,10 @@ status: true
 dependencies:
   config:
     - page_manager.page.facturacion
+    - views.view.facturacion_profesor
   module:
     - layout_discovery
-    - quicktabs
+    - views
 id: facturacion-layout_builder-0
 label: 'Layout Builder'
 weight: 0
@@ -23,16 +24,19 @@ variant_settings:
         label: ''
         context_mapping: {  }
       components:
-        4c96c580-fbe8-404b-8e98-53b2669d3e6b:
-          uuid: 4c96c580-fbe8-404b-8e98-53b2669d3e6b
+        f94c0fd1-628c-4498-b683-e17c90ab6249:
+          uuid: f94c0fd1-628c-4498-b683-e17c90ab6249
           region: content
           configuration:
-            id: 'quicktabs_block:facturacion'
+            id: 'views_block:facturacion_profesor-block_1'
             label: Facturación
             label_display: visible
-            provider: quicktabs
+            provider: views
             context_mapping: {  }
-          weight: 3
+            views_label: Facturación
+            items_per_page: none
+            exposed: {  }
+          weight: 4
           additional:
             layout_builder_styles_style:
               separacion_superior_mt_5: separacion_superior_mt_5
