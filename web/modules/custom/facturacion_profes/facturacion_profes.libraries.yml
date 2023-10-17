@@ -1,0 +1,6 @@
+facturacion_profes_js:
+  js:
+    js/mi_script.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal.message
