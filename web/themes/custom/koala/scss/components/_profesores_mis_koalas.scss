@@ -6,104 +6,108 @@
 
         .nav-item.mostrar {
           a {
-            border: unset;            
+            border: unset;
             &.active {
-              border-bottom: 2px solid var(--Red-K500, #ff0000);
+              color: $RedK500;
+              font-weight: 700;
+              border-bottom: 2px solid var(--Red-K500, black);
             }
           }
         }
       }
+      .tab-content {
+        .tab-pane {
+          background-color: #e6f1f1;
+        }
+      }
     }
-
-
-
 
     // Acordeon de logros
     .view-id-logros_taxonomia.view-display-id-block_1 {
       .view-content.row {
-        border-radius: 1.5rem;
-        background   : var(--Grey-K100, #e6f1f1);
-        padding      : 1rem 3rem 2rem 3rem;
+        // border-radius: 1.5rem;
+        // background   : var(--Grey-K100, #e6f1f1);
+        padding: 1rem 3rem 2rem 3rem;
         margin-bottom: 3rem;
-        margin-left  : 0rem;
+        margin-left: 0rem;
 
         .texto-logros {
-          margin-top   : 1rem;
+          margin-top: 1rem;
           margin-bottom: 2rem;
-          color        : #000;
-          font-family  : Nunito;
-          font-size    : 1rem;
-          font-style   : normal;
-          font-weight  : 600;
-          line-height  : normal;
+          color: #000;
+          font-family: Nunito;
+          font-size: 1rem;
+          font-style: normal;
+          font-weight: 600;
+          line-height: normal;
         }
       }
 
       .item-list-accordeon {
         margin-bottom: 0.5rem;
         border-radius: 1rem;
-        background   : var(--White, #fff);
-        padding      : 1rem;
+        background: var(--White, #fff);
+        padding: 1rem;
 
-        >h3 {
-          font-size    : 1rem;
-          font-weight  : 500;
+        > h3 {
+          font-size: 1rem;
+          font-weight: 500;
           margin-bottom: 0rem;
-          cursor       : pointer;
-          display      : block;
-          position     : relative;
-          color        : black;
+          cursor: pointer;
+          display: block;
+          position: relative;
+          color: black;
 
           &:before {
-            content  : "+";
-            color    : black;
-            position : absolute;
-            top      : 50%;
-            right    : -5px;
+            content: "+";
+            color: black;
+            position: absolute;
+            top: 50%;
+            right: -5px;
             font-size: 30px;
             transform: translateY(-50%);
           }
         }
 
         ul.listado-de-logros {
-          display              : none;
+          display: none;
           //display: grid;
           grid-template-columns: 1fr 1fr 1fr;
-          gap                  : 1rem;
-          list-style-type      : none;
-          padding              : 0;
+          gap: 1rem;
+          list-style-type: none;
+          padding: 0;
           //crear transicion para que se despliegue
-          transition           : 0.5s;
+          transition: 0.5s;
 
           li {
-            display      : flex;
-            align-items  : center;
+            display: flex;
+            align-items: center;
             border-radius: 1rem;
-            padding      : 0.5rem 1rem 0.5rem 2rem;
-            background   : white;
+            padding: 0.5rem 1rem 0.5rem 2rem;
+            background: white;
 
             a {
-              font-size      : 0.80rem;
-              font-style     : normal;
-              font-weight    : 700;
-              color          : var(--Grey-K500, #727f7f);
+              font-size: 0.8rem;
+              font-style: normal;
+              font-weight: 700;
+              color: var(--Grey-K500, #727f7f);
               text-decoration: none;
-              pointer-events : none;
-              position       : relative;
-              line-height    : 1.2;
-              display        : block;
+              pointer-events: none;
+              position: relative;
+              line-height: 1.2;
+              display: block;
 
               //Agregar ☆	antes del enlace
               &:before {
-                content         : "";
+                content: "";
                 background-image: url("../images/icon-star-disable.svg");
-                margin-right    : 0.5rem;
-                width           : 19px;
-                height          : 19px;
-                position        : absolute;
-                left            : -24px;
-                font-weight     : 300;
-                top             : -4px;
+                margin-right: 0.5rem;
+                width: 19px;
+                height: 19px;
+                position: absolute;
+                left: -24px;
+                font-weight: 300;
+                top: -4px;
               }
             }
 
@@ -111,27 +115,27 @@
               background: var(--Red-K100, #ffe8e8);
 
               a {
-                font-size      : 0.80rem;
-                font-style     : normal;
-                font-weight    : 700;
-                color          : black;
+                font-size: 0.8rem;
+                font-style: normal;
+                font-weight: 700;
+                color: black;
                 text-decoration: none;
-                pointer-events : none;
-                position       : relative;
-                line-height    : 1.2;
-                display        : block;
+                pointer-events: none;
+                position: relative;
+                line-height: 1.2;
+                display: block;
 
                 //Agregar ☆	antes del enlace
                 &:before {
-                  content         : "";
+                  content: "";
                   background-image: url("../images/icon-start.svg");
-                  margin-right    : 0.5rem;
-                  width           : 19px;
-                  height          : 19px;
-                  position        : absolute;
-                  left            : -24px;
-                  color           : white;
-                  top             : -4px;
+                  margin-right: 0.5rem;
+                  width: 19px;
+                  height: 19px;
+                  position: absolute;
+                  left: -24px;
+                  color: white;
+                  top: -4px;
                 }
               }
             }
@@ -152,7 +156,7 @@
         }
 
         &.activa {
-          >h3 {
+          > h3 {
             margin-bottom: 0.8rem;
 
             &:before {
@@ -168,8 +172,6 @@
       }
     }
 
-
-
     // Resumen de la clase.
     .view-resumen-de-clases {
       .no-mostrar {
@@ -182,82 +184,85 @@
       // }
 
       .resumen-clase {
-        border-radius  : 1.5rem;
-        border         : 2px solid var(--Grey-K100, #e6f1f1);
-        display        : flex;
-        padding        : 1rem;
-        flex-direction : column;
+        border-radius: 1.5rem;
+        border: 2px solid var(--Grey-K100, #e6f1f1);
+        display: flex;
+        padding: 1rem;
+        flex-direction: column;
         justify-content: center;
-        align-items    : flex-start;
-        gap            : 1.5rem;
-        margin-bottom  : 1rem;
+        align-items: flex-start;
+        gap: 1.5rem;
+        margin-bottom: 1rem;
 
         .header {
           justify-content: space-between;
-          flex-direction : row;
-          width          : 100%;
+          flex-direction: row;
+          width: 100%;
 
           div:nth-child(1) {
-            color      : #000;
+            color: #000;
             font-family: Nunito;
-            font-size  : 1rem;
-            font-style : normal;
+            font-size: 1rem;
+            font-style: normal;
             font-weight: 700;
             line-height: normal;
           }
 
           div:nth-child(2) {
-            color      : var(--Grey-K500, #727f7f);
+            color: var(--Grey-K500, #727f7f);
             font-family: Nunito;
-            font-size  : 1rem;
-            font-style : normal;
+            font-size: 1rem;
+            font-style: normal;
             font-weight: 700;
             line-height: normal;
           }
         }
 
         .resumen-video {
+          display: none;
           img {
             max-width: 100%;
-            height   : auto;
+            height: auto;
           }
         }
 
         .profesor-clase {
-          display        : flex;
-          flex-direction : row;
-          align-items    : center;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
           justify-content: flex-start;
-          width          : 100%;
-          flex-wrap      : nowrap;
+          width: 100%;
+          flex-wrap: nowrap;
+          background-color: white;
+          border-radius: 32px;
 
           .avatar {
             margin-right: 0.5rem;
 
             img {
               border-radius: 8.25963rem;
-              background   : url(<path-to-image>), lightgray 50% / cover no-repeat;
-              width        : 30px;
-              height       : 30px;
-              cursor       : pointer;
+              background: url(<path-to-image>), lightgray 50% / cover no-repeat;
+              width: 30px;
+              height: 30px;
+              cursor: pointer;
             }
           }
 
           .nombre {
-            color      : var(--Black, #000);
+            color: var(--Black, #000);
             font-family: Nunito;
-            font-size  : 1rem;
-            font-style : normal;
+            font-size: 1rem;
+            font-style: normal;
             font-weight: 700;
             line-height: normal;
           }
         }
 
         .comentarios-profesor {
-          color      : var(--Black, #000);
+          color: var(--Black, #000);
           font-family: Nunito;
-          font-size  : 1rem;
-          font-style : normal;
+          font-size: 1rem;
+          font-style: normal;
           font-weight: 500;
           line-height: normal;
         }
