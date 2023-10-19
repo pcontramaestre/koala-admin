@@ -24,7 +24,7 @@
                       .view-header {
                         position: absolute;
                         right: 0px;
-                        top: -11%;
+                        top: -3.7%;
 
                         a {
                           padding: 16px;
@@ -55,6 +55,9 @@
                       .view-content {
                         #views-bootstrap-tab-views-bootstrap-mis-koalas-block-2 {
                           .nav-tabs {
+                            overflow-x: auto;
+                            display: flex;
+                            flex-wrap: nowrap;
                             border-bottom: 2px solid #e6f1f1;
                             width: 78%;
 
@@ -74,6 +77,7 @@
                                 justify-content: center;
                                 align-items: center;
                                 margin-bottom: 1rem;
+                                text-wrap: nowrap;
                                 padding: 0.5rem 0.5rem 0.5rem 0rem;
                                 &:before {
                                   content: "";
@@ -129,7 +133,13 @@
                               }
                             }
                           }
-
+                          .nav-tabs::-webkit-scrollbar {
+                            width: 5px;
+                            height: 3px;
+                          }
+                          .nav-tabs::-webkit-scrollbar-thumb{
+                            background-color: grey;
+                          }
                           .tab-content {
                             .tab-pane {
                               .views-field.views-field-uid {
@@ -165,6 +175,9 @@
                                   }
                                 }
                               }
+                              .row {
+                                background: var(--Grey-K100, #e6f1f1);
+                              }
                             }
                           }
                         }
@@ -184,7 +197,6 @@
   .view-id-logros_taxonomia.view-display-id-block_1 {
     .view-content.row {
       border-radius: 1.5rem;
-      background: var(--Grey-K100, #e6f1f1);
       padding: 1rem 3rem 2rem 3rem;
       margin-bottom: 3rem;
       margin-left: 0rem;
@@ -244,7 +256,7 @@
           background: white;
 
           a {
-            font-size: 0.80rem;
+            font-size: 0.8rem;
             font-style: normal;
             font-weight: 700;
             color: var(--Grey-K500, #727f7f);
@@ -260,7 +272,7 @@
               background-image: url("../images/icon-star-disable.svg");
               margin-right: 0.5rem;
               width: 19px;
-                height: 19px;
+              height: 19px;
               position: absolute;
               left: -24px;
               font-weight: 300;
@@ -272,7 +284,7 @@
             background: var(--Red-K100, #ffe8e8);
 
             a {
-              font-size: 0.80rem;
+              font-size: 0.8rem;
               font-style: normal;
               font-weight: 700;
               color: black;
