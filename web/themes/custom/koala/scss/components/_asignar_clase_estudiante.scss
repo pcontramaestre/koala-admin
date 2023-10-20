@@ -1,6 +1,5 @@
 .node--type-asignar-clase-a-estudiante {
   #page-wrapper {
-
     //Formulario
     .node-asignar-clase-a-estudiante-edit-form {
       #parte-superio-no-mostrar {
@@ -18,33 +17,36 @@
         margin-bottom: 1rem;
       }
       .form-switch .form-check-input:checked {
-        background-color: #297e88;
-        border-color: #297e88;      
+        background-color: #FF6669;
+        border-color: #FF6669
       }
 
       .form-switch .form-check-input {
-        background-color: #297e8852;
-        border-color: #297e8852;
+        background-color: #ffe8e8;
+        border-color: #ffe8e8;
       }
-      
+
       .form-actions {
         display: flex;
         justify-content: center;
 
         button {
           border-radius: 2.5rem;
-          border: 2px solid var(--Turq-K500, #297E88);
-          background: var(--Agua-K500, #2FF7EE);
+          border: 2px solid var(--Turq-K500, #297e88);
+          background: var(--Agua-K500, #2ff7ee);
           color: black;
+          font-weight: 700;
+          font-size: 20px;
+          padding: 0.3rem 1.5rem;
 
           &:hover {
-            background: var(--Turq-K500, #297E88);
+            background: var(--Turq-K500, #297e88);
             color: white;
           }
         }
       }
 
-      //Layout 
+      //Layout
       .layout.layout--twocol {
         .layout__region.layout__region--top {
           flex: 0 1 auto;
@@ -60,10 +62,11 @@
           flex: 0 1 auto;
           max-width: 66%;
           width: 66%;
+          font-weight: 500;
 
           .field--name-field-logros-cumplidos {
             .fieldgroup {
-              margin-top: 1rem;
+              margin-top: 1.5rem;
               legend {
                 display: none;
               }
@@ -75,11 +78,13 @@
                   align-items: center;
                   justify-items: stretch;
                   align-content: center;
+                  .js-form-type-checkbox{
+                    max-width: 22vw;
+                  }
                 }
               }
             }
           }
-
         }
         .layout__region.layout__region--bottom {
           flex: 0 1 auto;
@@ -93,7 +98,7 @@
 
           .field--widget-string-textarea {
             margin-bottom: 0 !important;
-            > .form-type-textarea  {
+            > .form-type-textarea {
               display: grid;
               gap: 1rem;
               margin-bottom: 0 !important;
@@ -110,13 +115,15 @@
 
               textarea {
                 border-radius: 0.5rem;
-                border: 2px solid var(--Grey-K200, #BECACA);
-                background: var(--White, #FFF);
+                border: 2px solid var(--Grey-K200, #becaca);
+                background: var(--White, #fff);
               }
-
             }
           }
-
+          #edit-field-marcar-clase-como-finaliza-wrapper {
+            display: flex;
+            justify-content: end;
+          }
           .field--type-boolean {
             > .js-form-type-checkbox {
               width: auto;
@@ -127,12 +134,14 @@
               padding-left: 3rem;
               padding-right: 1rem;
               border-radius: 1rem;
-              background: var(--Grey-K100, #E6F1F1);
+              background: var(--Grey-K100, #e6f1f1);
               padding-top: 1rem;
               padding-bottom: 1rem;
 
+
               label {
                 margin-left: 0.4rem;
+                font-weight: 500;
               }
             }
           }
@@ -141,24 +150,100 @@
 
       // Bloque izquierda estudiante
       .block-estudiante {
-        max-width: 70%;
+        max-width: 92%;
 
         padding: 1rem 1.5rem 1rem 1rem;
         gap: 1rem;
         border-radius: 2rem;
-        background: var(--Yellow-K100, #FFF0CC);
+        background: var(--Yellow-K100, #fff0cc);
 
         .block-estudiante__img {
           img {
             max-height: 80px;
             max-width: 80px;
             border-radius: 50%;
-            border: 2px solid var(--White, #FFF);
+            border: 2px solid var(--White, #fff);
             background: url(<path-to-image>), lightgray 50% / cover no-repeat;
           }
         }
+        .block-estudiante__info {
+          font-weight: 700;
+          color: black;
+        }
       }
+    }
+  }
+}
 
+// tabla calificación
+
+.page-view-calificar-clases {
+  #block-koala-content {
+    .view-id-calificar_clases {
+      .view-header {
+        .text-center {
+          margin-bottom: 2rem !important;
+          h3 {
+            font-size: 20px;
+            font-weight: 700;
+          }
+        }
+      }
+      .view-content {
+        .table-responsive {
+          border-top-left-radius: 20px;
+          border-top-right-radius: 20px;
+          padding: 0rem;
+          border-right: 1px solid var(--Grey-K200, #becaca);
+          border-left: 1px solid var(--Grey-K200, #becaca);
+          border-top: 1px solid var(--Grey-K200, #becaca);
+          .table {
+            margin-bottom: 0rem;
+            thead {
+              background-color: #e6f1f1;
+              tr {
+                vertical-align: middle;
+                th {
+                  font-weight: 500;
+                  color: #727f7f;
+                  padding: 1rem;
+                  border-right: 1px solid #becaca;
+                }
+              }
+            }
+            tbody {
+              tr {
+                --bs-table-striped-bg: white;
+                .views-field-field-nombre-del-nino-a {
+                  font-weight: 600;
+                  color: black;
+                }
+                .views-field-field-fecha-cita-oculta {
+                  font-weight: 500;
+                  color: black;
+                }
+                .views-field-field-clase-a-asignar {
+                  font-weight: 500;
+                  color: black;
+                }
+                .views-field-edit-node {
+                  a {
+                    font-weight: 700;
+                    color: black;
+                    &:hover {
+                      opacity: 0.7;
+                    }
+                  }
+                }
+                td {
+                  border-right: 1px solid #becaca;
+                  padding: 1rem 0.5rem;
+                }
+              }
+            }
+          }
+        }
+      }
     }
   }
 }
