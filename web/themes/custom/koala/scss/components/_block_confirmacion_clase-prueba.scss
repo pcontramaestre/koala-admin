@@ -61,8 +61,7 @@ body.node--type-agendar-clase {
             }
 
             a {
-              background: #2ff7ee;
-              border: 2px solid #297e88;
+              background: #FFE8E8;
               border-radius: 28px;
               color: black;
               padding: 0.3rem 1rem 0.3rem 1rem;
@@ -70,19 +69,15 @@ body.node--type-agendar-clase {
               font-weight: 700;
               display: flex;
               justify-content: center;
-              &:hover{
-                background-color: #297e88;
-                color: white;
-              }
             }
           }
           .col-md-12:nth-child(4) {
             position: absolute;
-            top: 10vw;
+            top: 71%;
             left: 0;
             right: 0;
             margin: 0 auto;
-            width: 40%;
+            width: 96%;
           }
         }
       }
