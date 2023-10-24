@@ -21,6 +21,7 @@ dependencies:
     - field.field.user.user.field_tu_video_
     - field.field.user.user.user_picture
   module:
+    - advanced_text_formatter
     - field_layout
     - layout_builder
     - path
@@ -57,8 +58,10 @@ content:
     region: first
     settings:
       size: 60
-      placeholder: 'Nombre del acudiente'
-    third_party_settings: {  }
+      placeholder: 'Nombre de padre / Tutor legal'
+    third_party_settings:
+      advanced_text_formatter:
+        show_token_tree: 0
   path:
     type: path
     weight: 2

@@ -1,0 +1,21 @@
+uuid: 4fc69bba-4361-4b2d-b162-d4ee54b30baa
+langcode: es
+status: true
+dependencies:
+  module:
+    - system
+id: ocultar_header_en_admin
+label: 'Ocultar Header en admin'
+code: |-
+  .rol-administrator header#header {
+  	display:none;
+  }
+media: all
+preprocess: true
+conditions:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '/user/*'
+contexts: {  }
+conditions_require_all: true

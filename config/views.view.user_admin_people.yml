@@ -82,7 +82,7 @@ display:
           entity_type: user
           entity_field: name
           plugin_id: field
-          label: 'Nombre de usuario'
+          label: Usuario
           exclude: false
           alter:
             alter_text: false

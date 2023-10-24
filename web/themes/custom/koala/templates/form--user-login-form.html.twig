@@ -3,27 +3,51 @@
         <div class="login-form__top">
             
             <div class="texto-login">
-              {{ 'Eres nuevo,'|t }} <a href="/user/register">{{ 'Regístrate aquí'|t }}</a>
+              {% if current_language == 'es' %}
+                {{ 'Eres nuevo,'|t }} <a href="/user/register">{{ 'Regístrate aquí'|t }}</a>
+              {% else %}
+                {{ 'New here? '|t }} <a href="/user/register">{{ 'Sign up!'|t }}</a>
+              {% endif %}
             </div>
-            <h3 class="title-form">Iniciar sesión</h3>
+            <div class="texto-login">
+              {% if current_language == 'es' %}
+                <h3 class="title-form">Iniciar sesión</h3>
+              {% else %}
+                <h3 class="title-form">Sign In</h3>
+              {% endif %}
+            
             <div id="error_messages"></div>
 
             {{ element.messages }}
             {{ element.name }} {# username element #}
             {{ element.pass }} {# password element #}
               <div class="forgot-password2">
-                <a href="/user/password">{{ 'Restablecer su contraseña'|t }}</a>
+                {% if current_language == 'es' %}
+                  <a href="/user/password">{{ 'Restablecer su contraseña'|t }}</a>
+                {% else %}
+                  <a href="/user/password">{{ 'Reset your password'|t }}</a>
+                {% endif %}                
               </div>
             {{ element.form_build_id }} {# required #}
             {{ element.form_id }} {# required #}
             <div class="login-form__submit">
                 {{ element.actions.submit }}              
             </div>
-            <div class="separador">ó</div>
+            <div class="separador">
+              {% if current_language == 'es' %}
+                ó            
+              {% else %}
+                or            
+              {% endif %}     
+            </div>
             <div class="boton-google">
-              <button  type="submit" id="edit-submit2" name="opGoogle" value="Ingresa con Google" class="button js-form-submit form-submit btn btn-google">Ingresa con Google</button>
+              {% if current_language == 'es' %}
+                <button  type="submit" id="edit-submit2" name="opGoogle" value="Ingresa con Google" class="button js-form-submit form-submit btn btn-google">Ingresa con Google</button>
+              {% else %}
+                <button  type="submit" id="edit-submit2" name="opGoogle" value="Sign in with Google" class="button js-form-submit form-submit btn btn-google">Sign in with Google</button>
+              {% endif %}
             </div>
 
         </div>
     </form>
-</div>
+</div> 

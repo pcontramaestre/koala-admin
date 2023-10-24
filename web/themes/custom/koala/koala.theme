@@ -278,6 +278,7 @@ function koala_preprocess_page(&$variables) {
   
   // Almacena el idioma actual en una variable.
   $variables['current_language'] = $current_language;
+  
 }
 
 /**
@@ -291,4 +292,16 @@ function koala_preprocess_views_view(&$variables) {
   $variables['current_language'] = $current_language;
 }
 
+function koala_preprocess_user_login(&$variables) {
+  $current_language = \Drupal::languageManager()->getCurrentLanguage()->getId();
+  $variables['current_language'] = $current_language;
+  
+}
 
+/**
+ * Implements hook_preprocess_HOOK() for all theme templates.
+ */
+function koala_preprocess(&$variables, $hook) {
+  $current_language = \Drupal::languageManager()->getCurrentLanguage()->getId();
+  $variables['current_language'] = $current_language;
+}
