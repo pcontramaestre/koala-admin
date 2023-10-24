@@ -21,7 +21,7 @@
                     .view-display-id-block_2 {
                       position: relative;
 
-                      .view-header {
+                      > .view-header {
                         position: absolute;
                         right: 0px;
                         top: -3.7%;
@@ -71,7 +71,7 @@
                                 color: #ff6669;
                                 font-weight: 700;
                                 font-size: 16px;
-                                min-width: 140px;
+                                min-width: 100px;
                                 height: 24px;
                                 display: flex;
                                 justify-content: center;
@@ -79,6 +79,7 @@
                                 margin-bottom: 1rem;
                                 text-wrap: nowrap;
                                 padding: 0.5rem 0.5rem 0.5rem 0rem;
+                                position: relative;
                                 &:before {
                                   content: "";
                                   display: block;
@@ -86,7 +87,8 @@
                                   height: 24px;
                                   border-radius: 200px;
                                   margin-right: 0.5rem;
-                                  background-image: url("/themes/custom/koala/images/Avatar1.jpg");
+                                  background-image: url("/themes/custom/koala/images/Avatar1.png");
+                                  background-size: cover;
                                 }
                               }
 
@@ -94,8 +96,8 @@
                                 &:after {
                                   border-bottom: 2px solid black;
                                   content: "";
-                                  top: 40px;
-                                  width: 14%;
+                                  top: 28px;
+                                  width: 90%;
                                   position: absolute;
                                 }
                               }
@@ -341,6 +343,31 @@
   // Resumen de la clase.
 
   .view-resumen-de-clases {
+
+    > .view-header {
+      margin-top: 1.5rem;
+
+      .titulo-saludos {
+        h3 {
+          color: black;
+          font-size: 1.25rem;
+          font-style: normal;
+          font-weight: 700;
+          line-height: normal;
+        }
+      }
+
+      .subtitulo-saludos {
+        p {
+          font-family: Nunito;
+          font-size: 1rem;
+          font-style: normal;
+          font-weight: 500;
+          line-height: normal;
+          color: black;
+        }
+      }
+    }
     .no-mostrar {
       display: none;
     }
@@ -358,6 +385,7 @@
       align-items: flex-start;
       gap: 1.5rem;
       margin-bottom: 1rem;
+      background: white;
 
       .header {
         justify-content: space-between;
