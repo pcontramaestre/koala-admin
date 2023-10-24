@@ -161,6 +161,7 @@ body.page-user-register {
                   font-weight: 500;
                 }
               }
+
             }
           }
 
@@ -187,6 +188,140 @@ body.page-user-register {
 
                 .js-form-type-password {
                   .password-strength {
+                    .password-strength__title {
+                      font-size: 0.9rem;
+                      font-weight: 600;
+                      color: black;
+                    }
+                  }
+
+                  .password-confirm-message {
+                    font-size: 0.9rem;
+                    font-weight: 600;
+                    color: black;
+                    margin-top: 0.5rem;
+                  }
+                }
+              }
+              .js-form-type-password{
+                overflow: visible!important;
+              }
+            }
+
+            small {
+              display: none;
+            }
+          }
+        }
+      }
+
+      .form-actions {
+        button {
+          background-color: $AguaK500;
+          border: 2px solid $TurqK500;
+          padding: 0rem 1rem;
+          font-size: 1.2rem;
+          font-weight: 700;
+          height: 3rem;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+          margin: 0 auto;
+          color: black;
+          border-radius: 25px;
+          margin-bottom: 3rem;
+
+          &:hover {
+            background-color: $TurqK500;
+            color: white;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 700px) and (min-width: 325px) {
+  .page-user-register{
+    footer {
+      padding-top: 2rem;
+      .container {
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 1rem;
+        .site-footer__top {
+          width: 25%!important;
+          margin-bottom: 1rem;
+        }
+        .footer-bottom {
+          width: 90%!important;
+        }
+      }
+    }
+  }
+  #block-koala-content {
+    .content {
+      .title-logos {
+        .iconos {
+          .col-4:nth-child(1) {
+            .img {
+              margin-right: 1.3rem!important;
+            }
+          }
+        }
+      }
+
+      .user-register-form {
+        width: 70%;
+        margin: 0 auto;
+        margin-top: 2rem;
+
+        .layout--twocol-section {
+          .layout__region--first {
+            padding-right: 0.5rem;
+
+            .field--type-string {
+              .js-form-item {
+                label {
+                  display: none;
+                }
+
+                input {
+                  border-radius: 25px;
+                  border: 2px solid $GreyK200;
+                  height: 2.8rem;
+                  color: black;
+                  font-weight: 500;
+                }
+              }
+            }
+          }
+
+          .layout__region--second {
+            padding-left: 0.5rem;
+
+            .js-form-wrapper {
+              .js-form-item {
+                input {
+                  width: 100%;
+                  border-radius: 25px;
+                  border: 2px solid $GreyK200;
+                  height: 2.8rem;
+                  color: black;
+                }
+
+                .password-suggestions {
+                  border-radius: 15px;
+                  background-color: grey;
+                  color: white;
+                  padding: 0.5rem 1rem;
+                  font-size: 0.9rem;
+                }
+
+                .js-form-type-password {
+                  .password-strength {
+                    width: 65%!important;
                     .password-strength__title {
                       font-size: 0.9rem;
                       font-weight: 600;
@@ -236,9 +371,6 @@ body.page-user-register {
       }
     }
   }
-}
-
-@media only screen and (max-width: 700px) and (min-width: 340px) {
   body.page-user-register {
     .barra-superior {
       .atras {

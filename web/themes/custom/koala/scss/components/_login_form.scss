@@ -239,3 +239,14 @@ body.simplelogin {
     }
   }
 }
+@media only screen and (max-width: 700px) and (min-width: 300px){
+  .simplelogin-wrapper {
+    .simplelogin-form {
+      .login-form__submit {
+        .form-submit {
+          width           : 73%!important;
+        }
+      }
+    }
+  }
+}

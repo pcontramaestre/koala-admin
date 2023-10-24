@@ -245,49 +245,52 @@ body #main-wrapper {
       }
     }
   }
-
-  .path-padres {
+  body {
     #header {
       #navbar-main {
         div {
           justify-content: space-between;
         }
+      }
+    }
+  }
 
-        #CollapsingNavbar {
-          #block-koala-account-menu .nav {
-            gap: 0px;
-          }
+  #header {
+    #navbar-main {
+      #CollapsingNavbar {
+        #block-koala-account-menu .nav {
+          gap: 0px;
+        }
 
-          .offcanvas-body {
-            #block-padres {
-              margin-left: 0rem;
+        .offcanvas-body {
+          #block-padres {
+            margin-left: 0rem;
 
-              .nav {
-                display: block;
-                width: 100%;
-                text-align: center;
-                margin-top: 1rem;
+            .nav {
+              display: block;
+              width: 100%;
+              text-align: center;
+              margin-top: 1rem;
 
-                .nav-item {
-                  margin-bottom: 2rem;
-                  margin-right: 16px;
+              .nav-item {
+                margin-bottom: 2rem;
+                margin-right: 16px;
 
-                  .nav-link {
-                    font-size: 20px;
-                  }
-                }
-              }
-            }
-
-            #block-koala-account-menu {
-              justify-content: center !important;
-              margin-right: 0rem !important;
-
-              .no-admin {
-                // gap: 0px;
                 .nav-link {
                   font-size: 20px;
                 }
+              }
+            }
+          }
+
+          #block-koala-account-menu {
+            justify-content: center !important;
+            margin-right: 0rem !important;
+
+            .no-admin {
+              // gap: 0px;
+              .nav-link {
+                font-size: 20px;
               }
             }
           }
@@ -351,6 +354,15 @@ body #main-wrapper {
             }
           }
         }
+      }
+    }
+  }
+  #header #navbar-main #CollapsingNavbar .offcanvas-body{
+    flex-direction: column;
+    justify-content: flex-start!important;
+    .block-dropdown-language{
+      .dropbutton-widget{
+        width: auto!important;
       }
     }
   }
