@@ -16,17 +16,31 @@
   <div class="col-12 iconos text-center d-flex">
     <div class="col-4">
       <div class="img"><img src="/themes/custom/koala/images/clase.png" alt="Class"></div>
-      <div class="texto">{{ '25 minutos de clase'|t }}</div>
+      {% if current_language == 'es' %}
+        <div class="texto">{{ '25 minutos de clase'|t }}</div>
+      {% else %}
+        <div class="texto">{{ '25 minutes of class'|t }}</div>
+      {% endif %}
+      
     </div>
 
     <div class="col-4">
       <div class="img"><img src="/themes/custom/koala/images/test.png" alt="Class"></div>
-      <div class="texto">{{ 'Test de nivel'|t }}</div>
+      {% if current_language == 'es' %}
+        <div class="texto">{{ 'Test de nivel'|t }}</div>
+      {% else %}
+        <div class="texto">{{ 'Level test'|t }}</div>
+      {% endif %}
+      
     </div>
 
     <div class="col-4">
       <div class="img"><img src="/themes/custom/koala/images/conocer.png" alt="Class"></div>
-      <div class="texto">{{ 'Conocer al niño'|t }}</div>
+      {% if current_language == 'es' %}
+        <div class="texto">{{ 'Conocer al niño'|t }}</div>
+      {% else %}
+        <div class="texto">{{ 'Meet the child'|t }}</div>
+      {% endif %}
     </div>
   </div>
 </div>

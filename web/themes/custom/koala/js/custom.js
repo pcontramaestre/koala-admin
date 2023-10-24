@@ -77,10 +77,11 @@
     dateFormat: "dd-mm-yy", // 22-05-2019
     changeMonth: true,
     changeYear: true,
-    yearRange: "2001:2023",
+    // yearRange: "2001:2019",
     altFormat: "dd/mm/yy",
-    maxDate: "-1m -1w",
-    minDate: new Date(2001, 1 - 1, 1),
+    maxDate: "-5y",
+    //minDate: new Date(2001, 1 - 1, 1),
+    minDate: "-18y",
   });
 
   jQuery("#edit-field-fecha-de-la-cita-0-value").datepicker({

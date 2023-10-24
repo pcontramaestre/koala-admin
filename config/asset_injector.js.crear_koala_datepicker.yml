@@ -1,0 +1,34 @@
+uuid: 248527eb-a69e-42d6-91cd-fdf7dc90a254
+langcode: es
+status: true
+dependencies:
+  module:
+    - system
+id: crear_koala_datepicker
+label: 'Crear Koala - DatePicker'
+code: |
+  // Eliminar autocompletado.
+  (function ($) {
+  $('.node-agendar-clase-agendar-clases-form input[type="text"], .node-agendar-clase-agendar-clases-form input[type="date"], .node-agendar-clase-agendar-clases-form input[type="time"]').attr('autocomplete', 'off');
+
+
+  jQuery(document).ready(function ($) {
+  	
+  	$('.title-1').addClass('d-none');
+
+    
+  });
+
+  })(jQuery);
+noscript: ''
+noscriptRegion: {  }
+jquery: true
+header: false
+preprocess: true
+conditions:
+  request_path:
+    id: request_path
+    negate: false
+    pages: "/node/add/agendar_clase/agendar_clases\r\n/node/add/agendar_clase/agendar_clases/*"
+contexts: {  }
+conditions_require_all: true

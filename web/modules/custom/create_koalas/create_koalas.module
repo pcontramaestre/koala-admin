@@ -272,15 +272,15 @@ function callback_submit_agendar_clase(&$form, FormStateInterface $form_state) {
 
     // Execute the query and get the result.
     $nids = $query->execute();
-    dump("Nodos encontrados para el alumno con id $alumno_relacionado[0]['target_id']");
-    dump($nids);
+    //dump("Nodos encontrados para el alumno con id $alumno_relacionado[0]['target_id']");
+    //dump($nids);
     // Obtener el numero de nodos encontrados.
     $numero_nodos = count($nids);
     $numero_nodos = $numero_nodos - 1;
-    dump("Numero de nodos encontrados: $numero_nodos");
+    //dump("Numero de nodos encontrados: $numero_nodos");
 
     $numero_clase = $numero_nodos ? $numero_nodos : 1;
-    dump($numero_clase);
+    //dump($numero_clase);
       // Buscar en el tipo de contenido clases_estudiantes el campo field_numero_de_clase y que sea igual al numero de nodos encontrados. (Ambos son numeros).
       // Get the EntityTypeManager.
       $entityTypeManager = \Drupal::service('entity_type.manager');
@@ -294,13 +294,13 @@ function callback_submit_agendar_clase(&$form, FormStateInterface $form_state) {
 
       // Execute the query and get the result.
       $nids = $query->execute();
-      dump("El numero de clase es");
-      dump($nids);
+      //dump("El numero de clase es");
+      //dump($nids);
 
       // Obtener el id del nodo clases_estudiantes.
       $nid_clases_estudiantes = array_shift($nids);
-      dump("El id del nodo clases_estudiantes es");
-      dump($nid_clases_estudiantes);
+      //dump("El id del nodo clases_estudiantes es");
+      //dump($nid_clases_estudiantes);
 
       // Agregar el id del nodo clases_estudiantes al campo field_clase_a_asignar que es una referencia de entidad del nodo asignar_clase_a_estudiante.
       $node = Node::load($new_node_id);
@@ -309,10 +309,10 @@ function callback_submit_agendar_clase(&$form, FormStateInterface $form_state) {
 
       // Si se guardo el nodo asignar_clase_a_estudiante correctamente.
       if ($node) {
-        dump("Se guardo el nodo asignar_clase_a_estudiante correctamente con id $new_node_id con el numero de clase $nid_clases_estudiantes" );
+        //dump("Se guardo el nodo asignar_clase_a_estudiante correctamente con id $new_node_id con el numero de clase $nid_clases_estudiantes" );
       }
       else {
-        dump("No se guardo el nodo asignar_clase_a_estudiante correctamente");
+        //dump("No se guardo el nodo asignar_clase_a_estudiante correctamente");
         \Drupal::messenger()->addError( \Drupal::translation()->translate('No se guardo el nodo asignar_clase_a_estudiante correctamente con ID @error', ['@error' => $new_node_id ]));
       }
   }

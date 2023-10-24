@@ -16,17 +16,17 @@ class CustomChildLoginController extends ControllerBase {
    *   El ID del usuario hijo seleccionado.
    */
   public function startSession($uid) {
-    dump($uid);
+    //dump($uid);
     
     $user = User::load($uid);
     if ($user) { //&& $user->hasRole('padre')) {
-      dump($uid);
-      dump("Entro a padre con rol");
+      //dump($uid);
+      //dump("Entro a padre con rol");
       user_login_finalize($user);
       $this->messenger()->addMessage($this->t('Ahora estás logueado como el hijo seleccionado.'));
     }
-    dump($uid);
-    dump("No es padre");
+    //dump($uid);
+    //dump("No es padre");
     //return $this->redirect('<front>');
     return new RedirectResponse('/hijo');
   }
