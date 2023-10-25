@@ -61,7 +61,7 @@ body.node--type-agendar-clase {
             }
 
             a {
-              background: #FFE8E8;
+              background: #ffe8e8;
               border-radius: 28px;
               color: black;
               padding: 0.3rem 1rem 0.3rem 1rem;
@@ -115,16 +115,36 @@ body.node--type-agendar-clase {
 }
 
 @media only screen and (max-width: 700px) and (min-width: 340px) {
-  #block-koala-content .node--type-agendar-clase .node__content .cuadro {
-    width: 90%;
-    padding: 1rem 0rem 1.5rem 0rem;
+  #block-koala-content .node--type-agendar-clase {
+    .node__content{
+      .cuadro {
+        width: 100% !important;
+        padding: 1rem 0rem 1.5rem 0rem;
 
-    .col-md-12 {
-      text-align: center;
+        .col-md-12 {
+          text-align: center;
 
-      a {
-        padding: 0.5rem 1rem;
+          a {
+            padding: 0.5rem 1rem;
+          }
+          p {
+            float: none !important;
+            justify-content: center;
+          }
+        }
+        .col-md-12:nth-child(4){
+          top: 82%!important;
+        }
       }
+    }
+    .ir-a-cuenta:nth-child(2){
+      text-align: start!important;
+      width: 54%!important;
+    }
+    .ir-a-cuenta:nth-child(3){
+      text-align: end!important;
+      width: 44%!important;
+      padding-left: 0rem!important;
     }
   }
 }

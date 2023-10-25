@@ -22,6 +22,7 @@ h2 {
   max-width: 1240px;
 }
 
+
 .toast-container {
   [role="status"] {
     background-color: #f5f8d8;
@@ -405,6 +406,14 @@ h2 {
 }
 
 @media only screen and (max-width: 600px) and (min-width: 340px) {
+  .toast-container{
+    width: 100%;
+    .toast{
+      width: 96%;
+      margin: 0 auto;
+      margin-top: 1rem;
+    }
+  }
   #header {
     #navbar-main {
       #CollapsingNavbar {
@@ -624,9 +633,9 @@ h2 {
 }
 
 body.mobile {
-  .view-redes-sociales-p {
-    display: none;
-  }
+  // .view-redes-sociales-p {
+  //   display: none;
+  // }
 
   #CollapsingNavbar {
     .view-redes-sociales-p {

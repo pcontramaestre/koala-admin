@@ -219,7 +219,7 @@
   height: 18px;
 }
 
-@media only screen and (max-width: 700px) and (min-width: 340px) {
+@media only screen and (max-width: 700px) and (min-width: 320px) {
   .node-agendar-clases {
     #main-wrapper {
       .main-content {
@@ -260,6 +260,7 @@
                     .field--name-field-fecha-de-la-cita {
                       width           : 50%;
                       margin-bottom   : 0rem !important;
+                      padding: 0rem!important;
                       // order        : 4;
                     }
 
@@ -278,6 +279,13 @@
                       // order: 6;
                       width: 100%;
                       margin-left: 0rem!important;
+                      .js-form-type-checkbox {
+                        .form-check-label{
+                          a:nth-child(2){
+                            display: flex;
+                          }
+                        }
+                      }
                     }
                   }
                 }
