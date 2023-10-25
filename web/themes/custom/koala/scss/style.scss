@@ -77,3 +77,41 @@ p.centro-rem {
 .paragraph--type--bp-simple {
     padding-bottom: 1rem;
 }
+
+.ui-timepicker-table th.periods {
+    font-size: 0.8rem;
+    padding-right: 0.5rem;
+}
+
+.ui-timepicker-table td a {
+    width: 30px;
+    padding: 0.2rem;
+}
+
+
+.ui-timepicker-hours {
+    padding-right: 0.8rem;
+
+    .ui-timepicker {
+        tbody {
+            tr:nth-child(3) {
+                td {
+                    a {
+                        margin-top: 0.5rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.ui-timepicker-minutes {
+    padding-left: 0.5rem !important;
+
+    .ui-timepicker-title {
+        margin-top: -0.5rem; 
+    }
+    .ui-timepicker .ui-state-disabled {
+        background: transparent;
+    }
+}

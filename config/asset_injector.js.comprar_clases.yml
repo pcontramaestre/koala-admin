@@ -338,6 +338,8 @@ code: |-
         clases4Semanas.forEach((clase) => {
           if (clase.clasesPorSemana == clasesPorSemana) {
             precio = clase.valorPorClase;
+            //Convetir precio a dos decimales
+            precio = Math.round(precio * 100) / 100;
           }
         });
 
@@ -345,12 +347,17 @@ code: |-
         clases12Semanas.forEach((clase) => {
           if (clase.clasesPorSemana == clasesPorSemana) {
             precio = clase.valorPorClase;
+            //Convetir precio a dos decimales
+            precio = Math.round(precio * 100) / 100;
+
           }
         });
       } else if (suscription.value == 24) {
         clases24Semanas.forEach((clase) => {
           if (clase.clasesPorSemana == clasesPorSemana) {
             precio = clase.valorPorClase;
+            //Convetir precio a dos decimales
+            precio = Math.round(precio * 100) / 100;
           }
         });
       }
@@ -359,6 +366,8 @@ code: |-
     datosCosteClases.forEach((clase) => {
       if (clase.clases == parseInt(totalClases.textContent)) {
         precio = clase.costePorClase;
+        //Convetir precio a dos decimales
+        precio = Math.round(precio * 100) / 100;
       }
     });
 

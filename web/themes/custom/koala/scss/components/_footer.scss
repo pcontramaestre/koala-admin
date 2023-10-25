@@ -105,6 +105,10 @@ footer.site-footer {
       }
     }
     .footer-bottom {
+      .region-footer-bottom {
+        width: 100%;
+        margin: 0 auto;
+      }
       #block-footerbanderas {
         .field--name-body {
           .footer-banderas {
@@ -121,37 +125,6 @@ footer.site-footer {
   }
 }
 
-// .rol-profesor {
-//   footer.site-footer {
-//     .container {
-//       .site-footer__top {
-//         .no-admin.nav {
-//           list-style: none;
-//           font-weight: 700;
-//           font-size: 1.2rem;
-//           display: block;
-
-//           .nav-item {
-//             margin-bottom: 0.7rem;
-//           }
-//         }
-
-//         .region-footer-first {
-//           #block-logofooterhijos {
-//             .field--name-body {
-//               img {
-//                 margin-top: 2rem;
-//                 margin-left: 1.1rem;
-//               }
-//             }
-//           }
-//         }
-
-//         margin-top: 5.2rem;
-//       }
-//     }
-//   }
-// }
 .node-agendar-clases,
 .rol-profesor,
 .rol-padre {
@@ -178,7 +151,7 @@ footer.site-footer {
           #block-padres-2 {
             margin-top: -5rem;
           }
-          #block-profesor-2{
+          #block-profesor-2 {
             margin-top: -4rem;
           }
         }
@@ -288,8 +261,8 @@ footer.site-footer {
     .container {
       .site-footer__top {
         .region-footer-first {
-          #block-profesor-2{
-            margin-top: 1rem!important;
+          #block-profesor-2 {
+            margin-top: 1rem !important;
           }
         }
       }
@@ -297,7 +270,7 @@ footer.site-footer {
         #block-footerbanderas {
           .field--name-body {
             .footer-banderas {
-              margin-top: 0rem!important;
+              margin-top: 0rem !important;
             }
           }
         }
@@ -315,6 +288,50 @@ footer.site-footer {
 }
 
 @media only screen and (max-width: 1199px) and (min-width: 192px) {
+  .node-agendar-clases {
+    footer.site-footer {
+      .container {
+        .site-footer__top {
+          justify-content: center !important;
+          .region-footer-first {
+            #block-logofooterhijos {
+              margin-left: 0rem !important;
+            }
+            #block-padres-2 {
+              margin-top: 2rem !important;
+            }
+          }
+          .region-footer-second {
+            margin-top: 0.5rem !important;
+            .no-admin {
+              .nav-item {
+                a {
+                  padding-right: 0rem;
+                }
+              }
+            }
+            #block-correo {
+              .field--name-body {
+                .field--name-field-correo-electronico-footer {
+                  margin-left: 0rem !important;
+                }
+              }
+            }
+          }
+          .region-footer-third {
+            margin-top: 0.5rem !important;
+            margin: 0rem !important;
+            #block-siguenosen {
+              .view-content.row {
+                justify-content: center;
+                margin-bottom: 2rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
   .rol-padre {
     footer.site-footer {
       .container {
@@ -351,7 +368,7 @@ footer.site-footer {
 
           .region-footer-third {
             margin-top: 0rem;
-            margin: 0rem -1rem;
+            margin: 0rem;
 
             .block-dropdown-language {
               .dropbutton-multiple {
@@ -437,12 +454,24 @@ footer.site-footer {
           .block-dropdown-language {
             margin-top: 1.7rem;
             padding: 0;
+            margin-bottom: 1rem;
 
             .dropbutton-multiple {
               .dropbutton-widget {
                 margin: 0 auto;
                 margin-bottom: 2rem;
               }
+            }
+          }
+        }
+      }
+      .footer-bottom {
+        .region-footer-bottom {
+          #block-footerbanderas {
+            .footer-banderas {
+              flex-direction: column;
+              margin-top: 0rem !important;
+              line-height: 28px;
             }
           }
         }

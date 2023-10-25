@@ -21,10 +21,10 @@
                     .view-display-id-block_2 {
                       position: relative;
 
-                      .view-header {
+                      > .view-header {
                         position: absolute;
                         right: 0px;
-                        top: -11%;
+                        top: -3.7%;
 
                         a {
                           padding: 16px;
@@ -55,6 +55,9 @@
                       .view-content {
                         #views-bootstrap-tab-views-bootstrap-mis-koalas-block-2 {
                           .nav-tabs {
+                            overflow-x: auto;
+                            display: flex;
+                            flex-wrap: nowrap;
                             border-bottom: 2px solid #e6f1f1;
                             width: 78%;
 
@@ -68,13 +71,15 @@
                                 color: #ff6669;
                                 font-weight: 700;
                                 font-size: 16px;
-                                min-width: 140px;
+                                min-width: 100px;
                                 height: 24px;
                                 display: flex;
                                 justify-content: center;
                                 align-items: center;
                                 margin-bottom: 1rem;
+                                text-wrap: nowrap;
                                 padding: 0.5rem 0.5rem 0.5rem 0rem;
+                                position: relative;
                                 &:before {
                                   content: "";
                                   display: block;
@@ -82,7 +87,8 @@
                                   height: 24px;
                                   border-radius: 200px;
                                   margin-right: 0.5rem;
-                                  background-image: url("/themes/custom/koala/images/Avatar1.jpg");
+                                  background-image: url("/themes/custom/koala/images/Avatar1.png");
+                                  background-size: cover;
                                 }
                               }
 
@@ -90,8 +96,8 @@
                                 &:after {
                                   border-bottom: 2px solid black;
                                   content: "";
-                                  top: 40px;
-                                  width: 14%;
+                                  top: 28px;
+                                  width: 90%;
                                   position: absolute;
                                 }
                               }
@@ -129,7 +135,13 @@
                               }
                             }
                           }
-
+                          .nav-tabs::-webkit-scrollbar {
+                            width: 5px;
+                            height: 3px;
+                          }
+                          .nav-tabs::-webkit-scrollbar-thumb{
+                            background-color: grey;
+                          }
                           .tab-content {
                             .tab-pane {
                               .views-field.views-field-uid {
@@ -165,6 +177,9 @@
                                   }
                                 }
                               }
+                              .row {
+                                background: var(--Grey-K100, #e6f1f1);
+                              }
                             }
                           }
                         }
@@ -184,7 +199,6 @@
   .view-id-logros_taxonomia.view-display-id-block_1 {
     .view-content.row {
       border-radius: 1.5rem;
-      background: var(--Grey-K100, #e6f1f1);
       padding: 1rem 3rem 2rem 3rem;
       margin-bottom: 3rem;
       margin-left: 0rem;
@@ -244,7 +258,7 @@
           background: white;
 
           a {
-            font-size: 0.80rem;
+            font-size: 0.8rem;
             font-style: normal;
             font-weight: 700;
             color: var(--Grey-K500, #727f7f);
@@ -260,7 +274,7 @@
               background-image: url("../images/icon-star-disable.svg");
               margin-right: 0.5rem;
               width: 19px;
-                height: 19px;
+              height: 19px;
               position: absolute;
               left: -24px;
               font-weight: 300;
@@ -272,7 +286,7 @@
             background: var(--Red-K100, #ffe8e8);
 
             a {
-              font-size: 0.80rem;
+              font-size: 0.8rem;
               font-style: normal;
               font-weight: 700;
               color: black;
@@ -329,6 +343,31 @@
   // Resumen de la clase.
 
   .view-resumen-de-clases {
+
+    > .view-header {
+      margin-top: 1.5rem;
+
+      .titulo-saludos {
+        h3 {
+          color: black;
+          font-size: 1.25rem;
+          font-style: normal;
+          font-weight: 700;
+          line-height: normal;
+        }
+      }
+
+      .subtitulo-saludos {
+        p {
+          font-family: Nunito;
+          font-size: 1rem;
+          font-style: normal;
+          font-weight: 500;
+          line-height: normal;
+          color: black;
+        }
+      }
+    }
     .no-mostrar {
       display: none;
     }
@@ -346,6 +385,7 @@
       align-items: flex-start;
       gap: 1.5rem;
       margin-bottom: 1rem;
+      background: white;
 
       .header {
         justify-content: space-between;

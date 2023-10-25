@@ -257,6 +257,7 @@
                           tbody {
                             tr {
                               .fc-event-container {
+                                pointer-events: none;
                                 .fc-day-grid-event {
                                   background-color: transparent !important;
                                   border: none;
@@ -324,6 +325,7 @@
                                     border-radius: 8px;
                                     padding: 0.8rem;
                                     margin-right: 0px !important;
+                                    pointer-events: none;
 
                                     .fc-content {
                                       text-align: center;
@@ -469,6 +471,7 @@
                                     border: none;
                                     border-radius: 8px;
                                     padding: 16px;
+                                    pointer-events: none;
 
                                     .fc-content {
                                       margin-left: 0.5rem;
@@ -564,6 +567,7 @@
               }
 
               .fc-list-item {
+                pointer-events: none;
                 .fc-list-item-time {
                   font-weight: 500 !important;
                   background-color: white;
