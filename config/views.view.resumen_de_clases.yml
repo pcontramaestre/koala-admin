@@ -1056,7 +1056,21 @@ display:
     display_plugin: block
     position: 1
     display_options:
+      defaults:
+        header: false
       display_description: ''
+      header:
+        area_text_custom:
+          id: area_text_custom
+          table: views
+          field: area_text_custom
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text_custom
+          empty: true
+          content: "<div class=\"text-center titulo-saludos\"><h3>Saludos del profesor</h3></div>\r\n<div class=\"text-center subtitulo-saludos\"><p>Aquí encontrarás el resumen de las clases</p></div>"
+          tokenize: false
       display_extenders: {  }
     cache_metadata:
       max-age: -1
