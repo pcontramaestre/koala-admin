@@ -78,6 +78,9 @@
                     .titulo {
                       font-weight: 700;
                       font-size  : 24px;
+                      &:hover{
+                        text-decoration: underline;
+                      }
                     }
                     .nro{
                       font-weight: 500;

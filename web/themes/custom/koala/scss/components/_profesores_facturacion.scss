@@ -432,6 +432,9 @@
             font-weight: 500;
           }
         }
+        .js-hide {
+          display: none;
+        }
         button {
           background: #ffffff;
           border: 2px solid #297e88;
@@ -459,4 +462,107 @@
     pointer-events: none;
   }
   //}
+}
+
+// Metodos de pago profesores
+.node--type-metodos-de-pago {
+  #block-koala-content {
+    .node-metodos-de-pago-edit-form {
+      .layout-region-node-main {
+        .layout__region {
+          .field--name-field-cuentas-virtuales {
+            .table-responsive {
+              .tabledrag-toggle-weight-wrapper {
+                display: none;
+              }
+              .field-multiple-table {
+                thead {
+                  tr {
+                    th {
+                      border: none;
+                      .label {
+                        display: flex;
+                        align-items: center;
+                        margin-top: 2rem;
+                        font-size: 20px;
+                        font-weight: 700;
+                        justify-content: center;
+                        &:before {
+                          content: "";
+                          background-image: url("../images/Money.svg");
+                          height: 32px;
+                          background-size: contain;
+                          background-repeat: no-repeat;
+                          background-position: center;
+                          width: 32px;
+                          display: inline-block;
+                          margin-right: 0.5rem;
+                        }
+                      }
+                    }
+                  }
+                }
+                tbody {
+                  .draggable {
+                    .field-multiple-drag {
+                      display: none;
+                    }
+                    .has-multiple-fields-remove-button {
+                      --bs-table-accent-bg: white !important;
+                      .js-form-item {
+                        .js-form-wrapper {
+                          .js-form-item {
+                            label {
+                              font-weight: 500;
+                              color: black;
+                              margin-bottom: 0.5rem;
+                            }
+                            select,
+                            input {
+                              color: black;
+                              border: 2px solid #becaca;
+                              border-radius: 32px;
+                              height: 3rem;
+                              font-weight: 600;
+                              option {
+                                color: black;
+                                font-weight: 600;
+                                background-color: white;
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                  .even {
+                    border-top: 2px solid #becaca;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      .layout-region-node-footer {
+        .form-actions {
+          display: flex;
+          justify-content: center;
+          .button {
+            border-radius: 2.5rem;
+            border: 2px solid var(--Turq-K500, #297e88);
+            background: var(--Agua-K500, #2ff7ee) ;
+            color: black ;
+            font-size: 1.25rem;
+            font-weight: 700;
+            padding: 0.5rem 2rem;
+            &:hover{
+              background-color: #297e88;
+              color: white;
+            }
+          }
+        }
+      }
+    }
+  }
 }
