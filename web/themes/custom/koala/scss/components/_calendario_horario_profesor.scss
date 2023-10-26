@@ -80,8 +80,8 @@
 .rol-profesor {
   section {
     .layout__region {
-      .block-quicktabs-blockprofesores-calendario-horarios{
-        margin-top: 1.7rem!important;
+      .block-quicktabs-blockprofesores-calendario-horarios {
+        margin-top: 1.7rem !important;
         .content {
           #quicktabs-profesores_calendario_horarios {
             .item-list {
@@ -92,7 +92,7 @@
                 .list-group-item {
                   border: none;
                   border-radius: 0px;
-                  border-bottom: 2px solid #E6F1F1;
+                  border-bottom: 2px solid #e6f1f1;
                   &.active {
                     border-bottom: 2px solid black;
                     a {
@@ -554,14 +554,22 @@
 
       .fc-listMonth-view {
         border: 2px solid #e6f1f1;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+        overflow: hidden;
 
         .fc-scroller {
           .fc-list-table {
             tbody {
               .fc-list-heading {
+                border: none;
                 .fc-widget-header {
+                  background: #e6f1f1 !important;
                   a {
+                    font-weight: 500;
                     color: #727f7f;
+                    padding: 0.3rem;
+                    text-decoration: none;
                   }
                 }
               }
@@ -571,26 +579,25 @@
                 .fc-list-item-time {
                   font-weight: 500 !important;
                   background-color: white;
-                  color: #727f7f;
+                  color: black;
                   border: none;
-                  font-size: 14px;
+                  font-size: 1rem;
+                  padding: 1rem;
                 }
 
                 .fc-list-item-marker {
-                  padding: 8px 0px !important;
+                  padding: 1rem!important;
                 }
 
                 .fc-list-item-title {
                   display: flex;
+                  padding: 1rem;
 
                   a {
-                    background-color: #d7eff2;
-                    border-radius: 12px;
                     color: black;
                     font-weight: 700;
-                    font-size: 12px;
-                    padding: 0.2rem 0.2rem 0.2rem 0.4rem;
-                    margin-top: 0.1rem;
+                    font-size: 1rem;
+                    text-decoration: underline;
                   }
                 }
               }

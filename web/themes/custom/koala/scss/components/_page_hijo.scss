@@ -160,9 +160,10 @@
             .view-content {
               .horizontal {
                 .views-row {
+                  width: 84% !important;
                   .views-col {
-                    margin-right: 3%;
-                    width: 48.5% !important;
+                    margin-right: 7%;
+                    width: 46.5% !important;
 
                     &:last-child {
                       margin-right: 0rem;
@@ -216,7 +217,7 @@
 
             .view-footer {
               position: absolute;
-              right: -15%;
+              right: 0%;
               bottom: 33%;
 
               a {
@@ -629,15 +630,15 @@
         left: 0px;
         right: 0px;
         margin: 0 auto;
-        .field-content{
+        .field-content {
           width: 100%;
           display: flex;
           justify-content: center;
         }
       }
-      .views-row{
+      .views-row {
         text-align: center;
-        .views-field-nothing-1{
+        .views-field-nothing-1 {
           margin: 0 auto;
         }
       }
