@@ -48,6 +48,11 @@ code: |-
   			$('a[aria-controls="'+atributoTab+'"]').attr('aria-selected', 'true');
   			$('a[aria-controls="'+atributoTab+'"]').addClass('active');
   			$('a[aria-controls="'+atributoTab+'"]').click();
+  			
+  			$('button[aria-controls="'+atributoTab+'"]').attr('aria-selected', 'true');
+  			$('button[aria-controls="'+atributoTab+'"]').addClass('active');
+  			$('button[aria-controls="'+atributoTab+'"]').click();
+  			
   	}
   });
 noscript: ''
