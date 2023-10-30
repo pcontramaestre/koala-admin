@@ -198,3 +198,5 @@ modification+hijo+user+user: user.user.default
 'use  The form mode default linked to  node entity( asignar_clase_a_estudiante )': node.asignar_clase_a_estudiante.default
 'use  The form mode default linked to  node entity( suscripciones )': node.suscripciones.default
 'use  The form mode default linked to  node entity( facturacion_profesor )': node.facturacion_profesor.default
+'use  The form mode editar_hijo linked to  user entity( user )': user.user.editar_hijo
+'use  The form mode editar_hijo linked to  node entity( crear_hijos )': node.crear_hijos.editar_hijo

@@ -1175,6 +1175,7 @@ display:
         sorts: false
         filters: false
         filter_groups: false
+        footer: false
       relationships:
         field_alumno_relacionado:
           id: field_alumno_relacionado
@@ -1185,6 +1186,18 @@ display:
           admin_label: 'field_alumno_relacionado: Usuario'
           plugin_id: standard
           required: false
+      footer:
+        area_text_custom:
+          id: area_text_custom
+          table: views
+          field: area_text_custom
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text_custom
+          empty: false
+          content: "<div class=\"text-align-right\">\r\n   <a href=\"/padres/mi-calendario\">Ir a calendario de clases</a>\r\n</div>"
+          tokenize: false
       display_extenders: {  }
       block_description: 'Proximas Clases'
     cache_metadata:
@@ -2092,6 +2105,7 @@ display:
         sorts: false
         filters: false
         filter_groups: false
+        footer: false
       relationships:
         field_alumno_relacionado:
           id: field_alumno_relacionado
@@ -2103,6 +2117,18 @@ display:
           plugin_id: standard
           required: false
       display_description: ''
+      footer:
+        area_text_custom:
+          id: area_text_custom
+          table: views
+          field: area_text_custom
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text_custom
+          empty: false
+          content: "<div class=\"text-align-right\">\r\n   <a href=\"/padres/mi-calendario\">Ir a calendario de clases</a>\r\n</div>"
+          tokenize: false
       display_extenders: {  }
       block_description: 'Proximas Clases'
     cache_metadata:

@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.crear_hijos.body
     - field.field.node.crear_hijos.field_fecha_nacimiento
+    - field.field.node.crear_hijos.field_foto_del_nino
     - field.field.node.crear_hijos.field_hijo_relacionado
     - field.field.node.crear_hijos.field_logros
     - field.field.node.crear_hijos.field_puntos_acumulados
@@ -12,6 +13,7 @@ dependencies:
     - node.type.crear_hijos
   module:
     - options
+    - svg_image
     - text
     - user
 id: node.crear_hijos.default
@@ -33,6 +35,21 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     weight: 103
+    region: content
+  field_foto_del_nino:
+    type: image
+    label: above
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+    third_party_settings: {  }
+    weight: 108
     region: content
   field_hijo_relacionado:
     type: entity_reference_label
@@ -72,4 +89,7 @@ content:
     weight: 100
     region: content
 hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
   langcode: true

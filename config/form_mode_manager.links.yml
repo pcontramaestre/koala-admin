@@ -16,3 +16,5 @@ local_tasks:
     position: secondary
   taxonomy_term:
     position: secondary
+  commerce_subscription:
+    position: primary

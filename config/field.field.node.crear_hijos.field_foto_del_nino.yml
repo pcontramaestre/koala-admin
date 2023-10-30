@@ -1,0 +1,57 @@
+uuid: 0aa94e1f-d6e5-4763-80f0-3fe32228107d
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_foto_del_nino
+    - node.type.crear_hijos
+  module:
+    - filefield_paths
+    - image
+third_party_settings:
+  filefield_paths:
+    enabled: true
+    file_path:
+      value: '[date:custom:Y]-[date:custom:m]'
+      options:
+        slashes: false
+        pathauto: false
+        transliterate: false
+    file_name:
+      value: '[file:ffp-name-only-original].[file:ffp-extension-original]'
+      options:
+        slashes: false
+        pathauto: false
+        transliterate: false
+    redirect: false
+    retroactive_update: false
+    active_updating: false
+id: node.crear_hijos.field_foto_del_nino
+field_name: field_foto_del_nino
+entity_type: node
+bundle: crear_hijos
+label: 'Foto del niño'
+description: 'Su foto o cara virtual'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'png gif jpg jpeg'
+  max_filesize: '500 KB'
+  max_resolution: ''
+  min_resolution: ''
+  alt_field: false
+  alt_field_required: true
+  title_field: false
+  title_field_required: false
+  default_image:
+    uuid: eb74f5c3-da4b-45c7-b48b-1c29be275e2b
+    alt: 'Mi Koala'
+    title: 'Mi Koala'
+    width: 230
+    height: 235
+field_type: image
