@@ -44,10 +44,10 @@ code: |-
   					return false;
   				}
   			});
-  			$('a[aria-controls="'+atributoTab+'"]').click();
+  			
   			$('a[aria-controls="'+atributoTab+'"]').attr('aria-selected', 'true');
   			$('a[aria-controls="'+atributoTab+'"]').addClass('active');
-
+  			$('a[aria-controls="'+atributoTab+'"]').click();
   	}
   });
 noscript: ''
