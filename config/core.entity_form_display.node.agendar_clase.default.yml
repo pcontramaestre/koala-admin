@@ -17,6 +17,7 @@ dependencies:
     - field.field.node.agendar_clase.field_nombre_del_nino_a
     - field.field.node.agendar_clase.field_otra_hora
     - field.field.node.agendar_clase.field_sexo_n
+    - field.field.node.agendar_clase.field_tipo_clase
     - node.type.agendar_clase
     - workflows.workflow.asignar_profesor
   module:
@@ -158,6 +159,14 @@ content:
     weight: 11
     region: content
     settings: {  }
+    third_party_settings: {  }
+  field_tipo_clase:
+    type: string_textfield
+    weight: 30
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
   langcode:
     type: language_select

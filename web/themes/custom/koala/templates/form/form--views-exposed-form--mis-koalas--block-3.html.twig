@@ -21,6 +21,17 @@
 	<div class="datepicker-container">
 		<input type="text" id="datepicker-input" readonly="readonly">
 	</div>
+	{# Dos campos de tipo time. Hora de inicio y hora final #}
+	<div class="horas-inicio-final horas-inicio-final d-flex flex-row justify-content-around mb-4" style="gap:1rem;">
+		<div class="hora-inicio w-100">
+			<label for="hora-inicio">Desde</label>
+			<input type="time" id="hora-inicio" name="hora-inicio" value="08:00" class="w-100">
+		</div>
+		<div class="hora-final w-100">
+			<label for="hora-final">Hasta</label>
+			<input type="time" id="hora-final" name="hora-final" value="18:00" class="w-100">
+		</div>
+	</div>
 	<form{{attributes}}>
 		{{ children }}
 	</form>

@@ -1069,7 +1069,7 @@ display:
           admin_label: ''
           plugin_id: text_custom
           empty: true
-          content: "<div class=\"text-center titulo-saludos\"><h3>Saludos del profesor</h3></div>\r\n<div class=\"text-center subtitulo-saludos\"><p>Aquí encontrarás el resumen de las clases</p></div>"
+          content: "<div class=\"text-center titulo-saludos\"><h3>Saludos del profesor</h3></div>\r\n<div class=\"text-center subtitulo-saludos\"><p>Aquí encontrarás el resumen de las clases</p></div>\r\n<div class=\"resumen-clase resumen-sin-clases d-block\">\r\n  <div class=\"header d-flex\">\r\n    <div>Resumen de la clase</div>\r\n    <div>00/00/0000</div>\r\n  </div>\r\n  <div class=\"resumen\">\r\n    <p class=\"title-profesor mt-3\"><b>Profesor</b></p>\r\n    <p>Cuando el profesor realice el primer reporte del estudiante se reflejará en esta área.</p>\r\n  </div>\r\n</div>"
           tokenize: false
       display_extenders: {  }
     cache_metadata:

@@ -6,7 +6,7 @@ dependencies:
     - system
 id: accordeon_logros
 label: 'Accordeon Logros'
-code: |+
+code: |-
   // Togle accordeon
   const acordeon = document.getElementsByClassName('item-list-accordeon');
 
@@ -31,8 +31,13 @@ code: |+
     const idNino = tabs[i].querySelector('.views-field-uid > .id-del-nino').innerText.trim();
     // Buscar el elemento con la clase .resumen-clase[user="'+idNino+'"] y agregar la clase .mostrar
     const resumenClase = tabs[i].querySelectorAll('.resumen-clase[user="'+idNino+'"]');
+    
     for (j=0; j<resumenClase.length; j++) {
-      resumenClase[j].classList.add('mostrar');
+      // Desactivar resumenSinClases con la clase .resumen-sin-clases y eliminar d-block si tiene clases evaluadas
+      const resumenSinClase = tabs[i].querySelectorAll('.resumen-sin-clases');
+  		jQuery(resumenSinClase).removeClass('d-block');
+  		
+      resumenClase[j].classList.add('mostrar');  
       /*
         Buscar logros cumplidos en la clase .ids-logros-cumplidos
       */
@@ -57,12 +62,6 @@ code: |+
       }
     }
   }
-
-
-
-
-
-
 noscript: ''
 noscriptRegion: {  }
 jquery: true
