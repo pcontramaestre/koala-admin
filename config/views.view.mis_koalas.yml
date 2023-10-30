@@ -1099,7 +1099,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<a href=\"/custom-child-login/{{ field_hijo_relacionado }}\">{{ title__value }}</a>\r\n"
+            text: "<a href=\"/padres/mis-koalas?id={{ field_hijo_relacionado }}\">{{ title__value }}</a>\r\n"
             make_link: false
             path: ''
             absolute: false

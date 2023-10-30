@@ -1,0 +1,64 @@
+uuid: 3684adfb-1151-42a7-9b2e-becc67c855e6
+langcode: es
+status: true
+dependencies:
+  module:
+    - system
+id: tabs_hijos_padre
+label: 'Tabs hijos / Padre'
+code: |-
+  // Jquery load page
+  jQuery(document).ready(function($){
+
+    // Leer el parametro de la url ID
+    urlParams = new URLSearchParams(window.location.search);
+    id = urlParams.get('id');
+    if (id) {
+    	let atributoTab = '';
+
+  			$('.tab-content .tab-pane').each(function() {
+  				$(this).removeClass('active','show');
+  			});
+
+  			$('.nav-tabs .nav-item .nav-link').each(function() {
+  				$(this).removeClass('active');
+  				$(this).attr('aria-selected', 'false');
+  			});
+
+
+        // Recorrer los elementos .tab-pane
+  			$('.tab-content .tab-pane').each(function() {
+  				// Obtener el valor del atributo id-alumno
+  	
+  				// Get text span which class is "id-del-nino"
+  				idhijoTab = $(this).find('.id-del-nino').text();
+  				//eliminar espacios en blanco
+  				idhijoTab = idhijoTab.replace(/\s/g, '');
+  				
+  				if (id == idhijoTab) {
+  					atributoTab = $(this).attr('id');
+  	
+  					$(this).addClass('active');
+  					$(this).addClass('show');
+  	
+  					return false;
+  				}
+  			});
+  			$('a[aria-controls="'+atributoTab+'"]').click();
+  			$('a[aria-controls="'+atributoTab+'"]').attr('aria-selected', 'true');
+  			$('a[aria-controls="'+atributoTab+'"]').addClass('active');
+
+  	}
+  });
+noscript: ''
+noscriptRegion: {  }
+jquery: true
+header: false
+preprocess: true
+conditions:
+  request_path:
+    id: request_path
+    negate: false
+    pages: "/padres/mis-koalas\r\n/padres/mis-koalas/*"
+contexts: {  }
+conditions_require_all: true
