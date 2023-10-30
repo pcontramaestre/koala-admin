@@ -6,6 +6,7 @@ dependencies:
     - core.entity_view_mode.node.teaser
     - field.field.node.crear_hijos.body
     - field.field.node.crear_hijos.field_fecha_nacimiento
+    - field.field.node.crear_hijos.field_foto_del_nino
     - field.field.node.crear_hijos.field_hijo_relacionado
     - field.field.node.crear_hijos.field_logros
     - field.field.node.crear_hijos.field_puntos_acumulados
@@ -33,7 +34,11 @@ content:
     weight: 100
     region: content
 hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
   field_fecha_nacimiento: true
+  field_foto_del_nino: true
   field_hijo_relacionado: true
   field_logros: true
   field_puntos_acumulados: true

@@ -1,0 +1,73 @@
+<?php
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Entity\EntityTypeManagerInterface;
+use Drupal\user\Entity\User;
+use Drupal\node\Entity\Node;
+use Symfony\Component\HttpFoundation\RedirectResponse;
+use Drupal\Core\Form\FormStateInterface;
+
+
+function editar_hijo_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  //dump($form_id);
+  if ($form_id == 'node_crear_hijos_edit_form' || $form_id == 'node_crear_hijos_editar_hijo_form') {
+
+    $form['actions']['submit']['#value'] =  Drupal::translation()->translate('Actualizar información');
+
+    // Obtener el id del nodo actual
+    $nid = \Drupal::routeMatch()->getParameter('node');
+    //get value nid
+    $nid = $nid->id();
+    // cargar el nodo actual para obtener el valor del campo field_hijo_relacionado
+    $node = \Drupal\node\Entity\Node::load($nid);
+    //get value field_hijo_relacionado
+    $hijo_relacionado = $node->get('field_hijo_relacionado')->getValue();
+    //get value target_id
+    $hijo_relacionado = $hijo_relacionado[0]['target_id'];
+    //dump($hijo_relacionado);    
+    
+
+    foreach (array_keys($form['actions']) as $action) {
+      if ($action != 'preview' && isset($form['actions'][$action]['#type']) && $form['actions'][$action]['#type'] === 'submit') {
+        $form['actions'][$action]['#submit'][] = 'callback_submit_editar_hijo_submit';
+      }
+    }
+  }
+}
+
+function callback_submit_editar_hijo_submit(&$form, FormStateInterface $form_state) {
+  // Obtener el id del nodo actual
+  $nid = \Drupal::routeMatch()->getParameter('node');
+  $nid = $nid->id();
+  // cargar el nodo actual para obtener el valor del campo field_hijo_relacionado
+  $node = \Drupal\node\Entity\Node::load($nid);
+  //get value field_hijo_relacionado
+  $hijo_relacionado = $node->get('field_hijo_relacionado')->getValue();
+  //get value target_id
+  $hijo_relacionado = $hijo_relacionado[0]['target_id'];
+  //Obtener el titulo del nodo actual
+  $titulo_nombre_hijo = $node->get('title')->getValue();
+  $titulo_nombre_hijo = $titulo_nombre_hijo[0]['value'];
+
+  // Detectar si el campo field_foto_del_nino de tipo imagen tiene un valor y guardarlo en una variable
+  $foto_del_nino = $node->get('field_foto_del_nino')->getValue();
+  $foto_del_nino = $foto_del_nino[0]['target_id'];
+
+
+  // obtener usuario con id = $hijo_relacionado
+  $user = \Drupal\user\Entity\User::load($hijo_relacionado);
+  // obtener el valor del campo field_nombre_del_hijo 
+  $nombre_del_hijo = $user->get('field_nombre_del_hijo')->getValue();
+  $nombre_del_hijo = $nombre_del_hijo[0]['value'];
+
+  // Si el campo field_foto_del_nino de tipo imagen tiene un valor, editar el campo user_picture con el valor del campo field_foto_del_nino
+  if ($foto_del_nino) {
+    $user->set('user_picture', $foto_del_nino);
+  }
+  // Editar el nombre del usuario con id = $hijo_relacionado, valor del campo field_nombre_del_hijo con el valor del campo title del nodo actual
+  $user->set('field_nombre_del_hijo', $titulo_nombre_hijo);
+  $user->save();
+
+  $response = new RedirectResponse('/padres/mis-koalas');
+  $response->send();
+}
+

@@ -2,8 +2,6 @@ uuid: 52bc6ec5-24f7-459b-af64-f6e4b1ab154f
 langcode: es
 status: true
 dependencies:
-  config:
-    - filter.format.basic_html
   module:
     - comment
     - commerce_checkout
@@ -15,9 +13,9 @@ dependencies:
     - date_recur_modular
     - entity_print
     - field_permissions
-    - filter
     - fivestar
     - form_mode_control
+    - form_mode_manager
     - media
     - node_view_permissions
     - search
@@ -63,7 +61,8 @@ permissions:
   - 'search content'
   - 'skip comment approval'
   - 'update own commerce_subscription'
-  - 'use text format basic_html'
+  - 'use  The form mode editar_hijo linked to  user entity( user )'
+  - 'use user.editar_hijo form mode'
   - 'view any horarios_de_trabajo content'
   - 'view any horarios_profesores content'
   - 'view any mundos content'

@@ -1,0 +1,10 @@
+uuid: 2de445fd-f0dc-4d48-bab5-c43f6cfbec1b
+langcode: es
+status: true
+dependencies:
+  module:
+    - user
+id: user.editar_hijo
+label: 'Editar Hijo'
+targetEntityType: user
+cache: true

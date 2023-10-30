@@ -57,6 +57,11 @@ h2 {
       border-right: 2px solid #869021;
       border-bottom-right-radius: 24px;
       border-bottom-left-radius: 24px;
+
+      a {
+        pointer-events: none;
+        color: black;
+      }
     }
   }
 }

@@ -1,0 +1,80 @@
+uuid: bb86ebcc-31d4-4504-9664-e97c35451ccb
+langcode: es
+status: true
+dependencies:
+  config:
+    - core.entity_form_mode.user.editar_hijo
+    - field.field.user.user.commerce_remote_id
+    - field.field.user.user.field_apodo
+    - field.field.user.user.field_avatar
+    - field.field.user.user.field_celular
+    - field.field.user.user.field_direcc
+    - field.field.user.user.field_direccion
+    - field.field.user.user.field_nacionalidad
+    - field.field.user.user.field_nombre_del_acudiente
+    - field.field.user.user.field_nombre_del_hijo
+    - field.field.user.user.field_nombres_y_apellidos_del_pr
+    - field.field.user.user.field_numero_de_telefono
+    - field.field.user.user.field_padre
+    - field.field.user.user.field_pais
+    - field.field.user.user.field_tu_presentacion
+    - field.field.user.user.field_tu_video_
+    - field.field.user.user.user_picture
+    - image.style.thumbnail
+  module:
+    - field_layout
+    - layout_builder
+    - svg_image
+    - user
+third_party_settings:
+  field_layout:
+    id: layout_twocol_section
+    settings:
+      label: ''
+      column_widths: 50-50
+_core:
+  default_config_hash: FaQ9Ptcpxpg30AtiqRDtl_8zbJArHP1LPfug_s59TOA
+id: user.user.editar_hijo
+targetEntityType: user
+bundle: user
+mode: editar_hijo
+content:
+  field_nombre_del_hijo:
+    type: string_textfield
+    weight: 1
+    region: second
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  user_picture:
+    type: image_image
+    weight: 0
+    region: first
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+hidden:
+  account: true
+  commerce_remote_id: true
+  contact: true
+  customer_profiles: true
+  field_apodo: true
+  field_avatar: true
+  field_celular: true
+  field_direcc: true
+  field_direccion: true
+  field_nacionalidad: true
+  field_nombre_del_acudiente: true
+  field_nombres_y_apellidos_del_pr: true
+  field_numero_de_telefono: true
+  field_padre: true
+  field_pais: true
+  field_tu_presentacion: true
+  field_tu_video_: true
+  langcode: true
+  language: true
+  path: true
+  timezone: true
+  translation: true

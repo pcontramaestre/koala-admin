@@ -72,6 +72,7 @@ module:
   double_field: 0
   dropdown_language: 0
   dynamic_page_cache: 0
+  editar_hijo: 0
   editor: 0
   entity: 0
   entity_print: 0

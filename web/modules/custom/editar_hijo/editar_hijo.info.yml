@@ -1,0 +1,5 @@
+name: 'Editar Hijos'
+type: module
+description: 'Alter editar hijos.'
+package: Custom
+core_version_requirement: ^8 || ^9

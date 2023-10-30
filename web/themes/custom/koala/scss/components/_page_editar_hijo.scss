@@ -1,0 +1,218 @@
+.node--type-crear-hijos {
+
+  label {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+
+  .js-form-item input {
+    color: black;
+    border: 2px solid #becaca;
+    border-radius: 32px;
+    height: 3rem;
+    font-weight: 700;
+  }
+
+  .layout--twocol-section--50-50 {
+    gap: 2rem;
+
+    .layout__region--first {
+      display: flex;
+      flex-direction: column;
+      flex: 0 1 40% !important;
+      padding: 0rem 1rem 1rem 1rem;
+
+      .field--name-title {
+        background-color: #E6F1F1;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+        padding: 1rem 1rem 1rem 1rem;
+        margin-left: 0;
+        margin-right: 0;
+        margin-bottom: 0 !important;
+      }
+
+      .field--name-field-foto-del-nino {
+        order                     : 2;
+        background-color          : $GreyK100;
+        border-bottom-left-radius : 20px;
+        border-bottom-right-radius: 20px;
+        padding                   : 0rem 1rem 1rem 1rem;
+        margin-left: 0;
+        margin-right: 0;
+
+        .js-form-item {
+          label {
+            font-weight  : 600;
+            margin-bottom: 0.5rem;
+
+            &:before {
+              content: "Subir ";
+            }
+          }
+
+          .image-widget {
+            .image-preview {
+              img {
+                width : 3rem;
+                height: 3rem;
+              }
+            }
+
+            .image-widget-data {
+              display: flex;
+              float  : initial;
+
+              input {
+                background   : #d8fffd;
+                border       : 2px dashed #297e88;
+                border-radius: 32px;
+                font-size    : 0.9rem;
+                font-weight  : 600;
+                margin-top   : 1rem;
+                height: auto;
+              }
+            }
+          }
+
+          .description {
+            display    : flex;
+            margin-top : 1rem;
+            font-weight: 600;
+            color      : black !important;
+            font-size  : 16px;
+          }
+        }
+
+        .js-form-item {
+          label {
+            font-weight  : 600;
+            margin-bottom: 0.5rem;
+
+            &:before {
+              content: "Subir ";
+            }
+          }
+
+          .image-widget {
+            flex-direction: column;
+            display       : flex;
+
+            .image-preview {
+              background-color: #becaca;
+              border-radius   : 16px;
+              height          : 112px;
+              display         : flex;
+              align-items     : center;
+              justify-content : center;
+              padding         : 0px;
+
+              img {
+                height       : 80px;
+                width        : 80px;
+                border-radius: 40px;
+                border       : 1px solid white;
+                margin       : 0px;
+              }
+            }
+
+            .image-widget-data {
+              display       : flex;
+              flex-direction: column;
+              align-items   : center;
+
+              .file {
+                margin-bottom: 0.5rem;
+                margin-top   : 0.2rem;
+
+                a {
+                  display: none;
+                }
+              }
+
+              .button {
+                background     : #ffffff;
+                border         : 2px solid #297e88;
+                border-radius  : 28px;
+                color          : black !important;
+                padding        : 0.3rem 1.5rem 0.3rem 1.5rem;
+                text-decoration: none;
+                font-weight    : 700;
+                font-size      : 1.2rem;
+                width          : 40%;
+
+                &:before {
+                  display: none;
+                }
+
+                &:hover {
+                  background-color: #297e88;
+                  color           : white !important;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .layout__region--second {
+      .field--name-body {
+        .js-filter-wrapper {
+          display: none;
+        }
+        .description {
+          display: none;
+        }
+      }
+
+      .field--name-field-sexo {
+        legend {
+          span {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+          }
+        }
+      }
+
+      .field--name-field-hijo-relacionado {
+        display: none;
+      }
+    }
+  }
+
+  .form-actions {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    a[id^="edit-delete"] {
+      display: none;
+    }
+    .button {
+      padding        : 12px 16px;
+      gap            : 16px;
+      width          : 311px;
+      height         : 51px;
+      background     : #ffffff;
+      border         : 2px solid #297e88;
+      border-radius  : 32px;
+      color          : black;
+      font-weight    : 700;
+      font-size      : 20px;
+      display        : flex;
+      justify-content: center;
+      align-items    : center;
+
+      &:hover {
+        background-color: $TurqK500;
+        color           : white;
+      }
+
+      &:before {
+        display: none;
+      }
+    }    
+  }
+}

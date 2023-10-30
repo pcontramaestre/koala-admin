@@ -6,6 +6,7 @@ dependencies:
     - core.entity_form_mode.node.crear_koalas
     - field.field.node.crear_hijos.body
     - field.field.node.crear_hijos.field_fecha_nacimiento
+    - field.field.node.crear_hijos.field_foto_del_nino
     - field.field.node.crear_hijos.field_hijo_relacionado
     - field.field.node.crear_hijos.field_logros
     - field.field.node.crear_hijos.field_puntos_acumulados
@@ -61,6 +62,7 @@ content:
 hidden:
   body: true
   created: true
+  field_foto_del_nino: true
   field_hijo_relacionado: true
   field_logros: true
   field_puntos_acumulados: true

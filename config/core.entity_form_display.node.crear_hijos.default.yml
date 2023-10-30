@@ -5,16 +5,19 @@ dependencies:
   config:
     - field.field.node.crear_hijos.body
     - field.field.node.crear_hijos.field_fecha_nacimiento
+    - field.field.node.crear_hijos.field_foto_del_nino
     - field.field.node.crear_hijos.field_hijo_relacionado
     - field.field.node.crear_hijos.field_logros
     - field.field.node.crear_hijos.field_puntos_acumulados
     - field.field.node.crear_hijos.field_sexo
+    - image.style.thumbnail
     - node.type.crear_hijos
   module:
     - content_moderation
     - field_layout
     - layout_discovery
     - path
+    - svg_image
     - text
 third_party_settings:
   field_layout:
@@ -49,6 +52,14 @@ content:
     settings:
       size: 60
       placeholder: ''
+    third_party_settings: {  }
+  field_foto_del_nino:
+    type: image_image
+    weight: 103
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
     third_party_settings: {  }
   field_hijo_relacionado:
     type: entity_reference_autocomplete
