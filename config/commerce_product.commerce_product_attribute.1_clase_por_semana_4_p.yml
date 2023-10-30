@@ -3,5 +3,5 @@ langcode: es
 status: true
 dependencies: {  }
 id: 1_clase_por_semana_4_p
-label: 'Clases por semana / Mes'
+label: 'Clases para 4 semanas'
 elementType: select

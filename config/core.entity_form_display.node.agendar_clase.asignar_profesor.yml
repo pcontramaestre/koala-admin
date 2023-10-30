@@ -18,6 +18,7 @@ dependencies:
     - field.field.node.agendar_clase.field_nombre_del_nino_a
     - field.field.node.agendar_clase.field_otra_hora
     - field.field.node.agendar_clase.field_sexo_n
+    - field.field.node.agendar_clase.field_tipo_clase
     - node.type.agendar_clase
     - workflows.workflow.asignar_profesor
   module:
@@ -155,6 +156,7 @@ hidden:
   field_id_texto_alumno: true
   field_marcar_clase_como_finaliza: true
   field_otra_hora: true
+  field_tipo_clase: true
   langcode: true
   path: true
   promote: true

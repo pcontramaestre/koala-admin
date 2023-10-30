@@ -3,5 +3,5 @@ langcode: es
 status: true
 dependencies: {  }
 id: clases_24_semanas_3_me
-label: "Clases 24 semanas / 3 meses\t"
+label: 'Clases para 24 semanas'
 elementType: select

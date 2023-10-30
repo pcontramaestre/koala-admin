@@ -77,7 +77,8 @@
 {% set fecha = fecha_texto|date("d-m-Y") %}
 {% set fecha_inicio =  content.field_fecha_de_la_cita[0]['#context'].value|date("Ymd") ~ 'T' ~ content.field_hora_clase.value|date("His", 'utc') ~ 'Z' %}
 {% set alumno = content.field_nombre_del_nino_a.0 %}
-{# {{fecha_inicio}} #}
+{% set tipo_clase = content.field_tipo_clase[0]['#context'].value %}
+
 
 <article{{attributes.addClass(classes)}}>
 
@@ -85,10 +86,15 @@
 		<div class="superior text-center">
 			<img src="/themes/custom/koala/images/perfecto.png">
 			<h2>¡Perfecto! Lo has conseguido</h2>
+			<p>Te hemos enviado un correo con los detalles de tu clase gratuita</p>						
 		</div>
 		<div class="cuadro row">
 			<div class="col-12">
-				<h3>{{ 'Tu clase de prueba ha sido reservada'|t }}</h3>
+				{% if (tipo_clase == 'Paga' )  %}
+					<h3>{{ 'Tu clase de ha sido reservada'|t }}</h3>
+				{% else %}
+					<h3>{{ 'Tu clase gratuita ha sido reservada'|t }}</h3>
+				{% endif %}
 			</div>
 			<div class="col-md-12 col-lg-6">
 				<div>
@@ -112,7 +118,7 @@
 				{# Obtener el titulo del nodo en una variable llamada titulo_evento #}
 				{% set titulo_del_evento = "Clase gratuita de 25 minutos para Koala" %}
 				{% set detalles_clase = "Agendamiento+de+25+minutos+de+una+clase+gratuita.+En+la+clase+se+evaluara+el+nivel+de+español+de+su+hijo" %}
-				<a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text={{ titulo_del_evento }}&details={{detalles_clase}}&dates={{fecha_inicio}}" target="_blank" class="calendario-google">Agregar a Google Calendar</a>
+				{# <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text={{ titulo_del_evento }}&details={{detalles_clase}}&dates={{fecha_inicio}}" target="_blank" class="calendario-google">Agregar a Google Calendar</a> #}
 			</div>
 			{# {{ content }} #}
 		</div>
@@ -124,20 +130,25 @@
 			<a href="{{ path('entity.node.delete_form', {'node': node.id}) }}" class="boton-eliminar">Eliminar clase gratuita</a>
 		</div> #}
 
-	<div class="ir-a-cuenta">
-		<a href="/node/add/agendar_clase/agendar_clases" class="boton-ir-a-cuenta">Agregar otro niño +</a>
-	</div>
+	
+	{% if (tipo_clase == 'Paga' )  %}
+		<div class="ir-a-cuenta w-100 text-center">
+			<a href="/padres" class="boton-ir-a-cuenta">Ir a mi cuenta</a>
+		</div>
+	{% else %}
+		<div class="ir-a-cuenta">
+			<a href="/padres" class="boton-ir-a-cuenta">Ir a mi cuenta</a>
+		</div>
+
+		<div class="ir-a-cuenta">
+			<a href="/node/add/agendar_clase/agendar_clases" class="boton-ir-a-cuenta">Agregar otro niño +</a>
+		</div>
+	{% endif %}
+
+		{# {{ fecha|date("Ymd",'utc') }} #}
 
 
-	<div class="ir-a-cuenta">
-		<a href="/padres" class="boton-ir-a-cuenta">Ir a mi cuenta</a>
-	</div>
-
-
-	{# {{ fecha|date("Ymd",'utc') }} #}
-
-
-	{# {{ content.field_fecha_cita_gratis.value|date("Ymd", 'utc') ~ 'T' ~ content.field_hora_clase.value|date("His", 'utc') ~ 'Z'}} #}
+		{# {{ content.field_fecha_cita_gratis.value|date("Ymd", 'utc') ~ 'T' ~ content.field_hora_clase.value|date("His", 'utc') ~ 'Z'}} #}
 
 
 </article>

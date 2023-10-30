@@ -18,6 +18,7 @@ dependencies:
     - field.field.node.agendar_clase.field_nombre_del_nino_a
     - field.field.node.agendar_clase.field_otra_hora
     - field.field.node.agendar_clase.field_sexo_n
+    - field.field.node.agendar_clase.field_tipo_clase
     - node.type.agendar_clase
   module:
     - datetime
@@ -56,6 +57,14 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     weight: 1
+    region: content
+  field_tipo_clase:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 3
     region: content
 hidden:
   entity_print_view_epub: true

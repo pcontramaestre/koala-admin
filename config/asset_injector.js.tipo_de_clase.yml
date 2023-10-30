@@ -1,0 +1,28 @@
+uuid: 13b9113d-e99b-46b6-9e8d-cd3e0adb1783
+langcode: es
+status: true
+dependencies:
+  module:
+    - system
+id: tipo_de_clase
+label: 'Tipo de clase'
+code: |-
+  jQuery(document).ready(function($) {
+  	 if ($('input[name="field_tipo_clase[0][value]"]').length > 0) {
+  		//Set Value of the field Tipo de clase is Paga
+  		$('input[name="field_tipo_clase[0][value]"]').val('Paga');		
+  		$('.field--name-field-tipo-clase').css("display","none");
+  	 }
+  });
+noscript: ''
+noscriptRegion: {  }
+jquery: false
+header: false
+preprocess: true
+conditions:
+  request_path:
+    id: request_path
+    negate: false
+    pages: "/node/add/agendar_clase/agendando_clase\r\n/node/add/agendar_clase/agendando_clase/*"
+contexts: {  }
+conditions_require_all: true
