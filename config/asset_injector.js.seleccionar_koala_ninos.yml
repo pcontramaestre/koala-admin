@@ -1,0 +1,46 @@
+uuid: baa3d9f0-5483-4258-a2bb-3fa21910a5ac
+langcode: es
+status: true
+dependencies:
+  module:
+    - system
+id: seleccionar_koala_ninos
+label: 'Seleccionar Koala Niños'
+code: |-
+
+  jQuery(document).ready(function($){
+    $('input[name="field_selecc"]').each(function(){
+      if ($(this).is(':checked')) {
+        // console.log($(this).val());
+        var field_selecc = $(this).val();
+        var field_selecc_id = $(this).attr('id');
+        $('label[for="'+field_selecc_id+'"]').find('span.field-content').addClass('active');
+      }
+    });
+
+    $('input[name="field_selecc"]').change(function(){
+      $('input[name="field_selecc"]').each(function(){
+        if ($(this).is(':checked')) {
+          // console.log($(this).val());
+          var field_selecc = $(this).val();
+          var field_selecc_id = $(this).attr('id');
+          $('label[for="'+field_selecc_id+'"]').find('span.field-content').addClass('active');
+        } else {
+          var field_selecc_id = $(this).attr('id');
+          $('label[for="'+field_selecc_id+'"]').find('span.field-content').removeClass('active');
+        }
+      });
+    });
+  });
+noscript: ''
+noscriptRegion: {  }
+jquery: false
+header: false
+preprocess: true
+conditions:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /hijo/mis-koalas-avatares
+contexts: {  }
+conditions_require_all: true

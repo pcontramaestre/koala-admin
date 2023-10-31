@@ -463,6 +463,10 @@
     display: flex;
     flex-direction: column;
 
+    @media screen and (max-width: 800px) {
+      width: 100%;
+    }
+
     button {
       border: 2px solid #297e88;
       background-color: white;
@@ -482,11 +486,20 @@
       font-weight: 400;
       font-size: 12px;
       margin-bottom: 0.5rem;
+
+      @media screen and (max-width: 800px) {
+        display: none;
+      }
     }
   }
 
   .layout__region--second {
     padding-left: 1rem;
+
+    @media screen and (max-width: 800px) {
+      padding-left: 0rem;
+      
+    }
 
     .form-switch .form-check-input {
       margin-left: -1.5em;
@@ -506,6 +519,11 @@
           border-radius: 16px;
           margin-left: 1.5rem;
 
+          @media screen and (max-width: 800px) {
+            margin-left: 0rem;
+            
+          }
+
           &:before {
             content: "Profesiones";
             font-weight: 700;
@@ -522,12 +540,23 @@
       gap: 16px;
       margin-top: 1rem;
 
+      //Pantallas pequeñas de 250 a 500px
+      @media (min-width: 250px) and (max-width: 500px) {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      //Pantallas pequeñas de 500 a 800px
+      @media (min-width: 500px) and (max-width: 800px) {
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+
       .radio {
         position: relative;
         padding-left: 0em !important;
 
         input {
           position: absolute;
+          opacity: 0;
           left: 16%;
           top: 6%;
 
@@ -538,6 +567,13 @@
       }
 
       .form-check-label {
+
+        @media screen and (max-width: 800px) {
+          font-size: 12px;
+          height: 100%;
+          
+        }
+
         .views-field-nothing {
           .field-content {
             display: block;
@@ -547,6 +583,12 @@
             padding: 0.5rem 0.5rem 0rem 0.5rem;
             border-radius: 16px;
             font-size: 20px;
+            cursor: pointer;
+
+            &.active {
+              background: #2FF7EE;
+              box-shadow: 0px 0px 7px 1px #167672;
+            }
 
             p {
               font-weight: 500;
