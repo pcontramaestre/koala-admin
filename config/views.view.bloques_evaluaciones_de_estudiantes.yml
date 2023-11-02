@@ -3,8 +3,11 @@ langcode: es
 status: true
 dependencies:
   config:
+    - field.storage.node.field_codigo_de_la_clase_
     - field.storage.node.field_nombre_del_nino_a
     - field.storage.node.field_seleccionar_clase_agendada
+    - field.storage.taxonomy_term.field_nombre_de_la_unidad
+    - field.storage.taxonomy_term.field_nombre_largo_del_nivel
     - field.storage.user.field_nombre_del_hijo
     - field.storage.user.user_picture
     - image.style.responsive_img
@@ -12,6 +15,7 @@ dependencies:
   module:
     - node
     - svg_image
+    - taxonomy
     - user
 id: bloques_evaluaciones_de_estudiantes
 label: 'Bloques Evaluaciones de Estudiantes'
@@ -468,6 +472,309 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: false
+        title_1:
+          id: title_1
+          table: node_field_data
+          field: title
+          relationship: field_clase_a_asignar
+          group_type: group
+          admin_label: ''
+          entity_type: node
+          entity_field: title
+          plugin_id: field
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: false
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        field_codigo_de_la_clase_:
+          id: field_codigo_de_la_clase_
+          table: node__field_codigo_de_la_clase_
+          field: field_codigo_de_la_clase_
+          relationship: field_clase_a_asignar
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: false
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        field_nombre_de_la_unidad:
+          id: field_nombre_de_la_unidad
+          table: taxonomy_term__field_nombre_de_la_unidad
+          field: field_nombre_de_la_unidad
+          relationship: field_nivel_de_la_clase
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: false
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        field_nombre_largo_del_nivel:
+          id: field_nombre_largo_del_nivel
+          table: taxonomy_term__field_nombre_largo_del_nivel
+          field: field_nombre_largo_del_nivel
+          relationship: field_nivel_de_la_clase
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: false
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        nothing_2:
+          id: nothing_2
+          table: views
+          field: nothing
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: custom
+          label: ''
+          exclude: false
+          alter:
+            alter_text: true
+            text: "<div class=\"nivel-clase\">\r\n  <div class=\"nivel\">{{ field_codigo_de_la_clase_ }}</div>\r\n  <div class=\"derecha titulos\">\r\n     <div class=\"nombre-unidad\">{{ field_nombre_de_la_unidad }}</div>\r\n    <div class=\"nombre-clase\">{{ title_1 }}</div>\r\n  </div>\r\n</div>"
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: false
       pager:
         type: none
         options:
@@ -586,6 +893,24 @@ display:
           admin_label: 'field_alumno_relacionado: Usuario'
           plugin_id: standard
           required: false
+        field_clase_a_asignar:
+          id: field_clase_a_asignar
+          table: node__field_clase_a_asignar
+          field: field_clase_a_asignar
+          relationship: none
+          group_type: group
+          admin_label: 'field_clase_a_asignar: Contenido'
+          plugin_id: standard
+          required: false
+        field_nivel_de_la_clase:
+          id: field_nivel_de_la_clase
+          table: node__field_nivel_de_la_clase
+          field: field_nivel_de_la_clase
+          relationship: field_clase_a_asignar
+          group_type: group
+          admin_label: 'field_nivel_de_la_clase: Término de la taxonomía'
+          plugin_id: standard
+          required: false
       header: {  }
       footer: {  }
       display_extenders: {  }
@@ -598,8 +923,11 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
+        - 'config:field.storage.node.field_codigo_de_la_clase_'
         - 'config:field.storage.node.field_nombre_del_nino_a'
         - 'config:field.storage.node.field_seleccionar_clase_agendada'
+        - 'config:field.storage.taxonomy_term.field_nombre_de_la_unidad'
+        - 'config:field.storage.taxonomy_term.field_nombre_largo_del_nivel'
         - 'config:field.storage.user.field_nombre_del_hijo'
         - 'config:field.storage.user.user_picture'
   block_1:
@@ -620,7 +948,10 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
+        - 'config:field.storage.node.field_codigo_de_la_clase_'
         - 'config:field.storage.node.field_nombre_del_nino_a'
         - 'config:field.storage.node.field_seleccionar_clase_agendada'
+        - 'config:field.storage.taxonomy_term.field_nombre_de_la_unidad'
+        - 'config:field.storage.taxonomy_term.field_nombre_largo_del_nivel'
         - 'config:field.storage.user.field_nombre_del_hijo'
         - 'config:field.storage.user.user_picture'
