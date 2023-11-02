@@ -1,0 +1,37 @@
+uuid: daa23899-3116-4fff-8a3b-ab04cbd3753a
+langcode: es
+status: true
+dependencies:
+  module:
+    - node
+id: nivel_clase_profesores
+label: 'Nivel clase - profesores'
+code: |-
+  jQuery(document).ready(function($) {
+  	// Obtener el texto del div
+  	var textoDiv = $('.nivel').text();
+  	
+  	// Dividir el texto en base al punto
+  	var partes = textoDiv.split('.');
+  	
+  	// Guardar en una variable el valor antes del punto
+  	var valorAntesDelPunto = partes[0];
+  	
+  	// Reemplazar el texto del div por el valor antes del punto
+  	$('.nivel').text(valorAntesDelPunto);
+  });
+noscript: ''
+noscriptRegion: {  }
+jquery: false
+header: false
+preprocess: true
+conditions:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      asignar_clase_a_estudiante: asignar_clase_a_estudiante
+contexts: {  }
+conditions_require_all: true

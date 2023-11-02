@@ -1969,6 +1969,18 @@ display:
             items_per_page_options_all_label: '- All -'
             offset: false
             offset_label: Offset
+      empty:
+        area_text_custom:
+          id: area_text_custom
+          table: views
+          field: area_text_custom
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text_custom
+          empty: true
+          content: "<div class=\"sin-proximas-clases\">\r\n  No tienes clases programadas para tus hijos. puedes hacerlo desde el menú <b><a href=\"/padres/mis-koalas\">Mis niños</a></b>, seleccionas el hijo al que quieres crear la clase y haces clic en el botón de <b>Agendar Clase</b>\r\n</div>"
+          tokenize: false
       sorts:
         field_fecha_cita_oculta_value:
           id: field_fecha_cita_oculta_value
@@ -2099,6 +2111,7 @@ display:
         groups:
           1: AND
       defaults:
+        empty: false
         pager: false
         relationships: false
         fields: false
