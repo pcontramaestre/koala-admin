@@ -17,8 +17,8 @@
         margin-bottom: 1rem;
       }
       .form-switch .form-check-input:checked {
-        background-color: #FF6669;
-        border-color: #FF6669
+        background-color: #ff6669;
+        border-color: #ff6669;
       }
 
       .form-switch .form-check-input {
@@ -78,7 +78,7 @@
                   align-items: center;
                   justify-items: stretch;
                   align-content: center;
-                  .js-form-type-checkbox{
+                  .js-form-type-checkbox {
                     max-width: 22vw;
                   }
                 }
@@ -137,7 +137,6 @@
               background: var(--Grey-K100, #e6f1f1);
               padding-top: 1rem;
               padding-bottom: 1rem;
-
 
               label {
                 margin-left: 0.4rem;
@@ -276,6 +275,62 @@
                   border-right: 1px solid #becaca;
                   padding: 1rem 0.5rem;
                 }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 300px) and (max-width: 800px) {
+  .node--type-asignar-clase-a-estudiante {
+    #page-wrapper {
+      //Formulario
+      .node-asignar-clase-a-estudiante-edit-form {
+        .layout-region {
+          .layout--twocol {
+            flex-direction: column;
+            .layout__region--top {
+              display: none;
+            }
+            .layout__region--first {
+              max-width: 100% !important;
+              width: 100% !important;
+              .block-estudiante {
+                max-width: 100% !important;
+              }
+            }
+            .layout__region--second {
+              margin-top: 24px;
+              max-width: 100% !important;
+              width: 100% !important;
+              text-align: center;
+              .field--name-field-logros-cumplidos {
+                .fieldgroup {
+                  .fieldset-wrapper > {
+                    .checkbox {
+                      grid-template-columns: 1fr !important;
+                      .js-form-type-checkbox {
+                        max-width: 90vw !important;
+                        text-align: justify;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+            .layout__region--bottom {
+              grid-template-columns: 1fr !important;
+              text-align: center;
+              #edit-field-marcar-clase-como-finaliza-wrapper {
+                justify-content: center !important;
+              }
+              #edit-field-el-nino-no-asistio-a-la-cl-wrapper {
+                justify-content: center;
+                display: flex;
+                margin-top: -2rem;
               }
             }
           }

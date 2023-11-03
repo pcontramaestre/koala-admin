@@ -551,17 +551,80 @@
           .button {
             border-radius: 2.5rem;
             border: 2px solid var(--Turq-K500, #297e88);
-            background: var(--Agua-K500, #2ff7ee) ;
-            color: black ;
+            background: var(--Agua-K500, #2ff7ee);
+            color: black;
             font-size: 1.25rem;
             font-weight: 700;
             padding: 0.5rem 2rem;
-            &:hover{
+            &:hover {
               background-color: #297e88;
               color: white;
             }
           }
         }
+      }
+    }
+  }
+}
+
+@media (min-width: 300px) and (max-width: 800px) {
+  .path-facturacion {
+    .section {
+      #block-koala-content{
+        .block-views-blockfacturacion-profesor-block-1 {
+          .content{
+            .nav-tabs{
+              width: 100%!important;
+            }
+          }
+        }
+      }
+    }
+    .vista-facturacion-formulario {
+      display: block !important;
+      .izquierda {
+        width: 100% !important;
+        margin-bottom: 2rem;
+        .view-filters {
+          .views-exposed-form {
+            .form-actions {
+              .js-hide {
+                display: none !important;
+              }
+            }
+          }
+        }
+      }
+      .derecha{
+        .form-actions{
+          position: initial!important;
+          width: 90vw;
+          button{
+            padding: 0rem 3rem!important;
+          }
+        }
+      }
+    }
+    .div-formulario {
+      display: block !important;
+      width: 90vw;
+      fieldset:nth-child(1) {
+        margin-left: 0rem !important;
+        width: 100% !important;
+      }
+      .doble-columna {
+        label {
+          width: 145%!important;
+          font-size: 15px!important;
+        }
+        .dos-columnas-derecha{
+          label{
+            margin-left: 1rem;
+          }
+        }
+      }
+      label{
+        font-size: 15px!important;
       }
     }
   }
