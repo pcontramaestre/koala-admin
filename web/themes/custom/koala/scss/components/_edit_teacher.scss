@@ -41,7 +41,7 @@
                     height: 3rem;
                     font-weight: 500;
                     margin-bottom: 0.5rem;
-                    option{
+                    option {
                       border-radius: 20px;
                       font-weight: 500;
                     }
@@ -914,6 +914,59 @@
             }
           }
         }
+      }
+    }
+  }
+}
+
+@media (min-width: 300px) and (max-width: 800px) {
+  #block-koala-content {
+    .content {
+      .user-editar-profesor-form {
+        .layout--twocol-section {
+          display: flex;
+          flex-direction: column;
+          .layout__region--first {
+            padding: 0rem !important;
+            width: 100% !important;
+            .required-fields {
+              margin-bottom: 0rem !important;
+            }
+            #edit-group-presentacion{
+              margin-top: 0rem!important;
+            }
+            #edit-group-zona-horaria{
+              margin-top: 0.5rem;
+            }
+          }
+          .layout__region--second {
+            padding: 0rem !important;
+            width: 100% !important;
+            margin-top: 0rem !important;
+            .field--name-field-numero-de-telefono {
+              .phone-number-field {
+                .js-form-type-textfield {
+                  input {
+                    width: 58%!important;
+                  }
+                }
+                .js-form-type-select {
+                  .country-select:nth-child(2) {
+                    // width: 30% !important;
+                    display: none;
+                  }
+                  .country-select:nth-child(3){
+                    width: 40%!important;
+                  }
+                }
+              }
+            }
+          }
+        }
+        .form-actions {
+          width: 100%!important;
+          margin: auto!important;
+      }
       }
     }
   }

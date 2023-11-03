@@ -34,7 +34,7 @@
                     .cuadro-perfil-profesor {
                       .img-name {
                         .imagen {
-                          width: 25% !important;
+                          width: 25%;
 
                           .image-style-responsive-img {
                             height: auto;
@@ -512,5 +512,86 @@
 
   #drupal-modal {
     max-height: 500px !important;
+  }
+}
+
+@media (min-width: 300px) and (max-width: 800px){
+  .path-profesor {
+    .front-profesor{
+      #block-koala-content {
+        .content {
+          .layout__region--first {
+            margin-bottom: 0rem!important;
+            .block-views-blockdetalle-profesor-block-1 {
+              .content{
+                .view-detalle-profesor{
+                  width: 100%!important;
+                  .perfil-general-profesor{
+                    padding-left: calc(var(--bs-gutter-x) * .5)!important;
+                    .views-field-field-tu-video-{
+                      padding: 0rem 1rem 1rem 1rem!important;
+                    }
+                    .views-field-nothing {
+                      padding: 1.5rem 1rem 1rem 1rem!important;
+                      .field-content {
+                        .cuadro-perfil-profesor{
+                          .img-name {
+                            .imagen{
+                              width: 32.5%!important;
+                              .image-style-responsive-img{
+                                width: 80px!important;
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+          .layout__region--second{
+            width: 100%;
+            .block-views-blockclases-gratuitas-profesores-block-1{
+              padding: 1.5rem 0.5rem 1rem 0.5rem!important;
+            }
+            .block-views-blocktu-metodo-de-pago-block-1{
+              padding: 1.5rem 1rem 1rem 1rem!important;
+            }
+            .views-element-container{
+              max-width: unset!important;
+              margin-top: 1rem!important;
+              .content{
+                .view-clases-gratuitas-profesores{
+                  .view-footer{
+                    .ver-todos-koalas{
+                      text-align: end!important;
+                      a{
+                        &:after{
+                          float: none!important;
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+          .layout__region--third{
+            .views-element-container{
+              margin-top: 1rem!important;
+              padding: 1.5rem 1rem 1rem 1rem!important;
+              .view-content.row .view-grouping .view-grouping-content
+              .views-row .views-field-nothing .koalas-profes{
+                &:after{
+                  left: 99%!important;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
   }
 }

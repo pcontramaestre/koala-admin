@@ -332,21 +332,25 @@ footer.site-footer {
       }
     }
   }
-  .rol-padre {
+
     footer.site-footer {
       .container {
         .site-footer__top {
+          .no-admin.nav{
+            font-size: 16px!important;
+          }
           .region-footer-first {
             #block-logofooterhijos {
-              margin-left: 0rem;
+              margin-left: 0rem!important;
             }
 
             #block-padres-2 {
-              margin-top: 2rem;
+              margin-top: 2rem!important;
             }
           }
 
           .region-footer-second {
+            margin-top: 0.5rem!important;
             #block-correo {
               .field--name-body {
                 .field--name-field-correo-electronico-footer {
@@ -358,6 +362,7 @@ footer.site-footer {
             margin-top: 0rem;
 
             .no-admin {
+              font-size: 16px!important;
               .nav-item {
                 a {
                   padding-right: 0rem;
@@ -368,7 +373,7 @@ footer.site-footer {
 
           .region-footer-third {
             margin-top: 0rem;
-            margin: 0rem;
+            margin: 0rem!important;
 
             .block-dropdown-language {
               .dropbutton-multiple {
@@ -389,7 +394,7 @@ footer.site-footer {
         }
       }
     }
-  }
+
 
   .rol-hijo {
     footer {
@@ -428,6 +433,7 @@ footer.site-footer {
 
         .region-footer-first {
           width: 100%;
+          --bs-gutter-x: 0rem!important;
         }
 
         .block-config-pages {
@@ -438,6 +444,7 @@ footer.site-footer {
 
         .region-footer-second {
           width: 100%;
+          --bs-gutter-x: 0rem!important;
 
           ul {
             padding-left: 0rem;
@@ -450,6 +457,7 @@ footer.site-footer {
 
         .region-footer-third {
           width: 100%;
+          --bs-gutter-x: 0rem!important;
 
           .block-dropdown-language {
             margin-top: 1.7rem;
