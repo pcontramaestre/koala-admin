@@ -170,6 +170,43 @@
           color: black;
         }
       }
+
+      .nivel-clase {
+        margin-top: 1rem;
+        background: #E6F1F1;
+        max-width: 92%;
+        padding: 1rem 1.5rem 1rem 1rem;
+        gap: 1rem;
+        border-radius: 2rem;
+        display: flex;
+        align-items: center;
+
+        .nivel {
+          background: white;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          width: 60px;
+          height: 60px;
+          justify-content: center;
+          color: #297E88;
+          font-size: 1.5rem;
+          font-weight: 700;
+        }
+
+        .derecha.titulos {
+          .nombre-unidad {
+            font-weight: 700;
+            color: black;
+            font-size: 1.25rem;
+          }
+          .nombre-clase {
+            font-weight: 500;
+            color: black;
+            font-size: 1rem;
+          }
+        }
+      }
     }
   }
 }
