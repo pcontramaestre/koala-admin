@@ -367,3 +367,30 @@
     }
   }
 }
+
+@media (min-width: 300px) and (max-width: 800px) {
+  .path-profesor {
+    .view-mis-koalas-profesores {
+      .col-md-3{
+        order: 2;
+        margin-top: -3rem;
+      }
+      .col-md-9 {
+        order: 1;
+        .views-element-container {
+          .view-id-logros_taxonomia.view-display-id-block_1 {
+            .view-content.row {
+              padding: 0rem 1rem 2rem 1rem !important;
+              margin-right: 0rem !important;
+            }
+            .item-list-accordeon {
+              ul.listado-de-logros {
+                grid-template-columns: 1fr !important;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

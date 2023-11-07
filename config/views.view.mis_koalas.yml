@@ -1493,7 +1493,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<div class=\"boton-agendar\"><a href=\"/padres/mis-koalas/agendar_clase/{{ nid }}/{{ uid }}\" class=\"agendar-clase btn btn-primary mt-5 mb-5\">Agendar clase</a></div>\r\n<div class=\"boton-agendar boton-editar-nino\"><a href=\"/node/{{ nid }}/edit/editar_hijo\" class=\"agendar-clase btn btn-primary mt-5 mb-5\">Editar niño</a></div>\r\n<div class=\"boton-agendar boton-editar-nino\"><a href=\"/custom-child-login/{{ nid }}\" class=\"agendar-clase btn btn-primary mt-5 mb-5\">Entrar a la sección del niño</a></div>"
+            text: "<div class=\"boton-agendar\"><a href=\"/padres/mis-koalas/agendar_clase/{{ nid }}/{{ uid }}\" class=\"agendar-clase btn btn-primary mt-5 mb-5\">Agendar clase</a></div>\r\n<div class=\"boton-agendar boton-editar-nino\"><a href=\"/node/{{ nid }}/edit/editar_hijo\" class=\"agendar-clase btn btn-primary mt-5 mb-5\">Editar niño</a></div>\r\n<div class=\"boton-agendar boton-editar-nino\"><a href=\"/custom-child-login/{{ nid }}\" class=\"agendar-clase btn btn-primary mt-5 mb-5 entrar-nino\">Entrar a la sección del niño</a></div>"
             make_link: false
             path: ''
             absolute: false

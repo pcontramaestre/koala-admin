@@ -263,7 +263,7 @@ body #main-wrapper {
         }
 
         .offcanvas-body {
-          #block-padres {
+          .block {
             margin-left: 0rem;
 
             .nav {
@@ -271,10 +271,10 @@ body #main-wrapper {
               width: 100%;
               text-align: center;
               margin-top: 1rem;
+              margin-left: 0rem!important;
 
               .nav-item {
                 margin-bottom: 2rem;
-                margin-right: 16px;
 
                 .nav-link {
                   font-size: 20px;
