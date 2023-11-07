@@ -1,0 +1,60 @@
+uuid: 5ebc3b21-7afd-4a82-8bc7-dea356c27ce8
+langcode: es
+status: true
+dependencies: {  }
+id: abrir_modales
+label: 'Abrir modales'
+code: |-
+  jQuery(document).ready(function($) {
+  	
+  	 /* 
+     Entrar como niño
+    */
+  	
+    $('.boton-editar-nino a.entrar-nino').click(function(event) {
+      event.preventDefault(); // Prevenir el comportamiento predeterminado del enlace
+      
+      // Abrir el modal
+      $('#confirmarEntrarNino').modal('show');
+    });
+    
+    $('#botonEntrarNino').click(function() {
+      // Cerrar el modal
+      $('#confirmarEntrarNino').modal('hide');
+      
+      // Obtener la URL del enlace .entrar-nino y redirigir
+      var url = $('.boton-editar-nino a.entrar-nino').attr('href');
+      if (url) {
+        window.location.href = url;
+      }
+    });
+    
+    
+   /* 
+  //    Actualizar información
+  //   */
+  //    $('#user-editar-perfil-padre-form').submit(function(event) {
+  //     event.preventDefault(); // Prevenir el comportamiento predeterminado del formulario
+      
+  //     // Abrir el modal de confirmación
+  //     $('#confirmarActualizar').modal('show');
+  //   });
+    
+  //   $('#botonActualizar').click(function() {
+  //     $('#confirmarActualizar').modal('hide');
+  //     // Continuar con la acción del formulario    
+  //     console.log("Enviar formulario nuevo");
+  //     document.getElementById('user-editar-perfil-padre-form').submit();
+  //     console.log("Enviar formulario nuevo 2");
+  //   });
+
+
+  });
+noscript: ''
+noscriptRegion: {  }
+jquery: true
+header: false
+preprocess: true
+conditions: {  }
+contexts: {  }
+conditions_require_all: true
