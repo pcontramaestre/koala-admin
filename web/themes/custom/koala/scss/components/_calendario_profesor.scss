@@ -8,16 +8,16 @@
           .fc-button-group {
             button {
               background-color: white;
-              color           : black;
-              border          : none;
+              color: black;
+              border: none;
             }
           }
 
           .fc-today-button {
             background-color: white;
-            color           : #FF6669;
-            border          : none;
-            font-weight     : 700;
+            color: #ff6669;
+            border: none;
+            font-weight: 700;
           }
         }
 
@@ -26,8 +26,8 @@
 
           h2 {
             font-weight: 700;
-            font-size  : 20px;
-            color      : #727F7F;
+            font-size: 20px;
+            color: #727f7f;
           }
         }
 
@@ -35,10 +35,9 @@
           .fc-button-group {
             button {
               background-color: white;
-              color           : #FF6669;
-              border          : none;
-              font-weight     : 700;
-
+              color: #ff6669;
+              border: none;
+              font-weight: 700;
             }
 
             .fc-button-active {
@@ -50,17 +49,16 @@
       }
 
       .fc-view-container {
-
         .fc-dayGridMonth-view,
         .fc-timeGridWeek-view {
-          border: 1px solid #E6F1F1;
+          border: 1px solid #e6f1f1;
 
           table {
             .fc-head {
               tr {
                 .fc-head-container {
-                  color : $GreyK500;
-                  border: 2px solid #E6F1F1;
+                  color: $GreyK500;
+                  border: 2px solid #e6f1f1;
                 }
               }
             }
@@ -80,7 +78,7 @@
                             tbody {
                               tr {
                                 td {
-                                  border: 2px solid #E6F1F1;
+                                  border: 2px solid #e6f1f1;
                                 }
                               }
                             }
@@ -92,12 +90,12 @@
                             thead {
                               .fc-day-top {
                                 .fc-day-number {
-                                  color          : #727F7F;
+                                  color: #727f7f;
                                   text-decoration: none;
-                                  float          : left !important;
-                                  margin-left    : 0.5rem;
-                                  font-weight    : 600;
-                                  font-size      : 14px;
+                                  float: left !important;
+                                  margin-left: 0.5rem;
+                                  font-weight: 600;
+                                  font-size: 14px;
                                 }
                               }
                             }
@@ -107,27 +105,27 @@
                                 .fc-event-container {
                                   .fc-day-grid-event {
                                     background-color: transparent !important;
-                                    border          : none;
+                                    border: none;
 
                                     .fc-content {
                                       margin-left: 0.5rem;
 
                                       .fc-time {
-                                        font-weight     : 500 !important;
+                                        font-weight: 500 !important;
                                         background-color: white;
-                                        color           : #727F7F;
-                                        border          : none;
-                                        font-size       : 12px;
+                                        color: #727f7f;
+                                        border: none;
+                                        font-size: 12px;
                                       }
 
                                       .fc-title {
-                                        background-color: #F8E5DE;
-                                        border-radius   : 12px;
-                                        color           : #AF654A;
-                                        font-weight     : 700;
-                                        font-size       : 12px;
-                                        padding         : 0.2rem 0.2rem 0.2rem 0.4rem;
-                                        margin-top      : 0.1rem;
+                                        background-color: #f8e5de;
+                                        border-radius: 12px;
+                                        color: #af654a;
+                                        font-weight: 700;
+                                        font-size: 12px;
+                                        padding: 0.2rem 0.2rem 0.2rem 0.4rem;
+                                        margin-top: 0.1rem;
                                       }
                                     }
                                   }
@@ -138,7 +136,7 @@
                                     .fc-content {
                                       .fc-title {
                                         background-color: $RedK100;
-                                        color           : $RedK500;
+                                        color: $RedK500;
                                       }
                                     }
                                   }
@@ -148,8 +146,8 @@
                                   .fc-day-grid-event {
                                     .fc-content {
                                       .fc-title {
-                                        background-color: #F5F8D8;
-                                        color           : #869021;
+                                        background-color: #f5f8d8;
+                                        color: #869021;
                                       }
                                     }
                                   }
@@ -168,11 +166,11 @@
                         table {
                           tbody {
                             tr {
-                              border: 2px solid #E6F1F1;
+                              border: 2px solid #e6f1f1;
 
                               .fc-axis {
                                 span {
-                                  color    : #727F7F;
+                                  color: #727f7f;
                                   font-size: 14px;
                                 }
                               }
@@ -190,7 +188,7 @@
                                   .fc-event-container {
                                     .fc-time-grid-event {
                                       background-color: transparent !important;
-                                      border          : none;
+                                      border: none;
 
                                       .fc-content {
                                         .fc-time {
@@ -198,13 +196,13 @@
                                         }
 
                                         .fc-title {
-                                          background-color: #F8E5DE;
-                                          border-radius   : 12px;
-                                          color           : #AF654A;
-                                          font-weight     : 700;
-                                          font-size       : 12px;
-                                          padding         : 0.2rem 0.2rem 0.2rem 0.4rem;
-                                          margin-top      : 0.1rem;
+                                          background-color: #f8e5de;
+                                          border-radius: 12px;
+                                          color: #af654a;
+                                          font-weight: 700;
+                                          font-size: 12px;
+                                          padding: 0.2rem 0.2rem 0.2rem 0.4rem;
+                                          margin-top: 0.1rem;
                                         }
                                       }
                                     }
@@ -226,7 +224,7 @@
                             tr {
                               .fc-axis {
                                 span {
-                                  color    : #727F7F;
+                                  color: #727f7f;
                                   font-size: 14px;
                                 }
                               }
@@ -243,23 +241,21 @@
         }
 
         .fc-timeGridDay-view {
-          border: 1px solid #E6F1F1;
+          border: 1px solid #e6f1f1;
 
           table {
             .fc-head {
-
               tr {
                 .fc-head-container {
                   .fc-row {
-                    border: 1px solid #E6F1F1;
+                    border: 1px solid #e6f1f1;
 
                     table {
                       thead {
                         tr {
                           .fc-day-header {
-
                             span {
-                              color    : #727F7F;
+                              color: #727f7f;
                               font-size: 14px;
                             }
                           }
@@ -280,11 +276,11 @@
                         table {
                           tbody {
                             tr {
-                              border: 2px solid #E6F1F1;
+                              border: 2px solid #e6f1f1;
 
                               .fc-axis {
                                 span {
-                                  color    : #727F7F;
+                                  color: #727f7f;
                                   font-size: 14px;
                                 }
                               }
@@ -295,7 +291,6 @@
 
                       .fc-content-skeleton {
                         table {
-
                           tbody {
                             tr {
                               td {
@@ -303,29 +298,29 @@
                                   .fc-event-container {
                                     .fc-time-grid-event {
                                       background-color: transparent !important;
-                                      border          : none;
+                                      border: none;
 
                                       .fc-content {
                                         margin-left: 0.5rem;
-                                        display    : flex;
+                                        display: flex;
                                         align-items: center;
 
                                         .fc-time {
-                                          font-weight     : 500 !important;
+                                          font-weight: 500 !important;
                                           background-color: white;
-                                          color           : #727F7F;
-                                          border          : none;
-                                          font-size       : 12px;
+                                          color: #727f7f;
+                                          border: none;
+                                          font-size: 12px;
                                         }
 
                                         .fc-title {
-                                          background-color: #F8E5DE;
-                                          border-radius   : 12px;
-                                          color           : #AF654A;
-                                          font-weight     : 700;
-                                          font-size       : 12px;
-                                          padding         : 0.2rem 0.2rem 0.2rem 0.4rem;
-                                          margin-top      : 0.1rem;
+                                          background-color: #f8e5de;
+                                          border-radius: 12px;
+                                          color: #af654a;
+                                          font-weight: 700;
+                                          font-size: 12px;
+                                          padding: 0.2rem 0.2rem 0.2rem 0.4rem;
+                                          margin-top: 0.1rem;
                                         }
                                       }
                                     }
@@ -339,8 +334,8 @@
                                     .fc-time-grid-event {
                                       .fc-content {
                                         .fc-title {
-                                          background-color: #F5F8D8;
-                                          color           : #869021;
+                                          background-color: #f5f8d8;
+                                          color: #869021;
                                         }
                                       }
                                     }
@@ -354,8 +349,8 @@
                                     .fc-time-grid-event {
                                       .fc-content {
                                         .fc-title {
-                                          background-color: #FFE8E8;
-                                          color           : #FF6669;
+                                          background-color: #ffe8e8;
+                                          color: #ff6669;
                                         }
                                       }
                                     }
@@ -377,7 +372,7 @@
                             tr {
                               .fc-axis {
                                 span {
-                                  color    : #727F7F;
+                                  color: #727f7f;
                                   font-size: 14px;
                                 }
                               }
@@ -394,43 +389,52 @@
         }
 
         .fc-listYear-view {
-          border: 2px solid #E6F1F1;
+          border: 2px solid #e6f1f1;
+          border-top-left-radius: 20px;
+          border-top-right-radius: 20px;
+          overflow: hidden;
 
           .fc-scroller {
             .fc-list-table {
               tbody {
                 .fc-list-heading {
                   .fc-widget-header {
+                    background: #e6f1f1 !important;
                     a {
-                      color: #727F7F;
+                      font-weight: 500;
+                      color: #727f7f;
+                      padding: 0.3rem;
+                      text-decoration: none;
                     }
                   }
                 }
 
                 .fc-list-item {
                   .fc-list-item-time {
-                    font-weight     : 500 !important;
+                    font-weight: 500 !important;
                     background-color: white;
-                    color           : #727F7F;
-                    border          : none;
-                    font-size       : 14px;
+                    color: black;
+                    border: none;
+                    font-size: 1rem;
+                    padding: 1rem;
                   }
 
                   .fc-list-item-marker {
-                    padding: 8px 0px !important;
+                    padding: 1rem 0rem !important;
                   }
 
                   .fc-list-item-title {
                     display: flex;
+                    padding: 1rem;
 
                     a {
                       background-color: $RedK100;
-                      border-radius   : 12px;
-                      color           : $RedK500;
-                      font-weight     : 700;
-                      font-size       : 12px;
-                      padding         : 0.2rem 0.2rem 0.2rem 0.4rem;
-                      margin-top      : 0.1rem;
+                      border-radius: 12px;
+                      color: $RedK500;
+                      font-weight: 700;
+                      font-size: 12px;
+                      padding: 0.2rem 0.2rem 0.2rem 0.4rem;
+                      margin-top: 0.1rem;
                     }
                   }
                 }
@@ -438,18 +442,17 @@
                 .fc-list-item:nth-child(4n) {
                   .fc-list-item-title {
                     a {
-                      background-color: #F5F8D8;
-                      color           : #869021;
+                      background-color: #f5f8d8;
+                      color: #869021;
                     }
                   }
                 }
 
                 .fc-list-item:nth-child(6n) {
                   .fc-list-item-title {
-
                     a {
-                      background-color: #F8E5DE;
-                      color           : #AF654A;
+                      background-color: #f8e5de;
+                      color: #af654a;
                     }
                   }
                 }
@@ -462,53 +465,53 @@
   }
 }
 
+@media (min-width: 801px) {
+  div[id^="windowManager_"] {
+    > span[id^="htmlElement_"] {
+      left: 42% !important;
+      top: 18% !important;
+    }
+  }
+}
 //POPUP ALUMNOS
 div[id^="windowManager_"] {
-  //width           : 100% !important;
-  //height          : 100% !important;
-  //background-color: #000000b0 !important;
-
-  >span[id^="htmlElement_"] {
-    position      : absolute;
-    //left        : 42% !important;
-    //top         : 20% !important;
-    position      : fixed !important;
-    left          : 42% !important;
-    top           : 18% !important;
-    width         : 340px !important;
-    height        : max-content !important;
-    border-color  : rgb(1 1 1 / 0%) !important;
+  > span[id^="htmlElement_"] {
+    position: absolute;
+    position: fixed !important;
+    width: 340px !important;
+    height: max-content !important;
+    border-color: rgb(1 1 1 / 0%) !important;
 
     div.jsframe-titlebar-focused {
-      background             : #e6f1f1 !important;
-      color                  : black !important;
-      width                  : 340px !important;
-      height                 : 50px !important;
-      border-top-left-radius : 16px !important;
+      background: #e6f1f1 !important;
+      color: black !important;
+      width: 340px !important;
+      height: 50px !important;
+      border-top-left-radius: 16px !important;
       border-top-right-radius: 16px !important;
-      border-bottom          : none !important;
-      top                    : -9px !important;
+      border-bottom: none !important;
+      top: -9px !important;
 
-      >span {
-        left      : 16px !important;
-        top       : 16px !important;
-        display   : block !important;
-        max-width : 260px !important;
-        word-wrap : break-word !important;
+      > span {
+        left: 16px !important;
+        top: 16px !important;
+        display: block !important;
+        max-width: 260px !important;
+        word-wrap: break-word !important;
         word-break: break-all !important;
-        font-size : 1rem !important;
+        font-size: 1rem !important;
       }
     }
 
     div {
       .datos-clase {
-        display        : flex;
-        flex-direction : column;
-        flex-wrap      : nowrap;
-        align-content  : center;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-content: center;
         justify-content: space-between;
-        height         : 100%;
-        padding-bottom : 1rem;
+        height: 100%;
+        padding-bottom: 1rem;
 
         .imagen {
           img {
@@ -518,7 +521,7 @@ div[id^="windowManager_"] {
 
         .alumno {
           font-weight: 500;
-          color      : black;
+          color: black;
 
           p {
             margin-bottom: 0.5rem !important;
@@ -526,21 +529,21 @@ div[id^="windowManager_"] {
 
           .datos-alumno {
             background-color: white;
-            width           : 90%;
-            border-radius   : 32px;
-            height          : max-content;
-            font-weight     : 700;
-            font-size       : 20px;
-            display         : flex;
-            align-items     : center;
-            margin          : 0 auto;
-            padding         : 0.5rem;
-            margin-bottom   : 1rem;
+            width: 90%;
+            border-radius: 32px;
+            height: max-content;
+            font-weight: 700;
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+            margin: 0 auto;
+            padding: 0.5rem;
+            margin-bottom: 1rem;
 
             a {
-              color          : black;
+              color: black;
               text-decoration: none;
-              max-width      : 79%;
+              max-width: 79%;
 
               &:hover {
                 text-decoration: underline;
@@ -548,63 +551,63 @@ div[id^="windowManager_"] {
             }
 
             &:before {
-              content         : "";
-              display         : block;
-              width           : 40px;
-              height          : 40px;
-              margin-right    : 1rem;
+              content: "";
+              display: block;
+              width: 40px;
+              height: 40px;
+              margin-right: 1rem;
               background-image: url("/themes/custom/koala/images/Alumno-info.jpg");
             }
           }
         }
 
         .profesor {
-          margin-bottom   : 1rem !important;
+          margin-bottom: 1rem !important;
           background-color: white;
-          width           : 90%;
-          margin          : 0 auto;
-          border-radius   : 32px;
-          position        : relative;
-          margin-top      : 2rem;
-          height          : 56px;
-          display         : flex;
-          justify-content : center;
-          align-items     : center;
-          font-weight     : 700;
-          font-size       : 20px;
+          width: 90%;
+          margin: 0 auto;
+          border-radius: 32px;
+          position: relative;
+          margin-top: 2rem;
+          height: 56px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-weight: 700;
+          font-size: 20px;
 
           p {
-            position   : absolute;
-            bottom     : 115%;
-            left       : 0;
-            right      : 0;
-            margin     : 0 auto;
+            position: absolute;
+            bottom: 115%;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
             font-weight: 500;
-            font-size  : 16px;
+            font-size: 16px;
           }
         }
 
         .fecha.text-center {
           font-weight: 500;
-          color      : black;
+          color: black;
 
           .fecha {
-            font-size  : 20px;
+            font-size: 20px;
             font-weight: 700;
           }
         }
 
         .boton {
           background-color: #2ff7ee;
-          border          : 2px solid #297e88;
-          border-radius   : 32px;
-          width           : 260px;
-          height          : 51px;
-          display         : flex;
-          justify-content : center;
-          align-items     : center;
-          margin          : 0 auto;
-          margin-top      : 1rem;
+          border: 2px solid #297e88;
+          border-radius: 32px;
+          width: 260px;
+          height: 51px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin: 0 auto;
+          margin-top: 1rem;
 
           &:hover {
             background-color: #297e88;
@@ -615,47 +618,120 @@ div[id^="windowManager_"] {
           }
 
           a {
-            color          : black;
+            color: black;
             text-decoration: none;
-            font-weight    : 700;
-            font-size      : 20px;
+            font-weight: 700;
+            font-size: 20px;
           }
         }
 
         .editar-horario {
-          font-weight    : 700;
+          font-weight: 700;
           text-decoration: underline;
-          text-align     : center;
-          margin-top     : 1rem;
+          text-align: center;
+          margin-top: 1rem;
         }
       }
     }
 
     div[id^="window_"]:not(.jsframe-titlebar-focused) {
-      left                      : 0px !important;
-      top                       : 30px !important;
-      width                     : 340px !important;
-      min-height                : 600px !important;
-      background-color          : #e6f1f1 !important;
-      border-radius             : 16px !important;
+      left: 0px !important;
+      top: 30px !important;
+      width: 340px !important;
+      min-height: 600px !important;
+      background-color: #e6f1f1 !important;
+      border-radius: 16px !important;
       border-bottom-right-radius: 0px;
-      border-bottom-left-radius : 0px;
+      border-bottom-left-radius: 0px;
 
-      >div {
-        background-color          : #e6f1f1 !important;
+      > div {
+        background-color: #e6f1f1 !important;
         border-bottom-right-radius: 16px !important;
-        border-bottom-left-radius : 16px !important;
-        height                    : auto !important;
+        border-bottom-left-radius: 16px !important;
+        height: auto !important;
       }
 
-      >div:nth-of-type(1) {
-        left            : 310px !important;
+      > div:nth-of-type(1) {
+        left: 310px !important;
         background-color: transparent !important;
-        top             : -22px !important;
+        top: -22px !important;
 
-        >span {
+        > span {
           font-size: 19px !important;
-          color    : black !important;
+          color: black !important;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 300px) and (max-width: 800px) {
+  //POPUP ALUMNOS
+  div[id^="windowManager_"] {
+    > span[id^="htmlElement_"] {
+      left: 0% !important;
+      right: 0%;
+      margin: 0 auto;
+      top: 12.7% !important;
+      div {
+        .datos-clase {
+          .profesor {
+            display: none !important;
+          }
+        }
+      }
+    }
+  }
+  .view-clases-gratuitas-profesores {
+    .no-admin {
+      .js-drupal-fullcalendar {
+        .fc-view-container {
+          .fc-listYear-view {
+            .fc-scroller {
+              .fc-list-table {
+                tbody {
+                  .fc-list-item {
+                    background-color: $RedK100;
+                    border-radius: 38px;
+                    color: $RedK500;
+                    display: flex;
+                    flex-direction: column;
+                    width: 70vw;
+                    padding: 0.5rem 1rem;
+                    margin-top: 0.5rem !important;
+                    margin-bottom: 0.5rem !important;
+                    margin: 0 auto;
+                    .fc-list-item-time {
+                      order: 2;
+                      width: 91%;
+                      background-color: transparent !important;
+                      padding: 0rem !important;
+                    }
+                    .fc-list-item-marker {
+                      display: none;
+                    }
+                    .fc-list-item-title {
+                      border: none;
+                      padding: 0rem !important;
+                      a {
+                        font-size: 16px !important;
+                        color: black !important;
+                        padding: 0rem !important;
+                      }
+                    }
+                  }
+                  .fc-list-item:nth-child(4n) {
+                    background-color: #f5f8d8;
+                    color: #869021;
+                  }
+                  .fc-list-item:nth-child(6n) {
+                    background-color: #f8e5de;
+                    color: #af654a;
+                  }
+                }
+              }
+            }
+          }
         }
       }
     }

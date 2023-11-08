@@ -571,10 +571,36 @@
   .path-facturacion {
     .section {
       #block-koala-content{
+        .tab-content {
+          #nav-profile {
+            .view-resumen-de-pagos {
+              .table-responsive{
+                table {
+                  tbody {
+                    tr {
+                      .views-field-title{
+                        min-width: 145px!important;
+                      }
+                      .views-field-field-fecha-de-la-clase{
+                        min-width: 197px!important;
+                      }
+                      .views-field-field-sube-o-arrastra-tu-factura{
+                        min-width: 170px!important;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
         .block-views-blockfacturacion-profesor-block-1 {
           .content{
             .nav-tabs{
               width: 100%!important;
+              .nav-link{
+                font-size: 15px!important;
+              }
             }
           }
         }
