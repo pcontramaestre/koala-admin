@@ -28,14 +28,16 @@
 
                         a {
                           padding: 16px;
-                          border: none;
+                          border: 2px solid #297e88;
                           color: black;
                           font-weight: 700;
                           font-size: 16px;
-                          width: 253px;
+                          width: 197px;
                           height: 54px;
-                          background: #e6f1f1;
-                          border-radius: 24px;
+                          background: white;
+                          border-radius: 32px;
+                          display: flex;
+                          align-items: center;
                           &:after {
                             content: "";
                             display: block;
@@ -44,7 +46,7 @@
                             background-image: url("/themes/custom/koala/images/icon-koalas.png");
                             position: absolute;
                             top: 65px;
-                            left: 32px;
+                            left: 151px;;
                           }
                           &:hover {
                             text-decoration: underline;
@@ -59,7 +61,7 @@
                             display: flex;
                             flex-wrap: nowrap;
                             border-bottom: 2px solid #e6f1f1;
-                            width: 78%;
+                            width: 82%;
 
                             .nav-item {
                               margin-right: 1.8rem;
@@ -139,7 +141,7 @@
                             width: 5px;
                             height: 3px;
                           }
-                          .nav-tabs::-webkit-scrollbar-thumb{
+                          .nav-tabs::-webkit-scrollbar-thumb {
                             background-color: grey;
                           }
                           .tab-content {
@@ -158,10 +160,11 @@
                                   .boton-agendar {
                                     text-align: center;
 
-                                    .agendar-clase, a {
-                                      width: auto;
+                                    .agendar-clase,
+                                    a {
+                                      width: 190px;
                                       height: 45px;
-                                      background: #ffffff;
+                                      background: #2ff7ee;
                                       border: 2px solid #297e88;
                                       border-radius: 32px;
                                       color: black;
@@ -349,7 +352,6 @@
   // Resumen de la clase.
 
   .view-resumen-de-clases {
-
     > .view-header {
       margin-top: 1.5rem;
 
@@ -483,29 +485,58 @@
                           left: 0%;
                           bottom: 91% !important;
                           margin: 0 auto;
-                          width: 335px;
+                          width: auto;
                           a {
-                            width: 100% !important;
+                            width: 56px !important;
+                            height: 56px;
+                            border-radius: 32px !important;
+                            color: transparent !important;
+                            position: absolute;
+                            right: 0% !important;
+                            top: 11.7% !important;
+                            background-color: white !important;
+                            border: 1px solid #297e88;
                             &:after {
-                              left: 65px !important;
+                              left: 17px !important;
+                              top: 17px !important;
                             }
                           }
                         }
                         .view-content {
-                          margin-top: 6.5rem;
+                          margin-top: 0rem;
                           #views-bootstrap-tab-views-bootstrap-mis-koalas-block-2 {
                             .nav-tabs {
-                              width: 100% !important;
+                              width: 79% !important;
+                              height: 56px;
+                              padding: 1rem;
+                              border: 1px solid #becaca;
+                              border-radius: 16px;
                               display: flex;
                               .nav-item {
                                 margin-right: 1rem;
 
                                 button {
-                                  margin-bottom: 2.2rem !important;
+                                  margin-bottom: 0rem !important;
                                 }
                                 .nav-link.active {
                                   &:after {
-                                    width: 40% !important;
+                                    width: 100% !important;
+                                    top: 32px !important;
+                                  }
+                                }
+                              }
+                            }
+                            .tab-content {
+                              .tab-pane {
+                                .views-field {
+                                  .field-content {
+                                    .boton-agendar {
+                                      width: 100%;
+                                      .agendar-clase,
+                                      a {
+                                        width: 100%!important;
+                                      }
+                                    }
                                   }
                                 }
                               }
@@ -521,6 +552,22 @@
           }
         }
       }
+    }
+    .view-resumen-de-clases{
+      padding-top: 2rem;
+    }
+    .view-id-logros_taxonomia.view-display-id-block_1 {
+      .view-content.row {
+        padding: 1rem 1rem 1rem 0.3rem!important;
+      }
+      .item-list-accordeon {
+        ul.listado-de-logros{
+          grid-template-columns: 1fr!important;
+        }
+      }
+    }
+    #main-wrapper #main{
+      width: 94%!important;
     }
   }
 }

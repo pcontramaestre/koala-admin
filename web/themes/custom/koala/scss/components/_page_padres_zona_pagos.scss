@@ -1,7 +1,7 @@
 .path-zona-pagos {
   .on-the-gray {
     margin-top: -2rem;
-    padding: 0px!important;
+    padding: 0px !important;
   }
   //Cuadro de suscripciones activas
   .view-id-suscripciones {
@@ -545,10 +545,10 @@
     .quicktabs-tabpage {
       border: unset;
       margin-top: 1rem;
-      padding: 0.5em 0em 1em!important;
-      .views-element-container{
-        .view-commerce-user-orders{
-          --bs-gutter-x: 0rem!important;
+      padding: 0.5em 0em 1em !important;
+      .views-element-container {
+        .view-commerce-user-orders {
+          --bs-gutter-x: 0rem !important;
         }
       }
     }
@@ -618,7 +618,7 @@
               a {
                 font-weight: 700;
                 color: #000;
-                &:hover{
+                &:hover {
                   opacity: 0.7;
                 }
               }
@@ -671,6 +671,157 @@
       border: 2px solid var(--Turq-K500, #297e88);
       background: var(--White, #fff);
       color: var(--Turq-K600, #165f68);
+    }
+  }
+}
+
+.page-view-suscripciones {
+  #main-wrapper {
+    .no-admin {
+      .view-suscripciones {
+        .view-content {
+          border: 1px solid #e6f1f1;
+          border-top-left-radius: 20px;
+          border-top-right-radius: 20px;
+          overflow: hidden;
+          .table {
+            border-color: #e6f1f1 !important;
+            thead {
+              tr {
+                .views-field {
+                  background: #e6f1f1 !important;
+                  font-weight: 500;
+                  color: #727f7f;
+                }
+              }
+            }
+            tbody{
+              tr{
+                .views-field-field-nro-de-orden{
+                  a{
+                    color: black;
+                    font-weight: 700;
+                  }
+                }
+                &:hover{
+                  --bs-table-accent-bg: white!important
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 800px) and (min-width: 192px) {
+  .path-zona-pagos {
+    .view-id-suscripciones {
+      .view-header {
+        .suscripciones {
+          flex-direction: column;
+          .izquierda {
+            width: 100% !important;
+          }
+          .centro {
+            width: 100% !important;
+            .fila1 {
+              flex-direction: column;
+              .cuadro-blanco {
+                width: 100% !important;
+                max-width: 100% !important;
+              }
+              .ninos {
+                margin-bottom: 1rem;
+              }
+            }
+          }
+          .derecha {
+            width: 100% !important;
+            .ver-suscripciones {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+    .quicktabs-tabs.list-group {
+      .zona-de-pagos {
+        width: 50%;
+      }
+    }
+    .view-clases-por-nino {
+      .vista-izquierda {
+        .select-suscription {
+          margin-bottom: -0.5rem !important;
+        }
+        .vista-ninos {
+          .view-header {
+            .encabezado-ninos {
+              .col-5 {
+                padding-right: 0px !important;
+              }
+            }
+          }
+          .views-row {
+            padding: 0px 10px 0px 13px !important;
+            .views-field {
+              .field-content {
+                .col-5 {
+                  padding-right: 0px !important;
+                }
+              }
+            }
+            .datos-nino {
+              .resaltar {
+                min-width: 197px !important;
+                white-space: nowrap;
+                overflow: hidden;
+              }
+            }
+          }
+          .view-footer {
+            max-width: 100% !important;
+          }
+        }
+      }
+      .vista-derecha {
+        .row {
+          margin-top: 0rem !important;
+        }
+      }
+    }
+    .metdos-pago {
+      .titulo {
+        font-size: 16px !important;
+        padding-left: 0rem !important;
+      }
+      .imagen {
+        gap: 8px !important;
+        .metodo-pago-img-svg {
+          width: 15%;
+          img {
+            width: 100%;
+          }
+        }
+      }
+    }
+    .view-commerce-user-orders {
+      .table-responsive {
+        table {
+          tbody {
+            tr {
+              .views-field-placed {
+                min-width: 180px;
+              }
+              .views-field-entity-print-commerce-order {
+                min-width: 146px;
+              }
+            }
+          }
+        }
+      }
     }
   }
 }
