@@ -16,6 +16,8 @@ dependencies:
     - field.field.user.user.field_numero_de_telefono
     - field.field.user.user.field_padre
     - field.field.user.user.field_pais
+    - field.field.user.user.field_pencil_email
+    - field.field.user.user.field_pencil_id
     - field.field.user.user.field_tu_presentacion
     - field.field.user.user.field_tu_video_
     - field.field.user.user.user_picture
@@ -155,6 +157,22 @@ content:
     weight: 34
     region: first
     settings: {  }
+    third_party_settings: {  }
+  field_pencil_email:
+    type: string_textfield
+    weight: 45
+    region: first
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_pencil_id:
+    type: string_textfield
+    weight: 44
+    region: first
+    settings:
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
   field_tu_presentacion:
     type: text_textarea

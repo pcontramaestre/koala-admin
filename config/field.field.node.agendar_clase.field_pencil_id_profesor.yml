@@ -1,0 +1,19 @@
+uuid: b0503c2e-1df0-49da-a600-adc2946ca755
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_pencil_id_profesor
+    - node.type.agendar_clase
+id: node.agendar_clase.field_pencil_id_profesor
+field_name: field_pencil_id_profesor
+entity_type: node
+bundle: agendar_clase
+label: 'Pencil ID Profesor'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

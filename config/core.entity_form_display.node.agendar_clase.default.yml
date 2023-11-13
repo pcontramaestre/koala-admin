@@ -16,6 +16,11 @@ dependencies:
     - field.field.node.agendar_clase.field_marcar_clase_como_finaliza
     - field.field.node.agendar_clase.field_nombre_del_nino_a
     - field.field.node.agendar_clase.field_otra_hora
+    - field.field.node.agendar_clase.field_pencil_id_estudiante
+    - field.field.node.agendar_clase.field_pencil_id_profesor
+    - field.field.node.agendar_clase.field_pencil_url_access_estudian
+    - field.field.node.agendar_clase.field_pencil_url_access_profesor
+    - field.field.node.agendar_clase.field_pencil_url_clase
     - field.field.node.agendar_clase.field_sexo_n
     - field.field.node.agendar_clase.field_tipo_clase
     - node.type.agendar_clase
@@ -26,6 +31,7 @@ dependencies:
     - datetime
     - field_layout
     - layout_discovery
+    - link
     - path
     - time_field
     - timefield
@@ -153,6 +159,46 @@ content:
     settings:
       size: 60
       placeholder: ''
+    third_party_settings: {  }
+  field_pencil_id_estudiante:
+    type: string_textfield
+    weight: 31
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_pencil_id_profesor:
+    type: string_textfield
+    weight: 32
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_pencil_url_access_estudian:
+    type: string_textarea
+    weight: 34
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_pencil_url_access_profesor:
+    type: string_textarea
+    weight: 35
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_pencil_url_clase:
+    type: link_default
+    weight: 33
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
     third_party_settings: {  }
   field_sexo_n:
     type: options_select

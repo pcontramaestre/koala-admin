@@ -443,13 +443,13 @@ function api_pencil_connect_get_space_details($space_id) {
  * @param string $space_id
  *   El ID del espacio.
  * @param array $add_users
- *   Usuarios a agregar al espacio. Cada usuario debe ser un array con las claves "role" (para el rol del usuario), "email" y/o "userId" (para identificar al usuario).
+ *   (opcional) Usuarios a agregar al espacio. Cada usuario debe ser un array con las claves "role" (para el rol del usuario), "email" y/o "userId" (para identificar al usuario).
  * @param array $modify_users
- *   Usuarios a modificar en el espacio. Cada usuario debe ser un array con las claves "role" (para el nuevo rol del usuario), "email" y/o "userId" (para identificar al usuario).
+ *   (opcional) Usuarios a modificar en el espacio. Cada usuario debe ser un array con las claves "role" (para el nuevo rol del usuario), "email" y/o "userId" (para identificar al usuario).
  * @param array $remove_users
- *   Usuarios a eliminar del espacio. Cada usuario debe ser un array con las claves "email" y/o "userId" (para identificar al usuario).
+ *   (opcional) Usuarios a eliminar del espacio. Cada usuario debe ser un array con las claves "email" y/o "userId" (para identificar al usuario).
  * @param bool $notify_invitees
- *   Indica si se debe notificar a los invitados sobre los cambios.
+ *   (opcional) Indica si se debe notificar a los invitados sobre los cambios.
  *
  * @return array|bool
  *   Devuelve los detalles actualizados del espacio o FALSE en caso de error.
@@ -465,12 +465,21 @@ function api_pencil_connect_update_space_users($space_id, $add_users = [], $modi
     'Authorization: Bearer ' . $authorization_token,
   ];
 
-  $data = [
-    'addUsers' => $add_users,
-    'modifyUsers' => $modify_users,
-    'removeUsers' => $remove_users,
-    'notifyInvitees' => $notify_invitees,
-  ];
+  $data = [];
+
+  if (!empty($add_users)) {
+    $data['addUsers'] = $add_users;
+  }
+
+  if (!empty($modify_users)) {
+    $data['modifyUsers'] = $modify_users;
+  }
+
+  if (!empty($remove_users)) {
+    $data['removeUsers'] = $remove_users;
+  }
+
+  $data['notifyInvitees'] = $notify_invitees;
 
   $data_json = json_encode($data);
 
@@ -556,139 +565,188 @@ function api_pencil_connect_delete_space($space_id) {
 function api_pencil_connect_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
   
   if ($form_id == 'api_pencil_connect_settings_form--modificar') {
-    $users = api_pencil_connect_get_users();
 
-    $response_data = json_decode($users, TRUE);
-
-    if (!empty($response_data['results'])) {
-      foreach ($response_data['results'] as $user) {
-        // Realiza acciones según tus necesidades.
-        // Puedes acceder a los valores individuales del usuario, como:
-        $userId = $user['userId'];
-        $name = $user['name'];
-        $email = $user['email'];   
-        $profilePic = $user['profilePic'];
-        $userRole = $user['userRole'];
-
-        // Y así sucesivamente...
-        print_r($userId);
-        print_r($name);
-        print_r($email);        
-        print_r($profilePic);
-        print_r($userRole);
-      }
-    }
-    $totalRecords = $response_data['totalRecords'];
-
-    // Obtener el perfil de un usuario específico en la API. por ID
-    $userId = $response_data['results'][0]['userId'];
-    $user_profile = api_pencil_connect_get_user_profile($userId);
-    dump($user_profile);
-
-
-    // Eliminar a un usuario de tu institución en la API.
-    $user_id = '654b10714bce2e80b9c32f75';
-    $result = api_pencil_connect_remove_user($user_id);
-
-    if ($result) {
-      // El usuario fue eliminado correctamente.
-      \Drupal::messenger()->addMessage(new TranslatableMarkup('User removed successfully.'));
-    }
-    else {
-      // Se produjo un error al eliminar al usuario.
-      \Drupal::messenger()->addError(new TranslatableMarkup('Error removing user. Please try again.'));
-    }
-
-    // Genera un enlace de inicio de sesión para un usuario gestionado por la API.
-    $user_id = '654b10714bce2e80b9c32f75';
-    $redirect_url = 'https://staging.pencilapp.com/spaces/654a9b264bce2e80b9c32f0b';
-
-    $login_url = api_pencil_connect_authorize_user($user_id, $redirect_url);
-
-    // Verifica si se obtuvo el enlace de inicio de sesión.
-    if ($login_url !== FALSE) {
-      // Utiliza el enlace de inicio de sesión directo como sea necesario.
-
-      // $response = new RedirectResponse($login_url);
-      // $response->send();    
-      $response = new \Symfony\Component\HttpFoundation\RedirectResponse($login_url);
-      $response->send();
-      exit();
-    }
-    else {
-      // Hubo un error al obtener el enlace de inicio de sesión.
-      \Drupal::messenger()->addError(new TranslatableMarkup('Error generating user login link. Please try again.'));
-    }
-
-    //print_r($totalRecords);
-    //print_r($response_data);
-    // Realiza acciones adicionales según tu necesidad.
-    // Puedes imprimir los usuarios, almacenarlos en una variable, etc.
-    //dump($users);
-
-
-    //EJEMPLO PARA CREAR CLASE O ESPACIO.
-    $data = [
-      'title' => 'Espacio de prueba creado con API',
-      'hosts' => [
-        [
-          'email' => 'bob.bill@bob.com',
-          'userId' => '507f1f77bcf86cd799439011',
-        ],
-      ],
-      'participants' => [
-        [
-          'email' => 'bob.bill@bob.com',
-          'userId' => '507f1f77bcf86cd799439011',
-        ],
-      ],
-      'visibility' => 'public',
-      'notifyInvitees' => true,
+    $ids_spaces = [
+      "655257529a13a2ebd25ed77c",
+      "655257699a13a2ebd25ed77d",
+      "655257769a13a2ebd25ed77e",
+      "655257859a13a2ebd25ed77f",
+      "655257949a13a2ebd25ed780",
+      "655257a29a13a2ebd25ed781",
+      "655257b59a13a2ebd25ed782",
+      "655257c59a13a2ebd25ed783",
+      "655257d59a13a2ebd25ed784",
+      "655257e69a13a2ebd25ed785",  
     ];
     
-    $new_space = api_pencil_connect_create_space($data);
+    $participantes_agregados = false;
+    foreach ($ids_spaces as $space_id) {
+      $space_details = api_pencil_connect_get_space_details($space_id);
     
-    // Verifica si se creó el espacio correctamente.
-    if ($new_space !== FALSE) {
-      // Utiliza los datos del espacio como sea necesario.
-      $title = $new_space['title'];
-      $space_id = $new_space['spaceId'];
-      // ...
-    }
-    else {
-      // Hubo un error al crear el espacio.
-      \Drupal::messenger()->addError(new TranslatableMarkup('Error creating space. Please try again.'));
+      if ($space_details !== FALSE) {
+        // Verifica si el espacio tiene participantes.
+        if (!empty($space_details['participants'])) {
+          // El espacio tiene participantes.
+          // Puedes realizar las acciones necesarias para los espacios con participantes.
+          // Por ejemplo, puedes guardar los detalles del espacio en una base de datos o realizar otra operación.
+          $title = $space_details['title'];
+          $participants = $space_details['participants'];
+          // ...
+        }
+        else {
+          // El espacio no tiene participantes.
+          // Puedes realizar las acciones necesarias para los espacios sin participantes.
+          // Por ejemplo, puedes guardar los detalles del espacio en otra base de datos o realizar otra operación.
+          $title = $space_details['title'];
+          $participantes_agregados = true;
+
+          
+
+          // Finaliza la iteración y sale del bucle foreach.
+          break;
+        }
+      }
+      else {
+        // Error al obtener los detalles del espacio.
+        // Puedes realizar alguna acción o mostrar un mensaje de error.
+        \Drupal::messenger()->addError(new TranslatableMarkup('Error getting space details for space ID: @space_id', ['@space_id' => $space_id]));
+      }
     }
 
 
-    // Ejemplo para obtener los detalles de un espacio.
-    $space_id = '507f1f77bcf86cd799439011';
+    // $users = api_pencil_connect_get_users();
 
-    $space_details = api_pencil_connect_get_space_details($space_id);
+    // $response_data = json_decode($users, TRUE);
 
-    // Verifica si se obtuvieron los detalles del espacio correctamente.
-    if ($space_details !== FALSE) {
-      // Utiliza los detalles del espacio como sea necesario.
-      $title = $space_details['title'];
-      $hosts = $space_details['hosts'];
-      // ...
-    }
-    else {
-      // Hubo un error al obtener los detalles del espacio.
-      \Drupal::messenger()->addError(new TranslatableMarkup('Error getting space details. Please try again.'));
-    }
+    // if (!empty($response_data['results'])) {
+    //   foreach ($response_data['results'] as $user) {
+    //     // Realiza acciones según tus necesidades.
+    //     // Puedes acceder a los valores individuales del usuario, como:
+    //     $userId = $user['userId'];
+    //     $name = $user['name'];
+    //     $email = $user['email'];   
+    //     $profilePic = $user['profilePic'];
+    //     $userRole = $user['userRole'];
 
-    // Ejemplo para eliminar un espacio.
-    $space_id = '507f1f77bcf86cd799439011';
+    //     // Y así sucesivamente...
+    //     print_r($userId);
+    //     print_r($name);
+    //     print_r($email);        
+    //     print_r($profilePic);
+    //     print_r($userRole);
+    //   }
+    // }
+    // $totalRecords = $response_data['totalRecords'];
 
-    if (api_pencil_connect_delete_space($space_id)) {
-      // El espacio se eliminó correctamente.
-      \Drupal::messenger()->addMessage(new TranslatableMarkup('Space deleted successfully.'));
-    }
-    else {
-      // Hubo un error al eliminar el espacio.
-      \Drupal::messenger()->addError(new TranslatableMarkup('Error deleting space. Please try again.'));
-    }
+    // // Obtener el perfil de un usuario específico en la API. por ID
+    // $userId = $response_data['results'][0]['userId'];
+    // $user_profile = api_pencil_connect_get_user_profile($userId);
+    // dump($user_profile);
+
+
+    // // Eliminar a un usuario de tu institución en la API.
+    // $user_id = '654b10714bce2e80b9c32f75';
+    // $result = api_pencil_connect_remove_user($user_id);
+
+    // if ($result) {
+    //   // El usuario fue eliminado correctamente.
+    //   \Drupal::messenger()->addMessage(new TranslatableMarkup('User removed successfully.'));
+    // }
+    // else {
+    //   // Se produjo un error al eliminar al usuario.
+    //   \Drupal::messenger()->addError(new TranslatableMarkup('Error removing user. Please try again.'));
+    // }
+
+    // // Genera un enlace de inicio de sesión para un usuario gestionado por la API.
+    // $user_id = '654b10714bce2e80b9c32f75';
+    // $redirect_url = 'https://staging.pencilapp.com/spaces/654a9b264bce2e80b9c32f0b';
+
+    // $login_url = api_pencil_connect_authorize_user($user_id, $redirect_url);
+
+    // // Verifica si se obtuvo el enlace de inicio de sesión.
+    // if ($login_url !== FALSE) {
+    //   // Utiliza el enlace de inicio de sesión directo como sea necesario.
+
+    //   // $response = new RedirectResponse($login_url);
+    //   // $response->send();    
+    //   $response = new \Symfony\Component\HttpFoundation\RedirectResponse($login_url);
+    //   $response->send();
+    //   exit();
+    // }
+    // else {
+    //   // Hubo un error al obtener el enlace de inicio de sesión.
+    //   \Drupal::messenger()->addError(new TranslatableMarkup('Error generating user login link. Please try again.'));
+    // }
+
+    // //print_r($totalRecords);
+    // //print_r($response_data);
+    // // Realiza acciones adicionales según tu necesidad.
+    // // Puedes imprimir los usuarios, almacenarlos en una variable, etc.
+    // //dump($users);
+
+
+    // //EJEMPLO PARA CREAR CLASE O ESPACIO.
+    // $data = [
+    //   'title' => 'Espacio de prueba creado con API',
+    //   'hosts' => [
+    //     [
+    //       'email' => 'bob.bill@bob.com',
+    //       'userId' => '507f1f77bcf86cd799439011',
+    //     ],
+    //   ],
+    //   'participants' => [
+    //     [
+    //       'email' => 'bob.bill@bob.com',
+    //       'userId' => '507f1f77bcf86cd799439011',
+    //     ],
+    //   ],
+    //   'visibility' => 'public',
+    //   'notifyInvitees' => true,
+    // ];
+    
+    // $new_space = api_pencil_connect_create_space($data);
+    
+    // // Verifica si se creó el espacio correctamente.
+    // if ($new_space !== FALSE) {
+    //   // Utiliza los datos del espacio como sea necesario.
+    //   $title = $new_space['title'];
+    //   $space_id = $new_space['spaceId'];
+    //   // ...
+    // }
+    // else {
+    //   // Hubo un error al crear el espacio.
+    //   \Drupal::messenger()->addError(new TranslatableMarkup('Error creating space. Please try again.'));
+    // }
+
+
+    // // Ejemplo para obtener los detalles de un espacio.
+    // $space_id = '507f1f77bcf86cd799439011';
+
+    // $space_details = api_pencil_connect_get_space_details($space_id);
+
+    // // Verifica si se obtuvieron los detalles del espacio correctamente.
+    // if ($space_details !== FALSE) {
+    //   // Utiliza los detalles del espacio como sea necesario.
+    //   $title = $space_details['title'];
+    //   $hosts = $space_details['hosts'];
+    //   // ...
+    // }
+    // else {
+    //   // Hubo un error al obtener los detalles del espacio.
+    //   \Drupal::messenger()->addError(new TranslatableMarkup('Error getting space details. Please try again.'));
+    // }
+
+    // // Ejemplo para eliminar un espacio.
+    // $space_id = '507f1f77bcf86cd799439011';
+
+    // if (api_pencil_connect_delete_space($space_id)) {
+    //   // El espacio se eliminó correctamente.
+    //   \Drupal::messenger()->addMessage(new TranslatableMarkup('Space deleted successfully.'));
+    // }
+    // else {
+    //   // Hubo un error al eliminar el espacio.
+    //   \Drupal::messenger()->addError(new TranslatableMarkup('Error deleting space. Please try again.'));
+    // }
 
   }
 }

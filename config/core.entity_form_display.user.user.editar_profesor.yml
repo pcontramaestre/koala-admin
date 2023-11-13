@@ -17,6 +17,8 @@ dependencies:
     - field.field.user.user.field_numero_de_telefono
     - field.field.user.user.field_padre
     - field.field.user.user.field_pais
+    - field.field.user.user.field_pencil_email
+    - field.field.user.user.field_pencil_id
     - field.field.user.user.field_tu_presentacion
     - field.field.user.user.field_tu_video_
     - field.field.user.user.user_picture
@@ -195,6 +197,8 @@ hidden:
   field_nombre_del_hijo: true
   field_padre: true
   field_pais: true
+  field_pencil_email: true
+  field_pencil_id: true
   langcode: true
   path: true
   translation: true

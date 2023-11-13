@@ -7,6 +7,7 @@ dependencies:
     - field.storage.node.field_fecha_cita_oculta
     - field.storage.node.field_fecha_de_la_cita
     - field.storage.node.field_nombre_del_nino_a
+    - field.storage.node.field_pencil_url_access_profesor
     - field.storage.user.field_nombres_y_apellidos_del_pr
     - field.storage.user.user_picture
     - image.style.thumbnail
@@ -881,6 +882,68 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
+        field_pencil_url_access_profesor:
+          id: field_pencil_url_access_profesor
+          table: node__field_pencil_url_access_profesor
+          field: field_pencil_url_access_profesor
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: basic_string
+          settings: {  }
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
         nothing:
           id: nothing
           table: views
@@ -893,7 +956,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<div class=\"d-flex koala\">\r\n  <div class=\"imagen\">{{ user_picture }}</div>\r\n  <div class=\"nombre-fecha\">\r\n    <div class=\"nombre\">{{ field_nombre_del_nino_a }}</div>\r\n    <div class=\"fecha\">{{ field_fecha_cita_oculta }}</div>\r\n  </div>\r\n  <div class=\"enlace\">\r\n    <a href=\"https://koalaconecta.icreativadigital.com/login-profesor.html?name={{ field_nombres_y_apellidos_del_pr }}\"\r\n      target=\"_blank\" data1=\"/node/{{ nid }}/edit\" class=\"doble-clic\">Entrar</a>\r\n  </div>\r\n</div>"
+            text: "<div class=\"d-flex koala\">\r\n  <div class=\"imagen\">{{ user_picture }}</div>\r\n  <div class=\"nombre-fecha\">\r\n    <div class=\"nombre\">{{ field_nombre_del_nino_a }}</div>\r\n    <div class=\"fecha\">{{ field_fecha_cita_oculta }}</div>\r\n  </div>\r\n  <div class=\"enlace\">\r\n    <a href=\"{{ field_pencil_url_access_profesor }}\"\r\n      target=\"_blank\" data1=\"/node/{{ nid }}/edit\" class=\"doble-clic\">Entrar</a>\r\n  </div>\r\n</div>"
             make_link: false
             path: ''
             absolute: false
@@ -1139,6 +1202,7 @@ display:
         - 'config:field.storage.node.field_fecha_cita_oculta'
         - 'config:field.storage.node.field_fecha_de_la_cita'
         - 'config:field.storage.node.field_nombre_del_nino_a'
+        - 'config:field.storage.node.field_pencil_url_access_profesor'
         - 'config:field.storage.user.field_nombres_y_apellidos_del_pr'
         - 'config:field.storage.user.user_picture'
   block_2:
@@ -1756,8 +1820,6 @@ display:
           right_buttons: 'dayGridMonth,timeGridWeek,timeGridDay,listYear'
           default_view: dayGridMonth
           firstDay: '1'
-          minTime: '00:00:00'
-          maxTime: '23:59:59'
           nav_links: 1
           timeFormat: 'hh:mm a'
           allowEventOverlap: 1
@@ -1767,10 +1829,8 @@ display:
           languageSelector: 0
           dialogWindow: 1
           openEntityInNewTab: 0
-          dialogModal: 0
           createEventLink: 0
           eventLimit: '5'
-          slotDuration: '00:30:00'
           tax_field: ''
           vocabularies: ''
           color_bundle:
@@ -1790,6 +1850,10 @@ display:
           duration: ''
           bundle_type: ''
           classes: ''
+          minTime: '00:00:00'
+          maxTime: '23:59:59'
+          dialogModal: 0
+          slotDuration: '00:30:00'
       row:
         type: fields
         options: {  }
@@ -2264,8 +2328,6 @@ display:
           right_buttons: 'dayGridMonth,timeGridWeek,timeGridDay,listYear'
           default_view: dayGridMonth
           firstDay: '1'
-          minTime: '00:00:00'
-          maxTime: '23:59:59'
           nav_links: 1
           timeFormat: 'hh:mm a'
           allowEventOverlap: 1
@@ -2275,10 +2337,8 @@ display:
           languageSelector: 0
           dialogWindow: 0
           openEntityInNewTab: 0
-          dialogModal: 1
           createEventLink: 0
           eventLimit: '5'
-          slotDuration: '00:30:00'
           tax_field: ''
           vocabularies: ''
           color_bundle:
@@ -2293,6 +2353,10 @@ display:
           duration: ''
           bundle_type: ''
           classes: ''
+          minTime: '00:00:00'
+          maxTime: '23:59:59'
+          dialogModal: 1
+          slotDuration: '00:30:00'
       row:
         type: fields
         options: {  }

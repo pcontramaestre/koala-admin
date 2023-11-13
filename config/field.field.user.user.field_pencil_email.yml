@@ -1,0 +1,33 @@
+uuid: 160063ec-549c-4f6d-b3f1-e05c5dfbaf5b
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_pencil_email
+  module:
+    - multiple_registration
+    - user
+third_party_settings:
+  multiple_registration:
+    user_additional_register_form_required:
+      authenticated: 0
+      profesor: 0
+      padre: 0
+      hijo: 0
+    user_additional_register_form:
+      authenticated: 0
+      profesor: 0
+      padre: 0
+      hijo: 0
+id: user.user.field_pencil_email
+field_name: field_pencil_email
+entity_type: user
+bundle: user
+label: 'Pencil Email'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

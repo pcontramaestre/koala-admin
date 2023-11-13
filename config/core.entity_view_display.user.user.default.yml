@@ -16,6 +16,8 @@ dependencies:
     - field.field.user.user.field_numero_de_telefono
     - field.field.user.user.field_padre
     - field.field.user.user.field_pais
+    - field.field.user.user.field_pencil_email
+    - field.field.user.user.field_pencil_id
     - field.field.user.user.field_tu_presentacion
     - field.field.user.user.field_tu_video_
     - field.field.user.user.user_picture
@@ -138,6 +140,22 @@ content:
     third_party_settings: {  }
     weight: 7
     region: content
+  field_pencil_email:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 18
+    region: content
+  field_pencil_id:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 17
+    region: content
   field_tu_presentacion:
     type: text_default
     label: above
@@ -193,4 +211,7 @@ content:
 hidden:
   commerce_remote_id: true
   customer_profiles: true
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
   langcode: true
