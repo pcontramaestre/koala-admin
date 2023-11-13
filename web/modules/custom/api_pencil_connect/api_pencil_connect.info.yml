@@ -1,0 +1,7 @@
+name: 'API Pencil Connect'
+type: module
+description: 'Modulo para la integración con API Pencil Connect'
+package: Custom
+core_version_requirement: ^9 || ^10
+dependencies:
+  - config:config

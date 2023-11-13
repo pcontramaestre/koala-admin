@@ -79,7 +79,11 @@ function create_koalas_form_alter(&$form, FormStateInterface $form_state, $form_
     $entity_type_manager = \Drupal::service('entity_type.manager');
     $user = $entity_type_manager->getStorage('user')->load($id);
     // get field_nombre_del_hijo from user
-    $field_nombre_del_hijo = $user->get('field_nombre_del_hijo')->value;    
+    $field_nombre_del_hijo = $user->get('field_nombre_del_hijo')->value;  
+    
+    $field_field_pencil_id = $user->get('field_pencil_id')->value;
+    //field_pencil_id_estudiante
+    $form['field_pencil_id_estudiante']['widget'][0]['value']['#default_value'] = $field_field_pencil_id;
 
     // Asignar el valor del parámetro 'id' al campo field_alumno_relacionado del formulario.
     $form['field_alumno_relacionado']['widget'][0]['target_id']['#default_value'] = $user;
@@ -105,6 +109,14 @@ function create_koalas_form_alter(&$form, FormStateInterface $form_state, $form_
     $field_profesor = $request->query->get('field_profesor');
     // Asignar el valor del parámetro 'field_profesor' al campo field_asignar_profesor del formulario.
     $form['field_asignar_profesor']['widget']['#default_value'] = $field_profesor;
+
+    //Load user $field_profesor get field_pencil_id_profesor
+    $user_profesor = $entity_type_manager->getStorage('user')->load($field_profesor);
+    $field_pencil_id_profesor = $user_profesor->get('field_pencil_id')->value;
+    // Asignar el valor del parámetro 'field_pencil_id_profesor' al campo field_pencil_id_profesor del formulario.
+    $form['field_pencil_id_profesor']['widget'][0]['value']['#default_value'] = $field_pencil_id_profesor;
+    
+
     // Agregar solo lectura al campo field_asignar_profesor
     $form['field_asignar_profesor']['widget']['#attributes']['readonly'] = 'readonly';
 
@@ -115,7 +127,7 @@ function create_koalas_form_alter(&$form, FormStateInterface $form_state, $form_
     //$form['field_fecha_cita_oculta']['widget'][0]['value']['#date_date_format'] = "d/m/Y";
     #date_date_format
 
-        $fecha_texto = "31/05/1980";
+    $fecha_texto = "31/05/1980";
     $fecha_obj = DrupalDateTime::createFromFormat('d/m/Y', $fecha_texto);
 
     // Asignar el valor al campo field_fecha_cita_oculta (fecha y hora).
@@ -208,7 +220,62 @@ function callback_submit_agendar_clase(&$form, FormStateInterface $form_state) {
   $field_nombre_del_nino_a = $form_state->getValue('field_nombre_del_nino_a');
   $field_nombre_del_nino_a = $field_nombre_del_nino_a[0]['value'];
   
-  
+  // get field_pencil_id_estudiante value.
+  $field_pencil_id_estudiante = $form_state->getValue('field_pencil_id_estudiante');
+  $field_pencil_id_estudiante = $field_pencil_id_estudiante[0]['value'];
+  $correo_estudiante_pencil = $field_pencil_id_estudiante.'@pencilspaces.com';
+
+  // get field_pencil_id_profesor value.
+  $field_pencil_id_profesor = $form_state->getValue('field_pencil_id_profesor');
+  $field_pencil_id_profesor = $field_pencil_id_profesor[0]['value'];
+  $correo_profesor_pencil = $field_pencil_id_profesor.'@pencilspaces.com';
+
+  // Nombre de la clase a crear
+  $nombre_clase = "Class for ".$field_nombre_del_nino_a;
+
+  //Datos para crear un espacio de prueba con la API de Pencil Connect.
+  $data = [
+    'title' => $nombre_clase,
+    'hosts' => [
+      [
+        'email' => $correo_profesor_pencil,
+        'userId' => $field_pencil_id_profesor,
+      ],
+    ],
+    'participants' => [
+      [
+        'email' => $correo_estudiante_pencil,
+        'userId' => $field_pencil_id_estudiante,
+      ],
+    ],
+    'visibility' => 'public',
+    'notifyInvitees' => false,
+  ];
+
+  // convert $data to json.
+ //$data = json_encode($data);
+
+  // Crear un espacio con la API de Pencil Connect.
+  $create_space = api_pencil_connect_create_space($data);
+
+  if ($create_space !== FALSE) {
+    $space_id = $create_space['spaceId'];
+    $space_lync_url = $create_space['link'];
+
+    // create api_pencil_connect_authorize_user get token estudiante.
+    $token_estudiante = api_pencil_connect_authorize_user($field_pencil_id_estudiante,$space_lync_url);    
+    $url_access_estudiante = $token_estudiante;
+
+    // create api_pencil_connect_authorize_user get token profesor.
+    $token_profesor = api_pencil_connect_authorize_user($field_pencil_id_profesor,$space_lync_url);    
+    $url_access_profesor = $token_profesor;
+
+    //field_pencil_url_access_estudian , field_pencil_url_access_profesor
+  } else {
+    \Drupal::messenger()->addError(new TranslatableMarkup('Error creating space in the API - module create koala'));
+  }
+
+
 
   //Get id of the node agendando_clase.
   $nid = $form_state->getValue('nid');
@@ -228,6 +295,10 @@ function callback_submit_agendar_clase(&$form, FormStateInterface $form_state) {
   
 
   try {
+
+    // Load user field_alumno_relacionado 
+    
+
     // Crear un nuevo nodo
     $new_node = Node::create([
       'type' => 'asignar_clase_a_estudiante',
@@ -252,6 +323,14 @@ function callback_submit_agendar_clase(&$form, FormStateInterface $form_state) {
     $node = Node::load($nid);
     $node->set('field_clase_asignada', $new_node_id);
     $alumno_relacionado = $node->get('field_alumno_relacionado')->getValue();
+
+    // agregar field_pencil_url_access_estudian , field_pencil_url_access_profesor
+    $node->set('field_pencil_url_access_estudian', $url_access_estudiante);
+    $node->set('field_pencil_url_access_profesor', $url_access_profesor);
+    dump($url_access_estudiante);
+    dump($url_access_profesor);
+    sleep(15);
+
     $node->save();
 
     //dump($alumno_relacionado);
@@ -375,6 +454,9 @@ function callback_submit_crear_hijo($form, &$form_state) {
   $user->set("init", $correo_padre);
 
   $user->activate();
+
+
+
   $user->save();
   $newid = $user->id();
 
@@ -382,8 +464,6 @@ function callback_submit_crear_hijo($form, &$form_state) {
   $node = Node::load($form_state->getValue('nid'));
   $node->set('field_hijo_relacionado', $newid);
   $node->save();
-
-
 }
 
 /*
