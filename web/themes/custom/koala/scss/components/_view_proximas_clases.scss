@@ -76,6 +76,15 @@
 
         .view-footer {
           margin-bottom: 1.5rem;
+          .text-align-right{
+            a{
+              margin-top: 0rem!important;
+              padding-right: 2rem!important;
+              &:after{
+                left: 96%!important;
+              }
+            }
+          }
         }
       }
     }
