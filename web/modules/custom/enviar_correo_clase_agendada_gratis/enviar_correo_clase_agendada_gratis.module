@@ -121,6 +121,19 @@ function enviar_correo_clase_agendada_gratis_send_email(array &$form, FormStateI
   $user->addRole('hijo');
   $user->set("init", $correo_padre);
 
+  //Eliminar caracteres especiales del nombre del niño.  
+  $nombre = $form_state->getValue('field_nombre_del_nino_a');
+  $nombre = $nombre[0]['value'];  
+  // Crear usuario en Pencil Connect.
+  $create_user_pencil = api_pencil_connect_create_user($nombre,'Student');  
+  if ($create_user_pencil !== FALSE) {
+    $user->set('field_pencil_id', $create_user_pencil['userId']);    
+    $user->set('field_pencil_email', $create_user_pencil['email']);    
+    // $user->save();
+  } else {
+    \Drupal::messenger()->addError(new TranslatableMarkup('Error creating user student in the API'. $create_user_pencil ));
+  }
+
   $user->activate();
   $user->save();
   $newidhijo = $user->id();
@@ -190,15 +203,15 @@ function enviar_correo_clase_agendada_gratis_send_email(array &$form, FormStateI
 
   // Formatea la hora como HH:mm:ss
   $horaFormateada = $horas . ':' . $minutos . ':' . $segundos;
-  dump($horaFormateada);
+  //dump($horaFormateada);
 
 
 
 $fechaHoraTexto = $fecha_clase_save .' '. $horaFormateada;
 //$fechaHoraTexto = $fecha_clase_save;
-dump($fechaHoraTexto);
+//dump($fechaHoraTexto);
 //convertir en texto a $fechaHoraTexto
-dump(strtotime($fechaHoraTexto));
+//dump(strtotime($fechaHoraTexto));
 
 // Crea un objeto DateTime a partir del texto combinado
 $fechaHoraObjeto = \DateTime::createFromFormat('d-m-Y H:i:s', $fechaHoraTexto);
@@ -209,7 +222,7 @@ $fechaHoraObjeto = \DateTime::createFromFormat('d-m-Y H:i:s', $fechaHoraTexto);
 
 // Obtiene la fecha formateada
 $fechaFormateada = $fechaHoraObjeto->format('d-m-Y\TH:i:s');
-dump($fechaFormateada);
+//dump($fechaFormateada);
 
 //dump($fechaFormateada);
 
@@ -235,7 +248,7 @@ $form_state->setValue('field_id_texto_alumno', $newidhijo);
     $nid = $node->id();
     // Realiza las acciones necesarias con el ID del nodo.
     // Por ejemplo, muestra un mensaje con el ID del nodo.
-    dump($nid);
+    //dump($nid);
     $node = Node::load($nid);
 
     if ($node instanceof NodeInterface) {
@@ -249,7 +262,7 @@ $form_state->setValue('field_id_texto_alumno', $newidhijo);
       }
       catch (\Exception $e) {
         \Drupal::messenger()->addMessage($e->getMessage(), 'error');  
-        dump('myerrorid', $e);
+        //dump('myerrorid', $e);
       }
     }
     

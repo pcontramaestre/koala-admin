@@ -17,6 +17,8 @@ dependencies:
     - field.field.user.user.field_numero_de_telefono
     - field.field.user.user.field_padre
     - field.field.user.user.field_pais
+    - field.field.user.user.field_pencil_email
+    - field.field.user.user.field_pencil_id
     - field.field.user.user.field_tu_presentacion
     - field.field.user.user.field_tu_video_
     - field.field.user.user.user_picture
@@ -109,6 +111,9 @@ content:
 hidden:
   commerce_remote_id: true
   customer_profiles: true
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
   field_apodo: true
   field_avatar: true
   field_direcc: true
@@ -117,6 +122,8 @@ hidden:
   field_nombres_y_apellidos_del_pr: true
   field_numero_de_telefono: true
   field_pais: true
+  field_pencil_email: true
+  field_pencil_id: true
   field_tu_presentacion: true
   field_tu_video_: true
   langcode: true

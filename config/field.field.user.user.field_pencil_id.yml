@@ -1,0 +1,33 @@
+uuid: d16072dd-0b4f-46c0-9ace-342c23ab5cc4
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_pencil_id
+  module:
+    - multiple_registration
+    - user
+third_party_settings:
+  multiple_registration:
+    user_additional_register_form_required:
+      authenticated: 0
+      profesor: 0
+      padre: 0
+      hijo: 0
+    user_additional_register_form:
+      authenticated: 0
+      profesor: 0
+      padre: 0
+      hijo: 0
+id: user.user.field_pencil_id
+field_name: field_pencil_id
+entity_type: user
+bundle: user
+label: 'Pencil ID'
+description: 'ID del usuario en pencil'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

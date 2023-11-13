@@ -6,6 +6,7 @@ use Drupal\user\Entity\User;
 use Drupal\node\Entity\Node;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\StringTranslation\TranslatableMarkup;
 
 /**
  * Implements hook_entity_insert().
@@ -14,6 +15,7 @@ use Drupal\Core\Form\FormStateInterface;
  *  - Obtener el field_nombres_y_apellidos_del_pr
  *  - Crea un nodo de tipo "horarios_profesores".
  *  - Create node metodos_de_pago after register user role profesor.
+ *  - Create user in Pencil Connect.
  */
 function agregar_profesores_entity_insert(EntityInterface $entity) {
   if ($entity instanceof User && in_array('profesor', $entity->getRoles())) {
@@ -31,6 +33,15 @@ function agregar_profesores_entity_insert(EntityInterface $entity) {
       'field_profesor' => $entity->id(),
       'uid' => $entity->id(),
     ])->save();
+
+    $create_teache_pencil = api_pencil_connect_create_user($nombres_y_apellidos,'Teacher');
+    if ($create_teache_pencil !== FALSE) {
+      $entity->set('field_pencil_id', $create_teache_pencil['userId']);
+      $entity->set('field_pencil_email', $create_teache_pencil['email']);
+      $entity->save();
+    } else {
+      \Drupal::messenger()->addError(new TranslatableMarkup('Error creating user in the API'));
+    }
   }
 }
 

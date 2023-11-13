@@ -12,6 +12,7 @@ module:
   advancedqueue: 0
   age_field_formatter: 0
   agregar_profesores: 0
+  api_pencil_connect: 0
   asignar_profesor: 0
   asset_injector: 0
   auto_username: 0

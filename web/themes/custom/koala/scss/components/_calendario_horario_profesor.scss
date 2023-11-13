@@ -608,3 +608,46 @@
     }
   }
 }
+
+@media (min-width: 300px) and (max-width: 800px){
+  .view-horarios-de-trabajo-profesor {
+    .js-drupal-fullcalendar {
+      .fc-view-container {
+        .fc-timeGridDay-view{
+          table{
+            .fc-body{
+              tr{
+                .fc-widget-content{
+                  .fc-time-grid-container{
+                    height: 100vw!important;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .rol-profesor {
+    section {
+      .layout__region {
+        .block-quicktabs-blockprofesores-calendario-horarios {
+          .content {
+            .on-the-gray{
+              padding: 0px!important;
+            }
+            #quicktabs-profesores_calendario_horarios{
+              .item-list {
+                .quicktabs-tabs{
+                  width: 40%!important;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

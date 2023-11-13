@@ -518,14 +518,22 @@
 
           .fc-listYear-view {
             border: 2px solid #e6f1f1;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+            overflow: hidden;
 
             .fc-scroller {
               .fc-list-table {
                 tbody {
                   .fc-list-heading {
+                    border: none;
                     .fc-widget-header {
+                      background: #e6f1f1 !important;
                       a {
+                        font-weight: 500;
                         color: #727f7f;
+                        padding: 0.3rem;
+                        text-decoration: none;
                       }
                     }
                   }
@@ -534,26 +542,27 @@
                     .fc-list-item-time {
                       font-weight: 500 !important;
                       background-color: white;
-                      color: #727f7f;
+                      color: black;
                       border: none;
-                      font-size: 14px;
+                      font-size: 1rem;
+                      padding: 1rem;
                     }
 
                     .fc-list-item-marker {
-                      padding: 8px 0px !important;
+                      padding: 1rem !important;
                     }
 
                     .fc-list-item-title {
                       display: flex;
-
+                      padding: 1rem;
                       a {
                         background-color: #ffe8e8;
-                        border-radius: 12px;
                         color: #ff6669;
                         font-weight: 700;
-                        font-size: 12px;
-                        padding: 0.2rem 0.2rem 0.2rem 0.4rem;
-                        margin-top: 0.1rem;
+                        font-size: 1rem;
+                        border-radius: 15px;
+                        padding: 0rem 1rem;
+                        text-decoration: underline;
                       }
                     }
                   }
@@ -610,12 +619,12 @@
         .js-drupal-fullcalendar {
           .fc-header-toolbar {
             .fc-center {
-              h2{
-                font-size: 1rem!important;
+              h2 {
+                font-size: 1rem !important;
               }
             }
             .fc-left {
-              .fc-today-button{
+              .fc-today-button {
                 display: none;
               }
             }
@@ -624,7 +633,7 @@
                 .fc-timeGridWeek-button {
                   display: none;
                 }
-                .fc-timeGridDay-button{
+                .fc-timeGridDay-button {
                   display: none;
                 }
               }
@@ -643,10 +652,56 @@
                         .fc-day-grid {
                           .fc-week {
                             height: 50px !important;
-                            min-height: 3em!important;
+                            min-height: 3em !important;
                           }
                         }
                       }
+                    }
+                  }
+                }
+              }
+            }
+            .fc-listYear-view {
+              .fc-scroller {
+                .fc-list-table {
+                  tbody {
+                    .fc-list-item {
+                      background-color: $RedK100;
+                      border-radius: 38px;
+                      color: $RedK500;
+                      display: flex;
+                      flex-direction: column;
+                      width: 70vw;
+                      padding: 0.5rem 1rem;
+                      margin-top: 0.5rem !important;
+                      margin-bottom: 0.5rem !important;
+                      margin: 0 auto;
+                      .fc-list-item-time {
+                        order: 2;
+                        width: 91%;
+                        background-color: transparent !important;
+                        padding: 0rem !important;
+                      }
+                      .fc-list-item-marker {
+                        display: none;
+                      }
+                      .fc-list-item-title {
+                        border: none;
+                        padding: 0rem !important;
+                        a {
+                          font-size: 16px !important;
+                          color: black !important;
+                          padding: 0rem !important;
+                        }
+                      }
+                    }
+                    .fc-list-item:nth-child(4n) {
+                      background-color: #f5f8d8;
+                      color: #869021;
+                    }
+                    .fc-list-item:nth-child(6n) {
+                      background-color: #f8e5de;
+                      color: #af654a;
                     }
                   }
                 }

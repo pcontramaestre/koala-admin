@@ -1,0 +1,19 @@
+uuid: 16cddc68-17a0-4e77-9ec2-0df6606caf39
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_pencil_url_access_profesor
+    - node.type.agendar_clase
+id: node.agendar_clase.field_pencil_url_access_profesor
+field_name: field_pencil_url_access_profesor
+entity_type: node
+bundle: agendar_clase
+label: 'Pencil URL Access Profesor'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long
