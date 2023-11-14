@@ -270,106 +270,106 @@ function callback_submit_agendar_clase(&$form, FormStateInterface $form_state) {
 
 
   // Crear un espacio con la API de Pencil Connect.
-  // $create_space = api_pencil_connect_create_space($data);
+  $create_space = api_pencil_connect_create_space($data);
 
-  // if ($create_space !== FALSE) {
-  //   $space_id = $create_space['spaceId'];
-  //   $space_lync_url = $create_space['link'];
+  if ($create_space !== FALSE) {
+    $space_id = $create_space['spaceId'];
+    $space_lync_url = $create_space['link'];
 
-  //   // create api_pencil_connect_authorize_user get token estudiante.
-  //   $token_estudiante = api_pencil_connect_authorize_user($field_pencil_id_estudiante,$space_lync_url);    
-  //   $url_access_estudiante = $token_estudiante;
+    // create api_pencil_connect_authorize_user get token estudiante.
+    $token_estudiante = api_pencil_connect_authorize_user($field_pencil_id_estudiante,$space_lync_url);    
+    $url_access_estudiante = $token_estudiante;
 
-  //   // create api_pencil_connect_authorize_user get token profesor.
-  //   $token_profesor = api_pencil_connect_authorize_user($field_pencil_id_profesor,$space_lync_url);    
-  //   $url_access_profesor = $token_profesor;
+    // create api_pencil_connect_authorize_user get token profesor.
+    $token_profesor = api_pencil_connect_authorize_user($field_pencil_id_profesor,$space_lync_url);    
+    $url_access_profesor = $token_profesor;
 
-  //   //field_pencil_url_access_estudian , field_pencil_url_access_profesor
-  // } else {
-  //   \Drupal::messenger()->addError(new TranslatableMarkup('Error creating space in the API - module create koala'));
-  //   return FALSE;
-  // }
+    //field_pencil_url_access_estudian , field_pencil_url_access_profesor
+  } else {
+    \Drupal::messenger()->addError(new TranslatableMarkup('Error creating space in the API - module create koala'));
+    return FALSE;
+  }
 
 
-  //Agregar participantes a espacios creados manualmente
-  $ids_spaces = [
-    "655257529a13a2ebd25ed77c",
-    "655257699a13a2ebd25ed77d",
-    "655257769a13a2ebd25ed77e",
-    "655257859a13a2ebd25ed77f",
-    "655257949a13a2ebd25ed780",
-    "655257a29a13a2ebd25ed781",
-    "655257b59a13a2ebd25ed782",
-    "655257c59a13a2ebd25ed783",
-    "655257d59a13a2ebd25ed784",
-    "655257e69a13a2ebd25ed785",  
-  ];
+  // //Agregar participantes a espacios creados manualmente
+  // $ids_spaces = [
+  //   "655257529a13a2ebd25ed77c",
+  //   "655257699a13a2ebd25ed77d",
+  //   "655257769a13a2ebd25ed77e",
+  //   "655257859a13a2ebd25ed77f",
+  //   "655257949a13a2ebd25ed780",
+  //   "655257a29a13a2ebd25ed781",
+  //   "655257b59a13a2ebd25ed782",
+  //   "655257c59a13a2ebd25ed783",
+  //   "655257d59a13a2ebd25ed784",
+  //   "655257e69a13a2ebd25ed785",  
+  // ];
   
-  //Declarar   $url_access_estudiante de acceso publico
-  $url_access_estudiante = "";
-  $url_access_profesor = "";
+  // //Declarar   $url_access_estudiante de acceso publico
+  // $url_access_estudiante = "";
+  // $url_access_profesor = "";
 
-  $participantes_agregados = false;
-    foreach ($ids_spaces as $space_id) {
-      $space_details = api_pencil_connect_get_space_details($space_id);
+  // $participantes_agregados = false;
+  //   foreach ($ids_spaces as $space_id) {
+  //     $space_details = api_pencil_connect_get_space_details($space_id);
     
-      if ($space_details !== FALSE) {
-        // Verifica si el espacio tiene participantes.
-        if (!empty($space_details['participants'])) {
-          // El espacio tiene participantes.
-          // Puedes realizar las acciones necesarias para los espacios con participantes.
-          // Por ejemplo, puedes guardar los detalles del espacio en una base de datos o realizar otra operación.
-          $title = $space_details['title'];
-          $participants = $space_details['participants'];
-          // ...
-        }
-        else {
-          // El espacio no tiene participantes.
-          // Puedes realizar las acciones necesarias para los espacios sin participantes.
-          // Por ejemplo, puedes guardar los detalles del espacio en otra base de datos o realizar otra operación.
-          $title = $space_details['title'];
-          $participantes_agregados = true;
+  //     if ($space_details !== FALSE) {
+  //       // Verifica si el espacio tiene participantes.
+  //       if (!empty($space_details['participants'])) {
+  //         // El espacio tiene participantes.
+  //         // Puedes realizar las acciones necesarias para los espacios con participantes.
+  //         // Por ejemplo, puedes guardar los detalles del espacio en una base de datos o realizar otra operación.
+  //         $title = $space_details['title'];
+  //         $participants = $space_details['participants'];
+  //         // ...
+  //       }
+  //       else {
+  //         // El espacio no tiene participantes.
+  //         // Puedes realizar las acciones necesarias para los espacios sin participantes.
+  //         // Por ejemplo, puedes guardar los detalles del espacio en otra base de datos o realizar otra operación.
+  //         $title = $space_details['title'];
+  //         $participantes_agregados = true;
 
-          $add_users = [
-            [ 
-              'role' => 'participants',
-              'email' => $correo_estudiante_pencil,
-              'userId' => $field_pencil_id_estudiante,
-            ],
-            [
-              'role' => 'host',
-              'email' => $correo_profesor_pencil,
-              'userId' => $field_pencil_id_profesor,
-            ],
-          ];
+  //         $add_users = [
+  //           [ 
+  //             'role' => 'participants',
+  //             'email' => $correo_estudiante_pencil,
+  //             'userId' => $field_pencil_id_estudiante,
+  //           ],
+  //           [
+  //             'role' => 'host',
+  //             'email' => $correo_profesor_pencil,
+  //             'userId' => $field_pencil_id_profesor,
+  //           ],
+  //         ];
 
-          $agregar_usuarios_space = api_pencil_connect_update_space_users($space_id, $add_users);
+  //         $agregar_usuarios_space = api_pencil_connect_update_space_users($space_id, $add_users);
 
-          if ($agregar_usuarios_space !== FALSE ) {
+  //         if ($agregar_usuarios_space !== FALSE ) {
 
-              $space_details = api_pencil_connect_get_space_details($space_id);
+  //             $space_details = api_pencil_connect_get_space_details($space_id);
 
-              $space_id = $space_details['spaceId'];
-              $space_lync_url = $space_details['link'];
+  //             $space_id = $space_details['spaceId'];
+  //             $space_lync_url = $space_details['link'];
 
-              // create api_pencil_connect_authorize_user get token estudiante.
-              $token_estudiante = api_pencil_connect_authorize_user($field_pencil_id_estudiante,$space_lync_url);    
-              $url_access_estudiante = $token_estudiante;
+  //             // create api_pencil_connect_authorize_user get token estudiante.
+  //             $token_estudiante = api_pencil_connect_authorize_user($field_pencil_id_estudiante,$space_lync_url);    
+  //             $url_access_estudiante = $token_estudiante;
 
-              // create api_pencil_connect_authorize_user get token profesor.
-              $token_profesor = api_pencil_connect_authorize_user($field_pencil_id_profesor,$space_lync_url);    
-              $url_access_profesor = $token_profesor;
-          }
-          // Finaliza la iteración y sale del bucle foreach.
-          break;
-        }
-      }
-      else {
-        // Error al obtener los detalles del espacio.
-        // Puedes realizar alguna acción o mostrar un mensaje de error.
-        \Drupal::messenger()->addError(new TranslatableMarkup('Error getting space details for space ID: @space_id', ['@space_id' => $space_id]));
-      }
-    }
+  //             // create api_pencil_connect_authorize_user get token profesor.
+  //             $token_profesor = api_pencil_connect_authorize_user($field_pencil_id_profesor,$space_lync_url);    
+  //             $url_access_profesor = $token_profesor;
+  //         }
+  //         // Finaliza la iteración y sale del bucle foreach.
+  //         break;
+  //       }
+  //     }
+  //     else {
+  //       // Error al obtener los detalles del espacio.
+  //       // Puedes realizar alguna acción o mostrar un mensaje de error.
+  //       \Drupal::messenger()->addError(new TranslatableMarkup('Error getting space details for space ID: @space_id', ['@space_id' => $space_id]));
+  //     }
+  //   }
 
   //Get id of the node agendando_clase.
   $nid = $form_state->getValue('nid');
