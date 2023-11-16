@@ -1,0 +1,126 @@
+.rol-padre {
+  #main-wrapper {
+    #block-koala-content {
+      .informacion-orden {
+        .titulo {
+          margin-top: 1rem;
+          a {
+            font-weight: 700;
+            font-size: 20px;
+            color: black;
+          }
+          h2 {
+            margin: 1rem 0rem;
+            font-weight: 700;
+            font-size: 1.25rem;
+            text-align: center;
+          }
+        }
+        .customer-information {
+          background-color: #e6f1f1;
+          border-radius: 24px;
+          padding: 1rem 2rem;
+          font-weight: 500;
+          .field--name-mail {
+            margin-bottom: 0.5rem;
+            .field__label {
+              color: black;
+              font-weight: 700;
+              width: 115px;
+            }
+            .field__item {
+              background-color: white;
+              padding: 0.5rem;
+            }
+          }
+          .customer-billing {
+            .field__label {
+              font-weight: 700;
+              margin-bottom: 0.5rem;
+            }
+            .profile--type--customer {
+              .field--name-address {
+                .address {
+                  span {
+                    line-height: 30px;
+                  }
+                }
+              }
+            }
+          }
+        }
+        .order-information {
+          border: 2px solid #e6f1f1;
+          padding: 1rem 2rem;
+          border-radius: 24px;
+          margin-top: 1rem;
+          .field {
+            .field__label {
+              color: black;
+              font-weight: 700;
+            }
+            .field__item {
+              background-color: transparent;
+              font-weight: 500;
+              .view-commerce-order-item-table {
+                .table-responsive {
+                  .table {
+                    margin-top: 1.5rem;
+                    border-top-left-radius: 18px;
+                    border-top-right-radius: 18px;
+                    overflow: hidden;
+                    thead {
+                      border: 1px solid #becaca;
+                      tr {
+                        background-color: #e6f1f1;
+                        th {
+                          border-right: 1px solid #becaca;
+                          font-weight: 500;
+                          color: #727f7f;
+                          padding: 1rem;
+                        }
+                        th:last-child {
+                          border-right: none;
+                        }
+                      }
+                    }
+                    tbody{
+                      border: 1px solid #becaca;
+                      tr{
+                        td{
+                          --bs-table-accent-bg: white;
+                          border-right: 1px solid #becaca;
+                          padding: 1rem;
+                        }
+                        td:last-child {
+                          border-right: none;
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      .boton-imprimir{
+        a{
+          font-weight: 700;
+          font-size: 20px;
+          &:hover{
+            background-color: $TurqK600;
+            color: white;
+          }
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 800px) and (min-width: 192px) {
+  .rol-padre #main-wrapper #block-koala-content .informacion-orden
+  .order-information .field .field__item .view-commerce-order-item-table
+  .table-responsive .table tbody tr .views-field-title{
+    min-width: 520px;
+  }
+}
