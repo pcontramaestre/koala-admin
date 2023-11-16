@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.clases_estudiantes.body
     - field.field.node.clases_estudiantes.field_codigo_de_la_clase_
+    - field.field.node.clases_estudiantes.field_enlace_pdf_de_la_clase
     - field.field.node.clases_estudiantes.field_genially_de_la_clase
     - field.field.node.clases_estudiantes.field_genially_extra
     - field.field.node.clases_estudiantes.field_logros_de_la_clase
@@ -16,6 +17,7 @@ dependencies:
     - field_formatter_class
     - formatter_suite
     - gdoc_field
+    - link
     - term_reference_tree
     - text
     - user
@@ -38,6 +40,18 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     weight: 3
+    region: content
+  field_enlace_pdf_de_la_clase:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 9
     region: content
   field_genially_de_la_clase:
     type: formatter_suite_general_link
@@ -118,4 +132,7 @@ content:
     weight: 0
     region: content
 hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
   langcode: true

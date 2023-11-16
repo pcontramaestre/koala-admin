@@ -3063,7 +3063,7 @@ display:
           admin_label: ''
           plugin_id: text_custom
           empty: true
-          content: "<div class=\"text-center mb-4\">\r\n    <strong>Selecciona una cuenta</strong>\r\n</div>\r\n\r\n<a href=\"/padres\" class=\"d-block mb-5\">\r\n<div class=\"access-acudiente\">\r\n  <div class=\"imagen\">{{ user_picture_1 }}</div>\r\n  <div class=\"nombre-datos\">\r\n    <div class=\"nombre\">{{ field_nombre_del_acudiente }}</div>\r\n    <div class=\"tipo\">Acudiente</div>\r\n  </div>\r\n</div>\r\n</a>"
+          content: "<div class=\"text-center mb-4\">\r\n    <strong>Selecciona una cuenta</strong>\r\n</div>\r\n\r\n<a href=\"/padres\" class=\"d-block mb-5\">\r\n<div class=\"access-acudiente\">\r\n  <div class=\"imagen\">{{ user_picture_1 }}</div>\r\n  <div class=\"nombre-datos\">\r\n    <div class=\"nombre\">{{ field_nombre_del_acudiente }}</div>\r\n    <div class=\"tipo\">Padre/Tutor</div>\r\n  </div>\r\n</div>\r\n</a>"
           tokenize: true
       footer: {  }
       display_extenders: {  }

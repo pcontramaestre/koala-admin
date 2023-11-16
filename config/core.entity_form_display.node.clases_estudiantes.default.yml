@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.clases_estudiantes.body
     - field.field.node.clases_estudiantes.field_codigo_de_la_clase_
+    - field.field.node.clases_estudiantes.field_enlace_pdf_de_la_clase
     - field.field.node.clases_estudiantes.field_genially_de_la_clase
     - field.field.node.clases_estudiantes.field_genially_extra
     - field.field.node.clases_estudiantes.field_logros_de_la_clase
@@ -57,6 +58,14 @@ content:
     third_party_settings:
       advanced_text_formatter:
         show_token_tree: 0
+  field_enlace_pdf_de_la_clase:
+    type: link_default
+    weight: 26
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
   field_genially_de_la_clase:
     type: link_default
     weight: 17

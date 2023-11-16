@@ -86,12 +86,12 @@
 		<div class="superior text-center">
 			<img src="/themes/custom/koala/images/perfecto.png">
 			<h2>¡Perfecto! Lo has conseguido</h2>
-			<p>Te hemos enviado un correo con los detalles de tu clase gratuita</p>						
+			<p>Te hemos enviado un correo con los detalles de tu clase</p>						
 		</div>
 		<div class="cuadro row">
 			<div class="col-12">
 				{% if (tipo_clase == 'Paga' )  %}
-					<h3>{{ 'Tu clase de ha sido reservada'|t }}</h3>
+					<h3>{{ 'Tu clase ha sido reservada'|t }}</h3>
 				{% else %}
 					<h3>{{ 'Tu clase gratuita ha sido reservada'|t }}</h3>
 				{% endif %}
