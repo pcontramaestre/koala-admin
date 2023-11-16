@@ -248,7 +248,8 @@ code: |-
       { clasesPorSemana: 35, totalClases: 840, total: 8586.00, valorPorClase: 10.22143 },
     ];
 
-
+    document.querySelector('.linea1').style.display = 'none';
+    document.querySelector('.linea2').style.display = 'none';
     // Obtener todos los elementos con la clase "incrementa" y "decrementa"
     const incrementaButtons = document.querySelectorAll('.incrementa');
     const decrementaButtons = document.querySelectorAll('.decrementa');
@@ -376,6 +377,8 @@ code: |-
       precioClase.textContent = '$ ' + precio;
       precioClase.setAttribute('precio', precio);
       redondeoTotal = Math.round(parseInt(totalClases.textContent) * parseFloat(precioClase.getAttribute('precio')) * 100) / 100;
+      // Convertir redondeoTotal a moneda con formato $ 0,000.00
+      redondeoTotal = redondeoTotal.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
       valorTotal.textContent = '$ ' + redondeoTotal ;
       
       // Agregar valor a descuento ".descuento". Se obtiene de restar el valor del atributo precio de ".precio-clase" menos el primer valor del arreglo clases4Semanas
@@ -416,10 +419,13 @@ code: |-
           }
         });
 
-                    //ocultar linea 1
-                    document.querySelector('.linea1').style.display = 'block';
-                    //ocultar linea 2
-                    document.querySelector('.linea2').style.display = 'block';
+        if(parseInt(totalClases.textContent) > 0) {
+            //ocultar linea 1
+            document.querySelector('.linea1').style.display = 'block';
+            //ocultar linea 2
+            document.querySelector('.linea2').style.display = 'block';
+        }
+
 
         //Buscar el total de clases en el arreglo datosCosteClases, tomando en cuenta el total de clases
         totalclasesSeleccionadas = document.querySelector('.total-de-clases');
@@ -433,7 +439,13 @@ code: |-
           if (clase.clases == precio12Semanas) {
             precioClase12 = clase.costePorClase;
             precioCoste12 = clase.coste;
+
             ahorro = (17.5 * precio12Semanas) - precioCoste12;
+            // Convertir ahorro a moneda con formato $ 0,000.00
+            ahorro = ahorro.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
+            // Convertir precioCoste12 a moneda con formato $ 0,000.00
+            precioCoste12 = precioCoste12.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
+
             texto = "Si seleccionas 12 semanas, te saldrá por $" + precioCoste12 + " y ahorrarás $" + ahorro;
             document.querySelector('.linea1').textContent = texto;          
           }
@@ -444,6 +456,12 @@ code: |-
             precioClase24 = clase.costePorClase;
             precioCoste24 = clase.coste;
             ahorro = (17.5 * precio24Semanas) - precioCoste24;
+            // Convertir ahorro a moneda con formato $ 0,000.00
+            ahorro = ahorro.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
+            // Convertir precioCoste24 a moneda con formato $ 0,000.00
+            precioCoste24 = precioCoste24.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
+
+
             texto = "Si seleccionas 24 semanas, te saldrá por $" + precioCoste24 + " y ahorrarás $" + ahorro;
             document.querySelector('.linea2').textContent = texto;          
           }
@@ -467,15 +485,25 @@ code: |-
           if (clase.clases == precio24Semanas) {
             precioClase24 = clase.costePorClase;
             precioCoste24 = clase.coste;
+
+
             ahorro = (17.5 * precio24Semanas) - precioCoste24;
+            // Convertir ahorro a moneda con formato $ 0,000.00
+            ahorro = ahorro.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
+            // Convertir precioCoste24 a moneda con formato $ 0,000.00
+            precioCoste24 = precioCoste24.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
+
+
             texto = "Si seleccionas 24 semanas, te saldrá por $" + precioCoste24 + " y ahorrarás $" + ahorro;
             document.querySelector('.linea2').textContent = texto;          
           }
         });
 
-        //ocultar linea 1
-        document.querySelector('.linea1').style.display = 'none';
-
+        if(parseInt(totalClases.textContent) > 0) {
+          //ocultar linea 1
+          document.querySelector('.linea1').style.display = 'none';
+          document.querySelector('.linea2').style.display = 'block';
+        }
       } else if (suscription.value == 24) {
         enlace = '/product/5';
         // Buscar en el arreglo clasesComprar24Semanas el valor de totalClases, y guardar el valor de id en una variable
@@ -499,6 +527,9 @@ code: |-
         botonComprar.classList.remove('disabled');
       } else {
         botonComprar.classList.add('disabled');
+        // display none a linea 1 y linea 2
+        document.querySelector('.linea1').style.display = 'none';
+        document.querySelector('.linea2').style.display = 'none';
       }    
     }
 
