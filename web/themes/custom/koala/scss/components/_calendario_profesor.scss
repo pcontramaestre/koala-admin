@@ -467,7 +467,7 @@
 
 @media (min-width: 801px) {
   div[id^="windowManager_"] {
-    > span[id^="htmlElement_"] {
+    > span[id^="htmlElement_"]{
       left: 42% !important;
       top: 18% !important;
     }

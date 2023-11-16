@@ -130,21 +130,21 @@
   }
 
   //POPUP ALUMNOS
+  @media (min-width: 801px) {
+    div[id^="windowManager_"] {
+      > span[id^="htmlElement_"]{
+        left: 42% !important;
+        top: 18% !important;
+      }
+    }
+  }
   div[id^="windowManager_"] {
-    //width           : 100% !important;
-    //height          : 100% !important;
-    //background-color: #000000b0 !important;
-
     > span[id^="htmlElement_"] {
-      position: absolute;
-      //left        : 42% !important;
-      //top         : 20% !important;
-      position: fixed !important;
-      left: 42% !important;
-      top: 18% !important;
-      width: 340px !important;
-      height: max-content !important;
-      border-color: rgb(1 1 1 / 0%) !important;
+    position: absolute;
+    position: fixed !important;
+    width: 340px !important;
+    height: max-content !important;
+    border-color: rgb(1 1 1 / 0%) !important;
 
       div.jsframe-titlebar-focused {
         background: #e6f1f1 !important;
@@ -331,6 +331,22 @@
 
 @media (min-width: 300px) and (max-width: 800px) {
   .path-padres {
+    //POPUP ALUMNOS
+  div[id^="windowManager_"] {
+    > span[id^="htmlElement_"] {
+      left: 0% !important;
+      right: 0%;
+      margin: 0 auto;
+      top: 12.7% !important;
+      div {
+        .datos-clase {
+          .profesor {
+            display: none !important;
+          }
+        }
+      }
+    }
+  }
     .view-mis-koalas.view-display-id-block_6 {
       .view-header {
         font-size: 20px;
