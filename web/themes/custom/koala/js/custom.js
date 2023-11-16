@@ -79,7 +79,7 @@
     changeYear: true,
     // yearRange: "2001:2019",
     altFormat: "dd/mm/yy",
-    maxDate: "-5y",
+    maxDate: "-6y",
     //minDate: new Date(2001, 1 - 1, 1),
     minDate: "-18y",
   });
@@ -227,7 +227,7 @@
           nuevaFecha
         );
         console.log("Seleccionado");
-      },
+      },     
     });
     $(
       ".filtro-agendar .ui-datepicker-calendar .ui-datepicker-current-day a"
@@ -239,5 +239,7 @@
     var nuevoDia = fechaJS.getDate();
     console.log("Dia seleccionado " + nuevoDia);
     $("a[data-date='" + nuevoDia + "']").addClass("ui-state-active");
+
+    $('.filtro-agendar a.ui-state-active').click();
   });
 })(jQuery);

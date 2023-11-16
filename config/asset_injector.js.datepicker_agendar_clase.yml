@@ -8,6 +8,7 @@ id: datepicker_agendar_clase
 label: 'DatePicker Agendar Clase'
 code: |+
   (function ($) {
+
     // Se ejecuta cuando hay un evento ajax de una vista. Para que no se pierda el datepicker
       // Esta función se ejecutará cada vez que se complete una solicitud AJAX.
       // Puedes colocar aquí el código que deseas que se ejecute después de cada
@@ -41,6 +42,7 @@ code: |+
         },
       });
 
+  	  $('a.ui-state-active').click();
   })(jQuery);
 
 

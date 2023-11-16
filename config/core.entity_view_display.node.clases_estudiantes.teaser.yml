@@ -6,6 +6,7 @@ dependencies:
     - core.entity_view_mode.node.teaser
     - field.field.node.clases_estudiantes.body
     - field.field.node.clases_estudiantes.field_codigo_de_la_clase_
+    - field.field.node.clases_estudiantes.field_enlace_pdf_de_la_clase
     - field.field.node.clases_estudiantes.field_genially_de_la_clase
     - field.field.node.clases_estudiantes.field_genially_extra
     - field.field.node.clases_estudiantes.field_logros_de_la_clase
@@ -35,7 +36,11 @@ content:
     weight: 100
     region: content
 hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
   field_codigo_de_la_clase_: true
+  field_enlace_pdf_de_la_clase: true
   field_genially_de_la_clase: true
   field_genially_extra: true
   field_logros_de_la_clase: true
