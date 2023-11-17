@@ -1,0 +1,7 @@
+acceso_clases.clase_controller:
+  path: '/clases'
+  defaults:
+    _controller: '\Drupal\acceso_clases\Controller\ClaseController::contenidoClase'
+    _title: 'Clase'
+  requirements:
+    _permission: 'acceso clases content'

@@ -2,6 +2,7 @@ _core:
   default_config_hash: R4IF-ClDHXxblLcG0L7MgsLvfBIMAvi_skumNFQwkDc
 langcode: es
 module:
+  acceso_clases: 0
   add_content_by_bundle: 0
   address: 0
   admin_toolbar: 0

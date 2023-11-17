@@ -1,0 +1,7 @@
+name: 'Acceso a Clases'
+type: module
+description: 'Módulo para mostrar clases en un iframe accesible por rol padre o hijo.'
+core_version_requirement: ^9 || ^10
+package: Custom
+dependencies:
+  - drupal:user

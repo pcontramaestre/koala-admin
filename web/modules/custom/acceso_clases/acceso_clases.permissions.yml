@@ -1,0 +1,3 @@
+'acceso clases content':
+  title: 'Acceder al contenido de las clases'
+  restrict access: TRUE

@@ -3,6 +3,7 @@ langcode: es
 status: true
 dependencies:
   module:
+    - acceso_clases
     - comment
     - commerce_checkout
     - commerce_order
@@ -28,6 +29,7 @@ label: 'Usuario autenticado'
 weight: 1
 is_admin: false
 permissions:
+  - 'acceso clases content'
   - 'access checkout'
   - 'access comments'
   - 'access content'

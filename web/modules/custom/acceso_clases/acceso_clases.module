@@ -1,0 +1,17 @@
+<?php
+
+/**
+ * @file
+ * Contiene hooks y callbacks personalizados del módulo Acceso Clases.
+ */
+
+/**
+ * Implementa hook_theme() para registrar plantillas.
+ */
+function acceso_clases_theme($existing, $type, $theme, $path) {
+  return [
+    'clase-page' => [
+      'variables' => ['url' => NULL],
+    ],
+  ];
+}

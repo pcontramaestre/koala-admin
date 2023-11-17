@@ -4,5 +4,5 @@ description: 'Crea un nodo de horarios_de_trabajo al agregar un usuario con el r
 package: Custom
 core_version_requirement: ^8 || ^9
 dependencies:
-  - node
-  - user
+  - drupal:node
+  - drupal:user
