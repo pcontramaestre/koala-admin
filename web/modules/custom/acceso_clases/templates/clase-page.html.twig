@@ -1,7 +1,7 @@
 <div class="iframe-clase">
   <div class="cuadro-superpuesto"><div class="texto">Clase Hola Koala</div></div>
   {% if url %}
-    <iframe src="{{ url }}" width="100%" height="600" frameborder="0"></iframe>
+    <iframe src="{{ url }}" width="100%" height="600" frameborder="0" allow="camera;microphone"></iframe>
   {% else %}
     <p>Por favor especifique la URL de la clase.</p>
   {% endif %}
