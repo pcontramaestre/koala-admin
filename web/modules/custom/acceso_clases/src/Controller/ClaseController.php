@@ -10,12 +10,12 @@ class ClaseController extends ControllerBase {
     $url_param = $request->query->get('url');
     
     // Asegúrese de validar y desinfectar la URL aquí.
-    $url = filter_var($url_param, FILTER_SANITIZE_URL);
+    $url = $url_param; //filter_var($url_param, FILTER_SANITIZE_URL);
 
     // Servir de manera predeterminada un mensaje o una URL por defecto si es necesario.
-    if (!filter_var($url, FILTER_VALIDATE_URL)) {
-      $url = ''; // O establecer una URL por defecto o presentar un mensaje de error adecuado.
-    }
+    // if (!filter_var($url, FILTER_VALIDATE_URL)) {
+    //   $url = ''; // O establecer una URL por defecto o presentar un mensaje de error adecuado.
+    // }
 
     return [
       '#theme' => 'clase-page',
