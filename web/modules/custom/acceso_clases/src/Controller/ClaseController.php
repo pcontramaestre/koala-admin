@@ -10,7 +10,8 @@ class ClaseController extends ControllerBase {
     $url_param = $request->query->get('url');
     
     // Asegúrese de validar y desinfectar la URL aquí.
-    $url = $url_param; //filter_var($url_param, FILTER_SANITIZE_URL);
+    //$url = $url_param; //filter_var($url_param, FILTER_SANITIZE_URL);
+    $url = urldecode($url_param);
 
     // Servir de manera predeterminada un mensaje o una URL por defecto si es necesario.
     // if (!filter_var($url, FILTER_VALIDATE_URL)) {
