@@ -1914,8 +1914,8 @@ display:
           label: ''
           exclude: true
           alter:
-            alter_text: false
-            text: ''
+            alter_text: true
+            text: '/clases?url={{ field_pencil_url_access_estudian }} '
             make_link: false
             path: ''
             absolute: false
