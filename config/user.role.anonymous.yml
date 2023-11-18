@@ -5,6 +5,7 @@ dependencies:
   config:
     - filter.format.restricted_html
   module:
+    - acceso_clases
     - comment
     - commerce_checkout
     - commerce_product
@@ -20,6 +21,7 @@ label: 'Usuario anónimo'
 weight: 0
 is_admin: false
 permissions:
+  - 'acceso clases content'
   - 'access checkout'
   - 'access comments'
   - 'access content'

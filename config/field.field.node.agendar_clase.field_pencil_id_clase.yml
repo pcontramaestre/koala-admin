@@ -1,15 +1,15 @@
-uuid: 96c0cd89-d837-4753-a818-aa1e5985c70d
+uuid: 6d1ca4ea-019a-4da3-8637-e7ef7ea09ac3
 langcode: es
 status: true
 dependencies:
   config:
-    - field.storage.node.field_pencil_url_clase
+    - field.storage.node.field_pencil_id_clase
     - node.type.agendar_clase
-id: node.agendar_clase.field_pencil_url_clase
-field_name: field_pencil_url_clase
+id: node.agendar_clase.field_pencil_id_clase
+field_name: field_pencil_id_clase
 entity_type: node
 bundle: agendar_clase
-label: 'Pencil URL Clase'
+label: 'Pencil ID Clase'
 description: ''
 required: false
 translatable: false

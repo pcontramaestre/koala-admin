@@ -16,6 +16,7 @@ dependencies:
     - field.field.node.agendar_clase.field_marcar_clase_como_finaliza
     - field.field.node.agendar_clase.field_nombre_del_nino_a
     - field.field.node.agendar_clase.field_otra_hora
+    - field.field.node.agendar_clase.field_pencil_id_clase
     - field.field.node.agendar_clase.field_pencil_id_estudiante
     - field.field.node.agendar_clase.field_pencil_id_profesor
     - field.field.node.agendar_clase.field_pencil_url_access_estudian
@@ -31,7 +32,6 @@ dependencies:
     - datetime
     - field_layout
     - layout_discovery
-    - link
     - path
     - time_field
     - timefield
@@ -160,6 +160,14 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  field_pencil_id_clase:
+    type: string_textfield
+    weight: 37
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
   field_pencil_id_estudiante:
     type: string_textfield
     weight: 31
@@ -193,12 +201,12 @@ content:
       placeholder: ''
     third_party_settings: {  }
   field_pencil_url_clase:
-    type: link_default
-    weight: 33
+    type: string_textfield
+    weight: 36
     region: content
     settings:
-      placeholder_url: ''
-      placeholder_title: ''
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
   field_sexo_n:
     type: options_select

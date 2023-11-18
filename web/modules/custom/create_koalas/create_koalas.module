@@ -421,9 +421,16 @@ function callback_submit_agendar_clase(&$form, FormStateInterface $form_state) {
     // agregar field_pencil_url_access_estudian , field_pencil_url_access_profesor
     $node->set('field_pencil_url_access_estudian', $url_access_estudiante);
     $node->set('field_pencil_url_access_profesor', $url_access_profesor);
-    dump($url_access_estudiante);
-    dump($url_access_profesor);
-    sleep(15);
+
+    // Verificar space_lync_url que sea una url valida. y guardarla en el campo field_pencil_url_clase.
+    $node->set('field_pencil_url_clase', $space_lync_url);
+
+    // Guardar field_pencil_id_clase 
+    $node->set('field_pencil_id_clase', $space_id);
+
+    // dump($url_access_estudiante);
+    // dump($url_access_profesor);
+    // dump($space_lync_url);
 
     $node->save();
 

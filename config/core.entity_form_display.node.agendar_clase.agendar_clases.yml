@@ -17,6 +17,7 @@ dependencies:
     - field.field.node.agendar_clase.field_marcar_clase_como_finaliza
     - field.field.node.agendar_clase.field_nombre_del_nino_a
     - field.field.node.agendar_clase.field_otra_hora
+    - field.field.node.agendar_clase.field_pencil_id_clase
     - field.field.node.agendar_clase.field_pencil_id_estudiante
     - field.field.node.agendar_clase.field_pencil_id_profesor
     - field.field.node.agendar_clase.field_pencil_url_access_estudian
@@ -119,6 +120,7 @@ hidden:
   field_id_texto_alumno: true
   field_marcar_clase_como_finaliza: true
   field_otra_hora: true
+  field_pencil_id_clase: true
   field_pencil_id_estudiante: true
   field_pencil_id_profesor: true
   field_pencil_url_access_estudian: true

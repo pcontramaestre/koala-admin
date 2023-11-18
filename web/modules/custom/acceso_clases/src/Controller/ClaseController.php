@@ -36,3 +36,11 @@ class ClaseController extends ControllerBase {
     ];
   }
 }
+
+function buscar_id_estudiante() {
+
+}
+
+function generar_enlace_estudiante() {
+
+}

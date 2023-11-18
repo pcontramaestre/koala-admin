@@ -1,4 +1,4 @@
-uuid: e5f66c61-d801-4155-8339-50268b42ed23
+uuid: 923f2bd3-a883-4dfe-b32f-783884cf20d8
 langcode: es
 status: true
 dependencies:
@@ -8,8 +8,8 @@ dependencies:
 third_party_settings:
   field_permissions:
     permission_type: public
-id: node.field_pencil_url_clase
-field_name: field_pencil_url_clase
+id: node.field_pencil_id_clase
+field_name: field_pencil_id_clase
 entity_type: node
 type: string
 settings:
