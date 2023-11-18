@@ -60,6 +60,25 @@ body.path-clases {
           }
         }
 
+        .cuadro-logo {
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          max-width: 195px;
+          height: 190px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          background: transparent;
+
+          img {
+            max-width: 80%;
+            height: auto;
+            margin: 0 auto;
+          }
+        }
+
         iframe {                    
           height: 80vh;
           border-radius: 15px;
