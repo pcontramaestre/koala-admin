@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\acceso_clases\Controller;
+namespace Drupal\acceso_clases_profes\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
 use Symfony\Component\HttpFoundation\Request;
@@ -37,21 +37,18 @@ class ClaseController extends ControllerBase {
     //Obtener el rol del usuario
     $user = \Drupal\user\Entity\User::load(\Drupal::currentUser()->id());
     $roles = $user->getRoles();
-    // buscar el rol de hijo o padre    
-    $rol_buscar_hijo = in_array('hijo', $roles);
-    $rol_buscar_padre = in_array('padre', $roles);
-    $rol_actual = $rol_buscar_hijo || $rol_buscar_padre;
-    // comprobar si el usuario tiene el rol de hijo
+    $rol_actual = in_array("profesor", $roles);
+    // comprobar si el usuario tiene el rol de profesor
     if ($rol_actual) {
       return [
-        '#theme' => 'clase-page',
+        '#theme' => 'clase-page-profe',
         '#url' => $url,
-        '#rol' => 'hijo',
+        '#rol' => 'profesor',
         '#cache' => ['max-age' => 0], // Deshabilitar caching para este contenido dinámico.
       ];
     } else {
       return [
-        '#theme' => 'clase-page',
+        '#theme' => 'clase-page-profe',
         '#url' => $url,
         '#rol' => 'otro',
         '#cache' => ['max-age' => 0], // Deshabilitar caching para este contenido dinámico.

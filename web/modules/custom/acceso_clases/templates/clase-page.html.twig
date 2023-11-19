@@ -1,16 +1,70 @@
 <div class="iframe-clase">
-  <div class="cuadro-superpuesto">
-    {# Twig tweak open view estrellas #}
-    {{ drupal_view('estrellas', 'block_1') }}
-  </div>
-  <div class="cuadro-logo"><img src="/themes/custom/koala/images/LogoKoala.png" alt="Hola Koala" title="Hola Koala"></div>
-  <div class="cuadro-menor-1280 d-flex justify-content-center align-items-center d-none d-lg-block d-md-block d-sm-block d-xl-none text-center p-5">
-    <strong>La resolución de tu pantalla es menor a 1280px, 
-    por favor ingresa a la clase desde un dispositivo con mayor resolución.</strong>
-  </div>
-  {% if url %}
-    <iframe src="{{ url }}" width="100%" height="600" frameborder="0" allow="camera;microphone"></iframe>
-  {% else %}
-    <p>Por favor especifique la URL de la clase.</p>
-  {% endif %}
+	<div
+		class="cuadro-superpuesto">
+		{# Twig tweak open view estrellas #}
+		{% if rol == 'hijo' %}
+			{{ drupal_view('estrellas', 'block_1') }}
+		{% else %}
+			<div class="views-element-container">
+				<div class="no-admin view view-estrellas view-id-estrellas view-display-id-block_1 js-view-dom-id-14eedb4a0333f46edf063748652e1f22903c8211c4604b8f315609c3f484061d" data-once="ajax-pager">
+					<div class="view-content row">
+						<div class="views-row">
+							<div class="views-field views-field-nothing">
+								<span class="field-content">
+
+									<div class="my_teacher d-flex">
+										<div class="mi-profe">
+											<strong>Mi profesor</strong>
+										</div>
+										<div class="imagen">
+											<img class="no-admin image-style-responsive-img" src="/sites/default/files/styles/responsive_img/public/default_images/avatar.png?itok=wiQU7frF" width="150" height="150" alt="Usuario" title="Usuario" loading="lazy">
+										</div>
+										<div class="nombres">Profesor de pruebas</div>
+									</div>
+
+									<div class="titulo-cuadro">
+										<strong></strong>
+									</div>
+
+									<div class="estrellas-recibidas" id-clase="482">
+										<div class="titulo-est">Mis estrellas recibidas</div>
+										<div class="imgs-estrellas d-flex" cantidad="0">
+											<img src="/themes/custom/koala/images/estrella.png" alt="estrella" title="estrella" data="1">
+											<img src="/themes/custom/koala/images/estrella.png" alt="estrella" title="estrella" data="2">
+											<img src="/themes/custom/koala/images/estrella.png" alt="estrella" title="estrella" data="3">
+											<img src="/themes/custom/koala/images/estrella.png" alt="estrella" title="estrella" data="4">
+											<img src="/themes/custom/koala/images/estrella.png" alt="estrella" title="estrella" data="5">
+											<img src="/themes/custom/koala/images/estrella.png" alt="estrella" title="estrella" data="6">
+											<img src="/themes/custom/koala/images/estrella.png" alt="estrella" title="estrella" data="7">
+											<img src="/themes/custom/koala/images/estrella.png" alt="estrella" title="estrella" data="8">
+											<img src="/themes/custom/koala/images/estrella.png" alt="estrella" title="estrella" data="9">
+											<img src="/themes/custom/koala/images/estrella.png" alt="estrella" title="estrella" data="10">
+										</div>
+									</div>
+								</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		{% endif %}
+	</div>
+  <div class="container-cargando">
+    <div class="cargando">
+      <div class="pelotas"></div>
+      <div class="pelotas"></div>
+      <div class="pelotas"></div>
+      <span class="texto-cargando">Cargando clase<br>espere un momento</span>
+    </div>
+  </div>  
+	<div class="cuadro-logo"><img src="/themes/custom/koala/images/LogoKoala.png" alt="Hola Koala" title="Hola Koala"></div>
+	<div class="cuadro-menor-1280 d-flex justify-content-center align-items-center d-none d-lg-block d-md-block d-sm-block d-xl-none text-center p-5">
+		<strong>La resolución de tu pantalla es menor a 1280px, 
+			    por favor ingresa a la clase desde un dispositivo con mayor resolución.</strong>
+	</div>
+	{% if url %}
+		<iframe src="{{ url }}" width="100%" height="600" frameborder="0" allow="camera;microphone"></iframe>
+	{% else %}
+		<p>Por favor especifique la URL de la clase.</p>
+	{% endif %}
 </div>

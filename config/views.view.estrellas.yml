@@ -421,9 +421,8 @@ display:
           sort_asc_label: Asc
           sort_desc_label: Desc
       access:
-        type: perm
-        options:
-          perm: 'access content'
+        type: none
+        options: {  }
       cache:
         type: tag
         options: {  }
@@ -504,7 +503,6 @@ display:
         - 'languages:language_content'
         - 'languages:language_interface'
         - 'user.node_grants:view'
-        - user.permissions
       tags:
         - 'config:field.storage.node.field_estrellas_obtenidas'
         - 'config:field.storage.user.field_nombres_y_apellidos_del_pr'
@@ -522,7 +520,6 @@ display:
         - 'languages:language_content'
         - 'languages:language_interface'
         - 'user.node_grants:view'
-        - user.permissions
       tags:
         - 'config:field.storage.node.field_estrellas_obtenidas'
         - 'config:field.storage.user.field_nombres_y_apellidos_del_pr'

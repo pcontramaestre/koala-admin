@@ -1,0 +1,30 @@
+uuid: 0f67e989-3682-4cc3-a777-499fa11a7507
+langcode: es
+status: true
+dependencies:
+  module:
+    - system
+id: animacion_cargando_clases
+label: 'Animación cargando clases'
+code: |-
+  jQuery(document).ready(function($) {
+    // Mostrar el div al cargar la página
+    $('.container-cargando').addClass('mostrar');
+
+    // Ocultar el div después de 10 segundos con una animación agradable
+    setTimeout(function() {
+      $('.container-cargando').removeClass('mostrar').addClass('ocultar');
+    }, 15000);  // 15000 milisegundos = 15 segundos
+  });
+noscript: ''
+noscriptRegion: {  }
+jquery: true
+header: false
+preprocess: true
+conditions:
+  request_path:
+    id: request_path
+    negate: false
+    pages: "/clases\r\n/clases/*"
+contexts: {  }
+conditions_require_all: true
