@@ -1,0 +1,17 @@
+enviar_estrellas.enviar:
+  path: '/clase-profesor/enviar-estrella'
+  defaults:
+    _controller: '\Drupal\enviar_estrellas\Controller\EstrellaController::enviar'
+    _title: 'Enviar estrella'
+  methods:  [POST]
+  requirements:
+    _permission: 'access content'
+
+enviar_estrellas.recibir:
+  path: '/clase/recibir-estrellas/{id}'
+  defaults:
+    _controller: '\Drupal\enviar_estrellas\Controller\EstrellaController::recibir'
+    _title: 'Recibir estrellas'
+  methods:  [GET]
+  requirements:
+    _permission: 'access content'

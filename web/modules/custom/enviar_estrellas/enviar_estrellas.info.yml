@@ -1,0 +1,7 @@
+name: 'Enviar Estrellas'
+type: module
+description: 'Permite a los profesores enviar estrellas y a los estudiantes visualizarlas en tiempo real.'
+core_version_requirement: ^8 || ^9 || ^10
+package: Custom
+dependencies:
+  - drupal:core

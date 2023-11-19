@@ -1,0 +1,6 @@
+enviar_estrellas:
+  version: 1.x
+  js:
+    js/enviar_estrellas.js: {}
+  dependencies:
+    - core/jquery
