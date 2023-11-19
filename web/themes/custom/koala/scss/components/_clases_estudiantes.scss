@@ -58,6 +58,76 @@ body.path-clases {
             height: 17%;
             width: calc(100% - 195px);
           }
+
+          .views-element-container {
+            width: 100%;
+
+            .views-row {
+              .views-field-nothing {
+                .field-content {
+                  display: flex;
+                  flex-direction: row;
+                  flex-wrap: nowrap;
+                  align-items: center;
+                  gap: 1rem;
+                  justify-content: space-between;
+                  
+
+                  .my_teacher {
+                    max-width: 35%;
+                    flex: 0 35%;
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    align-items: center;
+                    gap: 8px;
+                    padding-left: 1rem;
+
+                    .mi-profe {
+                      width: 100%;
+                      flex: 0 100%;
+                    }
+                    .imagen {
+                      max-width: 60px;
+                      flex: 0 25%;
+                      text-align: left;
+
+                      img {
+                        max-width: 60px;
+                        height: auto;
+                        border-radius: 50%;
+                      }
+                    }
+
+                    .nombres {
+                      max-width: 74%;
+                      flex: 0 74%;
+                    }
+
+                  }
+
+                  .estrellas-recibidas {
+                    max-width: 35%;
+                    flex: 0 35%;
+
+                    .titulo-est {
+                      font-weight: bold;
+                    }
+
+                    .imgs-estrellas {
+                      flex-direction: row;
+                      flex-wrap: wrap;
+                      gap: 8px;
+
+                      img {
+                        max-width: 30px;
+                        height: 30px;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
         }
 
         .cuadro-logo {

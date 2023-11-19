@@ -1,0 +1,23 @@
+uuid: b4817ca3-d47b-49c9-8d81-ef79b6c4600b
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_estrellas_obtenidas
+    - node.type.agendar_clase
+id: node.agendar_clase.field_estrellas_obtenidas
+field_name: field_estrellas_obtenidas
+entity_type: node
+bundle: agendar_clase
+label: 'Estrellas obtenidas'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: 0
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.agendar_clase.field_alumno_relacionado
     - field.field.node.agendar_clase.field_asignar_profesor
     - field.field.node.agendar_clase.field_clase_asignada
+    - field.field.node.agendar_clase.field_estrellas_obtenidas
     - field.field.node.agendar_clase.field_fecha_cita_oculta
     - field.field.node.agendar_clase.field_fecha_de_la_cita
     - field.field.node.agendar_clase.field_fecha_nac
@@ -50,6 +51,7 @@ hidden:
   field_alumno_relacionado: true
   field_asignar_profesor: true
   field_clase_asignada: true
+  field_estrellas_obtenidas: true
   field_fecha_cita_oculta: true
   field_fecha_de_la_cita: true
   field_fecha_nac: true
