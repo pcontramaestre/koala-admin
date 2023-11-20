@@ -22,7 +22,27 @@ h2 {
   max-width: 1240px;
 }
 
-
+#confirmarEntrarNino {
+  .modal-dialog {
+    .modal-content {
+      border: 2px solid #2ff7ee;
+      background-color: #d7eff2;
+      .modal-footer {
+        .btn {
+          background-color: white;
+          color: black;
+          font-weight: 700;
+          border: 2px solid #297e88;
+          border-radius: 40px;
+          &:hover{
+            background-color: #297e88;
+            color: white;
+          }
+        }
+      }
+    }
+  }
+}
 .toast-container {
   [role="status"] {
     background-color: #f5f8d8;
@@ -67,15 +87,15 @@ h2 {
 }
 .toast-container {
   [role="alert"] {
-    background-color: #FFC2C4;
+    background-color: #ffc2c4;
     border-radius: 24px;
     .toast-header {
-      background-color: #FFC2C4;
+      background-color: #ffc2c4;
       color: black;
       border: none;
-      border-top: 2px solid #FF6669;
-      border-left: 2px solid #FF6669;
-      border-right: 2px solid #FF6669;
+      border-top: 2px solid #ff6669;
+      border-left: 2px solid #ff6669;
+      border-right: 2px solid #ff6669;
       border-top-right-radius: 24px;
       border-top-left-radius: 24px;
       &:before {
@@ -93,10 +113,10 @@ h2 {
     }
     .toast-body {
       color: black;
-      background-color: #FFC2C4;
-      border-bottom: 2px solid #FF6669;
-      border-left: 2px solid #FF6669;
-      border-right: 2px solid #FF6669;
+      background-color: #ffc2c4;
+      border-bottom: 2px solid #ff6669;
+      border-left: 2px solid #ff6669;
+      border-right: 2px solid #ff6669;
       border-bottom-right-radius: 24px;
       border-bottom-left-radius: 24px;
     }
@@ -411,9 +431,9 @@ h2 {
 }
 
 @media only screen and (max-width: 600px) and (min-width: 340px) {
-  .toast-container{
+  .toast-container {
     width: 100%;
-    .toast{
+    .toast {
       width: 96%;
       margin: 0 auto;
       margin-top: 1rem;

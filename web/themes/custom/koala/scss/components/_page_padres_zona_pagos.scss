@@ -277,6 +277,11 @@
                   object-fit: cover;
                 }
               }
+              .nombre-nino {
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+              }
 
               &:nth-child(2n) {
                 button {
@@ -695,16 +700,16 @@
                 }
               }
             }
-            tbody{
-              tr{
-                .views-field-field-nro-de-orden{
-                  a{
+            tbody {
+              tr {
+                .views-field-field-nro-de-orden {
+                  a {
                     color: black;
                     font-weight: 700;
                   }
                 }
-                &:hover{
-                  --bs-table-accent-bg: white!important
+                &:hover {
+                  --bs-table-accent-bg: white !important;
                 }
               }
             }
