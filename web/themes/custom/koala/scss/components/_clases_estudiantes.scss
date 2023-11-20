@@ -1,0 +1,237 @@
+body.path-clases {
+  #header {
+    #navbar-main {
+      height: 3.2rem;
+    }
+  }
+  #main-wrapper  {
+    margin-top: 3.25rem !important;
+    background: #2a7e88;
+
+    > #main {
+      max-width: 90% !important;
+      width: 90% !important;
+      .iframe-clase {
+        margin: 0 auto;
+        margin-top: 2rem;
+        position: relative;
+        max-width: 1440px;
+
+        .cuadro-superpuesto {
+          position: absolute;
+          left: 0px;
+          top: 0px;
+          border-top-left-radius: 15px;
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+          background: white;                  
+          @media only screen and (min-width: 1280px) and (max-width: 1291px) {
+            height: 24%;
+            width: calc(100% - 195px);
+          }
+          @media only screen and (min-width: 1292px) and (max-width: 1313px) {
+            height: 23%;
+            width: calc(100% - 195px);
+          }
+          @media only screen and (min-width: 1314px) and (max-width: 1335px) {
+            height: 22%;
+            width: calc(100% - 195px);
+          }
+          @media only screen and (min-width: 1336px) and (max-width: 1357px) {
+            height: 21%;
+            width: calc(100% - 195px);
+          }
+          @media only screen and (min-width: 1358px) and (max-width: 1379px) {
+            height: 20%;
+            width: calc(100% - 195px);
+          }
+          @media only screen and (min-width: 1380px) and (max-width: 1401px) {
+            height: 19%;
+            width: calc(100% - 195px);
+          }
+          @media only screen and (min-width: 1402px) and (max-width: 1423px) {
+            height: 18%;
+            width: calc(100% - 195px);
+          }
+          @media only screen and (min-width: 1424px){
+            height: 17%;
+            width: calc(100% - 195px);
+          }
+
+          .views-element-container {
+            width: 100%;
+
+            .views-row {
+              .views-field-nothing {
+                .field-content {
+                  display: flex;
+                  flex-direction: row;
+                  flex-wrap: nowrap;
+                  align-items: center;
+                  gap: 1rem;
+                  justify-content: space-between;
+                  
+
+                  .my_teacher {
+                    max-width: 35%;
+                    flex: 0 35%;
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    align-items: center;
+                    gap: 8px;
+                    padding-left: 1rem;
+
+                    .mi-profe {
+                      width: 100%;
+                      flex: 0 100%;
+                    }
+                    .imagen {
+                      max-width: 60px;
+                      flex: 0 25%;
+                      text-align: left;
+
+                      img {
+                        max-width: 60px;
+                        height: auto;
+                        border-radius: 50%;
+                      }
+                    }
+
+                    .nombres {
+                      max-width: 74%;
+                      flex: 0 74%;
+                    }
+
+                  }
+
+                  .estrellas-recibidas {
+                    max-width: 35%;
+                    flex: 0 35%;
+
+                    .titulo-est {
+                      font-weight: bold;
+                    }
+
+                    .imgs-estrellas {
+                      flex-direction: row;
+                      flex-wrap: wrap;
+                      gap: 8px;
+
+                      img {
+                        max-width: 30px;
+                        height: 30px;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        .cuadro-logo {
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          max-width: 195px;
+          height: 190px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          background: transparent;
+          width: 21vh;
+
+          img {
+            max-width: 60%;
+            height: auto;
+            margin: 0 auto;
+          }
+        }
+
+        .cuadro-menor-1280 {
+          position: absolute;
+          z-index: 1;
+          background: white;
+          width: 100%;
+          height: 100%;
+        }
+
+        iframe {                    
+          height: 80vh;
+          border-radius: 15px;
+          max-width: 1440px;
+        }
+      }
+    }
+  }
+
+  footer.site-footer {
+    display: none;
+  }
+
+/* ======================== */
+.container-cargando{
+  display: grid;
+  place-content: center;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background: white;  
+  &.mostrar {
+    display: grid;  /* Muestra el div */
+    opacity: 1;  /* Hace que el div sea completamente visible */
+  }
+  
+  &.ocultar {
+    opacity: 0;  /* Hace que el div sea completamente transparente */
+    display: none;  /* Oculta el div */
+  }  
+}
+.cargando{
+  width: 150px;
+  height: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin: 0 auto;
+  text-align: center;
+}
+.texto-cargando{ 
+  padding-top:20px;
+}
+.cargando span{
+    font-size: 20px;    
+    color: #488d96;
+    font-weight: bold;
+}
+.pelotas {
+    width: 30px;
+    height: 30px;
+    background-color: #ff6669;
+    animation: salto .5s alternate
+    infinite;
+  border-radius: 50%  
+}
+.pelotas:nth-child(2) {
+    animation-delay: .18s;
+    background-color: #00d2c2;
+}
+.pelotas:nth-child(3) {
+    animation-delay: .37s;
+    background-color: #2b7e88;
+}
+@keyframes salto {
+    from {
+        transform: scaleX(1.25);
+    }
+    to{
+        transform: 
+        translateY(-50px) scaleX(1);
+    }
+}
+
+}
