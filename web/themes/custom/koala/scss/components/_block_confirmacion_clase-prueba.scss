@@ -5,6 +5,8 @@ body.node--type-agendar-clase {
   #block-koala-content {
     .node--type-agendar-clase {
       margin-top: 3rem;
+      display: flex;
+      flex-direction: column;
 
       .node__content {
         .superior {
@@ -15,11 +17,11 @@ body.node--type-agendar-clase {
         }
 
         .cuadro {
-          width: 70%;
+          width: 45%;
           margin: 0 auto;
           border-radius: 15px;
           position: relative;
-          padding: 1rem 1rem 3.5rem 1rem;
+          padding: 1rem 1rem 0rem 1rem;
           box-shadow: 0px 2px 10px rgba(67, 67, 67, 0.15),
             0px 5px 20px rgba(74, 74, 74, 0.08),
             0px 10px 80px rgba(74, 74, 74, 0.02);
@@ -32,6 +34,7 @@ body.node--type-agendar-clase {
             h3 {
               font-weight: 700;
               font-size: 1.3rem;
+              margin-bottom: 1.5rem;
             }
           }
 
@@ -79,21 +82,25 @@ body.node--type-agendar-clase {
             margin: 0 auto;
             width: 96%;
           }
+          .col-lg-6 {
+            width: 100% !important;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+          }
         }
       }
 
-      .ir-a-cuenta:nth-child(2) {
-        text-align: end;
-      }
-      .ir-a-cuenta:nth-child(3) {
-        padding-left: 1rem;
-      }
-
       .ir-a-cuenta {
-        height: 6rem;
+        height: 4rem;
         padding-top: 2rem;
         display: inline-block;
-        width: 49%;
+        width: 100%;
+        text-align: center;
+      }
+      .ir-a-cuenta:nth-child(2) {
+        order: 2;
+        margin-bottom: 2rem;
 
         .boton-ir-a-cuenta {
           background: #ffffff;
@@ -110,13 +117,29 @@ body.node--type-agendar-clase {
           }
         }
       }
+      .ir-a-cuenta:nth-child(3) {
+        order: 1;
+        .boton-ir-a-cuenta {
+          background-color: #2ff7ee;
+          color: black !important;
+          border: 2px solid #297e88;
+          border-radius: 28px;
+          padding: 0.5rem 1rem 0.5rem 1rem;
+          text-decoration: none;
+          font-weight: 700;
+          &:hover {
+            background-color: #297e88;
+            color: white !important;
+          }
+        }
+      }
     }
   }
 }
 
 @media only screen and (max-width: 700px) and (min-width: 340px) {
   #block-koala-content .node--type-agendar-clase {
-    .node__content{
+    .node__content {
       .cuadro {
         width: 100% !important;
         padding: 1rem 0rem 1.5rem 0rem;
@@ -132,19 +155,19 @@ body.node--type-agendar-clase {
             justify-content: center;
           }
         }
-        .col-md-12:nth-child(4){
-          top: 82%!important;
+        .col-md-12:nth-child(4) {
+          top: 82% !important;
         }
       }
     }
-    .ir-a-cuenta:nth-child(2){
-      text-align: start!important;
-      width: 54%!important;
+    .ir-a-cuenta:nth-child(2) {
+      text-align: center !important;
+      width: 100% !important;
     }
-    .ir-a-cuenta:nth-child(3){
-      text-align: end!important;
-      width: 44%!important;
-      padding-left: 0rem!important;
+    .ir-a-cuenta:nth-child(3) {
+      text-align: center !important;
+      width: 100% !important;
+      padding-left: 0rem !important;
     }
   }
 }
