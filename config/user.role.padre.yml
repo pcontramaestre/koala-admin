@@ -10,6 +10,7 @@ dependencies:
     - node.type.suscripciones
     - workflows.workflow.asignar_profesor
   module:
+    - admin_toolbar_search
     - commerce_order
     - commerce_payment
     - commerce_product
@@ -74,6 +75,7 @@ permissions:
   - 'use  The form mode default linked to  node entity( suscripciones )'
   - 'use  The form mode editar_hijo linked to  node entity( crear_hijos )'
   - 'use  The form mode editar_hijo linked to  user entity( user )'
+  - 'use admin toolbar search'
   - 'use asignar_profesor transition publish'
   - 'use node.agendando_clase form mode'
   - 'use node.agendar_clases form mode'

@@ -1,3 +1,0 @@
-'acceso clases content Profesor':
-  title: 'Acceder al contenido de las clases de Profesor'
-  restrict access: TRUE

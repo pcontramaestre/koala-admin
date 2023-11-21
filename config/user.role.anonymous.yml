@@ -6,6 +6,7 @@ dependencies:
     - filter.format.restricted_html
   module:
     - acceso_clases
+    - admin_toolbar_search
     - comment
     - commerce_checkout
     - commerce_product
@@ -27,6 +28,7 @@ permissions:
   - 'access content'
   - 'access site-wide contact form'
   - 'search content'
+  - 'use admin toolbar search'
   - 'use text format restricted_html'
   - 'view commerce_product'
   - 'view media'

@@ -17,6 +17,7 @@ dependencies:
     - node.type.metodos_de_pago
     - node.type.profesores
   module:
+    - admin_toolbar_search
     - comment
     - contact
     - content_translation
@@ -102,6 +103,7 @@ permissions:
   - 'use  The form mode default linked to  node entity( metodos_de_pago )'
   - 'use  The form mode editar_horarios linked to  node entity( horarios_de_trabajo )'
   - 'use  The form mode editar_metodos_de_pago linked to  node entity( metodos_de_pago )'
+  - 'use admin toolbar search'
   - 'use media.default form mode'
   - 'use node.default form mode'
   - 'use node.editar_horarios form mode'

@@ -4,6 +4,7 @@ status: true
 dependencies:
   module:
     - acceso_clases
+    - admin_toolbar_search
     - comment
     - commerce_checkout
     - commerce_order
@@ -64,6 +65,7 @@ permissions:
   - 'skip comment approval'
   - 'update own commerce_subscription'
   - 'use  The form mode editar_hijo linked to  user entity( user )'
+  - 'use admin toolbar search'
   - 'use user.editar_hijo form mode'
   - 'view any horarios_de_trabajo content'
   - 'view any horarios_profesores content'

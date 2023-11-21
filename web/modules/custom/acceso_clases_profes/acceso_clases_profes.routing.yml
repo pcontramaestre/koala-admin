@@ -1,7 +1,0 @@
-acceso_clases.clase_controller:
-  path: '/clases-profe'
-  defaults:
-    _controller: '\Drupal\acceso_clases_profes\Controller\ClaseController::contenidoClase'
-    _title: 'Clase Profesor'
-  requirements:
-    _permission: 'acceso clases content Profesor''

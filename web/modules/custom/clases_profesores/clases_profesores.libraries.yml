@@ -1,0 +1,8 @@
+clases-profesores:
+  version: 1.x
+  js:
+    js/clases_profesores.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupalSettings
+    - core/drupal

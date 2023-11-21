@@ -164,6 +164,17 @@ body.path-clases {
           border-radius: 15px;
           max-width: 1440px;
         }
+
+        .estrella-saliente {
+          position: absolute;
+          top: 2%;
+          left: 30%;
+          width: auto;
+          height: auto;
+          display: none;
+          justify-content: center;
+          align-items: center;
+        }
       }
     }
   }

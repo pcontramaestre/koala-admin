@@ -1,0 +1,8 @@
+acceso-clases-js:
+  version: 1.0
+  js:
+    js/acceso-clases.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/drupalSettings

@@ -5,6 +5,7 @@ dependencies:
   config:
     - node.type.koala_ninos
   module:
+    - admin_toolbar_search
     - date_recur_modular
     - field_permissions
     - fivestar
@@ -26,6 +27,7 @@ permissions:
   - 'date_recur_modular use sierra form'
   - 'edit own koala_ninos content'
   - 'rate content'
+  - 'use admin toolbar search'
   - 'view any agendar_clase content'
   - 'view any horarios_de_trabajo content'
   - 'view any horarios_profesores content'

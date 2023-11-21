@@ -1,7 +1,0 @@
-name: 'Acceso a Clases Profesores'
-type: module
-description: 'Módulo para mostrar clases en un iframe accesible por rol profesor'
-core_version_requirement: ^9 || ^10
-package: Custom
-dependencies:
-  - drupal:user

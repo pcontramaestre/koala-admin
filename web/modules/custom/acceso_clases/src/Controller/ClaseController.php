@@ -48,6 +48,11 @@ class ClaseController extends ControllerBase {
         '#url' => $url,
         '#rol' => 'hijo',
         '#cache' => ['max-age' => 0], // Deshabilitar caching para este contenido dinámico.
+        '#attached' => [
+          'library' => [
+            'acceso_clases/acceso-clases-js', // Asegúrate de que esto coincida con el nombre de la biblioteca definida en tu .libraries.yml
+          ],
+        ],
       ];
     } else {
       return [
@@ -55,6 +60,11 @@ class ClaseController extends ControllerBase {
         '#url' => $url,
         '#rol' => 'otro',
         '#cache' => ['max-age' => 0], // Deshabilitar caching para este contenido dinámico.
+        '#attached' => [
+          'library' => [
+            'acceso_clases/acceso-clases-js', // Asegúrate de que esto coincida con el nombre de la biblioteca definida en tu .libraries.yml
+          ],
+        ],
       ];
     }
   }

@@ -1,0 +1,17 @@
+clases_profesores.clases_profesor:
+  path: '/clasesprofesor'
+  defaults:
+    _controller: '\Drupal\clases_profesores\Controller\ClasesProfesoresController::content'
+    _title: 'Clases del Profesor'
+  requirements:
+    _permission: 'access content'
+clases_profesores.asignar_estrella:
+  path: '/clases-profesor/asignar-estrella'
+  defaults:
+    _controller: '\Drupal\clases_profesores\Controller\ClasesProfesoresController::asignarEstrella'
+    _title: 'Asignar Estrella'
+  methods:  [POST]
+  options:
+    _ajax: TRUE
+  requirements:
+    _permission: 'access content'
