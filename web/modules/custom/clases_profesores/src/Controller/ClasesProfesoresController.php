@@ -17,18 +17,22 @@ class ClasesProfesoresController extends ControllerBase {
     $url = $request->query->get('url');
     $idClase = $request->query->get('idClase');
     $field_pencil_id_profesor = $request->query->get('idprofesor');
+    $space_lync_url = $request->query->get('url');
+    $token_estudiante = api_pencil_connect_authorize_user($field_pencil_id_profesor,$space_lync_url);
+    $url_completa = $token_estudiante;
 
     //Validar que el usuario logueado sea el profesor de la clase y tenga permisos, el id de la clase sea la del usuario logueado.
 
     // Validar la URL. Por ejemplo, podrías asegurarte de que es una URL válida.
-    if (!$this->isValidURL($url)) {
-      throw new AccessDeniedHttpException('URL no válida.');
-    }
+    // if (!$this->isValidURL($url)) {
+    //   throw new AccessDeniedHttpException('URL no válida.');
+    // }
     //dump($url);
     //dump($idClase);
 
     // Convertir $idClase a entero
     $idClase = (int) $idClase;
+    $url = urldecode($url_completa);
 
     return [
       '#theme' => 'clases-profesores',

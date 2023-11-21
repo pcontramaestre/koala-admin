@@ -37,11 +37,7 @@
               // var audio = new Audio('/themes/custom/koala/audio/audio.mp3');
               // audio.play();
               // pausar 2 segundos
-              // document.addEventListener('visibilitychange', function() {
-              //   if (!document.hidden) {
-              //     reproducirAudio();
-              //   }
-              // });
+              reproducirAudio();
               // Si es diferente, actualizar el valor del localStorage
               localStorage.setItem(itemGuardar, cantidad);
               // Actualizar la vista    
@@ -61,10 +57,9 @@
         // Reproducir el audio
         var audio = new Audio('/themes/custom/koala/audio/audio.mp3');
         audio.play();
-        // Ocultar el elemento .estrella-saliente después de 2 segundos
-        setTimeout(function() {
-          $('.estrella-saliente').css('display', 'none');
-        }, 2000);
+        // Ocultar el elemento .estrella-saliente después de 2 segundos        
+        $('.estrella-saliente').css('display', 'none');
+        
       }
       
     }
