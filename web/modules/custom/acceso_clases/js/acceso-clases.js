@@ -57,9 +57,10 @@
         // Reproducir el audio
         var audio = new Audio('/themes/custom/koala/audio/audio.mp3');
         audio.play();
-        // Ocultar el elemento .estrella-saliente después de 2 segundos        
-        $('.estrella-saliente').css('display', 'none');
-        
+        // Ocultar el elemento .estrella-saliente después de 2 segundos
+        setTimeout(function() {
+          $('.estrella-saliente').css('display', 'none');
+        }, 2000);
       }
       
     }

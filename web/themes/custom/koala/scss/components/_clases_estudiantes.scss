@@ -163,6 +163,7 @@ body.path-clases {
           height: 80vh;
           border-radius: 15px;
           max-width: 1440px;
+          min-height: 600px;
         }
 
         .estrella-saliente {
@@ -245,4 +246,38 @@ body.path-clases {
     }
 }
 
+}
+
+
+body.path-clasesprofesor {
+  #header {
+    #navbar-main {
+      height: 3.2rem;
+    }
+  }
+  #main-wrapper  {
+    margin-top: 3.25rem !important;
+    background: #2a7e88;
+
+    > #main {
+      max-width: 90% !important;
+      width: 90% !important;
+      .clases-del-profesor {
+        margin: 0 auto;
+        margin-top: 2rem;
+        position: relative;
+        max-width: 1440px;
+
+        iframe {                    
+          height: 80vh;
+          border-radius: 15px;
+          max-width: 1440px;
+          min-height: 600px;
+        }
+      }
+    }
+  }
+  .site-footer {
+    display: none;
+  }
 }
