@@ -20,47 +20,60 @@
         setInterval(function () {
           $('.vista-estrellas-estudiantes').trigger('RefreshView');      
           
-          // Uso de localstorage para actualizar la vista
-          var idclase = $('.estrellas-recibidas').attr('id-clase');
-          var cantidad = $('.imgs-estrellas').attr('cantidad');
-          var itemGuardar = 'cantidad_' + idclase;
-          // Leer el valor del localStorage
-          var cantidadLocalStorage = localStorage.getItem(itemGuardar);
-          // Comprobar exitencia de localStorage
-          if (cantidadLocalStorage) {
-            console.log('El valor del localStorage es: ' + cantidadLocalStorage);
-            // Si existe, verificar si el valor es igual a la cantidad actual
-            if (cantidadLocalStorage != cantidad) {              
-              console.log('El valor del localStorage es diferente a la cantidad actual.');
-              $('.estrella-saliente').css('display', 'flex');
-              // Escuchar un mp3 de estrella saliente por 2 segundos
-              // var audio = new Audio('/themes/custom/koala/audio/audio.mp3');
-              // audio.play();
-              // pausar 2 segundos
-              reproducirAudio();
-              // Si es diferente, actualizar el valor del localStorage
+          $(document).ajaxComplete(function (event, xhr, settings) {
+
+              // Uso de localstorage para actualizar la vista
+            var idclase = $('.estrellas-recibidas').attr('id-clase');
+            var cantidad = $('.imgs-estrellas').attr('cantidad');
+            var itemGuardar = 'cantidad_' + idclase;
+            // Leer el valor del localStorage
+            var cantidadLocalStorage = localStorage.getItem(itemGuardar);
+            // Comprobar exitencia de localStorage
+            if (cantidadLocalStorage) {
+              console.log('El valor del localStorage es: ' + cantidadLocalStorage);
+              // Si existe, verificar si el valor es igual a la cantidad actual
+              if (cantidadLocalStorage != cantidad) {              
+                console.log('El valor del localStorage es diferente a la cantidad actual.');
+                //$('.estrella-saliente').css('display', 'flex');
+                
+                // Escuchar un mp3 de estrella saliente por 2 segundos
+                // var audio = new Audio('/themes/custom/koala/audio/audio.mp3');
+                // audio.play();
+                // pausar 2 segundos
+                //reproducirAudio();
+                $('.estrella-contenedor').addClass('mostrar').removeClass('nomostrar');
+                // Si es diferente, actualizar el valor del localStorage
+                localStorage.setItem(itemGuardar, cantidad);
+                // Actualizar la vista    
+                console.log('Se ha actualizado la vista.'); 
+                setTimeout(function() {
+                  //$('.estrella-saliente').css('display', 'none');
+                  $('.estrella-contenedor').addClass('nomostrar').removeClass('mostrar');
+                }, 2000);
+                
+              } else  {
+                //$('.estrella-saliente').css('display', 'none');
+                //$('.estrella-contenedor').addClass('nomostrar').removeClass('mostrar');
+              }
+            } else {
               localStorage.setItem(itemGuardar, cantidad);
-              // Actualizar la vista    
-              console.log('Se ha actualizado la vista.'); 
-              
-            } else  {
-              $('.estrella-saliente').css('display', 'none');
             }
-          } else {
-            localStorage.setItem(itemGuardar, cantidad);
-          }
-          $('.estrella-saliente').css('display', 'none');
+          });
+
+          
         }, 10000); // 10000 milisegundos == 10 segundos
       });
 
       function reproducirAudio() {
         // Reproducir el audio
-        var audio = new Audio('/themes/custom/koala/audio/audio.mp3');
-        audio.play();
+        //var audio = new Audio('/themes/custom/koala/audio/audio.mp3');
+        //audio.play();
         // Ocultar el elemento .estrella-saliente después de 2 segundos
+        $('.estrella-contenedor').addClass('mostrar').removeClass('nomostrar');
         setTimeout(function() {
           $('.estrella-saliente').css('display', 'none');
-        }, 2000);
+         // $('.estrella-contenedor').addClass('nomostrar').removeClass('mostrar');
+        }, 3000);
       }
       
     }
