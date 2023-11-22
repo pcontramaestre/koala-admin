@@ -1,4 +1,90 @@
 body.path-clases {
+  /* Estilo base de la estrella */
+  .estrella-contenedor {
+    position: absolute;
+    top: 2%;
+    left: 30%;
+    //animacion al display none y flex
+    transition: all 1s ease-in-out;
+    
+    &.nomostrar {
+      display: none;
+      transition: all 1s ease-in-out;
+    }
+
+    &.mostrar {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: all 1s ease-in-out;
+    }
+
+    .estrella {
+      margin: 50px 0;
+      position: relative;
+      display: block;
+      color: red;
+      width: 0px;
+      height: 0px;
+      border-right: 100px solid transparent;
+      border-bottom: 70px solid yellow;
+      border-left: 100px solid transparent;
+      transform: rotate(35deg);
+      animation: agrandarYReducir 4s infinite;
+      &.estrella-animada {
+        //animation: aparecerestrella 4s forwards;
+        animation: agrandarYReducir 4s infinite;
+      }
+    }
+    
+    /* Pseudoelemento ::before para la estrella */
+    .estrella::before {
+      border-bottom: 80px solid yellow;
+      border-left: 30px solid transparent;
+      border-right: 30px solid transparent;
+      position: absolute;
+      height: 0;
+      width: 0;
+      top: -45px;
+      left: -65px;
+      display: block;
+      content: '';
+      transform: rotate(-35deg);
+    }
+    
+    /* Pseudoelemento ::after para la estrella */
+    .estrella::after {
+      position: absolute;
+      display: block;
+      color: yellow;
+      top: 3px;
+      left: -105px;
+      width: 0px;
+      height: 0px;
+      border-right: 100px solid transparent;
+      border-bottom: 70px solid yellow;
+      border-left: 100px solid transparent;
+      transform: rotate(-70deg);
+      content: '';
+    }
+
+    .estrella-animada {
+      animation: aparecerestrella 1s forwards;
+    }
+  }
+  
+
+/* Definición de la animación para agrandar y reducir */
+@keyframes aparecerestrella {
+  0%, 100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+
   #header {
     #navbar-main {
       height: 3.2rem;
@@ -163,6 +249,18 @@ body.path-clases {
           height: 80vh;
           border-radius: 15px;
           max-width: 1440px;
+          min-height: 600px;
+        }
+
+        .estrella-saliente {
+          position: absolute;
+          top: 2%;
+          left: 30%;
+          width: auto;
+          height: auto;
+          display: none;
+          justify-content: center;
+          align-items: center;
         }
       }
     }
@@ -234,4 +332,38 @@ body.path-clases {
     }
 }
 
+}
+
+
+body.path-clasesprofesor {
+  #header {
+    #navbar-main {
+      height: 3.2rem;
+    }
+  }
+  #main-wrapper  {
+    margin-top: 3.25rem !important;
+    background: #2a7e88;
+
+    > #main {
+      max-width: 90% !important;
+      width: 90% !important;
+      .clases-del-profesor {
+        margin: 0 auto;
+        margin-top: 2rem;
+        position: relative;
+        max-width: 1440px;
+
+        iframe {                    
+          height: 80vh;
+          border-radius: 15px;
+          max-width: 1440px;
+          min-height: 600px;
+        }
+      }
+    }
+  }
+  .site-footer {
+    display: none;
+  }
 }
