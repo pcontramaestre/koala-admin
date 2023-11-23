@@ -15,3 +15,23 @@ clases_profesores.asignar_estrella:
     _ajax: TRUE
   requirements:
     _permission: 'access content'
+# clases_profesores.activar_clase:
+#   path: '/clases-profesor/activar-clase'
+#   defaults:
+#     _controller: '\Drupal\clases_profesores\Controller\ClasesProfesoresController::activarClase'
+#     _title: 'Activar Clase'
+#   methods:  [POST]
+#   options:
+#     _ajax: TRUE
+#   requirements:
+#     _permission: 'access content'
+# clases_profesores.desactivar_clase:
+#   path: '/clases-profesor/desactivar-clase'
+#   defaults:
+#     _controller: '\Drupal\clases_profesores\Controller\ClasesProfesoresController::desactivarClase'
+#     _title: 'Desactivar Clase'
+#   methods:  [POST]
+#   options:
+#     _ajax: TRUE
+#   requirements:
+#     _permission: 'access content'
