@@ -342,12 +342,14 @@ h2 {
       background-color: transparent;
       background-image: none;
       padding-right: 0em;
+      width: 50%;
+      margin-bottom: 1rem;
 
       .dropdown-language-item {
         border: none;
 
         .dropbutton-action {
-          height: 3rem;
+          padding: 0.4rem 0rem 0.4rem 0rem;
           background-color: $TurqK50;
           border-radius: 32px;
           a {
@@ -370,7 +372,7 @@ h2 {
             align-items: center;
             height: 100%;
             padding-left: 1rem;
-            font-size: 20px;
+            font-size: 16px;
 
             img {
               border-radius: 15px;
@@ -397,10 +399,8 @@ h2 {
         }
 
         .dropbutton-toggle {
-          background-color: $TurqK50;
           border-top-right-radius: 32px;
           border-bottom-right-radius: 32px;
-          height: 3rem;
           button {
             background-color: transparent;
             background-image: none;
@@ -430,7 +430,7 @@ h2 {
   }
 }
 
-@media only screen and (max-width: 600px) and (min-width: 340px) {
+@media only screen and (max-width: 800px) and (min-width: 340px) {
   .toast-container {
     width: 100%;
     .toast {
@@ -508,7 +508,7 @@ h2 {
         margin-top: 2rem;
         .dropdown-language-item {
           .dropbutton-action {
-            font-size: 1.2rem;
+            font-size: 1rem;
             span {
               img {
                 height: 1.2rem;
@@ -528,7 +528,7 @@ h2 {
   }
 }
 
-@media only screen and (max-width: 1199px) and (min-width: 601px) {
+@media only screen and (max-width: 1199px) and (min-width: 801px) {
   #header {
     #navbar-main {
       #CollapsingNavbar {
@@ -582,20 +582,19 @@ h2 {
       width: auto;
 
       .dropbutton-widget {
-        width: 50%;
+        width: 82%;
         border-radius: 40px;
+        margin-bottom: 1rem;
 
         .dropdown-language-item {
-          padding: 1rem 0rem;
-
           .dropbutton-action {
-            font-size: 1.5rem;
+            font-size: 1rem;
             height: auto;
 
             span {
               img {
-                height: 2rem;
-                width: 2rem;
+                height: 1rem;
+                width: 1rem;
               }
             }
 
@@ -608,7 +607,7 @@ h2 {
           }
 
           .dropbutton-toggle {
-            width: 3rem;
+            width: 2rem;
           }
         }
       }

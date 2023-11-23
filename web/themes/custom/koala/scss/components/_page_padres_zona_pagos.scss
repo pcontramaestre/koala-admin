@@ -757,7 +757,9 @@
       }
     }
     .view-clases-por-nino {
+      flex-direction: column;
       .vista-izquierda {
+        max-width: 100%!important;
         .select-suscription {
           margin-bottom: -0.5rem !important;
         }
