@@ -60,6 +60,7 @@
             }
           });
 
+          consultarClaseActiva(idclase);
           
         }, 10000); // 10000 milisegundos == 10 segundos
       });
@@ -74,6 +75,46 @@
           $('.estrella-saliente').css('display', 'none');
          // $('.estrella-contenedor').addClass('nomostrar').removeClass('mostrar');
         }, 3000);
+      }
+
+      /* 
+        Funcion para consular /clases-profesor/consultar-activa por ajax.        
+      */
+      function consultarClaseActiva(idClase) {
+        $.ajax({
+          url: Drupal.url('clases-profesor/consultar-activa'),
+          type: 'POST',
+          dataType: 'json',
+          data: {
+            idClase: idClase,
+          },
+          success: function (response) {
+            //$('#selector-para-mensajes').html(response[0].data);
+            console.log(response);
+            console.log(response[0].data);
+            var respuesta = response[0].data;
+            if (respuesta == '0') {
+              console.log('Clase no iniciada');
+              $('.cuadro-clases-noiniciada-finalizada').addClass('d-flex').removeClass('d-none');
+              $('.cuadro-clases-noiniciada-finalizada .titulo h1').text('Clase no iniciada');
+              $('.cuadro-clases-noiniciada-finalizada .texto strong').text('La clase aún no ha iniciado, por favor espera a que el profesor inicie la clase.');
+            } else if (respuesta == '1') {
+              console.log('Clase iniciada');
+              $('.cuadro-clases-noiniciada-finalizada').addClass('d-none').removeClass('d-flex');
+            } else if (respuesta == '2') {
+              console.log('Clase finalizada');
+              $('.cuadro-clases-noiniciada-finalizada').addClass('d-flex').removeClass('d-none');
+              $('.cuadro-clases-noiniciada-finalizada .titulo h1').text('Clase finalizada');
+              $('.cuadro-clases-noiniciada-finalizada .texto strong').text('La clase ha finalizado, gracias por tu participación.');
+            } else {
+              console.log('No se ha recibido respuesta');
+            }            
+          },
+          error: function (jqXHR, textStatus, errorThrown) {
+            console.log(errorThrown);
+            console.log(textStatus);                
+          }        
+        });
       }
       
     }

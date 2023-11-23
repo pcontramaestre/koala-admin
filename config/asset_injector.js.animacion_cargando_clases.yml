@@ -14,7 +14,7 @@ code: |-
     // Ocultar el div después de 10 segundos con una animación agradable
     setTimeout(function() {
       $('.container-cargando').removeClass('mostrar').addClass('ocultar');
-    }, 15000);  // 15000 milisegundos = 15 segundos
+    }, 7000);  // 15000 milisegundos = 15 segundos
   });
 noscript: ''
 noscriptRegion: {  }

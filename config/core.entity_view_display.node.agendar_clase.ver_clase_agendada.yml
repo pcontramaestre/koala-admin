@@ -6,6 +6,7 @@ dependencies:
     - core.entity_view_mode.node.ver_clase_agendada
     - field.field.node.agendar_clase.field_alumno_relacionado
     - field.field.node.agendar_clase.field_asignar_profesor
+    - field.field.node.agendar_clase.field_clase_activa
     - field.field.node.agendar_clase.field_clase_asignada
     - field.field.node.agendar_clase.field_estrellas_obtenidas
     - field.field.node.agendar_clase.field_fecha_cita_oculta
@@ -176,6 +177,7 @@ hidden:
   entity_print_view_epub: true
   entity_print_view_pdf: true
   entity_print_view_word_docx: true
+  field_clase_activa: true
   field_clase_asignada: true
   field_estrellas_obtenidas: true
   field_marcar_clase_como_finaliza: true

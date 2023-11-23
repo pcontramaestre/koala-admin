@@ -9,6 +9,9 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 use Drupal\Core\Ajax\AjaxResponse;
 use Drupal\Core\Ajax\HtmlCommand;
 use Drupal\node\Entity\Node;
+use Drupal\Core\Ajax\MessageCommand;
+// funcion api_pencil_connect_authorize_user esta en un modulo custom llamado api_pencil_connect
+
 
 class ClasesProfesoresController extends ControllerBase {
   
@@ -65,13 +68,13 @@ class ClasesProfesoresController extends ControllerBase {
       if ($estrellasActuales === 0 || $estrellasActuales === null || $estrellasActuales === '') {
         $node->set('field_estrellas_obtenidas', 1);
         $node->save();
-        $response->addCommand(new HtmlCommand('#selector-para-mensajes', 'Nueva cantidad: 1'));
+        $response->addCommand(new HtmlCommand('#selector-para-mensajes', 'Estrellas enviadas: 1 de 10'));
       } else {
 
         if ($estrellasActuales < 10) {
           $node->set('field_estrellas_obtenidas', $estrellasActuales + 1);
           $node->save();
-          $response->addCommand(new HtmlCommand('#selector-para-mensajes', 'Nueva cantidad: ' . ($estrellasActuales + 1)));
+          $response->addCommand(new HtmlCommand('#selector-para-mensajes', 'Estrellas enviadas: ' . ($estrellasActuales + 1). ' de 10'));
         } else {
           $message = 'No se pueden asignar más de 10 estrellas.';
           $this->messenger()->addMessage($this->t($message));
@@ -83,6 +86,102 @@ class ClasesProfesoresController extends ControllerBase {
       $response->addCommand(new HtmlCommand('#selector-para-mensajes', 'No se pudo encontrar la clase o el nodo no tiene el campo requerido.'));
     }
       
+    return $response;
+  }
+
+  public function activarClase(Request $request) {
+    $idClase = $request->request->get('idClase');
+
+    //Hay que chekear que el id de la clase sea la del usuario logueado, tenga permisos
+    // Crear una respuesta Ajax
+    $response = new AjaxResponse();
+
+    // Lógica para buscar el nodo y sumar la estrella.
+    $node = Node::load($idClase);
+
+    if ($node && $node->bundle() === 'agendar_clase') {
+      // save field_clase_activa field type boolean
+      $node->set('field_clase_activa', "1");
+      // $node->save();
+      
+      if ($node->save()) {
+        //$response->addCommand(new HtmlCommand('#selector-para-mensajes', 'Clase activada'));
+        $message = 'Clase activada con éxito.';
+        //$this->messenger()->addMessage($this->t($message));
+        $response->addCommand(new MessageCommand($message, NULL, ['type' => 'status']));
+
+      } else {
+        //$response->addCommand(new HtmlCommand('#selector-para-mensajes', 'No se pudo activar la clase'));
+        $message = 'No se pudo activar la clase.';
+        //$this->messenger()->addMessage($this->t($message));
+        $response->addCommand(new MessageCommand($message, NULL, ['type' => 'status']));
+      }
+    } else {
+      $response->addCommand(new HtmlCommand('#selector-para-mensajes', 'No se pudo encontrar la clase o el nodo no tiene el campo requerido.'));
+    }
+    return $response;
+  }
+
+  public function desactivarClase(Request $request) {
+    $idClase = $request->request->get('idClase');
+
+    //Hay que chekear que el id de la clase sea la del usuario logueado, tenga permisos
+    // Crear una respuesta Ajax
+    $response = new AjaxResponse();
+
+    // Lógica para buscar el nodo y sumar la estrella.
+    $node = Node::load($idClase);
+
+    if ($node && $node->bundle() === 'agendar_clase') {
+      // save field_clase_activa field type boolean
+      $node->set('field_clase_activa', "2");
+      //$node->save();
+      // Comprobamos que se ha guardado correctamente
+      if ($node->save()) {
+        $response->addCommand(new HtmlCommand('#selector-para-mensajes', 'Clase desactivada'));
+        $message = 'Clase desactivada con éxito.';
+        $this->messenger()->addMessage($this->t($message));
+        
+      } else {
+        $response->addCommand(new HtmlCommand('#selector-para-mensajes', 'No se pudo desactivar la clase'));
+        $message = 'No se pudo desactivar la clase.';
+        $this->messenger()->addMessage($this->t($message));
+      }
+    } else {
+      $response->addCommand(new HtmlCommand('#selector-para-mensajes', 'No se pudo encontrar la clase o el nodo no tiene el campo requerido.'));
+    }
+    return $response;
+  }
+
+  public function consultarClaseActiva(Request $request) {
+    $idClase = $request->request->get('idClase');
+
+    //Hay que chekear que el id de la clase sea la del usuario logueado, tenga permisos
+    // Crear una respuesta Ajax
+    $response = new AjaxResponse();
+
+    // Lógica para buscar el nodo y sumar la estrella.
+    $node = Node::load($idClase);
+
+    if ($node && $node->bundle() === 'agendar_clase') {
+      // save field_clase_activa field type boolean
+      $clase_activa = $node->get('field_clase_activa')->value;
+      //$node->save();
+      // Comprobamos que se ha guardado correctamente
+
+      //Clase activa son 0, 1 y 2
+      if ($clase_activa === '0') {
+        $response->addCommand(new HtmlCommand('#respuesta', '0'));
+      } else if ($clase_activa === '1') {
+        $response->addCommand(new HtmlCommand('#respuesta', '1'));
+      } else if ($clase_activa === '2') {
+        $response->addCommand(new HtmlCommand('#respuesta', '2'));
+      } else {
+        $response->addCommand(new HtmlCommand('#respuesta', 'No se pudo consultar la clase'));
+      }
+    } else {
+      $response->addCommand(new HtmlCommand('#selector-para-mensajes', 'No se pudo encontrar la clase o el nodo no tiene el campo requerido.'));
+    }
     return $response;
   }
 

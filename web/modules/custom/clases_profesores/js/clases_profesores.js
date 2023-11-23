@@ -11,14 +11,47 @@
           if (estado == 'activar') {
             $(this).data('estado', 'desactivar');
             $(this).text('Finalizar clase');
+            console.log('Clase activada');
+            $.ajax({
+              url: Drupal.url('clases-profesor/activar-clase'),
+              type: 'POST',
+              dataType: 'json',
+              data: {
+                idClase: idClase,
+              },
+              success: function (response) {
+                //$('#selector-para-mensajes').html(response[0].data);
+                console.log(response);                                
+              },
+              error: function (jqXHR, textStatus, errorThrown) {
+                console.log(errorThrown);
+                console.log(textStatus);                
+              }        
+            });
           }
           if (estado == 'desactivar') {
             $(this).data('estado', 'finalizada');
             $(this).text('Clase finalizada');
+            console.log('Clase desactivada');
             // disabled = true
             $(this).prop('disabled', true);
             $('#asignar-estrella').prop('disabled', true);
-
+            $.ajax({
+              url: Drupal.url('clases-profesor/desactivar-clase'),
+              type: 'POST',
+              dataType: 'json',
+              data: {
+                idClase: idClase,
+              },
+              success: function (response) {
+                //$('#selector-para-mensajes').html(response[0].data);
+                console.log(response);
+              },
+              error: function (jqXHR, textStatus, errorThrown) {                
+                console.log(errorThrown);
+                console.log(textStatus);
+              }        
+            });            
           }
         });
       });

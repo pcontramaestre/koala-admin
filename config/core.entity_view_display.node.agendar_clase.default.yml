@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.agendar_clase.field_alumno_relacionado
     - field.field.node.agendar_clase.field_asignar_profesor
+    - field.field.node.agendar_clase.field_clase_activa
     - field.field.node.agendar_clase.field_clase_asignada
     - field.field.node.agendar_clase.field_estrellas_obtenidas
     - field.field.node.agendar_clase.field_fecha_cita_oculta
@@ -74,6 +75,14 @@ content:
       link: true
     third_party_settings: {  }
     weight: 112
+    region: content
+  field_clase_activa:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 129
     region: content
   field_clase_asignada:
     type: entity_reference_label

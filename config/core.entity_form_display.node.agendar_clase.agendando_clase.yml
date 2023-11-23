@@ -6,6 +6,7 @@ dependencies:
     - core.entity_form_mode.node.agendando_clase
     - field.field.node.agendar_clase.field_alumno_relacionado
     - field.field.node.agendar_clase.field_asignar_profesor
+    - field.field.node.agendar_clase.field_clase_activa
     - field.field.node.agendar_clase.field_clase_asignada
     - field.field.node.agendar_clase.field_estrellas_obtenidas
     - field.field.node.agendar_clase.field_fecha_cita_oculta
@@ -148,6 +149,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
 hidden:
+  field_clase_activa: true
   field_clase_asignada: true
   field_estrellas_obtenidas: true
   field_fecha_de_la_cita: true

@@ -1,0 +1,21 @@
+uuid: db749497-be1b-417c-8087-f75fedec7535
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_clase_activa
+    - node.type.agendar_clase
+id: node.agendar_clase.field_clase_activa
+field_name: field_clase_activa
+entity_type: node
+bundle: agendar_clase
+label: 'Clase activa'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: '0'
+default_value_callback: ''
+settings: {  }
+field_type: string
