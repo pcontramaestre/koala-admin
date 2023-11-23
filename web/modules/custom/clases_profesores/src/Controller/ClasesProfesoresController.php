@@ -177,10 +177,10 @@ class ClasesProfesoresController extends ControllerBase {
       } else if ($clase_activa === '2') {
         $response->addCommand(new HtmlCommand('#respuesta', '2'));
       } else {
-        $response->addCommand(new HtmlCommand('#respuesta', 'No se pudo consultar la clase'));
+        $response->addCommand(new HtmlCommand('#respuesta', '0'));
       }
     } else {
-      $response->addCommand(new HtmlCommand('#selector-para-mensajes', 'No se pudo encontrar la clase o el nodo no tiene el campo requerido.'));
+      $response->addCommand(new HtmlCommand('#respuesta', 'No se pudo encontrar la clase o el nodo no tiene el campo requerido.'));
     }
     return $response;
   }
