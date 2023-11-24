@@ -46,7 +46,7 @@
                             background-image: url("/themes/custom/koala/images/icon-koalas.png");
                             position: absolute;
                             top: 65px;
-                            left: 151px;;
+                            left: 151px;
                           }
                           &:hover {
                             text-decoration: underline;
@@ -162,7 +162,7 @@
 
                                     .agendar-clase,
                                     a {
-                                      width: 190px;
+                                      min-width: 190px;
                                       height: 45px;
                                       background: #2ff7ee;
                                       border: 2px solid #297e88;
@@ -465,7 +465,7 @@
   }
 }
 
-@media (min-width: 300px) and (max-width: 800px) {
+@media (min-width: 300px) and (max-width: 1100px) {
   .path-padres {
     #page-wrapper {
       #main-wrapper {
@@ -481,7 +481,7 @@
                     .content {
                       .view-display-id-block_2 {
                         .view-header {
-                          top: 0%!important;
+                          top: 0% !important;
                           right: 0% !important;
                           left: 0%;
                           bottom: 91% !important;
@@ -494,6 +494,7 @@
                             color: transparent !important;
                             position: absolute;
                             right: 0% !important;
+                            overflow: hidden;
                             top: -48px !important;
                             background-color: white !important;
                             border: 1px solid #297e88;
@@ -536,7 +537,7 @@
                                       z-index: 10;
                                       .agendar-clase,
                                       a {
-                                        width: 100%!important;
+                                        width: 100% !important;
                                       }
                                     }
                                   }
@@ -555,21 +556,85 @@
         }
       }
     }
-    .view-resumen-de-clases{
+    .view-resumen-de-clases {
       padding-top: 2rem;
     }
     .view-id-logros_taxonomia.view-display-id-block_1 {
       .view-content.row {
-        padding: 1rem 1rem 1rem 0.3rem!important;
+        padding: 1rem 1rem 1rem 0.3rem !important;
       }
       .item-list-accordeon {
-        ul.listado-de-logros{
-          grid-template-columns: 1fr!important;
+        ul.listado-de-logros {
+          grid-template-columns: 1fr !important;
         }
       }
     }
-    #main-wrapper #main{
-      width: 94%!important;
+    #main-wrapper #main {
+      width: 94% !important;
+    }
+  }
+}
+@media (min-width: 768px) and (max-width: 1000px) {
+  .path-padres {
+    .view-resumen-de-clases {
+      padding-top: 2rem;
+      .resumen-clase {
+        .header {
+          flex-direction: column;
+          div:nth-child(1) {
+            order: 1;
+          }
+          div:nth-child(2) {
+            text-align: end;
+            margin-bottom: 0.5rem;
+          }
+        }
+      }
+    }
+  }
+}
+@media (min-width: 300px) and (max-width: 960px) {
+  .path-padres {
+    #page-wrapper {
+      #main-wrapper {
+        .container {
+          #block-koala-content {
+            .content {
+              .layout--onecol {
+                .layout__region--content {
+                  .block-views-blockmis-koalas-block-2 {
+                    .content {
+                      .view-display-id-block_2 {
+                        .view-content {
+                          #views-bootstrap-tab-views-bootstrap-mis-koalas-block-2 {
+                            .tab-content {
+                              .tab-pane {
+                                .views-field {
+                                  .field-content {
+                                    flex-direction: column;
+                                    width: 84%;
+                                    margin: 0 auto;
+                                    .boton-agendar{
+                                      height: 2rem;
+                                    }
+                                    .boton-agendar:last-child{
+                                      height: auto;
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
     }
   }
 }

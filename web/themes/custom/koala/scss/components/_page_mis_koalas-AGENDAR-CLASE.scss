@@ -117,7 +117,7 @@
                     }
 
                     .views-field-field-nombre-del-hijo {
-                      margin-left: 16%;
+                      margin-left: 3.625rem;
                       text-align: initial;
 
                       .views-label {
@@ -216,7 +216,7 @@
                         }
 
                         .views-field-field-nombre-del-hijo {
-                          margin-left: 16%;
+                          margin-left: 3.625rem;
                           text-align: initial;
 
                           .views-label {
@@ -267,6 +267,7 @@
                     font-weight: 700;
                     font-size: 1.25rem;
                     line-height: 27px;
+                    margin-bottom: 1rem;
                   }
                 }
 
@@ -476,5 +477,63 @@
         }
       }
     }
+  }
+}
+
+@media only screen and (max-width: 900px) and (min-width: 192px) {
+  .page-view-mis-koalas.path-padres #main {
+    .main-content
+      section.section
+      .view-mis-koalas.view-display-id-page_1
+      .view-footer
+      .view-id-mis_koalas.view-display-id-block_3 {
+      .view-empty {
+        display: none;
+      }
+      .view-filters {
+        max-width: 100% !important;
+        width: 96% !important;
+        margin: 0 auto;
+      }
+      .view-content {
+        width: 100% !important;
+        .view-mis-koalas {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          margin-top: -2rem;
+        }
+        .view-header-resultados {
+          text-align: center;
+        }
+        .view-content-detail {
+          grid-template-columns: 1fr 1fr;
+          display: grid!important;
+          .views-row {
+            min-width: 50%!important;
+            width: 100%!important;
+            .views-field-field-nombres-y-apellidos-del-pr {
+              .field-content{
+                margin-left: 0.3rem!important;
+                label img{
+                  margin-right: 0.3rem!important;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .view-footer #boton-agendamos-clase {
+      margin-top: 2rem !important;
+    }
+  }
+}
+@media only screen and (max-width: 1200px) and (min-width: 701px) {
+  .page-view-mis-koalas.path-padres #main .main-content section.section
+  .view-mis-koalas.view-display-id-page_1 .view-footer
+  .view-id-mis_koalas.view-display-id-block_3 .view-content .view-mis-koalas{
+    margin-top: 1rem!important;
   }
 }

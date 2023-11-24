@@ -44,7 +44,7 @@ footer.site-footer {
       .menu {
         list-style: none;
         font-weight: 700;
-        font-size: 1.2rem;
+        font-size: 1rem;
 
         .menu-item {
           margin-bottom: 1.7rem;
@@ -63,25 +63,20 @@ footer.site-footer {
       }
 
       .region-footer-second {
-        width: 27%;
+        width: 33%;
         height: 16rem;
 
         h2 {
-          font-size: 1rem;
+          font-size: 0.8rem;
           font-weight: 600;
           margin-bottom: 0.5rem;
-        }
-
-        ul {
-          padding-left: 1rem;
         }
 
         .config_pages--view-mode--correo- {
           .field--name-field-correo-electronico-footer {
             font-weight: 700;
-            font-size: 1.2rem;
+            font-size: 1rem;
             text-decoration: underline;
-            padding-left: 1rem;
 
             &:before {
               content: url("EnvelopeOpen.png");
@@ -94,11 +89,11 @@ footer.site-footer {
       }
 
       .region-footer-third {
-        width: 15%;
+        width: 25%;
         height: auto;
 
         h2 {
-          font-size: 1rem;
+          font-size: 0.8rem;
           font-weight: 600;
           margin-bottom: 0.5rem;
         }
@@ -116,7 +111,10 @@ footer.site-footer {
             font-weight: 500;
             margin-bottom: 2rem;
             .texto1 {
-              margin-right: 0.5rem;
+              margin-right: 1rem;
+            }
+            .texto2{
+              margin-right: 1rem;
             }
           }
         }
@@ -134,7 +132,7 @@ footer.site-footer {
         .no-admin.nav {
           list-style: none;
           font-weight: 700;
-          font-size: 1.2rem;
+          font-size: 1rem;
           display: block;
 
           .nav-item {
@@ -170,9 +168,8 @@ footer.site-footer {
           #block-correo {
             .field--name-body {
               .field--name-field-correo-electronico-footer {
-                margin-left: 1rem;
                 font-weight: 700;
-                font-size: 1.2rem;
+                font-size: 1rem;
                 text-decoration: underline;
 
                 &:before {
@@ -187,7 +184,7 @@ footer.site-footer {
         }
 
         .region-footer-third {
-          margin: 5.2rem;
+          margin: 5.2rem 0rem;
 
           #block-siguenosen {
             .view-content.row {
@@ -218,14 +215,14 @@ footer.site-footer {
                   border-radius: 32px;
                   background: #ffc2c4;
                   color: black;
-                  font-size: 20px;
+                  font-size: 16px;
                   font-weight: 700;
-                  margin-bottom: 0.5rem;
+                  margin-bottom: 1rem;
 
                   //Pantallas menores a 1200px
                   @media (max-width: 1200px) {
                     margin: 0 auto;
-                    margin-bottom: 2rem;
+                    margin-bottom: 1rem;
                   }
 
                   > div {
@@ -287,7 +284,7 @@ footer.site-footer {
   }
 }
 
-@media only screen and (max-width: 1199px) and (min-width: 192px) {
+@media only screen and (max-width: 800px) and (min-width: 192px) {
   .node-agendar-clases {
     footer.site-footer {
       .container {
@@ -333,68 +330,67 @@ footer.site-footer {
     }
   }
 
-    footer.site-footer {
-      .container {
-        .site-footer__top {
-          .no-admin.nav{
-            font-size: 16px!important;
-          }
-          .region-footer-first {
-            #block-logofooterhijos {
-              margin-left: 0rem!important;
-            }
-
-            #block-padres-2 {
-              margin-top: 2rem!important;
-            }
+  footer.site-footer {
+    .container {
+      .site-footer__top {
+        .no-admin.nav {
+          font-size: 16px !important;
+        }
+        .region-footer-first {
+          #block-logofooterhijos {
+            margin-left: 0rem !important;
           }
 
-          .region-footer-second {
-            margin-top: 0.5rem!important;
-            #block-correo {
-              .field--name-body {
-                .field--name-field-correo-electronico-footer {
-                  margin-left: 0rem;
-                }
-              }
-            }
+          #block-padres-2 {
+            margin-top: 2rem !important;
+          }
+        }
 
-            margin-top: 0rem;
-
-            .no-admin {
-              font-size: 16px!important;
-              .nav-item {
-                a {
-                  padding-right: 0rem;
-                }
+        .region-footer-second {
+          margin-top: 0.5rem !important;
+          #block-correo {
+            .field--name-body {
+              .field--name-field-correo-electronico-footer {
+                margin-left: 0rem;
               }
             }
           }
 
-          .region-footer-third {
-            margin-top: 0rem;
-            margin: 0rem!important;
+          margin-top: 0rem;
 
-            .block-dropdown-language {
-              .dropbutton-multiple {
-                .dropbutton-widget {
-                  margin-bottom: 0rem !important;
-                }
+          .no-admin {
+            font-size: 16px !important;
+            .nav-item {
+              a {
+                padding-right: 0rem;
               }
             }
+          }
+        }
 
-            #block-siguenosen {
-              .view-content.row {
-                margin-bottom: 2rem;
-                display: flex;
-                justify-content: center;
+        .region-footer-third {
+          margin-top: 0rem;
+          margin: 0rem !important;
+
+          .block-dropdown-language {
+            .dropbutton-multiple {
+              .dropbutton-widget {
+                margin-bottom: 0rem !important;
               }
+            }
+          }
+
+          #block-siguenosen {
+            .view-content.row {
+              margin-bottom: 2rem;
+              display: flex;
+              justify-content: center;
             }
           }
         }
       }
     }
-
+  }
 
   .rol-hijo {
     footer {
@@ -433,7 +429,7 @@ footer.site-footer {
 
         .region-footer-first {
           width: 100%;
-          --bs-gutter-x: 0rem!important;
+          --bs-gutter-x: 0rem !important;
         }
 
         .block-config-pages {
@@ -444,7 +440,7 @@ footer.site-footer {
 
         .region-footer-second {
           width: 100%;
-          --bs-gutter-x: 0rem!important;
+          --bs-gutter-x: 0rem !important;
 
           ul {
             padding-left: 0rem;
@@ -457,7 +453,7 @@ footer.site-footer {
 
         .region-footer-third {
           width: 100%;
-          --bs-gutter-x: 0rem!important;
+          --bs-gutter-x: 0rem !important;
 
           .block-dropdown-language {
             margin-top: 1.7rem;
@@ -476,10 +472,12 @@ footer.site-footer {
       .footer-bottom {
         .region-footer-bottom {
           #block-footerbanderas {
-            .footer-banderas {
-              flex-direction: column;
-              margin-top: 0rem !important;
-              line-height: 28px;
+            .field--name-body {
+              .footer-banderas {
+                flex-direction: column;
+                margin-top: 0rem !important;
+                line-height: 28px;
+              }
             }
           }
         }
@@ -515,6 +513,33 @@ footer.site-footer {
             .layout__region {
               .field--name-body {
                 font-weight: 500;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1200px) and (min-width: 801px) {
+  footer.site-footer {
+    .container {
+      .site-footer__top {
+        .region-footer-first {
+          #block-padres-2 {
+            margin-top: -4rem !important;
+          }
+        }
+      }
+      .footer-bottom {
+        .region-footer-bottom {
+          #block-footerbanderas {
+            .field--name-body {
+              .footer-banderas {
+                flex-direction: column;
+                line-height: 28px;
+                align-items: center;
               }
             }
           }
