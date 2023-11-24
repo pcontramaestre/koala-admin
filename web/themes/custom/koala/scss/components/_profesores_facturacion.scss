@@ -342,7 +342,6 @@
       font-size: 1rem;
       color: black;
       font-weight: 500;
-      width: 115%;
       margin-bottom: 0.5rem;
     }
 
@@ -352,11 +351,14 @@
       flex-direction: row;
       justify-content: space-between;
       pointer-events: none;
-
+      .dos-columnas-izquierda {
+        label {
+          width: 120%;
+        }
+      }
       label {
         font-size: 1rem;
         font-weight: 500;
-        width: 115%;
         margin-bottom: 0.5rem;
 
         &::after {
@@ -570,22 +572,25 @@
 @media (min-width: 300px) and (max-width: 800px) {
   .path-facturacion {
     .section {
-      #block-koala-content{
+      #block-koala-content {
         .tab-content {
           #nav-profile {
             .view-resumen-de-pagos {
-              .table-responsive{
+              .table-responsive {
                 table {
                   tbody {
                     tr {
-                      .views-field-title{
-                        min-width: 145px!important;
+                      .views-field-title {
+                        min-width: 145px !important;
                       }
-                      .views-field-field-fecha-de-la-clase{
-                        min-width: 197px!important;
+                      .views-field-field-fecha-de-la-clase {
+                        min-width: 197px !important;
                       }
-                      .views-field-field-sube-o-arrastra-tu-factura{
-                        min-width: 170px!important;
+                      .views-field-field-sube-o-arrastra-tu-factura {
+                        min-width: 200px !important;
+                      }
+                      .views-field-field-escribe-el-numero-de-tu-fa{
+                        min-width: 120px;
                       }
                     }
                   }
@@ -595,11 +600,11 @@
           }
         }
         .block-views-blockfacturacion-profesor-block-1 {
-          .content{
-            .nav-tabs{
-              width: 100%!important;
-              .nav-link{
-                font-size: 15px!important;
+          .content {
+            .nav-tabs {
+              width: 100% !important;
+              .nav-link {
+                font-size: 15px !important;
               }
             }
           }
@@ -621,12 +626,12 @@
           }
         }
       }
-      .derecha{
-        .form-actions{
-          position: initial!important;
+      .derecha {
+        .form-actions {
+          position: initial !important;
           width: 90vw;
-          button{
-            padding: 0rem 3rem!important;
+          button {
+            padding: 0rem 3rem !important;
           }
         }
       }
@@ -639,18 +644,81 @@
         width: 100% !important;
       }
       .doble-columna {
-        label {
-          width: 145%!important;
-          font-size: 15px!important;
+        .dos-columnas-izquierda {
+          label {
+            width: 145% !important;
+          }
         }
-        .dos-columnas-derecha{
-          label{
+        label {
+          font-size: 15px !important;
+        }
+        .dos-columnas-derecha {
+          label {
             margin-left: 1rem;
           }
         }
       }
-      label{
-        font-size: 15px!important;
+      label {
+        font-size: 15px !important;
+      }
+    }
+  }
+}
+@media (min-width: 801px) and (max-width: 1200px) {
+  .path-facturacion {
+    .vista-facturacion-formulario {
+      flex-direction: column;
+      .izquierda {
+        width: 98%;
+        margin: 0 auto;
+      }
+      .derecha {
+        width: 100%;
+      }
+    }
+    .section {
+      #block-koala-content {
+        .tab-content {
+          #nav-profile {
+            .view-resumen-de-pagos {
+              .table-responsive {
+                table {
+                  tbody {
+                    tr {
+                      .views-field-title {
+                        min-width: 145px !important;
+                      }
+                      .views-field-field-fecha-de-la-clase {
+                        min-width: 197px !important;
+                      }
+                      .views-field-field-sube-o-arrastra-tu-factura {
+                        min-width: 200px !important;
+                      }
+                      .views-field-field-escribe-el-numero-de-tu-fa{
+                        min-width: 120px;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+        .block-views-blockfacturacion-profesor-block-1 {
+          .content {
+            .nav-tabs {
+              width: 48% !important;
+            }
+          }
+        }
+      }
+    }
+    .vista-facturacion-formulario {
+      .derecha {
+        .form-actions {
+          position: initial !important;
+          width: 90vw;
+        }
       }
     }
   }
