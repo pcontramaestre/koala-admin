@@ -352,7 +352,7 @@
           font-weight: 500;
           margin-bottom: -0.7rem;
           line-height: 22px;
-          min-width: 300px;
+          min-width: 130%;
           .titulo {
             h4 {
               font-size: 16px;
@@ -368,14 +368,16 @@
   }
 }
 
-@media (min-width: 300px) and (max-width: 800px) {
+@media (min-width: 300px) and (max-width: 900px) {
   .path-profesor {
     .view-mis-koalas-profesores {
       .col-md-3{
         order: 2;
         margin-top: -3rem;
+        width: 100%!important;
       }
       .col-md-9 {
+        width: 100%!important;
         order: 1;
         .views-element-container {
           .view-id-logros_taxonomia.view-display-id-block_1 {

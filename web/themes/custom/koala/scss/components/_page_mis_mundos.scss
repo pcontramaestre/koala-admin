@@ -1,5 +1,5 @@
 .path-mis-mundos {
-  background: #ECF9FB;
+  background: #ecf9fb;
 
   .view-mis-mundos.view-display-id-block_1 {
     .view-header {
@@ -7,7 +7,7 @@
 
       .titulo {
         font-size: 1.5rem;
-        color    : black;
+        color: black;
         margin-bottom: 1rem;
 
         strong {
@@ -17,7 +17,7 @@
 
       .subtitulo {
         font-size: 1rem;
-        color    : black;
+        color: black;
         font-weight: 500;
       }
     }
@@ -25,64 +25,64 @@
     .view-content.row {
       .views-view-grid.horizontal {
         .views-row {
-          display        : flex;
-          flex-wrap      : wrap;
-          align-content  : center;
-          align-items    : center;
+          display: flex;
+          flex-wrap: wrap;
+          align-content: center;
+          align-items: center;
           justify-content: flex-start;
 
-          >div {
+          > div {
             .views-field-nothing {
               padding: 1rem;
 
               .categoria {
-                border       : 1px solid #BECACA;
+                border: 1px solid #becaca;
                 border-radius: 16px;
-                width: 290px;
+                width: 105%;
 
                 .imagen {
                   img {
-                    width                  : 100%;
-                    object-fit             : cover;
-                    min-height             : 150px;
+                    width: 100%;
+                    object-fit: cover;
+                    min-height: 150px;
                     border-top-right-radius: 16px;
-                    border-top-left-radius : 16px;
+                    border-top-left-radius: 16px;
                   }
                 }
 
                 .titulo-numero {
                   a {
-                    display                   : block;
-                    font-size                 : 1rem;
-                    width                     : 100%;
-                    background                : white;
-                    border-bottom-left-radius : 16px;
+                    display: block;
+                    font-size: 1rem;
+                    width: 100%;
+                    background: white;
+                    border-bottom-left-radius: 16px;
                     border-bottom-right-radius: 16px;
-                    padding                   : 8px 16px 8px 16px;
-                    color                     : black;
-                    text-decoration           : none;
-                    position                  : relative;
+                    padding: 8px 16px 8px 16px;
+                    color: black;
+                    text-decoration: none;
+                    position: relative;
 
                     &::before {
-                      display    : block;
-                      top        : 50%;
-                      left       : 93%;
-                      transform  : translate(-50%, -50%);
-                      font-size  : 1.2rem;
+                      display: block;
+                      top: 50%;
+                      left: 93%;
+                      transform: translate(-50%, -50%);
+                      font-size: 1.2rem;
                       font-weight: 600;
-                      position   : absolute;
-                      content    : "\F285";
-                      font-family: 'bootstrap-icons';
+                      position: absolute;
+                      content: "\F285";
+                      font-family: "bootstrap-icons";
                     }
 
                     .titulo {
                       font-weight: 700;
-                      font-size  : 24px;
-                      &:hover{
+                      font-size: 24px;
+                      &:hover {
                         text-decoration: underline;
                       }
                     }
-                    .nro{
+                    .nro {
                       font-weight: 500;
                       color: black;
                     }
@@ -97,4 +97,33 @@
   }
 }
 
-/* Vector */
+@media (min-width: 700px) and (max-width: 900px) {
+  .path-mis-mundos
+    .view-mis-mundos.view-display-id-block_1
+    .view-content.row
+    .views-view-grid.horizontal
+    .views-row
+    .views-col {
+    width: 33% !important;
+  }
+}
+@media (min-width: 420px) and (max-width: 700px) {
+  .path-mis-mundos
+    .view-mis-mundos.view-display-id-block_1
+    .view-content.row
+    .views-view-grid.horizontal
+    .views-row
+    .views-col {
+    width: 50% !important;
+  }
+}
+@media (min-width: 300px) and (max-width: 420px) {
+  .path-mis-mundos
+    .view-mis-mundos.view-display-id-block_1
+    .view-content.row
+    .views-view-grid.horizontal
+    .views-row
+    .views-col {
+    width: 100% !important;
+  }
+}

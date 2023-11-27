@@ -498,7 +498,6 @@
 
     @media screen and (max-width: 800px) {
       padding-left: 0rem;
-      
     }
 
     .form-switch .form-check-input {
@@ -521,7 +520,6 @@
 
           @media screen and (max-width: 800px) {
             margin-left: 0rem;
-            
           }
 
           &:before {
@@ -567,11 +565,9 @@
       }
 
       .form-check-label {
-
         @media screen and (max-width: 800px) {
           font-size: 12px;
           height: 100%;
-          
         }
 
         .views-field-nothing {
@@ -586,7 +582,7 @@
             cursor: pointer;
 
             &.active {
-              background: #2FF7EE;
+              background: #2ff7ee;
               box-shadow: 0px 0px 7px 1px #167672;
             }
 
@@ -648,6 +644,7 @@
     #main-wrapper
     #block-koala-content
     .layout__region--first {
+    flex: 0 1 100% !important;
     .block-views-blockhijo-block-1 .view-hijo .views-row {
       .views-field-user-picture {
         margin-right: 16px;
@@ -663,7 +660,11 @@
       display: none;
     }
   }
+  .layout__region--second {
+    flex: 0 1 100% !important;
+  }
   .layout__region--third {
+    flex: 0 1 100% !important;
     position: relative;
     .view-koalas-avatares-ninos {
       .views-field-nothing {
@@ -683,6 +684,51 @@
         .views-field-nothing-1 {
           margin: 0 auto;
         }
+      }
+    }
+  }
+
+  .page-view-koalas-avatares-ninos {
+    .layout__region--first {
+      flex: 0 1 100% !important;
+    }
+  }
+}
+
+@media (min-width: 800px) and (max-width: 1199px) {
+  .path-hijo:not(.page-view-koalas-avatares-ninos)
+    #main-wrapper
+    #block-koala-content {
+    .layout__region--first {
+      flex: 0 1 50% !important;
+    }
+    .layout__region--second {
+      flex: 0 1 50% !important;
+    }
+    .layout__region--third {
+      flex: 0 1 100% !important;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      .block-views .view-id-koalas_avatares_ninos {
+        .views-field-nothing-1 {
+          margin: 0 auto;
+          margin-bottom: 1rem;
+        }
+        .views-field-nothing {
+          .estrella {
+            margin: 0 auto;
+          }
+        }
+      }
+    }
+  }
+
+  .page-view-koalas-avatares-ninos {
+    .layout--twocol-section {
+      flex-wrap: nowrap !important;
+      .layout__region--second {
+        padding-left: 0rem !important;
       }
     }
   }
