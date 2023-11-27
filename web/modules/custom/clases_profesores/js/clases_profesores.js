@@ -68,7 +68,7 @@
           },
           success: function (response) {
             // La lógica para actualizar la interfaz aquí
-            // console.log(response);
+            console.log(response);
             // console.log('Se ha asignado la estrella a la clase.');
             /*
               Response:
