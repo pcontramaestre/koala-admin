@@ -126,6 +126,16 @@
             .field--name-field-fecha-cita-oculta {
               display: none;
             }
+            label {
+              font-weight: 500;
+              color: black;
+              margin-bottom: 0.5rem;
+            }
+            input {
+              border: 2px solid #becaca;
+              border-radius: 32px;
+              color: black;
+            }
           }
 
           //Formulario
@@ -158,7 +168,6 @@
 
           .alumno-seleccionado {
             .datos-del-koala {
-              width: 75%;
               margin-left: 0rem;
               border: 2px solid #e6f1f1;
               border-radius: 24px;
@@ -176,6 +185,7 @@
                     background-image: url(/themes/custom/koala/images/Profile-icon-Koala.png);
                     display: -webkit-inline-box;
                     margin-right: 0.5rem;
+                    background-repeat: no-repeat;
                   }
                   &:after {
                     content: "\f078";
@@ -186,7 +196,7 @@
                 }
               }
               .imagen-profesor {
-                width: 44px;
+                width: 15%;
                 background-color: #f5f8d8;
                 padding: 0.5rem 0rem 0.5rem 0.5rem;
                 border-bottom-left-radius: 24px;
@@ -207,6 +217,7 @@
                 align-items: center;
                 border-bottom-right-radius: 24px;
                 border-top-right-radius: 24px;
+                width: 85%;
                 h2 {
                   font-size: 16px;
                   font-weight: 700;
@@ -250,11 +261,11 @@
   }
 }
 
-@media only screen and (max-width: 1200px) and (min-width: 550px){
+@media only screen and (max-width: 1200px) and (min-width: 550px) {
   .path-node.rol-padre {
     form.node-agendar-clase-agendando-clase-form.node-form {
       .content {
-        .derecha{
+        .derecha {
           .formulario {
             #select-horario {
               .horario {
@@ -271,11 +282,11 @@
     }
   }
 }
-@media only screen and (max-width: 550px) and (min-width: 441px){
+@media only screen and (max-width: 550px) and (min-width: 441px) {
   .path-node.rol-padre {
     form.node-agendar-clase-agendando-clase-form.node-form {
       .content {
-        .derecha{
+        .derecha {
           .formulario {
             #select-horario {
               .horario {
@@ -292,11 +303,11 @@
     }
   }
 }
-@media only screen and (max-width: 440px) and (min-width: 300px){
+@media only screen and (max-width: 440px) and (min-width: 300px) {
   .path-node.rol-padre {
     form.node-agendar-clase-agendando-clase-form.node-form {
       .content {
-        .derecha{
+        .derecha {
           .formulario {
             #select-horario {
               .horario {
@@ -314,7 +325,7 @@
   }
 }
 
-@media only screen and (max-width: 1100px) and (min-width: 767px){
+@media only screen and (max-width: 1100px) and (min-width: 767px) {
   .path-node.rol-padre {
     form.node-agendar-clase-agendando-clase-form.node-form {
       .content {
@@ -337,7 +348,7 @@
   }
 }
 
-@media only screen and (max-width: 767px) and (min-width: 300px){
+@media only screen and (max-width: 767px) and (min-width: 300px) {
   .path-node.rol-padre {
     form.node-agendar-clase-agendando-clase-form.node-form {
       .content {
@@ -351,15 +362,20 @@
                 .nombres-profesor {
                   width: 76%;
                 }
-                .presentacion-profesor{
+                .presentacion-profesor {
                   text-align: center;
                 }
               }
             }
           }
-          .view-profesor-agendar-clase .views-field-field-tu-video-{
+          .view-profesor-agendar-clase .views-field-field-tu-video- {
             text-align: center;
+            margin-bottom: 1rem;
           }
+        }
+        .derecha .layout-region-node-footer .alumno-seleccionado .datos-del-koala{
+          width: 100%!important;
+          margin-bottom: 1rem;
         }
       }
     }
