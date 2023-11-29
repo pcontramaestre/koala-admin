@@ -553,15 +553,16 @@
               }
               .js-form-type-select {
                 .country-select:nth-child(2) {
-                  border-radius: 32px;
-                  padding: 0rem 1rem;
-                  width: 17%;
-                  display: flex;
-                  border: 2px solid #becaca;
-                  align-items: center;
-                  float: left;
-                  height: 3rem;
-                  margin-right: 2%;
+                  display: none;
+                  // border-radius: 32px;
+                  // padding: 0rem 1rem;
+                  // width: 17%;
+                  // display: flex;
+                  // border: 2px solid #becaca;
+                  // align-items: center;
+                  // float: left;
+                  // height: 3rem;
+                  // margin-right: 2%;
                   .phone-number-flag {
                     border-radius: 10px;
                   }
@@ -573,7 +574,7 @@
                 .country-select:nth-child(3) {
                   border: none;
                   height: auto;
-                  width: 33%;
+                  width: 45%;
                   float: left;
                   border: none;
                   margin-right: 2%;
@@ -645,7 +646,7 @@
               .js-form-type-textfield {
                 margin-top: -1rem;
                 input {
-                  width: 46%;
+                  width: 53%;
                 }
               }
             }
