@@ -1,4 +1,7 @@
 body.path-clases {
+  #header {
+    display: none;
+  }
   /* Estilo base de la estrella */
   .estrella-contenedor {
     position: absolute;
@@ -86,22 +89,26 @@ body.path-clases {
 
 
   #header {
+    display: none;
     #navbar-main {
       height: 3.2rem;
     }
   }
   #main-wrapper  {
-    margin-top: 3.25rem !important;
+    margin-top: 0 !important;
     background: #2a7e88;
+    min-height: 100vh !important;
+    display: flex;
+    align-items: center;;
 
     > #main {
-      max-width: 90% !important;
-      width: 90% !important;
+      max-width: 95% !important;
+      width: 95% !important;
       .iframe-clase {
         margin: 0 auto;
-        margin-top: 2rem;
+        margin-top: 0rem;
         position: relative;
-        max-width: 1440px;
+        max-width: 100%;
 
         .cuadro-superpuesto {
           position: absolute;
@@ -246,9 +253,9 @@ body.path-clases {
         }
 
         iframe {                    
-          height: 80vh;
+          height: 90vh;
           border-radius: 15px;
-          max-width: 1440px;
+          max-width: 100%;
           min-height: 600px;
         }
 
