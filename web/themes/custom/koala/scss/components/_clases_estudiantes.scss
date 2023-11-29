@@ -120,7 +120,11 @@ body.path-clases {
           flex-direction: row;
           justify-content: center;
           align-items: center;
-          background: white;                  
+          background: white;   
+          @media only screen and (min-width: 1024px) and (max-width: 1280px) {
+            width: calc(100% - (100vh - 638px));
+            height: 25vh;
+          }
           @media only screen and (min-width: 1280px) and (max-width: 1291px) {
             height: 24%;
             width: calc(100% - 195px);
@@ -138,7 +142,7 @@ body.path-clases {
             width: calc(100% - 195px);
           }
           @media only screen and (min-width: 1358px) and (max-width: 1379px) {
-            height: 20%;
+            height: 23vh;
             width: calc(100% - 195px);
           }
           @media only screen and (min-width: 1380px) and (max-width: 1401px) {
