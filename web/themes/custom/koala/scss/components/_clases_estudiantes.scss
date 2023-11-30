@@ -182,16 +182,14 @@ body.path-clases {
             height: calc(100% - (100vh - 107px));
           }  
 
-          @media only screen and (max-height: 550px) { 
-            .cuadro-menor-1280 {
-              display: block !important;
-            }
-          }
-
-          @media only screen and (min-width: 1280px) and (min-height: 690px) { 
+          @media only screen and (min-width: 1280px) and (max-width:1340px) and (min-height: 690px) { 
             width: calc(100% - 195px);
-            //height: calc(100% - (100vh - 132px));
-            height: calc(100% - (100vh - 21vh));
+            //height: calc(100% - (100vh - 21vh));
+            height: calc(100% - 80vh);
+          }
+          @media only screen and (min-width: 1340px) and (min-height: 690px) { 
+            width: calc(100% - 195px);
+            height:calc(100% - 82vh);
           }
 
           @media only screen and (min-width: 1280px) and (min-height: 720px) { 
