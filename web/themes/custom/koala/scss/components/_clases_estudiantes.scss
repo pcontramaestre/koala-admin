@@ -385,17 +385,19 @@ body.path-clasesprofesor {
     align-items: center;
 
     > #main {
-      max-width: 95% !important;
+      max-width: 1824px !important;
       width: 95% !important;
+      max-height: 970px !important;
+
       .clases-del-profesor {
         margin: 0 auto;
         position: relative;
         max-width: 95%;
 
         iframe {                    
-          height: 85vh;
+          height: 90vh;
           border-radius: 15px;
-          max-width: 95%;
+          max-width: 100%;
           min-height: 600px;
         }
       }
