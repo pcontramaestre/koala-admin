@@ -176,11 +176,12 @@ body.path-clases {
           @media only screen and (max-height: 604px) { 
             width: calc(100% - (100vh - 450px));
             min-height: 25vh;           
+            max-width: calc(100% - 151px);
           }
 
           @media only screen and (max-height: 550px) { 
             .cuadro-menor-1280 {
-              display: block;
+              display: block !important;
             }
           }
 
