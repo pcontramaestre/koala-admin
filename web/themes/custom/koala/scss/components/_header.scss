@@ -238,7 +238,7 @@ body #main-wrapper {
 @media (min-width: 300px) and (max-width: 1199px) {
   #header {
     #navbar-main {
-      padding: 0rem 1rem!important;
+      padding: 0rem 1rem !important;
 
       .navbar-toggler {
         padding-right: 0px;
@@ -257,6 +257,23 @@ body #main-wrapper {
 
   #header {
     #navbar-main {
+      div {
+        .navbar-toggler {
+          display: flex;
+          align-items: center;
+          .navbar-toggler-icon {
+            background-image: none !important;
+            display: none;
+          }
+          &:before {
+            content: url("");
+            background-image: url("../images/List.png");
+            height: 32px;
+            width: 32px;
+            display: block;
+          }
+        }
+      }
       #CollapsingNavbar {
         #block-koala-account-menu .nav {
           gap: 0px;
@@ -271,7 +288,7 @@ body #main-wrapper {
               width: 100%;
               text-align: center;
               margin-top: 1rem;
-              margin-left: 0rem!important;
+              margin-left: 0rem !important;
 
               .nav-item {
                 margin-bottom: 2rem;
@@ -357,12 +374,12 @@ body #main-wrapper {
       }
     }
   }
-  #header #navbar-main #CollapsingNavbar .offcanvas-body{
+  #header #navbar-main #CollapsingNavbar .offcanvas-body {
     flex-direction: column;
-    justify-content: flex-start!important;
-    .block-dropdown-language{
-      .dropbutton-widget{
-        width: auto!important;
+    justify-content: flex-start !important;
+    .block-dropdown-language {
+      .dropbutton-widget {
+        width: auto !important;
       }
     }
   }
