@@ -173,9 +173,15 @@ body.path-clases {
             max-width: calc(100% - 120px);
           }
 
-          @media only screen and (max-height: 601px) { 
+          @media only screen and (max-height: 604px) { 
             width: calc(100% - (100vh - 450px));
             min-height: 25vh;           
+          }
+
+          @media only screen and (max-height: 550px) { 
+            .cuadro-menor-1280 {
+              display: block;
+            }
           }
 
           .views-element-container {
