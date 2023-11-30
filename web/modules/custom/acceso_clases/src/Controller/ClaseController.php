@@ -3,7 +3,11 @@
 namespace Drupal\acceso_clases\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
+use Drupal\Core\Ajax\AjaxResponse;
+use Drupal\Core\Ajax\HtmlCommand;
+use Drupal\node\Entity\Node;
 use Symfony\Component\HttpFoundation\Request;
+
 
 class ClaseController extends ControllerBase {
   public function contenidoClase(Request $request) {
@@ -67,6 +71,16 @@ class ClaseController extends ControllerBase {
         ],
       ];
     }
+  }
+
+  // function consultaClase
+  function consultaClase(Request $request) {
+    $response = new AjaxResponse();
+    $idClase = $request->query->get('idClase');
+    if ($request->isXmlHttpRequest()) {      
+      $node = Node::load($idClase);
+    }
+    return $response;
   }
 }
 

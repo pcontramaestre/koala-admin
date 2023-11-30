@@ -5,3 +5,10 @@ acceso_clases.clase_controller:
     _title: 'Clase'
   requirements:
     _permission: 'acceso clases content'
+acceso_clases.clase_consulta:
+  path: '/clases/consulta/{id}'
+  defaults:
+    _controller: '\Drupal\acceso_clases\Controller\ClaseController::consultaClase'
+    _title: 'Consulta Clase'
+  requirements:
+    _permission: 'acceso clases content'
