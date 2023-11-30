@@ -172,6 +172,12 @@ body.path-clases {
             // width: calc(100% - (100vh - 541px));            
             max-width: calc(100% - 120px);
           }
+
+          @media only screen and (max-height: 601px) { 
+            width: calc(100% - (100vh - 450px));
+            min-height: 25vh;           
+          }
+
           .views-element-container {
             width: 100%;
 
@@ -269,6 +275,8 @@ body.path-clases {
           background: white;
           width: 100%;
           height: 100%;
+
+
         }
 
         iframe {                    
@@ -297,6 +305,8 @@ body.path-clases {
           width: 100%;
           height: 100%;
           display: flex;
+
+
         }
       }
     }
