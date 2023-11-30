@@ -75,10 +75,20 @@ class ClaseController extends ControllerBase {
 
   // function consultaClase
   function consultaClase(Request $request) {
+    $idClase = $request->request->get('idClase');
     $response = new AjaxResponse();
-    $idClase = $request->query->get('idClase');
+    //$idClase = $request->query->get('idClase');
     if ($request->isXmlHttpRequest()) {      
       $node = Node::load($idClase);
+      if ($node && $node->bundle() === 'agendar_clase' && $node->hasField('field_estrellas_obtenidas')) {
+        $estrellas = $node->get('field_estrellas_obtenidas')->value;
+        if ($estrellas == null || $estrellas == '' || $estrellas == 0) {
+          $estrellas = 0;
+        }        
+        $response->addCommand(new HtmlCommand('#estrellas', $estrellas));
+      } else {
+        $response->addCommand(new HtmlCommand('#estrellas', 'No se pudo encontrar la clase o el nodo no tiene el campo requerido.'));
+      }
     }
     return $response;
   }
