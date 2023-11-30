@@ -75,7 +75,7 @@ class ClaseController extends ControllerBase {
 
   // function consultaClase
   function consultaClase(Request $request) {
-    $idClase = $request->request->get('idClase');
+    $idClase = $request->request->get('id');
     $response = new AjaxResponse();
     //$idClase = $request->query->get('idClase');
     if ($request->isXmlHttpRequest()) {      
