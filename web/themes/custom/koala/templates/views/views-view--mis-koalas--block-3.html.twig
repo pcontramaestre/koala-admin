@@ -65,8 +65,13 @@
 		<div class="view-content row">
 			{{ drupal_view('mis_koalas', 'block_7_cuadro_koala') }}
 			<div class="view-header-resultados">
-				<div class="titulo-profesores">Profesores recomendados</div>
-				<div>Selecciona a tu profesor para agendar y ver más información sobre su perfil
+				{% if current_language == 'es' %}
+					<div class="titulo-profesores">Profesores recomendados</div>
+					<div>Selecciona a tu profesor para agendar y ver más información sobre su perfil
+				{% else %}
+					<div class="titulo-profesores">Recommended teachers</div>
+					<div>Select your teacher to schedule and see more information about their profile
+				{% endif %}
 				</div>
 			</div>
 

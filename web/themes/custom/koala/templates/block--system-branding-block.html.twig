@@ -26,7 +26,11 @@
     </a>
   {% endif %}
   {% if 'profesor' in user.getroles(TRUE)  %}
-    <a href="/profesor" title="{{ 'Home'|t }}" rel="home" class="navbar-brand">
+      {% if current_language == 'es' %}
+        <a href="/profesor" title="{{ 'Home'|t }}" rel="home" class="navbar-brand">
+      {% else %}
+        <a href="/en/profesor" title="{{ 'Home'|t }}" rel="home" class="navbar-brand">
+      {% endif %}
       {% if site_logo %}
         <img src="{{ site_logo }}" alt="{{ 'Home'|t }}" class="img-fluid d-inline-block align-top" />
       {% endif %}
@@ -34,7 +38,11 @@
     </a>
   {% endif %}
   {% if 'padre' in user.getroles(TRUE)  %}
-    <a href="/padres" title="{{ 'Home'|t }}" rel="home" class="navbar-brand">
+      {% if current_language == 'es' %}
+        <a href="/padres" title="{{ 'Home'|t }}" rel="home" class="navbar-brand">
+      {% else %}
+        <a href="/en/padres" title="{{ 'Home'|t }}" rel="home" class="navbar-brand">
+      {% endif %}
       {% if site_logo %}
         <img src="{{ site_logo }}" alt="{{ 'Home'|t }}" class="img-fluid d-inline-block align-top" />
       {% endif %}
