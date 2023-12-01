@@ -211,11 +211,31 @@ body.path-clases {
           }
           @media only screen and (min-width: 1280px) and (min-height: 900px) { 
             width: calc(100% - 195px);
-            height:calc(100% - 83vh);
+            height:calc(100% - 80vh);
           }
 
+          @media only screen and (min-width: 1500px) and (min-height: 910px) { 
+            width: calc(100% - 195px);
+            height: 137px;
+          }
+          @media only screen and (min-width: 1400px) and (max-width:1450px) and (min-height: 910px) { 
+            width: calc(100% - 195px);
+            height: 164px;
+          }
+          @media only screen and (min-width: 1350px) and (max-width:1400px) and (min-height: 910px) { 
+            width: calc(100% - 195px);
+            height: 172px;
+          }
+          @media only screen and (min-width: 1300px) and (max-width:1350px) and (min-height: 910px) { 
+            width: calc(100% - 195px);
+            height: 187px;
+          }
+          @media only screen and (min-width: 1280px) and (max-width:1300px) and (min-height: 910px) { 
+            width: calc(100% - 195px);
+            height: 195px;
+          }
 
-
+          // Pantallas a 1280px a 1300px de ancho. Con un alto 
 
 
 
@@ -325,7 +345,7 @@ body.path-clases {
           border-radius: 15px;
           max-width: 100%;
           min-height: 600px;
-          max-height: 1024px;
+          max-height: 900px;
         }
 
         .estrella-saliente {
