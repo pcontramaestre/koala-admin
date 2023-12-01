@@ -85,20 +85,37 @@
 	<div{{content_attributes.addClass('node__content','clearfix')}}>
 		<div class="superior text-center">
 			<img src="/themes/custom/koala/images/perfecto.png">
-			<h2>¡Perfecto! Lo has conseguido</h2>
-			<p>Te hemos enviado un correo con los detalles de tu clase</p>						
+			{% if current_language == 'es' %}
+				<h2>¡Perfecto! Lo has conseguido</h2>
+				<p>Te hemos enviado un correo con los detalles de tu clase</p>						
+			{% else %}
+				<h2>Perfect! You did it</h2>
+				<p>We have sent you an email with the details of your class</p>
+			{% endif %}
 		</div>
 		<div class="cuadro row">
 			<div class="col-12">
 				{% if (tipo_clase == 'Paga' )  %}
-					<h3>{{ 'Tu clase ha sido reservada'|t }}</h3>
+					{% if current_language == 'es' %}
+						<h3>{{ 'Tu clase ha sido reservada'|t }}</h3>
+					{% else %}
+						<h3>{{ 'Your class has been booked'|t }}</h3>
+					{% endif %}
 				{% else %}
-					<h3>{{ 'Tu clase gratuita ha sido reservada'|t }}</h3>
+					{% if current_language == 'es' %}
+						<h3>{{ 'Tu clase gratuita ha sido reservada'|t }}</h3>
+					{% else %}
+						<h3>{{ 'Your free class has been booked'|t }}</h3>
+					{% endif %}
 				{% endif %}
 			</div>
 			<div class="col-md-12 col-lg-6">
 				<div>
-					<h4>{{ 'Alumno'|t }}</h4>
+					{% if current_language == 'es' %}
+						<h4>{{ 'Alumno'|t }}</h4>
+					{% else %}
+						<h4>{{ 'Student'|t }}</h4>
+					{% endif %}
 				</div>
 				<div>
 					<p>{{ content.field_nombre_del_nino_a.0 }}</p>
@@ -106,7 +123,11 @@
 			</div>
 			<div class="col-md-12 col-lg-6">
 				<div>
-					<h4>{{ 'Fecha'|t }}</h4>
+					{% if current_language == 'es' %}
+						<h4>{{ 'Fecha'|t }}</h4>
+					{% else %}
+						<h4>{{ 'Date'|t }}</h4>
+					{% endif %}
 				</div>
 				<div>
 					<p>{{ content.field_fecha_cita_oculta.0 }}</p>
@@ -133,15 +154,27 @@
 	
 	{% if (tipo_clase == 'Paga' )  %}
 		<div class="ir-a-cuenta w-100 text-center">
-			<a href="/padres" class="boton-ir-a-cuenta">Ir a mi cuenta</a>
+			{% if current_language == 'es' %}
+				<a href="/padres" class="boton-ir-a-cuenta">Ir a mi cuenta</a>
+			{% else %}
+				<a href="/en/padres" class="boton-ir-a-cuenta">Go to my account</a>
+			{% endif %}
 		</div>
 	{% else %}
 		<div class="ir-a-cuenta">
-			<a href="/padres" class="boton-ir-a-cuenta">Ir a mi cuenta</a>
+			{% if current_language == 'es' %}
+				<a href="/padres" class="boton-ir-a-cuenta">Ir a mi cuenta</a>
+			{% else %}
+				<a href="/en/padres" class="boton-ir-a-cuenta">Go to my account</a>
+			{% endif %}
 		</div>
 
 		<div class="ir-a-cuenta">
-			<a href="/node/add/agendar_clase/agendar_clases" class="boton-ir-a-cuenta">Agregar otro niño +</a>
+			{% if current_language == 'es' %}
+				<a href="/node/add/agendar_clase/agendar_clases" class="boton-ir-a-cuenta">Agregar otro niño +</a>
+			{% else %}
+				<a href="/en/node/add/agendar_clase/agendar_clases" class="boton-ir-a-cuenta">Add another child +</a>
+			{% endif %}
 		</div>
 	{% endif %}
 

@@ -24,7 +24,11 @@
 
   <div class="content clearfix row mt-5">
     <div class="col-12 volver pb-3">
+      {% if current_language == 'es' %}
         <a href="#" onclick="history.back();"><span> < </span> Volver</a>
+      {% else %}
+        <a href="#" onclick="history.back();"><span> < </span> Back</a>
+      {% endif %}
     </div>
     <div class="col-md-4 izquierda">
       {{ drupal_view('profesor_agendar_clase', 'block_1') }}     
@@ -33,7 +37,11 @@
     <div class="col-md-8 derecha">
       <div class="formulario">
         <div id="select-horario">
-        <div class="titulo"><h2>{{ 'Selecciona hora de clase'|t }}</h2></div>
+        {% if current_language == 'es' %}
+          <div class="titulo"><h2>{{ 'Selecciona hora de clase'|t }}</h2></div>
+        {% else %}
+          <div class="titulo"><h2>{{ 'Select class time'|t }}</h2></div>
+        {% endif %}
           <div class="horario"></div>
         </div>
         {{ form|without('advanced', 'actions') }}
@@ -52,8 +60,13 @@
   <div class="content clearfix row">
     <div class="col-md-12 layout-region layout-region-node-main">
       <div class="formulario">
-        <h3 class="title-1">{{ 'Paso 2/2 '|t }}</h3>
-        <h2 class="title-2">{{ 'Agenda tu clase'|t }}</h2>
+        {% if current_language == 'es' %}
+          <h3 class="title-1">{{ 'Paso 2/2 '|t }}</h3>
+          <h2 class="title-2">{{ 'Agenda tu clase'|t }}</h2>
+        {% else %}
+          <h3 class="title-1">{{ 'Step 2/2 '|t }}</h3>
+          <h2 class="title-2">{{ 'Schedule your class'|t }}</h2>
+        {% endif %}
         {{ form|without('advanced', 'actions') }}
       </div>
     </div>

@@ -21,8 +21,13 @@ Agendando clase variable <br>
 <div class="content clearfix row">
 	<div class="col-md-12 layout-region layout-region-node-main">
 		<div class="formulario">
-			<h3 class="title-1">{{ 'Paso 2/2'|t }}</h3>
-			<h2 class="title-2">{{ 'Agenda tu clase'|t }}</h2>
+			{% if current_language == 'es' %}
+				<h3 class="title-1">{{ 'Paso 2/2'|t }}</h3>
+				<h2 class="title-2">{{ 'Agenda tu clase'|t }}</h2>
+			{% else %}
+				<h3 class="title-1">{{ 'Step 2/2'|t }}</h3>
+				<h2 class="title-2">{{ 'Schedule your class'|t }}</h2>
+			{% endif %}
 			{{ form|without('advanced', 'actions') }}
 		</div>
 	</div>

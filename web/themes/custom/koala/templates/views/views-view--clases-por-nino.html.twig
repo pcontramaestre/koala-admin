@@ -42,7 +42,11 @@
 <div{{ attributes.addClass(classes) }}>
   <div class="vista-izquierda">
     <div class="vista-ninos">
-      <div class="title-section">Clases por niño </div>
+      {% if current_language == 'es' %}
+        <div class="title-section">Clases por niño </div>
+      {% else %}
+        <div class="title-section">Classes per child </div>
+      {% endif %}
       {% if header %}
         <div class="view-header">
           {{ header }}
@@ -78,16 +82,32 @@
 
   <div class="select-suscription">
     <div class="form-item form-type-radios form-item-suscription">
-      <label for="edit-suscription">Ciclo de facturación {{current_language}} </label>
+      {% if current_language == 'es' %}
+        <label for="edit-suscription">Ciclo de facturación {{current_language}} </label>
+      {% else %}
+        <label for="edit-suscription">Billing cycle {{current_language}} </label>
+      {% endif %}
       <div id="edit-suscription" class="form-radios">
         <div class="form-item form-type-radio form-item-suscription">
-          <input type="radio" id="edit-suscription-0" name="suscription" value="4" texto="4 semanas" class="form-radio" checked="checked">  <label class="option" for="edit-suscription-0">4 semanas </label>
+          {% if current_language == 'es' %}
+            <input type="radio" id="edit-suscription-0" name="suscription" value="4" texto="4 semanas" class="form-radio" checked="checked">  <label class="option" for="edit-suscription-0">4 semanas </label>
+          {% else %}
+            <input type="radio" id="edit-suscription-0" name="suscription" value="4" texto="4 semanas" class="form-radio" checked="checked">  <label class="option" for="edit-suscription-0">4 weeks </label>
+          {% endif %}
         </div>
         <div class="form-item form-type-radio form-item-suscription">
-          <input type="radio" id="edit-suscription-1" name="suscription" value="12" texto="12 semanas" class="form-radio">  <label class="option" for="edit-suscription-1">12 semanas </label>
+          {% if current_language == 'es' %}
+            <input type="radio" id="edit-suscription-1" name="suscription" value="12" texto="12 semanas" class="form-radio">  <label class="option" for="edit-suscription-1">12 semanas </label>
+          {% else %}
+            <input type="radio" id="edit-suscription-1" name="suscription" value="12" texto="12 semanas" class="form-radio">  <label class="option" for="edit-suscription-1">12 weeks </label>
+          {% endif %}
         </div>
         <div class="form-item form-type-radio form-item-suscription">
-          <input type="radio" id="edit-suscription-2" name="suscription" value="24" texto="24 semanas" class="form-radio">  <label class="option" for="edit-suscription-2">24 semanas </label>
+          {% if current_language == 'es' %}
+            <input type="radio" id="edit-suscription-2" name="suscription" value="24" texto="24 semanas" class="form-radio">  <label class="option" for="edit-suscription-2">24 semanas </label>
+          {% else %}
+            <input type="radio" id="edit-suscription-2" name="suscription" value="24" texto="24 semanas" class="form-radio">  <label class="option" for="edit-suscription-2">24 weeks </label>
+          {% endif %}
         </div>
       </div>
     </div>
@@ -95,29 +115,59 @@
     
   </div>
   <div class="vista-derecha">
-    <div class="title-section">Resumen</div>
+    {% if current_language == 'es' %}
+      <div class="title-section">Resumen</div>
+    {% else %}
+      <div class="title-section">Summary</div>
+    {% endif %}
 
     <div class="valores row">
-      <div class="col-8 texto texto-clases-semana">Clases por semana</div>
-      <div class="col-4 clase-por-semana">0</div>
-      <div class="col-8 texto texto-duracion">Duración</div>
-      <div class="col-4 duracion" semanas="4">4 semanas</div>
-      <div class="col-8 texto texto-total-clases">Número total de clases</div>
-      <div class="col-4 total-clases">0</div>
-      <div class="col-8 texto texto-precio-clase">Precio por clase</div>
-      <div class="col-4 precio-clase" precio="17.50">$ 17.50</div>
-      <div class="col-8 texto texto-descuento">Descuento</div>
-      <div class="col-4 descuento">$ 0</div>
-      <div class="col-8 texto texto-valor-total">Valor total</div>
-      <div class="col-4 valor-total">$ 0</div>
-      <div class="col-8 texto texto-ahorro">Tu ahorro</div>
-      <div class="col-4 ahorro">$ 0</div>
+      {% if current_language == 'es' %}
+        <div class="col-8 texto texto-clases-semana">Clases por semana</div>
+      {% else %}
+        <div class="col-8 texto texto-clases-semana">Classes per week</div>
+      {% endif %}
+      {% if current_language == 'es' %}
+        <div class="col-4 clase-por-semana">0</div>
+        <div class="col-8 texto texto-duracion">Duración</div>
+        <div class="col-4 duracion" semanas="4">4 semanas</div>
+        <div class="col-8 texto texto-total-clases">Número total de clases</div>
+        <div class="col-4 total-clases">0</div>
+        <div class="col-8 texto texto-precio-clase">Precio por clase</div>
+        <div class="col-4 precio-clase" precio="17.50">$ 17.50</div>
+        <div class="col-8 texto texto-descuento">Descuento</div>
+        <div class="col-4 descuento">$ 0</div>
+        <div class="col-8 texto texto-valor-total">Valor total</div>
+        <div class="col-4 valor-total">$ 0</div>
+        <div class="col-8 texto texto-ahorro">Tu ahorro</div>
+        <div class="col-4 ahorro">$ 0</div>
+      {% else %}
+        <div class="col-4 clase-por-semana">0</div>
+        <div class="col-8 texto texto-duracion">Duration</div>
+        <div class="col-4 duracion" semanas="4">4 weeks</div>
+        <div class="col-8 texto texto-total-clases">Total number of classes</div>
+        <div class="col-4 total-clases">0</div>
+        <div class="col-8 texto texto-precio-clase">Price per class</div>
+        <div class="col-4 precio-clase" precio="17.50">$ 17.50</div>
+        <div class="col-8 texto texto-descuento">Discount</div>
+        <div class="col-4 descuento">$ 0</div>
+        <div class="col-8 texto texto-valor-total">Total value</div>
+        <div class="col-4 valor-total">$ 0</div>
+        <div class="col-8 texto texto-ahorro">Your savings</div>
+        <div class="col-4 ahorro">$ 0</div>
+      {% endif %}
     </div>
-
-    <div class="row mt-5">
-        <div class="linea1">Escoje 12 semanas y tendras ahorro</div>
-        <div class="linea2">Escoje 24 semanas y terdras ahorro</div>
-    </div>
+    {% if current_language == 'es' %}
+      <div class="row mt-5">
+          <div class="linea1">Escoje 12 semanas y tendras ahorro</div>
+          <div class="linea2">Escoje 24 semanas y terdras ahorro</div>
+      </div>
+    {% else %}
+      <div class="row mt-5">
+          <div class="linea1">Choose 12 weeks and you will have savings</div>
+          <div class="linea2">Choose 24 weeks and you will have savings</div>
+      </div>
+    {% endif %}
   </div>
 
 
@@ -126,7 +176,11 @@
 </div>
 
 <div class="metdos-pago">
-  <div class="titulo">Conoce nuestros métodos de pago</div>
+  {% if current_language == 'es' %}
+    <div class="titulo">Conoce nuestros métodos de pago</div>
+  {% else %}
+    <div class="titulo">Know our payment methods</div>
+  {% endif %}
   <div class="imagen d-flex">
     <div class="metodo-pago-img-svg">
       <img src="/themes/custom/koala/images/metodos/paypal.svg" alt="">
@@ -149,7 +203,11 @@
   </div>
 
   <div class="boton-comprar">
-    <a href="/checkout" class="btn btn-comprar disabled">Confirmar y pagar</a>
+    {% if current_language == 'es' %}
+      <a href="/checkout" class="btn btn-comprar disabled">Confirmar y pagar</a>
+    {% else %}
+      <a href="/checkout" class="btn btn-comprar disabled">Confirm and pay</a>
+    {% endif %}
   </div>
 </div>
 

@@ -13,7 +13,11 @@
 {{ attach_library('bootstrap_barrio/form') }}
 
 <div class="filtro-agendar">
-	<div class="texto-desde">Seleccione el mes y día</div>
+	{% if current_language == 'es' %}
+		<div class="texto-desde">Seleccione el mes y día</div>
+	{% else %}
+		<div class="texto-desde">Select month and day</div>
+	{% endif %}
 	<div id="datepicker-seleccionar-fecha"></div>
 	<div id="datepicker-seleccionar-fecha2"></div>
 
@@ -24,11 +28,19 @@
 	{# Dos campos de tipo time. Hora de inicio y hora final #}
 	<div class="horas-inicio-final horas-inicio-final d-flex flex-row justify-content-around mb-4" style="gap:1rem;">
 		<div class="hora-inicio w-100">
-			<label for="hora-inicio">Desde</label>
+			{% if current_language == 'es' %}
+				<label for="hora-inicio">Desde</label>
+			{% else %}
+				<label for="hora-inicio">From</label>
+			{% endif %}
 			<input type="time" id="hora-inicio" name="hora-inicio" value="08:00" class="w-100">
 		</div>
 		<div class="hora-final w-100">
-			<label for="hora-final">Hasta</label>
+			{% if current_language == 'es' %}
+				<label for="hora-final">Hasta</label>
+			{% else %}
+				<label for="hora-final">To</label>
+			{% endif %}
 			<input type="time" id="hora-final" name="hora-final" value="18:00" class="w-100">
 		</div>
 	</div>

@@ -20,7 +20,11 @@
   {# Agregar titulo y boton de volver con javascript #}
   <div class="row">
     <div class="col-md-12">
-      <h2>Editar hijo</h2>
+      {% if current_language == 'es' %}
+        <h2>Editar hijo</h2>
+      {% else %}
+        <h2>Edit child</h2>
+      {% endif %}
     </div>
   </div>  
 </div>
