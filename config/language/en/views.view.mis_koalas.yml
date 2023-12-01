@@ -23,3 +23,12 @@ display:
       footer:
         area_text_custom:
           content: "<a href=\"/node/add/agendar_clase/agendar_clases?agregar=1\" class=\"btn btn-primary mt-5 mb-5\" data-drupal-link-system-path=\"/node/add/agendar_clase/agendar_clases\">Add Koalas</a>\r\n\r\n\r\n"
+  block_2:
+    display_options:
+      fields:
+        nothing_1:
+          alter:
+            text: "<div class=\"boton-agendar\"><a href=\"/padres/mis-koalas/agendar_clase/{{ nid }}/{{ uid }}\" class=\"agendar-clase btn btn-primary mt-5 mb-5\">Schedule class</a></div>\r\n<div class=\"boton-agendar boton-editar-nino\"><a href=\"/node/{{ nid }}/edit/editar_hijo\" class=\"agendar-clase btn btn-primary mt-5 mb-5\">Edit child</a></div>\r\n<div class=\"boton-agendar boton-editar-nino\"><a href=\"/custom-child-login/{{ nid }}\" class=\"agendar-clase btn btn-primary mt-5 mb-5 entrar-nino\">Enter the child's section</a></div>"
+      header:
+        area_text_custom:
+          content: '<a href="/node/add/agendar_clase/agendar_clases?agregar=1" class="btn btn-primary mt-5 mb-5" data-drupal-link-system-path="/node/add/agendar_clase/agendar_clases">Add Koalas</a>'

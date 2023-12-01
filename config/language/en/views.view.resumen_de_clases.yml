@@ -1,0 +1,18 @@
+display:
+  block_1:
+    display_options:
+      header:
+        area_text_custom:
+          content: "<div class=\"text-center titulo-saludos\"><h3>Greetings from the teacher</h3></div>\r\n<div class=\"text-center subtitulo-saludos\"><p>Here you will find the summary of the classes</p></div>\r\n<div class=\"resumen-clase resumen-sin-clases d-block\">\r\n  <div class=\"header d-flex\">\r\n    <div>Class Summary</div>\r\n    <div>00/00/0000</div>\r\n  </div>\r\n  <div class=\"resumen\">\r\n    <p class=\"title-profesor mt-3\"><b>Teacher</b></p>\r\n    <p>When the teacher makes the student's first report it will be reflected in this area.</p>\r\n  </div>\r\n</div>"
+  block_2:
+    display_options:
+      fields:
+        nothing:
+          alter:
+            text: "<div class=\"resumen-clase\" id=\"id-resumen-{{ nid }}\" user=\"{{ uid }}\">\r\n  <div class=\"header d-flex\">\r\n    <div>Class Summary</div>\r\n    <div>{{ created }}</div>\r\n  </div>\r\n  <div class=\"resumen-video\">\r\n    <img src=\"/themes/custom/koala/images/resumen-clase.png\">\r\n  </div>\r\n  <div class=\"profesor-clase\">\r\n    <div class=\"avatar\">{{ user_picture }}</div>\r\n    <div class=\"nombre\">{{ field_nombres_y_apellidos_del_pr }}</div>\r\n  </div>\r\n  <div class=\"comentarios-profesor\">\r\n    <div class=\"titulo\"><h4>Feedback for the child</h4></div>\r\n    <div class=\"comentario\">{{ field_mensaje_para_el_nino }}</div>\r\n  </div>\r\n  <div class=\"observaciones-profesor\">\r\n    <div class=\"titulo\"><h4>Teacher's observations</h4></div>\r\n    <div class=\"comentario\">{{ field_observaciones_del_profesor }}</div>\r\n  </div>\r\n  <div class=\"no-mostrar ids-logros-cumplidos\">{{ field_logros_cumplidos }}</div>\r\n</div>"
+  default:
+    display_options:
+      fields:
+        nothing:
+          alter:
+            text: "<div class=\"resumen-clase\" id=\"id-resumen-{{ nid }}\" user=\"{{ uid }}\">\r\n  <div class=\"header d-flex\">\r\n    <div>Class Summary</div>\r\n    <div>{{ created }}</div>\r\n  </div>\r\n  <div class=\"resumen-video\">\r\n    <img src=\"/themes/custom/koala/images/resumen-clase.png\">\r\n  </div>\r\n  <div class=\"profesor-clase\">\r\n    <div class=\"avatar\">{{ user_picture }}</div>\r\n    <div class=\"nombre\">{{ field_nombres_y_apellidos_del_pr }}</div>\r\n  </div>\r\n  <div class=\"comentarios-profesor\">\r\n    <div class=\"comentario\">{{ field_mensaje_para_el_nino }}</div>\r\n  </div>\r\n  <div class=\"no-mostrar ids-logros-cumplidos\">{{ field_logros_cumplidos }}</div>\r\n</div>"
