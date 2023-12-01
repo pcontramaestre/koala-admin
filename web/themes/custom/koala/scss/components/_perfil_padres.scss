@@ -403,3 +403,21 @@
     }
   }
 }
+
+.current_language-en #block-koala-content .content .layout--twocol-section--33-67 
+.layout__region--first .block-views-blockusuario-actual-block-1:before {
+  content: "My profile";
+}
+
+.path-padres {
+  .current_language-es {
+    .block-views-blockbanner-perfil-padres-block-2 {
+      display: none;
+    }    
+  }
+  .current_language-en {
+    .block-views-blockbanner-perfil-padres-block-1 {
+      display: none;
+    }
+  }
+}
