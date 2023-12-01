@@ -1,0 +1,22 @@
+uuid: b7122b88-3b75-4b31-adb0-d66ead8e3674
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.suscripciones
+id: node.suscripciones.sticky
+field_name: sticky
+entity_type: node
+bundle: suscripciones
+label: 'Fijo al comienzo de las listas'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: Activado
+  off_label: Desactivado
+field_type: boolean

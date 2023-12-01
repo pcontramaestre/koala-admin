@@ -5,7 +5,6 @@ dependencies:
   config:
     - field.storage.user.user_picture
   module:
-    - content_translation
     - filefield_paths
     - image
     - multiple_registration
@@ -28,11 +27,6 @@ third_party_settings:
     redirect: false
     retroactive_update: false
     active_updating: false
-  content_translation:
-    translation_sync:
-      file: '0'
-      alt: '0'
-      title: '0'
   multiple_registration:
     user_additional_register_form_required:
       authenticated: 0
@@ -53,7 +47,7 @@ bundle: user
 label: Imagen
 description: 'Su cara o foto virtual.'
 required: false
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:

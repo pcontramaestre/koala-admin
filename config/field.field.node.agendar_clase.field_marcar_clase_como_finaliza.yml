@@ -12,7 +12,7 @@ bundle: agendar_clase
 label: 'Marcar clase como finalizada'
 description: 'Selecciona esta opción para que la clase quede finalizada '
 required: false
-translatable: true
+translatable: false
 default_value:
   -
     value: 0

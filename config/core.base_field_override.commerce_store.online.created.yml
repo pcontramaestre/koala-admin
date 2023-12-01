@@ -1,0 +1,18 @@
+uuid: 2dad4459-1055-48cb-9501-bab464e500ef
+langcode: es
+status: true
+dependencies:
+  config:
+    - commerce_store.commerce_store_type.online
+id: commerce_store.online.created
+field_name: created
+entity_type: commerce_store
+bundle: online
+label: Creado
+description: 'The time when the store was created.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created

@@ -1,0 +1,22 @@
+uuid: e09842fa-ddaf-41a3-b34b-36167ff7abd3
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.metodos_de_pago
+id: node.metodos_de_pago.status
+field_name: status
+entity_type: node
+bundle: metodos_de_pago
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: Activado
+  off_label: Desactivado
+field_type: boolean

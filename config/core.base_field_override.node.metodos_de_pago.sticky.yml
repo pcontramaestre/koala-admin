@@ -1,0 +1,22 @@
+uuid: da77dec6-fe24-40b5-bf06-8fb5faabce70
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.metodos_de_pago
+id: node.metodos_de_pago.sticky
+field_name: sticky
+entity_type: node
+bundle: metodos_de_pago
+label: 'Fijo al comienzo de las listas'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: Activado
+  off_label: Desactivado
+field_type: boolean

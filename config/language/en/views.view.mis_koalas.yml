@@ -1,0 +1,25 @@
+display:
+  block_4:
+    display_options:
+      fields:
+        nothing:
+          alter:
+            text: "  <div class=\"access-acudiente\">\r\n    <div class=\"imagen\"><a href=\"/custom-child-login/{{ field_hijo_relacionado }}\">{{ user_picture }}</a></div>\r\n    <div class=\"nombre-datos\">\r\n      <div class=\"nombre\"><a href=\"/custom-child-login/{{ field_hijo_relacionado }}\">{{ title }}</a></div>\r\n      <div class=\"tipo\"><a href=\"/custom-child-login/{{ field_hijo_relacionado }}\">Student</a></div>\r\n    </div>\r\n  </div>\r\n"
+      header:
+        area_text_custom:
+          content: "<div class=\"text-center mb-4\">\r\n    <strong>Select an account</strong>\r\n</div>\r\n\r\n<a href=\"/padres\" class=\"d-block mb-5\">\r\n<div class=\"access-acudiente\">\r\n  <div class=\"imagen\">{{ user_picture_1 }}</div>\r\n  <div class=\"nombre-datos\">\r\n    <div class=\"nombre\">{{ field_nombre_del_acudiente }}</div>\r\n    <div class=\"tipo\">Parent/Guardian</div>\r\n  </div>\r\n</div>\r\n</a>"
+  default:
+    display_options:
+      footer:
+        area_text_custom:
+          content: "<a href=\"/node/add/agendar_clase/agendar_clases\" class=\"btn btn-primary mt-5 mb-5\" data-drupal-link-system-path=\"/node/add/agendar_clase/agendar_clases\">Add Koalas</a>\r\n\r\n\r\n"
+  attachment_1:
+    display_options:
+      header:
+        area_text_custom:
+          content: '<div class="text-center titulo-profesores">Teachers available</div>'
+  block_1:
+    display_options:
+      footer:
+        area_text_custom:
+          content: "<a href=\"/node/add/agendar_clase/agendar_clases?agregar=1\" class=\"btn btn-primary mt-5 mb-5\" data-drupal-link-system-path=\"/node/add/agendar_clase/agendar_clases\">Add Koalas</a>\r\n\r\n\r\n"

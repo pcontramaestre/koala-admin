@@ -15,4 +15,4 @@ id: node.agendar_clase
 target_entity_type_id: node
 target_bundle: agendar_clase
 default_langcode: site_default
-language_alterable: false
+language_alterable: true

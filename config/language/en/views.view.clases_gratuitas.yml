@@ -1,0 +1,26 @@
+display:
+  default:
+    display_options:
+      footer:
+        area_text_custom:
+          content: "<div class=\"text-align-right\">\r\n   <a href=\"/padres/calendario\">Go to class calendar</a>\r\n</div>"
+  block_1:
+    display_options:
+      footer:
+        area_text_custom:
+          content: "<div class=\"text-align-right\">\r\n   <a href=\"/padres/mi-calendario\">Go to class calendar</a>\r\n</div>"
+      block_description: 'Upcoming Classes'
+  block_proximas_clases:
+    display_title: 'Upcoming Classes'
+    display_options:
+      empty:
+        area_text_custom:
+          content: "<div class=\"sin-proximas-clases\">\r\n  You don't have classes scheduled for your children. you can do it from the menu <b><a href=\"/padres/mis-koalas\">Mis niños</a></b>, Select the child for whom you want to create the class and click on the <b>Schedule Class</b> button\r\n</div>"
+      footer:
+        area_text_custom:
+          content: "<div class=\"text-align-right\">\r\n   <a href=\"/padres/mi-calendario\">Go to class calendar</a>\r\n</div>"
+      block_description: 'Upcoming Classes'
+      fields:
+        nothing:
+          alter:
+            text: "<div class=\"row clases-proximas\">\r\n  <div class=\"dato-del-nino d-flex col-md-6\">\r\n    <div class=\"imagen\">{{ user_picture }}</div>\r\n    <div class=\"datos\"> \r\n         {{ field_nombre_del_nino_a }} \r\n         <div class=\"fecha-nac\">{{ field_fecha_nac }} </div>\r\n     </div>\r\n  </div>\r\n  <div class=\"datos-clase d-flex col-md-6\">\r\n    <div class=\"titulo\">Fecha</div>\r\n    <div class=\"datos-fecha\">\r\n      <div>{{ field_fecha_cita_oculta }}</div>\r\n      <div>{{ field_fecha_cita_oculta_1 }}</div>\r\n    </div>\r\n    <div class=\"boton\">      \r\n     <a href=\"/clases?idestudiante={{ field_pencil_id_estudiante }}&url={{ field_pencil_url_clase }}&idClase={{ nid }}\" class=\"editar-clase\"target=\"_blank\">Get into class</a>\r\n    </div>\r\n  </div>\r\n</div>"

@@ -1,0 +1,20 @@
+uuid: 233e8f66-09c0-486f-b7e1-b5fa58cd6321
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.suscripciones
+id: node.suscripciones.menu_link
+field_name: menu_link
+entity_type: node
+bundle: suscripciones
+label: 'Enlace del menu'
+description: 'Enlace de menú calculado para el nodo (solo disponible durante el guardado del nodo).'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: default
+  handler_settings: {  }
+field_type: entity_reference

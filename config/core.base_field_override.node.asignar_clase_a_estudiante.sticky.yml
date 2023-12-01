@@ -1,0 +1,22 @@
+uuid: 0504b427-8c9a-48be-b8aa-768a244a9aab
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.asignar_clase_a_estudiante
+id: node.asignar_clase_a_estudiante.sticky
+field_name: sticky
+entity_type: node
+bundle: asignar_clase_a_estudiante
+label: 'Fijo al comienzo de las listas'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: Activado
+  off_label: Desactivado
+field_type: boolean

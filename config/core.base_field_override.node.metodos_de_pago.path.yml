@@ -1,0 +1,20 @@
+uuid: 52ac7b3a-7b5e-45e1-a5ca-e5a7d497619b
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.metodos_de_pago
+  module:
+    - path
+id: node.metodos_de_pago.path
+field_name: path
+entity_type: node
+bundle: metodos_de_pago
+label: 'Alias de URL'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

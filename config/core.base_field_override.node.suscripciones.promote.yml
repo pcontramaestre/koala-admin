@@ -1,0 +1,22 @@
+uuid: b3758561-2a98-4acf-a198-a01816a5c96c
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.suscripciones
+id: node.suscripciones.promote
+field_name: promote
+entity_type: node
+bundle: suscripciones
+label: 'Promocionado a la página principal'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: Activado
+  off_label: Desactivado
+field_type: boolean

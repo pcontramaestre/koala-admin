@@ -1,0 +1,18 @@
+uuid: 2251c8f5-5427-4c0b-b4a6-7d2605f63e47
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.metodos_de_pago
+id: node.metodos_de_pago.created
+field_name: created
+entity_type: node
+bundle: metodos_de_pago
+label: 'Fecha de autoría'
+description: 'La fecha en que el nodo fue creado.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created

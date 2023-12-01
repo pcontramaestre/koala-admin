@@ -1,0 +1,18 @@
+uuid: 3b7d8f57-1200-4d50-bf54-e2694312a56e
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.facturacion_profesor
+id: node.facturacion_profesor.created
+field_name: created
+entity_type: node
+bundle: facturacion_profesor
+label: 'Fecha de autoría'
+description: 'La fecha en que el nodo fue creado.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created

@@ -1,0 +1,18 @@
+uuid: a8db0281-9f93-4c44-8313-5cfb48a6245c
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.metodos_de_pago
+id: node.metodos_de_pago.changed
+field_name: changed
+entity_type: node
+bundle: metodos_de_pago
+label: Modificado
+description: 'La fecha en que el nodo fue editado por última vez.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

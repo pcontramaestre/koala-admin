@@ -1,0 +1,20 @@
+uuid: 9c2e2bf9-041e-4ada-83a8-0e30624c0fc3
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.facturacion_profesor
+  module:
+    - path
+id: node.facturacion_profesor.path
+field_name: path
+entity_type: node
+bundle: facturacion_profesor
+label: 'Alias de URL'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

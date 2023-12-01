@@ -1,0 +1,18 @@
+uuid: 3a81657a-9161-47cf-8ae8-f43b6b932e92
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.suscripciones
+id: node.suscripciones.changed
+field_name: changed
+entity_type: node
+bundle: suscripciones
+label: Modificado
+description: 'La fecha en que el nodo fue editado por última vez.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

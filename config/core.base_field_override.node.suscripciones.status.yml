@@ -1,0 +1,22 @@
+uuid: 2860b168-ad85-458f-83a2-e294b1efcc37
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.suscripciones
+id: node.suscripciones.status
+field_name: status
+entity_type: node
+bundle: suscripciones
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: Activado
+  off_label: Desactivado
+field_type: boolean

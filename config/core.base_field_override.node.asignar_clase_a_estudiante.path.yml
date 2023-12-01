@@ -1,0 +1,20 @@
+uuid: 22dc6a77-c41a-43e6-b429-c47f1d40c531
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.asignar_clase_a_estudiante
+  module:
+    - path
+id: node.asignar_clase_a_estudiante.path
+field_name: path
+entity_type: node
+bundle: asignar_clase_a_estudiante
+label: 'Alias de URL'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

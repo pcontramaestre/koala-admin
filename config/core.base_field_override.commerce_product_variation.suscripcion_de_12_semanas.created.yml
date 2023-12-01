@@ -1,0 +1,18 @@
+uuid: 45e5d2f4-e5ae-4b1c-b192-90f5be221025
+langcode: es
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_variation_type.suscripcion_de_12_semanas
+id: commerce_product_variation.suscripcion_de_12_semanas.created
+field_name: created
+entity_type: commerce_product_variation
+bundle: suscripcion_de_12_semanas
+label: Creado
+description: 'The time when the variation was created.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created

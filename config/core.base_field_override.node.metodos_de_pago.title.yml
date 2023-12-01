@@ -11,7 +11,7 @@ bundle: metodos_de_pago
 label: 'Título de referencia'
 description: ''
 required: true
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings: {  }

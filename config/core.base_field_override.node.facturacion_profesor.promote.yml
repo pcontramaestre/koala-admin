@@ -1,0 +1,22 @@
+uuid: c69fc8d5-042a-4435-9c39-0814337e5a18
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.facturacion_profesor
+id: node.facturacion_profesor.promote
+field_name: promote
+entity_type: node
+bundle: facturacion_profesor
+label: 'Promocionado a la página principal'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: Activado
+  off_label: Desactivado
+field_type: boolean

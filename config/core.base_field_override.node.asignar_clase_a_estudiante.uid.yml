@@ -1,0 +1,20 @@
+uuid: 12d4a01e-5fa6-4850-9003-9a1003f5deee
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.asignar_clase_a_estudiante
+id: node.asignar_clase_a_estudiante.uid
+field_name: uid
+entity_type: node
+bundle: asignar_clase_a_estudiante
+label: 'Escrito por'
+description: 'El nombre de usuario del autor del contenido.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: 'Drupal\node\Entity\Node::getDefaultEntityOwner'
+settings:
+  handler: default
+  handler_settings: {  }
+field_type: entity_reference

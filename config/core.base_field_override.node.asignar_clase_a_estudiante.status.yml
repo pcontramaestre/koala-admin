@@ -1,0 +1,22 @@
+uuid: e3887d9a-2312-4ea8-840b-68697198fa80
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.asignar_clase_a_estudiante
+id: node.asignar_clase_a_estudiante.status
+field_name: status
+entity_type: node
+bundle: asignar_clase_a_estudiante
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: Activado
+  off_label: Desactivado
+field_type: boolean

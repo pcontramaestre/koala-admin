@@ -1,0 +1,52 @@
+uuid: c7ee0c22-8f41-48da-8a66-1bf9d85213f1
+langcode: es
+status: true
+dependencies:
+  module:
+    - system
+id: 1_iframe_clase_ninos
+label: '1. Iframe clase niños'
+code: |-
+  jQuery(document).ready(function($) {
+    // Verificar si existe el iframe
+    if($('.iframe-clase iframe').length > 0) {
+      // Obtener el tamaño del iframe y mostrarlo en la consola
+      var iframe = $('.iframe-clase iframe')[0];
+      
+      // Esperar a que el contenido del iframe esté completamente cargado
+      iframe.onload = function() {
+      	console.log("Cargo el iframe");
+        // Acceder al contenido del iframe
+        var iframeContent = iframe.contentDocument || iframe.contentWindow.document;
+
+        
+        // Obtener el ancho del div dentro del iframe
+        var anchoDiv = $(iframeContent).find('#overlay-parent-container').width();
+        console.log('Ancho del div dentro del iframe: ' + anchoDiv + 'px');
+      };
+      
+      var ancho = iframe.offsetWidth;
+      var alto = iframe.offsetHeight;
+      console.log('Tamaño inicial del iframe - Ancho: ' + ancho + 'px, Alto: ' + alto + 'px');
+
+      // Detectar el evento de redimensionamiento de la pantalla
+      $(window).on('resize', function() {
+        // Obtener el nuevo tamaño del iframe y mostrarlo en la consola
+        var nuevoAncho = iframe.offsetWidth;
+        var nuevoAlto = iframe.offsetHeight;
+        console.log('Nuevo tamaño del iframe al redimensionar la pantalla - Ancho: ' + nuevoAncho + 'px, Alto: ' + nuevoAlto + 'px');
+      });
+    }
+  });
+noscript: ''
+noscriptRegion: {  }
+jquery: true
+header: false
+preprocess: true
+conditions:
+  request_path:
+    id: request_path
+    negate: false
+    pages: "/clases\r\n/clases/*"
+contexts: {  }
+conditions_require_all: true

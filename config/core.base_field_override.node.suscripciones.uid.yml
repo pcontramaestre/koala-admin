@@ -1,0 +1,20 @@
+uuid: a22a8f00-1fcf-4f17-9f1a-0c21f73c62f8
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.suscripciones
+id: node.suscripciones.uid
+field_name: uid
+entity_type: node
+bundle: suscripciones
+label: 'Escrito por'
+description: 'El nombre de usuario del autor del contenido.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: 'Drupal\node\Entity\Node::getDefaultEntityOwner'
+settings:
+  handler: default
+  handler_settings: {  }
+field_type: entity_reference

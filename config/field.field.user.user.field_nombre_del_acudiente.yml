@@ -26,7 +26,7 @@ bundle: user
 label: 'Nombre de padre / Tutor legal'
 description: ''
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings: {  }

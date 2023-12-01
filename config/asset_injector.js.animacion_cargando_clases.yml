@@ -5,16 +5,156 @@ dependencies:
   module:
     - system
 id: animacion_cargando_clases
-label: 'Animación cargando clases'
+label: '2. Animación cargando clases'
 code: |-
   jQuery(document).ready(function($) {
     // Mostrar el div al cargar la página
-    $('.container-cargando').addClass('mostrar');
+   // $('.container-cargando').addClass('mostrar');
 
     // Ocultar el div después de 10 segundos con una animación agradable
-    setTimeout(function() {
+   // setTimeout(function() {
       $('.container-cargando').removeClass('mostrar').addClass('ocultar');
-    }, 7000);  // 15000 milisegundos = 15 segundos
+   // }, 5000);  // 15000 milisegundos = 15 segundos
+   // Obtener la URL actual
+
+   if($('.iframe-clase iframe').length > 0) {
+   	  console.log("Iframe encontrado");
+   	  //var iframe = $('.iframe-clase iframe')[0];
+      //iframe.onload = function() {
+      	console.log("Iframe cargado");
+      	var pruebas = $('.estrellas-recibidas').attr("pruebas");
+      	if (pruebas == 'si') {
+      		  console.log("Iframe de pruebas");
+      			// Obtener la URL actual
+  					var url = window.location.href;
+  					
+  					// Función para obtener el parámetro "idClase" de la URL
+  					function getParameterByName(name, url) {
+  					  name = name.replace(/[\[\]]/g, "\\$&");
+  					  var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+  					      results = regex.exec(url);
+  					  if (!results) return null;
+  					  if (!results[2]) return '';
+  					  return decodeURIComponent(results[2].replace(/\+/g, " "));
+  					}
+  					
+  					// Obtener el valor del parámetro "idClase"
+  					var idClase = getParameterByName('idClase', url);
+  				  
+  				  console.log("El id de la clase es: "+idClase);
+  					
+  					
+  					//Verificar si ya tiene idClase
+  					 $('.estrellas-recibidas').attr("id-clase",idClase);
+  					 
+  				setInterval(function() {
+  					idClase = $('.estrellas-recibidas').attr("id-clase");
+  			    consultarClaseActiva(idClase);
+  			    consultarClase(idClase);
+  			  }, 8000);
+      	}
+      //}
+   }
+   
+   
+   
+  		function consultarClaseActiva(idClase) {
+          $.ajax({
+            url: Drupal.url('clases-profesor/consultar-activa'),
+            type: 'POST',
+            dataType: 'json',
+            data: {
+              idClase: idClase,
+            },
+            success: function (response) {
+              //$('#selector-para-mensajes').html(response[0].data);
+              console.log(response);
+              console.log(response[0].data);
+              var respuesta = response[0].data;
+              if (respuesta == '0') {
+                console.log('Clase no iniciada');
+                $('.cuadro-clases-noiniciada-finalizada').addClass('d-flex').removeClass('d-none');
+                $('.cuadro-clases-noiniciada-finalizada .titulo h1').text('Clase no iniciada');
+                $('.cuadro-clases-noiniciada-finalizada .texto strong').text('La clase aún no ha iniciado, por favor espera a que el profesor inicie la clase.');
+              } else if (respuesta == '1') {
+                console.log('Clase iniciada');
+                $('.cuadro-clases-noiniciada-finalizada').addClass('d-none').removeClass('d-flex');
+              } else if (respuesta == '2') {
+                console.log('Clase finalizada');
+                $('.cuadro-clases-noiniciada-finalizada').addClass('d-flex').removeClass('d-none');
+                $('.cuadro-clases-noiniciada-finalizada .titulo h1').text('Clase finalizada');
+                $('.cuadro-clases-noiniciada-finalizada .texto strong').text('La clase ha finalizado, gracias por tu participación.');
+              } else {
+                console.log('No se ha recibido respuesta');
+              }            
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+              console.log(errorThrown);
+              console.log(textStatus);                
+            }        
+          });
+      }
+        
+      /* 
+    Funcion Consultar clase
+    URL: /clases/consulta/{id}
+    Parametros: id = id de la clase
+    Metodo: POST
+    Retorno: JSON
+    Descripcion: Consultar las estrellas recibidas por el estudiante
+  	*/
+  	function consultarClase(id) {
+  	  $.ajax({
+  	    url: Drupal.url('clases/consulta/'+id),
+  	    type: 'POST',
+  	    dataType: 'json',
+  	    data: {
+  	      id: id,
+  	    },
+  	    success: function (response) {
+  	      //$('#selector-para-mensajes').html(response[0].data);
+  	      // console.log("Respuesta de las estrellas");
+  	      // console.log(response);
+          // console.log(response[0].data);
+          var cantidadEstrellas = response[0].data;
+          cantidadEstrellas = parseInt(cantidadEstrellas);
+          $('.imgs-estrellas').attr('cantidad', cantidadEstrellas);
+          var idclase = $('.estrellas-recibidas').attr('id-clase');
+          var itemGuardar = 'cantidad_' + idclase;
+          var localStorageitem = localStorage.getItem(itemGuardar);
+
+          if (localStorageitem) {
+            if (localStorageitem != cantidadEstrellas) {
+              localStorage.setItem(itemGuardar, cantidadEstrellas);
+              $('.estrella-contenedor').addClass('mostrar').removeClass('nomostrar');
+              // Actualizar la vista    
+              setTimeout(function() {
+                //$('.estrella-saliente').css('display', 'none');
+                $('.estrella-contenedor').addClass('nomostrar').removeClass('mostrar');
+              }, 2000);
+            }
+          } else {
+            localStorage.setItem(itemGuardar, cantidadEstrellas);
+          }
+
+          //localStorage.setItem(itemGuardar, cantidadEstrellas);
+          // Recorrer .imgs-estrellas > img, y cambiar la imagen de la estrella por /themes/custom/koala/images/estrella.png
+          $('.imgs-estrellas > img').each(function(index, el) {
+            if (index < cantidadEstrellas) {
+              $(this).attr('src', '/themes/custom/koala/images/estrella.png');
+            } else {
+              $(this).attr('src', '/themes/custom/koala/images/estrella-vacia.png');
+            }
+          });
+  	    },
+  	    error: function (jqXHR, textStatus, errorThrown) {
+  	      console.log(errorThrown);
+  	      console.log(textStatus);                
+  	    }        
+  	  });
+  	}
+        
+        
   });
 noscript: ''
 noscriptRegion: {  }

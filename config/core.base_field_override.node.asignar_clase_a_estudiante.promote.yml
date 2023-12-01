@@ -1,0 +1,22 @@
+uuid: a4df5334-a5ac-4d9b-a0c6-54406ba9d033
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.asignar_clase_a_estudiante
+id: node.asignar_clase_a_estudiante.promote
+field_name: promote
+entity_type: node
+bundle: asignar_clase_a_estudiante
+label: 'Promocionado a la página principal'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: Activado
+  off_label: Desactivado
+field_type: boolean
