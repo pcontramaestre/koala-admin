@@ -342,25 +342,26 @@
             line-height: normal;
           }
         }
-
-        .comentarios-profesor,
-        .observaciones-profesor {
-          color: var(--Black, #000);
-          font-family: Nunito;
-          font-size: 1rem;
-          font-style: normal;
-          font-weight: 500;
-          margin-bottom: -0.7rem;
-          line-height: 22px;
-          min-width: 130%;
-          .titulo {
-            h4 {
-              font-size: 16px;
-              font-weight: 700;
+        @media (min-width: 1200px){
+          .comentarios-profesor,
+          .observaciones-profesor {
+            color: var(--Black, #000);
+            font-family: Nunito;
+            font-size: 1rem;
+            font-style: normal;
+            font-weight: 500;
+            margin-bottom: -0.7rem;
+            line-height: 22px;
+            min-width: 130%;
+            .titulo {
+              h4 {
+                font-size: 16px;
+                font-weight: 700;
+              }
             }
-          }
-          .comentario {
-            font-family: 500;
+            .comentario {
+              font-family: 500;
+            }
           }
         }
       }

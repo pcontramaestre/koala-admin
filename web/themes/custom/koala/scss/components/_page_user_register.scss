@@ -2,8 +2,15 @@ body.page-user-register {
   background-image: url("../images/background.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-
+  #header {
+    #navbar-main {
+      background-color: white !important;
+      height: 5.2rem;
+    }
+  }
   .barra-superior {
+    justify-content: flex-start!important;
+    background-color: white;
     position: absolute;
     z-index: 3;
     display: flex;
@@ -161,7 +168,6 @@ body.page-user-register {
                   font-weight: 500;
                 }
               }
-
             }
           }
 
@@ -203,8 +209,8 @@ body.page-user-register {
                   }
                 }
               }
-              .js-form-type-password{
-                overflow: visible!important;
+              .js-form-type-password {
+                overflow: visible !important;
               }
             }
 
@@ -243,7 +249,7 @@ body.page-user-register {
 }
 
 @media only screen and (max-width: 700px) and (min-width: 325px) {
-  .page-user-register{
+  .page-user-register {
     footer {
       padding-top: 2rem;
       .container {
@@ -251,11 +257,11 @@ body.page-user-register {
         align-items: center;
         margin-bottom: 1rem;
         .site-footer__top {
-          width: 25%!important;
+          width: 25% !important;
           margin-bottom: 1rem;
         }
         .footer-bottom {
-          width: 90%!important;
+          width: 90% !important;
         }
       }
     }
@@ -266,7 +272,7 @@ body.page-user-register {
         .iconos {
           .col-4:nth-child(1) {
             .img {
-              margin-right: 1.3rem!important;
+              margin-right: 1.3rem !important;
             }
           }
         }
@@ -321,7 +327,7 @@ body.page-user-register {
 
                 .js-form-type-password {
                   .password-strength {
-                    width: 65%!important;
+                    width: 65% !important;
                     .password-strength__title {
                       font-size: 0.9rem;
                       font-weight: 600;
