@@ -1,8 +1,12 @@
 body #main-wrapper {
   min-height: 95vh;
 }
-
-#header {
+.barra-superior{
+  justify-content: space-between;
+  padding-right: 4rem;
+}
+#header,
+.barra-superior {
   #block-dropdownlanguage {
     min-width: 128px;
     max-height: 50px;
@@ -14,6 +18,49 @@ body #main-wrapper {
       background: #d7f0f2;
       border-radius: 16px;
       width: 9.5rem;
+      .dropbutton-widget {
+        border: none;
+        background-color: transparent;
+        background-image: none;
+        padding-right: 0em;
+        .dropdown-language-item {
+          .dropbutton-action {
+            height: 2.2rem;
+            span {
+              font-weight: 700;
+              padding: 0;
+              color: black;
+              display: flex;
+              align-items: center;
+              height: 100%;
+              padding-left: 1rem;
+              font-size: 1rem;
+              img {
+                border-radius: 15px;
+                height: 1rem;
+                margin-right: 0.5rem;
+              }
+            }
+          }
+          .dropbutton-toggle {
+            background-color: #d7eff2;
+            border-top-right-radius: 32px;
+            border-bottom-right-radius: 32px;
+            button {
+              background-color: transparent;
+              background-image: none;
+              &:before {
+                content: "\f078";
+                font-family: "Font Awesome 5 Free";
+                font-weight: 900;
+              }
+              .dropbutton-arrow {
+                border: none;
+              }
+            }
+          }
+        }
+      }
     }
   }
 }
