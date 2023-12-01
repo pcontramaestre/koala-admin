@@ -4,11 +4,11 @@ status: true
 dependencies: {  }
 id: home_padres
 label: 'Home Padres'
-token: false
+token: true
 context:
   show_warning: true
   group:
-    language: false
+    language: true
   fallback:
     language: ''
 menu:

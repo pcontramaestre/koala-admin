@@ -1,0 +1,31 @@
+uuid: 3134edff-69c1-49a0-945b-a7d6d7beff32
+langcode: es
+status: true
+dependencies: {  }
+id: 3_cambios_de_idioma_con_javascript
+label: '3. Cambios de idioma con javascript'
+code: |-
+  jQuery(document).ready(function($) {
+  	$('.current_language-en .block-views-blockclases-gratuitas-block-proximas-clases > h2').text("Upcoming classes");
+  	$('.current_language-en #block-koala-content .content .layout--twocol-section--33-67 .layout__region--first .block-views-blockmis-koalas-block-1 h2').text("My Koalas");
+  	//Crear nuevo padre
+  	$('.current_language-en .user-register-form .field--name-field-nombre-del-acudiente input').attr("placeholder",'Parent/Legal Guardian Name');
+  	
+  	//Agendar Clase de nuevo hijo (Schedule your class)
+  	$('.current_language-en .node-agendar-clase-agendar-clases-form .field--name-field-fecha-de-la-cita input').attr("placeholder",'Date of the class');
+  	$('.current_language-en .node-agendar-clase-agendar-clases-form .form-item-field-nombre-del-nino-a-0-value input').attr("placeholder","Child's name");
+  	$('.current_language-en .node-agendar-clase-agendar-clases-form .form-item-field-fecha-nac-0-value input').attr("placeholder","Date of birth");
+  	$('.current_language-en .node-agendar-clase-agendar-clases-form .form-item-field-hora-clase-0-value input').attr("placeholder","Class time");
+  	$('.current_language-en .node-agendar-clase-agendar-clases-form button.form-submit').text("Schedule class");
+  	
+  	//EDITAR HIJOS
+  	$('.current_language-en .node-crear-hijos-editar-hijo-form button.form-submit').text("Update information");
+  });
+noscript: ''
+noscriptRegion: {  }
+jquery: false
+header: false
+preprocess: true
+conditions: {  }
+contexts: {  }
+conditions_require_all: true

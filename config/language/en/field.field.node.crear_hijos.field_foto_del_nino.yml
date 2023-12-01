@@ -1,0 +1,6 @@
+label: 'Photo of the child'
+description: 'Your photo or virtual face'
+settings:
+  default_image:
+    alt: 'My Koala'
+    title: 'My Koala'

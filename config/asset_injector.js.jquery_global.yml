@@ -15,9 +15,15 @@ code: |-
         var fecha_usar = $("input[id^='edit-field-fechas-laborables-value-min']").val();
         var partesFecha = fecha_usar.split('/'); // Divide la cadena en partes usando el separador '/'
   			var fecha_formateada = partesFecha[2] + '-' + partesFecha[0].padStart(2, '0') + '-' + partesFecha[1].padStart(2, '0');
-
-
-      var linkUrl = '/node/add/agendar_clase/agendando_clase?id=' + getLastParameterFromUrl() + '&field_profesor=' + idusuario2  + '&fecha='+fecha_formateada;
+  			
+  			var idiomaIngles = $('#page-wrapper').hasClass('current_language-en');
+  			
+  			if (idiomaIngles) {
+  				var linkUrl = '/en/node/add/agendar_clase/agendando_clase?id=' + getLastParameterFromUrl() + '&field_profesor=' + idusuario2  + '&fecha='+fecha_formateada;
+  			} else {
+  				var linkUrl = '/node/add/agendar_clase/agendando_clase?id=' + getLastParameterFromUrl() + '&field_profesor=' + idusuario2  + '&fecha='+fecha_formateada;	
+  			}
+      	
       $('#boton-agendamos-clase').attr('href', linkUrl);
     });
 
@@ -38,6 +44,12 @@ code: |-
         var fecha_usar = $("input[id^='edit-field-fechas-laborables-value-min']").val();
         var partesFecha = fecha_usar.split('/'); // Divide la cadena en partes usando el separador '/'
   			var fecha_formateada = partesFecha[2] + '-' + partesFecha[0].padStart(2, '0') + '-' + partesFecha[1].padStart(2, '0');      
+  			/*var idiomaIngles = $('#page-wrapper').hasClass('current_language-en');
+  			if (idiomaIngles) {
+        	var linkUrl = '/en/agendar_cita?id=' + getLastParameterFromUrl() + '&field_profesor=' + selectedValue + '&fecha='+fecha_formateada;
+        } else {
+        	var linkUrl = '/agendar_cita?id=' + getLastParameterFromUrl() + '&field_profesor=' + selectedValue + '&fecha='+fecha_formateada;
+        }*/
         var linkUrl = '/agendar_cita?id=' + getLastParameterFromUrl() + '&field_profesor=' + selectedValue + '&fecha='+fecha_formateada;
         $('#boton-agendamos-clase').attr('href', linkUrl);
       });

@@ -5,8 +5,8 @@ dependencies:
   module:
     - user
 id: inicio_padres
-label: 'Inicio Padres'
-description: ''
+label: 'Inicio Padres '
+description: 'Inicio Padres '
 use_admin_theme: false
 path: /padres
 access_logic: and
