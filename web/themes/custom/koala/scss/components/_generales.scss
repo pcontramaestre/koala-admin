@@ -555,14 +555,24 @@ footer.site-footer {
 
 .path-padres {
   .view-id-mis_koalas.view-display-id-block_2 {
-    .fondo-gris {
-      background: #e6f1f1;
-      position: absolute;
-      left: -30vw;
-      width: 200vw;
-      height: 106%;
-      z-index: -1;
-      top: -1rem;
+
+    .tab-pane {
+      .row {
+        .col-md-3, .col-md-9 {
+          position: relative;
+          z-index: 1;
+        }
+        .fondo-gris {
+          background: #e6f1f1;
+          position: absolute;
+          left: -30vw;
+          width: 200vw;
+          height: 106%;
+          z-index: -1;
+          top: -1rem;
+        }
+      }
     }
+
   }
 }
