@@ -576,3 +576,25 @@ footer.site-footer {
 
   }
 }
+.access-acudiente {
+  position: relative;
+  .enlace-agendar-completo {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+  }
+  a {
+    text-decoration: none;
+  }
+  &:hover {
+    opacity: 0.8;
+    color: #ff6669;
+
+    a {
+      color: #ff6669;
+      text-decoration: none;
+    }
+  }
+}
