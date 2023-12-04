@@ -1,4 +1,3 @@
-langcode: es
 map:
   'no': en
   pt: en
@@ -14,3 +13,4 @@ map:
   en-gb: en
   es: es
   es-co: es
+  es-ve: es

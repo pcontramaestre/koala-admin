@@ -1,19 +1,19 @@
-uuid: bcfaddfe-2c4c-4b5a-bce9-f4d8ca4af7b5
+uuid: 1f07cd17-c82b-489c-8cad-3a4b5f4b75d1
 langcode: es
 status: true
 dependencies:
   config:
     - commerce_product.commerce_product_type.clases
-id: commerce_product.clases.uid
-field_name: uid
+id: commerce_product.clases.default_variation
+field_name: default_variation
 entity_type: commerce_product
 bundle: clases
-label: Author
-description: 'The product author.'
+label: 'Default variation'
+description: 'The default variation.'
 required: false
 translatable: true
 default_value: {  }
-default_value_callback: 'Drupal\commerce_product\Entity\Product::getDefaultEntityOwner'
+default_value_callback: ''
 settings:
   handler: default
   handler_settings: {  }

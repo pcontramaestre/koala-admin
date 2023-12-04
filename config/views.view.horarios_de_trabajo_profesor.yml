@@ -1659,7 +1659,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: '<a href="/node/{{ nid__value }}/edit/editar_horarios?destination=/horarios-de-trabajo-profesor">Editar Horarios</a>'
+            text: '<a href="/node/{{ nid__value }}/edit/editar_horarios?destination=/horarios-de-trabajo-profesor" class="btn-editar">Editar Horarios</a>'
             make_link: false
             path: ''
             absolute: false
@@ -1839,8 +1839,21 @@ display:
         fields: false
         filters: false
         filter_groups: false
+        header: false
         footer: false
       use_ajax: true
+      header:
+        area_text_custom:
+          id: area_text_custom
+          table: views
+          field: area_text_custom
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text_custom
+          empty: true
+          content: '{{ nid }}'
+          tokenize: true
       footer:
         area_text_custom:
           id: area_text_custom

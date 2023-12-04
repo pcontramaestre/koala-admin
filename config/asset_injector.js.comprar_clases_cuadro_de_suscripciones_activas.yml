@@ -14,7 +14,10 @@ code: |
   var divElement = document.querySelector('.suscripciones .cuadro-blanco.ninos > .valor');
 
   // 3) Actualizar el contenido del div con el valor de filas
-  divElement.textContent = filas.toString();
+  if (filas > 0) {
+  	divElement.textContent = filas.toString();	
+  }
+
 
   // 4) Obtener el valor del div con la clase .valor-clases-compradas
   var valorClasesCompradas = document.querySelector('.valor-clases-compradas').textContent;

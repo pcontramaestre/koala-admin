@@ -6,6 +6,7 @@ dependencies:
     - commerce_product.commerce_product_type.clases
     - field.storage.commerce_product.field_imagen_de_suscripcion
   module:
+    - content_translation
     - filefield_paths
     - image
 third_party_settings:
@@ -26,6 +27,11 @@ third_party_settings:
     redirect: false
     retroactive_update: false
     active_updating: false
+  content_translation:
+    translation_sync:
+      alt: alt
+      title: title
+      file: '0'
 id: commerce_product.clases.field_imagen_de_suscripcion
 field_name: field_imagen_de_suscripcion
 entity_type: commerce_product
@@ -33,7 +39,7 @@ bundle: clases
 label: 'Imagen de suscripción'
 description: ''
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:

@@ -11,7 +11,7 @@ bundle: suscripcion_de_12_semanas
 label: Creado
 description: 'The time when the variation was created.'
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings: {  }

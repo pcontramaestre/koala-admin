@@ -42,3 +42,15 @@ display:
       footer:
         area_text_custom:
           content: "<a href=\"/en/node/add/agendar_clase/agendar_clases\" id=\"boton-agendamos-clase\" id-estudiante=\"{{ uid|trim }}\" class=\"btn btn-primary mt-5 mb-5\" data-drupal-link-system-path=\"/en/node/add/agendar_clase/agendar_clases\">Schedule Class</a>\r\n\r\n\r\n"
+  block_6:
+    display_options:
+      fields:
+        nothing:
+          alter:
+            text: "  <div class=\"access-acudiente\">\r\n    <div class=\"imagen\"><a href=\"/en/padres/mis-koalas/agendar_clase/{{ nid }}/{{ uid }}\">{{ user_picture }}</a></div>\r\n    <div class=\"nombre-datos\">\r\n      <div class=\"nombre\"><a href=\"/en/padres/mis-koalas/agendar_clase/{{ nid }}/{{ uid }}\">{{ title }}</a></div>\r\n      <div class=\"tipo\"></div>\r\n    </div>\r\n  </div>\r\n"
+        title:
+          alter:
+            text: "<a href=\"/en/padres/mis-koalas/agendar_clase/{{ nid }}/{{ uid }}\">{{ title__value }}</a>\r\n"
+      header:
+        area_text_custom:
+          content: '<div class="text-center mt-4 mb-5">Who do you want to schedule?</div>'
