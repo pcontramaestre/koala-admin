@@ -200,6 +200,9 @@ body #main-wrapper {
 
 #header {
   #navbar-main {
+    div .navbar-brand img{
+      z-index: 1;
+    }
     padding: 0rem 0rem;
 
     #CollapsingNavbar {
@@ -341,7 +344,7 @@ body #main-wrapper {
                 margin-bottom: 2rem;
 
                 .nav-link {
-                  font-size: 20px;
+                  font-size: 16px;
                 }
               }
             }
@@ -354,7 +357,10 @@ body #main-wrapper {
             .no-admin {
               // gap: 0px;
               .nav-link {
-                font-size: 20px;
+                font-size: 16px;
+              }
+              .nav-link--user-logout{
+                margin-bottom: 2rem;
               }
             }
           }
@@ -370,7 +376,13 @@ body #main-wrapper {
           display: flex;
           width: 100%;
           justify-content: end;
-
+          &:after {
+            content: url("");
+            background-image: url("../images/List.png");
+            height: 32px;
+            width: 32px;
+            display: block;
+          }
           &:before {
             content: "";
             display: block;
@@ -411,7 +423,7 @@ body #main-wrapper {
                   margin-right: 0rem;
 
                   .nav-link {
-                    font-size: 20px;
+                    font-size: 16px;
                   }
                 }
               }
@@ -529,7 +541,7 @@ body #main-wrapper {
           a {
             color: black;
             text-decoration: none;
-            font-size: 1.1rem;
+            font-size: 1rem;
             letter-spacing: 0.0625rem;
             font-weight: 800;
           }

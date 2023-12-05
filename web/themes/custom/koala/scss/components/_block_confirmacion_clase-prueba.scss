@@ -138,13 +138,13 @@ body.node--type-agendar-clase {
       }
     }
     .ir-a-cuenta:nth-child(2){
-      text-align: start!important;
-      width: 54%!important;
+      text-align: center!important;
+      width: 100%!important;
     }
-    .ir-a-cuenta:nth-child(3){
-      text-align: end!important;
-      width: 44%!important;
-      padding-left: 0rem!important;
-    }
+    // .ir-a-cuenta:nth-child(3){
+    //   text-align: end!important;
+    //   width: 44%!important;
+    //   padding-left: 0rem!important;
+    // }
   }
 }
