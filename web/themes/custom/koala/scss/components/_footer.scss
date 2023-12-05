@@ -97,6 +97,12 @@ footer.site-footer {
           font-weight: 600;
           margin-bottom: 0.5rem;
         }
+        @media (min-width: 1200px){
+          .dropbutton-widget{
+            width: 56%;
+            margin-bottom: 0.5rem;
+          }
+        }
       }
     }
     .footer-bottom {
@@ -219,8 +225,8 @@ footer.site-footer {
                   font-weight: 700;
                   margin-bottom: 1rem;
 
-                  //Pantallas menores a 1200px
-                  @media (max-width: 1200px) {
+                  //Pantallas menores a 800px
+                  @media (max-width: 800px) {
                     margin: 0 auto;
                     margin-bottom: 1rem;
                   }
@@ -462,6 +468,7 @@ footer.site-footer {
 
             .dropbutton-multiple {
               .dropbutton-widget {
+                width: 56%;
                 margin: 0 auto;
                 margin-bottom: 2rem;
               }
@@ -529,6 +536,11 @@ footer.site-footer {
         .region-footer-first {
           #block-padres-2 {
             margin-top: -4rem !important;
+          }
+        }
+        .region-footer-third{
+          .dropbutton-widget{
+            margin-bottom: 0.5rem;
           }
         }
       }

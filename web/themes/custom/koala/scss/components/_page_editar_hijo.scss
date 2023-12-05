@@ -1,16 +1,29 @@
 .node--type-crear-hijos {
-
+  .node-crear-hijos-editar-hijo-form{
+    .edit-children{
+      margin: 1.5rem 1rem 2rem 1rem;
+      text-align: center;
+      h2{
+        font-size: 24px!important;
+      }
+    }
+  }
   label {
     font-weight: 600;
     margin-bottom: 0.5rem;
   }
 
-  .js-form-item input {
-    color: black;
-    border: 2px solid #becaca;
-    border-radius: 32px;
-    height: 3rem;
-    font-weight: 700;
+  .js-form-item {
+    input {
+      color: black;
+      border: 2px solid #becaca;
+      border-radius: 32px;
+      font-weight: 700;
+    }
+    .form-check-input{
+      height: 1.3rem;
+      width: 1.3rem!important;
+    }
   }
 
   .layout--twocol-section--50-50 {
@@ -139,7 +152,6 @@
                 text-decoration: none;
                 font-weight    : 700;
                 font-size      : 1.2rem;
-                width          : 40%;
 
                 &:before {
                   display: none;
@@ -213,6 +225,16 @@
       &:before {
         display: none;
       }
-    }    
+    }
+  }
+}
+@media (min-width: 300px) and (max-width: 800px){
+  .node--type-crear-hijos {
+    .layout--twocol-section--50-50 {
+      .layout__region--first {
+        flex: 0 1 100%!important;
+        padding: 0rem!important;
+      }
+    }
   }
 }

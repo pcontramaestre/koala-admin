@@ -219,8 +219,8 @@ footer.site-footer {
                   font-weight: 700;
                   margin-bottom: 1rem;
 
-                  //Pantallas menores a 1200px
-                  @media (max-width: 1200px) {
+                  //Pantallas menores a 800px
+                  @media (max-width: 800px) {
                     margin: 0 auto;
                     margin-bottom: 1rem;
                   }
