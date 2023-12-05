@@ -241,5 +241,6 @@
     $("a[data-date='" + nuevoDia + "']").addClass("ui-state-active");
 
     $('.filtro-agendar a.ui-state-active').click();
+    $('#boton-agendamos-clase').css('display','none');
   });
 })(jQuery);
