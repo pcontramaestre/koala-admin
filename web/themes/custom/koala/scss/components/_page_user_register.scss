@@ -6,10 +6,14 @@ body.page-user-register {
     #navbar-main {
       background-color: white !important;
       height: 5.2rem;
+      #block-dropdownlanguage {
+        position: absolute;
+        right: 4rem;
+      }
     }
   }
   .barra-superior {
-    justify-content: flex-start!important;
+    justify-content: flex-start !important;
     background-color: white;
     position: absolute;
     z-index: 3;

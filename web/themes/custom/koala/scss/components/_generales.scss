@@ -10,6 +10,51 @@
     }
   }
 }
+// modal entrar como niño
+
+#confirmarEntrarNino {
+  .modal-dialog {
+    .modal-content {
+      .modal-header {
+        .modal-title {
+          display: flex;
+          width: 100%;
+          justify-content: center;
+          font-weight: 700;
+        }
+      }
+      .modal-body {
+        font-weight: 500;
+      }
+      .modal-footer {
+        display: flex;
+        justify-content: center;
+        .btn-secondary{
+          border: 2px solid #FF6669;
+          background-color: #FF9294;
+          &:hover{
+            background-color: #FF6669;
+            color: white;
+          }
+        }
+        .btn-primary{
+          background-color: #2FF7EE;
+          border: 2px solid #297E88;
+          &:hover{
+            background-color: #297E88;
+            color: white;
+          }
+        }
+        .btn{
+          min-width: 7rem;
+          font-weight: 500;
+          border-radius: 20px;
+          color: black;
+        }
+      }
+    }
+  }
+}
 
 footer.site-footer {
   background: $GreyK200 !important;
