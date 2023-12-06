@@ -210,7 +210,7 @@
                                 .field-multiple-table {
                                   border-color: white;
                                   .js-form-item-field-fechas-laborables-0-interval {
-                                    display: none;
+                                    display: none !important;
                                   }
                                   thead {
                                     tr {
