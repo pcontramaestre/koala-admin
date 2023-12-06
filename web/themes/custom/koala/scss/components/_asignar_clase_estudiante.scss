@@ -43,6 +43,12 @@
             background: var(--Turq-K500, #297e88);
             color: white;
           }
+
+          &:disabled {
+            background: var(--Grey-K100, #e6f1f1);
+            color: var(--Grey-K500, #727f7f);
+            border: 2px solid var(--Grey-K100, #e6f1f1);
+          }
         }
       }
 
