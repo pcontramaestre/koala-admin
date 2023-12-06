@@ -5,7 +5,7 @@ dependencies:
   module:
     - system
 id: edad_hijo_seccion_padres
-label: 'Edad Hijo Seccion Padres'
+label: 'Edad Hijo Seccion Padres / Ocultar Banner'
 code: |-
   jQuery(document).ready(function($) {
     // Obtener todos los elementos con la clase "datos"
@@ -32,6 +32,11 @@ code: |-
       // Reemplazar el texto del div con la edad calculada
       $(this).find('.fecha-nac').text('Edad: ' + edad + ' años');
     });
+    
+    // Si existen clases agendadas, no mostrar el banner
+    if ($('.clase-agendada').length > 0) {
+    	$('.banner-padres-perfil').css('display', 'none');
+    }
   });
 noscript: ''
 noscriptRegion: {  }

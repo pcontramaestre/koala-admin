@@ -11,6 +11,7 @@ dependencies:
     - field.storage.node.field_pencil_id_estudiante
     - field.storage.node.field_pencil_url_access_estudian
     - field.storage.node.field_pencil_url_clase
+    - field.storage.user.field_nombres_y_apellidos_del_pr
     - field.storage.user.user_picture
     - image.style.thumbnail
     - node.type.agendar_clase
@@ -424,7 +425,7 @@ display:
         type: default
         options:
           grouping: {  }
-          row_class: ''
+          row_class: clase-agendada
           default_row_class: true
       row:
         type: fields
@@ -2157,6 +2158,69 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
+        field_nombres_y_apellidos_del_pr:
+          id: field_nombres_y_apellidos_del_pr
+          table: user__field_nombres_y_apellidos_del_pr
+          field: field_nombres_y_apellidos_del_pr
+          relationship: field_asignar_profesor
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: false
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
         nothing:
           id: nothing
           table: views
@@ -2169,7 +2233,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<div class=\"row clases-proximas\">\r\n  <div class=\"dato-del-nino d-flex col-md-6\">\r\n    <div class=\"imagen\">{{ user_picture }}</div>\r\n    <div class=\"datos\"> \r\n         {{ field_nombre_del_nino_a }} \r\n         <div class=\"fecha-nac\">{{ field_fecha_nac }} </div>\r\n     </div>\r\n  </div>\r\n  <div class=\"datos-clase d-flex col-md-6\">\r\n    <div class=\"titulo\">Fecha</div>\r\n    <div class=\"datos-fecha\">\r\n      <div>{{ field_fecha_cita_oculta }}</div>\r\n      <div>{{ field_fecha_cita_oculta_1 }}</div>\r\n    </div>\r\n    <div class=\"boton\">      \r\n     <a href=\"/clases?idestudiante={{ field_pencil_id_estudiante }}&url={{ field_pencil_url_clase }}&idClase={{ nid }}\" class=\"editar-clase\"target=\"_blank\">Entrar a Clase</a>\r\n    </div>\r\n  </div>\r\n</div>"
+            text: "<div class=\"row clases-proximas\">\r\n  <div class=\"dato-del-nino d-flex col-md-6\">\r\n    <div class=\"imagen\">{{ user_picture }}</div>\r\n    <div class=\"datos\"> \r\n         {{ field_nombre_del_nino_a }} \r\n         <div class=\"fecha-nac\">{{ field_fecha_nac }} </div>\r\n     </div>\r\n  </div>\r\n  <div class=\"datos-clase d-flex col-md-6\">\r\n    <div class=\"titulo\">Fecha</div>\r\n    <div class=\"datos-fecha\">\r\n      <div>{{ field_fecha_cita_oculta }}</div>\r\n      <div>{{ field_fecha_cita_oculta_1 }}</div>\r\n    </div>\r\n   <div class=\"profesor\"><strong>Profesor: </strong>{{ field_nombres_y_apellidos_del_pr }}</div>\r\n    <div class=\"boton\">      \r\n     <a href=\"/clases?idestudiante={{ field_pencil_id_estudiante }}&url={{ field_pencil_url_clase }}&idClase={{ nid }}\" class=\"editar-clase\"target=\"_blank\">Entrar a Clase</a>\r\n    </div>\r\n  </div>\r\n</div>"
             make_link: false
             path: ''
             absolute: false
@@ -2509,6 +2573,15 @@ display:
           admin_label: 'field_alumno_relacionado: Usuario'
           plugin_id: standard
           required: false
+        field_asignar_profesor:
+          id: field_asignar_profesor
+          table: node__field_asignar_profesor
+          field: field_asignar_profesor
+          relationship: none
+          group_type: group
+          admin_label: 'field_asignar_profesor: Usuario'
+          plugin_id: standard
+          required: false
       display_description: ''
       footer:
         area_text_custom:
@@ -2539,4 +2612,5 @@ display:
         - 'config:field.storage.node.field_pencil_id_estudiante'
         - 'config:field.storage.node.field_pencil_url_access_estudian'
         - 'config:field.storage.node.field_pencil_url_clase'
+        - 'config:field.storage.user.field_nombres_y_apellidos_del_pr'
         - 'config:field.storage.user.user_picture'
