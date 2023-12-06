@@ -102,8 +102,12 @@ function callback_submit_asignar_clase_a_estudiante_submit(&$form, FormStateInte
       $nid = reset($nids);
       $node = Node::load($nid);
     }
-    // Obtener el nodo de tipo "suscripciones" con el id obtenido
-    $node = Node::load(reset($nids));
+    if (!empty($nids)) {
+      // Obtener el nodo de tipo "suscripciones" con el id obtenido
+      $node = Node::load(reset($nids));
+    } else {
+      $node = false;
+    }
     if ($node ){ 
       // obtener los valores numericos de los campos field_clases_restantes, field_clases_usadas    
       $field_clases_restantes = $node->get('field_clases_restantes')->getValue();
