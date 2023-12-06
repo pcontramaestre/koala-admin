@@ -1,0 +1,46 @@
+uuid: 2dfaa0ba-8264-45c1-bccc-004da457531d
+langcode: es
+status: true
+dependencies:
+  module:
+    - system
+id: 5_fechas_suscripcion_de_clases
+label: '5. Fechas suscripcion de clases'
+code: |-
+  jQuery(document).ready(function($) {
+    // Obtener el valor de "3" de la URL
+    const productId = window.location.pathname.split('/').pop();
+
+    // Calcular las fechas de inicio y fin basado en el valor de "productId"
+    let startDate = new Date();
+    let endDate;
+    if (productId === '3') {
+      endDate = new Date(startDate.getTime() + 4 * 7 * 24 * 60 * 60 * 1000); // Sumar 4 semanas
+    } else if (productId === '4') {
+      endDate = new Date(startDate.getTime() + 12 * 7 * 24 * 60 * 60 * 1000); // Sumar 12 semanas
+    } else if (productId === '5') {
+      endDate = new Date(startDate.getTime() + 24 * 7 * 24 * 60 * 60 * 1000); // Sumar 24 semanas
+    }
+
+    // Formatear las fechas
+    const formattedStartDate = startDate.toDateString();
+    const formattedEndDate = endDate.toDateString();
+
+    // Actualizar el contenido de la clase ".field--name-body"
+    if (productId) {
+      let newText = `Your plan starts on ${formattedStartDate} until ${formattedEndDate}`;
+      $('.field--name-body').html(newText);
+    }
+  });
+noscript: ''
+noscriptRegion: {  }
+jquery: true
+header: false
+preprocess: true
+conditions:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '/product/*'
+contexts: {  }
+conditions_require_all: true

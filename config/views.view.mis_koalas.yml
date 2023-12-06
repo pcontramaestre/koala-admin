@@ -2227,7 +2227,7 @@ display:
           expose_sort_order: true
           sort_asc_label: Asc
           sort_desc_label: Desc
-          text_input_required: 'Seleccione cualquier filtro y pulse Aplicar para ver los resultados'
+          text_input_required: 'Elige una fecha y haz clic en aplicar para ver los profesores disponibles en el día seleccionado.'
           text_input_required_format: basic_html
           bef:
             general:
@@ -2243,11 +2243,6 @@ display:
             filter:
               field_fechas_laborables_value:
                 plugin_id: default
-                advanced:
-                  collapsible: false
-                  is_secondary: false
-              field_fechas_laborables_value_1:
-                plugin_id: bef_datepicker
                 advanced:
                   collapsible: false
                   is_secondary: false
@@ -3090,6 +3085,55 @@ display:
     display_options:
       title: 'Calendario Padres'
       fields:
+        nothing_1:
+          id: nothing_1
+          table: views
+          field: nothing
+          relationship: none
+          group_type: group
+          admin_label: 'Hoy es'
+          plugin_id: custom
+          label: ''
+          exclude: false
+          alter:
+            alter_text: true
+            text: "<div class=\"fecha-hoy\">Today is {{ \"now\"|date(\"F jS \\\\a\\\\t g:ia\") }}</div>\r\n"
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: false
         title:
           id: title
           table: node_field_data
@@ -3681,7 +3725,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<div class=\"datos-clase\">\r\n  <div class=\"imagen\">\r\n    <img src=\"/themes/custom/koala/images/fondo-calendario-horario.png\" class=\"mw-100\">\r\n  </div>\r\n  <div class=\"alumno text-center\">\r\n    <p>Alumno</p>\r\n    <div class=\"datos-alumno\">\r\n      {{ field_nombre_del_nino_a }} \r\n    </div>\r\n  </div>\r\n  <div class=\"profesor text-center\">\r\n    <p>Profesor</p>\r\n   {{ field_nombres_y_apellidos_del_pr }} \r\n  </div>\r\n  <div class=\"fecha text-center\">\r\n    <p>Fecha</p>\r\n    <div class=\"fecha\">{{ field_fecha_cita_oculta_1 }}</div>\r\n  </div>\r\n  <div class=\"boton\">\r\n        <a href=\"/clases?idestudiante={{ field_pencil_id_estudiante }}&url={{ field_pencil_url_clase }}&idClase={{ nid }}\" class=\"editar-clase\"target=\"_blank\">Entrar a Clase</a>\r\n   </div>\r\n  <div class=\"editar-horario\">Cancelar clase</div>\r\n</div>"
+            text: "{{ nothing_1 }}\r\n<div class=\"datos-clase\">\r\n  <div class=\"imagen\">\r\n    <img src=\"/themes/custom/koala/images/fondo-calendario-horario.png\" class=\"mw-100\">\r\n  </div>\r\n  <div class=\"alumno text-center\">\r\n    <p>Alumno</p>\r\n    <div class=\"datos-alumno\">\r\n      {{ field_nombre_del_nino_a }} \r\n    </div>\r\n  </div>\r\n  <div class=\"profesor text-center\">\r\n    <p>Profesor</p>\r\n   {{ field_nombres_y_apellidos_del_pr }} \r\n  </div>\r\n  <div class=\"fecha text-center\">\r\n    <p>Fecha</p>\r\n    <div class=\"fecha\">{{ field_fecha_cita_oculta_1 }}</div>\r\n  </div>\r\n  <div class=\"boton\">\r\n        <a href=\"/clases?idestudiante={{ field_pencil_id_estudiante }}&url={{ field_pencil_url_clase }}&idClase={{ nid }}\" class=\"editar-clase\"target=\"_blank\">Entrar a Clase</a>\r\n   </div>\r\n  <div class=\"editar-horario\">Cancelar clase</div>\r\n</div>"
             make_link: false
             path: ''
             absolute: false
@@ -3827,7 +3871,7 @@ display:
           title: field_nombre_del_nino_a
           left_buttons: 'prev,next today'
           right_buttons: 'dayGridMonth,timeGridWeek,timeGridDay,listYear'
-          default_view: dayGridMonth
+          default_view: listYear
           firstDay: '1'
           nav_links: 1
           timeFormat: 'hh:mm a'
@@ -5843,7 +5887,7 @@ display:
           admin_label: ''
           plugin_id: text_custom
           empty: true
-          content: "<a href=\"/node/add/agendar_clase/agendar_clases\" id=\"boton-agendamos-clase\" id-estudiante=\"{{ uid|trim }}\" class=\"btn btn-primary mt-5 mb-5\" data-drupal-link-system-path=\"/node/add/agendar_clase/agendar_clases\">Agendar Clase</a>\r\n\r\n\r\n"
+          content: "<a href=\"/node/add/agendar_clase/agendar_clases\" id=\"boton-agendamos-clase\" id-estudiante=\"{{ uid|trim }}\" class=\"btn btn-primary mt-5 mb-5\" data-drupal-link-system-path=\"/node/add/agendar_clase/agendar_clases\">Siguiente</a>\r\n\r\n\r\n"
           tokenize: true
       display_extenders: {  }
       path: padres/mis-koalas/agendar_clase/%/%

@@ -567,6 +567,39 @@ bundles_roles_grants:
       grant_view: 0
       grant_update: 0
       grant_delete: 0
+  horarios_para_profesores_de_clas:
+    anonymous:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    authenticated:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    content_editor:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    administrator:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    profesor:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    padre:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    hijo:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    author:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
 grants_tab_availability:
   agendar_clase: false
   profesores: false
@@ -582,6 +615,7 @@ grants_tab_availability:
   asignar_clase_a_estudiante: false
   suscripciones: false
   facturacion_profesor: false
+  horarios_para_profesores_de_clas: false
 map_rid_gid:
   anonymous: 0
   authenticated: 1

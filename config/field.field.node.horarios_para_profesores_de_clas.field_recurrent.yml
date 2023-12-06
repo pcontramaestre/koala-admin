@@ -1,0 +1,32 @@
+uuid: bb3b69cb-5d33-4c1e-97d2-b30d25ad5f9b
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_recurrent
+    - node.type.horarios_para_profesores_de_clas
+  module:
+    - date_recur
+id: node.horarios_para_profesores_de_clas.field_recurrent
+field_name: field_recurrent
+entity_type: node
+bundle: horarios_para_profesores_de_clas
+label: 'Recurrent - Horario'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  precreate: P1Y
+  parts:
+    all: true
+    frequencies:
+      SECONDLY: {  }
+      MINUTELY: {  }
+      HOURLY: {  }
+      DAILY: {  }
+      WEEKLY: {  }
+      MONTHLY: {  }
+      YEARLY: {  }
+field_type: date_recur

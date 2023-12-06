@@ -1,0 +1,84 @@
+uuid: 03163697-9322-42dd-8271-2cb9d06cbd3a
+langcode: es
+status: true
+dependencies:
+  module:
+    - node
+id: 6_calificar_clases
+label: '6. Calificar clases'
+code: |-
+  jQuery(document).ready(function($) {
+    // Agregar el atributo "disabled" al botón
+  /*  
+    $('.node-asignar-clase-a-estudiante-edit-form.node-form .form-actions > button').attr('disabled', true);
+
+    // Escuchar el evento "change" en todos los checkboxes con la clase "input.form-checkbox"
+    $('input.form-checkbox').on('change', function() {
+      // Si se activa algún checkbox, quitar el atributo "disabled" del botón
+      if ($('input.form-checkbox:checked').length > 0) {
+        $('.node-asignar-clase-a-estudiante-edit-form.node-form .form-actions > button').removeAttr('disabled');
+      } else {
+        $('.node-asignar-clase-a-estudiante-edit-form.node-form .form-actions > button').attr('disabled', true);
+      }
+    });
+
+    // Escuchar el evento "change" en el checkbox con la id "edit-field-marcar-clase-como-finaliza-value"
+    $('#edit-field-marcar-clase-como-finaliza-value').on('change', function() {
+      // Desactivar el checkbox con la id "edit-field-el-nino-no-asistio-a-la-cl-value" si se activa el checkbox con la id "edit-field-marcar-clase-como-finaliza-value"
+      if ($('#edit-field-marcar-clase-como-finaliza-value').is(':checked')) {
+        $('#edit-field-el-nino-no-asistio-a-la-cl-value').prop('checked', false);
+      }
+    });
+
+    // Escuchar el evento "change" en el checkbox con la id "edit-field-el-nino-no-asistio-a-la-cl-value"
+    $('#edit-field-el-nino-no-asistio-a-la-cl-value').on('change', function() {
+      // Desactivar el checkbox con la id "edit-field-marcar-clase-como-finaliza-value" si se activa el checkbox con la id "edit-field-el-nino-no-asistio-a-la-cl-value"
+      if ($('#edit-field-el-nino-no-asistio-a-la-cl-value').is(':checked')) {
+        $('#edit-field-marcar-clase-como-finaliza-value').prop('checked', false);
+      }
+    });
+    */
+      // Agregar el atributo "disabled" al botón
+    $('.node-asignar-clase-a-estudiante-edit-form.node-form .form-actions > button').attr('disabled', true);
+
+    // Escuchar el evento "change" en los checkboxes con las ids "edit-field-el-nino-no-asistio-a-la-cl-value" y "edit-field-marcar-clase-como-finaliza-value"
+    $('#edit-field-el-nino-no-asistio-a-la-cl-value, #edit-field-marcar-clase-como-finaliza-value').on('change', function() {
+      // Si el checkbox "edit-field-el-nino-no-asistio-a-la-cl-value" o "edit-field-marcar-clase-como-finaliza-value" cambia de estado, habilitar o deshabilitar el botón según corresponda
+      if ($('#edit-field-el-nino-no-asistio-a-la-cl-value').is(':checked') || $('#edit-field-marcar-clase-como-finaliza-value').is(':checked')) {
+        $('.node-asignar-clase-a-estudiante-edit-form.node-form .form-actions > button').removeAttr('disabled');
+      } else {
+        $('.node-asignar-clase-a-estudiante-edit-form.node-form .form-actions > button').attr('disabled', true);
+      }
+    });
+
+    // Escuchar el evento "change" en el checkbox con la id "edit-field-marcar-clase-como-finaliza-value"
+    $('#edit-field-marcar-clase-como-finaliza-value').on('change', function() {
+      // Desactivar el checkbox con la id "edit-field-el-nino-no-asistio-a-la-cl-value" si se activa el checkbox con la id "edit-field-marcar-clase-como-finaliza-value"
+      if ($('#edit-field-marcar-clase-como-finaliza-value').is(':checked')) {
+        $('#edit-field-el-nino-no-asistio-a-la-cl-value').prop('checked', false);
+      }
+    });
+
+    // Escuchar el evento "change" en el checkbox con la id "edit-field-el-nino-no-asistio-a-la-cl-value"
+    $('#edit-field-el-nino-no-asistio-a-la-cl-value').on('change', function() {
+      // Desactivar el checkbox con la id "edit-field-marcar-clase-como-finaliza-value" si se activa el checkbox con la id "edit-field-el-nino-no-asistio-a-la-cl-value"
+      if ($('#edit-field-el-nino-no-asistio-a-la-cl-value').is(':checked')) {
+        $('#edit-field-marcar-clase-como-finaliza-value').prop('checked', false);
+      }
+    });
+  });
+noscript: ''
+noscriptRegion: {  }
+jquery: true
+header: false
+preprocess: true
+conditions:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      asignar_clase_a_estudiante: asignar_clase_a_estudiante
+contexts: {  }
+conditions_require_all: true

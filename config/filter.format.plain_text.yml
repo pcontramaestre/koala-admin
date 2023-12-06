@@ -1,7 +1,9 @@
 uuid: 143f454f-ff5c-46fd-9860-ce0bea436741
 langcode: es
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - token_filter
 _core:
   default_config_hash: NIKBt6kw_uPhNI0qtR2DnRf7mSOgAQdx7Q94SKMjXbQ
 name: 'Texto sin formato'
@@ -27,3 +29,10 @@ filters:
     status: true
     weight: 0
     settings: {  }
+  token_filter:
+    id: token_filter
+    provider: token_filter
+    status: true
+    weight: 0
+    settings:
+      replace_empty: '1'
