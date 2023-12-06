@@ -135,7 +135,13 @@
                       .fieldset-wrapper {
                         #edit-field-sexo-n {
                           justify-content: center !important;
-
+                          display: flex;
+                          .js-form-item-field-sexo-n{
+                            .form-check-input{
+                              width: 1.2em;
+                              height: 1.2rem;
+                            }
+                          }
                           .js-form-item {
                             display: flex;
                             margin: 0rem 1.1rem;
