@@ -209,7 +209,9 @@
                               .table-responsive {
                                 .field-multiple-table {
                                   border-color: white;
-
+                                  .js-form-item-field-fechas-laborables-0-interval {
+                                    display: none;
+                                  }
                                   thead {
                                     tr {
                                       border-color: white;
@@ -438,12 +440,13 @@
                                             }
 
                                             details {
-                                              width        : 70%;
+                                              width        : 100%;
                                               display      : flow-root;
                                               border       : none;
                                               margin-bottom: 0rem;
 
                                               summary {
+                                                //display: none;
                                                 border-radius   : 32px;
                                                 border          : 2px solid #BECACA;
                                                 color           : black;
