@@ -1,0 +1,11 @@
+change_password_modal:
+  version: 1.0
+  js:
+    js/change_password_modal.js: {}
+  css:
+    theme:
+      css/change_password_modal.css: {}
+  dependencies:
+    - core/drupal.dialog
+    - core/drupal.dialog.ajax
+    - core/jquery

@@ -96,7 +96,7 @@ function callback_submit_asignar_clase_a_estudiante_submit(&$form, FormStateInte
     ->sort('nid', 'ASC')
     ->range(0, 1);
     $nids = $query->execute();
-   
+
     $node = NULL;
     if (!empty($nids)) {
       $nid = reset($nids);
@@ -108,6 +108,7 @@ function callback_submit_asignar_clase_a_estudiante_submit(&$form, FormStateInte
     } else {
       $node = false;
     }
+
     if ($node ){ 
       // obtener los valores numericos de los campos field_clases_restantes, field_clases_usadas    
       $field_clases_restantes = $node->get('field_clases_restantes')->getValue();
