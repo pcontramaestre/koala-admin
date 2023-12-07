@@ -1,0 +1,37 @@
+uuid: 2563d1c8-6a10-423c-b212-2964ea91505a
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_first_login
+  module:
+    - multiple_registration
+    - user
+third_party_settings:
+  multiple_registration:
+    user_additional_register_form_required:
+      authenticated: 0
+      profesor: 0
+      padre: 0
+      hijo: 0
+    user_additional_register_form:
+      authenticated: 0
+      profesor: 0
+      padre: 0
+      hijo: 0
+id: user.user.field_first_login
+field_name: field_first_login
+entity_type: user
+bundle: user
+label: 'First Login'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: Activado
+  off_label: Desactivado
+field_type: boolean
