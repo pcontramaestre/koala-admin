@@ -5,7 +5,18 @@
       #parte-superio-no-mostrar {
         display: none;
       }
-
+      .mensaje-finalizar-clase-facturacion {
+        > div::before{
+          content: "";
+          background-image: url('/themes/custom/koala/images/warning.svg');
+          display: block;
+          background-repeat: no-repeat;
+          height: 30px;
+          width: 30px;
+          background-size: contain;
+          margin-right: 1rem;
+        }
+      }
       .titulo-pagina {
         color: #000;
         text-align: center;
@@ -179,7 +190,7 @@
 
       .nivel-clase {
         margin-top: 1rem;
-        background: #E6F1F1;
+        background: #e6f1f1;
         max-width: 92%;
         padding: 1rem 1.5rem 1rem 1rem;
         gap: 1rem;
@@ -195,7 +206,7 @@
           width: 60px;
           height: 60px;
           justify-content: center;
-          color: #297E88;
+          color: #297e88;
           font-size: 1.5rem;
           font-weight: 700;
         }
@@ -296,6 +307,14 @@
       //Formulario
       .node-asignar-clase-a-estudiante-edit-form {
         .layout-region {
+          .mensaje-finalizar-clase-facturacion {
+            min-height: 9%;
+            > div{
+              > div{
+                flex-direction: column;
+              }
+            }
+          }
           .layout--twocol {
             flex-direction: column;
             .layout__region--top {
@@ -346,23 +365,23 @@
   }
   .page-view-calificar-clases {
     #block-koala-content {
-      .view-id-calificar_clases{
+      .view-id-calificar_clases {
         .view-content {
           .table-responsive {
             .table {
               tbody {
                 tr {
-                  .views-field-field-nombre-del-nino-a{
-                    min-width: 205px!important;
+                  .views-field-field-nombre-del-nino-a {
+                    min-width: 205px !important;
                   }
-                  .views-field-field-fecha-cita-oculta{
-                    min-width: 203px!important;
+                  .views-field-field-fecha-cita-oculta {
+                    min-width: 203px !important;
                   }
-                  .views-field-field-clase-a-asignar{
-                    min-width: 115px!important;
+                  .views-field-field-clase-a-asignar {
+                    min-width: 115px !important;
                   }
-                  .views-field-edit-node{
-                    min-width: 165px!important;
+                  .views-field-edit-node {
+                    min-width: 165px !important;
                   }
                 }
               }
