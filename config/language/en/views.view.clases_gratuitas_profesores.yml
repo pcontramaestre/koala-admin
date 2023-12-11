@@ -1,0 +1,10 @@
+display:
+  block_1:
+    display_options:
+      fields:
+        nothing:
+          alter:
+            text: "<div class=\"d-flex koala\">\r\n  <div class=\"imagen\">{{ user_picture }}</div>\r\n  <div class=\"nombre-fecha\">\r\n    <div class=\"nombre\">{{ field_nombre_del_nino_a }}</div>\r\n    <div class=\"fecha\">{{ field_fecha_cita_oculta }}</div>\r\n  </div>\r\n  <div class=\"enlace\">\r\n    <a href=\"/en/clasesprofesor?idprofesor={{field_pencil_id_profesor}}&idClase={{ nid_1 }}&url={{ field_pencil_url_clase }}\"\r\n      target=\"_blank\" data1=\"/en/node/{{ nid }}/edit\" class=\"doble-clic\">Enter</a>\r\n  </div>\r\n</div>"
+      footer:
+        area_text_custom:
+          content: '<div class="ver-todos-koalas"><a href="/en/profesor/calendario">Go to class calendar</a></div>'
