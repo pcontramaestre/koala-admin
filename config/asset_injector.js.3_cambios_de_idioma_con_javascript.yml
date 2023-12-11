@@ -20,10 +20,18 @@ code: |-
   	
   	//EDITAR HIJOS
   	$('.current_language-en .node-crear-hijos-editar-hijo-form button.form-submit').text("Update information");
+  	
+  	/*
+  	   PROFESORES
+  	*/
+  	//Perfil
+  	$('.current_language-en .block-views-blockclases-gratuitas-profesores-block-1 > h2').text("Upcoming Classes");
+  	$('.current_language-en .block-views-blocktu-metodo-de-pago-block-1 > h2').text("My payment method");
+  	
   });
 noscript: ''
 noscriptRegion: {  }
-jquery: false
+jquery: true
 header: false
 preprocess: true
 conditions: {  }

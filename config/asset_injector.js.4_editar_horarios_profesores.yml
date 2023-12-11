@@ -1,0 +1,33 @@
+uuid: 5d6de494-d8c1-48e4-978e-5fd2e4ad8e7f
+langcode: es
+status: true
+dependencies:
+  module:
+    - node
+id: 4_editar_horarios_profesores
+label: '4. Editar horarios profesores'
+code: |-
+  jQuery(document).ready(function($) {
+    $('#edit-field-fechas-laborables').change(function() {
+      if ($(this).val() === 'DAILY') {
+        $(this).parent().find('details > summary').click();
+        console.log("Clic en dia");
+      }
+    });
+  });
+noscript: ''
+noscriptRegion: {  }
+jquery: true
+header: false
+preprocess: true
+conditions:
+  node_type:
+    id: node_type
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      horarios_de_trabajo: horarios_de_trabajo
+      horarios_profesores: horarios_profesores
+contexts: {  }
+conditions_require_all: true

@@ -38,6 +38,8 @@ function agregar_profesores_entity_insert(EntityInterface $entity) {
     if ($create_teache_pencil !== FALSE) {
       $entity->set('field_pencil_id', $create_teache_pencil['userId']);
       $entity->set('field_pencil_email', $create_teache_pencil['email']);
+      //field_first_login add true
+      $entity->set('field_first_login', TRUE);
       $entity->save();
     } else {
       \Drupal::messenger()->addError(new TranslatableMarkup('Error creating user in the API'));

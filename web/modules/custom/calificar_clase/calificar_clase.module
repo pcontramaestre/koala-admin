@@ -12,6 +12,7 @@
  * Implements hook_form_FORM_ID_alter() for the node_asignar_clase_a_estudiante_form.
  */
 function calificar_clase_form_alter(&$form, FormStateInterface $form_state, $form_id) {  
+  
   if ($form_id == 'node_asignar_clase_a_estudiante_edit_form') {
     $form['title']['#access'] = FALSE;
     $form['actions']['submit']['#value'] =  Drupal::translation()->translate('Cargar calificación');
@@ -96,14 +97,19 @@ function callback_submit_asignar_clase_a_estudiante_submit(&$form, FormStateInte
     ->sort('nid', 'ASC')
     ->range(0, 1);
     $nids = $query->execute();
-   
+
     $node = NULL;
     if (!empty($nids)) {
       $nid = reset($nids);
       $node = Node::load($nid);
     }
-    // Obtener el nodo de tipo "suscripciones" con el id obtenido
-    $node = Node::load(reset($nids));
+    if (!empty($nids)) {
+      // Obtener el nodo de tipo "suscripciones" con el id obtenido
+      $node = Node::load(reset($nids));
+    } else {
+      $node = false;
+    }
+
     if ($node ){ 
       // obtener los valores numericos de los campos field_clases_restantes, field_clases_usadas    
       $field_clases_restantes = $node->get('field_clases_restantes')->getValue();
@@ -128,8 +134,16 @@ function callback_submit_asignar_clase_a_estudiante_submit(&$form, FormStateInte
     }
   }
 
-  // Redireccionar a la pagina del profesor /profesor
-  $response = new RedirectResponse('/profesor');
-  $response->send();
+  //get language
+  $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
+  // si es español
+  if ($language == 'es') {
+    $response = new RedirectResponse('/profesor');
+    $response->send();
+  } else {
+    $response = new RedirectResponse('/en/profesor');
+    $response->send();
+  }
+
 
 }

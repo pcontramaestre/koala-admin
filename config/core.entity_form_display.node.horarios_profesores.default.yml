@@ -45,8 +45,9 @@ content:
         120|2 hours
         custom
       show_extra: true
-      hide_date: true
+      hide_date: false
       allday: false
+      remove_seconds: true
       separator: hasta
     third_party_settings:
       smart_date_recur:
@@ -55,8 +56,8 @@ content:
           MINUTELY: '0'
           HOURLY: '0'
           DAILY: DAILY
-          WEEKLY: WEEKLY
-          MONTHLY: MONTHLY
+          WEEKLY: '0'
+          MONTHLY: '0'
           YEARLY: '0'
   field_profesor:
     type: entity_reference_autocomplete

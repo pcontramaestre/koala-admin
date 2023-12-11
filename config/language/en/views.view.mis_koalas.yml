@@ -41,4 +41,38 @@ display:
     display_options:
       footer:
         area_text_custom:
-          content: "<a href=\"/en/node/add/agendar_clase/agendar_clases\" id=\"boton-agendamos-clase\" id-estudiante=\"{{ uid|trim }}\" class=\"btn btn-primary mt-5 mb-5\" data-drupal-link-system-path=\"/en/node/add/agendar_clase/agendar_clases\">Schedule Class</a>\r\n\r\n\r\n"
+          content: "<a href=\"/en/node/add/agendar_clase/agendar_clases\" id=\"boton-agendamos-clase\" id-estudiante=\"{{ uid|trim }}\" class=\"btn btn-primary mt-5 mb-5\" data-drupal-link-system-path=\"/en/node/add/agendar_clase/agendar_clases\">Next</a>\r\n\r\n\r\n"
+  block_6:
+    display_options:
+      fields:
+        nothing:
+          alter:
+            text: "  <div class=\"access-acudiente\">\r\n    <div class=\"imagen\"><a href=\"/en/padres/mis-koalas/agendar_clase/{{ nid }}/{{ uid }}\">{{ user_picture }}</a></div>\r\n    <div class=\"nombre-datos\">\r\n      <div class=\"nombre\"><a href=\"/en/padres/mis-koalas/agendar_clase/{{ nid }}/{{ uid }}\">{{ title }}</a></div>\r\n      <div class=\"tipo\"></div>\r\n    </div>\r\n  </div>\r\n"
+        title:
+          alter:
+            text: "<a href=\"/en/padres/mis-koalas/agendar_clase/{{ nid }}/{{ uid }}\">{{ title__value }}</a>\r\n"
+      header:
+        area_text_custom:
+          content: '<div class="text-center mt-4 mb-5">Who do you want to schedule?</div>'
+  block_3:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Apply
+          text_input_required: 'Choose a date and click apply to see the teachers available on the selected day.'
+      filters:
+        field_fechas_laborables_value:
+          expose:
+            label: 'Select date'
+            description: 'Select a date range to search for available teachers'
+            min_placeholder: 'Since the date'
+            max_placeholder: 'Till the date'
+  profesor_detalle_horario:
+    display_options:
+      title: 'Search teachers'
+  block_5:
+    display_options:
+      fields:
+        nothing:
+          alter:
+            text: "{{ nothing_1 }}\r\n<div class=\"datos-clase\">\r\n  <div class=\"imagen\">\r\n    <img src=\"/themes/custom/koala/images/fondo-calendario-horario.png\" class=\"mw-100\">\r\n  </div>\r\n  <div class=\"alumno text-center\">\r\n    <p>Student</p>\r\n    <div class=\"datos-alumno\">\r\n      {{ field_nombre_del_nino_a }} \r\n    </div>\r\n  </div>\r\n  <div class=\"profesor text-center\">\r\n    <p>Teacher</p>\r\n   {{ field_nombres_y_apellidos_del_pr }} \r\n  </div>\r\n  <div class=\"fecha text-center\">\r\n    <p>Date</p>\r\n    <div class=\"fecha\">{{ field_fecha_cita_oculta_1 }}</div>\r\n  </div>\r\n  <div class=\"boton\">\r\n        <a href=\"/clases?idestudiante={{ field_pencil_id_estudiante }}&url={{ field_pencil_url_clase }}&idClase={{ nid }}\" class=\"editar-clase\"target=\"_blank\">Get into class</a>\r\n   </div>\r\n  <div class=\"editar-horario\">Cancel class</div>\r\n</div>"

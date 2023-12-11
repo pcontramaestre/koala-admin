@@ -98,6 +98,7 @@ module:
   filefield_paths: 0
   filter: 0
   filtro_logros_clases: 0
+  first_login_teacher: 0
   fivestar: 0
   flags: 0
   flags_country: 0

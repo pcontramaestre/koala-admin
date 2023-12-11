@@ -10,6 +10,8 @@ dependencies:
     - field.storage.node.field_hijo_relacionado
     - field.storage.node.field_logros
     - field.storage.node.field_nombre_del_nino_a
+    - field.storage.node.field_pencil_id_estudiante
+    - field.storage.node.field_pencil_url_clase
     - field.storage.user.field_nombre_del_acudiente
     - field.storage.user.field_nombre_del_hijo
     - field.storage.user.field_nombres_y_apellidos_del_pr
@@ -1493,7 +1495,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<div class=\"boton-agendar\"><a href=\"/padres/mis-koalas/agendar_clase/{{ nid }}/{{ uid }}\" class=\"agendar-clase btn btn-primary mt-5 mb-5\">Agendar clase</a></div>\r\n<div class=\"boton-agendar boton-editar-nino\"><a href=\"/node/{{ nid }}/edit/editar_hijo\" class=\"agendar-clase btn btn-primary mt-5 mb-5\">Editar niño</a></div>\r\n<div class=\"boton-agendar boton-editar-nino\"><a href=\"/custom-child-login/{{ nid }}\" class=\"agendar-clase btn btn-primary mt-5 mb-5 entrar-nino\">Entrar a la sección del niño</a></div>"
+            text: "<div class=\"boton-agendar\"><a href=\"/padres/mis-koalas/agendar_clase/{{ nid }}/{{ uid }}\" class=\"agendar-clase btn btn-primary mt-5 mb-5\">Agendar clase</a></div>\r\n<div class=\"boton-agendar boton-editar-nino\"><a href=\"/node/{{ nid }}/edit/editar_hijo\" class=\"agendar-clase btn btn-primary mt-5 mb-5\">Editar niño</a></div>\r\n<div class=\"boton-agendar boton-editar-nino\"><a href=\"/custom-child-login/{{ uid }}\" class=\"agendar-clase btn btn-primary mt-5 mb-5 entrar-nino\">Entrar a la sección del niño</a></div>"
             make_link: false
             path: ''
             absolute: false
@@ -2225,7 +2227,7 @@ display:
           expose_sort_order: true
           sort_asc_label: Asc
           sort_desc_label: Desc
-          text_input_required: 'Seleccione cualquier filtro y pulse Aplicar para ver los resultados'
+          text_input_required: 'Elige una fecha y haz clic en aplicar para ver los profesores disponibles en el día seleccionado.'
           text_input_required_format: basic_html
           bef:
             general:
@@ -2241,11 +2243,6 @@ display:
             filter:
               field_fechas_laborables_value:
                 plugin_id: default
-                advanced:
-                  collapsible: false
-                  is_secondary: false
-              field_fechas_laborables_value_1:
-                plugin_id: bef_datepicker
                 advanced:
                   collapsible: false
                   is_secondary: false
@@ -3088,6 +3085,55 @@ display:
     display_options:
       title: 'Calendario Padres'
       fields:
+        nothing_1:
+          id: nothing_1
+          table: views
+          field: nothing
+          relationship: none
+          group_type: group
+          admin_label: 'Hoy es'
+          plugin_id: custom
+          label: ''
+          exclude: false
+          alter:
+            alter_text: true
+            text: "<div class=\"fecha-hoy\">Today is {{ \"now\"|date(\"F jS \\\\a\\\\t g:ia\") }}</div>\r\n"
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: false
         title:
           id: title
           table: node_field_data
@@ -3475,6 +3521,198 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
+        field_pencil_id_estudiante:
+          id: field_pencil_id_estudiante
+          table: node__field_pencil_id_estudiante
+          field: field_pencil_id_estudiante
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: true
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: true
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: false
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        field_pencil_url_clase:
+          id: field_pencil_url_clase
+          table: node__field_pencil_url_clase
+          field: field_pencil_url_clase
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: true
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: true
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: false
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        nid:
+          id: nid
+          table: node_field_data
+          field: nid
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: node
+          entity_field: nid
+          plugin_id: field
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: true
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: true
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: number_integer
+          settings:
+            thousand_separator: ''
+            prefix_suffix: false
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
         nothing:
           id: nothing
           table: views
@@ -3487,7 +3725,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<div class=\"datos-clase\">\r\n  <div class=\"imagen\">\r\n    <img src=\"/themes/custom/koala/images/fondo-calendario-horario.png\" class=\"mw-100\">\r\n  </div>\r\n  <div class=\"alumno text-center\">\r\n    <p>Alumno</p>\r\n    <div class=\"datos-alumno\">\r\n      {{ field_nombre_del_nino_a }} \r\n    </div>\r\n  </div>\r\n  <div class=\"profesor text-center\">\r\n    <p>Profesor</p>\r\n   {{ field_nombres_y_apellidos_del_pr }} \r\n  </div>\r\n  <div class=\"fecha text-center\">\r\n    <p>Fecha</p>\r\n    <div class=\"fecha\">{{ field_fecha_cita_oculta_1 }}</div>\r\n  </div>\r\n  <div class=\"boton\"><a href=\"https://koalaconecta.icreativadigital.com/login.htm\" target=\"_blank\">Entrar a clase</a></div>\r\n  <div class=\"editar-horario\">Editar horario</div>\r\n</div>"
+            text: "{{ nothing_1 }}\r\n<div class=\"datos-clase\">\r\n  <div class=\"imagen\">\r\n    <img src=\"/themes/custom/koala/images/fondo-calendario-horario.png\" class=\"mw-100\">\r\n  </div>\r\n  <div class=\"alumno text-center\">\r\n    <p>Alumno</p>\r\n    <div class=\"datos-alumno\">\r\n      {{ field_nombre_del_nino_a }} \r\n    </div>\r\n  </div>\r\n  <div class=\"profesor text-center\">\r\n    <p>Profesor</p>\r\n   {{ field_nombres_y_apellidos_del_pr }} \r\n  </div>\r\n  <div class=\"fecha text-center\">\r\n    <p>Fecha</p>\r\n    <div class=\"fecha\">{{ field_fecha_cita_oculta_1 }}</div>\r\n  </div>\r\n  <div class=\"boton\">\r\n        <a href=\"/clases?idestudiante={{ field_pencil_id_estudiante }}&url={{ field_pencil_url_clase }}&idClase={{ nid }}\" class=\"editar-clase\"target=\"_blank\">Entrar a Clase</a>\r\n   </div>\r\n  <div class=\"editar-horario\">Cancelar clase</div>\r\n</div>"
             make_link: false
             path: ''
             absolute: false
@@ -3626,14 +3864,14 @@ display:
       style:
         type: fullcalendar_view_display
         options:
-          default_date_source: first
+          default_date_source: now
           defaultDate: ''
           start: field_fecha_cita_oculta
           end: ''
           title: field_nombre_del_nino_a
           left_buttons: 'prev,next today'
           right_buttons: 'dayGridMonth,timeGridWeek,timeGridDay,listYear'
-          default_view: dayGridMonth
+          default_view: listYear
           firstDay: '1'
           nav_links: 1
           timeFormat: 'hh:mm a'
@@ -3652,18 +3890,26 @@ display:
             agendar_clase: '#3a87ad'
             agendar_clase_no_gratis: '#3a87ad'
             article: '#3a87ad'
+            asignar_clase_a_estudiante: '#3a87ad'
+            clases_estudiantes: '#3a87ad'
             crear_hijos: '#3a87ad'
             event: '#3a87ad'
+            facturacion_profesor: '#3a87ad'
             horarios_de_trabajo: '#3a87ad'
             horarios_profesores: '#3a87ad'
+            koala_ninos: '#3a87ad'
+            metodos_de_pago: '#3a87ad'
             mundos: '#3a87ad'
             mundos_detalle: '#3a87ad'
             page: '#3a87ad'
             profesores: '#3a87ad'
+            suscripciones: '#3a87ad'
           rrule: ''
           duration: ''
           bundle_type: ''
           classes: ''
+          default_mobile_view: listYear
+          mobile_width: '768'
           minTime: '00:00:00'
           maxTime: '23:59:59'
           dialogModal: 0
@@ -3724,6 +3970,8 @@ display:
         - 'config:field.storage.node.field_asignar_profesor'
         - 'config:field.storage.node.field_fecha_cita_oculta'
         - 'config:field.storage.node.field_nombre_del_nino_a'
+        - 'config:field.storage.node.field_pencil_id_estudiante'
+        - 'config:field.storage.node.field_pencil_url_clase'
         - 'config:field.storage.user.field_nombres_y_apellidos_del_pr'
   block_6:
     id: block_6
@@ -4311,7 +4559,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "  <div class=\"access-acudiente\">\r\n    <div class=\"imagen\"><a href=\"/padres/mis-koalas/agendar_clase/{{ nid }}/{{ uid }}\">{{ user_picture }}</a></div>\r\n    <div class=\"nombre-datos\">\r\n      <div class=\"nombre\"><a href=\"/padres/mis-koalas/agendar_clase/{{ nid }}/{{ uid }}\">{{ title }}</a></div>\r\n      <div class=\"tipo\"></div>\r\n    </div>\r\n  </div>\r\n"
+            text: "  <div class=\"access-acudiente\">\r\n   <a href=\"/padres/mis-koalas/agendar_clase/{{ nid }}/{{ uid }}\" class=\"enlace-agendar-completo\"></a>\r\n    <div class=\"imagen\"><a href=\"/padres/mis-koalas/agendar_clase/{{ nid }}/{{ uid }}\">{{ user_picture }}</a></div>\r\n    <div class=\"nombre-datos\">\r\n      <div class=\"nombre\"><a href=\"/padres/mis-koalas/agendar_clase/{{ nid }}/{{ uid }}\">{{ title }}</a></div>\r\n      <div class=\"tipo\"></div>\r\n    </div>\r\n  </div>\r\n"
             make_link: false
             path: ''
             absolute: false
@@ -5639,7 +5887,7 @@ display:
           admin_label: ''
           plugin_id: text_custom
           empty: true
-          content: "<a href=\"/node/add/agendar_clase/agendar_clases\" id=\"boton-agendamos-clase\" id-estudiante=\"{{ uid|trim }}\" class=\"btn btn-primary mt-5 mb-5\" data-drupal-link-system-path=\"/node/add/agendar_clase/agendar_clases\">Agendar Clase</a>\r\n\r\n\r\n"
+          content: "<a href=\"/node/add/agendar_clase/agendar_clases\" id=\"boton-agendamos-clase\" id-estudiante=\"{{ uid|trim }}\" class=\"btn btn-primary mt-5 mb-5\" data-drupal-link-system-path=\"/node/add/agendar_clase/agendar_clases\">Siguiente</a>\r\n\r\n\r\n"
           tokenize: true
       display_extenders: {  }
       path: padres/mis-koalas/agendar_clase/%/%

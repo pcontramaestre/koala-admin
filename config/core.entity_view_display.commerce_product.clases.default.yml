@@ -3,7 +3,9 @@ langcode: es
 status: true
 dependencies:
   config:
+    - block_content.type.basic
     - commerce_product.commerce_product_type.clases
+    - core.base_field_override.commerce_product.clases.title
     - field.field.commerce_product.clases.body
     - field.field.commerce_product.clases.field_imagen_de_suscripcion
   module:
@@ -66,7 +68,7 @@ third_party_settings:
                 third_party_settings:
                   field_formatter_class:
                     class: ''
-            weight: 4
+            weight: 5
             additional:
               layout_builder_styles_style:
                 separacion_superior_mt_5: 0
@@ -90,7 +92,7 @@ third_party_settings:
                 third_party_settings:
                   field_formatter_class:
                     class: ''
-            weight: 3
+            weight: 4
             additional:
               layout_builder_styles_style:
                 separacion_superior_mt_5: 0
@@ -110,7 +112,7 @@ third_party_settings:
                 label: hidden
                 settings:
                   image_link: ''
-                  image_style: media_library
+                  image_style: wide
                   image_loading:
                     attribute: lazy
                   svg_attributes:
@@ -144,6 +146,22 @@ third_party_settings:
                   field_formatter_class:
                     class: ''
             weight: 0
+            additional:
+              layout_builder_styles_style:
+                separacion_superior_mt_5: 0
+          3404b760-bc2b-4426-bf97-4939c9a07784:
+            uuid: 3404b760-bc2b-4426-bf97-4939c9a07784
+            region: content
+            configuration:
+              id: 'inline_block:basic'
+              label: 'Fechas desde'
+              label_display: '0'
+              provider: layout_builder
+              view_mode: full
+              context_mapping: {  }
+              block_revision_id: 13
+              block_serialized: null
+            weight: 3
             additional:
               layout_builder_styles_style:
                 separacion_superior_mt_5: 0

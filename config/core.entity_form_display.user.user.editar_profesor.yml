@@ -10,6 +10,7 @@ dependencies:
     - field.field.user.user.field_celular
     - field.field.user.user.field_direcc
     - field.field.user.user.field_direccion
+    - field.field.user.user.field_first_login
     - field.field.user.user.field_nacionalidad
     - field.field.user.user.field_nombre_del_acudiente
     - field.field.user.user.field_nombre_del_hijo
@@ -85,7 +86,7 @@ third_party_settings:
       label: 'Zona horaria'
       region: first
       parent_name: ''
-      weight: 4
+      weight: 6
       format_type: fieldset
       format_settings:
         classes: ''
@@ -115,13 +116,13 @@ bundle: user
 mode: editar_profesor
 content:
   account:
-    weight: 5
+    weight: 3
     region: second
     settings: {  }
     third_party_settings: {  }
   field_direcc:
     type: address_default
-    weight: 7
+    weight: 5
     region: second
     settings: {  }
     third_party_settings: {  }
@@ -144,7 +145,7 @@ content:
     third_party_settings: {  }
   field_numero_de_telefono:
     type: phone_number_default
-    weight: 6
+    weight: 4
     region: second
     settings:
       default_country: US
@@ -167,16 +168,6 @@ content:
     settings:
       media_types: {  }
     third_party_settings: {  }
-  language:
-    weight: 7
-    region: first
-    settings: {  }
-    third_party_settings: {  }
-  timezone:
-    weight: 8
-    region: first
-    settings: {  }
-    third_party_settings: {  }
   user_picture:
     type: image_image
     weight: 2
@@ -193,6 +184,7 @@ hidden:
   field_avatar: true
   field_celular: true
   field_direccion: true
+  field_first_login: true
   field_nombre_del_acudiente: true
   field_nombre_del_hijo: true
   field_padre: true
@@ -200,5 +192,7 @@ hidden:
   field_pencil_email: true
   field_pencil_id: true
   langcode: true
+  language: true
   path: true
+  timezone: true
   translation: true

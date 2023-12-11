@@ -1,0 +1,18 @@
+uuid: cadd6856-7eb4-418c-bbd4-2339b2b9c0b8
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.horarios_para_profesores_de_clas
+id: node.horarios_para_profesores_de_clas.title
+field_name: title
+entity_type: node
+bundle: horarios_para_profesores_de_clas
+label: 'Título de referencia'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

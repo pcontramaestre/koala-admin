@@ -1,0 +1,5 @@
+name: 'First Login Teacher'
+type: module
+description: 'Displays a popup to prompt password change on first login for teacher role.'
+core_version_requirement: '^8 || ^9'
+package: Custom

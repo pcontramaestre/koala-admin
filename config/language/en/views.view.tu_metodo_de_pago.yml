@@ -1,0 +1,10 @@
+display:
+  default:
+    display_options:
+      header:
+        area_text_custom:
+          content: '<strong>Your payment method</strong>'
+      fields:
+        nid:
+          alter:
+            text: '<a href="/en/node/{{ nid__value }}/edit">Edit</a>'

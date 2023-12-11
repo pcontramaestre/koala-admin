@@ -1,0 +1,98 @@
+<?php
+/**
+ * @file
+ * Contains first_login_teacher.module.
+ */
+use Drupal\Core\Session\AccountInterface;
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\user\Entity\User;
+use Drupal\Core\Form\FormStateInterface;
+use Symfony\Component\HttpFoundation\RedirectResponse;
+
+/**
+ * Implements hook_user_login().
+ */
+function first_login_teacher_user_login(AccountInterface $account) {
+  // Check if this is the first time logged in and if the user has the 'professor' role.
+  //if ($account->hasRole('profesor') && $account->getLastLoginTime() == 0) {
+  $user = User::load(\Drupal::currentUser()->id());
+  // get value bolean field_first_login
+  $first_login = $user->get('field_first_login')->value;
+  // chheck user role 'profesor' with $user
+  $roles = \Drupal::currentUser()->getRoles();
+  $profesor = in_array('profesor', $roles);  
+  if ($first_login && $profesor) {
+    // Store a flag in the user session to trigger the popup.
+    $_SESSION['first_login_teacher_popup'] = TRUE;
+    // create cookie para el popup
+    setcookie('first_login_teacher_popup', TRUE, time() + 86400, '/');
+  }
+}
+
+/**
+ * Implements hook_form_alter().
+ * Add a custom submit handler to edit user.
+ */
+function first_login_teacher_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) { 
+  $user = User::load(\Drupal::currentUser()->id());
+  $roles = \Drupal::currentUser()->getRoles();
+  $profesor = in_array('profesor', $roles);
+  if ($profesor) {
+    if ($form_id == 'user_form' || $form_id == 'user_editar_profesor_form') {
+      unset($_SESSION['first_login_teacher_popup']);
+      $form['actions']['submit']['#submit'][] = 'callback_submit_first_login_teacher_change_password_submit';
+    }
+  }
+}
+
+
+// Function user update password
+function callback_submit_first_login_teacher_change_password_submit(array &$form, FormStateInterface $form_state) {
+  $user = User::load(\Drupal::currentUser()->id());
+  $user->set('field_first_login', FALSE);
+  $user->save();
+  // Remove the flag from the user session.
+  unset($_SESSION['first_login_teacher_popup']);
+  // remove cookie
+  setcookie('first_login_teacher_popup', '', time() - 3600, '/');
+
+  // get language 
+  $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
+  // si es español
+  if ($language == 'es') {
+    // redireccionar a la página de inicio que es /profesor
+    $response = new RedirectResponse('/profesor');
+    $response->send();
+  } else {
+    // si es ingles
+    // redireccionar a la página de inicio que es /profesor
+    $response = new RedirectResponse('/en/profesor');
+    $response->send();
+  }
+}
+
+
+/**
+ * Implements hook_preprocess_page().
+ */
+function first_login_teacher_preprocess_page(&$variables) {
+  $cookie = $_COOKIE['first_login_teacher_popup'];
+  if (isset($_SESSION['first_login_teacher_popup']) && $cookie) {
+    $user = User::load(\Drupal::currentUser()->id());
+    // $getLastLoginTimeUser = $user->getLastLoginTime();
+    // dump($getLastLoginTimeUser);
+    $namae = $user->get('field_nombres_y_apellidos_del_pr')->value;
+    // dump($namae);
+    // dump($_SESSION['first_login_teacher_popup']);
+    // $access = $user->getLastAccessedTime();
+    // dump($access);
+    // $isNew = $user->isNew();
+    // dump($isNew);
+    // $userCreate = $user->getCreatedTime();
+    // dump($userCreate);
+    // Attach the library that contains styles and JavaScript for the modal.
+    $variables['#attached']['library'][] = 'first_login_teacher/change_password_modal';
+    $variables['#attached']['drupalSettings']['first_login_teacher']['uid'] = $user->id();
+    $variables['#attached']['drupalSettings']['first_login_teacher']['namae'] = $namae;
+  }
+}

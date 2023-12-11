@@ -1,0 +1,28 @@
+uuid: c833b183-6faa-464b-8b61-6e26e6e8f05a
+langcode: es
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.horarios_para_profesores_de_clas.field_asignar_profesor
+    - field.field.node.horarios_para_profesores_de_clas.field_recurrent
+    - node.type.horarios_para_profesores_de_clas
+  module:
+    - user
+id: node.horarios_para_profesores_de_clas.teaser
+targetEntityType: node
+bundle: horarios_para_profesores_de_clas
+mode: teaser
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  field_asignar_profesor: true
+  field_recurrent: true
+  langcode: true
