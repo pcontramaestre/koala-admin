@@ -628,3 +628,9 @@
     }
   }
 }
+
+.current_language-en {
+  .view-detalle-profesor .perfil-general-profesor .views-field-nothing .field-content:before {
+    content: "My profile" !important;
+  }
+}

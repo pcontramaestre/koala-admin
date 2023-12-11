@@ -12,6 +12,7 @@
  * Implements hook_form_FORM_ID_alter() for the node_asignar_clase_a_estudiante_form.
  */
 function calificar_clase_form_alter(&$form, FormStateInterface $form_state, $form_id) {  
+  
   if ($form_id == 'node_asignar_clase_a_estudiante_edit_form') {
     $form['title']['#access'] = FALSE;
     $form['actions']['submit']['#value'] =  Drupal::translation()->translate('Cargar calificación');
@@ -133,8 +134,16 @@ function callback_submit_asignar_clase_a_estudiante_submit(&$form, FormStateInte
     }
   }
 
-  // Redireccionar a la pagina del profesor /profesor
-  $response = new RedirectResponse('/profesor');
-  $response->send();
+  //get language
+  $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
+  // si es español
+  if ($language == 'es') {
+    $response = new RedirectResponse('/profesor');
+    $response->send();
+  } else {
+    $response = new RedirectResponse('/en/profesor');
+    $response->send();
+  }
+
 
 }
