@@ -29,6 +29,7 @@ dependencies:
     - field.field.node.agendar_clase.field_tipo_clase
     - node.type.agendar_clase
   module:
+    - datetime
     - field_group
     - field_layout
     - layout_discovery
@@ -68,6 +69,12 @@ content:
   field_asignar_profesor:
     type: options_select
     weight: 6
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_fecha_cita_oculta:
+    type: datetime_default
+    weight: 8
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -127,6 +134,14 @@ content:
       size: 60
       placeholder: 'Nombre del niño/a'
     third_party_settings: {  }
+  field_pencil_id_profesor:
+    type: string_textfield
+    weight: 7
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
   field_sexo_n:
     type: options_buttons
     weight: 2
@@ -147,14 +162,12 @@ hidden:
   field_clase_activa: true
   field_clase_asignada: true
   field_estrellas_obtenidas: true
-  field_fecha_cita_oculta: true
   field_hora_cita_oculta: true
   field_id_texto_alumno: true
   field_marcar_clase_como_finaliza: true
   field_otra_hora: true
   field_pencil_id_clase: true
   field_pencil_id_estudiante: true
-  field_pencil_id_profesor: true
   field_pencil_url_access_estudian: true
   field_pencil_url_access_profesor: true
   field_pencil_url_clase: true

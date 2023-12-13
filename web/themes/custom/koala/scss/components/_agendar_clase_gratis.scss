@@ -342,6 +342,24 @@
         margin-bottom: 2rem;
         gap: 2rem;
         flex: 1;
+
+        a {
+          text-decoration: none;
+          padding: 0.5rem 1rem 0.3125rem 1rem;
+          border: 2px solid #becaca;
+          border-radius: 32px;
+          color: black;
+          font-size: 1rem;
+
+          &:hover {
+            background-color: #297e88;
+            color: white;
+          }
+          &.active {
+            background-color: #297e88;
+            color: white;
+          }
+        }
     }
   }
 

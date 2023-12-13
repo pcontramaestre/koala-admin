@@ -190,11 +190,15 @@ function enviar_correo_clase_agendada_gratis_send_email(array &$form, FormStateI
   // dump($form_state->getValue('field_fecha_de_la_cita'));
 
   // Save field_hora_clase (type text) and field_fecha_de_la_cita (Number of seconds after 12am) to datetime field field_fecha_cita_oculta
-  $fecha_clase_save = $form_state->getValue('field_fecha_de_la_cita');
-  $hora_clase_save = $form_state->getValue('field_hora_clase');
+  $fecha_clase_save = $form_state->getValue('field_fecha_de_la_cita');  
   $fecha_clase_save = $fecha_clase_save[0]['value'];
-  // var_dump('field_fecha_de_la_cita');
+
+  $hora_clase_save = $form_state->getValue('field_hora_clase');
   $hora_clase_save = $hora_clase_save[0]['value'];
+
+  
+
+
   // dump($fecha_clase_save);
   // Convierte los segundos a horas y minutos
   $horas = gmdate('H', $hora_clase_save);
@@ -203,11 +207,12 @@ function enviar_correo_clase_agendada_gratis_send_email(array &$form, FormStateI
 
   // Formatea la hora como HH:mm:ss
   $horaFormateada = $horas . ':' . $minutos . ':' . $segundos;
-  //dump($horaFormateada);
-
-
-
+  
 $fechaHoraTexto = $fecha_clase_save .' '. $horaFormateada;
+
+
+
+
 //$fechaHoraTexto = $fecha_clase_save;
 //dump($fechaHoraTexto);
 //convertir en texto a $fechaHoraTexto
@@ -230,10 +235,62 @@ $fechaFormateada = $fechaHoraObjeto->format('d-m-Y\TH:i:s');
 $form_state->setValue('field_alumno_relacionado', $newidhijo);
 $form_state->setValue('field_id_texto_alumno', $newidhijo);
 
+// field_pencil_id_estudiante
+$form_state->setValue('field_pencil_id_estudiante', $create_user_pencil['userId']);
+
+
+// get field_pencil_id_profesor value.
+$field_pencil_id_profesor = $form_state->getValue('field_pencil_id_profesor');
+$field_pencil_id_profesor = $field_pencil_id_profesor[0]['value'];
+$correo_profesor_pencil = $field_pencil_id_profesor.'@pencilspaces.com';
+
+// get field_pencil_id_estudiante value.
+$field_pencil_id_estudiante = $create_user_pencil['userId'];
+$correo_estudiante_pencil = $create_user_pencil['email'];
+
+$nombre_nino = $form_state->getValue('field_nombre_del_nino_a');
+$nombre_nino = $nombre_nino[0]['value'];
+
+// Nombre de la clase a crear
+$nombre_clase = "Class free for ".$nombre_nino;
+
+//Datos para crear un espacio de prueba con la API de Pencil Connect.
+$data = [
+  'title' => $nombre_clase,
+  'hosts' => [
+    [
+      'email' => $correo_profesor_pencil,
+      'userId' => $field_pencil_id_profesor,
+    ],
+  ],
+  'participants' => [
+    [
+      'email' => $correo_estudiante_pencil,
+      'userId' => $field_pencil_id_estudiante,
+    ],
+  ],
+  'visibility' => 'public',
+  'notifyInvitees' => false,
+];
+
+// Crear un espacio con la API de Pencil Connect.
+$create_space = api_pencil_connect_create_space($data);
+
+if ($create_space !== FALSE) {
+  $space_id = $create_space['spaceId'];
+  $space_lync_url = $create_space['link'];
+} else {
+  \Drupal::messenger()->addError(new TranslatableMarkup('Error creating space in the API - module create koala' . $create_space ));
+}
+
+// field_pencil_url_clase and field_pencil_id_clase
+$form_state->setValue('field_pencil_url_clase', $space_lync_url);
+$form_state->setValue('field_pencil_id_clase', $space_id);
+
 
 // Guarda la fecha formateada en el campo oculto
 
-  $form_state->setValue('field_fecha_cita_oculta', $fechaFormateada);
+  //$form_state->setValue('field_fecha_cita_oculta', $fechaFormateada);
 
     $formObject = $form_state->getFormObject();
     if (!($formObject instanceof \Drupal\Core\Entity\EntityFormInterface)) {
@@ -253,10 +310,12 @@ $form_state->setValue('field_id_texto_alumno', $newidhijo);
 
     if ($node instanceof NodeInterface) {
       try {
-        $node->set('field_fecha_cita_oculta', date('Y-m-d\TH:i:s', strtotime($fechaHoraTexto)));
-        // gaurdar field_alumno_relacionado y field_id_texto_alumno
+        //$node->set('field_fecha_cita_oculta', date('Y-m-d\TH:i:s', strtotime($fechaHoraTexto)));        
         $node->set('field_alumno_relacionado', $newidhijo);
-        $node->set('field_id_texto_alumno', $newidhijo);        
+        $node->set('field_id_texto_alumno', $newidhijo);
+        $node->set('field_pencil_id_estudiante', $create_user_pencil['userId']);
+        $node->set('field_pencil_url_clase', $space_lync_url);
+        $node->set('field_pencil_id_clase', $space_id);                
         $node->save();
         \Drupal::messenger()->addMessage('Node saved successfully ID: '.$newidhijo); 
       }

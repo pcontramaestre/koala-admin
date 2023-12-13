@@ -9,6 +9,10 @@ code: |-
     background: red !important;
     color: white !important;
   }
+
+  .toast-container {
+  	z-index:200000 !important;
+  }
 media: all
 preprocess: true
 conditions: {  }

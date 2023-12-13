@@ -32,12 +32,14 @@ code: |-
   	    var horaFin = $horaFin.text().trim();
   	    var dataTeacher = $horaInicio.attr('data-teacher');
   	    var dataDate = $horaInicio.attr('data-date');
+        var pencilId = $horaInicio.attr('data-pencil-id');
   	    
   	    clases.push({
   	      horaInicio: horaInicio,
   	      horaFin: horaFin,
   	      dataTeacher: dataTeacher,
-  	      dataDate: dataDate
+  	      dataDate: dataDate,
+          pencilId: pencilId
   	    });
   	  });
   	
@@ -64,6 +66,9 @@ code: |-
           console.log(dateText);
           console.log(buscarHorariosClase(dateText));
           $('.form-item-field-fecha-de-la-cita-0-value input').val(dateText);
+          $('input[id="edit-field-hora-clase-0-value').val('');
+          $('input[name="field_fecha_cita_oculta[0][value][date]"]').val('');
+          $('input[name="field_fecha_cita_oculta[0][value][time]"]').val('');
         },
         beforeShowDay: function(date) {
           var stringDate = $.datepicker.formatDate('dd-mm-yy', date);
@@ -75,8 +80,7 @@ code: |-
         },
       });
       //$('.ui-datepicker-current-day a').find('.ui-state-active').removeClass('ui-state-active');
-      $('.ui-datepicker-current-day').each(function() {
-      	console.log('encontrado')
+      $('.ui-datepicker-current-day').each(function() {    	
       	var fechaactiva = $(this).find('.ui-state-active');
       	fechaactiva.removeClass('ui-state-active');
       });
@@ -91,6 +95,7 @@ code: |-
           var horaInicioGTM = $horaInicio.text().trim();
           var horaFinGTM = $horaFin.text().trim();
           var dataDate = $horaInicio.attr('data-date');
+          var pencilId = $horaInicio.attr('data-pencil-id');
           
           if (dataDate === fecha) {
             var dataTeacher = $horaInicio.attr('data-teacher');
@@ -100,7 +105,8 @@ code: |-
               horaInicio: horaInicioLocal,
               horaFin: horaFinLocal,
               dataTeacher: dataTeacher,
-              dataDate: dataDate
+              dataDate: dataDate,
+              pencilId: pencilId
             });
           }
         });
@@ -115,7 +121,7 @@ code: |-
         clases.forEach(function(clase) {
           var horaActual = clase.horaInicio;
           while (horaActual < clase.horaFin) {
-            horasDisponibles.push({ hora: horaActual, dataTeacher: clase.dataTeacher });
+            horasDisponibles.push({ hora: horaActual, dataTeacher: clase.dataTeacher, pencilId: clase.pencilId });
             horaActual = sumarMinutos(horaActual, 30);
           }
         });
@@ -124,7 +130,7 @@ code: |-
         $divEscogerHorario.empty();
         // Agregar las horas disponibles al div con id 'id-escoger-horario'
         horasDisponibles.forEach(function(horaDisponible) {
-          var $a = $('<a href="#" data-teacher-id="' + horaDisponible.dataTeacher + '" data-hora="' + horaDisponible.hora + '">' + horaDisponible.hora + '</a>');
+          var $a = $('<a href="#" class="hora-enlace" data-teacher-id="' + horaDisponible.dataTeacher + '" data-pencil-id="'+ horaDisponible.pencilId +'" data-hora="' + horaDisponible.hora + '">' + horaDisponible.hora + '</a>');
           $('#id-escoger-horario').append($a);
         });
 
@@ -197,11 +203,25 @@ code: |-
   		
   		  // Convertir la hora de formato de 24 horas a 12 horas y agregar AM o PM
   		  var hora12 = convertirAFormato12Horas(hora24);
+
+        var horaSeleccionada = hora24+":00";
+        $('input[name="field_fecha_cita_oculta[0][value][time]"]').val(horaSeleccionada);
   		
   		  // Mostrar la hora en formato 12 horas con AM o PM
   		  console.log("Teacher ID: " + teacherId);
   		  console.log("Hora en formato 12 horas: " + hora12);
   		  $('.form-item-field-hora-clase-0-value input').val(hora12);
+
+        var fechaOriginal = $('input[id="edit-field-fecha-de-la-cita-0-value"]').val();
+        // Divide la fecha en año, mes y día
+        var partesFecha = fechaOriginal.split('-');
+        var day = partesFecha[0];
+        var month = partesFecha[1];
+        var year = partesFecha[2];
+        // Formatea la fecha en el formato deseado "23/08/2023"
+        var fechaFormateada = year + '-' + month + '-' + day;
+        $('input[name="field_fecha_cita_oculta[0][value][date]"]').val(fechaFormateada);
+
   		  
   		  // Buscar y seleccionar el option con el valor del teacherId en el select
   		  $('#edit-field-asignar-profesor').val(teacherId);
@@ -212,6 +232,16 @@ code: |-
   		  // Mostrar la opción seleccionada en el select
   		  var selectedOptionText = $('#edit-field-asignar-profesor option:selected').text();
   		  console.log("Opción seleccionada en el select: " + selectedOptionText);
+
+        // Obtener el id de pencil
+        var pencilId = $(this).data('pencil-id');
+        console.log("Pencil ID: " + pencilId);
+        $('.form-item-field-pencil-id-profesor-0-value input').val(pencilId);
+
+        // buscar todos los enlaces con la clase 'hora-enlace' y remover la clase 'active'
+        $('.hora-enlace').removeClass('active');
+        // Agregar la clase 'active' al enlace clickeado
+        $(this).addClass('active');
   		});
   		
   		// Función para convertir la hora de formato de 24 horas a 12 horas y agregar AM o PM
