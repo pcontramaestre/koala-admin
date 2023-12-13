@@ -1,0 +1,11 @@
+uuid: e1c32f95-b820-4829-aec3-6a9559fae819
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.1_fecha_hora_inicio_fin
+id: node.1_fecha_hora_inicio_fin
+target_entity_type_id: node
+target_bundle: 1_fecha_hora_inicio_fin
+default_langcode: site_default
+language_alterable: false

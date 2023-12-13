@@ -1,0 +1,21 @@
+uuid: 2623b6ee-c37d-4da5-9325-8d62595ee9c3
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hora_inicio_final
+    - node.type.1_fecha_hora_inicio_fin
+  module:
+    - time_field
+id: node.1_fecha_hora_inicio_fin.field_hora_inicio_final
+field_name: field_hora_inicio_final
+entity_type: node
+bundle: 1_fecha_hora_inicio_fin
+label: 'Hora Inicio - Final'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: time_range

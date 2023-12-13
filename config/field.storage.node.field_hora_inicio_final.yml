@@ -1,19 +1,20 @@
-uuid: 18d4b838-99a6-4bf3-999c-b38496d9379a
+uuid: 76c7a16c-4192-47e8-8b60-be4b9165ad4d
 langcode: es
 status: true
 dependencies:
   module:
     - field_permissions
-    - user
+    - node
+    - time_field
 third_party_settings:
   field_permissions:
     permission_type: public
-id: user.field_first_login
-field_name: field_first_login
-entity_type: user
-type: boolean
+id: node.field_hora_inicio_final
+field_name: field_hora_inicio_final
+entity_type: node
+type: time_range
 settings: {  }
-module: core
+module: time_field
 locked: false
 cardinality: 1
 translatable: true

@@ -1,0 +1,18 @@
+uuid: 0d2b8f6a-e50f-4438-9649-24ca656dae3b
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.agregar_horarios_de_clases_grati
+id: node.agregar_horarios_de_clases_grati.title
+field_name: title
+entity_type: node
+bundle: agregar_horarios_de_clases_grati
+label: 'Título de referencia (No se muestra en la página)'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,24 @@
+uuid: b7e25feb-9df8-466f-8046-8cd4832d0fd7
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_fecha_hora
+    - node.type.horarios_de_trabajo
+  module:
+    - datetime
+id: node.horarios_de_trabajo.field_fecha_hora
+field_name: field_fecha_hora
+entity_type: node
+bundle: horarios_de_trabajo
+label: 'Fecha - Hora'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    default_date_type: now
+    default_date: now
+default_value_callback: ''
+settings: {  }
+field_type: datetime

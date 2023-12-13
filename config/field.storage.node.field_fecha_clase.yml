@@ -1,19 +1,21 @@
-uuid: 18d4b838-99a6-4bf3-999c-b38496d9379a
+uuid: 2308c2ea-d5c9-438e-8614-641a500a82aa
 langcode: es
 status: true
 dependencies:
   module:
+    - datetime
     - field_permissions
-    - user
+    - node
 third_party_settings:
   field_permissions:
     permission_type: public
-id: user.field_first_login
-field_name: field_first_login
-entity_type: user
-type: boolean
-settings: {  }
-module: core
+id: node.field_fecha_clase
+field_name: field_fecha_clase
+entity_type: node
+type: datetime
+settings:
+  datetime_type: date
+module: datetime
 locked: false
 cardinality: 1
 translatable: true

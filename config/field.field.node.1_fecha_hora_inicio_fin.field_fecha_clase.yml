@@ -1,0 +1,21 @@
+uuid: 59d2d7a5-1ac9-4796-99b2-f7835142c75a
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_fecha_clase
+    - node.type.1_fecha_hora_inicio_fin
+  module:
+    - datetime
+id: node.1_fecha_hora_inicio_fin.field_fecha_clase
+field_name: field_fecha_clase
+entity_type: node
+bundle: 1_fecha_hora_inicio_fin
+label: 'Fecha clase'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

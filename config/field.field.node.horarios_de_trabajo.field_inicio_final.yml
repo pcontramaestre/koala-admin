@@ -1,0 +1,21 @@
+uuid: 0701a839-8626-42fb-b637-0b01dcb5b7c6
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_inicio_final
+    - node.type.horarios_de_trabajo
+  module:
+    - time_field
+id: node.horarios_de_trabajo.field_inicio_final
+field_name: field_inicio_final
+entity_type: node
+bundle: horarios_de_trabajo
+label: 'Inicio - Final'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: time_range

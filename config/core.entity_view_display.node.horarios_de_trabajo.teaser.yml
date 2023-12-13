@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
+    - field.field.node.horarios_de_trabajo.field_fecha_hora
     - field.field.node.horarios_de_trabajo.field_horario_de_trabajo_domingo
     - field.field.node.horarios_de_trabajo.field_horario_de_trabajo_jueves
     - field.field.node.horarios_de_trabajo.field_horario_de_trabajo_lunes
@@ -11,6 +12,7 @@ dependencies:
     - field.field.node.horarios_de_trabajo.field_horario_de_trabajo_miercol
     - field.field.node.horarios_de_trabajo.field_horario_de_trabajo_sabado
     - field.field.node.horarios_de_trabajo.field_horario_de_trabajo_viernes
+    - field.field.node.horarios_de_trabajo.field_inicio_final
     - field.field.node.horarios_de_trabajo.field_profesor
     - node.type.horarios_de_trabajo
   module:
@@ -26,6 +28,10 @@ content:
     weight: 100
     region: content
 hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  field_fecha_hora: true
   field_horario_de_trabajo_domingo: true
   field_horario_de_trabajo_jueves: true
   field_horario_de_trabajo_lunes: true
@@ -33,5 +39,6 @@ hidden:
   field_horario_de_trabajo_miercol: true
   field_horario_de_trabajo_sabado: true
   field_horario_de_trabajo_viernes: true
+  field_inicio_final: true
   field_profesor: true
   langcode: true

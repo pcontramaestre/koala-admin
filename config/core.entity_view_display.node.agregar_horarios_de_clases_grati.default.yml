@@ -1,0 +1,41 @@
+uuid: fae76405-dfcf-4cb8-8060-1e30310e10f5
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.field.node.agregar_horarios_de_clases_grati.field_fecha_hora_inicio_hora_fin
+    - field.field.node.agregar_horarios_de_clases_grati.field_profesor
+    - node.type.agregar_horarios_de_clases_grati
+  module:
+    - user
+id: node.agregar_horarios_de_clases_grati.default
+targetEntityType: node
+bundle: agregar_horarios_de_clases_grati
+mode: default
+content:
+  field_fecha_hora_inicio_hora_fin:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  field_profesor:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  langcode: true

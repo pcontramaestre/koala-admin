@@ -68,10 +68,13 @@
           <h2 class="title-2">{{ 'Schedule your class'|t }}</h2>
         {% endif %}
         {{ form|without('advanced', 'actions') }}
-      </div>
+      </div>      
     </div>
     <div class="col layout-region-node-footer">
       {{ form.actions }}
+    </div>
+    <div class="vista-horarios-disponibles">
+      {{ drupal_view('horarios_clases_gratis', 'block_1') }}
     </div>
   </div>
 

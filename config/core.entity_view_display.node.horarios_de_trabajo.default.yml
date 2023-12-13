@@ -3,6 +3,7 @@ langcode: es
 status: true
 dependencies:
   config:
+    - field.field.node.horarios_de_trabajo.field_fecha_hora
     - field.field.node.horarios_de_trabajo.field_horario_de_trabajo_domingo
     - field.field.node.horarios_de_trabajo.field_horario_de_trabajo_jueves
     - field.field.node.horarios_de_trabajo.field_horario_de_trabajo_lunes
@@ -10,16 +11,28 @@ dependencies:
     - field.field.node.horarios_de_trabajo.field_horario_de_trabajo_miercol
     - field.field.node.horarios_de_trabajo.field_horario_de_trabajo_sabado
     - field.field.node.horarios_de_trabajo.field_horario_de_trabajo_viernes
+    - field.field.node.horarios_de_trabajo.field_inicio_final
     - field.field.node.horarios_de_trabajo.field_profesor
     - node.type.horarios_de_trabajo
   module:
+    - datetime
     - double_field
+    - time_field
     - user
 id: node.horarios_de_trabajo.default
 targetEntityType: node
 bundle: horarios_de_trabajo
 mode: default
 content:
+  field_fecha_hora:
+    type: datetime_default
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: medium
+    third_party_settings: {  }
+    weight: 112
+    region: content
   field_horario_de_trabajo_domingo:
     type: double_field_unformatted_list
     label: above
@@ -188,6 +201,15 @@ content:
     third_party_settings: {  }
     weight: 107
     region: content
+  field_inicio_final:
+    type: time_range_formatter
+    label: above
+    settings:
+      time_format: 'h:i a'
+      timerange_format: 'start ~ end'
+    third_party_settings: {  }
+    weight: 111
+    region: content
   field_profesor:
     type: entity_reference_label
     label: above
@@ -202,4 +224,7 @@ content:
     weight: 100
     region: content
 hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
   langcode: true

@@ -1,0 +1,28 @@
+uuid: 299e6c21-b020-4f3b-9ff3-5e5cb94f122e
+langcode: es
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.1_fecha_hora_inicio_fin.field_fecha_clase
+    - field.field.node.1_fecha_hora_inicio_fin.field_hora_inicio_final
+    - node.type.1_fecha_hora_inicio_fin
+  module:
+    - user
+id: node.1_fecha_hora_inicio_fin.teaser
+targetEntityType: node
+bundle: 1_fecha_hora_inicio_fin
+mode: teaser
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  field_fecha_clase: true
+  field_hora_inicio_final: true
+  langcode: true

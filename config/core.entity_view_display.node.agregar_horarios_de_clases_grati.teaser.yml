@@ -1,0 +1,28 @@
+uuid: c368aaea-27d3-4f03-8963-319367a7ca11
+langcode: es
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.agregar_horarios_de_clases_grati.field_fecha_hora_inicio_hora_fin
+    - field.field.node.agregar_horarios_de_clases_grati.field_profesor
+    - node.type.agregar_horarios_de_clases_grati
+  module:
+    - user
+id: node.agregar_horarios_de_clases_grati.teaser
+targetEntityType: node
+bundle: agregar_horarios_de_clases_grati
+mode: teaser
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  field_fecha_hora_inicio_hora_fin: true
+  field_profesor: true
+  langcode: true

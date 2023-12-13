@@ -1,13 +1,13 @@
-uuid: 8a93d24d-cd7c-484e-97ca-ad4e637160f2
+uuid: a5f17daf-8c82-4b00-a4ee-9ecffd0ca38a
 langcode: es
 status: true
 dependencies:
   config:
-    - node.type.horarios_para_profesores_de_clas
-id: node.horarios_para_profesores_de_clas.promote
+    - node.type.1_fecha_hora_inicio_fin
+id: node.1_fecha_hora_inicio_fin.promote
 field_name: promote
 entity_type: node
-bundle: horarios_para_profesores_de_clas
+bundle: 1_fecha_hora_inicio_fin
 label: 'Promocionado a la página principal'
 description: ''
 required: false

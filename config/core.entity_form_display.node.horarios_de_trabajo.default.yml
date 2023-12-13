@@ -3,6 +3,7 @@ langcode: es
 status: true
 dependencies:
   config:
+    - field.field.node.horarios_de_trabajo.field_fecha_hora
     - field.field.node.horarios_de_trabajo.field_horario_de_trabajo_domingo
     - field.field.node.horarios_de_trabajo.field_horario_de_trabajo_jueves
     - field.field.node.horarios_de_trabajo.field_horario_de_trabajo_lunes
@@ -10,14 +11,18 @@ dependencies:
     - field.field.node.horarios_de_trabajo.field_horario_de_trabajo_miercol
     - field.field.node.horarios_de_trabajo.field_horario_de_trabajo_sabado
     - field.field.node.horarios_de_trabajo.field_horario_de_trabajo_viernes
+    - field.field.node.horarios_de_trabajo.field_inicio_final
     - field.field.node.horarios_de_trabajo.field_profesor
     - node.type.horarios_de_trabajo
   module:
     - chosen_field
+    - content_moderation
+    - datetime
     - double_field
     - field_layout
     - layout_discovery
     - path
+    - time_field
 third_party_settings:
   field_layout:
     id: layout_onecol
@@ -30,13 +35,19 @@ mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 10
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_fecha_hora:
+    type: datetime_default
+    weight: 27
     region: content
     settings: {  }
     third_party_settings: {  }
   field_horario_de_trabajo_domingo:
     type: double_field
-    weight: 129
+    weight: 17
     region: content
     settings:
       first:
@@ -59,7 +70,7 @@ content:
     third_party_settings: {  }
   field_horario_de_trabajo_jueves:
     type: double_field
-    weight: 126
+    weight: 14
     region: content
     settings:
       first:
@@ -82,7 +93,7 @@ content:
     third_party_settings: {  }
   field_horario_de_trabajo_lunes:
     type: double_field
-    weight: 122
+    weight: 11
     region: content
     settings:
       first:
@@ -105,7 +116,7 @@ content:
     third_party_settings: {  }
   field_horario_de_trabajo_martes:
     type: double_field
-    weight: 123
+    weight: 12
     region: content
     settings:
       first:
@@ -128,7 +139,7 @@ content:
     third_party_settings: {  }
   field_horario_de_trabajo_miercol:
     type: double_field
-    weight: 124
+    weight: 13
     region: content
     settings:
       first:
@@ -151,7 +162,7 @@ content:
     third_party_settings: {  }
   field_horario_de_trabajo_sabado:
     type: double_field
-    weight: 128
+    weight: 16
     region: content
     settings:
       first:
@@ -174,7 +185,7 @@ content:
     third_party_settings: {  }
   field_horario_de_trabajo_viernes:
     type: double_field
-    weight: 127
+    weight: 15
     region: content
     settings:
       first:
@@ -195,9 +206,17 @@ content:
         rows: 5
       inline: true
     third_party_settings: {  }
+  field_inicio_final:
+    type: time_range_widget
+    weight: 26
+    region: content
+    settings:
+      enabled: false
+      step: 5
+    third_party_settings: {  }
   field_profesor:
     type: chosen_select
-    weight: 130
+    weight: 1
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -208,36 +227,42 @@ content:
     settings:
       include_locked: true
     third_party_settings: {  }
+  moderation_state:
+    type: moderation_state_default
+    weight: 9
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   path:
     type: path
-    weight: 30
+    weight: 7
     region: content
     settings: {  }
     third_party_settings: {  }
   promote:
     type: boolean_checkbox
-    weight: 15
+    weight: 5
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 120
+    weight: 10
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
-    weight: 16
+    weight: 6
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   title:
     type: string_textfield
-    weight: -5
+    weight: 0
     region: content
     settings:
       size: 60
@@ -245,7 +270,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 5
+    weight: 3
     region: content
     settings:
       match_operator: CONTAINS
@@ -254,7 +279,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
   url_redirects:
-    weight: 50
+    weight: 8
     region: content
     settings: {  }
     third_party_settings: {  }

@@ -1,13 +1,13 @@
-uuid: cadd6856-7eb4-418c-bbd4-2339b2b9c0b8
+uuid: 706d4e84-8a0a-404d-85b8-989a6801466d
 langcode: es
 status: true
 dependencies:
   config:
-    - node.type.horarios_para_profesores_de_clas
-id: node.horarios_para_profesores_de_clas.title
+    - node.type.1_fecha_hora_inicio_fin
+id: node.1_fecha_hora_inicio_fin.title
 field_name: title
 entity_type: node
-bundle: horarios_para_profesores_de_clas
+bundle: 1_fecha_hora_inicio_fin
 label: 'Título de referencia'
 description: ''
 required: true

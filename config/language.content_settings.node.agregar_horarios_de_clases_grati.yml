@@ -1,0 +1,11 @@
+uuid: e7d4dec3-6efd-43c9-b4ef-1ffa5caf2d36
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.agregar_horarios_de_clases_grati
+id: node.agregar_horarios_de_clases_grati
+target_entity_type_id: node
+target_bundle: agregar_horarios_de_clases_grati
+default_langcode: site_default
+language_alterable: false

@@ -1,0 +1,61 @@
+uuid: 50bd1f1d-1d80-41a3-a59e-11c7ce008d72
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.field.node.1_fecha_hora_inicio_fin.field_fecha_clase
+    - field.field.node.1_fecha_hora_inicio_fin.field_hora_inicio_final
+    - node.type.1_fecha_hora_inicio_fin
+  module:
+    - datetime
+    - field_layout
+    - layout_discovery
+    - time_field
+    - timepicker
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+id: node.1_fecha_hora_inicio_fin.default
+targetEntityType: node
+bundle: 1_fecha_hora_inicio_fin
+mode: default
+content:
+  field_fecha_clase:
+    type: datetime_default
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings:
+      timepicker:
+        enabled: '1'
+        type: timepicker_jquery_ui
+        js_options:
+          value: ''
+  field_hora_inicio_final:
+    type: time_range_widget
+    weight: 2
+    region: content
+    settings:
+      enabled: false
+      step: 5
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  langcode: true
+  moderation_state: true
+  path: true
+  promote: true
+  status: true
+  sticky: true
+  uid: true
+  url_redirects: true

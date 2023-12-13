@@ -1,0 +1,39 @@
+{#
+/**
+ * @file
+ * Default theme implementation for a fieldgroup html element.
+ *
+ * Available variables:
+ * - title: Title of the group.
+ * - title_element: Element to wrap the title.
+ * - children: The children of the group.
+ * - wrapper_element: The html element to use
+ * - attributes: A list of HTML attributes for the group wrapper.
+ *
+ * @see template_preprocess_field_group_html_element()
+ *
+ * @ingroup themeable
+ */
+#}
+
+<{{ wrapper_element }} {{ attributes }}>
+  {% if title %}
+  <{{ title_element }}{{ title_attributes }}>{{ title }}</{{ title_element }}>
+  {% endif %}
+  {% if collapsible %}
+  <div class="field-group-wrapper">
+  {% endif %}
+  <div class="fechas-horarios-agendamiento">
+    {# {% if current_language == 'es' %}
+      <div class="texto-fecha">Escoge la fecha en la que desea la clase gratuita</div>
+    {% else %}
+      <div class="texto-fecha">Choose the date you want the free class</div>
+    {% endif %} #}
+    <div class="escoger-fecha" id="id-escoger-fecha"></div>
+    <div class="escoger-horario" id="id-escoger-horario"></div>
+  </div>
+  {{children}}
+  {% if collapsible %}
+  </div>
+  {% endif %}
+</{{ wrapper_element }}>

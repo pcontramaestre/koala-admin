@@ -68,6 +68,7 @@ module:
   date_recur_modular: 0
   datetime: 0
   datetime_range: 0
+  datetime_range_timezone: 0
   dblog: 0
   devel: 0
   devel_entity_updates: 0

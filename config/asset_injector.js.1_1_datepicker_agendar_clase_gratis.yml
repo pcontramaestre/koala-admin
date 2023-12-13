@@ -1,0 +1,241 @@
+uuid: 2d3b74f1-ce37-4b8c-b746-067e6c9743c2
+langcode: es
+status: true
+dependencies:
+  module:
+    - system
+id: 1_1_datepicker_agendar_clase_gratis
+label: '1.1 Datepicker Agendar Clase Gratis'
+code: |-
+  (function ($) {
+    jQuery(document).ready(function($) {
+  	  var fechasUnicas = {};
+  	  var fechasClase = [];
+  	
+  	  $('.profesor-tr').each(function() {
+  	    var fecha = $(this).find('.views-field-field-fecha-clase').text().replace(/[^\d-]/g, '').trim();
+  	    if (!fechasUnicas[fecha]) {
+  	      fechasUnicas[fecha] = true;
+  	      fechasClase.push(fecha);
+  	    }
+  	  });
+  	
+  	  console.log(fechasClase);
+  	  
+  	
+  	  var clases = [];
+
+  	  $('.profesor-tr').each(function() {
+  	    var $horaInicio = $(this).find('.views-field-field-hora-inicio-final .hora-inicio');
+  	    var $horaFin = $(this).find('.views-field-field-hora-inicio-final .hora-fin');
+  	    var horaInicio = $horaInicio.text().trim();
+  	    var horaFin = $horaFin.text().trim();
+  	    var dataTeacher = $horaInicio.attr('data-teacher');
+  	    var dataDate = $horaInicio.attr('data-date');
+  	    
+  	    clases.push({
+  	      horaInicio: horaInicio,
+  	      horaFin: horaFin,
+  	      dataTeacher: dataTeacher,
+  	      dataDate: dataDate
+  	    });
+  	  });
+  	
+  	  console.log(clases);
+  	  
+
+      // Se ejecuta cuando hay un evento ajax de una vista. Para que no se pierda el datepicker
+      // Esta función se ejecutará cada vez que se complete una solicitud AJAX.
+      // Puedes colocar aquí el código que deseas que se ejecute después de cada
+      // actualización de la página o filtrado de vistas.
+      // Por ejemplo, aquí puedes volver a inicializar un date picker u otros elementos.
+      // Inicializar el Datepicker en el campo de entrada
+
+      var fechasHabilitadas = ["2023-12-13", "2023-12-14", "2023-12-15"]; // Fechas específicas habilitadas
+      
+      $("#id-escoger-fecha").datepicker({
+        inline: true, // Mostrar el Datepicker en línea
+        dateFormat: "dd-mm-yy", // Formato de la fecha
+        changeMonth: true, //Cambiar mes
+        defaultDate: "+1D",
+        minDate: "+1D",
+        maxDate: "+1M",
+        onSelect: function (dateText) {
+          console.log(dateText);
+          console.log(buscarHorariosClase(dateText));
+          $('.form-item-field-fecha-de-la-cita-0-value input').val(dateText);
+        },
+        beforeShowDay: function(date) {
+          var stringDate = $.datepicker.formatDate('dd-mm-yy', date);
+          if ($.inArray(stringDate, fechasClase) != -1) {
+            return [true, '']; // Habilitar la fecha y no aplicar ninguna clase de CSS
+          } else {
+            return [false, 'disabled']; // Deshabilitar la fecha y aplicar la clase de CSS "disabled"
+          }
+        },
+      });
+      //$('.ui-datepicker-current-day a').find('.ui-state-active').removeClass('ui-state-active');
+      $('.ui-datepicker-current-day').each(function() {
+      	console.log('encontrado')
+      	var fechaactiva = $(this).find('.ui-state-active');
+      	fechaactiva.removeClass('ui-state-active');
+      });
+
+      
+      function buscarHorariosClase(fecha) {
+        var clases = [];
+      
+        $('.profesor-tr').each(function() {
+          var $horaInicio = $(this).find('.views-field-field-hora-inicio-final .hora-inicio');
+          var $horaFin = $(this).find('.views-field-field-hora-inicio-final .hora-fin');
+          var horaInicioGTM = $horaInicio.text().trim();
+          var horaFinGTM = $horaFin.text().trim();
+          var dataDate = $horaInicio.attr('data-date');
+          
+          if (dataDate === fecha) {
+            var dataTeacher = $horaInicio.attr('data-teacher');
+            var horaInicioLocal = convertirAGMTALocal(horaInicioGTM+':00');
+            var horaFinLocal = convertirAGMTALocal(horaFinGTM+':00');
+            clases.push({
+              horaInicio: horaInicioLocal,
+              horaFin: horaFinLocal,
+              dataTeacher: dataTeacher,
+              dataDate: dataDate
+            });
+          }
+        });
+      
+        // Ordenar el arreglo por la hora de inicio
+        clases.sort(function(a, b) {
+          return convertirHoraAMinutos(a.horaInicio) - convertirHoraAMinutos(b.horaInicio);
+        });
+
+        // Crear un nuevo arreglo de horas disponibles en intervalos de 30 minutos
+        var horasDisponibles = [];
+        clases.forEach(function(clase) {
+          var horaActual = clase.horaInicio;
+          while (horaActual < clase.horaFin) {
+            horasDisponibles.push({ hora: horaActual, dataTeacher: clase.dataTeacher });
+            horaActual = sumarMinutos(horaActual, 30);
+          }
+        });
+
+        var $divEscogerHorario = $('#id-escoger-horario');
+        $divEscogerHorario.empty();
+        // Agregar las horas disponibles al div con id 'id-escoger-horario'
+        horasDisponibles.forEach(function(horaDisponible) {
+          var $a = $('<a href="#" data-teacher-id="' + horaDisponible.dataTeacher + '" data-hora="' + horaDisponible.hora + '">' + horaDisponible.hora + '</a>');
+          $('#id-escoger-horario').append($a);
+        });
+
+      
+        return clases;
+      }
+      
+
+      // Función para sumar minutos a una hora en formato HH:MM
+      function sumarMinutos(hora, minutos) {
+        var [hh, mm] = hora.split(':').map(Number);
+        mm += minutos;
+        hh += Math.floor(mm / 60);
+        mm %= 60;
+        return `${String(hh).padStart(2, '0')}:${String(mm).padStart(2, '0')}`;
+      }
+
+
+      // Función para convertir la hora de GTM a la hora local del usuario
+      function convertirAGMTALocal(horaGTM) {
+      	console.log(horaGTM);
+        var horaGTMObjeto = new Date('2000-01-01T' + horaGTM + 'Z');
+        var zonaHoraria = Intl.DateTimeFormat().resolvedOptions().timeZone;
+        console.log("Zona horaria detectada:", zonaHoraria);
+        var horaLocal = horaGTMObjeto.toLocaleTimeString([], {timeZone: zonaHoraria});
+        
+        // Obtener la diferencia de minutos entre la hora local y GMT
+  			const diferenciaMinutos = new Date().getTimezoneOffset();
+  			
+  			// Convertir la diferencia de minutos a horas
+  			const diferenciaHoras = Math.abs(diferenciaMinutos / 60);
+  			
+  			console.log("Diferencia de horas con GMT:", diferenciaHoras);
+  			console.log("Diferencia de minutos con GMT:", diferenciaMinutos);
+
+        // Convertir la hora de GMT a la zona horaria local
+        const horaLocal2 = sumarHorasAGMT(horaGTM, diferenciaHoras);
+
+        console.log("Hora local:", horaLocal2);
+        
+        return horaLocal2;
+      }
+      
+
+      // Función para sumar horas a una hora en formato GMT
+      function sumarHorasAGMT(horaGMT, diferenciaHoras) {
+        const [hora, minutos, segundos] = horaGMT.split(':').map(Number);
+        let horaLocal = hora + diferenciaHoras;
+        if (horaLocal < 0) {
+          horaLocal += 24;
+        } else if (horaLocal >= 24) {
+          horaLocal -= 24;
+        }
+        return `${horaLocal.toString().padStart(2, '0')}:${minutos.toString().padStart(2, '0')}`;
+      }
+      // Función para convertir una hora en formato HH:MM a minutos
+      function convertirHoraAMinutos(hora) {
+        var partes = hora.split(':');
+        return parseInt(partes[0]) * 60 + parseInt(partes[1]);
+      }
+
+
+  		// Función para manejar el clic en los enlaces
+  		$('#id-escoger-horario').on('click', 'a', function(e) {
+  		  e.preventDefault(); // Evitar que el enlace recargue la página
+  		
+  		  // Obtener los atributos del enlace clickeado
+  		  var teacherId = $(this).data('teacher-id');
+  		  var hora24 = $(this).data('hora');
+  		
+  		  // Convertir la hora de formato de 24 horas a 12 horas y agregar AM o PM
+  		  var hora12 = convertirAFormato12Horas(hora24);
+  		
+  		  // Mostrar la hora en formato 12 horas con AM o PM
+  		  console.log("Teacher ID: " + teacherId);
+  		  console.log("Hora en formato 12 horas: " + hora12);
+  		  $('.form-item-field-hora-clase-0-value input').val(hora12);
+  		  
+  		  // Buscar y seleccionar el option con el valor del teacherId en el select
+  		  $('#edit-field-asignar-profesor').val(teacherId);
+  		
+  		  // Habilitar el select
+  		  $('#edit-field-asignar-profesor').prop('disabled', false);
+  		
+  		  // Mostrar la opción seleccionada en el select
+  		  var selectedOptionText = $('#edit-field-asignar-profesor option:selected').text();
+  		  console.log("Opción seleccionada en el select: " + selectedOptionText);
+  		});
+  		
+  		// Función para convertir la hora de formato de 24 horas a 12 horas y agregar AM o PM
+  		function convertirAFormato12Horas(hora24) {
+  		  var horaSplit = hora24.split(':');
+  		  var horas = parseInt(horaSplit[0]);
+  		  var minutos = horaSplit[1];
+  		  var ampm = horas >= 12 ? 'PM' : 'AM';
+  		  horas = horas % 12;
+  		  horas = horas ? horas : 12; // Si es 0, cambiar a 12
+  		  return horas + ':' + minutos + ampm;
+  		}
+
+    });
+  })(jQuery);
+noscript: ''
+noscriptRegion: {  }
+jquery: true
+header: false
+preprocess: true
+conditions:
+  request_path:
+    id: request_path
+    negate: false
+    pages: "/node/add/agendar_clase/agendar_clases\r\n/node/add/agendar_clase/agendar_clases/*\r\n/*/node/add/agendar_clase/agendar_clases\r\n/*/node/add/agendar_clase/agendar_clases/*"
+contexts: {  }
+conditions_require_all: true

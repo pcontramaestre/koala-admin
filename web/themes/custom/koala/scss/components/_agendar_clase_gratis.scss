@@ -303,3 +303,48 @@
     }
   }
 }
+
+
+// AGENDAR CLASE GRATIS 
+.node-agendar-clases {
+  .fechas-horarios-agendamiento {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-content: flex-start;
+    align-items: flex-start;
+
+
+
+    #id-escoger-fecha {
+      width: 35%;
+      flex: 0 35%;
+      > .ui-datepicker-inline {
+        margin-left: 0px;
+        width: 100%;
+
+        .ui-datepicker-calendar .ui-state-default.ui-state-active {
+          background-color: #FF6669 !important;
+          color: white !important;
+        }
+      }
+      
+    }
+    
+    #id-escoger-horario {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        background: white;
+        padding: 1rem;        
+        margin-bottom: 2rem;
+        gap: 2rem;
+        flex: 1;
+    }
+  }
+
+  
+  
+}

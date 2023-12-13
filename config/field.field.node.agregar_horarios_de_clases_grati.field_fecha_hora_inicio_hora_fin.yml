@@ -1,0 +1,29 @@
+uuid: a4512d97-0fe1-484b-b4ce-88e93add2e93
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_fecha_hora_inicio_hora_fin
+    - node.type.1_fecha_hora_inicio_fin
+    - node.type.agregar_horarios_de_clases_grati
+id: node.agregar_horarios_de_clases_grati.field_fecha_hora_inicio_hora_fin
+field_name: field_fecha_hora_inicio_hora_fin
+entity_type: node
+bundle: agregar_horarios_de_clases_grati
+label: 'Fecha - Hora Inicio - Hora Fin'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      1_fecha_hora_inicio_fin: 1_fecha_hora_inicio_fin
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

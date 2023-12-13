@@ -1,4 +1,4 @@
-uuid: 9c440426-7783-4ea7-9d00-3cf9a1822261
+uuid: 65e611cc-5d23-4110-8381-129e9d01941d
 langcode: es
 status: true
 dependencies:
@@ -8,9 +8,9 @@ third_party_settings:
   menu_ui:
     available_menus: {  }
     parent: ''
-name: 'Horarios de trabajo -Clases Gratis'
-type: horarios_de_trabajo
-description: 'Permite agregar a los profesores que van a dar las clases gratis'
+name: 'Agregar horarios de clases gratis'
+type: agregar_horarios_de_clases_grati
+description: 'Permite agregar los horarios de las clases gratis'
 help: ''
 new_revision: false
 preview_mode: 0

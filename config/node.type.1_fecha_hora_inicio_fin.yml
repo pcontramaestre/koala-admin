@@ -1,0 +1,17 @@
+uuid: 6189a63c-d4fd-4e63-895c-213ed2ce4500
+langcode: es
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: '1. Fecha - Hora inicio - Fin'
+type: 1_fecha_hora_inicio_fin
+description: 'Formulario secundario, no usar directamente. Guarda Fecha, Hora de inicio y hora final de horarios de clases gratis'
+help: ''
+new_revision: false
+preview_mode: 0
+display_submitted: true

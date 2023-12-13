@@ -1,0 +1,25 @@
+uuid: 1d162d16-b7e7-4f37-8c71-7e8efaf78292
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_profesor
+    - node.type.agregar_horarios_de_clases_grati
+id: node.agregar_horarios_de_clases_grati.field_profesor
+field_name: field_profesor
+entity_type: node
+bundle: agregar_horarios_de_clases_grati
+label: Profesor
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: views
+  handler_settings:
+    view:
+      view_name: profesores
+      display_name: entity_reference_1
+      arguments: {  }
+field_type: entity_reference

@@ -1,0 +1,22 @@
+uuid: 4696b8ad-bb24-486e-8030-882d549c6448
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.agregar_horarios_de_clases_grati
+id: node.agregar_horarios_de_clases_grati.promote
+field_name: promote
+entity_type: node
+bundle: agregar_horarios_de_clases_grati
+label: 'Promocionado a la página principal'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: Activado
+  off_label: Desactivado
+field_type: boolean

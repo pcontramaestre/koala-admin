@@ -1,16 +1,16 @@
-uuid: b85b0a05-2bad-4f7e-9ff0-efedb3b4df5a
+uuid: ee779e51-f336-4fa2-b11d-5908bbbc3ea7
 langcode: es
 status: true
 dependencies:
   config:
-    - field.field.node.horarios_para_profesores_de_clas.field_asignar_profesor
-    - field.field.node.horarios_para_profesores_de_clas.field_recurrent
-    - node.type.horarios_para_profesores_de_clas
+    - field.field.node.agregar_horarios_de_clases_grati.field_fecha_hora_inicio_hora_fin
+    - field.field.node.agregar_horarios_de_clases_grati.field_profesor
+    - node.type.agregar_horarios_de_clases_grati
   module:
     - chosen_field
     - content_moderation
-    - date_recur_modular
     - field_layout
+    - inline_entity_form
     - layout_discovery
     - path
 third_party_settings:
@@ -18,9 +18,9 @@ third_party_settings:
     id: layout_onecol
     settings:
       label: ''
-id: node.horarios_para_profesores_de_clas.default
+id: node.agregar_horarios_de_clases_grati.default
 targetEntityType: node
-bundle: horarios_para_profesores_de_clas
+bundle: agregar_horarios_de_clases_grati
 mode: default
 content:
   created:
@@ -29,15 +29,22 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_asignar_profesor:
+  field_fecha_hora_inicio_hora_fin:
+    type: inline_entity_form_simple
+    weight: 122
+    region: content
+    settings:
+      form_mode: default
+      override_labels: false
+      label_singular: ''
+      label_plural: ''
+      collapsible: false
+      collapsed: false
+      revision: false
+    third_party_settings: {  }
+  field_profesor:
     type: chosen_select
     weight: 121
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  field_recurrent:
-    type: date_recur_modular_alpha
-    weight: 122
     region: content
     settings: {  }
     third_party_settings: {  }

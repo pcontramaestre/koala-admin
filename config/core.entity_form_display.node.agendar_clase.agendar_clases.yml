@@ -29,6 +29,7 @@ dependencies:
     - field.field.node.agendar_clase.field_tipo_clase
     - node.type.agendar_clase
   module:
+    - field_group
     - field_layout
     - layout_discovery
     - timefield
@@ -37,14 +38,42 @@ third_party_settings:
     id: layout_onecol
     settings:
       label: ''
+  field_group:
+    group_horario_clase:
+      children:
+        - field_fecha_de_la_cita
+        - field_hora_clase
+      label: 'Escoge la fecha en la que desea la clase gratuita'
+      region: content
+      parent_name: ''
+      weight: 3
+      format_type: html_element
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        element: div
+        show_label: true
+        label_element: h5
+        label_element_classes: titulo-fecha-clase-gratis
+        attributes: ''
+        effect: none
+        speed: fast
+        required_fields: true
 id: node.agendar_clase.agendar_clases
 targetEntityType: node
 bundle: agendar_clase
 mode: agendar_clases
 content:
+  field_asignar_profesor:
+    type: options_select
+    weight: 6
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   field_fecha_de_la_cita:
     type: string_textfield
-    weight: 3
+    weight: 4
     region: content
     settings:
       size: 60
@@ -60,14 +89,14 @@ content:
     third_party_settings: {  }
   field_he_leido_y_estoy_de_acuerd:
     type: boolean_checkbox
-    weight: 5
+    weight: 4
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   field_hora_clase:
     type: timefield_standard_widget
-    weight: 4
+    weight: 5
     region: content
     settings:
       separator: ':'
@@ -106,7 +135,7 @@ content:
     third_party_settings: {  }
   title:
     type: string_textfield
-    weight: 6
+    weight: 5
     region: content
     settings:
       size: 60
@@ -115,7 +144,6 @@ content:
 hidden:
   created: true
   field_alumno_relacionado: true
-  field_asignar_profesor: true
   field_clase_activa: true
   field_clase_asignada: true
   field_estrellas_obtenidas: true

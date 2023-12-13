@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_form_mode.node.administrador
+    - field.field.node.horarios_de_trabajo.field_fecha_hora
     - field.field.node.horarios_de_trabajo.field_horario_de_trabajo_domingo
     - field.field.node.horarios_de_trabajo.field_horario_de_trabajo_jueves
     - field.field.node.horarios_de_trabajo.field_horario_de_trabajo_lunes
@@ -11,10 +12,12 @@ dependencies:
     - field.field.node.horarios_de_trabajo.field_horario_de_trabajo_miercol
     - field.field.node.horarios_de_trabajo.field_horario_de_trabajo_sabado
     - field.field.node.horarios_de_trabajo.field_horario_de_trabajo_viernes
+    - field.field.node.horarios_de_trabajo.field_inicio_final
     - field.field.node.horarios_de_trabajo.field_profesor
     - node.type.horarios_de_trabajo
   module:
     - chosen_field
+    - content_moderation
     - double_field
     - field_layout
     - layout_discovery
@@ -209,6 +212,12 @@ content:
     settings:
       include_locked: true
     third_party_settings: {  }
+  moderation_state:
+    type: moderation_state_default
+    weight: 100
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   path:
     type: path
     weight: 30
@@ -259,4 +268,6 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  field_fecha_hora: true
+  field_inicio_final: true
