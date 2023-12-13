@@ -301,7 +301,7 @@
   }
 }
 
-@media (min-width: 300px) and (max-width: 800px) {
+@media (min-width: 300px) and (max-width: 860px) {
   .node--type-asignar-clase-a-estudiante {
     #page-wrapper {
       //Formulario
@@ -309,6 +309,7 @@
         .layout-region {
           .mensaje-finalizar-clase-facturacion {
             min-height: 9%;
+            justify-content: flex-start!important;
             > div{
               > div{
                 flex-direction: column;

@@ -9,7 +9,7 @@ body.path-clases {
     left: 30%;
     //animacion al display none y flex
     transition: all 1s ease-in-out;
-    
+
     &.nomostrar {
       display: none;
       transition: all 1s ease-in-out;
@@ -39,7 +39,7 @@ body.path-clases {
         animation: agrandarYReducir 4s infinite;
       }
     }
-    
+
     /* Pseudoelemento ::before para la estrella */
     .estrella::before {
       border-bottom: 80px solid yellow;
@@ -51,10 +51,10 @@ body.path-clases {
       top: -45px;
       left: -65px;
       display: block;
-      content: '';
+      content: "";
       transform: rotate(-35deg);
     }
-    
+
     /* Pseudoelemento ::after para la estrella */
     .estrella::after {
       position: absolute;
@@ -68,25 +68,24 @@ body.path-clases {
       border-bottom: 70px solid yellow;
       border-left: 100px solid transparent;
       transform: rotate(-70deg);
-      content: '';
+      content: "";
     }
 
     .estrella-animada {
       animation: aparecerestrella 1s forwards;
     }
   }
-  
 
-/* Definición de la animación para agrandar y reducir */
-@keyframes aparecerestrella {
-  0%, 100% {
-    opacity: 0;
+  /* Definición de la animación para agrandar y reducir */
+  @keyframes aparecerestrella {
+    0%,
+    100% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
   }
-  50% {
-    opacity: 1;
-  }
-}
-
 
   #header {
     display: none;
@@ -94,12 +93,12 @@ body.path-clases {
       height: 3.2rem;
     }
   }
-  #main-wrapper  {
+  #main-wrapper {
     margin-top: 0 !important;
     background: #2a7e88;
     min-height: 100vh !important;
     display: flex;
-    align-items: center;;
+    align-items: center;
 
     > #main {
       max-width: 1824px !important;
@@ -112,6 +111,7 @@ body.path-clases {
         max-width: 100%;
 
         .cuadro-superpuesto {
+          background-color: #ecf9fb;
           position: absolute;
           left: 0px;
           top: 0px;
@@ -120,124 +120,120 @@ body.path-clases {
           flex-direction: row;
           justify-content: center;
           align-items: center;
-          background: white;   
           width: calc(100% - 195px);
           max-width: calc(100% - 120px);
           max-height: 195px;
 
-          @media only screen and (max-height: 604px) { 
+          @media only screen and (max-height: 604px) {
             width: calc(100% - (100vh - 450px));
-            min-height: 25vh;           
+            min-height: 25vh;
             max-width: calc(100% - 151px);
           }
-          @media only screen and (max-height: 630px) and (min-width:1180px) {
+          @media only screen and (max-height: 630px) and (min-width: 1180px) {
             height: calc(100% - (100vh - 107px));
-          }  
+          }
 
-          @media only screen and (min-width: 1280px) and (max-width:1340px) and (min-height: 690px) { 
+          @media only screen and (min-width: 1280px) and (max-width: 1340px) and (min-height: 690px) {
             width: calc(100% - 195px);
             //height: calc(100% - (100vh - 21vh));
             height: calc(100% - 80vh);
           }
-          @media only screen and (min-width: 1340px) and (min-height: 690px) { 
+          @media only screen and (min-width: 1340px) and (min-height: 690px) {
             width: calc(100% - 195px);
-            height:calc(100% - 82vh);
+            height: calc(100% - 82vh);
           }
 
+          @media only screen and (min-width: 1280px) and (min-height: 720px) {
+            width: calc(100% - 195px);
+            height: calc(100% - 82vh);
+          }
+          @media only screen and (min-width: 1280px) and (min-height: 750px) {
+            width: calc(100% - 195px);
+            height: calc(100% - 80vh);
+          }
+          @media only screen and (min-width: 1280px) and (min-height: 760px) {
+            width: calc(100% - 195px);
+            height: calc(100% - 83vh);
+          }
+          @media only screen and (min-width: 1280px) and (min-height: 770px) {
+            width: calc(100% - 195px);
+            height: calc(100% - 83vh);
+          }
+          @media only screen and (min-width: 1280px) and (min-height: 780px) {
+            width: calc(100% - 195px);
+            height: calc(100% - 83vh);
+          }
+          @media only screen and (min-width: 1280px) and (min-height: 790px) {
+            width: calc(100% - 195px);
+            height: calc(100% - 83vh);
+          }
+          @media only screen and (min-width: 1280px) and (min-height: 800px) {
+            width: calc(100% - 195px);
+            height: calc(100% - 83vh);
+          }
+          @media only screen and (min-width: 1280px) and (min-height: 810px) {
+            width: calc(100% - 195px);
+            height: calc(100% - 83vh);
+          }
+          @media only screen and (min-width: 1280px) and (min-height: 820px) {
+            width: calc(100% - 195px);
+            height: calc(100% - 83vh);
+          }
+          @media only screen and (min-width: 1280px) and (min-height: 830px) {
+            width: calc(100% - 195px);
+            height: calc(100% - 83vh);
+          }
+          @media only screen and (min-width: 1280px) and (min-height: 840px) {
+            width: calc(100% - 195px);
+            height: calc(100% - 83vh);
+          }
+          @media only screen and (min-width: 1280px) and (min-height: 850px) {
+            width: calc(100% - 195px);
+            height: calc(100% - 83vh);
+          }
+          @media only screen and (min-width: 1280px) and (min-height: 860px) {
+            width: calc(100% - 195px);
+            height: calc(100% - 83vh);
+          }
+          @media only screen and (min-width: 1280px) and (min-height: 870px) {
+            width: calc(100% - 195px);
+            height: calc(100% - 83vh);
+          }
+          @media only screen and (min-width: 1280px) and (min-height: 880px) {
+            width: calc(100% - 195px);
+            height: calc(100% - 83vh);
+          }
+          @media only screen and (min-width: 1280px) and (min-height: 890px) {
+            width: calc(100% - 195px);
+            height: calc(100% - 83vh);
+          }
+          @media only screen and (min-width: 1280px) and (min-height: 900px) {
+            width: calc(100% - 195px);
+            height: calc(100% - 80vh);
+          }
 
-          @media only screen and (min-width: 1280px)and (min-height: 720px) { 
-            width: calc(100% - 195px);
-            height:calc(100% - 82vh);
-          }          
-          @media only screen and (min-width: 1280px) and (min-height: 750px) { 
-            width: calc(100% - 195px);
-            height:calc(100% - 80vh);
-          }
-          @media only screen and (min-width: 1280px) and (min-height: 760px) { 
-            width: calc(100% - 195px);
-            height:calc(100% - 83vh);
-          }
-          @media only screen and (min-width: 1280px) and (min-height: 770px) { 
-            width: calc(100% - 195px);
-            height:calc(100% - 83vh);
-          }
-          @media only screen and (min-width: 1280px) and (min-height: 780px) { 
-            width: calc(100% - 195px);
-            height:calc(100% - 83vh);
-          }
-          @media only screen and (min-width: 1280px) and (min-height: 790px) { 
-            width: calc(100% - 195px);
-            height:calc(100% - 83vh);
-          }
-          @media only screen and (min-width: 1280px) and (min-height: 800px) { 
-            width: calc(100% - 195px);
-            height:calc(100% - 83vh);
-          }
-          @media only screen and (min-width: 1280px) and (min-height: 810px) { 
-            width: calc(100% - 195px);
-            height:calc(100% - 83vh);
-          }
-          @media only screen and (min-width: 1280px) and (min-height: 820px) { 
-            width: calc(100% - 195px);
-            height:calc(100% - 83vh);
-          }
-          @media only screen and (min-width: 1280px) and (min-height: 830px) { 
-            width: calc(100% - 195px);
-            height:calc(100% - 83vh);
-          }
-          @media only screen and (min-width: 1280px) and (min-height: 840px) { 
-            width: calc(100% - 195px);
-            height:calc(100% - 83vh);
-          }
-          @media only screen and (min-width: 1280px) and (min-height: 850px) { 
-            width: calc(100% - 195px);
-            height:calc(100% - 83vh);
-          }
-          @media only screen and (min-width: 1280px) and (min-height: 860px) { 
-            width: calc(100% - 195px);
-            height:calc(100% - 83vh);
-          }
-          @media only screen and (min-width: 1280px) and (min-height: 870px) { 
-            width: calc(100% - 195px);
-            height:calc(100% - 83vh);
-          }
-          @media only screen and (min-width: 1280px) and (min-height: 880px) { 
-            width: calc(100% - 195px);
-            height:calc(100% - 83vh);
-          }
-          @media only screen and (min-width: 1280px) and (min-height: 890px) { 
-            width: calc(100% - 195px);
-            height:calc(100% - 83vh);
-          }
-          @media only screen and (min-width: 1280px) and (min-height: 900px) { 
-            width: calc(100% - 195px);
-            height:calc(100% - 80vh);
-          }
-
-          @media only screen and (min-width: 1500px) and (min-height: 910px) { 
+          @media only screen and (min-width: 1500px) and (min-height: 910px) {
             width: calc(100% - 195px);
             height: 137px;
           }
-          @media only screen and (min-width: 1400px) and (max-width:1450px) and (min-height: 910px) { 
+          @media only screen and (min-width: 1400px) and (max-width: 1450px) and (min-height: 910px) {
             width: calc(100% - 195px);
             height: 164px;
           }
-          @media only screen and (min-width: 1350px) and (max-width:1400px) and (min-height: 910px) { 
+          @media only screen and (min-width: 1350px) and (max-width: 1400px) and (min-height: 910px) {
             width: calc(100% - 195px);
             height: 172px;
           }
-          @media only screen and (min-width: 1300px) and (max-width:1350px) and (min-height: 910px) { 
+          @media only screen and (min-width: 1300px) and (max-width: 1350px) and (min-height: 910px) {
             width: calc(100% - 195px);
             height: 187px;
           }
-          @media only screen and (min-width: 1280px) and (max-width:1300px) and (min-height: 910px) { 
+          @media only screen and (min-width: 1280px) and (max-width: 1300px) and (min-height: 910px) {
             width: calc(100% - 195px);
             height: 195px;
           }
 
-          // Pantallas a 1280px a 1300px de ancho. Con un alto 
-
-
+          // Pantallas a 1280px a 1300px de ancho. Con un alto
 
           .views-element-container {
             width: 100%;
@@ -251,7 +247,6 @@ body.path-clases {
                   align-items: center;
                   gap: 1rem;
                   justify-content: space-between;
-                  
 
                   .my_teacher {
                     max-width: 35%;
@@ -259,35 +254,44 @@ body.path-clases {
                     flex-direction: row;
                     flex-wrap: wrap;
                     align-items: center;
-                    gap: 8px;
                     padding-left: 1rem;
 
                     .mi-profe {
                       width: 100%;
                       flex: 0 100%;
+                      margin-bottom: 8px;
                     }
                     .imagen {
                       max-width: 60px;
                       flex: 0 25%;
                       text-align: left;
+                      background-color: white;
+                      border-top-left-radius: 64px;
+                      border-bottom-left-radius: 64px;
+                      padding: 3.5px 0px;
 
                       img {
-                        max-width: 60px;
-                        height: auto;
-                        border-radius: 50%;
+                        width: 45px;
+                        height: 45px;
+                        border-radius: 200px;
                       }
                     }
 
                     .nombres {
                       max-width: 74%;
                       flex: 0 74%;
+                      background-color: white;
+                      border-top-right-radius: 64px;
+                      border-bottom-right-radius: 64px;
+                      padding: 13px 0px;
+                      font-size: 18px;
+                      font-weight: 700;
                     }
-
                   }
 
                   .estrellas-recibidas {
-                    max-width: 35%;
-                    flex: 0 35%;
+                    max-width: 37%;
+                    flex: 0 37%;
 
                     .titulo-est {
                       font-weight: bold;
@@ -297,6 +301,9 @@ body.path-clases {
                       flex-direction: row;
                       flex-wrap: wrap;
                       gap: 8px;
+                      background-color: #2ff7ee;
+                      border-radius: 40px;
+                      padding: 8px 16px 8px 24px;
 
                       img {
                         max-width: 30px;
@@ -336,11 +343,9 @@ body.path-clases {
           background: white;
           width: 100%;
           height: 100%;
-
-
         }
 
-        iframe {                    
+        iframe {
           height: 100vh;
           border-radius: 15px;
           max-width: 100%;
@@ -367,8 +372,6 @@ body.path-clases {
           width: 100%;
           height: 100%;
           display: flex;
-
-
         }
       }
     }
@@ -378,70 +381,66 @@ body.path-clases {
     display: none;
   }
 
-/* ======================== */
-.container-cargando{
-  display: grid;
-  place-content: center;
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  background: white;  
-  &.mostrar {
-    display: grid;  /* Muestra el div */
-    opacity: 1;  /* Hace que el div sea completamente visible */
+  /* ======================== */
+  .container-cargando {
+    display: grid;
+    place-content: center;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background: white;
+    &.mostrar {
+      display: grid; /* Muestra el div */
+      opacity: 1; /* Hace que el div sea completamente visible */
+    }
+
+    &.ocultar {
+      opacity: 0; /* Hace que el div sea completamente transparente */
+      display: none; /* Oculta el div */
+    }
   }
-  
-  &.ocultar {
-    opacity: 0;  /* Hace que el div sea completamente transparente */
-    display: none;  /* Oculta el div */
-  }  
-}
-.cargando{
-  width: 150px;
-  height: 30px;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-end;
-  justify-content: space-between;
-  margin: 0 auto;
-  text-align: center;
-}
-.texto-cargando{ 
-  padding-top:20px;
-}
-.cargando span{
-    font-size: 20px;    
+  .cargando {
+    width: 150px;
+    height: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .texto-cargando {
+    padding-top: 20px;
+  }
+  .cargando span {
+    font-size: 20px;
     color: #488d96;
     font-weight: bold;
-}
-.pelotas {
+  }
+  .pelotas {
     width: 30px;
     height: 30px;
     background-color: #ff6669;
-    animation: salto .5s alternate
-    infinite;
-  border-radius: 50%  
-}
-.pelotas:nth-child(2) {
-    animation-delay: .18s;
+    animation: salto 0.5s alternate infinite;
+    border-radius: 50%;
+  }
+  .pelotas:nth-child(2) {
+    animation-delay: 0.18s;
     background-color: #00d2c2;
-}
-.pelotas:nth-child(3) {
-    animation-delay: .37s;
+  }
+  .pelotas:nth-child(3) {
+    animation-delay: 0.37s;
     background-color: #2b7e88;
-}
-@keyframes salto {
+  }
+  @keyframes salto {
     from {
-        transform: scaleX(1.25);
+      transform: scaleX(1.25);
     }
-    to{
-        transform: 
-        translateY(-50px) scaleX(1);
+    to {
+      transform: translateY(-50px) scaleX(1);
     }
+  }
 }
-
-}
-
 
 body.path-clasesprofesor {
   #header {
@@ -451,7 +450,7 @@ body.path-clasesprofesor {
     }
   }
 
-  #main-wrapper  {
+  #main-wrapper {
     margin-top: 0rem !important;
     background: #2a7e88;
     min-height: 100vh !important;
@@ -468,7 +467,7 @@ body.path-clasesprofesor {
         position: relative;
         max-width: 100%;
 
-        iframe {                    
+        iframe {
           height: 90vh;
           border-radius: 15px;
           max-width: 100%;
