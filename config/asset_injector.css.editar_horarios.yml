@@ -1,0 +1,38 @@
+uuid: cb27a1a1-c4e9-464c-86e7-89ca29aa0666
+langcode: es
+status: true
+dependencies: {  }
+id: editar_horarios
+label: 'Editar Horarios'
+code: |-
+  .draggable .has-multiple-fields-remove-button .smartdate--widget .fieldset-wrapper details summary {
+  	display:none;
+  }
+
+  .smartdate--widget .fieldset-wrapper .duration-wrapper,.js-form-item-field-fechas-laborables-0-duration,.js-form-item-field-fechas-laborables-0-repeat,.js-form-item-field-fechas-laborables-0-repeat-end {
+  	display:none !important;
+  }
+  .smartdate--widget .fieldset-wrapper .js-form-type-select {
+  	display:none !important;
+  }
+
+  .ield-fechas-laborables-0-repeat-end-date {
+  	margin-top: 0 !important;
+  }
+  .smartdate--widget .fieldset-wrapper > .js-form-type-date::before{
+  	content: 'Fecha de finalización';
+  	display:block;
+  }
+
+  .smartdate--widget .fieldset-wrapper > .js-form-type-date {
+  	margin-top: 0 !important;
+  }
+
+  tr.draggable.even {
+  	display:none;
+  }
+media: all
+preprocess: true
+conditions: {  }
+contexts: {  }
+conditions_require_all: true

@@ -14,6 +14,8 @@ code: |-
         console.log("Clic en dia");
       }
     });
+    
+    $('.fieldset-wrapper details summary').css("display","none");
   });
 noscript: ''
 noscriptRegion: {  }
@@ -27,7 +29,6 @@ conditions:
     context_mapping:
       node: '@node.node_route_context:node'
     bundles:
-      horarios_de_trabajo: horarios_de_trabajo
       horarios_profesores: horarios_profesores
 contexts: {  }
 conditions_require_all: true
