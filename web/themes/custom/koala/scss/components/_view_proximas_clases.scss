@@ -168,15 +168,15 @@
           border-radius: 10px;
         }
 
-        .clase-paga.views-row {
-          background: $AlgaK100;
+        .views-row:nth-child(2n){
+          background   : #e6f1f1;
         }
 
         .views-row {
           border       : 1px solid #e6f1f1;
           border-radius: 24px;
           padding      : 1rem;
-          background   : #e6f1f1;
+          background: $AlgaK100;
           margin-bottom: 1.5rem;
 
           .views-field {
@@ -189,12 +189,12 @@
                 align-items   : center;
                 background    : white;
                 border-radius : 16px;
-                padding       : 0.5rem;
+                padding       : 1rem 0.5rem;
 
                 .imagen {
                   max-width : 100%;
                   width     : auto;
-                  
+
 
                   img {
                     height       : 80px;
