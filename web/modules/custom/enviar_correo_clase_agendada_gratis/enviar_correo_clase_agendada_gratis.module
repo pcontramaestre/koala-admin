@@ -278,7 +278,8 @@ $create_space = api_pencil_connect_create_space($data);
 
 if ($create_space !== FALSE) {
   $space_id = $create_space['spaceId'];
-  $space_lync_url = $create_space['link'];
+  $space_lync_url = $create_space['link'];  
+  \Drupal::messenger()->addError(new TranslatableMarkup('Creating space in the API - module create koala' . dump($create_space) . "Data: " . dump($data) ));
 } else {
   \Drupal::messenger()->addError(new TranslatableMarkup('Error creating space in the API - module create koala' . $create_space ));
 }
