@@ -633,6 +633,39 @@ bundles_roles_grants:
       grant_view: 0
       grant_update: 0
       grant_delete: 0
+  clases_de_nivelacion:
+    anonymous:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    authenticated:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    content_editor:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    administrator:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    profesor:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    padre:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    hijo:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    author:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
 grants_tab_availability:
   agendar_clase: false
   profesores: false
@@ -650,6 +683,7 @@ grants_tab_availability:
   facturacion_profesor: false
   agregar_horarios_de_clases_grati: false
   1_fecha_hora_inicio_fin: false
+  clases_de_nivelacion: false
 map_rid_gid:
   anonymous: 0
   authenticated: 1

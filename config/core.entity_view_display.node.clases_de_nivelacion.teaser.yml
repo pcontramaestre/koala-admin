@@ -1,0 +1,30 @@
+uuid: 925ac18f-29b2-40d4-bfff-b3893d464d44
+langcode: es
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.clases_de_nivelacion.field_cargar_genialys_y_clases_e
+    - field.field.node.clases_de_nivelacion.field_logros_de_la_clase
+    - field.field.node.clases_de_nivelacion.field_seleccione_el_nino
+    - node.type.clases_de_nivelacion
+  module:
+    - user
+id: node.clases_de_nivelacion.teaser
+targetEntityType: node
+bundle: clases_de_nivelacion
+mode: teaser
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  field_cargar_genialys_y_clases_e: true
+  field_logros_de_la_clase: true
+  field_seleccione_el_nino: true
+  langcode: true

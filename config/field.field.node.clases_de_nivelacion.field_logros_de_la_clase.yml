@@ -1,0 +1,29 @@
+uuid: e9a1b31b-acfb-4b32-bb93-cacc9dfe54af
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_logros_de_la_clase
+    - node.type.clases_de_nivelacion
+    - taxonomy.vocabulary.logros
+id: node.clases_de_nivelacion.field_logros_de_la_clase
+field_name: field_logros_de_la_clase
+entity_type: node
+bundle: clases_de_nivelacion
+label: 'Logros a evaluar'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      logros: logros
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

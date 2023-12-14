@@ -1,0 +1,121 @@
+uuid: e4bc78f8-4c2b-47c6-aa40-9fcd13f62dae
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.field.node.clases_de_nivelacion.field_cargar_genialys_y_clases_e
+    - field.field.node.clases_de_nivelacion.field_logros_de_la_clase
+    - field.field.node.clases_de_nivelacion.field_seleccione_el_nino
+    - node.type.clases_de_nivelacion
+  module:
+    - chosen_field
+    - content_moderation
+    - field_layout
+    - layout_discovery
+    - path
+    - term_reference_tree
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+id: node.clases_de_nivelacion.default
+targetEntityType: node
+bundle: clases_de_nivelacion
+mode: default
+content:
+  created:
+    type: datetime_timestamp
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_cargar_genialys_y_clases_e:
+    type: string_textarea
+    weight: 123
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_logros_de_la_clase:
+    type: term_reference_tree
+    weight: 122
+    region: content
+    settings:
+      start_minimized: true
+      leaves_only: false
+      select_parents: false
+      cascading_selection: 0
+      max_depth: 0
+    third_party_settings: {  }
+  field_seleccione_el_nino:
+    type: chosen_select
+    weight: 121
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  moderation_state:
+    type: moderation_state_default
+    weight: 100
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 30
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  promote:
+    type: boolean_checkbox
+    weight: 15
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 120
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  sticky:
+    type: boolean_checkbox
+    weight: 16
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: -5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 5
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  url_redirects:
+    weight: 50
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

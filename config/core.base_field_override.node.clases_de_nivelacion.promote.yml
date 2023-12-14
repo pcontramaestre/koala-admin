@@ -1,0 +1,22 @@
+uuid: a9e11a50-00f3-4f52-a752-5e7e69dbec44
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.clases_de_nivelacion
+id: node.clases_de_nivelacion.promote
+field_name: promote
+entity_type: node
+bundle: clases_de_nivelacion
+label: 'Promocionado a la página principal'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: Activado
+  off_label: Desactivado
+field_type: boolean
