@@ -4,7 +4,7 @@ status: true
 dependencies: {  }
 id: editar_horarios
 label: 'Editar Horarios'
-code: |-
+code: |+
   .draggable .has-multiple-fields-remove-button .smartdate--widget .fieldset-wrapper details summary {
   	display:none;
   }
@@ -28,9 +28,6 @@ code: |-
   	margin-top: 0 !important;
   }
 
-  tr.draggable.even {
-  	display:none;
-  }
 media: all
 preprocess: true
 conditions: {  }

@@ -1,0 +1,47 @@
+uuid: 18ea7f31-cba1-4152-ac2f-a4d45d6c321e
+langcode: es
+status: true
+dependencies:
+  config:
+    - block_content.type.basic
+    - page_manager.page.cancelar_suscripcion
+  module:
+    - layout_builder
+    - layout_discovery
+id: cancelar_suscripcion-layout_builder-0
+label: 'Layout Builder'
+weight: 0
+variant: layout_builder
+variant_settings:
+  id: layout_builder
+  label: null
+  weight: 0
+  uuid: 4f8e63f4-c6aa-471c-9097-8001fa0b8665
+  sections:
+    -
+      layout_id: layout_onecol
+      layout_settings:
+        label: ''
+        context_mapping: {  }
+      components:
+        a8851803-d279-4d45-99b4-dd6befb9eb5d:
+          uuid: a8851803-d279-4d45-99b4-dd6befb9eb5d
+          region: content
+          configuration:
+            id: 'inline_block:basic'
+            label: Cancelar
+            label_display: '0'
+            provider: layout_builder
+            view_mode: full
+            context_mapping: {  }
+            block_revision_id: 14
+            block_serialized: null
+          weight: 0
+          additional:
+            layout_builder_styles_style:
+              separacion_superior_mt_5: 0
+      third_party_settings: {  }
+page: cancelar_suscripcion
+selection_criteria: {  }
+selection_logic: and
+static_context: {  }

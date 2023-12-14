@@ -1,0 +1,12 @@
+uuid: 1cf47bce-cf6a-4f6d-98f3-4a37a07a2088
+langcode: es
+status: true
+dependencies: {  }
+id: cancelar_suscripcion
+label: 'Cancelar suscripción'
+description: ''
+use_admin_theme: false
+path: /cancelar-suscripcion
+access_logic: and
+access_conditions: {  }
+parameters: {  }

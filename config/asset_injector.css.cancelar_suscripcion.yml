@@ -1,0 +1,100 @@
+uuid: 100d1d83-1cd2-4a4c-a6cf-f5be3406658e
+langcode: es
+status: true
+dependencies:
+  module:
+    - system
+id: cancelar_suscripcion
+label: 'Cancelar suscripción'
+code: |-
+  .path-cancelar-suscripcion #main-wrapper {
+  	    background: #C6F5F2;
+  	    min-height: 70vh;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+  	
+  }
+
+  .path-cancelar-suscripcion #page {
+  	background: #C6F5F2;
+  }
+
+  .cancelar-suscripcion {
+  	max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .titulo-pagina {
+  	    text-align: center;
+      font-family: Nunito;
+      font-size: 1.25rem;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+      max-width: 60%;
+      margin: 0 auto;
+      margin-bottom: 2rem;
+  }
+
+  .botones.col-12 {
+      margin-top: 2rem;
+  }
+
+  .texto-otro.text-center {
+      color: #000;
+      text-align: center;
+      font-family: Nunito;
+      font-size: 1.25rem;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+  }
+
+  .botone {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      margin-top: 2rem;
+  }
+
+  .boton {
+      min-width: 200px;
+      text-align: center;
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+      cursor: pointer;
+  }
+
+  .boton.boton-continuar {
+      border-radius: 2.5rem;
+      border: 2px solid var(--Turq-K500, #297E88);
+      background: var(--Agua-K500, #2FF7EE);
+  }
+
+  .boton.boton-cancelar {
+      border-radius: 2.5rem;
+      border: 2px solid var(--Red-K500, #FF6669);
+      background: var(--Red-K300, #FF9294);
+  }
+
+  .izquierda .texto {
+      max-width: 60%;
+      margin-bottom: 1rem;
+  }
+
+  .radios {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+  }
+media: all
+preprocess: true
+conditions:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /cancelar-suscripcion
+contexts: {  }
+conditions_require_all: true
