@@ -76,23 +76,18 @@ function callback_submit_first_login_teacher_change_password_submit(array &$form
  * Implements hook_preprocess_page().
  */
 function first_login_teacher_preprocess_page(&$variables) {
-  $cookie = $_COOKIE['first_login_teacher_popup'];
-  if (isset($_SESSION['first_login_teacher_popup']) && $cookie) {
-    $user = User::load(\Drupal::currentUser()->id());
-    // $getLastLoginTimeUser = $user->getLastLoginTime();
-    // dump($getLastLoginTimeUser);
-    $namae = $user->get('field_nombres_y_apellidos_del_pr')->value;
-    // dump($namae);
-    // dump($_SESSION['first_login_teacher_popup']);
-    // $access = $user->getLastAccessedTime();
-    // dump($access);
-    // $isNew = $user->isNew();
-    // dump($isNew);
-    // $userCreate = $user->getCreatedTime();
-    // dump($userCreate);
-    // Attach the library that contains styles and JavaScript for the modal.
-    $variables['#attached']['library'][] = 'first_login_teacher/change_password_modal';
-    $variables['#attached']['drupalSettings']['first_login_teacher']['uid'] = $user->id();
-    $variables['#attached']['drupalSettings']['first_login_teacher']['namae'] = $namae;
+  $user = User::load(\Drupal::currentUser()->id());
+  $roles = \Drupal::currentUser()->getRoles();
+  $profesor = in_array('profesor', $roles);
+  if ($profesor){
+    $cookie = $_COOKIE['first_login_teacher_popup'];
+    if (isset($_SESSION['first_login_teacher_popup']) && $cookie) {
+      $user = User::load(\Drupal::currentUser()->id());
+      $namae = $user->get('field_nombres_y_apellidos_del_pr')->value;
+      $variables['#attached']['library'][] = 'first_login_teacher/change_password_modal';
+      $variables['#attached']['drupalSettings']['first_login_teacher']['uid'] = $user->id();
+      $variables['#attached']['drupalSettings']['first_login_teacher']['namae'] = $namae;
+    }
   }
+  
 }
