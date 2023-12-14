@@ -475,6 +475,19 @@ body.path-clasesprofesor {
           max-width: 100%;
           min-height: 600px;
         }
+        .formulario{
+          margin: 1rem 0rem 2rem 0rem;
+          .btn-primary{
+            color: #2a7e88;
+            background-color: white;
+            opacity: 1;
+            font-weight: 700;
+            border-radius: 24px;
+            &:hover{
+              text-decoration: underline;
+            }
+          }
+        }
       }
     }
   }

@@ -1,7 +1,7 @@
 .node-agendar-clases {
   background-image: url("../images/background.jpg");
   background-repeat: no-repeat;
-  background-size  : cover;
+  background-size: cover;
 
   #main-wrapper {
     .main-content {
@@ -87,22 +87,22 @@
                   }
 
                   .field--type-boolean {
-                    float           : left;
-                    width           : 80%;
-                    margin-left     : 10%;
-                    border-radius   : 13px;
+                    float: left;
+                    width: 80%;
+                    margin-left: 10%;
+                    border-radius: 13px;
                     background-color: white;
 
                     .js-form-item {
                       margin: 0.9rem 1rem 0rem 1rem;
-                      label{
+                      label {
                         font-weight: 500;
                         color: black;
                       }
 
                       .form-check-label {
                         a {
-                          color      : black;
+                          color: black;
                           font-weight: 700;
                           margin-left: 1rem;
                         }
@@ -113,7 +113,7 @@
                   .field--name-field-hora-cita-oculta {
                     .js-form-item {
                       label {
-                        display : none;
+                        display: none;
                         position: absolute;
                       }
 
@@ -136,8 +136,8 @@
                         #edit-field-sexo-n {
                           justify-content: center !important;
                           display: flex;
-                          .js-form-item-field-sexo-n{
-                            .form-check-input{
+                          .js-form-item-field-sexo-n {
+                            .form-check-input {
                               width: 1.2em;
                               height: 1.2rem;
                             }
@@ -162,8 +162,8 @@
 
             .form-actions {
               button {
-                background-color: #2FF7EE;
-                border: 2px solid #297E88;
+                background-color: #2ff7ee;
+                border: 2px solid #297e88;
                 padding: 0rem 1rem;
                 font-size: 1.2rem;
                 font-weight: 700;
@@ -214,7 +214,7 @@
   position: absolute;
   border-radius: 10px;
   margin-top: 0.3rem;
-    margin-left: 0.25rem;
+  margin-left: 0.25rem;
 }
 
 .path-node .form-radio.form-control.form-check-input {
@@ -243,51 +243,50 @@
                   }
 
                   .title-2 {
-                    margin-top   : 1rem;
+                    margin-top: 1rem;
                     margin-bottom: 1rem;
                   }
 
                   .layout__region--content {
-
                     .field--name-field-nombre-del-nino-a {
-                      width           : 100%;
-                      padding         : 0rem;
-                      margin-bottom   : 0rem !important;
+                      width: 100%;
+                      padding: 0rem;
+                      margin-bottom: 0rem !important;
                       // order        : 1;
                     }
 
                     .field--name-field-fecha-nac {
-                      width           : 100%;
-                      padding         : 0rem;
-                      margin-bottom   : 0rem !important;
+                      width: 100%;
+                      padding: 0rem;
+                      margin-bottom: 0rem !important;
                       // order        : 3;
                     }
 
                     .field--name-field-fecha-de-la-cita {
-                      width           : 50%;
-                      margin-bottom   : 0rem !important;
-                      padding: 0rem!important;
+                      width: 50%;
+                      margin-bottom: 0rem !important;
+                      padding: 0rem !important;
                       // order        : 4;
                     }
 
                     .field--name-field-hora-clase {
-                      width           : 50%;
-                      margin-bottom   : 0rem !important;
+                      width: 50%;
+                      margin-bottom: 0rem !important;
                       // order        : 5;
                     }
 
                     .field--name-field-sexo-n {
-                      margin-bottom   : 0.5rem !important;
+                      margin-bottom: 0.5rem !important;
                       // order        : 2;
                     }
 
                     .field--type-boolean {
                       // order: 6;
                       width: 100%;
-                      margin-left: 0rem!important;
+                      margin-left: 0rem !important;
                       .js-form-type-checkbox {
-                        .form-check-label{
-                          a:nth-child(2){
+                        .form-check-label {
+                          a:nth-child(2) {
                             display: flex;
                           }
                         }
@@ -304,8 +303,7 @@
   }
 }
 
-
-// AGENDAR CLASE GRATIS 
+// AGENDAR CLASE GRATIS
 .node-agendar-clases {
   .fechas-horarios-agendamiento {
     display: flex;
@@ -315,8 +313,6 @@
     align-content: flex-start;
     align-items: flex-start;
 
-
-
     #id-escoger-fecha {
       width: 35%;
       flex: 0 35%;
@@ -325,44 +321,42 @@
         width: 100%;
 
         .ui-datepicker-calendar .ui-state-default.ui-state-active {
-          background-color: #FF6669 !important;
+          background-color: #ff6669 !important;
           color: white !important;
         }
       }
-      
     }
-    
+
     #id-escoger-horario {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: flex-start;
-        background: white;
-        padding: 1rem;        
-        margin-bottom: 2rem;
-        gap: 2rem;
-        flex: 1;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      background: white;
+      padding: 1rem;
+      margin-bottom: 2rem;
+      flex: 1;
+      border: 1px solid #becaca;
+      border-radius: 24px;
 
-        a {
-          text-decoration: none;
-          padding: 0.5rem 1rem 0.3125rem 1rem;
-          border: 2px solid #becaca;
-          border-radius: 32px;
-          color: black;
-          font-size: 1rem;
+      a {
+        text-decoration: none;
+        padding: 0.5rem 1rem 0.3125rem 1rem;
+        border: 2px solid #becaca;
+        border-radius: 32px;
+        color: black;
+        font-size: 1rem;
+        margin-bottom: 1rem;
+        margin-right: 1rem;
+        font-weight: 700;
 
-          &:hover {
-            background-color: #297e88;
-            color: white;
-          }
-          &.active {
-            background-color: #297e88;
-            color: white;
-          }
+        &:hover {
+          background-color: #2ff7ee;
         }
+        &.active {
+          background-color: #2ff7ee;
+        }
+      }
     }
   }
-
-  
-  
 }
