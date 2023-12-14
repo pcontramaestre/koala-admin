@@ -1763,8 +1763,8 @@ display:
           click_sort_column: value
           type: datetime_custom
           settings:
-            timezone_override: ''
-            date_format: 'H:i A e'
+            timezone_override: UTC
+            date_format: 'H:i'
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -2349,6 +2349,143 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
+        user_picture_1:
+          id: user_picture_1
+          table: user__user_picture
+          field: user_picture
+          relationship: field_asignar_profesor
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: image
+          settings:
+            image_link: ''
+            image_style: thumbnail
+            image_loading:
+              attribute: lazy
+            svg_attributes:
+              width: null
+              height: null
+            svg_render_as_image: true
+          group_column: ''
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        field_fecha_cita_oculta_2:
+          id: field_fecha_cita_oculta_2
+          table: node__field_fecha_cita_oculta
+          field: field_fecha_cita_oculta
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: formatter_suite_datetime_time_ago_list
+          settings:
+            future_format: 'Comienza en @interval'
+            past_format: 'Clase iniciada hace @interval'
+            granularity: '2'
+            listStyle: span
+            listSeparator: ','
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
         nothing:
           id: nothing
           table: views
@@ -2361,7 +2498,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<div class=\"row clases-proximas\">\r\n  <div class=\"dato-del-nino d-flex col-md-6\">\r\n    <div class=\"imagen\">{{ user_picture }}</div>\r\n    <div class=\"datos\"> \r\n         {{ field_nombre_del_nino_a }} \r\n         <div class=\"fecha-nac\">{{ field_fecha_nac }} </div>\r\n     </div>\r\n  </div>\r\n  <div class=\"datos-clase d-flex col-md-6\">\r\n    <div class=\"titulo\">Fecha</div>\r\n    <div class=\"datos-fecha\">\r\n      <div>{{ field_fecha_cita_oculta }}</div>\r\n      <div>{{ field_fecha_cita_oculta_1 }}</div>\r\n    </div>\r\n   <div class=\"profesor\"><strong>Profesor: </strong>{{ field_nombres_y_apellidos_del_pr }}</div>\r\n    <div class=\"boton\">      \r\n     <a href=\"/clases?idestudiante={{ field_pencil_id_estudiante }}&url={{ field_pencil_url_clase }}&idClase={{ nid }}\" class=\"editar-clase\"target=\"_blank\">Entrar a Clase</a>\r\n    </div>\r\n  </div>\r\n</div>"
+            text: "{% set tipodeclase = field_tipo_clase %}\r\n{% if tipodeclase == \"paga\" %}\r\n  <div class=\"row clases-proximas\">\r\n      <div class=\"dato-del-nino d-flex col-md-3\">\r\n        <div class=\"imagen\">{{ user_picture }}</div>\r\n        <div class=\"datos\"> \r\n            {{ field_nombre_del_nino_a }} \r\n        </div>\r\n      </div>\r\n      <div class=\"dato-del-nino d-flex col-md-3\">\r\n        <div class=\"imagen\">{{ user_picture_1 }}</div>\r\n        <div class=\"datos\"> \r\n            {{ field_nombres_y_apellidos_del_pr }}\r\n        </div>\r\n      </div>\r\n      <div class=\"datos-clase d-flex col-md-6\">\r\n        <div class=\"titulo\">Tu clase comenzará el</div>\r\n        <div class=\"datos-fecha\">\r\n          <div class=\"fecha-clase\">{{ field_fecha_cita_oculta }}</div>\r\n          <div class=\"hora-inicio-clase\">{{ field_fecha_cita_oculta_1 }}</div>\r\n        </div>      \r\n        <div class=\"boton\">      \r\n        <a href=\"/clases?idestudiante={{ field_pencil_id_estudiante }}&url={{ field_pencil_url_clase }}&idClase={{ nid }}\" class=\"editar-clase\"target=\"_blank\">Entrar a Clase</a>\r\n        </div>\r\n      </div>\r\n    </div>\r\n{% else %}\r\n  <div class=\"row clases-proximas\">\r\n    <div class=\"dato-del-nino d-flex col-md-3\">\r\n      <div class=\"imagen\">{{ user_picture }}</div>\r\n      <div class=\"datos\"> \r\n          {{ field_nombre_del_nino_a }} \r\n      </div>\r\n    </div>\r\n    <div class=\"dato-del-nino d-flex col-md-3\">\r\n      <div class=\"imagen\">{{ user_picture_1 }}</div>\r\n      <div class=\"datos\"> \r\n          {{ field_nombres_y_apellidos_del_pr }}\r\n      </div>\r\n    </div>\r\n    <div class=\"datos-clase d-flex col-md-6\">\r\n      <div class=\"titulo\">Tu clase gratuita</div>\r\n      <div class=\"datos-fecha\">\r\n        <div>{{ field_fecha_cita_oculta_2 }}</div>\r\n        <div>{{ field_fecha_cita_oculta_1 }}</div>\r\n      </div>\r\n      <div class=\"boton\">      \r\n      <a href=\"/clases?idestudiante={{ field_pencil_id_estudiante }}&url={{ field_pencil_url_clase }}&idClase={{ nid }}\" class=\"editar-clase\"target=\"_blank\">Entrar a Clase</a>\r\n      </div>\r\n    </div>\r\n  </div>\r\n{% endif %}\r\n"
             make_link: false
             path: ''
             absolute: false
@@ -2467,7 +2604,7 @@ display:
           value:
             min: ''
             max: ''
-            value: '-30 minutes'
+            value: '-15 minutes'
             type: offset
           group: 1
           exposed: false

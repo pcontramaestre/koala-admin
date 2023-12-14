@@ -2,18 +2,38 @@
   .block-views-blockclases-gratuitas-block-proximas-clases {
     .content {
       .view-display-id-block_proximas_clases {
+
         .view-content {
           margin-right: -6px;
 
           .views-row {
             .views-field {
               .clases-proximas {
+                gap: 1rem;
                 .dato-del-nino {
-                  width: 45% !important;
+                  width: 22% !important;
+                  flex: 1;
+                  .imagen {
+                    max-width: 100% !important;
+                    width: auto !important;
+                    img {
+                      height: 80px !important;
+                      width : 80px !important;
+                    }
+                  }
                 }
 
                 .datos-clase {
-                  width: 55% !important;
+                  // width: 55% !important;
+                  flex: 2;
+                  .imagen {
+                    max-width: 100% !important;
+                    width: auto !important;
+                    img {
+                      height: 80px !important;
+                      width : 80px !important;
+                    }
+                  }
                 }
               }
             }
@@ -172,9 +192,9 @@
                 padding       : 0.5rem;
 
                 .imagen {
-                  max-width : 30%;
-                  width     : 30%;
-                  text-align: center;
+                  max-width : 100%;
+                  width     : auto;
+                  
 
                   img {
                     height       : 80px;
@@ -188,7 +208,10 @@
                   font-weight: 700;
                   font-size  : 20px;
                   text-align : center;
-                  margin-left: 0.5rem;
+                  margin-left: 0;
+                  line-height: 1.1;
+                  margin-top: 0.5rem;
+                  margin-bottom: 0.5rem;
 
                   .fecha-nac {
                     font-weight: 500;
@@ -206,8 +229,8 @@
                 padding-right  : 0px;
 
                 .titulo {
-                  margin-bottom: 0.1rem;
-                  font-weight  : 500;
+                  margin-bottom: 0.4rem;
+                  font-weight  : 600;
                   color        : black;
                 }
 
@@ -216,10 +239,11 @@
                   flex-direction: column;
                   flex-wrap     : nowrap;
                   align-items   : center;
-                  font-size     : 24px;
+                  font-size     : 1.3rem;
                   font-weight   : 700;
                   margin-bottom : 0.1rem;
                   text-align    : center;
+                  line-height: 1.2;
                 }
 
                 .profesor {
