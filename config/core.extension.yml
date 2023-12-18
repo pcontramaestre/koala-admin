@@ -84,6 +84,7 @@ module:
   entity_reference_revisions: 0
   entity_usage: 0
   enviar_correo_clase_agendada_gratis: 0
+  enviar_estrellas: 0
   facturacion_profes: 0
   fecha_widget: 0
   field: 0
@@ -212,6 +213,7 @@ module:
   twig_ui: 0
   typed_data: 0
   update: 0
+  upgrade_status: 0
   user: 0
   user_view_mode: 0
   view_mode_select_by_token: 0

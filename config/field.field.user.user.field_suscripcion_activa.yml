@@ -1,0 +1,37 @@
+uuid: ec143284-5323-4d95-b927-f4a3dab5db7c
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_suscripcion_activa
+  module:
+    - multiple_registration
+    - user
+third_party_settings:
+  multiple_registration:
+    user_additional_register_form_required:
+      authenticated: 0
+      profesor: 0
+      padre: 0
+      hijo: 0
+    user_additional_register_form:
+      authenticated: 0
+      profesor: 0
+      padre: 0
+      hijo: 0
+id: user.user.field_suscripcion_activa
+field_name: field_suscripcion_activa
+entity_type: user
+bundle: user
+label: 'Suscripción activa'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: Activado
+  off_label: Desactivado
+field_type: boolean

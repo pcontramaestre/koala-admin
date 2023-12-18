@@ -20,32 +20,10 @@ use Drupal\Component\Utility\Unicode;
 use Drupal\Core\Entity\Query\QueryFactory;
 use Drupal\Core\Entity\EntityTypeManager;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
-
-
-/*
-* Array de ids de espacios
-655257529a13a2ebd25ed77c
-655257699a13a2ebd25ed77d
-655257769a13a2ebd25ed77e
-655257859a13a2ebd25ed77f
-655257949a13a2ebd25ed780
-655257a29a13a2ebd25ed781
-655257b59a13a2ebd25ed782
-655257c59a13a2ebd25ed783
-655257d59a13a2ebd25ed784
-655257e69a13a2ebd25ed785
-*/
-
-
-
-
-
-
 /**
  * Implements hook_form_FORM_ID_alter() for the node_agendar_clase_form.
  */
 function create_koalas_form_alter(&$form, FormStateInterface $form_state, $form_id) {
-  //dump($form_id);
   // Obtener el usuario actual.
   $user = \Drupal::currentUser();
   $uid = $user->id();
@@ -536,6 +514,16 @@ function callback_submit_crear_hijo($form, &$form_state) {
   // Numero random para el correo del 100 al 999.
   $random = rand(100, 999);
   $correo = 'correo-' . $uid . '-' . $random . '@correohijo.com';
+
+  // buscar si el correo ya existe.
+  $email_repetido = buscar_email_repetido($correo);
+  while ($email_repetido) {
+    $random = rand(100, 999);
+    $correo = 'correo-' . $uid . '-' . $random . '@correohijo.com';
+    $email_repetido = buscar_email_repetido($correo);
+  }
+
+
   // El nombre del hijo es el title del nodo.
   $nombre = $form_state->getValue('title');
 
@@ -566,6 +554,31 @@ function callback_submit_crear_hijo($form, &$form_state) {
   $node->set('field_hijo_relacionado', $newid);
   $node->save();
 }
+
+
+function buscar_email_repetido ($correo) {
+  // Get the EntityTypeManager.
+  $entityTypeManager = \Drupal::service('entity_type.manager');
+
+  // Get the User entity Query service.
+  $query = $entityTypeManager->getStorage('user')->getQuery();
+
+  // Add conditions to the query.
+  $query->condition('mail', $correo);
+
+  // Execute the query and get the result.
+  $nids = $query->execute();
+
+  // Obtener el numero de nodos encontrados.
+  $numero_nodos = count($nids);  
+  if ($numero_nodos > 0) {
+    return TRUE;
+  }
+  else {
+    return FALSE;
+  }
+}
+
 
 /*
 Crear un hook para que despues de guardar el formulario con id node_agendar_clase_agendar_clases_form

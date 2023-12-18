@@ -121,5 +121,11 @@ class SuscriptionsEventsEventSubscriber implements EventSubscriberInterface {
       'field_usuario_padre' => $user_id,
     ]);
     $node->save();
+
+    // Load user by id.
+    $user = \Drupal\user\Entity\User::load($user_id);
+    // add true to field_suscripcion_activa and save.
+    $user->field_suscripcion_activa->value = true;
+    $user->save();    
   }
 }

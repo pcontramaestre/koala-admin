@@ -20,6 +20,7 @@ dependencies:
     - field.field.user.user.field_pais
     - field.field.user.user.field_pencil_email
     - field.field.user.user.field_pencil_id
+    - field.field.user.user.field_suscripcion_activa
     - field.field.user.user.field_tu_presentacion
     - field.field.user.user.field_tu_video_
     - field.field.user.user.user_picture
@@ -85,6 +86,7 @@ hidden:
   field_pais: true
   field_pencil_email: true
   field_pencil_id: true
+  field_suscripcion_activa: true
   field_tu_presentacion: true
   field_tu_video_: true
   langcode: true

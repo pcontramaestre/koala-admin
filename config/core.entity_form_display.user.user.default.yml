@@ -19,6 +19,7 @@ dependencies:
     - field.field.user.user.field_pais
     - field.field.user.user.field_pencil_email
     - field.field.user.user.field_pencil_id
+    - field.field.user.user.field_suscripcion_activa
     - field.field.user.user.field_tu_presentacion
     - field.field.user.user.field_tu_video_
     - field.field.user.user.user_picture
@@ -181,6 +182,13 @@ content:
     settings:
       size: 60
       placeholder: ''
+    third_party_settings: {  }
+  field_suscripcion_activa:
+    type: boolean_checkbox
+    weight: 47
+    region: first
+    settings:
+      display_label: true
     third_party_settings: {  }
   field_tu_presentacion:
     type: text_textarea
