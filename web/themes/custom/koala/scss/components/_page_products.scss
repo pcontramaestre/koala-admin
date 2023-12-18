@@ -1,44 +1,69 @@
 .path-product {
+  background-color: #e6f1f1;
   #block-koala-content {
-    max-width: 800px;
     margin: 0 auto;
-    width: 80%;
+    width: 100%;
     margin-top: 3rem;
 
     .layout__region--content {
       .block-field-blockcommerce-productclasestitle {
         font-weight: 700;
-        font-size: 1.5rem;
+        font-size: 1.25rem;
         text-align: center;
       }
 
       .block-field-blockcommerce-productclasesfield-imagen-de-suscripcion {
         text-align: center;
-        margin-top: 1rem !important;
+        margin-top: 2rem !important;
         margin-bottom: 1rem !important;
+        width: 50%;
+        float: left;
 
         img {
-          min-width: 500px;
-          min-height: 300px;
+          min-width: 600px;
+          min-height: 340px;
           object-fit: contain;
-          max-width: 500px;
           height: auto;
         }
       }
-
-
-        
-
-      .field--name-price {
-        margin-bottom: 1rem;
-        background: #d7f0f2;
-        padding: 1rem;
-        font-weight: 700;
-        font-size: 1.25rem;
+      .block-field-blockcommerce-productclasesbody {
+        width: 48%;
+        float: right;
+        margin-top: 2rem !important;
+        font-weight: 500;
       }
-      
+      .block-field-blockcommerce-product-variation4-semanas-mesprice {
+        width: 48%;
+        float: right;
+        .field--name-price {
+          margin-bottom: 1rem;
+          background: white;
+          padding: 0rem 1rem;
+          box-shadow: 0px 2px 10px 0px #43434326;
+          border-radius: 16px;
+          height: 54px;
+          display: flex;
+          align-items: center;
+          .field__label {
+            background-color: #9ff8f4;
+            height: 30px;
+            border-radius: 24px;
+            padding: 4px 8px;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            margin-right: 1rem;
+          }
+          .field__item {
+            font-size: 1.25rem;
+            font-weight: 700;
+          }
+        }
+      }
 
       .block-field-blockcommerce-productclasesvariations {
+        width: 48%;
+        float: right;
         .field--name-purchased-entity {
           .form-type-select {
             label {
@@ -47,9 +72,11 @@
             }
 
             select {
-              border-radius: 1.375rem;
+              border-radius: 2.375rem;
               color: black;
               border: 2px solid #becaca;
+              padding: 10px 14px !important;
+              font-weight: 500;
             }
           }
         }
@@ -60,47 +87,41 @@
 
           button {
             height: 3rem;
-            padding: 0.375rem 1rem;
+            padding: 0.375rem 2rem;
             justify-content: center;
             align-items: center;
             gap: 0.75rem;
             flex: 1 0 0;
             border-radius: 1.75rem;
-            border: 2px solid var(--Turq-K500, #297E88);
-            background: var(--Agua-K500, #2FF7EE);
-            text-align: center;              
+            border: 2px solid var(--Turq-K500, #297e88);
+            background: var(--Agua-K500, #2ff7ee);
+            text-align: center;
             text-decoration: none;
             color: black;
             max-width: 300px;
-        
+            font-weight: 700;
+            font-size: 1.25rem;
+
             &:hover {
-              border-radius: 1.75rem;
-              border: 2px solid var(--Turq-K500, #297E88);
-              background: var(--White, #FFF);
-              color: var(--Turq-K600, #165F68);
+              background: var(--White, #fff);
+              color: var(--Turq-K600, #165f68);
             }
           }
         }
       }
-
     }
-
   }
 }
-
-
 
 // Pagina de informacion de la orden
 .path-checkout {
   #block-koala-content {
-    max-width: 1024px;
-    margin: 0 auto;
     margin-top: 3rem;
 
     a {
       font-size: 1rem;
       font-weight: 700;
-      color: #297E88 !important;
+      color: #297e88 !important;
       text-decoration: underline;
     }
 
@@ -108,60 +129,210 @@
       font-size: 1.25rem;
       color: black;
       font-weight: 700;
+      display: flex;
+      justify-content: center;
     }
 
     table {
       tbody {
-        background: #2ff7ef;
-        border: 2px solid #297e88;
-
+        border-top: 2px solid #d7eff2;
+        border-bottom: 2px solid #d7eff2;
+        --bs-table-striped-bg: transparent;
+        background-color: transparent;
+        --bs-table-hover-bg: transparent;
         td {
           vertical-align: middle;
         }
       }
     }
 
-    .checkout-pane-coupon-redemption,.form-actions {
+    .checkout-pane-coupon-redemption,
+    .form-actions {
       button {
         height: 3rem;
-        padding: 0.375rem 1rem;
+        padding: 0.375rem 2rem;
         justify-content: center;
         align-items: center;
         gap: 0.75rem;
         flex: 1 0 0;
         border-radius: 1.75rem;
-        border: 2px solid var(--Turq-K500, #297E88);
-        background: var(--Agua-K500, #2FF7EE);
-        text-align: center;              
+        border: 2px solid var(--Turq-K500, #297e88);
+        background: white;
+        text-align: center;
         text-decoration: none;
-        color: black;
+        color: #165f68;
         max-width: 300px;
-    
+        font-weight: 700;
+        font-size: 20px;
+
         &:hover {
-          border-radius: 1.75rem;
-          border: 2px solid var(--Turq-K500, #297E88);
-          background: var(--White, #FFF);
-          color: var(--Turq-K600, #165F68);
+          background: #165f68;
+          color: white;
         }
       }
     }
 
     .layout-checkout-form {
       .row {
-        > .col-sm-6:nth-child(2) {
-          h3 {
-            font-size: 1.25rem;
-            font-weight: 700;
-          }
+        > .col-sm-6:nth-child(1) {
+          .checkout-pane-payment-information {
+            > legend {
+              .fieldset-legend {
+                margin-bottom: 1rem;
+                width: 90vw;
+              }
+            }
+            .fieldset-wrapper {
+              #edit-payment-information-billing-information {
+                .js-form-item {
+                  select,
+                  input {
+                    border: 2px solid #becaca;
+                    height: 46px;
+                    border-radius: 32px;
+                    font-weight: 500;
+                  }
+                  label {
+                    font-weight: 500;
+                    margin-bottom: 0.5rem;
+                  }
+                  .chosen-container {
+                    border: 2px solid #becaca;
+                    height: 46px;
+                    border-radius: 32px;
+                    font-weight: 500;
+                    display: flex !important;
+                    align-items: center;
+                    .chosen-single {
+                      border: none;
+                      background: white;
+                      box-shadow: none;
+                      text-decoration: none;
+                      span {
+                        color: black;
+                        font-weight: 500;
+                      }
+                    }
+                  }
+                }
+                .js-form-type-checkbox {
+                  input{
+                    border: none;
+                    height: 1rem;
+                  }
+                }
+                // .field--type-address {
+                //   .form-wrapper {
 
-          .form-item-sidebar-coupon-redemption-form-code {
-            label {
-              font-size: 1.25rem;
-              font-weight: 700;
-              color: black;
+                //   }
+                // }
+                // .js-form-item-payment-information-billing-information-select-address{
+
+                // }
+              }
+              .js-form-type-radio {
+                border: 2px solid #e6f1f1;
+                height: 54px;
+                border-radius: 16px;
+                font-weight: 500;
+                display: flex;
+                align-items: center;
+                padding-left: 3.5rem;
+                margin-bottom: 1rem;
+                .form-radio {
+                  margin-right: 0.5rem;
+                  width: 1.2rem;
+                  height: 1.2rem;
+                }
+                .form-check-input:checked[type="radio"]:after {
+                  margin-left: 0.3rem;
+                }
+              }
             }
           }
         }
+        > .col-sm-6:nth-child(2) {
+          background-color: #ecf9fb;
+          border-radius: 16px;
+          padding: 1rem;
+          display: flex;
+          flex-direction: column;
+          margin-top: 3.5rem;
+          h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            text-align: center;
+          }
+          .checkout-pane-order-summary {
+            order: 2;
+            margin-bottom: 0rem !important;
+            .view-commerce-checkout-order-summary {
+              .view-footer {
+                .field--name-total-price {
+                  .no-admin {
+                    .order-total-line {
+                      display: flex;
+                      justify-content: space-between;
+                    }
+                    .order-total-line__total {
+                      background: white;
+                      box-shadow: 0px 2px 10px 0px #43434326;
+                      height: 54px;
+                      border-radius: 32px;
+                      align-items: center;
+                      padding: 0rem 1rem;
+                      margin-top: 1rem;
+                      .order-total-line-label {
+                        font-weight: 500;
+                      }
+                      .order-total-line-value {
+                        font-size: 20px;
+                        width: auto;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+          .checkout-pane-coupon-redemption {
+            order: 1;
+            .form-item-sidebar-coupon-redemption-form-code {
+              width: 74.5%;
+              float: left;
+              label {
+                font-weight: 500;
+                color: black;
+                margin-bottom: 0.5rem;
+              }
+              input {
+                height: 46px;
+                border-radius: 28px;
+                border: 2px solid #becaca;
+              }
+            }
+            .js-form-submit {
+              width: 24%;
+              float: right;
+              background-color: white;
+              font-weight: 700;
+              color: #297e88;
+              margin-top: 2rem;
+              height: 46px;
+              font-size: 16px;
+              padding: 0rem;
+              &:hover {
+                background-color: #297e88;
+                color: white;
+              }
+            }
+          }
+        }
+      }
+      .layout-region-checkout-footer {
+        width: 87%;
+        text-align: end;
+        margin-top: 1.5rem;
       }
     }
   }
