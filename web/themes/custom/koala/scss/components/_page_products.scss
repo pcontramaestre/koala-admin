@@ -183,52 +183,110 @@
               }
             }
             .fieldset-wrapper {
-              #edit-payment-information-billing-information {
-                .js-form-item {
-                  select,
-                  input {
-                    border: 2px solid #becaca;
-                    height: 46px;
-                    border-radius: 32px;
-                    font-weight: 500;
-                  }
-                  label {
-                    font-weight: 500;
-                    margin-bottom: 0.5rem;
-                  }
-                  .chosen-container {
-                    border: 2px solid #becaca;
-                    height: 46px;
-                    border-radius: 32px;
-                    font-weight: 500;
-                    display: flex !important;
-                    align-items: center;
-                    .chosen-single {
-                      border: none;
-                      background: white;
-                      box-shadow: none;
-                      text-decoration: none;
-                      span {
-                        color: black;
-                        font-weight: 500;
-                      }
+              .js-form-item {
+                select,
+                input {
+                  border: 2px solid #becaca;
+                  height: 46px;
+                  border-radius: 32px;
+                  font-weight: 500;
+                }
+                label {
+                  font-weight: 500;
+                  margin-bottom: 0.5rem;
+                }
+                .chosen-container {
+                  border: 2px solid #becaca;
+                  height: 46px;
+                  border-radius: 32px;
+                  font-weight: 500;
+                  display: flex !important;
+                  align-items: center;
+                  .chosen-single {
+                    border: none;
+                    background: white;
+                    box-shadow: none;
+                    text-decoration: none;
+                    span {
+                      color: black;
+                      font-weight: 500;
                     }
                   }
                 }
-                .js-form-type-checkbox {
-                  input{
-                    border: none;
-                    height: 1rem;
+              }
+              .profile {
+                .address {
+                  font-weight: 500;
+                }
+              }
+              .address-book-edit-button {
+                border-radius: 1.75rem;
+                border: 2px solid var(--Turq-K500, #297e88);
+                background: white;
+                color: #165f68;
+                font-weight: 700;
+                &:hover {
+                  background-color: #165f68;
+                  color: white;
+                }
+              }
+
+              .js-form-type-checkbox {
+                input {
+                  border: none;
+                  height: 1rem;
+                }
+              }
+
+              #edit-payment-information-add-payment-method {
+                border: 2px solid #e6f1f1;
+                padding: 1rem;
+                border-radius: 16px;
+                .stripe-form {
+                  .payment-method-icon-list {
+                    .payment-method-icon {
+                      box-shadow: 0px 2px 10px 0px #43434326;
+                      border-radius: 4px;
+                    }
+                  }
+                  .js-form-item {
+                    .form-text {
+                      border: 2px solid #becaca;
+                      height: 46px;
+                      border-radius: 32px;
+                      font-weight: 500;
+                      padding: 0.7rem 0rem 0rem 0.7rem;
+                    }
+                    select,
+                    input {
+                      border: 2px solid #becaca;
+                      height: 46px;
+                      border-radius: 32px;
+                      font-weight: 500;
+                    }
+                    label {
+                      font-weight: 500;
+                      margin-bottom: 0.5rem;
+                    }
+                    #card-number-element {
+                      width: 100%;
+                    }
+                  }
+                  .js-form-item-payment-information-add-payment-method-payment-details-expiration {
+                    width: 50%;
+                    float: left;
+                    #expiration-element {
+                      width: 98%;
+                    }
+                  }
+                  .js-form-item-payment-information-add-payment-method-payment-details-security-code {
+                    width: 50%;
+                    float: right;
+                    #security-code-element {
+                      width: 98%;
+                    }
                   }
                 }
-                // .field--type-address {
-                //   .form-wrapper {
-
-                //   }
-                // }
-                // .js-form-item-payment-information-billing-information-select-address{
-
-                // }
               }
               .js-form-type-radio {
                 border: 2px solid #e6f1f1;
@@ -244,7 +302,7 @@
                   width: 1.2rem;
                   height: 1.2rem;
                 }
-                .form-check-input:checked[type="radio"]:after {
+                .form-check-input:checked[type=radio]:after {
                   margin-left: 0.3rem;
                 }
               }
