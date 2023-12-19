@@ -202,6 +202,7 @@
                   font-weight: 500;
                   display: flex !important;
                   align-items: center;
+                  width: 100%!important;
                   .chosen-single {
                     border: none;
                     background: white;
@@ -288,6 +289,11 @@
                   }
                 }
               }
+              #edit-payment-information-billing-information{
+                border: 2px solid #e6f1f1;
+                padding: 1rem;
+                border-radius: 16px;
+              }
               .js-form-type-radio {
                 border: 2px solid #e6f1f1;
                 height: 54px;
@@ -302,8 +308,9 @@
                   width: 1.2rem;
                   height: 1.2rem;
                 }
-                .form-check-input:checked[type=radio]:after {
-                  margin-left: 0.3rem;
+                .form-check-label{
+                  margin-bottom: 0rem!important;
+                  margin-top: 0.2rem;
                 }
               }
             }
