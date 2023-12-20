@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.user.full
     - field.field.user.user.commerce_remote_id
+    - field.field.user.user.field_apellidos
     - field.field.user.user.field_apodo
     - field.field.user.user.field_avatar
     - field.field.user.user.field_celular
@@ -106,6 +107,7 @@ hidden:
   entity_print_view_epub: true
   entity_print_view_pdf: true
   entity_print_view_word_docx: true
+  field_apellidos: true
   field_apodo: true
   field_avatar: true
   field_direcc: true

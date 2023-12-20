@@ -15,7 +15,12 @@ code: |-
       }
     });
     
-    $('.fieldset-wrapper details summary').css("display","none");
+    //$('.fieldset-wrapper details summary').css("display","none");
+    $('.field--type-smartdate details').attr('open', true);
+    $('.field--type-smartdate details summary').attr('aria-expanded', 'true');
+    $('.field--type-smartdate details summary').attr('aria-pressed', 'true');
+    //$('.field--type-smartdate select.recur-repeat option[value="DAILY"]').attr('selected', 'selected');
+    //$('.field--type-smartdate select.recur-repeat option[value="DAILY"]').prop('selected', true);
   });
 noscript: ''
 noscriptRegion: {  }

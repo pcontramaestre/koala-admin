@@ -276,6 +276,26 @@
               }
             }
           }
+          .field--name-field-apellidos {
+            background-color: #E6F1F1;
+            margin-bottom: 0rem !important;
+            padding: 1rem 1rem 0rem 1rem;
+            .js-form-type-textfield {
+              margin-bottom: 0rem !important;
+              .description.text-muted {
+                display: none;
+              }
+            }
+            input {
+              pointer-events: none;
+              color: black;
+              border-radius: 32px;
+              height: 3rem;
+              font-weight: 700;
+              background-color: #e9ecef;
+            }
+
+          }
           .field-group-fieldset {
             .fieldset-legend {
               font-size: 1.3rem;
@@ -294,6 +314,8 @@
             }
             .fieldset-wrapper {
               margin-top: 3.5rem;
+              background: #e6f1f1;
+              border-radius: 16px;
             }
           }
           #edit-group-presentacion {

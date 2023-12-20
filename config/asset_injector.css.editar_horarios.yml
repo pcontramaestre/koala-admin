@@ -1,10 +1,13 @@
 uuid: cb27a1a1-c4e9-464c-86e7-89ca29aa0666
 langcode: es
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - node
 id: editar_horarios
 label: 'Editar Horarios'
-code: |+
+code: |-
+  /*
   .draggable .has-multiple-fields-remove-button .smartdate--widget .fieldset-wrapper details summary {
   	display:none;
   }
@@ -28,8 +31,103 @@ code: |+
   	margin-top: 0 !important;
   }
 
+  */
+
+  .node--type-horarios-profesores #page-wrapper #main-wrapper #content .section #block-koala-content .content .node-horarios-profesores-editar-horarios-form .content .layout-region .layout--onecol .layout__region .field--name-field-fechas-laborables div .js-form-item .table-responsive .field-multiple-table tbody .draggable .has-multiple-fields-remove-button .smartdate--widget .fieldset-wrapper > .js-form-type-date {
+  	    margin-top: 0 !important;
+  }
+
+  .smartdate--widget .fieldset-wrapper > .js-form-type-date::before{
+  	content: 'Fecha de finalización';
+  	display:block;
+  }
+
+  .node--type-horarios-profesor .draggable .field-interval--label,.node--type-horarios-profesor .draggable .field-interval {
+  	display:none;
+  }
+
+  .js-form-item-field-fechas-laborables-0-repeat::before,.js-form-item-field-fechas-laborables-10-repeat::before,
+  .js-form-item-field-fechas-laborables-11-repeat::before,.js-form-item-field-fechas-laborables-12-repeat::before {
+      content: "Repetir cada";
+      display: block;
+  }
+
+
+  .duration-wrapper {
+      display: none !important;
+  }
+
+  .js-form-item-field-fechas-laborables-0-repeat::before,
+  .js-form-item-field-fechas-laborables-10-repeat::before,
+  .js-form-item-field-fechas-laborables-11-repeat::before,
+  .js-form-item-field-fechas-laborables-12-repeat::before,
+  .js-form-item-field-fechas-laborables-13-repeat::before,
+  .js-form-item-field-fechas-laborables-14-repeat::before,
+  .js-form-item-field-fechas-laborables-15-repeat::before,
+  .js-form-item-field-fechas-laborables-16-repeat::before,
+  .js-form-item-field-fechas-laborables-17-repeat::before,
+  .js-form-item-field-fechas-laborables-18-repeat::before,
+  .js-form-item-field-fechas-laborables-19-repeat::before,
+  .js-form-item-field-fechas-laborables-1-repeat::before,
+  .js-form-item-field-fechas-laborables-20-repeat::before,
+  .js-form-item-field-fechas-laborables-21-repeat::before,
+  .js-form-item-field-fechas-laborables-22-repeat::before,
+  .js-form-item-field-fechas-laborables-23-repeat::before,
+  .js-form-item-field-fechas-laborables-24-repeat::before,
+  .js-form-item-field-fechas-laborables-25-repeat::before,
+  .js-form-item-field-fechas-laborables-26-repeat::before,
+  .js-form-item-field-fechas-laborables-27-repeat::before,
+  .js-form-item-field-fechas-laborables-28-repeat::before,
+  .js-form-item-field-fechas-laborables-29-repeat::before,
+  .js-form-item-field-fechas-laborables-2-repeat::before,
+  .js-form-item-field-fechas-laborables-30-repeat::before,
+  .js-form-item-field-fechas-laborables-31-repeat::before,
+  .js-form-item-field-fechas-laborables-3-repeat::before,
+  .js-form-item-field-fechas-laborables-4-repeat::before,
+  .js-form-item-field-fechas-laborables-5-repeat::before,
+  .js-form-item-field-fechas-laborables-6-repeat::before,
+  .js-form-item-field-fechas-laborables-7-repeat::before,
+  .js-form-item-field-fechas-laborables-8-repeat::before,
+  .js-form-item-field-fechas-laborables-9-repeat::before {
+    content: "Repetir cada";
+    display: block;
+  }
+
+  .node--type-horarios-profesores #page-wrapper #main-wrapper #content .section #block-koala-content .content .node-horarios-profesores-editar-horarios-form .content .layout-region .layout--onecol .layout__region .field--name-field-fechas-laborables div .js-form-item .table-responsive .field-multiple-table tbody .draggable .has-multiple-fields-remove-button .smartdate--widget .fieldset-wrapper .js-form-type-select .recur-repeat.form-select {
+  	    margin-top: 0.3rem;
+  }
+
+  .node--type-horarios-profesores .js-form-item-field-fechas-laborables-0-interval,
+  .node--type-horarios-profesores .form-item-field-fechas-laborables-1-interval,
+  .node--type-horarios-profesores .form-item-field-fechas-laborables-2-interval,
+  .node--type-horarios-profesores .form-item-field-fechas-laborables-3-interval
+  .node--type-horarios-profesores .form-item-field-fechas-laborables-4-interval,
+  .node--type-horarios-profesores .form-item-field-fechas-laborables-5-interval,
+  .node--type-horarios-profesores .form-item-field-fechas-laborables-6-interval,
+  .node--type-horarios-profesores .form-item-field-fechas-laborables-20-interval,
+  .node--type-horarios-profesores .form-item-field-fechas-laborables-21-interval,
+  .node--type-horarios-profesores .form-item-field-fechas-laborables-22-interval,
+  .node--type-horarios-profesores .form-item-field-fechas-laborables-23-interval,
+  .node--type-horarios-profesores .form-item-field-fechas-laborables-30-interval,
+  .node--type-horarios-profesores .form-item-field-fechas-laborables-31-interval,
+  .node--type-horarios-profesores .form-item-field-fechas-laborables-32-interval,
+  .node--type-horarios-profesores .form-item-field-fechas-laborables-33-interval,
+  .node--type-horarios-profesores .js-form-item-field-fechas-laborables-10-interval, 
+  .node--type-horarios-profesores .js-form-item-field-fechas-laborables-11-interval,
+  .node--type-horarios-profesores .js-form-item-field-fechas-laborables-12-interval,
+  .node--type-horarios-profesores .js-form-item-field-fechas-laborables-13-interval {
+    display: none !important;
+  }
 media: all
 preprocess: true
-conditions: {  }
+conditions:
+  node_type:
+    id: node_type
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      horarios_de_trabajo: horarios_de_trabajo
+      horarios_profesores: horarios_profesores
 contexts: {  }
 conditions_require_all: true

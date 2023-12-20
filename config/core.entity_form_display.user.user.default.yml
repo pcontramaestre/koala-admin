@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.user.user.commerce_remote_id
+    - field.field.user.user.field_apellidos
     - field.field.user.user.field_apodo
     - field.field.user.user.field_avatar
     - field.field.user.user.field_celular
@@ -58,6 +59,14 @@ content:
     weight: 4
     region: first
     settings: {  }
+    third_party_settings: {  }
+  field_apellidos:
+    type: string_textfield
+    weight: 48
+    region: first
+    settings:
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
   field_apodo:
     type: string_textfield

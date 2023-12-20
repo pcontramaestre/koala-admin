@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_form_mode.user.editar_profesor
     - field.field.user.user.commerce_remote_id
+    - field.field.user.user.field_apellidos
     - field.field.user.user.field_apodo
     - field.field.user.user.field_avatar
     - field.field.user.user.field_celular
@@ -46,6 +47,7 @@ third_party_settings:
     group_datos:
       children:
         - field_nombres_y_apellidos_del_pr
+        - field_apellidos
         - user_picture
       label: Datos
       region: first
@@ -121,6 +123,16 @@ content:
     region: second
     settings: {  }
     third_party_settings: {  }
+  field_apellidos:
+    type: string_textfield
+    weight: 2
+    region: first
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings:
+      advanced_text_formatter:
+        show_token_tree: 0
   field_direcc:
     type: address_default
     weight: 6
@@ -164,7 +176,7 @@ content:
     third_party_settings: {  }
   field_tu_video_:
     type: media_library_widget
-    weight: 3
+    weight: 8
     region: first
     settings:
       media_types: {  }
@@ -181,7 +193,7 @@ content:
     third_party_settings: {  }
   user_picture:
     type: image_image
-    weight: 2
+    weight: 3
     region: first
     settings:
       progress_indicator: throbber

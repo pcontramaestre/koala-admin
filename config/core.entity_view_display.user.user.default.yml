@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.user.user.commerce_remote_id
+    - field.field.user.user.field_apellidos
     - field.field.user.user.field_apodo
     - field.field.user.user.field_avatar
     - field.field.user.user.field_celular
@@ -50,6 +51,14 @@ targetEntityType: user
 bundle: user
 mode: default
 content:
+  field_apellidos:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 21
+    region: content
   field_apodo:
     type: string
     label: above

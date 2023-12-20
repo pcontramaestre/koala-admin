@@ -242,5 +242,13 @@
 
     $('.filtro-agendar a.ui-state-active').click();
     $('#boton-agendamos-clase').css('display','none');
+
+
+    $('.field--type-smartdate details').attr('open', true);
+    $('.field--type-smartdate details summary').attr('aria-expanded', 'true');
+    $('.field--type-smartdate details summary').attr('aria-pressed', 'true');
+    console.log('Se ha recargado el ajax de la vista');  
+    $('.field--type-smartdate select.recur-repeat option[value="DAILY"]').attr('selected', 'selected');
+    $('.field--type-smartdate select.recur-repeat option[value="DAILY"]').prop('selected', true);
   });
 })(jQuery);

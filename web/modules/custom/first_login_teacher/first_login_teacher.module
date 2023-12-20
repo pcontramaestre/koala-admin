@@ -80,7 +80,7 @@ function first_login_teacher_preprocess_page(&$variables) {
   $roles = \Drupal::currentUser()->getRoles();
   $profesor = in_array('profesor', $roles);
   if ($profesor){
-    $cookie = $_COOKIE['first_login_teacher_popup'];
+    $cookie = true;//$_COOKIE['first_login_teacher_popup'];
     if (isset($_SESSION['first_login_teacher_popup']) && $cookie) {
       $user = User::load(\Drupal::currentUser()->id());
       $namae = $user->get('field_nombres_y_apellidos_del_pr')->value;

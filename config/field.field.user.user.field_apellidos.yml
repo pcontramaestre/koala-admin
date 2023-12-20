@@ -1,16 +1,13 @@
-uuid: 3009bfaa-129a-447c-9664-25131b7edf30
+uuid: 0c5e06a5-5828-49cc-9f00-3bd84b226367
 langcode: es
 status: true
 dependencies:
   config:
-    - field.storage.user.field_nombres_y_apellidos_del_pr
+    - field.storage.user.field_apellidos
   module:
-    - field_display_label
     - multiple_registration
     - user
 third_party_settings:
-  field_display_label:
-    display_label: 'Nombres y Apellidos'
   multiple_registration:
     user_additional_register_form_required:
       authenticated: 0
@@ -22,12 +19,12 @@ third_party_settings:
       profesor: 0
       padre: 0
       hijo: 0
-id: user.user.field_nombres_y_apellidos_del_pr
-field_name: field_nombres_y_apellidos_del_pr
+id: user.user.field_apellidos
+field_name: field_apellidos
 entity_type: user
 bundle: user
-label: 'Nombres del profesor'
-description: 'Ingrese aquí nombres del profesor <b>Solo nombres</b>'
+label: Apellidos
+description: ''
 required: false
 translatable: false
 default_value: {  }
