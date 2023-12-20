@@ -3938,7 +3938,7 @@ display:
           title: field_nombre_del_nino_a
           left_buttons: 'prev,next today'
           right_buttons: 'dayGridMonth,timeGridWeek,timeGridDay,listYear'
-          default_view: listYear
+          default_view: dayGridMonth
           firstDay: '1'
           nav_links: 1
           timeFormat: 'hh:mm a'
@@ -3954,10 +3954,13 @@ display:
           tax_field: ''
           vocabularies: ''
           color_bundle:
+            1_fecha_hora_inicio_fin: '#3a87ad'
             agendar_clase: '#3a87ad'
             agendar_clase_no_gratis: '#3a87ad'
+            agregar_horarios_de_clases_grati: '#3a87ad'
             article: '#3a87ad'
             asignar_clase_a_estudiante: '#3a87ad'
+            clases_de_nivelacion: '#3a87ad'
             clases_estudiantes: '#3a87ad'
             crear_hijos: '#3a87ad'
             event: '#3a87ad'

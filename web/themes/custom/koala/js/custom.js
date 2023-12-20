@@ -252,5 +252,19 @@
     // $('.field--type-smartdate select.recur-repeat option[value="DAILY"]').prop('selected', true);v
     $('select option[value="COUNT"]').remove();
 
+    // al seleccionar select.recur-repeat la opción DAILY, buscar select option[value="UNTIL"] seleccionarlo y mostrarlo
+    $('.field--type-smartdate select.recur-repeat').on('change', function () {
+      var selectedValue = $(this).val();
+      console.log(selectedValue);
+      if (selectedValue == 'DAILY') {
+        $('.field--type-smartdate select.recur-end option[value="UNTIL"]').attr('selected', 'selected');
+        $('.field--type-smartdate select.recur-end option[value="UNTIL"]').prop('selected', true);
+        $('.field--type-smartdate select.recur-end').show();
+      } else {
+        $('.field--type-smartdate select.recur-end option[value="UNTIL"]').removeAttr('selected');
+        $('.field--type-smartdate select.recur-end option[value="UNTIL"]').prop('selected', false);
+        $('.field--type-smartdate select.recur-end').hide();
+      }
+    });
   });
 })(jQuery);
