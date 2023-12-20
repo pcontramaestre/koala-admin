@@ -161,7 +161,7 @@
         text-align: center;
         text-decoration: none;
         color: #165f68;
-        max-width: 300px;
+        max-width: 340px;
         font-weight: 700;
         font-size: 20px;
 
@@ -177,9 +177,9 @@
         > .col-sm-6:nth-child(1) {
           .checkout-pane-payment-information {
             > legend {
+              width: 204%;
               .fieldset-legend {
                 margin-bottom: 1rem;
-                width: 90vw;
               }
             }
             .fieldset-wrapper {
@@ -202,7 +202,7 @@
                   font-weight: 500;
                   display: flex !important;
                   align-items: center;
-                  width: 100%!important;
+                  width: 100% !important;
                   .chosen-single {
                     border: none;
                     background: white;
@@ -289,7 +289,7 @@
                   }
                 }
               }
-              #edit-payment-information-billing-information{
+              #edit-payment-information-billing-information {
                 border: 2px solid #e6f1f1;
                 padding: 1rem;
                 border-radius: 16px;
@@ -308,8 +308,8 @@
                   width: 1.2rem;
                   height: 1.2rem;
                 }
-                .form-check-label{
-                  margin-bottom: 0rem!important;
+                .form-check-label {
+                  margin-bottom: 0rem !important;
                   margin-top: 0.2rem;
                 }
               }
@@ -398,6 +398,13 @@
         width: 87%;
         text-align: end;
         margin-top: 1.5rem;
+        #edit-actions {
+          width: 50%;
+          float: right;
+          #edit-actions-next{
+            float: left;
+          }
+        }
       }
     }
   }
