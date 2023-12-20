@@ -21,6 +21,7 @@ code: |-
     $('.field--type-smartdate details summary').attr('aria-pressed', 'true');
     //$('.field--type-smartdate select.recur-repeat option[value="DAILY"]').attr('selected', 'selected');
     //$('.field--type-smartdate select.recur-repeat option[value="DAILY"]').prop('selected', true);
+    $('select option[value="COUNT"]').remove();
   });
 noscript: ''
 noscriptRegion: {  }
