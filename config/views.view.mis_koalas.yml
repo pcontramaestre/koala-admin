@@ -2991,7 +2991,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "  <div class=\"access-acudiente\">\r\n    <div class=\"imagen\"><a href=\"/custom-child-login/{{ field_hijo_relacionado }}\">{{ user_picture }}</a></div>\r\n    <div class=\"nombre-datos\">\r\n      <div class=\"nombre\"><a href=\"/custom-child-login/{{ field_hijo_relacionado }}\">{{ title }}</a></div>\r\n      <div class=\"tipo\"><a href=\"/custom-child-login/{{ field_hijo_relacionado }}\">Estudiante</a></div>\r\n    </div>\r\n  </div>\r\n"
+            text: "  <div class=\"access-acudiente\">\r\n    <div class=\"imagen\"><a href=\"/custom-child-login/{{ field_hijo_relacionado }}\">{{ user_picture }}</a></div>\r\n    <div class=\"nombre-datos\">\r\n      <div class=\"nombre\"><a href=\"/custom-child-login/{{ field_hijo_relacionado }}\">{{ title }}</a></div>\r\n    </div>\r\n  </div>\r\n"
             make_link: false
             path: ''
             absolute: false
@@ -3127,7 +3127,7 @@ display:
           admin_label: ''
           plugin_id: text_custom
           empty: true
-          content: "<div class=\"text-center mb-4\">\r\n    <strong>Selecciona una cuenta</strong>\r\n</div>\r\n\r\n<a href=\"/padres\" class=\"d-block mb-5\">\r\n<div class=\"access-acudiente\">\r\n  <div class=\"imagen\">{{ user_picture_1 }}</div>\r\n  <div class=\"nombre-datos\">\r\n    <div class=\"nombre\">{{ field_nombre_del_acudiente }}</div>\r\n    <div class=\"tipo\">Padre/Tutor</div>\r\n  </div>\r\n</div>\r\n</a>"
+          content: "<div class=\"text-center mb-4\">\r\n    <strong>Selecciona una cuenta</strong>\r\n</div>\r\n\r\n<a href=\"/padres\" class=\"d-block mb-5\">\r\n<div class=\"access-acudiente\">\r\n  <div class=\"imagen\">{{ user_picture_1 }}</div>\r\n  <div class=\"nombre-datos\">\r\n    <div class=\"nombre\">{{ field_nombre_del_acudiente }}</div>\r\n  </div>\r\n</div>\r\n</a>"
           tokenize: true
       footer: {  }
       display_extenders: {  }
