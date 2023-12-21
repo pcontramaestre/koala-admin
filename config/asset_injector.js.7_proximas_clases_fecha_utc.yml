@@ -1,0 +1,75 @@
+uuid: 1fe68c3f-be0d-4b0a-8ada-f73f50cc5ed5
+langcode: es
+status: true
+dependencies:
+  module:
+    - system
+id: 7_proximas_clases_fecha_utc
+label: '7. Proximas clases, fecha UTC'
+code: |+
+
+  // Ejecutar jquery cuando el documento este listo
+  jQuery(document).ready(function($) {
+    $('.view-display-id-block_proximas_clases .clase-paga').each(function(){
+      // Buscar .datos-fecha .hora-inicio-clase .fecha-utc
+      var fechaUTC = $(this).find('.datos-fecha .hora-inicio-clase .fecha-utc').text();
+      // Convertir la fecha a un formato válido para la función Date()
+      var fechaArray = fechaUTC.split(/[^0-9]/);
+      var fechaValida = new Date(Date.UTC(fechaArray[2], fechaArray[1]-1, fechaArray[0], fechaArray[3], fechaArray[4], fechaArray[5]));
+    
+      // Obtener la fecha en la zona horaria del navegador
+      var fechaLocal = fechaValida.toLocaleString();
+    
+      // Obtener solo la hora en formato de 12 horas
+      var hora12h = fechaValida.toLocaleTimeString('en-US', {hour: 'numeric', minute: 'numeric', hour12: true});
+    
+      // Obtener la zona horaria actual
+      var zonaHoraria = Intl.DateTimeFormat().resolvedOptions().timeZone;
+    
+      // Combinar la hora en formato de 12 horas con la zona horaria
+      var horaConZonaHoraria = hora12h + " - " + zonaHoraria;
+    
+      var fechaMostrar = $(this).find('.datos-fecha .hora-inicio-clase .fecha-mostrar');
+      fechaMostrar.text(horaConZonaHoraria);
+    });
+
+    //.clase-gratis
+    $('.view-display-id-block_proximas_clases .clase-gratis').each(function(){
+      // Buscar .datos-fecha .hora-inicio-clase .fecha-utc
+      var fechaUTC = $(this).find('.datos-fecha .hora-inicio-clase .fecha-utc').text();
+      // Convertir la fecha a un formato válido para la función Date()
+      var fechaArray = fechaUTC.split(/[^0-9]/);
+      var fechaValida = new Date(Date.UTC(fechaArray[2], fechaArray[1]-1, fechaArray[0], fechaArray[3], fechaArray[4], fechaArray[5]));
+    
+      // Obtener la fecha en la zona horaria del navegador
+      var fechaLocal = fechaValida.toLocaleString();
+    
+      // Obtener solo la hora en formato de 12 horas
+      var hora12h = fechaValida.toLocaleTimeString('en-US', {hour: 'numeric', minute: 'numeric', hour12: true});
+    
+      // Obtener solo la fecha de la variable fechaValida
+      var fecha = fechaValida.toLocaleDateString();
+
+      // Obtener la zona horaria actual
+      var zonaHoraria = Intl.DateTimeFormat().resolvedOptions().timeZone;
+    
+      // Combinar la hora en formato de 12 horas con la zona horaria
+      var horaConZonaHoraria = fecha + "-" + hora12h + " - " + zonaHoraria;
+    
+      var fechaMostrar = $(this).find('.datos-fecha .hora-inicio-clase .fecha-mostrar');
+      fechaMostrar.text(horaConZonaHoraria);
+    });
+  });
+
+noscript: ''
+noscriptRegion: {  }
+jquery: true
+header: false
+preprocess: true
+conditions:
+  request_path:
+    id: request_path
+    negate: false
+    pages: "/padres\r\n/en/padres\r\n/es/padres"
+contexts: {  }
+conditions_require_all: true

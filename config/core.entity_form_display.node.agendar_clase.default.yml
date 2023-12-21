@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.agendar_clase.field_alumno_relacionado
+    - field.field.node.agendar_clase.field_apellidos_del_nino_a
     - field.field.node.agendar_clase.field_asignar_profesor
     - field.field.node.agendar_clase.field_clase_activa
     - field.field.node.agendar_clase.field_clase_asignada
@@ -59,6 +60,14 @@ content:
     weight: 19
     region: content
     settings: {  }
+    third_party_settings: {  }
+  field_apellidos_del_nino_a:
+    type: string_textfield
+    weight: 40
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
   field_asignar_profesor:
     type: chosen_select

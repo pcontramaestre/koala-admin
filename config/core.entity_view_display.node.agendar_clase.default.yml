@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.agendar_clase.field_alumno_relacionado
+    - field.field.node.agendar_clase.field_apellidos_del_nino_a
     - field.field.node.agendar_clase.field_asignar_profesor
     - field.field.node.agendar_clase.field_clase_activa
     - field.field.node.agendar_clase.field_clase_asignada
@@ -67,6 +68,14 @@ content:
       link: true
     third_party_settings: {  }
     weight: 115
+    region: content
+  field_apellidos_del_nino_a:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 130
     region: content
   field_asignar_profesor:
     type: entity_reference_label

@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_form_mode.node.agendando_clase
     - field.field.node.agendar_clase.field_alumno_relacionado
+    - field.field.node.agendar_clase.field_apellidos_del_nino_a
     - field.field.node.agendar_clase.field_asignar_profesor
     - field.field.node.agendar_clase.field_clase_activa
     - field.field.node.agendar_clase.field_clase_asignada
@@ -149,6 +150,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
 hidden:
+  field_apellidos_del_nino_a: true
   field_clase_activa: true
   field_clase_asignada: true
   field_estrellas_obtenidas: true

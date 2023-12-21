@@ -48,24 +48,32 @@
                   }
 
                   .field--name-field-nombre-del-nino-a {
-                    width: 50%;
+                    width: 33%;
                     float: left;
                     padding: 1rem 0.5rem 0rem 0rem;
                   }
 
+
                   .field--name-field-fecha-nac {
-                    width: 50%;
+                    width: 33%;
+                    float: left;
+                    padding: 1rem 0rem 0rem 0.5rem;
+                  }
+                  .field--name-field-apellidos-del-nino-a {
+                    width: 33%;
                     float: left;
                     padding: 1rem 0rem 0rem 0.5rem;
                   }
 
                   .field--name-field-fecha-de-la-cita {
+                    display: none;
                     width: 50%;
                     float: left;
                     padding: 0rem 0.5rem 0rem 0rem;
                   }
 
                   .field--name-field-hora-clase {
+                    display: none;
                     width: 50%;
                     float: left;
                     padding: 0rem 0rem 0rem 0.5rem;
@@ -92,6 +100,7 @@
                     margin-left: 10%;
                     border-radius: 13px;
                     background-color: white;
+                    margin-top: 2rem;
 
                     .js-form-item {
                       margin: 0.9rem 1rem 0rem 1rem;
@@ -109,7 +118,9 @@
                       }
                     }
                   }
-
+                  .field--name-field-asignar-profesor,.field--name-field-pencil-id-profesor,.field--name-field-fecha-cita-oculta{
+                    display: none;
+                  }
                   .field--name-field-hora-cita-oculta {
                     .js-form-item {
                       label {

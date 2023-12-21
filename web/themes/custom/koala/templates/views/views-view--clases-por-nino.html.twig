@@ -157,17 +157,21 @@
         <div class="col-4 ahorro">$ 0</div>
       {% endif %}
     </div>
-    {% if current_language == 'es' %}
-      <div class="row mt-5">
-          <div class="linea1">Escoje 12 semanas y tendras ahorro</div>
-          <div class="linea2">Escoje 24 semanas y terdras ahorro</div>
-      </div>
-    {% else %}
-      <div class="row mt-5">
-          <div class="linea1">Choose 12 weeks and you will have savings</div>
-          <div class="linea2">Choose 24 weeks and you will have savings</div>
-      </div>
-    {% endif %}
+    <div class="mensaje-plan-de-ahorro mt-3">
+      {% if current_language == 'es' %}
+        <div class="titulo">Plan de ahorro</div>
+        <div class="row mt-1">
+            <div class="linea1">Escoje 12 semanas y tendras ahorro</div>
+            <div class="linea2">Escoje 24 semanas y terdras ahorro</div>
+        </div>
+      {% else %}
+        <div class="titulo">Savings plan</div>
+        <div class="row mt-1">
+            <div class="linea1">Choose 12 weeks and you will have savings</div>
+            <div class="linea2">Choose 24 weeks and you will have savings</div>
+        </div>
+      {% endif %}
+    </div>
   </div>
 
 
@@ -201,7 +205,13 @@
       <img src="/themes/custom/koala/images/metodos/dinners.svg" alt="">
     </div>
   </div>
-
+  <div class="text-center mt-3 mb-3">
+    {% if current_language == 'es' %}
+      * Podrás agregar un cupón de descuento al finalizar la compra
+    {% else %}
+      * You can add a discount coupon at the end of the purchase 
+    {% endif %}
+  </div>
   <div class="boton-comprar">
     {% if current_language == 'es' %}
       <a href="/checkout" class="btn btn-comprar disabled">Confirmar y pagar</a>

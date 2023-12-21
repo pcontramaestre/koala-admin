@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.full
     - field.field.node.agendar_clase.field_alumno_relacionado
+    - field.field.node.agendar_clase.field_apellidos_del_nino_a
     - field.field.node.agendar_clase.field_asignar_profesor
     - field.field.node.agendar_clase.field_clase_activa
     - field.field.node.agendar_clase.field_clase_asignada
@@ -79,6 +80,7 @@ hidden:
   entity_print_view_pdf: true
   entity_print_view_word_docx: true
   field_alumno_relacionado: true
+  field_apellidos_del_nino_a: true
   field_asignar_profesor: true
   field_clase_activa: true
   field_clase_asignada: true
