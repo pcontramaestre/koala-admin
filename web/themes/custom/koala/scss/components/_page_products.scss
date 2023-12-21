@@ -20,18 +20,21 @@
         float: left;
 
         img {
-          min-width: 600px;
+          width: 100%;
           min-height: 340px;
           object-fit: contain;
           height: auto;
         }
       }
+
       .block-field-blockcommerce-productclasesbody {
         width: 48%;
         float: right;
         margin-top: 2rem !important;
         font-weight: 500;
+        margin-bottom: 1rem;
       }
+
       .block-field-blockcommerce-product-variation4-semanas-mesprice {
         width: 48%;
         float: right;
@@ -106,6 +109,9 @@
               background: var(--White, #fff);
               color: var(--Turq-K600, #165f68);
             }
+            &:before {
+              display: none;
+            }
           }
         }
       }
@@ -168,6 +174,9 @@
         &:hover {
           background: #165f68;
           color: white;
+        }
+        &:before {
+          display: none;
         }
       }
     }
@@ -395,13 +404,15 @@
         }
       }
       .layout-region-checkout-footer {
-        width: 87%;
+        width: 100%;
         text-align: end;
         margin-top: 1.5rem;
+        padding-right: 0em !important;
         #edit-actions {
+          align-items: center;
           width: 50%;
           float: right;
-          #edit-actions-next{
+          #edit-actions-next {
             float: left;
           }
         }
@@ -415,6 +426,94 @@
       justify-content: space-evenly;
       align-items: center;
       margin-top: 2rem;
+    }
+  }
+}
+
+@media (max-width: 700px) and (min-width: 300px) {
+  .path-product {
+    #block-koala-content {
+      .layout__region--content {
+        .block-field-blockcommerce-productclasesfield-imagen-de-suscripcion {
+          float: none !important;
+          width: 100%;
+          img {
+            min-height: auto !important;
+          }
+        }
+        .block-field-blockcommerce-productclasesbody {
+          float: none !important;
+          width: 100%;
+        }
+        .block-field-blockcommerce-product-variation4-semanas-mesprice {
+          float: none !important;
+          width: 100%;
+        }
+        .block-field-blockcommerce-productclasesvariations {
+          float: none !important;
+          width: 100%;
+        }
+      }
+    }
+  }
+  .path-checkout {
+    #block-koala-content {
+      .layout-checkout-form {
+        .row {
+          > .col-sm-6:nth-child(1) {
+            order: 2;
+            .checkout-pane-payment-information {
+              > legend {
+                width: 92% !important;
+                position: absolute;
+                top: 110px;
+              }
+            }
+          }
+          > .col-sm-6:nth-child(2) {
+            margin-top: 2rem !important;
+            order: 1;
+            margin-bottom: 1rem;
+          }
+          .col-sm-6 {
+            width: 100% !important;
+          }
+        }
+        .layout-region-checkout-footer {
+          #edit-actions {
+            width: 100%;
+            float: none;
+            display: flex;
+            justify-content: space-between;
+            #edit-actions-next {
+              text-align: center;
+              float: none !important;
+              margin: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 840px) and (min-width: 300px) {
+  .path-checkout
+    #block-koala-content
+    .layout-checkout-form
+    .row
+    > .col-sm-6:nth-child(1)
+    .checkout-pane-payment-information
+    .fieldset-wrapper
+    #edit-payment-information-add-payment-method
+    .stripe-form {
+    .js-form-item-payment-information-add-payment-method-payment-details-expiration {
+      width: 100% !important;
+      float: none !important;
+    }
+    .js-form-item-payment-information-add-payment-method-payment-details-security-code {
+      width: 100% !important;
+      float: none !important;
     }
   }
 }
