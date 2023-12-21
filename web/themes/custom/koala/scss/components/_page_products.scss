@@ -383,6 +383,14 @@
               }
             }
           }
+          .form-actions {
+            order: 3;
+            display: flex;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+            margin-top: 1rem;
+          }
           .checkout-pane-coupon-redemption {
             order: 1;
             .form-item-sidebar-coupon-redemption-form-code {

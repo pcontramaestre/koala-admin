@@ -671,7 +671,7 @@ display:
           exposed: true
           expose:
             operator_id: code_op
-            label: 'Coupon code'
+            label: 'Código de cupón'
             description: ''
             use_operator: false
             operator: code_op
