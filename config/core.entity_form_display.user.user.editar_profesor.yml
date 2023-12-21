@@ -85,7 +85,6 @@ third_party_settings:
     group_zona_horaria:
       children:
         - timezone
-        - language
       label: 'Zona horaria'
       region: first
       parent_name: ''
@@ -181,11 +180,6 @@ content:
     settings:
       media_types: {  }
     third_party_settings: {  }
-  language:
-    weight: 6
-    region: first
-    settings: {  }
-    third_party_settings: {  }
   timezone:
     weight: 5
     region: first
@@ -216,5 +210,6 @@ hidden:
   field_pencil_id: true
   field_suscripcion_activa: true
   langcode: true
+  language: true
   path: true
   translation: true
