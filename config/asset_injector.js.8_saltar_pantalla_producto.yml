@@ -1,0 +1,35 @@
+uuid: f4bd4f1f-f71a-4453-aa19-6a356fb1fff6
+langcode: es
+status: true
+dependencies:
+  module:
+    - system
+    - user
+id: 8_saltar_pantalla_producto
+label: '8. Saltar pantalla producto'
+code: |-
+  jQuery(document).ready(function($) {
+  	console.log('Pantalla de producto');
+  	$('.button--add-to-cart').click();
+  });
+noscript: ''
+noscriptRegion: {  }
+jquery: true
+header: false
+preprocess: true
+conditions:
+  request_path:
+    id: request_path
+    negate: false
+    pages: "/product/*\r\n/en/product/*\r\n/es/product/*"
+  user_role:
+    id: user_role
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+    roles:
+      profesor: profesor
+      padre: padre
+      hijo: hijo
+contexts: {  }
+conditions_require_all: true

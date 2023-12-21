@@ -37,7 +37,7 @@ configuration:
       step: review
       weight: 4
       button_id: edit-actions-next
-      auto_submit_review_form: false
+      auto_submit_review_form: true
       setup_future_usage: ''
     payment_process:
       step: payment
@@ -48,14 +48,16 @@ configuration:
       weight: 6
     completion_message:
       step: complete
-      weight: 7
+      weight: 8
       message:
         value: '<p>Your order number is [commerce_order:order_number].&nbsp;</p><p>Order items: [commerce_order:order_items]</p><p>Order type: [commerce_order:type]</p><p>Precio total: [commerce_order:total_price]</p><p>Url orden: [commerce_order:url]</p><p>You can view your order on your account page when logged in.</p>'
         format: full_html
     order_summary:
       step: complete
       weight: 8
-      view: commerce_checkout_order_summary
+      message:
+        value: '<p>Your order number is [commerce_order:order_number].&nbsp;</p><p>Order items: [commerce_order:order_items]</p><p>Order type: [commerce_order:type]</p><p>Precio total: [commerce_order:total_price]</p><p>Url orden: [commerce_order:url]</p><p>You can view your order on your account page when logged in.</p>'
+        format: full_html
     coupon_redemption:
       step: _sidebar
       weight: 9

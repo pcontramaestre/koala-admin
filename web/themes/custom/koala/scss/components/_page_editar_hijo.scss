@@ -32,8 +32,11 @@
     .layout__region--first {
       display: flex;
       flex-direction: column;
-      flex: 0 1 40% !important;
+      flex: 0 1 90% !important;
       padding: 0rem 1rem 1rem 1rem;
+      max-width: 900px;
+      width: 90%;
+      margin: 0 auto;
 
       .field--name-title {
         background-color: #E6F1F1;
@@ -43,6 +46,30 @@
         margin-left: 0;
         margin-right: 0;
         margin-bottom: 0 !important;
+
+        input {
+          pointer-events: none;
+          background-color: #E6F1F1;        
+        }
+      }
+      .field--name-field-sexo {
+        background: #e6f1f1;
+        margin-bottom: 0 !important;
+        padding: 0rem 1rem 0rem 1rem;
+
+        legend {
+          font-weight: 600;
+          margin-bottom: 0.5rem;
+          font-size: 1rem !important;
+        }
+
+        #edit-field-sexo {
+          display: flex;
+          flex-direction: row;
+          flex-wrap: nowrap;
+          align-items: center;
+          gap: 1rem;
+        }
       }
 
       .field--name-field-foto-del-nino {
@@ -169,6 +196,7 @@
     }
 
     .layout__region--second {
+      display: none;
       .field--name-body {
         .js-filter-wrapper {
           display: none;

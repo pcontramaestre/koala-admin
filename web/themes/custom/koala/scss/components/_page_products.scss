@@ -1,5 +1,19 @@
 .path-product {
   background-color: #e6f1f1;
+
+  .superpuesto {
+    background: #e6f1f1;
+    color: black;
+    width: 84%;
+    position: absolute;
+    height: 81%;
+    max-width: 1400px !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+  }
+
   #block-koala-content {
     margin: 0 auto;
     width: 100%;
