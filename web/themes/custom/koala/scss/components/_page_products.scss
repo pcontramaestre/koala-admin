@@ -135,13 +135,19 @@
 
 // Pagina de informacion de la orden
 .path-checkout {
+  background-color: #d7eff2;
+  background-image: url("/themes/custom/koala/images/background-checkout.png");
+  display: block;
+  background-repeat: no-repeat;
+  background-size: contain;
+
   #block-koala-content {
     margin-top: 3rem;
 
     a {
       font-size: 1rem;
       font-weight: 700;
-      color: #297e88 !important;
+      color: #297e88;
       text-decoration: underline;
     }
 
@@ -168,7 +174,7 @@
 
     .checkout-pane-coupon-redemption,
     .form-actions {
-      button {
+      button:not(.btn-close) {
         height: 3rem;
         padding: 0.375rem 2rem;
         justify-content: center;
@@ -354,6 +360,30 @@
           .checkout-pane-order-summary {
             order: 2;
             margin-bottom: 0rem !important;
+            .table-responsive {
+              table {
+                tbody {
+                  tr {
+                    td {
+                      font-weight: 700;
+                      font-size: 18px;
+                      display: flex;
+                      align-items: center;
+                      justify-content: space-between;
+                      &:before {
+                        content: "";
+                        background-image: url("/themes/custom/koala/images/suscription.png");
+                        display: block;
+                        background-repeat: no-repeat;
+                        background-size: contain;
+                        height: 48px;
+                        width: 48px;
+                      }
+                    }
+                  }
+                }
+              }
+            }
             .view-commerce-checkout-order-summary {
               .view-footer {
                 .field--name-total-price {
@@ -393,9 +423,35 @@
           }
           .checkout-pane-coupon-redemption {
             order: 1;
+            margin-bottom: 0rem !important;
+            .js-form-wrapper {
+              margin-bottom: 0rem !important;
+              .coupon-redemption-form__coupons {
+                table {
+                  width: 100%;
+                  tbody {
+                    tr {
+                      display: flex;
+                      align-items: center;
+                      justify-content: space-between;
+                      td {
+                        font-weight: 500;
+                        .js-form-submit {
+                          margin-top: 0rem !important;
+                        }
+                      }
+                    }
+                    tr:nth-child(1) {
+                      padding-top: 1.5rem;
+                    }
+                  }
+                }
+              }
+            }
             .form-item-sidebar-coupon-redemption-form-code {
               width: 74.5%;
               float: left;
+              margin-bottom: 0rem !important;
               label {
                 font-weight: 500;
                 color: black;
@@ -407,19 +463,20 @@
                 border: 2px solid #becaca;
               }
             }
-            .js-form-submit {
-              width: 24%;
-              float: right;
-              background-color: white;
-              font-weight: 700;
-              color: #297e88;
-              margin-top: 2rem;
-              height: 46px;
-              font-size: 16px;
-              padding: 0rem;
-              &:hover {
-                background-color: #297e88;
-                color: white;
+            .js-form-wrapper {
+              .js-form-submit {
+                float: right;
+                background-color: white;
+                font-weight: 700;
+                color: #297e88;
+                margin-top: 2rem;
+                height: 46px;
+                font-size: 16px;
+                padding: 0rem 1rem;
+                &:hover {
+                  background-color: #297e88;
+                  color: white;
+                }
               }
             }
           }
@@ -443,6 +500,79 @@
   }
 
   .checkout-complete {
+    height: 37vw;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    .confirmacion-compra {
+      .imagen-koalas {
+        text-align: center;
+      }
+      .texto-confirmacion {
+        background-color: white;
+        border-radius: 24px;
+        padding: 32px 32px 16px 16px;
+        margin-top: -1.3rem;
+        display: flex;
+        justify-content: space-between;
+        .texto {
+          .titulo {
+            h2 {
+              font-weight: 700;
+              margin-bottom: 0.2rem;
+            }
+          }
+          .agradecer-usuario {
+            font-weight: 500;
+          }
+          .nombre-plan {
+            h3 {
+              font-size: 16px;
+              font-weight: 700;
+              margin-top: 0.5rem;
+            }
+          }
+        }
+        .botones {
+          display: flex;
+          margin-top: 1.5rem;
+          .boton {
+            height: 51px;
+            border-radius: 32px;
+            border: 2px solid #297e88;
+            width: 220px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            a {
+              text-decoration: none!important;
+              font-size: 20px!important;
+            }
+            &:hover {
+              background-color: #297e88!important;
+              a{
+                color: white!important;
+              }
+            }
+          }
+          .boton:nth-child(1) {
+            margin-right: 2rem;
+            background-color: #2ff7ee;
+            a {
+              color: black !important;
+            }
+            &:hover {
+              a{
+                color: white!important;
+              }
+            }
+          }
+          .boton:nth-child(2) {
+            background-color: white;
+          }
+        }
+      }
+    }
     .opciones {
       width: 100%;
       justify-content: space-evenly;

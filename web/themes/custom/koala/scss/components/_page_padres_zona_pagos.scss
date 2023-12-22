@@ -384,12 +384,12 @@
             margin-top: 1rem;
             .form-type-radio {
               padding-bottom: 1rem;
-              .form-radio[checked="checked"] {
+              display: flex;
+              align-items: center;
+              .form-radio:checked[type="radio"] {
                 background-color: #ffe8e8 !important;
                 border-color: #ff6669 !important;
                 background-image: none !important;
-                height: 18px;
-                width: 18px;
                 // &:after {
                 //   content: "";
                 //   width: 0.5rem;
@@ -404,6 +404,11 @@
               .option {
                 font-weight: 500;
                 color: #000;
+              }
+              .form-radio{
+                margin-right: 0.5rem;
+                height: 18px;
+                width: 18px;
               }
             }
           }
@@ -446,6 +451,31 @@
         }
         .col-4 {
           font-weight: 700;
+        }
+      }
+      .mensaje-plan-de-ahorro {
+        background-color: #f5f8d8;
+        border-radius: 24px;
+        padding: 1rem;
+        min-height: 80px;
+        .titulo {
+          font-weight: 700;
+          display: flex;
+          &:before {
+            content: "";
+            background-image: url("/themes/custom/koala/images/message-succes.png");
+            display: block;
+            background-repeat: no-repeat;
+            height: 48px;
+            width: 48px;
+            background-size: contain;
+            margin-right: 1rem;
+          }
+        }
+        .row {
+          font-size: 14px;
+          margin-left: 55px;
+          margin-top: -1rem !important;
         }
       }
     }
@@ -503,6 +533,7 @@
         border: 2px solid var(--Turq-K500, #297e88);
         background: var(--Agua-K500, #2ff7ee);
         font-weight: 700;
+        font-size: 20px;
 
         &.disabled {
           border: 2px solid var(--Grey-K200, #becaca);
@@ -760,7 +791,7 @@
     .view-clases-por-nino {
       flex-direction: column;
       .vista-izquierda {
-        max-width: 100%!important;
+        max-width: 100% !important;
         .select-suscription {
           margin-bottom: -0.5rem !important;
         }
