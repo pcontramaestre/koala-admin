@@ -612,8 +612,7 @@
                                 .views-field {
                                   .field-content {
                                     flex-direction: column;
-                                    width: 84%;
-                                    margin: 0 auto;
+                                    width: auto;
                                     .boton-agendar{
                                       height: 2rem;
                                     }
@@ -632,6 +631,15 @@
                 }
               }
             }
+          }
+        }
+      }
+    }
+    .view-id-logros_taxonomia.view-display-id-block_1{
+      .item-list-accordeon{
+        ul.listado-de-logros{
+          li{
+            padding: 6px 4px 4px 28px!important;
           }
         }
       }

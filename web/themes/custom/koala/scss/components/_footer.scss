@@ -291,6 +291,11 @@ footer.site-footer {
 }
 
 @media only screen and (max-width: 800px) and (min-width: 192px) {
+  .rol-padre{
+    footer.site-footer{
+      margin-top: 0rem!important;
+    }
+  }
   .node-agendar-clases {
     footer.site-footer {
       .container {
