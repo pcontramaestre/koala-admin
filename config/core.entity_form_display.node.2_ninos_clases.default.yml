@@ -1,0 +1,52 @@
+uuid: bae499ca-1af9-462d-a1c9-1c8c111c6be8
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.field.node.2_ninos_clases.field_alumno_relacionado
+    - field.field.node.2_ninos_clases.field_clase_asignada_est
+    - node.type.2_ninos_clases
+  module:
+    - chosen_field
+    - field_layout
+    - layout_discovery
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+id: node.2_ninos_clases.default
+targetEntityType: node
+bundle: 2_ninos_clases
+mode: default
+content:
+  field_alumno_relacionado:
+    type: chosen_select
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_clase_asignada_est:
+    type: chosen_select
+    weight: 26
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  langcode: true
+  moderation_state: true
+  path: true
+  promote: true
+  status: true
+  sticky: true
+  uid: true
+  url_redirects: true

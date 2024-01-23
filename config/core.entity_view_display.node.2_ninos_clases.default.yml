@@ -1,0 +1,41 @@
+uuid: ad8ff31d-7d9c-4a7f-8eef-34bba1a3bd3c
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.field.node.2_ninos_clases.field_alumno_relacionado
+    - field.field.node.2_ninos_clases.field_clase_asignada_est
+    - node.type.2_ninos_clases
+  module:
+    - user
+id: node.2_ninos_clases.default
+targetEntityType: node
+bundle: 2_ninos_clases
+mode: default
+content:
+  field_alumno_relacionado:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_clase_asignada_est:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  langcode: true

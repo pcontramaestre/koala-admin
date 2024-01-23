@@ -45,7 +45,7 @@ third_party_settings:
       children:
         - field_fecha_de_la_cita
         - field_hora_clase
-      label: 'Escoge la fecha en la que desea la clase gratuita'
+      label: 'Escoge la fecha y hora en la que desea la clase gratuita'
       region: content
       parent_name: ''
       weight: 4

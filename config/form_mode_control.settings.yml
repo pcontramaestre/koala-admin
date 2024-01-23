@@ -204,3 +204,4 @@ modification+hijo+user+user: user.user.default
 'use  The form mode default linked to  node entity( agregar_horarios_de_clases_grati )': node.agregar_horarios_de_clases_grati.default
 'use  The form mode default linked to  node entity( 1_fecha_hora_inicio_fin )': node.1_fecha_hora_inicio_fin.default
 'use  The form mode default linked to  node entity( clases_de_nivelacion )': node.clases_de_nivelacion.default
+'use  The form mode default linked to  node entity( 2_ninos_clases )': node.2_ninos_clases.default

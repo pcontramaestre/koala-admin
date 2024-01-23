@@ -800,6 +800,7 @@ display:
           admin_label: 'field_profesor: Usuario'
           plugin_id: standard
           required: false
+      css_class: d-none
       use_ajax: true
       header: {  }
       footer:

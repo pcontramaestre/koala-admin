@@ -1,0 +1,33 @@
+uuid: 88affdd7-9e33-4b12-a46b-c33686e98fbd
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_clase_asignada_est
+    - node.type.2_ninos_clases
+    - node.type.clases_estudiantes
+  content:
+    - 'node:clases_estudiantes:a55a7653-dd6b-420e-8636-4288698c4f3e'
+id: node.2_ninos_clases.field_clase_asignada_est
+field_name: field_clase_asignada_est
+entity_type: node
+bundle: 2_ninos_clases
+label: 'Clase asignada'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    target_uuid: a55a7653-dd6b-420e-8636-4288698c4f3e
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      clases_estudiantes: clases_estudiantes
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

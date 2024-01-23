@@ -1,0 +1,35 @@
+uuid: ce92c612-f437-4704-a4c3-3818e42bc5fc
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_alumno_relacionado
+    - node.type.2_ninos_clases
+id: node.2_ninos_clases.field_alumno_relacionado
+field_name: field_alumno_relacionado
+entity_type: node
+bundle: 2_ninos_clases
+label: 'Alumno relacionado'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:user'
+  handler_settings:
+    target_bundles: null
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    filter:
+      type: role
+      role:
+        hijo: hijo
+        content_editor: '0'
+        administrator: '0'
+        profesor: '0'
+        padre: '0'
+    include_anonymous: false
+field_type: entity_reference

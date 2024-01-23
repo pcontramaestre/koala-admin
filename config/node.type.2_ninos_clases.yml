@@ -1,0 +1,17 @@
+uuid: feb30869-3ed6-4320-b5bf-62c119950e42
+langcode: es
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: '2. Niños - Clases'
+type: 2_ninos_clases
+description: 'Formulario que relaciona los niños con las próximas clases'
+help: ''
+new_revision: false
+preview_mode: 0
+display_submitted: true

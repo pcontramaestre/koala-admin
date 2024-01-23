@@ -1,0 +1,11 @@
+uuid: 9b23ae8c-b91a-4e9e-8864-3852c73b0ef1
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.2_ninos_clases
+id: node.2_ninos_clases
+target_entity_type_id: node
+target_bundle: 2_ninos_clases
+default_langcode: site_default
+language_alterable: false

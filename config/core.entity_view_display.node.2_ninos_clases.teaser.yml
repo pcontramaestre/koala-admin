@@ -1,0 +1,28 @@
+uuid: 252347ff-705e-4ee3-aa18-ef623eeb3f8a
+langcode: es
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.2_ninos_clases.field_alumno_relacionado
+    - field.field.node.2_ninos_clases.field_clase_asignada_est
+    - node.type.2_ninos_clases
+  module:
+    - user
+id: node.2_ninos_clases.teaser
+targetEntityType: node
+bundle: 2_ninos_clases
+mode: teaser
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  field_alumno_relacionado: true
+  field_clase_asignada_est: true
+  langcode: true
