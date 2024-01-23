@@ -1,3 +1,35 @@
+body.node--type-mundos-detalle {
+  background-color: #d7eff2;
+  background-image: url(/themes/custom/koala/images/background-checkout.png);
+  display: block;
+  background-repeat: no-repeat;
+  -webkit-background-size: contain;
+  background-size: contain;
+  
+  #page-wrapper {
+    #header {
+      display: none;
+    }
+    #main-wrapper {
+      margin-top: 0px !important;
+      min-height: 100vh !important;
+
+      > #main {
+        min-height: 90vh;
+        max-width: 1600px !important;
+      }
+
+      .mis-mundos-detalle {
+        max-height: 90vh;
+      }
+    }
+
+    footer.site-footer {
+      display: none;
+    }
+  }  
+}
+
 .path-hijo:not(.page-view-koalas-avatares-ninos) {
   background: #ecf9fb;
 
