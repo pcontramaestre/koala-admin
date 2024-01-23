@@ -335,6 +335,11 @@
           .views-row {
             .views-field-field-nombres-y-apellidos-del-pr {
               width: 100%;
+              cursor: pointer;
+
+              input[type="radio"] {
+                opacity: 0;
+              }
 
               .field-content {
                 display: flex;
@@ -354,6 +359,8 @@
                   color: black;
                   text-align: left;
                   line-height: 1.1;
+                  cursor: pointer;
+                  width: 100%;
 
                   img {
                     border-radius: 132px;
