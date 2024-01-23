@@ -27,6 +27,9 @@ code: |-
       $('#boton-agendamos-clase').attr('href', linkUrl);
       //console.log("Agendando cita");
       $('#boton-agendamos-clase').css('display','flex');
+      console.log(linkUrl);
+  		window.location.href = linkUrl;
+  		
     });
 
     function getLastParameterFromUrl() {
@@ -54,6 +57,9 @@ code: |-
         }*/
         var linkUrl = '/agendar_cita?id=' + getLastParameterFromUrl() + '&field_profesor=' + selectedValue + '&fecha='+fecha_formateada;
         $('#boton-agendamos-clase').attr('href', linkUrl);
+        //$('#boton-agendamos-clase').trigger('click');
+  			//window.location.href = linkUrl;
+  			//console.log(linkUrl);
         
       });
     }
