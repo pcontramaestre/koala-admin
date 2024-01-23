@@ -93,3 +93,5 @@ koala/css/style.css
 web/themes/custom/koala/css/style.min.css
 web/themes/custom/koala/css/style.css
 drush.sh
+web/sites/develop.services.yml
+composer.lock
