@@ -138,6 +138,7 @@ permissions:
   - 'view own field_hora_clase'
   - 'view own field_logros'
   - 'view own field_nombres_y_apellidos_del_pr'
+  - 'view own field_observaciones_agregadas_de'
   - 'view own field_tu_presentacion'
   - 'view own horarios_de_trabajo content'
   - 'view own horarios_profesores content'

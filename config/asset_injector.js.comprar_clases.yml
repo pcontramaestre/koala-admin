@@ -88,6 +88,8 @@ code: |-
     { clases: 136, coste: 1545.00, costePorClase: 11.36029 },
     { clases: 140, coste: 1590.00, costePorClase: 11.35714 },
     { clases: 144, coste: 1620.00, costePorClase: 11.25000 },
+    { clases: 148, coste: 1665.00, costePorClase: 11.25000 },
+    { clases: 152, coste: 1667.00, costePorClase: 10.96157 },
     { clases: 156, coste: 1710.00, costePorClase: 10.96157 },
     { clases: 168, coste: 1838.25, costePorClase: 10.94196 },
     { clases: 180, coste: 1966.50, costePorClase: 10.92500 },
@@ -374,12 +376,12 @@ code: |-
 
 
 
-      precioClase.textContent = '$ ' + precio;
+      precioClase.textContent = '$' + precio;
       precioClase.setAttribute('precio', precio);
       redondeoTotal = Math.round(parseInt(totalClases.textContent) * parseFloat(precioClase.getAttribute('precio')) * 100) / 100;
       // Convertir redondeoTotal a moneda con formato $ 0,000.00
       redondeoTotal = redondeoTotal.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
-      valorTotal.textContent = '$ ' + redondeoTotal ;
+      valorTotal.textContent = '' + redondeoTotal ;
       
       // Agregar valor a descuento ".descuento". Se obtiene de restar el valor del atributo precio de ".precio-clase" menos el primer valor del arreglo clases4Semanas
       const descuento = document.querySelector('.descuento');
@@ -391,7 +393,7 @@ code: |-
       
       // Agregar valor a ahorro ".ahorro". Se obtiene (total-clases * primer-valor-del-arreglo-clases4Semanas) - (total-clases * precio-clase)
       const ahorro = document.querySelector('.ahorro');
-      ahorro.textContent = ' $ ' + Math.round((parseInt(totalClases.textContent) * datosCosteClases[0].costePorClase) - (parseInt(totalClases.textContent) * parseFloat(precioClase.getAttribute('precio'))));
+      ahorro.textContent = ' $' + Math.round((parseInt(totalClases.textContent) * datosCosteClases[0].costePorClase) - (parseInt(totalClases.textContent) * parseFloat(precioClase.getAttribute('precio'))));
 
     }
 
@@ -453,9 +455,9 @@ code: |-
             precioCoste12 = precioCoste12.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
             
             if (idiomaIngles) {
-              texto = "If you select 12 weeks, it will cost you $" + precioCoste12 + " and you will save $" + ahorro;
+              texto = "If you select 12 weeks, it will cost you " + precioCoste12 + " and you will save " + ahorro;
             } else {
-              texto = "Si seleccionas 12 semanas, te saldrá por $" + precioCoste12 + " y ahorrarás $" + ahorro;
+              texto = "Si seleccionas 12 semanas, te saldrá por " + precioCoste12 + " y ahorrarás " + ahorro;
             }
             
             document.querySelector('.linea1').textContent = texto;          
@@ -473,9 +475,9 @@ code: |-
             precioCoste24 = precioCoste24.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
 
             if (idiomaIngles) { 
-              texto = "If you select 24 weeks, it will cost you $" + precioCoste24 + " and you will save $" + ahorro;
+              texto = "If you select 24 weeks, it will cost you " + precioCoste24 + " and you will save " + ahorro;
             } else {
-              texto = "Si seleccionas 24 semanas, te saldrá por $" + precioCoste24 + " y ahorrarás $" + ahorro;
+              texto = "Si seleccionas 24 semanas, te saldrá por " + precioCoste24 + " y ahorrarás " + ahorro;
             }
             
             document.querySelector('.linea2').textContent = texto;          
@@ -514,9 +516,9 @@ code: |-
             precioCoste24 = precioCoste24.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
 
             if (idiomaIngles) { 
-              texto = "If you select 24 weeks, it will cost you $" + precioCoste24 + " and you will save $" + ahorro;
+              texto = "If you select 24 weeks, it will cost you " + precioCoste24 + " and you will save " + ahorro;
             } else {
-              texto = "Si seleccionas 24 semanas, te saldrá por $" + precioCoste24 + " y ahorrarás $" + ahorro;
+              texto = "Si seleccionas 24 semanas, te saldrá por " + precioCoste24 + " y ahorrarás " + ahorro;
             }
             document.querySelector('.linea2').textContent = texto;          
           }

@@ -1,0 +1,19 @@
+uuid: 2d18d685-21be-43e4-b352-ab473e60a921
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_observaciones_agregadas_de
+    - node.type.facturacion_profesor
+id: node.facturacion_profesor.field_observaciones_agregadas_de
+field_name: field_observaciones_agregadas_de
+entity_type: node
+bundle: facturacion_profesor
+label: 'Observaciones agregadas desde administración'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

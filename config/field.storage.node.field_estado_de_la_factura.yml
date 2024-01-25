@@ -21,6 +21,9 @@ settings:
     -
       value: Pagado
       label: Pagado
+    -
+      value: Rechazado
+      label: Rechazado
   allowed_values_function: ''
 module: options
 locked: false

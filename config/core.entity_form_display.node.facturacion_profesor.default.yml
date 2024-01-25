@@ -13,6 +13,7 @@ dependencies:
     - field.field.node.facturacion_profesor.field_inasistencias_del_profesor
     - field.field.node.facturacion_profesor.field_mes_de_la_clase
     - field.field.node.facturacion_profesor.field_metodo_de_pago
+    - field.field.node.facturacion_profesor.field_observaciones_agregadas_de
     - field.field.node.facturacion_profesor.field_sube_o_arrastra_tu_factura
     - node.type.facturacion_profesor
   module:
@@ -138,6 +139,14 @@ content:
     weight: 128
     region: content
     settings: {  }
+    third_party_settings: {  }
+  field_observaciones_agregadas_de:
+    type: string_textarea
+    weight: 132
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
     third_party_settings: {  }
   field_sube_o_arrastra_tu_factura:
     type: file_generic
