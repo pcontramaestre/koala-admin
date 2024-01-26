@@ -33,7 +33,7 @@
 			{% else %}
 				<label for="hora-inicio">From</label>
 			{% endif %}
-			<input type="time" id="hora-inicio" name="hora-inicio" value="08:00" class="w-100">
+			<input type="time" id="hora-inicio" name="hora-inicio" value="07:00" step="1800" class="w-100">
 		</div>
 		<div class="hora-final w-100">
 			{% if current_language == 'es' %}
@@ -41,7 +41,7 @@
 			{% else %}
 				<label for="hora-final">To</label>
 			{% endif %}
-			<input type="time" id="hora-final" name="hora-final" value="18:00" class="w-100">
+			<input type="time" id="hora-final" name="hora-final" value="22:00" step="1800" class="w-100">
 		</div>
 	</div>
 	<form{{attributes}}>
