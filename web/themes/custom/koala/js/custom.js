@@ -265,7 +265,7 @@
     ).val();
     var fechaJS = new Date(fechaseleccionada);
     var nuevoDia = fechaJS.getDate();
-    console.log("Dia seleccionado " + nuevoDia);
+    // console.log("Dia seleccionado " + nuevoDia);
     $("a[data-date='" + nuevoDia + "']").addClass("ui-state-active");
 
     $('.filtro-agendar a.ui-state-active').click();
