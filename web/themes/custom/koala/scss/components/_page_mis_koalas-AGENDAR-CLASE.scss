@@ -214,6 +214,7 @@
                             display: none;
                           }
                         }
+                        
 
                         .views-field-field-nombre-del-hijo {
                           margin-left: 3.625rem;
@@ -333,6 +334,11 @@
           }
 
           .views-row {
+
+            .views-field-field-fechas-laborables-value, .views-field-field-fechas-laborables-end-value {
+              display: none;
+            }
+            
             .views-field-field-nombres-y-apellidos-del-pr {
               width: 100%;
               cursor: pointer;
