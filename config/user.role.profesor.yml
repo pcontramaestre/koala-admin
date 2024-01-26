@@ -10,6 +10,8 @@ dependencies:
     - media.type.image
     - media.type.remote_video
     - media.type.video
+    - node.type.agendar_clase
+    - node.type.agendar_clase_no_gratis
     - node.type.asignar_clase_a_estudiante
     - node.type.facturacion_profesor
     - node.type.horarios_de_trabajo
@@ -113,7 +115,10 @@ permissions:
   - 'use user.default form mode'
   - 'use user.editar_profesor form mode'
   - 'use user.registro_de_profesores form mode'
+  - 'view agendar_clase revisions'
+  - 'view agendar_clase_no_gratis revisions'
   - 'view any agendar_clase content'
+  - 'view any agendar_clase_no_gratis content'
   - 'view any asignar_clase_a_estudiante content'
   - 'view any clases_estudiantes content'
   - 'view any crear_hijos content'
@@ -128,6 +133,7 @@ permissions:
   - 'view field_logros'
   - 'view media'
   - 'view own agendar_clase content'
+  - 'view own agendar_clase_no_gratis content'
   - 'view own article content'
   - 'view own asignar_clase_a_estudiante content'
   - 'view own clases_estudiantes content'

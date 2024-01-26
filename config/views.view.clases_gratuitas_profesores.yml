@@ -1376,8 +1376,8 @@ display:
           admin_label: ''
           plugin_id: text_custom
           empty: true
-          content: '<div class="ver-todos-koalas"><a href="/profesor/calendario">Ir a calendario de clases</a></div>'
-          tokenize: false
+          content: "<div class=\"ver-todos-koalas\"><a href=\"/profesor/calendario\">Ir a calendario de clases</a></div>\r\n"
+          tokenize: true
       display_extenders: {  }
       block_description: 'Clases Gratuitas'
     cache_metadata:
