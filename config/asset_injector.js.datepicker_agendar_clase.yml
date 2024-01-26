@@ -38,6 +38,9 @@ code: |+
           $("#datepicker-input").val(dateText);
           $("#edit-field-fechas-laborables-value-min").val(dateText);
           $("#edit-field-fechas-laborables-value-max").val(nuevaFecha);
+          
+          console.log($('input[id^="hora-inicio"]').val());
+          console.log($('input[id^="hora-final"]').val());
           console.log("Seleccionado");
         },
       });
