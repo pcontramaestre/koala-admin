@@ -2,7 +2,8 @@
  * @file
  * Global utilities.
  *
- */
+*/
+/* jshint esversion: 6 */
 (function ($, Drupal) {
   ("use strict");
 
@@ -195,8 +196,36 @@
 })(jQuery, Drupal);
 
 (function ($) {
+  function parseHora(hora) {
+    var partes = hora.split(':');
+    var fecha = new Date();
+    fecha.setHours(parseInt(partes[0]), parseInt(partes[1]), parseInt(partes[2]), 0);
+    return fecha;
+  }
+
+  var horaInicio = $('input[id^="hora-inicio"]').val();
+  var horaFinal = $('input[id^="hora-final"]').val();
+  localStorage.setItem('horaInicio', horaInicio);
+  localStorage.setItem('horaFinal', horaFinal);
+
+  // Cuando se cambie o agregue un valor en el campo input[id^="hora-inicio"] o input[id^="hora-final"], guardar el valor en una variable de localStorage
+  $('input[id^="hora-inicio"], input[id^="hora-final"]').on('change', function () {
+    var horaInicio = $('input[id^="hora-inicio"]').val();
+    var horaFinal = $('input[id^="hora-final"]').val();
+    localStorage.setItem('horaInicio', horaInicio);
+    localStorage.setItem('horaFinal', horaFinal);
+  });  
+
+
   // Se ejecuta cuando hay un evento ajax de una vista. Para que no se pierda el datepicker
   $(document).ajaxComplete(function (event, xhr, settings) {
+    // Cuando se cambie o agregue un valor en el campo input[id^="hora-inicio"] o input[id^="hora-final"], guardar el valor en una variable de localStorage
+    $('input[id^="hora-inicio"], input[id^="hora-final"]').on('change', function () {
+      var horaInicio = $('input[id^="hora-inicio"]').val();
+      var horaFinal = $('input[id^="hora-final"]').val();
+      localStorage.setItem('horaInicio', horaInicio);
+      localStorage.setItem('horaFinal', horaFinal);
+    });    
     // Esta función se ejecutará cada vez que se complete una solicitud AJAX.
     // Puedes colocar aquí el código que deseas que se ejecute después de cada
     // actualización de la página o filtrado de vistas.
@@ -226,7 +255,6 @@
         $('input[id^="edit-field-fechas-laborables-value-max"]').val(
           nuevaFecha
         );
-        console.log("Seleccionado");
       },     
     });
     $(
@@ -242,6 +270,71 @@
 
     $('.filtro-agendar a.ui-state-active').click();
     $('#boton-agendamos-clase').css('display','none');
+
+
+    // Convertir texto de hora a un objeto Date
+    function parseHora(hora) {
+      var partes = hora.split(':');
+      var fecha = new Date();
+      fecha.setHours(parseInt(partes[0]), parseInt(partes[1]), parseInt(partes[2]), 0);
+      return fecha;
+    }
+
+    // Función para decidir si una hora está en el rango especificado
+    function horaEnRango(hora, inicio, fin) {
+        return hora >= inicio && hora <= fin;
+    }
+
+    // Leer los valores del localStorage y convertirlos a objetos Date
+    var horaInicio = localStorage.getItem('horaInicio');
+    var horaFinal = localStorage.getItem('horaFinal');
+
+    $('input[id^="hora-inicio"]').val(horaInicio);
+    $('input[id^="hora-final"]').val(horaFinal);
+
+    // Comprobar si alguna de las horas está dentro del rango
+    function algunaHoraEnRango(horaInicio, horaFin, filtroInicio, filtroFin) {
+      return (horaInicio > filtroInicio && horaInicio < filtroFin) || (horaFin > filtroInicio && horaFin < filtroFin);
+    }
+
+    // Leer el valor de todos los .views-field-field-fechas-laborables-value > span y convertir a hora local
+    $('.views-field-field-fechas-laborables-value > span, .views-field-field-fechas-laborables-end-value > span').each(function() {
+      var utcTime = $(this).text().trim(); // Obtener la hora en formato UTC
+      var horaLocal = getLocalTime(utcTime);
+      var hora = horaLocal.split(' ')[1];
+      $(this).text(hora);
+    });
+
+    var filtroHoraInicio = parseHora(horaInicio+':00');
+    var filtroHoraFin = parseHora(horaFinal+':00');
+    // Recorrer cada fila de la vista
+    $('.view-content-detail > .views-row').each(function() {
+      var horaInicioTxt = $(this).find('.views-field-field-fechas-laborables-value .field-content').text().trim();
+      var horaFinTxt = $(this).find('.views-field-field-fechas-laborables-end-value .field-content').text().trim();
+      var horaInicio = parseHora(horaInicioTxt); // Obtener hora de inicio en formato objeto Date
+      var horaFin = parseHora(horaFinTxt); // Obtener hora de fin en formato objeto Date
+      // Verificar si alguna de las horas está dentro del rango especificado
+      if (algunaHoraEnRango(horaInicio, horaFin, filtroHoraInicio, filtroHoraFin)) {
+          // Si se cumple la condición, podrías simplemente dejarlas visibles o aplicar alguna acción
+          $(this).show(); 
+      } else {
+          // Si no, puedes decidir ocultarlas o hacer otra acción
+          $(this).hide();
+      }
+  });
+
+
+    /*
+
+    */
+
+
+    function getLocalTime(utcTime) {
+      var zonaHoraria = Intl.DateTimeFormat().resolvedOptions().timeZone;
+      var fechaHora = new Date('2022-10-15T'+utcTime + 'Z'); // Convertir a hora local
+      var localTime = fechaHora.toLocaleString([], {timeZone: zonaHoraria}); // Convertir a hora local
+      return localTime;
+    }
 
 
     $('.field--type-smartdate details').attr('open', true);
@@ -266,5 +359,7 @@
         $('.field--type-smartdate select.recur-end').hide();
       }
     });
+
+
   });
 })(jQuery);
