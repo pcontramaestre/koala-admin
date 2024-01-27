@@ -8,6 +8,8 @@ dependencies:
     - field.storage.user.field_nombres_y_apellidos_del_pr
     - node.type.agregar_horarios_de_clases_grati
     - system.menu.admin
+    - user.role.administrator
+    - user.role.content_editor
     - user.role.profesor
   module:
     - better_exposed_filters
@@ -461,6 +463,11 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
+      access:
+        type: role
+        options:
+          role:
+            profesor: profesor
       sorts:
         field_fecha_clase_value:
           id: field_fecha_clase_value
@@ -742,6 +749,7 @@ display:
         type: fields
         options: {  }
       defaults:
+        access: false
         style: false
         row: false
         relationships: false
@@ -1059,6 +1067,12 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
+      access:
+        type: role
+        options:
+          role:
+            content_editor: content_editor
+            administrator: administrator
       sorts:
         field_fecha_clase_value:
           id: field_fecha_clase_value
@@ -1356,6 +1370,7 @@ display:
         type: fields
         options: {  }
       defaults:
+        access: false
         style: false
         row: false
         relationships: false
