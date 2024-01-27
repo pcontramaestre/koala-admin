@@ -1145,7 +1145,7 @@ display:
         type: normal
         title: 'Facturación profesores'
         description: ''
-        weight: 0
+        weight: 9
         expanded: false
         menu_name: admin
         parent: system.admin
