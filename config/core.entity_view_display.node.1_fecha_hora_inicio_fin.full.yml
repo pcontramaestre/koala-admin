@@ -1,0 +1,50 @@
+uuid: 9b82b0ea-5a91-4435-a685-02d21c6b67e5
+langcode: es
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.full
+    - field.field.node.1_fecha_hora_inicio_fin.field_fecha_clase
+    - field.field.node.1_fecha_hora_inicio_fin.field_hora_inicio_final
+    - node.type.1_fecha_hora_inicio_fin
+  module:
+    - datetime
+    - field_formatter_class
+    - layout_builder
+    - time_field
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: node.1_fecha_hora_inicio_fin.full
+targetEntityType: node
+bundle: 1_fecha_hora_inicio_fin
+mode: full
+content:
+  field_fecha_clase:
+    type: datetime_default
+    label: hidden
+    settings:
+      timezone_override: ''
+      format_type: html_datetime
+    third_party_settings:
+      field_formatter_class:
+        class: ''
+    weight: 0
+    region: content
+  field_hora_inicio_final:
+    type: time_range_formatter
+    label: hidden
+    settings:
+      time_format: 'h:i a'
+      timerange_format: 'start ~ end'
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  langcode: true
+  links: true

@@ -1,0 +1,22 @@
+uuid: 80ab176f-3f75-4d70-9524-a5a8837551d2
+langcode: es
+status: true
+dependencies:
+  module:
+    - system
+id: administracio
+label: Administracio
+code: |-
+  .path-admin .view-id-clases_gratis.view-display-id-page_1 table > caption {
+  	font-weight: bold;
+    margin-bottom: 1rem;
+  }
+media: all
+preprocess: true
+conditions:
+  request_path:
+    id: request_path
+    negate: false
+    pages: "/admin/*\r\n/admin/"
+contexts: {  }
+conditions_require_all: true
