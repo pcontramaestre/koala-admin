@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.facturacion_profesor.field_escribe_el_numero_de_tu_fa
     - field.field.node.facturacion_profesor.field_estado_de_la_factura
     - field.field.node.facturacion_profesor.field_fecha_de_la_clase
+    - field.field.node.facturacion_profesor.field_fecha_de_pago_rechazo
     - field.field.node.facturacion_profesor.field_horas_a_pagar
     - field.field.node.facturacion_profesor.field_inasistencias_del_estudian
     - field.field.node.facturacion_profesor.field_inasistencias_del_profesor
@@ -104,6 +105,12 @@ content:
   field_fecha_de_la_clase:
     type: datetime_default
     weight: -2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_fecha_de_pago_rechazo:
+    type: datetime_default
+    weight: 133
     region: content
     settings: {  }
     third_party_settings: {  }

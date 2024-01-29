@@ -313,7 +313,20 @@
 
     // Comprobar si alguna de las horas está dentro del rango
     function algunaHoraEnRango(horaInicio, horaFin, filtroInicio, filtroFin) {
-      return (horaInicio > filtroInicio && horaInicio < filtroFin) || (horaFin > filtroInicio && horaFin < filtroFin);
+       console.log(horaInicio);
+
+       if (horaInicio < filtroFin && filtroInicio < horaFin) {
+        console.log('horaInicio < filtroFin && filtroInicio < horaFin');
+        return true;
+       }
+
+        if (horaFin > filtroInicio && horaFin < filtroFin) {
+          console.log('horaFin > filtroInicio && horaFin < filtroFin');
+        }
+
+      return (horaInicio >= filtroInicio && horaInicio < filtroFin) || (horaFin > filtroInicio && horaFin < filtroFin);
+      //return (horaInicio >= filtroInicio && horaInicio <= filtroFin) && (horaFin >= filtroInicio);
+
     }
 
     // Leer el valor de todos los .views-field-field-fechas-laborables-value > span y convertir a hora local
