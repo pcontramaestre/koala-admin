@@ -1,0 +1,7 @@
+name: Cancelar Clase
+type: module
+description: Permite a los usuarios cancelar clases.
+core_version_requirement: ^9 || ^10
+package: Custom
+dependencies:
+  - drupal:node

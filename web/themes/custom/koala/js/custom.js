@@ -54,6 +54,7 @@
         selectedValue;
       $("#boton-agendamos-clase").attr("href", linkUrl);
     });
+
   });
   // console.log("ready inicio");
   $("input[id^='field_profesor']").on("click", function () {
@@ -126,6 +127,15 @@
   );
 
   jQuery(document).ready(function ($) {
+    $('#cancelarclase').on('click', function (e) {
+      e.preventDefault();
+      var href = $(this).attr('data-url');    
+      // Popup de confirmación.
+      if(confirm("¿Deseas cancelar esta clase? Si la eliminas, tendrás que volver a agendarla.")) {
+        // Si es confirmado, redirigir a la ruta.
+        window.location.href = href;
+      }
+    });
     //COUNTDOWN
     let pageNodePADRES = document.body.classList.contains("path-padres");
     if (pageNodePADRES === true) {
@@ -219,6 +229,15 @@
 
   // Se ejecuta cuando hay un evento ajax de una vista. Para que no se pierda el datepicker
   $(document).ajaxComplete(function (event, xhr, settings) {
+    $('#cancelarclase').on('click', function (e) {
+      e.preventDefault();
+      var href = $(this).attr('data-url');    
+      // Popup de confirmación.
+      if(confirm("¿Deseas cancelar esta clase? Si la eliminas, tendrás que volver a agendarla.")) {
+        // Si es confirmado, redirigir a la ruta.
+        window.location.href = href;
+      }
+    });
     // Cuando se cambie o agregue un valor en el campo input[id^="hora-inicio"] o input[id^="hora-final"], guardar el valor en una variable de localStorage
     $('input[id^="hora-inicio"], input[id^="hora-final"]').on('change', function () {
       var horaInicio = $('input[id^="hora-inicio"]').val();

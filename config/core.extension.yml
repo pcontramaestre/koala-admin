@@ -27,6 +27,7 @@ module:
   calendar_datetime: 0
   calendar_link: 0
   calificar_clase: 0
+  cancelar_clase: 0
   chosen: 0
   chosen_field: 0
   chosen_lib: 0

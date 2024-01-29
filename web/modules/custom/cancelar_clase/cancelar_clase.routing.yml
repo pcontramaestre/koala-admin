@@ -1,0 +1,7 @@
+cancelar_clase.cancelar:
+  path: '/cancelar-clase'
+  defaults:
+    _controller: '\Drupal\cancelar_clase\Controller\CancelarClaseController::cancelar'
+    _title: 'Cancelar Clase'
+  requirements:
+    _permission: 'access content'

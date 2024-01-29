@@ -1,0 +1,8 @@
+cancelar_clase.js:
+  version: 1.0
+  js:
+    js/cancelar_clase.js: {}
+  dependencies:
+    - core/drupal
+    - core/drupalSettings
+    - core/jquery
