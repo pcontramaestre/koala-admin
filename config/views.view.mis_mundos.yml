@@ -301,7 +301,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<div class=\"categoria\">\r\n  <div class=\"imagen\">{{ field_imagen_del_mundo }}</div>\r\n  <div class=\"titulo-numero\">\r\n   <a href=\"/mis-mundos/{{ nid }}\">\r\n       <div class=\"titulo\">{{ title }} </div>\r\n       <div class=\"nro\">{{ field_nro_de_juegos_incluidos }}</div>\r\n    </a>\r\n  </div>\r\n</div>"
+            text: "<div class=\"categoria\">\r\n  <div class=\"imagen\">{{ field_imagen_del_mundo }}</div>\r\n  <div class=\"titulo-numero\">\r\n   <a href=\"/mis-mundos/{{ nid }}\">\r\n       <div class=\"titulo\">{{ title }} </div>\r\n       <div class=\"nro\"></div>\r\n    </a>\r\n  </div>\r\n</div>"
             make_link: false
             path: ''
             absolute: false
