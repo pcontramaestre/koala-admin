@@ -8,7 +8,7 @@ id: imprimir_orden
 label: 'Imprimir orden'
 code: |-
   // Obtener el botón de imprimir
-  var botonImprimir = document.querySelector('.imprimir');
+  var botonImprimir = document.querySelector('.imprimir2');
 
   // Agregar un evento de clic al botón de imprimir
   botonImprimir.addEventListener('click', function() {

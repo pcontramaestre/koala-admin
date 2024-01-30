@@ -47,6 +47,13 @@
       {{ order.state }}
       {{ order.order_items }}
       {{ order.total_price }}
+      {# Obtener el numero de orden #}
+      {% set order_number = order_entity.order_number.value %}
+    </div>
+    {# Obtener el id de la orden #}
+    {% set order_id = order_entity.order_id.value %}
+    <div class="boton-imprimir">
+      <a href="/print/pdf/commerce_order/{{ order_id }}" class="imprimir" target="_blank">Imprimir</a>
     </div>
 
   </div>
