@@ -1220,7 +1220,7 @@ display:
           admin_label: ''
           plugin_id: text_custom
           empty: false
-          content: '<a href="/admin/vista-facturas-profesores.xls" target="_blank">Descargar excel</a>'
+          content: '<a href="/admin/vista-facturas-profesores.xlsx" target="_blank">Descargar excel</a>'
           tokenize: false
       display_extenders: {  }
       path: admin/vista-facturas-profesores
@@ -2034,18 +2034,64 @@ display:
             content_editor: content_editor
             administrator: administrator
       style:
-        type: serializer
+        type: excel_export
         options:
-          uses_fields: false
           formats:
-            json: json
             xls: xls
-            xlsx: xlsx
+          xls_settings:
+            xls_format: Excel2007
+            metadata:
+              creator: ''
+              last_modified_by: ''
+              title: ''
+              description: ''
+              subject: ''
+              keywords: ''
+              category: ''
+              manager: ''
+              company: ''
+      row:
+        type: data_field
+        options:
+          field_options:
+            created:
+              alias: ''
+              raw_output: false
+            field_nombres_y_apellidos_del_pr:
+              alias: ''
+              raw_output: false
+            field_asignar_profesor:
+              alias: ''
+              raw_output: false
+            field_clases_impartidas:
+              alias: ''
+              raw_output: false
+            field_inasistencias_del_estudian:
+              alias: ''
+              raw_output: false
+            field_inasistencias_del_profesor:
+              alias: ''
+              raw_output: false
+            field_mes_de_la_clase:
+              alias: ''
+              raw_output: false
+            field_sube_o_arrastra_tu_factura:
+              alias: ''
+              raw_output: false
+            field_horas_a_pagar:
+              alias: ''
+              raw_output: false
+            field_estado_de_la_factura:
+              alias: ''
+              raw_output: false
+            field_observaciones_agregadas_de:
+              alias: ''
+              raw_output: false
       defaults:
         access: false
         fields: false
       display_extenders: {  }
-      path: admin/vista-facturas-profesores.xls
+      path: admin/vista-facturas-profesores.xlsx
       auth: {  }
     cache_metadata:
       max-age: -1
