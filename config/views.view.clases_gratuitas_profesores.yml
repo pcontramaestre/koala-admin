@@ -426,7 +426,7 @@ display:
         - 'config:field.storage.node.field_nombre_del_nino_a'
   block_1:
     id: block_1
-    display_title: Block
+    display_title: 'Proximas Clases - Profesor'
     display_plugin: block
     position: 1
     display_options:
@@ -549,7 +549,7 @@ display:
           click_sort_column: value
           type: string
           settings:
-            link_to_entity: true
+            link_to_entity: false
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -1185,6 +1185,13 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: false
+      pager:
+        type: none
+        options:
+          offset: 0
+      cache:
+        type: none
+        options: {  }
       sorts:
         created:
           id: created
@@ -1302,18 +1309,24 @@ display:
           exposed: false
           expose:
             operator_id: ''
-            label: ''
+            label: 'Marcar clase como finalizada (field_marcar_clase_como_finaliza)'
             description: ''
             use_operator: false
-            operator: ''
+            operator: field_marcar_clase_como_finaliza_value_op
             operator_limit_selection: false
             operator_list: {  }
-            identifier: ''
+            identifier: field_marcar_clase_como_finaliza_value
             required: false
             remember: false
             multiple: false
             remember_roles:
               authenticated: authenticated
+              anonymous: '0'
+              content_editor: '0'
+              administrator: '0'
+              profesor: '0'
+              padre: '0'
+              hijo: '0'
           is_grouped: false
           group_info:
             label: ''
@@ -1331,7 +1344,10 @@ display:
         groups:
           1: AND
       defaults:
+        cache: false
         title: false
+        use_ajax: false
+        pager: false
         relationships: false
         fields: false
         sorts: false
@@ -1366,6 +1382,8 @@ display:
           admin_label: 'field_clase_asignada: Contenido'
           plugin_id: standard
           required: false
+      use_ajax: true
+      display_description: ''
       footer:
         area_text_custom:
           id: area_text_custom
@@ -1386,7 +1404,6 @@ display:
         - 'languages:language_content'
         - 'languages:language_interface'
         - url
-        - url.query_args
         - user
         - 'user.node_grants:view'
         - user.roles
@@ -2087,6 +2104,276 @@ display:
         - 'config:field.storage.node.field_fecha_de_la_cita'
         - 'config:field.storage.node.field_nombre_del_nino_a'
         - 'config:field.storage.user.field_nombres_y_apellidos_del_pr'
+  block_3:
+    id: block_3
+    display_title: '2 Proximas Clases - Profesor'
+    display_plugin: block
+    position: 1
+    display_options:
+      title: 'Clases Profesores'
+      fields:
+        field_nombre_del_nino_a:
+          id: field_nombre_del_nino_a
+          table: node__field_nombre_del_nino_a
+          field: field_nombre_del_nino_a
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 18
+            word_boundary: false
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: true
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: false
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        title:
+          id: title
+          table: node_field_data
+          field: title
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: node
+          entity_field: title
+          plugin_id: field
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: false
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+      pager:
+        type: none
+        options:
+          offset: 0
+      cache:
+        type: none
+        options: {  }
+      sorts:
+        created:
+          id: created
+          table: node_field_data
+          field: created
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: node
+          entity_field: created
+          plugin_id: date
+          order: DESC
+          expose:
+            label: ''
+            field_identifier: ''
+          exposed: false
+          granularity: second
+        field_fecha_cita_oculta_value:
+          id: field_fecha_cita_oculta_value
+          table: node__field_fecha_cita_oculta
+          field: field_fecha_cita_oculta_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: datetime
+          order: ASC
+          expose:
+            label: ''
+            field_identifier: ''
+          exposed: false
+          granularity: minute
+      filters:
+        status:
+          id: status
+          table: node_field_data
+          field: status
+          entity_type: node
+          entity_field: status
+          plugin_id: boolean
+          value: '1'
+          group: 1
+          expose:
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+        type:
+          id: type
+          table: node_field_data
+          field: type
+          entity_type: node
+          entity_field: type
+          plugin_id: bundle
+          value:
+            agendar_clase: agendar_clase
+          expose:
+            operator_limit_selection: false
+            operator_list: {  }
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+      defaults:
+        cache: false
+        title: false
+        use_ajax: false
+        pager: false
+        relationships: false
+        fields: false
+        sorts: false
+        filters: false
+        filter_groups: false
+        footer: false
+      relationships:
+        field_alumno_relacionado:
+          id: field_alumno_relacionado
+          table: node__field_alumno_relacionado
+          field: field_alumno_relacionado
+          relationship: none
+          group_type: group
+          admin_label: 'field_alumno_relacionado: Usuario'
+          plugin_id: standard
+          required: false
+        field_asignar_profesor:
+          id: field_asignar_profesor
+          table: node__field_asignar_profesor
+          field: field_asignar_profesor
+          relationship: none
+          group_type: group
+          admin_label: 'field_asignar_profesor: Usuario'
+          plugin_id: standard
+          required: false
+        field_clase_asignada:
+          id: field_clase_asignada
+          table: node__field_clase_asignada
+          field: field_clase_asignada
+          relationship: none
+          group_type: group
+          admin_label: 'field_clase_asignada: Contenido'
+          plugin_id: standard
+          required: false
+      use_ajax: true
+      display_description: ''
+      footer:
+        area_text_custom:
+          id: area_text_custom
+          table: views
+          field: area_text_custom
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text_custom
+          empty: true
+          content: "<div class=\"ver-todos-koalas\"><a href=\"/profesor/calendario\">Ir a calendario de clases</a></div>\r\n"
+          tokenize: true
+      display_extenders: {  }
+      block_description: 'Clases Gratuitas 2'
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url
+        - user
+        - 'user.node_grants:view'
+        - user.roles
+      tags:
+        - 'config:field.storage.node.field_nombre_del_nino_a'
   page_1:
     id: page_1
     display_title: Calendario

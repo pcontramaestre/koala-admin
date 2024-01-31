@@ -230,7 +230,7 @@
             }
           }
 
-          .view-clases-gratuitas-profesores {
+          .view-clases-gratuitas-profesores, .view-proximas-clases-profesores {
             .view-content {
               width: 100%;
               margin: 0 auto;
@@ -566,7 +566,7 @@
                 max-width: unset!important;
                 margin-top: 1rem!important;
                 .content{
-                  .view-clases-gratuitas-profesores{
+                  .view-clases-gratuitas-profesores, .view-proximas-clases-profesores{
                     .view-footer{
                       .ver-todos-koalas{
                         text-align: end!important;

@@ -1,4 +1,4 @@
-.view-clases-gratuitas-profesores {
+.view-clases-gratuitas-profesores,.view-proximas-clases-profesores {
   margin-top: 1rem;
 
   .no-admin {
@@ -682,7 +682,7 @@ div[id^="windowManager_"] {
       }
     }
   }
-  .view-clases-gratuitas-profesores {
+  .view-clases-gratuitas-profesores,.view-proximas-clases-profesores {
     .no-admin {
       .js-drupal-fullcalendar {
         .fc-view-container {

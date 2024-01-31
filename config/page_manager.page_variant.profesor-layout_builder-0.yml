@@ -4,9 +4,9 @@ status: true
 dependencies:
   config:
     - page_manager.page.profesor
-    - views.view.clases_gratuitas_profesores
     - views.view.detalle_profesor
     - views.view.mis_koalas_profesores
+    - views.view.proximas_clases_profesores
     - views.view.tu_metodo_de_pago
   module:
     - layout_builder
@@ -58,21 +58,6 @@ variant_settings:
           additional:
             layout_builder_styles_style:
               separacion_superior_mt_5: separacion_superior_mt_5
-        ad3eba35-9ac4-40fc-acce-95674c6900b2:
-          uuid: ad3eba35-9ac4-40fc-acce-95674c6900b2
-          region: second
-          configuration:
-            id: 'views_block:clases_gratuitas_profesores-block_1'
-            label: 'Próximas Clases'
-            label_display: visible
-            provider: views
-            context_mapping: {  }
-            views_label: 'Próximas Clases'
-            items_per_page: none
-          weight: 0
-          additional:
-            layout_builder_styles_style:
-              separacion_superior_mt_5: separacion_superior_mt_5
         6f3dbfe7-03df-40f9-9b4f-6c42ad882a4e:
           uuid: 6f3dbfe7-03df-40f9-9b4f-6c42ad882a4e
           region: second
@@ -84,7 +69,23 @@ variant_settings:
             context_mapping: {  }
             views_label: 'Mi método de pago'
             items_per_page: none
-          weight: 1
+          weight: 2
+          additional:
+            layout_builder_styles_style:
+              separacion_superior_mt_5: separacion_superior_mt_5
+        c5555aea-2eac-4504-b053-739b252635c3:
+          uuid: c5555aea-2eac-4504-b053-739b252635c3
+          region: second
+          configuration:
+            id: 'views_block:proximas_clases_profesores-block_1'
+            label: 'Próximas clases'
+            label_display: visible
+            provider: views
+            context_mapping: {  }
+            views_label: 'Próximas clases'
+            items_per_page: none
+            exposed: {  }
+          weight: 0
           additional:
             layout_builder_styles_style:
               separacion_superior_mt_5: separacion_superior_mt_5
