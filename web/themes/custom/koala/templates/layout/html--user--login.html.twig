@@ -59,5 +59,21 @@
     {{ page }}
     {{ page_bottom }}
     <js-bottom-placeholder token="{{ placeholder_token|raw }}">
+    <script>
+
+      var idioma = navigator.language || navigator.userLanguage;
+
+      var urlactual = window.location.href;
+
+      //detectar si la ruta ruta actual es /en
+      if (urlactual.includes('/en')) {
+      } else {
+        // Verificar si el idioma es inglés
+        if (idioma.startsWith('en')) {
+          // Redirigir a la versión en inglés
+          window.location.href = '/en' + window.location.pathname;
+        }        
+      } 
+    </script>
   </body>
 </html>
