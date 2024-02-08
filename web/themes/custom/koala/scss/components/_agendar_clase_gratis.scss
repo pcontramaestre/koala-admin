@@ -316,6 +316,11 @@
 
 // AGENDAR CLASE GRATIS
 .node-agendar-clases {
+  a.hora-enlace.disabled {
+    background: red;
+    color: white !important;
+    pointer-events: none;
+  }
   .fechas-horarios-agendamiento {
     display: flex;
     flex-direction: row;

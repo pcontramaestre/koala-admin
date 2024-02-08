@@ -74,8 +74,13 @@
       {{ form.actions }}
     </div>
     <div class="vista-horarios-disponibles">
+      <div class="text-center"><strong>{{ 'Horarios disponibles'|t }}</strong></div>
       {{ drupal_view('horarios_clases_gratis', 'block_1') }}
     </div>
+    <div class="vista-clases-no-disponibles">
+      <div class="text-center"><strong>{{ 'Clases agendadas'|t }}</strong></div>
+      {{ drupal_view('clases_gratis_agendadas', 'block_1') }}
+    </div>    
   </div>
 
 {% endif %}
