@@ -6,6 +6,7 @@ dependencies:
     - core.entity_view_mode.node.teaser
     - field.field.node.agregar_horarios_de_clases_grati.field_fecha_hora_inicio_hora_fin
     - field.field.node.agregar_horarios_de_clases_grati.field_profesor
+    - field.field.node.agregar_horarios_de_clases_grati.field_zona_horaria_del_profesor
     - node.type.agregar_horarios_de_clases_grati
   module:
     - user
@@ -25,4 +26,5 @@ hidden:
   entity_print_view_word_docx: true
   field_fecha_hora_inicio_hora_fin: true
   field_profesor: true
+  field_zona_horaria_del_profesor: true
   langcode: true

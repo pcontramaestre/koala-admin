@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.1_fecha_hora_inicio_fin.field_fecha_clase
+    - field.field.node.1_fecha_hora_inicio_fin.field_fecha_con_zona_horaria
     - field.field.node.1_fecha_hora_inicio_fin.field_hora_inicio_final
     - node.type.1_fecha_hora_inicio_fin
   module:
@@ -51,6 +52,7 @@ content:
     third_party_settings: {  }
 hidden:
   created: true
+  field_fecha_con_zona_horaria: true
   langcode: true
   moderation_state: true
   path: true

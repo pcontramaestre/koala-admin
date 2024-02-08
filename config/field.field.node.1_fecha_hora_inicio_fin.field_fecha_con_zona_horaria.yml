@@ -1,0 +1,21 @@
+uuid: c375cd7d-b167-41c9-ac35-852d6ec3f8dc
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_fecha_con_zona_horaria
+    - node.type.1_fecha_hora_inicio_fin
+  module:
+    - datetime_range_timezone
+id: node.1_fecha_hora_inicio_fin.field_fecha_con_zona_horaria
+field_name: field_fecha_con_zona_horaria
+entity_type: node
+bundle: 1_fecha_hora_inicio_fin
+label: 'Fecha con zona horaria'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: daterange_timezone

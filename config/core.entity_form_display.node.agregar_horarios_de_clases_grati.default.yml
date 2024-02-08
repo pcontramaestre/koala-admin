@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.agregar_horarios_de_clases_grati.field_fecha_hora_inicio_hora_fin
     - field.field.node.agregar_horarios_de_clases_grati.field_profesor
+    - field.field.node.agregar_horarios_de_clases_grati.field_zona_horaria_del_profesor
     - node.type.agregar_horarios_de_clases_grati
   module:
     - chosen_field
@@ -13,6 +14,7 @@ dependencies:
     - inline_entity_form
     - layout_discovery
     - path
+    - tzfield
 third_party_settings:
   field_layout:
     id: layout_onecol
@@ -45,6 +47,12 @@ content:
   field_profesor:
     type: chosen_select
     weight: 121
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_zona_horaria_del_profesor:
+    type: tzfield_default
+    weight: 123
     region: content
     settings: {  }
     third_party_settings: {  }

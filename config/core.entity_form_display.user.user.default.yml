@@ -23,6 +23,7 @@ dependencies:
     - field.field.user.user.field_suscripcion_activa
     - field.field.user.user.field_tu_presentacion
     - field.field.user.user.field_tu_video_
+    - field.field.user.user.field_zona_horaria_detectada
     - field.field.user.user.user_picture
     - image.style.thumbnail
   module:
@@ -213,6 +214,14 @@ content:
     region: first
     settings:
       media_types: {  }
+    third_party_settings: {  }
+  field_zona_horaria_detectada:
+    type: string_textfield
+    weight: 49
+    region: first
+    settings:
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
   language:
     weight: 3

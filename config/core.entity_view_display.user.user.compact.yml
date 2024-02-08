@@ -24,6 +24,7 @@ dependencies:
     - field.field.user.user.field_suscripcion_activa
     - field.field.user.user.field_tu_presentacion
     - field.field.user.user.field_tu_video_
+    - field.field.user.user.field_zona_horaria_detectada
     - field.field.user.user.user_picture
     - image.style.thumbnail
   module:
@@ -108,6 +109,7 @@ hidden:
   field_suscripcion_activa: true
   field_tu_presentacion: true
   field_tu_video_: true
+  field_zona_horaria_detectada: true
   langcode: true
   mail: true
   member_for: true

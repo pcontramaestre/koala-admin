@@ -1,0 +1,24 @@
+uuid: c5a6c09f-0af5-42ff-a4ea-be11ed29057d
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_zona_horaria_del_profesor
+    - node.type.agregar_horarios_de_clases_grati
+  module:
+    - tzfield
+id: node.agregar_horarios_de_clases_grati.field_zona_horaria_del_profesor
+field_name: field_zona_horaria_del_profesor
+entity_type: node
+bundle: agregar_horarios_de_clases_grati
+label: 'Zona horaria del profesor'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  exclude: {  }
+  default_site: false
+  default_user: false
+field_type: tzfield

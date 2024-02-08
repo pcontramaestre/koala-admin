@@ -65,6 +65,7 @@ module:
   ctools_views: 0
   custom_child_login: 0
   custom_role_redirect: 0
+  custom_user_timezone: 0
   date_recur: 0
   date_recur_modular: 0
   datetime: 0
@@ -213,6 +214,7 @@ module:
   twig_tweak: 0
   twig_ui: 0
   typed_data: 0
+  tzfield: 0
   update: 0
   upgrade_status: 0
   user: 0

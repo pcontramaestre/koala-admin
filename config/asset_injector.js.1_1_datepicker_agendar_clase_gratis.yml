@@ -9,6 +9,36 @@ label: '1.1 Datepicker Agendar Clase Gratis'
 code: |-
   (function ($) {
     jQuery(document).ready(function($) {
+
+      //Cambiar horas Local a GMT
+      $('.profesor-tr').each(function() {
+        var $horaInicio = $(this).find('.hora-inicial-clase');
+        var $horaFin = $(this).find('.hora-final-clase');
+        var horaInicio = $horaInicio.text().trim();
+        var horaFin = $horaFin.text().trim();
+
+        var newDateInicio = new Date(horaInicio);
+        var newDateFin = new Date(horaFin);
+
+        // var horaInicio = newDateInicio.toISOString();
+        // var horaFin = newDateFin.toISOString();
+        var hours = newDateInicio.getHours().toString().padStart(2, '0');
+        var minutes = newDateInicio.getMinutes().toString().padStart(2, '0');
+
+        // Formatear como HH:mm
+        var InicioTimeString = hours + ':' + minutes;
+
+
+        var hours = newDateFin.getHours().toString().padStart(2, '0');
+        var minutes = newDateFin.getMinutes().toString().padStart(2, '0');
+
+        // Formatear como HH:mm
+        var FinTimeString = hours + ':' + minutes;
+        
+        $(this).find('.views-field-field-hora-inicio-final .hora-inicio').html(InicioTimeString);
+        $(this).find('.views-field-field-hora-inicio-final .hora-fin').html(FinTimeString);
+      });
+
   	  var fechasUnicas = {};
   	  var fechasClase = [];
   	
@@ -53,7 +83,7 @@ code: |-
       // Por ejemplo, aquí puedes volver a inicializar un date picker u otros elementos.
       // Inicializar el Datepicker en el campo de entrada
 
-      var fechasHabilitadas = ["2023-12-13", "2023-12-14", "2023-12-15"]; // Fechas específicas habilitadas
+      
       
       $("#id-escoger-fecha").datepicker({
         inline: true, // Mostrar el Datepicker en línea
@@ -65,6 +95,7 @@ code: |-
         onSelect: function (dateText) {
           console.log(dateText);
           console.log(buscarHorariosClase(dateText));
+          buscarClasesAgendadas(dateText);
           $('.form-item-field-fecha-de-la-cita-0-value input').val(dateText);
           $('input[id="edit-field-hora-clase-0-value').val('');
           $('input[name="field_fecha_cita_oculta[0][value][date]"]').val('');
@@ -100,8 +131,10 @@ code: |-
           
           if (dataDate === fecha) {
             var dataTeacher = $horaInicio.attr('data-teacher');
-            var horaInicioLocal = convertirAGMTALocal(horaInicioGTM+':00');
-            var horaFinLocal = convertirAGMTALocal(horaFinGTM+':00');
+            // var horaInicioLocal = convertirAGMTALocal(horaInicioGTM);
+            // var horaFinLocal = convertirAGMTALocal(horaFinGTM);
+            var horaInicioLocal = horaInicioGTM;
+            var horaFinLocal = horaFinGTM;
             clases.push({
               horaInicio: horaInicioLocal,
               horaFin: horaFinLocal,
@@ -136,10 +169,49 @@ code: |-
           $('#id-escoger-horario').append($a);
         });
 
-      
         return clases;
       }
       
+      function buscarClasesAgendadas(fecha) {
+        //Crear un arreglo con las clases agendadas 
+        var clasesAgendadas = [];
+        $('.profesor-agendado-tr').each(function() {
+
+          var fechaHora = $(this).find('.views-field-field-fecha-cita-oculta time').text().trim();
+          var horaUsada = new Date(fechaHora);
+          var hours = horaUsada.getHours().toString().padStart(2, '0');
+          var minutes = horaUsada.getMinutes().toString().padStart(2, '0');
+          var horaAgendada = hours + ':' + minutes;
+
+          $(this).find('.hora-cita-agendada').html(horaAgendada);
+
+          //var $horaAgendada = $(this).find('.hora-cita-agendada');
+          //var horaAgendada = $horaAgendada.text().trim();
+          console.log("Hora Agendada: "+horaAgendada);
+          //horaAgendada = horaAgendada.split(':');
+          //horaAgendada = horaAgendada[0]+":"+horaAgendada[1];
+
+          var $idProfesor = $(this).find('.views-field-field-asignar-profesor-1');
+          var idProfesor = $idProfesor.text().trim();
+          console.log("ID Profesor: "+idProfesor);
+          var fechaAgendada = $(this).find('.views-field-field-fecha-cita-oculta-1').text().trim();
+          console.log("Fecha Agendada: "+fechaAgendada);
+          if (fechaAgendada === fecha) {
+            console.log("Fecha encontrada: "+fechaAgendada);          
+            $('.hora-enlace').each(function() {
+              var IDprofegratis = $(this).attr('data-teacher-id');
+              var DataHora = $(this).attr('data-hora');
+              console.log("Hora agendada: "+horaAgendada+" Profesor: "+idProfesor);
+              if (IDprofegratis === idProfesor && DataHora === horaAgendada) {
+                $(this).addClass('disabled');
+                console.log("Consegui una para disabled: "+horaAgendada+" Profesor: "+idProfesor);
+              }
+            });
+          }
+          //clasesAgendadas.push(horaAgendada);
+        });
+      };
+
 
       // Función para sumar minutos a una hora en formato HH:MM
       function sumarMinutos(hora, minutos) {
@@ -153,8 +225,9 @@ code: |-
 
       // Función para convertir la hora de GTM a la hora local del usuario
       function convertirAGMTALocal(horaGTM) {
-      	console.log(horaGTM);
-        var horaGTMObjeto = new Date('2000-01-01T' + horaGTM + 'Z');
+      	console.log("Hora GMT Nueva: "+horaGTM);
+        //var horaGTMObjeto = new Date('2000-01-01T' + horaGTM + 'Z');
+        var horaGTMObjeto = new Date(horaGTM);
         var zonaHoraria = Intl.DateTimeFormat().resolvedOptions().timeZone;
         console.log("Zona horaria detectada:", zonaHoraria);
         var horaLocal = horaGTMObjeto.toLocaleTimeString([], {timeZone: zonaHoraria});
@@ -167,6 +240,9 @@ code: |-
   			
   			console.log("Diferencia de horas con GMT:", diferenciaHoras);
   			console.log("Diferencia de minutos con GMT:", diferenciaMinutos);
+
+        // Convertir horaGTM=2024-02-09T16:00:00.000Z a horaLocal=16:00
+        horaGTM = horaGTM.split('T')[1].split('.')[0];
 
         // Convertir la hora de GMT a la zona horaria local
         const horaLocal2 = sumarHorasAGMT(horaGTM, diferenciaHoras);

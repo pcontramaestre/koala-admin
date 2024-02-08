@@ -86,6 +86,7 @@ permissions:
   - 'use user.editar_hijo form mode'
   - 'use user.editar_perfil_padre form mode'
   - 'use user.registro_de_hijos form mode'
+  - 'view any agendar_clase content'
   - 'view any clases_estudiantes content'
   - 'view any horarios_de_trabajo content'
   - 'view any horarios_profesores content'

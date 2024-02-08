@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.1_fecha_hora_inicio_fin.field_fecha_clase
+    - field.field.node.1_fecha_hora_inicio_fin.field_fecha_con_zona_horaria
     - field.field.node.1_fecha_hora_inicio_fin.field_hora_inicio_final
     - node.type.1_fecha_hora_inicio_fin
   module:
@@ -24,5 +25,6 @@ hidden:
   entity_print_view_pdf: true
   entity_print_view_word_docx: true
   field_fecha_clase: true
+  field_fecha_con_zona_horaria: true
   field_hora_inicio_final: true
   langcode: true

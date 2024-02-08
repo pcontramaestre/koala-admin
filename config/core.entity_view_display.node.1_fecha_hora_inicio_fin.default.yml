@@ -4,10 +4,12 @@ status: true
 dependencies:
   config:
     - field.field.node.1_fecha_hora_inicio_fin.field_fecha_clase
+    - field.field.node.1_fecha_hora_inicio_fin.field_fecha_con_zona_horaria
     - field.field.node.1_fecha_hora_inicio_fin.field_hora_inicio_final
     - node.type.1_fecha_hora_inicio_fin
   module:
     - datetime
+    - datetime_range_timezone
     - field_formatter_class
     - time_field
     - user
@@ -26,6 +28,16 @@ content:
       field_formatter_class:
         class: ''
     weight: 101
+    region: content
+  field_fecha_con_zona_horaria:
+    type: daterange_timezone
+    label: above
+    settings:
+      separator: '-'
+      format_type: medium
+      display_timezone: true
+    third_party_settings: {  }
+    weight: 103
     region: content
   field_hora_inicio_final:
     type: time_range_formatter

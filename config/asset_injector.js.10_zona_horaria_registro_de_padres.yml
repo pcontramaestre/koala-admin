@@ -1,11 +1,11 @@
-uuid: 3332ef00-318f-472d-8f03-490136b8e3c0
+uuid: 69bfa855-17e7-47ce-b766-75ee351ecf32
 langcode: es
 status: true
 dependencies:
   module:
     - system
-id: 9_zona_horaria_actual
-label: '9. Zona horaria actual - profesor'
+id: 10_zona_horaria_registro_de_padres
+label: '10. Zona horaria - Registro de padres'
 code: |2-
     jQuery(document).ready(function($) {
       var now = new Date();
@@ -15,17 +15,18 @@ code: |2-
       var zonaHoraria = Intl.DateTimeFormat().resolvedOptions().timeZone;
       console.log("Zona horaria actual: " + zonaHoraria); // Imprime la zona horaria actual
 
-      $('.zona-horaria').text(zonaHoraria + ' (GMT' + (timezoneOffset >= 0 ? "+" : "-") + timezoneOffset + ')');
+      //$('input#edit-field-zona-horaria-detectada-0-value').val(zonaHoraria + ' (GMT' + (timezoneOffset >= 0 ? "+" : "-") + timezoneOffset + ')');
+      $('input#edit-field-zona-horaria-detectada-0-value').val(zonaHoraria);
     });
 noscript: ''
 noscriptRegion: {  }
-jquery: false
+jquery: true
 header: false
 preprocess: true
 conditions:
   request_path:
     id: request_path
     negate: false
-    pages: "*/editar_horarios/*\r\n*/editar_horarios\r\n/horarios-de-trabajo-profesor\r\n"
+    pages: "/user/register\r\n*/user/register"
 contexts: {  }
 conditions_require_all: true
