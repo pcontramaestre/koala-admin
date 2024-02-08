@@ -501,7 +501,17 @@ function create_koalas_form_user_register_form_alter(&$form, FormStateInterface 
 
   // Assign the email as the username.
   $form['#submit'][] = 'custom_user_registration_assign_username';
+  
 }
+
+function custom_user_registration_assign_username(&$form, FormStateInterface $form_state) {
+  $email = $form_state->getValue('mail');
+  $form_state->setValue('name', $email);
+  // $zonaHoraria = $form_state->getValue('field_zona_horaria_detectada');
+  // $form_state->setValue('timezone', $zonaHoraria);
+
+}
+
 
 /**
  * Funcion callback_submit_crear_hijo para crear un nuevo usuario de tipo hijo.
@@ -511,14 +521,14 @@ function callback_submit_crear_hijo($form, &$form_state) {
   $uid = $user->id();
   $correo_padre = $user->getEmail();
   $password = '123456-' . $uid;
-  // Numero random para el correo del 100 al 999.
-  $random = rand(100, 999);
+  // Numero random para el correo del 100 al 9999.
+  $random = rand(100, 9999);
   $correo = 'correo-' . $uid . '-' . $random . '@correohijo.com';
 
   // buscar si el correo ya existe.
   $email_repetido = buscar_email_repetido($correo);
   while ($email_repetido) {
-    $random = rand(100, 999);
+    $random = rand(100, 9999);
     $correo = 'correo-' . $uid . '-' . $random . '@correohijo.com';
     $email_repetido = buscar_email_repetido($correo);
   }
@@ -691,10 +701,7 @@ function callback_submit($form, &$form_state) {
   /**
    * Custom submit handler to assign email as username.
    */
-  function custom_user_registration_assign_username(&$form, FormStateInterface $form_state) {
-    $email = $form_state->getValue('mail');
-    $form_state->setValue('name', $email);
-  }
+
 
   // sleep(10);
   // redirect to page internal /padres
