@@ -1,0 +1,5 @@
+name: 'Custom User Timezone'
+type: module
+description: 'Assign timezone for users with "padre" role'
+package: Custom
+core_version_requirement: ^9 || ^10
