@@ -1,3 +1,6 @@
+/*jshint esversion: 6 */
+/* jshint esversion: 8 */
+
 (function ($, Drupal) {
   Drupal.behaviors.clasesProfesoresBehavior = {
     attach: function (context, settings) {
@@ -56,6 +59,8 @@
         });
       });
 
+      
+
       $('#asignar-estrella', context).click(function (e) {
         e.preventDefault();
         var idClase = $(this).data('id-clase');
@@ -91,6 +96,67 @@
 
       // Activar y desactivar clase #activar-clase
       //console.log('Se ha adjuntado el comportamiento al botón de activar clase.');
+
+      //GRABAR CLASE    
+      let recorder, stream;
+
+      
+
+      async function startRecording() {
+        stream = await navigator.mediaDevices.getDisplayMedia({
+          "video": {
+            "displaySurface": "browser"
+          },
+          "audio": true,
+          "preferCurrentTab": true
+        });
+        
+        const options = { mimeType: 'video/webm; codecs=vp9,opus' };
+        recorder = new MediaRecorder(stream, options);
+        
+        const chunks = [];
+        recorder.ondataavailable = e => chunks.push(e.data);
+        
+        recorder.onstop = async () => {
+          const completeBlob = new Blob(chunks, { type: chunks[0].type });
+          downloadRecording(completeBlob);
+        };
+        
+        recorder.start();
+      }
+
+      function pauseRecording() {
+        if (recorder && recorder.state === "recording") {
+          recorder.pause();
+          // Aquí puedes cambiar el estado del botón o interfaz según sea necesario
+        } else if (recorder && recorder.state === "paused") {
+          recorder.resume();
+          // Cambiar estado del botón o interfaz aquí si es necesario
+        }
+      }
+
+      function stopRecording() {
+        recorder.stop();
+        stream.getTracks().forEach(track => track.stop());
+      }
+
+      // Función para descargar localmente la grabación, se puede adaptar para subir al servidor
+      function downloadRecording(blob) {
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.style.display = "none";
+        a.href = url;
+        a.download = "recording.webm";
+        document.body.appendChild(a);
+        a.click();
+        window.URL.revokeObjectURL(url);
+      }
+
+      // Asociar las funciones con los botones
+      document.getElementById("grabar-clase").addEventListener("click", startRecording);
+      document.getElementById("pausar-grabacion").addEventListener("click", pauseRecording);
+      document.getElementById("finalizar-grabacion").addEventListener("click", stopRecording);
+
     }
   };
 })(jQuery, Drupal);
