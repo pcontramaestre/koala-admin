@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.mundos_detalle.body
     - field.field.node.mundos_detalle.field_categoria_principal_del_mu
     - field.field.node.mundos_detalle.field_iframe_juego
+    - field.field.node.mundos_detalle.field_logros
     - field.field.node.mundos_detalle.field_musica_o_audiolibros_
     - field.field.node.mundos_detalle.field_seccion
     - node.type.mundos_detalle
@@ -32,8 +33,12 @@ content:
     weight: 100
     region: content
 hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
   field_categoria_principal_del_mu: true
   field_iframe_juego: true
+  field_logros: true
   field_musica_o_audiolibros_: true
   field_seccion: true
   langcode: true

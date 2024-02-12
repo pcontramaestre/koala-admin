@@ -1,0 +1,63 @@
+uuid: f893ef05-bed4-477c-87df-d57cbac0eb20
+langcode: es
+status: true
+dependencies:
+  module:
+    - system
+id: 10_bloqueo_de_mundos_por_logros
+label: '10 Bloqueo de mundos por logros'
+code: |-
+  var arrayLogros = [];
+  jQuery('.view-logros-por-estudiante .views-field-field-logros-cumplidos').each(function(){
+    var logros = jQuery(this).text().trim();
+
+    logros_array = logros.split(', ');
+
+    if (arrayLogros.length == 0) {
+      arrayLogros = logros_array;
+    } else {
+      for (var i = 0; i < logros_array.length; i++) {
+        if (arrayLogros.indexOf(logros_array[i]) == -1) {
+          arrayLogros.push(logros_array[i]);
+        }
+      }
+    }
+  });
+
+  var logros_juegos_array = [];
+  jQuery('.juegos-mundo').each(function(){
+    var nid = jQuery(this).find('.views-field-nid .field-content').text().trim();  
+    nid = ".nodo-id-"+nid+" .bloqueo-mundo";
+    var encontrado = 1;
+    var logros_juegos = jQuery(this).find('.logros-juegos').text().trim();
+    if(logros_juegos.length == 0) {
+      jQuery(nid).addClass('d-none');
+    } else {
+      logros_juegos_array = logros_juegos.split(', ');
+      // Buscar logros_juegos_array en arrayLogros
+      for (var i = 0; i < logros_juegos_array.length; i++) {
+        if (arrayLogros.indexOf(logros_juegos_array[i]) == -1) {
+          // salir del each
+          console.log('No se cumple la condición');
+          console.log(logros_juegos_array[i]); 
+          encontrado = 0;
+        }
+      }
+      if (encontrado == 1) { 
+        // Si se cumple la condición, desbloquear el mundo
+        jQuery(nid).addClass('d-none');
+      }
+    }
+  });
+noscript: ''
+noscriptRegion: {  }
+jquery: true
+header: false
+preprocess: true
+conditions:
+  request_path:
+    id: request_path
+    negate: false
+    pages: "/mis-mundos/*\r\n/*/mis-mundos/*"
+contexts: {  }
+conditions_require_all: true

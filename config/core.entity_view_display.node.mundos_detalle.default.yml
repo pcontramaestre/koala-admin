@@ -6,12 +6,12 @@ dependencies:
     - field.field.node.mundos_detalle.body
     - field.field.node.mundos_detalle.field_categoria_principal_del_mu
     - field.field.node.mundos_detalle.field_iframe_juego
+    - field.field.node.mundos_detalle.field_logros
     - field.field.node.mundos_detalle.field_musica_o_audiolibros_
     - field.field.node.mundos_detalle.field_seccion
     - node.type.mundos_detalle
   module:
     - layout_builder
-    - layout_discovery
     - text
     - user
 third_party_settings:
@@ -30,7 +30,18 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
+  field_logros:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 1
+    region: content
 hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
   field_categoria_principal_del_mu: true
   field_iframe_juego: true
   field_musica_o_audiolibros_: true

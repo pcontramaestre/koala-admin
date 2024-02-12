@@ -29,6 +29,7 @@ permissions:
   - 'rate content'
   - 'use admin toolbar search'
   - 'view any agendar_clase content'
+  - 'view any asignar_clase_a_estudiante content'
   - 'view any horarios_de_trabajo content'
   - 'view any horarios_profesores content'
   - 'view any mundos content'
