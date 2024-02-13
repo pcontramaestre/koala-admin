@@ -1,0 +1,31 @@
+uuid: 19fff82f-db40-43cd-8317-9ee007da51ae
+langcode: es
+status: true
+dependencies:
+  module:
+    - field_permissions
+    - node
+    - options
+third_party_settings:
+  field_permissions:
+    permission_type: public
+id: node.field_donde_aparece_
+field_name: field_donde_aparece_
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: Inicio
+      label: Inicio
+    -
+      value: Final
+      label: Final
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,21 @@
+uuid: 51c1a018-7e6c-4bfd-be3d-187316f7fbdd
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_donde_aparece_
+    - node.type.slider_clases_koalas
+  module:
+    - options
+id: node.slider_clases_koalas.field_donde_aparece_
+field_name: field_donde_aparece_
+entity_type: node
+bundle: slider_clases_koalas
+label: 'Donde aparece?'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

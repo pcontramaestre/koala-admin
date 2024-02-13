@@ -1,0 +1,18 @@
+uuid: 6de0862b-bfdd-4f81-8cf7-6985c4ff801f
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.slider_clases_koalas
+id: node.slider_clases_koalas.title
+field_name: title
+entity_type: node
+bundle: slider_clases_koalas
+label: 'Título del slider (Referencial)'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

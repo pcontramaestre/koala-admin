@@ -1,0 +1,21 @@
+uuid: 7796100e-146a-480d-8174-bb0ed8619914
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_texto_2
+    - node.type.slider_clases_koalas
+  module:
+    - text
+id: node.slider_clases_koalas.field_texto_2
+field_name: field_texto_2
+entity_type: node
+bundle: slider_clases_koalas
+label: 'Texto 2'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

@@ -95,6 +95,7 @@ permissions:
   - 'view any mundos_detalle content'
   - 'view any page content'
   - 'view any profesores content'
+  - 'view any slider_clases_koalas content'
   - 'view clases commerce_product'
   - 'view commerce_order'
   - 'view commerce_product'

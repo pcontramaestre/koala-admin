@@ -1,0 +1,19 @@
+uuid: 33dfdd4d-14b7-4e3d-85e5-d2cc1252160f
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_texto_1
+    - node.type.slider_clases_koalas
+id: node.slider_clases_koalas.field_texto_1
+field_name: field_texto_1
+entity_type: node
+bundle: slider_clases_koalas
+label: 'Texto 1'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

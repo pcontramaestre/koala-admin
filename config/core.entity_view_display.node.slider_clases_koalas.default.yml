@@ -1,0 +1,77 @@
+uuid: 919566e0-3b05-4f46-bec6-8697c5b1a0d6
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.field.node.slider_clases_koalas.field_donde_aparece_
+    - field.field.node.slider_clases_koalas.field_imagen_del_slider
+    - field.field.node.slider_clases_koalas.field_posicion_del_slider
+    - field.field.node.slider_clases_koalas.field_texto_1
+    - field.field.node.slider_clases_koalas.field_texto_2
+    - node.type.slider_clases_koalas
+  module:
+    - options
+    - svg_image
+    - text
+    - user
+id: node.slider_clases_koalas.default
+targetEntityType: node
+bundle: slider_clases_koalas
+mode: default
+content:
+  field_donde_aparece_:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 105
+    region: content
+  field_imagen_del_slider:
+    type: image
+    label: above
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_posicion_del_slider:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  field_texto_1:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  field_texto_2:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  langcode: true

@@ -1,0 +1,17 @@
+uuid: 5d75d670-089f-4f8e-ba03-eae251c54cd5
+langcode: es
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: 'Slider Clases koalas'
+type: slider_clases_koalas
+description: 'Cargar o editar los slider que se muestran antes de iniciar una clase y al finalizar una clase. '
+help: ''
+new_revision: false
+preview_mode: 0
+display_submitted: true

@@ -1,0 +1,16 @@
+uuid: e3121489-c170-41d4-b3fa-0fd086b5fed6
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.slider_clases_koalas
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+id: node.slider_clases_koalas
+target_entity_type_id: node
+target_bundle: slider_clases_koalas
+default_langcode: site_default
+language_alterable: true

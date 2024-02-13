@@ -1,0 +1,34 @@
+uuid: 570da461-432a-43d2-8617-ac035cf14b63
+langcode: es
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.slider_clases_koalas.field_donde_aparece_
+    - field.field.node.slider_clases_koalas.field_imagen_del_slider
+    - field.field.node.slider_clases_koalas.field_posicion_del_slider
+    - field.field.node.slider_clases_koalas.field_texto_1
+    - field.field.node.slider_clases_koalas.field_texto_2
+    - node.type.slider_clases_koalas
+  module:
+    - user
+id: node.slider_clases_koalas.teaser
+targetEntityType: node
+bundle: slider_clases_koalas
+mode: teaser
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  field_donde_aparece_: true
+  field_imagen_del_slider: true
+  field_posicion_del_slider: true
+  field_texto_1: true
+  field_texto_2: true
+  langcode: true

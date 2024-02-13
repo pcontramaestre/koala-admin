@@ -1,0 +1,25 @@
+uuid: e79232c8-9e55-4cad-a250-c08641f002d9
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_posicion_del_slider
+    - node.type.slider_clases_koalas
+id: node.slider_clases_koalas.field_posicion_del_slider
+field_name: field_posicion_del_slider
+entity_type: node
+bundle: slider_clases_koalas
+label: 'Posición del slider'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

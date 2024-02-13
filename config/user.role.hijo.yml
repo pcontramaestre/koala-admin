@@ -36,6 +36,7 @@ permissions:
   - 'view any mundos_detalle content'
   - 'view any page content'
   - 'view any profesores content'
+  - 'view any slider_clases_koalas content'
   - 'view field_hora_clase'
   - 'view field_logros'
   - 'view own article content'
