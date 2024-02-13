@@ -72,18 +72,19 @@
 
 	<div class="cuadro-clases-noiniciada-finalizada justify-content-center align-items-center">
 		<div class="cuadro">
-			<div class="titulo">
+			<div class="titulo d-none">
 				<strong><h1></h1></strong>
 			</div>
-				<div class="cargando mt-5 pt-5">
+				<div class="cargando mt-5 pt-5 d-none">
 					<div class="pelotas"></div>
 					<div class="pelotas"></div>
 					<div class="pelotas"></div>
 				</div>
-			<div class="texto pt-5">
+			<div class="texto pt-5 d-none">
 				<strong>Cargando....</strong>
 			</div>
 		</div>
+		{{ drupal_view('slider_inicio_y_fin_de_clases', 'block_1') }}
 	</div>
 
 	{% if url %}
