@@ -1,19 +1,24 @@
-uuid: 0e5e5290-e818-49a3-9dc8-a7fc827110e2
+uuid: a87e08a7-06ce-4f6c-b500-cee164828305
 langcode: es
 status: true
 dependencies:
   config:
+    - field.storage.user.field_apellidos
+    - field.storage.user.field_celular
+    - field.storage.user.field_direccion
     - field.storage.user.field_nombre_del_acudiente
+    - field.storage.user.field_pais
     - field.storage.user.user_picture
+    - image.style.icono
     - user.role.administrator
+    - user.role.content_editor
     - user.role.padre
   module:
-    - formatter_suite
-    - show_email
+    - options
     - svg_image
     - user
-id: usuario_actual
-label: 'Usuario actual'
+id: editar_padre
+label: 'Editar padre'
 module: views
 description: ''
 tag: ''
@@ -26,143 +31,17 @@ display:
     display_plugin: default
     position: 0
     display_options:
-      title: 'Usuario actual'
+      title: 'Editar padre'
       fields:
-        user_picture:
-          id: user_picture
-          table: user__user_picture
-          field: user_picture
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: field
-          label: ''
-          exclude: true
-          alter:
-            alter_text: true
-            text: '<img src="{{ user_picture }}" class="avatar-padre img-fluid rounded">'
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: target_id
-          type: image_url
-          settings:
-            image_style: media_library
-          group_column: ''
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        field_nombre_del_acudiente:
-          id: field_nombre_del_acudiente
-          table: user__field_nombre_del_acudiente
-          field: field_nombre_del_acudiente
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: field
-          label: ''
-          exclude: true
-          alter:
-            alter_text: true
-            text: '<strong>{{ field_nombre_del_acudiente__value }}</strong>'
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: string
-          settings:
-            link_to_entity: false
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        init:
-          id: init
+        name:
+          id: name
           table: users_field_data
-          field: init
+          field: name
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: user
-          entity_field: init
+          entity_field: name
           plugin_id: field
           label: ''
           exclude: true
@@ -184,8 +63,8 @@ display:
             target: ''
             nl2br: false
             max_length: 0
-            word_boundary: true
-            ellipsis: true
+            word_boundary: false
+            ellipsis: false
             more_link: false
             more_link_text: ''
             more_link_path: ''
@@ -206,81 +85,9 @@ display:
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: value
-          type: show_email_address
+          type: user_name
           settings:
-            hide_user_one: 0
-            email_mailto: 1
-            hide_per_role:
-              authenticated: 0
-              content_editor: 0
-              administrator: 0
-              profesor: 0
-              padre: 0
-              hijo: 0
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        uid:
-          id: uid
-          table: users_field_data
-          field: uid
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: user
-          entity_field: uid
-          plugin_id: field
-          label: ''
-          exclude: true
-          alter:
-            alter_text: true
-            text: '<a href="/editar-padre"><img src="/themes/custom/koala/images/edit.png"></a>'
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: number_unformatted
-          settings: {  }
+            link_to_entity: false
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -343,11 +150,455 @@ display:
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: value
-          type: formatter_suite_general_email
+          type: basic_string
+          settings: {  }
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        user_picture:
+          id: user_picture
+          table: user__user_picture
+          field: user_picture
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: image
           settings:
-            emailStyle: plain
-            linkText: 'Correo electrónico'
-            classes: ''
+            image_link: ''
+            image_style: icono
+            image_loading:
+              attribute: lazy
+            svg_attributes:
+              width: null
+              height: null
+            svg_render_as_image: true
+          group_column: ''
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        field_nombre_del_acudiente:
+          id: field_nombre_del_acudiente
+          table: user__field_nombre_del_acudiente
+          field: field_nombre_del_acudiente
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: false
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        field_apellidos:
+          id: field_apellidos
+          table: user__field_apellidos
+          field: field_apellidos
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: false
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        field_celular:
+          id: field_celular
+          table: user__field_celular
+          field: field_celular
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: false
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        field_direccion:
+          id: field_direccion
+          table: user__field_direccion
+          field: field_direccion
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: basic_string
+          settings: {  }
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        field_pais:
+          id: field_pais
+          table: user__field_pais
+          field: field_pais
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: list_default
+          settings: {  }
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        uid:
+          id: uid
+          table: users_field_data
+          field: uid
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: user
+          entity_field: uid
+          plugin_id: field
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: number_unformatted
+          settings: {  }
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -370,7 +621,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<div class=\"cuadro-perfil-padre\">\r\n   <div class=\"row fila1\">\r\n     <div class=\"col-2 avatar1\">{{ user_picture }} </div>\r\n     <div class=\"col-8 nombre-ac\">{{ field_nombre_del_acudiente }}</div>\r\n    <div class=\"col-2 editar-usuario\">{{ uid }}</div>\r\n   </div>\r\n   <div class=\"row fila2\">\r\n     <div class=\"col-2 correo\">{{ mail }}</div>\r\n   </div>\r\n</div>"
+            text: "\r\n<div class=\"row datos-padre\">\r\n  <div class=\"col-md-12 col-lg-4\">\r\n    <div class=\"nombres-apellidos-avatar\">\r\n      <span class=\"label\">Nombres y apellidos:</span>\r\n      <div class=\"nombre\">\r\n        <span class=\"imagen\">{{ user_picture }}</span>        \r\n        <span class=\"dato\">{{ field_nombre_del_acudiente }} {{ field_apellidos }}</span>\r\n      </div>\r\n\r\n      <div class=\"botones\">\r\n        <a href=\"/user/{{ uid }}/edit/editar_perfil_padre\" class=\"edit-user\">Editar información</a>\r\n        <a href=\"#\" class=\"eliminar-user\">Eliminar mi cuenta</a>\r\n      </div>\r\n    </div>\r\n  </div>\r\n\r\n  <div class=\"col-md-12 col-lg-7\">\r\n    <div class=\"datos-contacto\">\r\n      <div class=\"fondo\">\r\n        <span>Correo electrónico:</span>\r\n        <div class=\"dato\">        \r\n          <span class=\"icono\"><i class=\"fas fa-envelope\"></i></span>\r\n          <span class=\"texto\">{{ mail }}</span>\r\n        </div>\r\n      </div>\r\n\r\n      <div class=\"fondo\">\r\n        <span>Celular:</span>\r\n        <div class=\"dato\">        \r\n          <span class=\"icono\"><i class=\"fas fa-phone\"></i></span>\r\n          <span class=\"texto\">{{ field_celular }}</span>\r\n        </div>\r\n      </div>\r\n\r\n      <div class=\"fondo\">\r\n        <span for=\"direccion\">Dirección:</span>\r\n        <div class=\"dato\">\r\n          <span class=\"icono\"><i class=\"fas fa-map-marker-alt\"></i></span>\r\n          <span class=\"texto\">{{ field_direccion }}</span>\r\n        </div>\r\n      </div>\r\n\r\n      <div class=\"fondo\">\r\n        <span for=\"pais\">País:</span>\r\n        <div class=\"dato\">  \r\n          <span class=\"icono\"><i class=\"fas fa-globe-americas\"></i></span>\r\n          <span class=\"texto\">{{ field_pais }}</span>\r\n        </div>\r\n      </div>\r\n    </div>\r\n</div>"
             make_link: false
             path: ''
             absolute: false
@@ -426,6 +677,7 @@ display:
         type: role
         options:
           role:
+            content_editor: content_editor
             administrator: administrator
             padre: padre
       cache:
@@ -484,15 +736,53 @@ display:
             operator: ''
             operator_limit_selection: false
             operator_list: {  }
+        roles_target_id:
+          id: roles_target_id
+          table: user__roles
+          field: roles_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: user
+          entity_field: roles
+          plugin_id: user_roles
+          operator: or
+          value:
+            padre: padre
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
       style:
         type: default
       row:
         type: fields
-        options:
-          default_field_elements: true
-          inline: {  }
-          separator: ''
-          hide_empty: false
       query:
         type: views_query
         options:
@@ -502,7 +792,18 @@ display:
           replica: false
           query_tags: {  }
       relationships: {  }
-      header: {  }
+      header:
+        area_text_custom:
+          id: area_text_custom
+          table: views
+          field: area_text_custom
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text_custom
+          empty: false
+          content: "<div class=\"title-page text-center mt-5 mb-5\">\r\n  <span>Tu información</span>\r\n</div>"
+          tokenize: false
       footer: {  }
       display_extenders: {  }
     cache_metadata:
@@ -514,15 +815,20 @@ display:
         - user
         - user.roles
       tags:
+        - 'config:field.storage.user.field_apellidos'
+        - 'config:field.storage.user.field_celular'
+        - 'config:field.storage.user.field_direccion'
         - 'config:field.storage.user.field_nombre_del_acudiente'
+        - 'config:field.storage.user.field_pais'
         - 'config:field.storage.user.user_picture'
-  block_1:
-    id: block_1
-    display_title: Block
-    display_plugin: block
+  page_1:
+    id: page_1
+    display_title: Page
+    display_plugin: page
     position: 1
     display_options:
       display_extenders: {  }
+      path: editar-padre
     cache_metadata:
       max-age: -1
       contexts:
@@ -532,5 +838,9 @@ display:
         - user
         - user.roles
       tags:
+        - 'config:field.storage.user.field_apellidos'
+        - 'config:field.storage.user.field_celular'
+        - 'config:field.storage.user.field_direccion'
         - 'config:field.storage.user.field_nombre_del_acudiente'
+        - 'config:field.storage.user.field_pais'
         - 'config:field.storage.user.user_picture'
