@@ -63,7 +63,7 @@ code: |-
     $('#edit-field-el-nino-no-asistio-a-la-cl-value').on('change', function() {
       // Desactivar el checkbox con la id "edit-field-marcar-clase-como-finaliza-value" si se activa el checkbox con la id "edit-field-el-nino-no-asistio-a-la-cl-value"
       if ($('#edit-field-el-nino-no-asistio-a-la-cl-value').is(':checked')) {
-        $('#edit-field-marcar-clase-como-finaliza-value').prop('checked', false);
+        $('#edit-field-marcar-clase-como-finaliza-value').prop('checked', true);
       }
     });
   });
