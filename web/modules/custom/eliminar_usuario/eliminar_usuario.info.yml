@@ -1,0 +1,8 @@
+name: Eliminar Usuario
+type: module
+description: 'Permite a los usuarios con rol padre eliminar su cuenta y la de sus hijos.'
+core_version_requirement: ^9 || ^10
+package: Custom
+dependencies:
+  - drupal:node
+  - drupal:user

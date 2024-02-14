@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * Implements hook_theme().
+ */
+function eliminar_usuario_theme($existing, $type, $theme, $path) {
+  return [
+    'eliminar-usuario' => [
+      'variables' => [
+        'language' => NULL,
+      ],
+      'template' => 'eliminar-usuario',
+    ],
+    'usuario-eliminado' => [
+      'variables' => [ 
+          'usuarios_hijos' => NULL,
+          'suscripciones' => NULL,
+        ],
+      'template' => 'usuario-eliminado',
+    ],
+  ];
+}
+
+

@@ -1,0 +1,15 @@
+eliminar_usuario.content:
+  path: '/eliminar_usuario'
+  defaults:
+    _controller: '\Drupal\eliminar_usuario\Controller\EliminarUsuarioController::showForm'
+    _title: 'Eliminar Usuario'
+  requirements:
+    _permission: 'access content'    
+
+usuario_eliminado.content:
+  path: '/usuario_eliminado'
+  defaults:
+    _controller: '\Drupal\eliminar_usuario\Controller\EliminarUsuarioController::usuarioEliminado'
+    _title: 'Usuario Eliminado'
+  requirements:
+    _permission: 'access content'

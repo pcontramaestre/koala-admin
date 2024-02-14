@@ -1,0 +1,176 @@
+{% if language == 'es' %}
+  {%  
+    set title = "Entendemos que decidas marcharte, así que mejoraremos la fórmula para cuando decidas volver" 
+  %}
+  {%
+    set body1 = "Considera que al momento de eliminar tu cuenta, también se eliminarán los datos y facturas de pago de la cuenta personal y la de los niños asociados la cuenta principal"
+  %}
+  {%
+    set body2 = "¿Estás seguro?"
+  %}
+  {%
+    set body3 = "Para continuar, escribe la palabra"     
+  %}
+  {% 
+    set body31 = "BORRAR"
+  %}
+  {%
+    set body32 = "y presiona el botón" 
+  %}
+  {% 
+    set body33 = "Eliminar mi cuenta"
+  %}
+  {%
+    set body34 = "para finalizar el proceso"
+    %}
+  {%
+    set boton = "Eliminar mi cuenta"
+  %}
+  {%
+    set placeholder = "Escribe BORRAR para confirmar"
+  %}
+
+{% else %}
+  {%  
+    set title = "We understand that you decide to leave, so we will improve the formula for when you decide to return" 
+  %}
+  {%
+    set body1 = "Consider that when you delete your account, the data and payment invoices of the personal account and those of the children associated with the main account will also be deleted"
+  %}
+  {%
+    set body2 = "Are you sure?"
+  %}
+  {%
+    set body3 = "To continue, write the word"
+  %}
+  {% 
+    set body31 = "DELETE"
+  %}
+  {%
+    set body32 = "and press the button"
+  %}
+  {% 
+    set body33 = "Delete my account"
+  %}
+  {%
+    set body34 = "to finish the process"
+  %}
+  {%
+    set boton = "Delete my account"
+  %}
+  {%
+    set placeholder = "Write DELETE to confirm"
+  %}
+{% endif %}
+
+<style>
+  article {
+    max-width: 1030px;
+    margin: 0 auto;
+    width: 90%;
+    min-height: 85vh;
+  }
+  .svg-doctor {
+    width: 100%;
+    max-width: 250px;    
+    margin-bottom: -3rem;
+  }
+  .body {
+    font-size: 1.2rem;
+    font-weight: 700;    
+  }
+  .body2 {
+    font-size: 1.5rem;
+  }
+  .body3 {
+    font-size: 1rem;
+    font-weight: 500;
+  }
+  .accion-botones {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    max-width: 550px;
+    gap: 1rem;
+    margin: 0 auto;
+  }
+  .text-confirm {
+    height: 51px;
+    flex: 1 0 0;
+    border-radius: 8px;
+    border: 1px solid #000;
+    background: var(--White, #FFF);
+    text-align: center;
+    text-transform: uppercase;
+  }
+  .confirm-eliminar {
+    display: flex;
+    width: 254px;
+    padding: 12px 20px;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+    border-radius: 40px;
+    border: 2px solid var(--Red-K500, #FF6669);
+    background: var(--Red-K300, #FF9294);
+    color: var(--Black, #000);
+    font-family: Nunito;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+
+</style>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+      var input = document.querySelector('.text-confirm');
+      var enlace = document.querySelector('.confirm-eliminar');
+
+      input.addEventListener('input', function() {
+          validarTexto(this.value.toUpperCase());
+      });
+
+      input.addEventListener('blur', function() {
+          validarTexto(this.value.toUpperCase());
+      });
+
+      function validarTexto(texto) {
+          if (texto === "BORRAR" || texto === "DELETE") {
+              enlace.style.display = 'inline';
+              // add class to button to enable click
+              enlace.classList.add('enabled');
+          } else {
+              enlace.style.display = 'none';
+              // remove class to button to disable click
+              enlace.classList.remove('enabled');
+          }
+      }
+  });
+</script>
+
+<article>
+  <header>
+    <p class="text-center body mt-5 mb-4">{{ title }}</p>
+  </header>
+  
+  <p class="text-center">
+    <img class="svg-doctor" src="/themes/custom/koala/images/koala-doctor.svg" alt="Despedida Koala doctor" title="Despedida Koala doctor"/>
+  </p>
+
+  <p class="text-center body body1">{{ body1 }}</p>
+  <p class="text-center body body2">{{ body2 }}</p>
+  <p class="text-center body body3">{{ body3 }} <strong>{{ body31 }}</strong> {{ body32 }} <strong>{{ body33 }}</strong> {{ body34 }}</p>
+
+
+  <div class="text-center accion-botones">
+    <input type="text" name="confirm" class="text-confirm" placeholder="{{placeholder}}"></input>
+    <a href="/usuario_eliminado" class="confirm-eliminar" style="display: none;">{{ boton }}</a>
+  </div>
+  
+</article>

@@ -34,4 +34,4 @@ visibility:
   request_path:
     id: request_path
     negate: false
-    pages: "/user/*\r\n/padres/*\r\n/padres\r\n/node/add/agendar_clase/agendar_clases\r\n/node/*\r\n*/editar_perfil_padre\r\n/zona-pagos\r\n/checkout\r\n/checkout/*\r\n*/orders/*\r\n/cart\r\n/product/*\r\n/suscripciones\r\n/editar-padre\r\n*/editar-padre/*"
+    pages: "/user/*\r\n/padres/*\r\n/padres\r\n/node/add/agendar_clase/agendar_clases\r\n/node/*\r\n*/editar_perfil_padre\r\n/zona-pagos\r\n/checkout\r\n/checkout/*\r\n*/orders/*\r\n/cart\r\n/product/*\r\n/suscripciones\r\n/editar-padre\r\n*/editar-padre/*\r\n/eliminar_usuario\r\n*/eliminar_usuario/*"
