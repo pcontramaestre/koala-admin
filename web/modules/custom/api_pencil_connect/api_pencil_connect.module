@@ -506,6 +506,59 @@ function api_pencil_connect_update_space_users($space_id, $add_users = [], $modi
   return $response_data;
 }
 
+/**
+ * Elimina a un usuario de un espacio.
+ *
+ * @param string $user_id
+ *   El ID del usuario a eliminar.
+ *
+ * @return array|bool
+ *   Devuelve los detalles actualizados del espacio o FALSE en caso de error.
+ * 
+ * Metodo para eliminar un usuario de un espacio
+ * DELETE
+ * 
+ * Example:
+ * curl -X 'DELETE' \
+ * 'https://staging-api.pencilapp.com/users/507f1f77bcf86cd799439011/remove' \
+ * -H 'accept: **'
+ */
+ 
+
+function api_pencil_connect_delete_user($user_id){
+  $api_url = api_pencil_connect_get_api_url();
+  $authorization_token = api_pencil_connect_get_authorization_token();
+
+  $url = $api_url . '/users/' . $user_id . '/remove';
+
+  $headers = [
+    'accept: */*',
+    'Authorization: Bearer ' . $authorization_token,
+  ];
+
+  $curl = curl_init();
+  curl_setopt($curl, CURLOPT_URL, $url);
+  curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+  curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
+  curl_setopt($curl, CURLOPT_CUSTOMREQUEST, 'DELETE');
+
+  $response = curl_exec($curl);
+  $error_message = curl_error($curl);
+  $http_code = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+
+  curl_close($curl);
+
+  if ($http_code == 401 || $http_code == 404 || $http_code == 500) {
+    $response_data = json_decode($response, TRUE);
+    \Drupal::messenger()->addError(new TranslatableMarkup('Error deleting user from space: ' . ' ' . print_r($response_data)));
+    return FALSE;
+  }
+
+  $response_data = json_decode($response, TRUE);
+  return $response_data;
+}
+
+
 
 /**
  * Elimina un espacio.

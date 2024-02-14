@@ -13,8 +13,7 @@ function eliminar_usuario_theme($existing, $type, $theme, $path) {
     ],
     'usuario-eliminado' => [
       'variables' => [ 
-          'usuarios_hijos' => NULL,
-          'suscripciones' => NULL,
+          'language' => NULL,
         ],
       'template' => 'usuario-eliminado',
     ],

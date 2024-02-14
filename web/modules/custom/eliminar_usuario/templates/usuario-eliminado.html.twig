@@ -1,11 +1,54 @@
-<article>
-  <header>
-    <h1>Cuentas de Usuarios Eliminadas</h1>
-  </header>
-  <p>Tu cuenta y las cuentas relacionadas han sido eliminadas.</p>
+<style>
+  .path-usuario-eliminado #header {
+    display: none;
+  }
+  #main-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: unset !important;
+    background: var(--Yellow-K100, #FFF0CC);
+  }
+  footer.site-footer {
+    margin-top: 0rem !important;
+  }
 
-  <p>Usuarios Hijos:</p>
-  {{ dump(usuarios_hijos) }}
-  <p>Suscripciones:</p>
-  {{ dump(suscripciones)}}
+  .volver-home {
+    display: flex;
+    width: 254px;
+    padding: 12px 20px;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    border-radius: 40px;
+    border: 2px solid var(--Turq-K500, #297E88);
+    background: var(--White, #FFF);
+    color: var(--Turq-K500, #297E88);
+    text-decoration: none;
+    margin-top: 1rem;
+  }
+</style>
+
+{% if language == 'es' %}
+  {% set title = 'Tu cuenta se ha eliminado satisfactoriamente' %}
+  {% set description = 'Gracias por haber hecho parte de Hola Koala. Esperamos verte en una próxima oportunidad' %}
+  {% set enlace = 'Volver al home' %}
+{% else %}
+  {% set title = 'Your account has been deleted successfully' %}
+  {% set description = 'Thanks for being part of Hola Koala. We hope to see you in a next opportunity' %}
+  {% set enlace = 'Go back to home' %}
+{% endif %}
+
+<article class="d-flex">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h1 class="text-center">{{title}}</h1>
+        <p class="text-center">{{description}}</p>
+        <div class="d-flex justify-content-center">
+          <a href="https://holakoala.com" class="volver-home">{{enlace}}</a>
+        </div>
+      </div>
+    </div>
+  </div>
 </article>
