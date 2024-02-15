@@ -33,6 +33,7 @@
     <div class="col-md-4 izquierda">
       {{ drupal_view('profesor_agendar_clase', 'block_1') }}     
       {{ drupal_view('mis_koalas', 'profesor_detalle_horario') }}
+ 
     </div>
     <div class="col-md-8 derecha">
       <div class="formulario">
@@ -53,6 +54,13 @@
         <div class="form-actions">
           {{ form.actions }}
         </div>
+      </div>
+
+      <div class="vista-clases-no-disponibles mt-5">
+        <div class="text-center">
+          <strong>{{ 'Clases agendadas para el profesor, para el dia seleccionado'|t }}</strong>
+        </div>
+        {{ drupal_view('clases_gratis_agendadas', 'block_2') }}
       </div>
     </div>
   </div>

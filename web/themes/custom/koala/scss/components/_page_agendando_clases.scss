@@ -121,6 +121,11 @@
                   background: #2ff7ee;
                 }
               }
+              a.hora-enlace.disabled {
+                background: red;
+                color: white !important;
+                pointer-events: none;
+              }
             }
           }
           .layout--onecol {

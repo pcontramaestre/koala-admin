@@ -148,6 +148,46 @@ code: |-
   		
   		  horariosDiv.append(enlace);
   		}
+  		
+  		//MARCAR HORAS DESABILITADAS
+  		
+  		
+  		//Crear un arreglo con las clases agendadas 
+          var clasesAgendadas = [];
+          $('.profesor-agendado-tr').each(function() {
+
+            var fechaHora = $(this).find('.views-field-field-fecha-cita-oculta time').text().trim();
+            var horaUsada = new Date(fechaHora);
+            var hours = horaUsada.getHours().toString().padStart(2, '0');
+            var minutes = horaUsada.getMinutes().toString().padStart(2, '0');
+            var horaAgendada = hours + ':' + minutes;
+
+            $(this).find('.hora-cita-agendada').html(horaAgendada);
+
+            //var $horaAgendada = $(this).find('.hora-cita-agendada');
+            //var horaAgendada = $horaAgendada.text().trim();
+            //console.log("Hora Agendada: "+horaAgendada);
+            //horaAgendada = horaAgendada.split(':');
+            //horaAgendada = horaAgendada[0]+":"+horaAgendada[1];
+
+            var $idProfesor = $(this).find('.views-field-field-asignar-profesor-1');
+            var idProfesor = $idProfesor.text().trim();
+            console.log("ID Profesor: "+idProfesor);
+            var fechaAgendada = $(this).find('.views-field-field-fecha-cita-oculta-1').text().trim();
+            //console.log("Fecha Agendada: "+fechaAgendada);
+
+              console.log("Fecha encontrada: "+fechaAgendada);          
+              $('.hora-enlace').each(function() {
+                var DataHora = $(this).text().trim();
+                //console.log("Hora agendada - DataHora: "+DataHora);
+                if (DataHora === horaAgendada) {
+                  $(this).addClass('disabled');
+                  //console.log("Consegui una para disabled: "+horaAgendada+" Profesor: "+idProfesor);
+                }
+              });
+            //clasesAgendadas.push(horaAgendada);
+          });
+  		
   	}
   	
   });

@@ -11,7 +11,7 @@ dependencies:
     - node
     - user
 id: clases_gratis_agendadas
-label: 'Clases gratis agendadas'
+label: 'Clases agendadas'
 module: views
 description: ''
 tag: ''
@@ -537,16 +537,111 @@ display:
         - 'config:field.storage.node.field_fecha_cita_oculta'
   block_1:
     id: block_1
-    display_title: Block
+    display_title: 'Block (Gratis)'
     display_plugin: block
     position: 1
     display_options:
+      display_description: ''
       display_extenders: {  }
     cache_metadata:
       max-age: -1
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
+        - 'user.node_grants:view'
+        - user.permissions
+      tags:
+        - 'config:field.storage.node.field_asignar_profesor'
+        - 'config:field.storage.node.field_fecha_cita_oculta'
+  block_2:
+    id: block_2
+    display_title: 'Clases (Pagas)'
+    display_plugin: block
+    position: 1
+    display_options:
+      arguments:
+        field_fecha_cita_oculta_value:
+          id: field_fecha_cita_oculta_value
+          table: node__field_fecha_cita_oculta
+          field: field_fecha_cita_oculta_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: datetime
+          default_action: default
+          exception:
+            value: all
+            title_enable: false
+            title: All
+          title_enable: false
+          title: ''
+          default_argument_type: query_parameter
+          default_argument_options:
+            query_param: fecha
+            fallback: ''
+            multiple: and
+          default_argument_skip_url: false
+          summary_options:
+            base_path: ''
+            count: true
+            override: false
+            items_per_page: 25
+          summary:
+            sort_order: asc
+            number_of_records: 0
+            format: default_summary
+          specify_validation: false
+          validate:
+            type: none
+            fail: 'not found'
+          validate_options: {  }
+        field_asignar_profesor_target_id:
+          id: field_asignar_profesor_target_id
+          table: node__field_asignar_profesor
+          field: field_asignar_profesor_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: numeric
+          default_action: default
+          exception:
+            value: all
+            title_enable: false
+            title: All
+          title_enable: false
+          title: ''
+          default_argument_type: query_parameter
+          default_argument_options:
+            query_param: field_profesor
+            fallback: ''
+            multiple: and
+          default_argument_skip_url: false
+          summary_options:
+            base_path: ''
+            count: true
+            override: false
+            items_per_page: 25
+          summary:
+            sort_order: asc
+            number_of_records: 0
+            format: default_summary
+          specify_validation: false
+          validate:
+            type: none
+            fail: 'not found'
+          validate_options: {  }
+          break_phrase: false
+          not: false
+      defaults:
+        arguments: false
+      display_description: ''
+      display_extenders: {  }
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url
         - 'user.node_grants:view'
         - user.permissions
       tags:
