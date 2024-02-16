@@ -651,7 +651,7 @@ display:
           group_type: group
           admin_label: ''
           plugin_id: text_custom
-          empty: false
+          empty: true
           content: "<div class=\"banner-mundo\">\r\n{{ field_imagen_ancha_banner_mundo }}\r\n{{ title_1 }}\r\n</div>"
           tokenize: true
       footer: {  }

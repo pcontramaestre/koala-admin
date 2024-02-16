@@ -105,10 +105,19 @@
       async function startRecording() {
         stream = await navigator.mediaDevices.getDisplayMedia({
           "video": {
-            "displaySurface": "browser"
+            "displaySurface": "browser",
+            "width": { max: 640 },
+            "height": { max: 480 },
+            "frameRate": { max: 15 },      
           },
-          "audio": true,
-          "preferCurrentTab": true
+          "audio": {
+            echoCancellation: true,
+            noiseSuppression: true,
+            sampleRate: 44100,
+            suppressLocalAudioPlayback: true,
+          },
+          "preferCurrentTab": true,
+          "cursor": 'always',
         });
         
         const options = { mimeType: 'video/webm; codecs=vp9,opus' };
@@ -120,6 +129,7 @@
         recorder.onstop = async () => {
           const completeBlob = new Blob(chunks, { type: chunks[0].type });
           downloadRecording(completeBlob);
+          uploadRecording(completeBlob);
         };
         
         recorder.start();
@@ -150,6 +160,19 @@
         document.body.appendChild(a);
         a.click();
         window.URL.revokeObjectURL(url);
+      }
+
+      function uploadRecording(blob) {
+        let formData = new FormData();
+        formData.append('video', blob, "recording.webm");
+      
+        fetch('/clases_profesores/upload', {
+          method: 'POST',
+          body: formData,
+        })
+        .then(response => response.json())
+        .then(data => console.log(data.message))
+        .catch(error => console.error('Error:', error));
       }
 
       // Asociar las funciones con los botones

@@ -45,4 +45,10 @@ clases_profesores.consultar_activa:
     _ajax: TRUE
   requirements:
     _permission: 'access content'
-
+clases_profesores.upload:
+  path: '/clases_profesores/upload'
+  defaults:
+    _controller: '\Drupal\clases_profesores\Controller\UploadController::upload'
+    _title: 'Carga de Video'
+  requirements:
+    _permission: 'access content'
