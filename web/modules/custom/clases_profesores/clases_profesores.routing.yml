@@ -48,7 +48,8 @@ clases_profesores.consultar_activa:
 clases_profesores.upload:
   path: '/clases_profesores/upload'
   defaults:
-    _controller: '\Drupal\clases_profesores\Controller\UploadController::upload'
+    _controller: 'clases_profesores.upload_controller:upload'
     _title: 'Carga de Video'
+  methods:  [POST]
   requirements:
     _permission: 'access content'

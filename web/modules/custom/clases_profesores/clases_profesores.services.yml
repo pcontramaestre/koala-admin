@@ -1,0 +1,6 @@
+services:
+  clases_profesores.upload_controller:
+    class: Drupal\clases_profesores\Controller\UploadController
+    arguments: ['@file_system']
+    tags:
+      - { name: controller.service_arguments }
