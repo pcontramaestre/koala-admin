@@ -1,0 +1,23 @@
+uuid: dd66b7b3-2b82-47d1-9d1b-1c9de0089b3c
+langcode: es
+status: true
+dependencies:
+  module:
+    - field_permissions
+    - node
+third_party_settings:
+  field_permissions:
+    permission_type: public
+id: node.field_ruta_video_clase
+field_name: field_ruta_video_clase
+entity_type: node
+type: string_long
+settings:
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

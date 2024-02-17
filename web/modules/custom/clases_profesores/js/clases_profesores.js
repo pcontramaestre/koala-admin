@@ -106,9 +106,9 @@
         stream = await navigator.mediaDevices.getDisplayMedia({
           "video": {
             "displaySurface": "browser",
-            "width": { max: 640 },
-            "height": { max: 480 },
-            "frameRate": { max: 15 },      
+            "width": { max: 1280 },
+            "height": { max: 720 },
+            "frameRate": { max: 15 },
           },
           "audio": {
             echoCancellation: true,
@@ -128,7 +128,7 @@
         
         recorder.onstop = async () => {
           const completeBlob = new Blob(chunks, { type: chunks[0].type });
-          downloadRecording(completeBlob);
+          //downloadRecording(completeBlob);
           uploadRecording(completeBlob);
         };
         
@@ -165,10 +165,18 @@
       function uploadRecording(blob) {
         let formData = new FormData();
         formData.append('video', blob, "recording.webm");
-      
+        
+        //get parameters from url (idClase)
+        let url = new URL(window.location.href);
+        let idClase = url.searchParams.get("idClase");
+
         fetch('/clases_profesores/upload', {
           method: 'POST',
           body: formData,
+          // send idClase
+          headers: {
+            'idClase': idClase
+          },
         })
         .then(response => response.json())
         .then(data => console.log(data.message))

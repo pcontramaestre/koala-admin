@@ -10,6 +10,7 @@ dependencies:
     - field.field.node.asignar_clase_a_estudiante.field_marcar_clase_como_finaliza
     - field.field.node.asignar_clase_a_estudiante.field_mensaje_para_el_nino
     - field.field.node.asignar_clase_a_estudiante.field_observaciones_del_profesor
+    - field.field.node.asignar_clase_a_estudiante.field_ruta_video_clase
     - field.field.node.asignar_clase_a_estudiante.field_seleccionar_clase_agendada
     - node.type.asignar_clase_a_estudiante
   module:
@@ -76,6 +77,13 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 103
+    region: content
+  field_ruta_video_clase:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 109
     region: content
   field_seleccionar_clase_agendada:
     type: entity_reference_label

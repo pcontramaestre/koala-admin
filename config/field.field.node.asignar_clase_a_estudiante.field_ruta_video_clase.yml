@@ -1,0 +1,19 @@
+uuid: 54bf43f5-cd89-4be4-b615-9e54d165eb91
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ruta_video_clase
+    - node.type.asignar_clase_a_estudiante
+id: node.asignar_clase_a_estudiante.field_ruta_video_clase
+field_name: field_ruta_video_clase
+entity_type: node
+bundle: asignar_clase_a_estudiante
+label: 'Ruta video clase'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

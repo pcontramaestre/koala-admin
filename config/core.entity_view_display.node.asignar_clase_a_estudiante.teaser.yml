@@ -11,6 +11,7 @@ dependencies:
     - field.field.node.asignar_clase_a_estudiante.field_marcar_clase_como_finaliza
     - field.field.node.asignar_clase_a_estudiante.field_mensaje_para_el_nino
     - field.field.node.asignar_clase_a_estudiante.field_observaciones_del_profesor
+    - field.field.node.asignar_clase_a_estudiante.field_ruta_video_clase
     - field.field.node.asignar_clase_a_estudiante.field_seleccionar_clase_agendada
     - node.type.asignar_clase_a_estudiante
   module:
@@ -36,5 +37,6 @@ hidden:
   field_marcar_clase_como_finaliza: true
   field_mensaje_para_el_nino: true
   field_observaciones_del_profesor: true
+  field_ruta_video_clase: true
   field_seleccionar_clase_agendada: true
   langcode: true
