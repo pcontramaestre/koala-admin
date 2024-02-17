@@ -43,7 +43,7 @@ class UploadController extends ControllerBase {
         // Guardar ruta del archivo en la variable de $file_upload
         $file_upload = $public_file_path . $filename;
         // convertir $file_upload a URI
-        $file_upload = \Drupal\Core\Url::fromUri($file_upload);
+        //$file_upload = \Drupal\Core\Url::fromUri($file_upload);
 
         $clase_asignada = $this->getClaseAsignada($idClase);
         $this->saveVideo($clase_asignada, $file_upload);

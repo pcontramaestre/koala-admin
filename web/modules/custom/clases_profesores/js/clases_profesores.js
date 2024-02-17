@@ -128,7 +128,7 @@
         
         recorder.onstop = async () => {
           const completeBlob = new Blob(chunks, { type: chunks[0].type });
-          //downloadRecording(completeBlob);
+          downloadRecording(completeBlob);
           uploadRecording(completeBlob);
         };
         
