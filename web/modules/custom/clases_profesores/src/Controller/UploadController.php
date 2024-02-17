@@ -69,6 +69,7 @@ class UploadController extends ControllerBase {
     dump($nids);
     // Obtener el valor de campo referenciado field_clase_asignada
     $node = \Drupal\node\Entity\Node::load(reset($nids));
+    dump($node);
     $field_clase_asignada = $node->get('field_clase_asignada')->getValue();
     dump($field_clase_asignada);
     $clase_asignada = $field_clase_asignada[0]['target_id'];
