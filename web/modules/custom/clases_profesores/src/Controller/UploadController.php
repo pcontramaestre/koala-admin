@@ -29,6 +29,7 @@ class UploadController extends ControllerBase {
       $file = $request->files->get('video');
       // get idClase from request Header
       $idClase = $request->headers->get('idClase');
+      dump($idClase);
 
       // Verificar si el directorio "video_uploads" existe
       $public_file_path = 'public://video_uploads/';
@@ -42,6 +43,7 @@ class UploadController extends ControllerBase {
 
         // Guardar ruta del archivo en la variable de $file_upload
         $file_upload = $public_file_path . $filename;
+        dump($file_upload);
         // convertir $file_upload a URI
         //$file_upload = \Drupal\Core\Url::fromUri($file_upload);
 
@@ -66,7 +68,9 @@ class UploadController extends ControllerBase {
     // Obtener el valor de campo referenciado field_clase_asignada
     $node = \Drupal\node\Entity\Node::load(reset($nids));
     $field_clase_asignada = $node->get('field_clase_asignada')->getValue();
+    dump($field_clase_asignada);
     $clase_asignada = $field_clase_asignada[0]['target_id'];
+    dump($clase_asignada);
 
     return $clase_asignada;
   }
