@@ -45,7 +45,8 @@ class UploadController extends ControllerBase {
         $file_upload = $public_file_path . $filename;
         dump($file_upload);
         // convertir $file_upload a URI
-        //$file_upload = \Drupal\Core\Url::fromUri($file_upload);
+        $file_upload = \Drupal\Core\Url::fromUri($file_upload);
+        dump($file_upload);
 
         $clase_asignada = $this->getClaseAsignada($idClase);
         $this->saveVideo($clase_asignada, $file_upload);
@@ -58,13 +59,14 @@ class UploadController extends ControllerBase {
   }
 
   private function getClaseAsignada($idClase) {
+    dump($idClase);
     // Buscar idClase en el tipo de contenido agendar_clase en el id del nodo
     $query = \Drupal::entityQuery('node')
     ->condition('type', 'agendar_clase')
     ->condition('nid', $idClase);
     
     $nids = $query->execute();
-
+    dump($nids);
     // Obtener el valor de campo referenciado field_clase_asignada
     $node = \Drupal\node\Entity\Node::load(reset($nids));
     $field_clase_asignada = $node->get('field_clase_asignada')->getValue();
