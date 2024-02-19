@@ -1,0 +1,145 @@
+.path-eliminar-suscripcion {
+  .node-cancelar-suscripcion-form {
+    margin-top: 2rem;
+
+    h2.h2-cancelar-suscripcion {
+      text-align: center;
+      margin-bottom: 1rem;
+      font-size: 1.3rem;
+      font-weight: 700;
+    }
+
+    #edit-field-razones-cancelar--wrapper {
+      legend {
+        margin-bottom: 1rem;
+        span {
+          font-size: 1rem;
+          font-weight: 500;
+        }
+      }
+
+      .fieldset-wrapper {
+        #edit-field-razones-cancelar {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 0.5rem;
+          align-items: center;
+          justify-items: start;
+        }
+      }
+    }
+
+    .img-center {
+      display: flex;
+      height: 100%;
+      justify-content: center;
+      flex-wrap: nowrap;
+
+      img {
+        padding: 2rem;
+        width: 100%;
+        height: auto;
+      }
+    }    
+
+    .form-actions {
+      display: flex;
+      flex-direction: row-reverse;
+      flex-wrap: nowrap;
+      align-content: center;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      margin-bottom: 2rem !important;
+      padding-top: 4rem;
+      position: relative;
+
+
+      @media screen and (max-width: 768px){
+        flex-wrap: wrap;
+      }
+
+      .text-cancelar-suscripcion {
+        position: absolute;
+        top: 0;
+        font-size: 1.3rem;
+        font-weight: 700;
+      }
+
+      #edit-submit {
+        display: flex;
+        width: 254px;
+        padding: 12px 20px;
+        justify-content: center;
+        align-items: center;
+        gap: 12px;
+        border-radius: 40px;
+        border: 2px solid var(--Red-K500, #FF6669);
+        background: var(--Red-K300, #FF9294);
+        color: var(--Black, #000);
+        font-family: Nunito;
+        font-size: 1.1rem;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+      }
+      #edit-cancel {
+        display: flex;
+        width: 254px;
+        padding: 12px 20px;
+        justify-content: center;
+        align-items: center;
+        gap: 12px;
+        border-radius: 40px;
+        border: 2px solid var(--Turq-K500, #297E88);
+        background: var(--White, #FFF);
+        color: var(--Turq-K500, #297E88);
+        font-family: Nunito;
+        font-size: 1.1rem;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+      }
+    }
+  }
+
+  .elimina-usuario {
+    display: flex;
+    padding: 2.5rem 1rem;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    background: var(--Yellow-K100, #FFF0CC);
+
+    p {
+      margin: 0;
+      font-size: 1.2rem;
+      font-weight: 700;
+    }
+    
+    a {
+      color: var(--Turq-K500, #297E88);      
+      font-weight: 700;
+    }
+  }
+
+  .suscribcion-activa {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+
+
+
+  footer.site-footer {
+    margin-top: 0 !important;
+  }
+
+  .suscripciones {
+    .centro {
+      width: 70% !important;
+    }
+    .derecha {
+      display: none !important;
+    }
+  }
+}

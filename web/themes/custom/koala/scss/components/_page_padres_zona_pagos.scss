@@ -1,4 +1,4 @@
-.path-zona-pagos {
+.path-zona-pagos,.path-eliminar-suscripcion {
   .on-the-gray {
     margin-top: -2rem;
     padding: 0px !important;
@@ -161,6 +161,11 @@
           align-items: center;
           flex-wrap: nowrap;
           gap: 0.5rem;
+
+          a {
+            color: var(--Turq-K500, #297E88);      
+            font-weight: 700;
+          }
 
           .suscripciones-activas {
             text-align: center;
