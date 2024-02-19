@@ -1,0 +1,28 @@
+uuid: 788e3f9f-9a10-44ec-ac86-59bb938cf544
+langcode: es
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.cancelar_suscripcion.field_dejanos_tus_comentarios_op
+    - field.field.node.cancelar_suscripcion.field_razones_cancelar
+    - node.type.cancelar_suscripcion
+  module:
+    - user
+id: node.cancelar_suscripcion.teaser
+targetEntityType: node
+bundle: cancelar_suscripcion
+mode: teaser
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  field_dejanos_tus_comentarios_op: true
+  field_razones_cancelar: true
+  langcode: true

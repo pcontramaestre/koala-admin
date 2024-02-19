@@ -1,0 +1,10 @@
+uuid: f34f3bc9-527f-49b1-ba7b-29cdece7c348
+langcode: es
+status: true
+dependencies:
+  module:
+    - node
+id: node.cancelar_suscripcion
+label: 'Cancelar suscripción'
+targetEntityType: node
+cache: true

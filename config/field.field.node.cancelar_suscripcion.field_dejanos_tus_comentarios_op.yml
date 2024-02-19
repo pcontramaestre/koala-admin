@@ -1,0 +1,19 @@
+uuid: bb1c53fc-2767-4992-b0c7-1431200ffc0e
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_dejanos_tus_comentarios_op
+    - node.type.cancelar_suscripcion
+id: node.cancelar_suscripcion.field_dejanos_tus_comentarios_op
+field_name: field_dejanos_tus_comentarios_op
+entity_type: node
+bundle: cancelar_suscripcion
+label: 'Déjanos tus comentarios (*opcional)'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

@@ -1,0 +1,97 @@
+uuid: f296f554-914a-4c05-8b1f-f7df1a181c54
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.field.node.cancelar_suscripcion.field_dejanos_tus_comentarios_op
+    - field.field.node.cancelar_suscripcion.field_razones_cancelar
+    - node.type.cancelar_suscripcion
+  module:
+    - field_group
+    - field_layout
+  theme:
+    - bootstrap_barrio
+third_party_settings:
+  field_layout:
+    id: barrio_col2-3-9
+    settings:
+      label: ''
+  field_group:
+    group_izquierda:
+      children:
+        - title
+      label: Izquierda
+      region: top
+      parent_name: ''
+      weight: 0
+      format_type: html_element
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: izquierda-imagen
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+        required_fields: true
+    group_derecha:
+      children:
+        - field_razones_cancelar
+        - field_dejanos_tus_comentarios_op
+      label: derecha
+      region: second
+      parent_name: ''
+      weight: 2
+      format_type: html_element
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: derecha-radios
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+        required_fields: true
+id: node.cancelar_suscripcion.default
+targetEntityType: node
+bundle: cancelar_suscripcion
+mode: default
+content:
+  field_dejanos_tus_comentarios_op:
+    type: string_textarea
+    weight: 4
+    region: second
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_razones_cancelar:
+    type: options_buttons
+    weight: 3
+    region: second
+    settings: {  }
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 1
+    region: top
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  langcode: true
+  moderation_state: true
+  path: true
+  promote: true
+  status: true
+  sticky: true
+  uid: true
+  url_redirects: true

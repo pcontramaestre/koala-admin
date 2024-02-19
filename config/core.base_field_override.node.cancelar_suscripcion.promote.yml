@@ -1,0 +1,22 @@
+uuid: 0c2d672a-13bc-4b75-9e2c-5e4645e43875
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.cancelar_suscripcion
+id: node.cancelar_suscripcion.promote
+field_name: promote
+entity_type: node
+bundle: cancelar_suscripcion
+label: 'Promocionado a la página principal'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: Activado
+  off_label: Desactivado
+field_type: boolean

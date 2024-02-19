@@ -1,0 +1,17 @@
+uuid: 29d6b303-6b2f-406f-b8f5-996333749403
+langcode: es
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: 'Cancelar suscripción'
+type: cancelar_suscripcion
+description: 'Formulario de cancelación de suscripción por parte del padre'
+help: ''
+new_revision: true
+preview_mode: 0
+display_submitted: true

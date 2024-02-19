@@ -1,0 +1,11 @@
+uuid: 54d74ecc-c68f-458d-a174-e4129e06e447
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.cancelar_suscripcion
+id: node.cancelar_suscripcion
+target_entity_type_id: node
+target_bundle: cancelar_suscripcion
+default_langcode: current_interface
+language_alterable: false

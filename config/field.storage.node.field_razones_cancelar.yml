@@ -1,0 +1,43 @@
+uuid: 6b6f6d3c-2733-4391-95b6-b1d7b33e3696
+langcode: es
+status: true
+dependencies:
+  module:
+    - field_permissions
+    - node
+    - options
+third_party_settings:
+  field_permissions:
+    permission_type: public
+id: node.field_razones_cancelar
+field_name: field_razones_cancelar
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: '01'
+      label: 'He encontrado una mejor oferta'
+    -
+      value: '02'
+      label: 'El servicio es muy costoso'
+    -
+      value: '03'
+      label: 'Me hubiera gustado encontrar mayor variedad en los profes'
+    -
+      value: '04'
+      label: 'Las clases van muy rapido y siento que mi hijo no esta aprendiendo'
+    -
+      value: '05'
+      label: 'Tienen muy pocos recursos didáticos'
+    -
+      value: '06'
+      label: 'No deseo continuar'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
