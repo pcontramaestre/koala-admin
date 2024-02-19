@@ -61,133 +61,140 @@
 
       
 
-      $('#asignar-estrella', context).click(function (e) {
-        e.preventDefault();
-        var idClase = $(this).data('id-clase');
-        $.ajax({
-          url: Drupal.url('clases-profesor/asignar-estrella'),
-          type: 'POST',
-          dataType: 'json',
-          data: {
-            idClase: idClase,
-          },
-          success: function (response) {
-            // La lógica para actualizar la interfaz aquí
-            console.log(response);
-            // console.log('Se ha asignado la estrella a la clase.');
-            /*
-              Response:
-              0: 
-              command: "insert"
-              data: "Nueva cantidad: 5"
-              method: "html"
-              selector: "#selector-para-mensajes"
-              settings: null
-            */
-            // console.log(response[0].data);
-            // Agregar mensaje de éxito en la interfaz, #selector-para-mensajes
-            $('#selector-para-mensajes').html(response[0].data);
-          },
-          error: function (jqXHR, textStatus, errorThrown) {
-            console.log(errorThrown);
-          }        
-        });
-      });
+      
 
       // Activar y desactivar clase #activar-clase
       //console.log('Se ha adjuntado el comportamiento al botón de activar clase.');
 
-      //GRABAR CLASE    
-      let recorder, stream;
-
-      
-
-      async function startRecording() {
-        stream = await navigator.mediaDevices.getDisplayMedia({
-          "video": {
-            "displaySurface": "browser",
-            "width": { max: 1280 },
-            "height": { max: 720 },
-            "frameRate": { max: 15 },
-          },
-          "audio": {
-            echoCancellation: true,
-            noiseSuppression: true,
-            sampleRate: 44100,
-            suppressLocalAudioPlayback: true,
-          },
-          "preferCurrentTab": true,
-          "cursor": 'always',
-        });
-        
-        const options = { mimeType: 'video/webm; codecs=vp9,opus' };
-        recorder = new MediaRecorder(stream, options);
-        
-        const chunks = [];
-        recorder.ondataavailable = e => chunks.push(e.data);
-        
-        recorder.onstop = async () => {
-          const completeBlob = new Blob(chunks, { type: chunks[0].type });
-          downloadRecording(completeBlob);
-          uploadRecording(completeBlob);
-        };
-        
-        recorder.start();
-      }
-
-      function pauseRecording() {
-        if (recorder && recorder.state === "recording") {
-          recorder.pause();
-          // Aquí puedes cambiar el estado del botón o interfaz según sea necesario
-        } else if (recorder && recorder.state === "paused") {
-          recorder.resume();
-          // Cambiar estado del botón o interfaz aquí si es necesario
-        }
-      }
-
-      function stopRecording() {
-        recorder.stop();
-        stream.getTracks().forEach(track => track.stop());
-      }
-
-      // Función para descargar localmente la grabación, se puede adaptar para subir al servidor
-      function downloadRecording(blob) {
-        const url = URL.createObjectURL(blob);
-        const a = document.createElement("a");
-        a.style.display = "none";
-        a.href = url;
-        a.download = "recording.webm";
-        document.body.appendChild(a);
-        a.click();
-        window.URL.revokeObjectURL(url);
-      }
-
-      function uploadRecording(blob) {
-        let formData = new FormData();
-        formData.append('video', blob, "recording.webm");
-        
-        //get parameters from url (idClase)
-        let url = new URL(window.location.href);
-        let idClase = url.searchParams.get("idClase");
-
-        fetch('/clases_profesores/upload', {
-          method: 'POST',
-          body: formData,
-          // send idClase
-          headers: {
-            'idClase': idClase
-          },
-        })
-        .then(response => response.json())
-        .then(data => console.log(data.message))
-        .catch(error => console.error('Error:', error));
-      }
-
-      // Asociar las funciones con los botones
-      document.getElementById("grabar-clase").addEventListener("click", startRecording);
-      document.getElementById("pausar-grabacion").addEventListener("click", pauseRecording);
-      document.getElementById("finalizar-grabacion").addEventListener("click", stopRecording);
 
     }
   };
+
+
+  $('#asignar-estrella').click(function (e) {
+    e.preventDefault();
+    var idClase = $(this).data('id-clase');
+    $.ajax({
+      url: Drupal.url('clases-profesor/asignar-estrella'),
+      type: 'POST',
+      dataType: 'json',
+      data: {
+        idClase: idClase,
+      },
+      success: function (response) {
+        // La lógica para actualizar la interfaz aquí
+        console.log(response);
+        // console.log('Se ha asignado la estrella a la clase.');
+        /*
+          Response:
+          0: 
+          command: "insert"
+          data: "Nueva cantidad: 5"
+          method: "html"
+          selector: "#selector-para-mensajes"
+          settings: null
+        */
+        // console.log(response[0].data);
+        // Agregar mensaje de éxito en la interfaz, #selector-para-mensajes
+        $('#selector-para-mensajes').html(response[0].data);
+      },
+      error: function (jqXHR, textStatus, errorThrown) {
+        console.log(errorThrown);
+      }        
+    });
+  });
+
+
+        //GRABAR CLASE    
+        let recorder, stream;
+
+      
+
+        async function startRecording() {
+          stream = await navigator.mediaDevices.getDisplayMedia({
+            "video": {
+              "displaySurface": "browser",
+              "width": { max: 1280 },
+              "height": { max: 720 },
+              "frameRate": { max: 15 },
+            },
+            "audio": {
+              echoCancellation: true,
+              noiseSuppression: true,
+              sampleRate: 44100,
+              suppressLocalAudioPlayback: true,
+            },
+            "preferCurrentTab": true,
+            "cursor": 'always',
+          });
+          
+          const options = { mimeType: 'video/webm; codecs=vp9,opus' };
+          recorder = new MediaRecorder(stream, options);
+          
+          const chunks = [];
+          recorder.ondataavailable = e => chunks.push(e.data);
+          
+          recorder.onstop = async () => {
+            const completeBlob = new Blob(chunks, { type: chunks[0].type });
+            downloadRecording(completeBlob);
+            uploadRecording(completeBlob);
+          };
+          
+          recorder.start();
+        }
+  
+        function pauseRecording() {
+          if (recorder && recorder.state === "recording") {
+            recorder.pause();
+            // Aquí puedes cambiar el estado del botón o interfaz según sea necesario
+          } else if (recorder && recorder.state === "paused") {
+            recorder.resume();
+            // Cambiar estado del botón o interfaz aquí si es necesario
+          }
+        }
+  
+        function stopRecording() {
+          recorder.stop();
+          stream.getTracks().forEach(track => track.stop());
+        }
+  
+        // Función para descargar localmente la grabación, se puede adaptar para subir al servidor
+        function downloadRecording(blob) {
+          const url = URL.createObjectURL(blob);
+          const a = document.createElement("a");
+          a.style.display = "none";
+          a.href = url;
+          a.download = "recording.webm";
+          document.body.appendChild(a);
+          a.click();
+          window.URL.revokeObjectURL(url);
+        }
+  
+        function uploadRecording(blob) {
+          let formData = new FormData();
+          formData.append('video', blob, "recording.webm");
+          
+          //get parameters from url (idClase)
+          let url = new URL(window.location.href);
+          let idClase = url.searchParams.get("idClase");
+  
+          fetch('/clases_profesores/upload', {
+            method: 'POST',
+            body: formData,
+            // send idClase
+            headers: {
+              'idClase': idClase
+            },
+          })
+          .then(response => response.json())
+          .then(data => console.log(data.message))
+          .catch(error => console.error('Error:', error));
+        }
+  
+        // Asociar las funciones con los botones
+        document.getElementById("grabar-clase").addEventListener("click", startRecording);
+        document.getElementById("pausar-grabacion").addEventListener("click", pauseRecording);
+        document.getElementById("finalizar-grabacion").addEventListener("click", stopRecording);
+  
+
 })(jQuery, Drupal);
