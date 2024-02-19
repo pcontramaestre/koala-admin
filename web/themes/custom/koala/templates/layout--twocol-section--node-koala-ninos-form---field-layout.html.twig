@@ -21,7 +21,8 @@
 					<p class="text-center">Acumula muchos Koalapuntos para desbloquear nuevos trajes y profesiones</p>
 					<div class="estrella">
 						<img src="/themes/custom/koala/images/estrella.png">
-						<div class="texto">1.250
+						<div class="texto">
+							<span class="total-estrellas">0</span>
 							<span>Estrellas</span>
 						</div>
 					</div>
@@ -34,6 +35,7 @@
 		{% if content.second %}
 			<div {{ region_attributes.second.addClass('layout__region', 'layout__region--second') }}>
 				{{ content.second }}
+				{{ drupal_view('estrellas_acumuladas_koalas', 'block_1') }}
 			</div>
 		{% endif %}
 
