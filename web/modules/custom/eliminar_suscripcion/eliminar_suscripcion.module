@@ -1,0 +1,16 @@
+<?php
+/**
+ * Implements hook_theme().
+ */
+function eliminar_suscripcion_theme($existing, $type, $theme, $path) {
+  return [
+    'eliminar-suscripcion' => [
+      'variables' => [
+        'language' => NULL,
+      ],
+      'template' => 'eliminar-usuario',
+    ],
+  ];
+}
+
+

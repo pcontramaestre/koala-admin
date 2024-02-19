@@ -1,0 +1,7 @@
+eliminar_suscripcion.content:
+  path: '/eliminar_suscripcion'
+  defaults:
+    _controller: '\Drupal\eliminar_suscripcion\Controller\EliminarSuscripcionController::showForm'
+    _title: 'Eliminar Suscripcion'
+  requirements:
+    _permission: 'access content'  

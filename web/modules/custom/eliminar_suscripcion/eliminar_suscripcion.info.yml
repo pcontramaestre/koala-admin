@@ -1,0 +1,8 @@
+name: Eliminar suscripcion
+type: module
+description: 'Permite a los usuarios con rol padre eliminar su suscripcion activa.'
+core_version_requirement: ^9 || ^10
+package: Custom
+dependencies:
+  - drupal:node
+  - drupal:user
