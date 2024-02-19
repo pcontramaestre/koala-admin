@@ -28,11 +28,27 @@ class EstrellaController extends ControllerBase {
         // Verificar que el campo existe y es del tipo esperado.
         if ($node->hasField('field_estrellas_obtenidas')) {
           $estrellasActuales = (int) $node->get('field_estrellas_obtenidas')->value;
+          //$alumno_relacionado = $node->get('field_alumno_relacionado')->entity;
+          //$alumno_relacionado = $node->get('field_alumno_relacionado')->getValue();
+          //$alumno_relacionado = $alumno_relacionado[0]['target_id'];
+
+
           // Comprobar si ya se alcanzó el número máximo de estrellas.
           if ($estrellasActuales < $maxEstrellas) {
             // Incrementar el número de estrellas y guardar el nodo.
             $node->set('field_estrellas_obtenidas', min($estrellasActuales + 1, $maxEstrellas));
             $node->save();
+
+            // Guardar la estrella en el usuario relacionado.
+            //$user = \Drupal\user\Entity\User::load($alumno_relacionado);
+            //comprobar si field_estrellas_acumuladas esta vacio, si es asi, se le asigna 0, si no, se le suma 1
+            //if (empty($user->get('field_estrellas_acumuladas')->value)) {
+            //  $user->set('field_estrellas', 1);
+            //} else {
+            //  $total_estrellas = (int) $user->get('field_estrellas_acumuladas')->value;
+            //  $user->set('field_estrellas_acumuladas', $total_estrellas + 1);
+            //}
+            //$user->save();
 
             return new JsonResponse(['success' => TRUE, 'message' => 'Estrella agregada correctamente a clase ' . $idClase]);
           } else {
