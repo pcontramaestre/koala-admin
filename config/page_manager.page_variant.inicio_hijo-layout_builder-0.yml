@@ -5,6 +5,7 @@ dependencies:
   config:
     - page_manager.page.inicio_hijo
     - views.view.clase_hijo
+    - views.view.estrellas_acumuladas_koalas
     - views.view.hijo
     - views.view.koalas_avatares_ninos
     - views.view.mis_mundos_perfil
@@ -100,6 +101,22 @@ variant_settings:
             views_label: ''
             items_per_page: none
           weight: 0
+          additional:
+            layout_builder_styles_style:
+              separacion_superior_mt_5: 0
+        5bff94d4-c4e6-450e-8ea9-3af54e7da401:
+          uuid: 5bff94d4-c4e6-450e-8ea9-3af54e7da401
+          region: third
+          configuration:
+            id: 'views_block:estrellas_acumuladas_koalas-block_1'
+            label: ''
+            label_display: '0'
+            provider: views
+            context_mapping: {  }
+            views_label: ''
+            items_per_page: none
+            exposed: {  }
+          weight: 1
           additional:
             layout_builder_styles_style:
               separacion_superior_mt_5: 0

@@ -1,0 +1,39 @@
+uuid: fa95455a-3c24-48d9-8508-7dcd17be1a11
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_estrellas_acumuladas
+  module:
+    - multiple_registration
+    - user
+third_party_settings:
+  multiple_registration:
+    user_additional_register_form_required:
+      authenticated: 0
+      profesor: 0
+      padre: 0
+      hijo: 0
+    user_additional_register_form:
+      authenticated: 0
+      profesor: 0
+      padre: 0
+      hijo: 0
+id: user.user.field_estrellas_acumuladas
+field_name: field_estrellas_acumuladas
+entity_type: user
+bundle: user
+label: 'Estrellas acumuladas'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  min: 0
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

@@ -246,7 +246,7 @@ display:
             external: false
             replace_spaces: false
             path_case: none
-            trim_whitespace: false
+            trim_whitespace: true
             alt: ''
             rel: ''
             link_class: ''
@@ -260,7 +260,7 @@ display:
             more_link: false
             more_link_text: ''
             more_link_path: ''
-            strip_tags: false
+            strip_tags: true
             trim: false
             preserve_tags: ''
             html: false
@@ -367,7 +367,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<div class=\"koala-nino\" id=\"{{ tid }}\">\r\n   <div class=\"title\">{{ name }} </div>\r\n   <div class=\"descripcion\">{{ description__value }}</div>\r\n   <div class=\"imagen\">{{ field_imagen_del_koala }}</div>\r\n</div>"
+            text: "<div class=\"koala-nino\" id=\"{{ tid }}\">\r\n   <div class=\"title\">{{ name }} </div>\r\n   <div class=\"descripcion\">{{ description__value }}</div>\r\n   <div class=\"imagen\">{{ field_imagen_del_koala }}</div>\r\n   <span class=\"puntos d-none\">{{ field_puntos_requeridos }}</span>\r\n</div>\r\n<span class=\"mensaje-bloqueado d-none\">\r\n  Se necesitan {{ field_puntos_requeridos }} estrellas para desbloquear este Koala\r\n</span>"
             make_link: false
             path: ''
             absolute: false

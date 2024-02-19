@@ -10,6 +10,7 @@ dependencies:
     - field.field.user.user.field_celular
     - field.field.user.user.field_direcc
     - field.field.user.user.field_direccion
+    - field.field.user.user.field_estrellas_acumuladas
     - field.field.user.user.field_first_login
     - field.field.user.user.field_nacionalidad
     - field.field.user.user.field_nombre_del_acudiente
@@ -97,6 +98,15 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 8
+    region: content
+  field_estrellas_acumuladas:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 23
     region: content
   field_first_login:
     type: boolean

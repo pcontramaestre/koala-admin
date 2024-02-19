@@ -1,0 +1,51 @@
+uuid: 1220f340-8e86-4309-837c-6da2bc8a519a
+langcode: es
+status: true
+dependencies:
+  module:
+    - system
+    - user
+id: 11_sumar_estrellas_koalas
+label: '11 Sumar estrellas koalas'
+code: |2
+    jQuery(document).ready(function($) {
+      // Suma de estrellas acumuladas y mostrar en cuadro de estrellas obtenidas
+      var cantidad_estrellas = 0;
+    	$('.view-estrellas-acumuladas-koalas table.table tbody tr').each(function() {
+        var estrellas = $(this).find('td').text();
+        cantidad_estrellas += parseInt(estrellas);
+      });
+      $('.total-estrellas').text(cantidad_estrellas);
+      var total_estrellas = parseInt($('.total-estrellas').text());
+      //Desbloquear avatares 
+      $('.field--name-field-selecc.field--widget-options-buttons .form-item-field-selecc').each(function() {
+        var puntos = parseInt($(this).find('.puntos').text());
+        if (puntos > total_estrellas) {
+          $(this).find('.mensaje-bloqueado').removeClass('d-none');
+          $(this).find('label').css('pointer-events', 'none');
+          $(this).find('span.field-content').css({'background': '#8080808f'});
+          $(this).find('image').css({'filter': 'grayscale(100%)'});
+        }
+      });  
+  	});
+
+    
+noscript: ''
+noscriptRegion: {  }
+jquery: true
+header: false
+preprocess: true
+conditions:
+  user_role:
+    id: user_role
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+    roles:
+      hijo: hijo
+  request_path:
+    id: request_path
+    negate: false
+    pages: "/hijo\r\n/hijo/*\r\n*/hijo/*"
+contexts: {  }
+conditions_require_all: true

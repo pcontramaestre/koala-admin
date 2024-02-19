@@ -461,7 +461,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<div class=\"estrella\">\r\n   <img src=\"/themes/custom/koala/images/estrella.png\">\r\n   <div class=\"texto\">1.250  <span>Estrellas</span></div>\r\n</div>"
+            text: "<div class=\"estrella\">\r\n   <img src=\"/themes/custom/koala/images/estrella.png\">\r\n   <div class=\"texto\"><span class=\"total-estrellas\">1.250</span>  <span>Estrellas</span></div>\r\n</div>"
             make_link: false
             path: ''
             absolute: false
