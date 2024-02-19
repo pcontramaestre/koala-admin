@@ -21,8 +21,7 @@ use Drupal\views\ViewExecutable;
  * Implements hook_form_FORM_ID_alter() for agendar_clase node edit form.
  */
 function enviar_correo_clase_agendada_gratis_form_alter(array &$form, FormStateInterface $form_state, $form_id) {
-  // Agregar un #submit handler personalizado para enviar el correo.
-  //dump($form_id);
+  // Agregar un #submit handler personalizado para enviar el correo.  
     if ($form_id === 'agendar_clase_node_form' || $form_id === 'node_agendar_clase_agendar_clases_form') {
       $form['actions']['submit']['#submit'][] = 'enviar_correo_clase_agendada_gratis_send_email';
     }
@@ -94,12 +93,6 @@ function enviar_correo_clase_agendada_gratis_send_email(array &$form, FormStateI
 
   // Get value radio field_sexo_n.
   $sexo = $form_state->getValue('field_sexo_n');
-
-  // Obtener el field_nombre_del_acudiente del usuario actual
-  // $query = \Drupal::entityQuery('user');
-  // $query->condition('uid', $uid);
-  // $entity_ids = $query->execute();
-  // $user = \Drupal\user\Entity\User::load(array_shift($entity_ids));
   $password = '123456-' . $uid;
   // Numero random para el correo del 100 al 999.
   $random = rand(100, 999);
@@ -151,8 +144,6 @@ function enviar_correo_clase_agendada_gratis_send_email(array &$form, FormStateI
   // Crear un nuevo nodo de tipo koala_ninos. con los campos 
   // field_describe_tu_koala, field_hijo_relacionado
   // Crea un nodo de tipo "horarios_profesores".
-
-
   $title = 'Mi primer Koala';
   $description = 'Mi primer Koala descripción';
 
@@ -175,20 +166,6 @@ function enviar_correo_clase_agendada_gratis_send_email(array &$form, FormStateI
     // Mensaje de error. "El koala del niñ@ no se ha creado correctamente".
     \Drupal::messenger()->addMessage(\Drupal::translation()->translate('El koala del niñ@ no se ha creado correctamente'));
   }
-
-
-
-
-  // Obtener los valores necesarios del formulario.
-  // $fecha_clase = $values['field_fecha_de_la_cita']->value;
-  // $hora_clase = $values['field_hora_clase']->value;
-  // $titulo = $values['title']->value;
-
-  // dump field_hora_clase and field_fecha_de_la_cita
-//  var_dump('field_hora_clase and field_fecha_de_la_cita');
-  // dump($form_state->getValue('field_hora_clase'));
-  // dump($form_state->getValue('field_fecha_de_la_cita'));
-
   // Save field_hora_clase (type text) and field_fecha_de_la_cita (Number of seconds after 12am) to datetime field field_fecha_cita_oculta
   $fecha_clase_save = $form_state->getValue('field_fecha_de_la_cita');  
   $fecha_clase_save = $fecha_clase_save[0]['value'];
@@ -196,10 +173,6 @@ function enviar_correo_clase_agendada_gratis_send_email(array &$form, FormStateI
   $hora_clase_save = $form_state->getValue('field_hora_clase');
   $hora_clase_save = $hora_clase_save[0]['value'];
 
-  
-
-
-  // dump($fecha_clase_save);
   // Convierte los segundos a horas y minutos
   $horas = gmdate('H', $hora_clase_save);
   $minutos = gmdate('i', $hora_clase_save);
@@ -210,28 +183,12 @@ function enviar_correo_clase_agendada_gratis_send_email(array &$form, FormStateI
   
 $fechaHoraTexto = $fecha_clase_save .' '. $horaFormateada;
 
-
-
-
-//$fechaHoraTexto = $fecha_clase_save;
-//dump($fechaHoraTexto);
-//convertir en texto a $fechaHoraTexto
-//dump(strtotime($fechaHoraTexto));
-
 // Crea un objeto DateTime a partir del texto combinado
 $fechaHoraObjeto = \DateTime::createFromFormat('d-m-Y H:i:s', $fechaHoraTexto);
 
 //convertir $fechaHoraObjeto a 'd-m-Y\TH:i:s format for datetime field in drupal
-
-
-
 // Obtiene la fecha formateada
 $fechaFormateada = $fechaHoraObjeto->format('d-m-Y\TH:i:s');
-//dump($fechaFormateada);
-
-//dump($fechaFormateada);
-
-
 $form_state->setValue('field_alumno_relacionado', $newidhijo);
 $form_state->setValue('field_id_texto_alumno', $newidhijo);
 
@@ -304,10 +261,38 @@ $form_state->setValue('field_pencil_id_clase', $space_id);
   // Verifica si el objeto es una instancia de NodeInterface y obtiene el ID del nodo.
   if ($node instanceof NodeInterface) {
     $nid = $node->id();
-    // Realiza las acciones necesarias con el ID del nodo.
-    // Por ejemplo, muestra un mensaje con el ID del nodo.
-    //dump($nid);
     $node = Node::load($nid);
+    // Titulo del nodo asignar_clase_a_estudiante. Asignar clase a estudiante + nombre del niño.
+    $title = 'Asignar clase a estudiante ' . $nombre_nino;
+    // Crea un nodo de tipo "asignar_clase_a_estudiante".
+    $new_node = Node::create([
+      'type' => 'asignar_clase_a_estudiante',
+      'title' => $title,
+    ]);
+    // Establecer el valor del campo 'field_seleccionar_clase_agendada'
+    $new_node->set('field_seleccionar_clase_agendada', $nid);
+    // Guardar el nodo
+    $new_node->save();
+    // Obtener el ID del nodo recién creado
+    $new_node_id = $new_node->id();
+    $numero_clase = 0;
+
+        // Buscar en el tipo de contenido clases_estudiantes el campo field_numero_de_clase y que sea igual al numero de nodos encontrados. (Ambos son numeros).
+      // Get the EntityTypeManager.
+      $entityTypeManager = \Drupal::service('entity_type.manager');
+      // Get the Node entity Query service.
+      $query = $entityTypeManager->getStorage('node')->getQuery();
+      // Add conditions to the query.
+      $query->condition('type', 'clases_estudiantes');
+      $query->condition('field_numero_de_clase', $numero_clase);
+      // Execute the query and get the result.
+      $nids = $query->execute();
+
+      $nid_clases_estudiantes = array_shift($nids);
+      $node_clase_asignada = Node::load($new_node_id);
+      $node_clase_asignada->set('field_clase_a_asignar', $nid_clases_estudiantes);
+      $node_clase_asignada->save();
+
 
     if ($node instanceof NodeInterface) {
       try {
@@ -316,13 +301,13 @@ $form_state->setValue('field_pencil_id_clase', $space_id);
         $node->set('field_id_texto_alumno', $newidhijo);
         $node->set('field_pencil_id_estudiante', $create_user_pencil['userId']);
         $node->set('field_pencil_url_clase', $space_lync_url);
-        $node->set('field_pencil_id_clase', $space_id);                
+        $node->set('field_pencil_id_clase', $space_id);   
+        $node->set('field_clase_asignada', $new_node_id);             
         $node->save();
         \Drupal::messenger()->addMessage('Node saved successfully ID: '.$newidhijo); 
       }
       catch (\Exception $e) {
         \Drupal::messenger()->addMessage($e->getMessage(), 'error');  
-        //dump('myerrorid', $e);
       }
     }
     
@@ -437,8 +422,6 @@ function enviar_correo_clase_agendada_gratis_mail($key, &$message, $params) {
       $message['body'][] = $params['message'];
       $message['headers'] = $params['headers'];
       $message['attachments'] = $params['attachments'];
-      
-
       break;
   }
 }
