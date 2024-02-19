@@ -7,6 +7,7 @@ dependencies:
     - field.storage.node.field_logros_cumplidos
     - field.storage.node.field_mensaje_para_el_nino
     - field.storage.node.field_observaciones_del_profesor
+    - field.storage.node.field_ruta_video_clase
     - field.storage.user.field_nombre_del_hijo
     - field.storage.user.field_nombres_y_apellidos_del_pr
     - field.storage.user.field_padre
@@ -1825,6 +1826,68 @@ display:
           multi_type: separator
           separator: '|'
           field_api_classes: false
+        field_ruta_video_clase:
+          id: field_ruta_video_clase
+          table: node__field_ruta_video_clase
+          field: field_ruta_video_clase
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: true
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: true
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: basic_string
+          settings: {  }
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
         nothing:
           id: nothing
           table: views
@@ -1837,7 +1900,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<div class=\"resumen-clase\" id=\"id-resumen-{{ nid }}\" user=\"{{ uid }}\">\r\n  <div class=\"header d-flex\">\r\n    <div>Resumen de la clase</div>\r\n    <div>{{ created }}</div>\r\n  </div>\r\n  <div class=\"resumen-video\">\r\n    <img src=\"/themes/custom/koala/images/resumen-clase.png\">\r\n  </div>\r\n  <div class=\"profesor-clase\">\r\n    <div class=\"avatar\">{{ user_picture }}</div>\r\n    <div class=\"nombre\">{{ field_nombres_y_apellidos_del_pr }}</div>\r\n  </div>\r\n  <div class=\"comentarios-profesor\">\r\n    <div class=\"comentario\">{{ field_mensaje_para_el_nino }}</div>\r\n  </div>\r\n  <div class=\"no-mostrar ids-logros-cumplidos\">{{ field_logros_cumplidos }}</div>\r\n</div>"
+            text: "<div class=\"resumen-clase\" id=\"id-resumen-{{ nid }}\" user=\"{{ uid }}\">\r\n  <div class=\"header d-flex\">\r\n    <div>Resumen de la clase</div>\r\n    <div>{{ created }}</div>\r\n  </div>\r\n  <div class=\"resumen-video\">\r\n    <a href=\"{{ field_ruta_video_clase }}\" target=\"_blank\"><img src=\"/themes/custom/koala/images/resumen-clase.png\"></a>\r\n  </div>\r\n  <div class=\"profesor-clase\">\r\n    <div class=\"avatar\">{{ user_picture }}</div>\r\n    <div class=\"nombre\">{{ field_nombres_y_apellidos_del_pr }}</div>\r\n  </div>\r\n  <div class=\"comentarios-profesor\">\r\n    <div class=\"comentario\">{{ field_mensaje_para_el_nino }}</div>\r\n  </div>\r\n  <div class=\"no-mostrar ids-logros-cumplidos\">{{ field_logros_cumplidos }}</div>\r\n</div>"
             make_link: false
             path: ''
             absolute: false
@@ -1905,6 +1968,7 @@ display:
         - 'config:field.storage.node.field_logros_cumplidos'
         - 'config:field.storage.node.field_mensaje_para_el_nino'
         - 'config:field.storage.node.field_observaciones_del_profesor'
+        - 'config:field.storage.node.field_ruta_video_clase'
         - 'config:field.storage.user.field_nombre_del_hijo'
         - 'config:field.storage.user.field_nombres_y_apellidos_del_pr'
         - 'config:field.storage.user.field_padre'
