@@ -613,6 +613,7 @@ body.node--type-mundos-detalle {
             font-size: 20px;
             cursor: pointer;
             min-width: 189px;
+            position: relative;
             @media screen and (max-width: 800px) {
               min-width: auto;
             }
@@ -769,5 +770,29 @@ body.node--type-mundos-detalle {
         padding-left: 0rem !important;
       }
     }
+  }
+}
+
+.path-hijo {
+  .view-id-estrellas_acumuladas_koalas.view-display-id-block_1 {
+    display: none;
+  }
+  .total-estrellas {
+    font-size:1.3rem;
+    font-weight: 700;
+  }
+
+  .mensaje-bloqueado {
+    display: block;
+    position: absolute;
+    font-size: 0.7rem;
+    padding: 0.5rem 1rem;
+    bottom: 0px;
+    background: #ff6669;
+    color: white;
+    left: 0px;
+    border-bottom-left-radius: 16px;
+    line-height: 1;
+    border-bottom-right-radius: 16px;
   }
 }
