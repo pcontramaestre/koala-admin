@@ -1,4 +1,11 @@
 <?php
+use Drupal\node\Entity\Node;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\user\Entity\User;
+use Drupal\Core\StringTranslation\TranslatableMarkup;
+use Drupal\views\ViewExecutable;
+use \Drupal\node\NodeInterface;
+
 /**
  * Implements hook_theme().
  */
@@ -8,9 +15,64 @@ function eliminar_suscripcion_theme($existing, $type, $theme, $path) {
       'variables' => [
         'language' => NULL,
       ],
-      'template' => 'eliminar-usuario',
+      'template' => 'eliminar-suscripcion',
     ],
   ];
 }
 
+function eliminar_suscripcion_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  
+  if ($form_id == 'node_cancelar_suscripcion_form') {
+    //Agregar en la parte superior del formulario un h2 con el texto "Cancelar suscripción", add class "h2-cancelar-suscripcion"
+    $form['cancelar_suscripcion'] = [
+      '#type' => 'html_tag',
+      '#tag' => 'h2',
+      '#value' => new TranslatableMarkup('Cancelar suscripción'),
+      '#attributes' => [
+        'class' => ['h2-cancelar-suscripcion'],
+      ],
+    ];
 
+    //Not show title field and asign value "Cancelar suscripción - Usuario: " + username
+    $form['title']['#access'] = FALSE;
+    $form['title']['widget'][0]['value']['#default_value'] = new TranslatableMarkup('Cancelar suscripción - Usuario: ') . \Drupal::currentUser()->getAccountName();
+
+    $form['actions']['cancelar_suscripcion_text'] = [
+      '#type' => 'html_tag',
+      '#tag' => 'h2',
+      '#value' => new TranslatableMarkup('¿Quieres cancelar tu suscripción?'),
+      '#attributes' => [
+        'class' => ['text-cancelar-suscripcion'],
+      ],
+    ];
+    //Change the submit button text
+    $form['actions']['submit']['#value'] = new TranslatableMarkup('Si, quiero cancelar');
+    //Add a custom linkk, to redirect to front page
+    $form['actions']['cancel'] = [
+      '#type' => 'link',
+      '#title' =>  new TranslatableMarkup('No, quiero seguir suscrito'),
+      '#url' => \Drupal\Core\Url::fromRoute('<front>'),
+      '#attributes' => [
+        'class' => ['button'],
+      ],
+    ];
+    
+    //Edit legend of field field_razones_cancelar
+    $form['field_razones_cancelar']['widget']['#title'] = new TranslatableMarkup('Cuéntanos cuáles son las razones por las que deseas cancelar tu suscripción');
+    
+    $form['#submit'][] = 'eliminar_suscripcion_form_submit';
+  }
+};
+
+function eliminar_suscripcion_theme_suggestions_alter(array &$suggestions, array $variables, $hook) {
+  if ($hook == 'node_edit_form') {
+    if ($node = \Drupal::routeMatch()->getParameter('node')) {
+      $content_type = $node->bundle();
+    } else {
+      $current_path = \Drupal::service('path.current')->getPath();
+      $path_args = explode('/', $current_path);
+      $content_type = $path_args[3];
+    }
+    $suggestions[] = 'node_edit_form__' . $content_type;
+  }
+}
