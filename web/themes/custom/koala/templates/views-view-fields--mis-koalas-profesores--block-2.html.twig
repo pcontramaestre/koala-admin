@@ -56,11 +56,12 @@
 {%- endfor %}
 {% set id_alum = row.users_field_data_node__field_alumno_relacionado_uid %}
   {# Llamar a la vista logros_taxonomia block_1 #}
-  <div class="row mt-5">
-    <div class="col-md-3">
+  <div class="row mt-5 vistas-tabs">
+    <div class="col-md-3 col-izquierda">      
+      {{ drupal_view('material_proximas_clases', 'block_1',id_alum ) }}
       {{ drupal_view('resumen_de_clases', 'block_2',id_alum ) }}
     </div>
-    <div class="col-md-9">
+    <div class="col-md-9 col-derecha">
        {{ drupal_view('logros_taxonomia', 'block_1') }}
     </div>
   </div>

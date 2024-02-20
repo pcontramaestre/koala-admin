@@ -254,6 +254,108 @@
       }
     }
 
+    .vistas-tabs {
+      .col-izquierda {
+        .views-element-container {
+          width: 100%;
+
+          > .view {
+            display: flex;
+            max-width: 100%;
+            margin-top: 2rem;
+            padding-left: 1rem;
+
+            .view-content.row {
+              margin: 0;
+              width: 100%;
+
+              .views-row {
+                margin: 0;
+                width: 100%;
+                padding: 0;
+
+                > .views-field {
+                  display: block;
+                  width: 100%;
+
+                  .presentacion {
+                    display: flex;
+                    flex-direction: column;
+                    flex-wrap: wrap;
+                    align-content: flex-start;
+                    width: 100%;
+                    gap: 8px;
+
+                    > * {
+                      display: flex;
+                      max-width: 100%;
+                    }
+
+                    > p {
+                      word-break: break-all;
+                      background: #e6f1f1;
+                      font-size: 0.9rem;
+                      margin: 0;
+                      padding: 0.2rem;
+                    }
+                  }
+
+                  .cuadro-proxima {
+                    display: flex;
+                    flex-direction: column;
+                    flex-wrap: wrap;
+                    background: white;
+                    padding: 12px;
+                    border-radius: 15px;
+                    gap: 8px;
+
+                    > h3 {
+                      font-size: 1.2rem;
+                      text-align: center;
+                      font-weight: 700;
+                    }
+
+                    > div {
+                      display: flex;
+                      flex-direction: column;
+                      gap: 4px;
+                      margin-bottom: 1rem;
+                      max-width: 100%;
+                      > span {
+                        font-weight: 700;
+                        font-size: 0.9rem;
+                      }
+                       a {
+                        display: block;
+                        word-break: break-all;
+                        max-width: 100%;
+                        font-size: 0.8rem;
+                        color: #297e88;
+                        font-weight: 700;
+                      }
+
+                      .list-group-item {
+                        border: unset;
+
+                        p {
+                          word-break: break-all;
+                          background: #e6f1f1;
+                          font-size: 0.9rem;
+                          margin: 0;
+                          padding: 0.2rem;
+                          margin-bottom: 8px;
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
     // Resumen de la clase.
     .view-resumen-de-clases {
       .no-mostrar {
