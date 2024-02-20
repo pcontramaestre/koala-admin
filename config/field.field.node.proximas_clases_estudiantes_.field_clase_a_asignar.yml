@@ -1,0 +1,25 @@
+uuid: 2b0ac296-0a80-4766-a98d-9a60500f7ae7
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_clase_a_asignar
+    - node.type.proximas_clases_estudiantes_
+id: node.proximas_clases_estudiantes_.field_clase_a_asignar
+field_name: field_clase_a_asignar
+entity_type: node
+bundle: proximas_clases_estudiantes_
+label: 'Clase a asignar'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: views
+  handler_settings:
+    view:
+      view_name: listado_de_clases
+      display_name: entity_reference_1
+      arguments: {  }
+field_type: entity_reference

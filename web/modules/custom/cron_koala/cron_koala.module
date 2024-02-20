@@ -1,0 +1,24 @@
+<?php
+
+use Drupal\node\Entity\Node;
+use Drupal\Core\Datetime\DrupalDateTime;
+
+/**
+ * Implements hook_cron().
+ */
+function cron_koala_cron() {
+  $current_date = new DrupalDateTime('now');
+  
+  $query = \Drupal::entityQuery('node')
+    ->condition('type', 'agendar_clase')
+    ->condition('field_fecha_cita_oculta', $current_date->format('Y-m-d'), '>=');
+  
+  $nids = $query->execute();
+  $nodes = Node::loadMultiple($nids);
+  
+  // Aquí puedes implementar la lógica o acciones a realizar con los nodos obtenidos
+  foreach ($nodes as $node) {
+    // Ejemplo: registrar en un log o realizar algún proceso
+    \Drupal::logger('cron_koala')->notice('Procesando nodo con ID: @nid', ['@nid' => $node->id()]);
+  }
+}

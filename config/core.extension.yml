@@ -60,12 +60,15 @@ module:
   contextual: 0
   country: 0
   create_koalas: 0
+  cron_koala: 0
   ctools: 0
   ctools_entity_mask: 0
   ctools_views: 0
   custom_child_login: 0
   custom_role_redirect: 0
   custom_user_timezone: 0
+  dashboards: 0
+  dashboards_views: 0
   date_recur: 0
   date_recur_modular: 0
   datetime: 0

@@ -1,0 +1,7 @@
+name: Cron Koala
+type: module
+description: 'Modulo para ejecutar acciones específicas con el cron de Drupal.'
+core_version_requirement: ^8 || ^9
+package: Custom
+dependencies:
+  - drupal:node

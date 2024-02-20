@@ -131,6 +131,7 @@ permissions:
   - 'view own horarios_profesores content'
   - 'view own koala_ninos content'
   - 'view own profile'
+  - 'view own proximas_clases_estudiantes_ content'
   - 'view own suscripciones content'
   - 'view recurring commerce_order'
   - 'view user email addresses'

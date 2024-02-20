@@ -5,11 +5,9 @@ dependencies:
   config:
     - commerce_product.commerce_product_type.default
     - field.field.commerce_product.default.body
-    - field.field.commerce_product.default.field_perio
   module:
     - commerce
     - commerce_product
-    - commerce_recurring
     - field_layout
     - layout_discovery
     - path
@@ -39,12 +37,6 @@ content:
   created:
     type: datetime_timestamp
     weight: 5
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  field_perio:
-    type: commerce_billing_period_default
-    weight: 9
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -85,6 +77,11 @@ content:
     settings:
       size: 60
       placeholder: ''
+    third_party_settings: {  }
+  translation:
+    weight: 10
+    region: content
+    settings: {  }
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete

@@ -1,20 +1,20 @@
-uuid: a8118969-d425-45f4-bd7e-9034a77ea976
+uuid: f6b8da57-cb32-4b96-a7d8-b035a82d1359
 langcode: es
 status: true
 dependencies:
   module:
-    - commerce_product
-    - commerce_recurring
     - field_permissions
+    - node
 third_party_settings:
   field_permissions:
     permission_type: public
-id: commerce_product.field_perio
-field_name: field_perio
-entity_type: commerce_product
-type: commerce_billing_period
-settings: {  }
-module: commerce_recurring
+id: node.field_observaciones_de_la_clase_
+field_name: field_observaciones_de_la_clase_
+entity_type: node
+type: string_long
+settings:
+  case_sensitive: false
+module: core
 locked: false
 cardinality: 1
 translatable: true

@@ -1202,6 +1202,49 @@ display:
         - 'config:field.storage.node.field_observaciones_agregadas_de'
         - 'config:field.storage.node.field_sube_o_arrastra_tu_factura'
         - 'config:field.storage.user.field_nombres_y_apellidos_del_pr'
+  block_1:
+    id: block_1
+    display_title: 'Bloque Facturación de profesores'
+    display_plugin: block
+    position: 1
+    display_options:
+      defaults:
+        footer: false
+      display_description: ''
+      footer:
+        area_text_custom:
+          id: area_text_custom
+          table: views
+          field: area_text_custom
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text_custom
+          empty: false
+          content: '<a href="/admin/vista-facturas-profesores.xlsx" target="_blank">Descargar excel</a>'
+          tokenize: false
+      display_extenders: {  }
+      block_description: 'Vista Administrativa de Facturación de profesores'
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url
+        - 'user.node_grants:view'
+        - user.permissions
+      tags:
+        - 'config:field.storage.node.field_asignar_profesor'
+        - 'config:field.storage.node.field_clases_impartidas'
+        - 'config:field.storage.node.field_estado_de_la_factura'
+        - 'config:field.storage.node.field_horas_a_pagar'
+        - 'config:field.storage.node.field_inasistencias_del_estudian'
+        - 'config:field.storage.node.field_inasistencias_del_profesor'
+        - 'config:field.storage.node.field_mes_de_la_clase'
+        - 'config:field.storage.node.field_metodo_de_pago'
+        - 'config:field.storage.node.field_observaciones_agregadas_de'
+        - 'config:field.storage.node.field_sube_o_arrastra_tu_factura'
+        - 'config:field.storage.user.field_nombres_y_apellidos_del_pr'
   page_1:
     id: page_1
     display_title: Page

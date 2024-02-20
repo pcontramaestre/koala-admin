@@ -1,0 +1,29 @@
+uuid: f4317eca-f933-4c39-823b-03e39f309a92
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_alumno_relacionado
+    - node.type.proximas_clases_estudiantes_
+id: node.proximas_clases_estudiantes_.field_alumno_relacionado
+field_name: field_alumno_relacionado
+entity_type: node
+bundle: proximas_clases_estudiantes_
+label: 'Alumno relacionado'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:user'
+  handler_settings:
+    target_bundles: null
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    filter:
+      type: _none
+    include_anonymous: false
+field_type: entity_reference

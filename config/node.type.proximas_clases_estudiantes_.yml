@@ -1,0 +1,17 @@
+uuid: 685ddc32-2928-47d5-b26a-f98801f78bb2
+langcode: es
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: 'Próximas clases estudiantes'
+type: proximas_clases_estudiantes_
+description: 'Este formulario guarda las próximas clases de los estudiantes. '
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: true

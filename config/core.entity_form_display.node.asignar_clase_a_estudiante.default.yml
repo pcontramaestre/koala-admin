@@ -9,6 +9,7 @@ dependencies:
     - field.field.node.asignar_clase_a_estudiante.field_logros_cumplidos2
     - field.field.node.asignar_clase_a_estudiante.field_marcar_clase_como_finaliza
     - field.field.node.asignar_clase_a_estudiante.field_mensaje_para_el_nino
+    - field.field.node.asignar_clase_a_estudiante.field_observaciones_de_la_clase_
     - field.field.node.asignar_clase_a_estudiante.field_observaciones_del_profesor
     - field.field.node.asignar_clase_a_estudiante.field_ruta_video_clase
     - field.field.node.asignar_clase_a_estudiante.field_seleccionar_clase_agendada
@@ -166,4 +167,5 @@ content:
     third_party_settings: {  }
 hidden:
   field_logros_cumplidos2: true
+  field_observaciones_de_la_clase_: true
   field_ruta_video_clase: true

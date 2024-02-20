@@ -1,0 +1,19 @@
+/modules/contrib/commerce_recurring/src/Cron.php
+
+diff --git a/src/Cron.php b/src/Cron.php
+index 486be46..b808e70 100644
+--- a/src/Cron.php
++++ b/src/Cron.php
+@@ -58,8 +58,10 @@ class Cron implements CronInterface {
+     /** @var \Drupal\advancedqueue\Entity\QueueInterface $recurring_queue */
+     $recurring_queue = $queue_storage->load('commerce_recurring');
+ 
+-    $this->enqueueOrders($recurring_queue);
+-    $this->enqueueSubscriptions($recurring_queue);
++    if(!empty($recurring_queue)){
++      $this->enqueueOrders($recurring_queue);
++      $this->enqueueSubscriptions($recurring_queue);
++    }
+   }
+ 
+   /**

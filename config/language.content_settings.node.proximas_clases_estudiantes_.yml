@@ -1,0 +1,11 @@
+uuid: 3290836c-48ea-495c-98d9-926bf7521be0
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.proximas_clases_estudiantes_
+id: node.proximas_clases_estudiantes_
+target_entity_type_id: node
+target_bundle: proximas_clases_estudiantes_
+default_langcode: site_default
+language_alterable: false

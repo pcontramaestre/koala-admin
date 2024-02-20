@@ -1,0 +1,19 @@
+uuid: 4119b115-7804-44cd-843a-d270240d9d1f
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_comentarios_u_observacione
+    - node.type.proximas_clases_estudiantes_
+id: node.proximas_clases_estudiantes_.field_comentarios_u_observacione
+field_name: field_comentarios_u_observacione
+entity_type: node
+bundle: proximas_clases_estudiantes_
+label: 'Comentarios u observaciones de administración'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

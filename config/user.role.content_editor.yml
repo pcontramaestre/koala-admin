@@ -3,6 +3,7 @@ langcode: es
 status: true
 dependencies:
   config:
+    - dashboards.dashboard.panel_de_control
     - filter.format.basic_html
     - filter.format.full_html
     - filter.format.restricted_html
@@ -20,6 +21,7 @@ dependencies:
     - node.type.horarios_profesores
     - node.type.page
     - node.type.profesores
+    - node.type.proximas_clases_estudiantes_
     - node.type.suscripciones
     - taxonomy.vocabulary.avatar_profesor
     - taxonomy.vocabulary.tags
@@ -33,6 +35,7 @@ dependencies:
     - content_moderation
     - content_translation
     - contextual
+    - dashboards
     - date_recur
     - date_recur_modular
     - entity_print
@@ -80,6 +83,7 @@ permissions:
   - 'administer registration roles'
   - 'administer url aliases'
   - 'administer users'
+  - 'can view panel_de_control dashboard'
   - 'cancel smart date recur instances'
   - 'create agendar_clase content'
   - 'create article content'
@@ -148,6 +152,7 @@ permissions:
   - 'edit any horarios_profesores content'
   - 'edit any image media'
   - 'edit any profesores content'
+  - 'edit any proximas_clases_estudiantes_ content'
   - 'edit any remote_video media'
   - 'edit any suscripciones content'
   - 'edit any video media'
@@ -236,6 +241,7 @@ permissions:
   - 'view any mundos_detalle content'
   - 'view any page content'
   - 'view any profesores content'
+  - 'view any proximas_clases_estudiantes_ content'
   - 'view any suscripciones content'
   - 'view config_pages entity'
   - 'view field_apodo'
@@ -263,6 +269,7 @@ permissions:
   - 'view own horarios_profesores content'
   - 'view own page content'
   - 'view own profesores content'
+  - 'view own proximas_clases_estudiantes_ content'
   - 'view own suscripciones content'
   - 'view own unpublished content'
   - 'view own unpublished media'

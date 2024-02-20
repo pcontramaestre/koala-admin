@@ -28,14 +28,33 @@ function calificar_clase_form_alter(&$form, FormStateInterface $form_state, $for
     if ($node) {
       $field_clase_a_asignar = $node->get('field_clase_a_asignar')->getValue();
       $field_clase_a_asignar = $field_clase_a_asignar[0]['target_id'];
+      
+      $field_seleccionar_clase_agendada = $node->get('field_seleccionar_clase_agendada')->getValue();
+      $field_seleccionar_clase_agendada = $field_seleccionar_clase_agendada[0]['target_id'];
+
+      // Cargar el nodo con el id $field_seleccionar_clase_agendada y obtener el valor del campo field_alumno_relacionado
+      $node_agendar_clase = Node::load($field_seleccionar_clase_agendada);
+      $field_alumno_relacionado = $node_agendar_clase->get('field_alumno_relacionado')->getValue();
+      $field_alumno_relacionado = $field_alumno_relacionado[0]['target_id'];
+
+      $nodos_proximas_clases = buscarProximasClases($field_alumno_relacionado);
+      // Abrir el nodo "clases_estudiantes" con el id $nodos_proximas_clases y obtener el valor del campo field_numero_de_clase
+      $node_proximas_clases = Node::load($nodos_proximas_clases);
+      $field_numero_de_clase_proximas_clases = $node_proximas_clases->get('field_numero_de_clase')->getValue();
+      $field_numero_de_clase_proximas_clases = $field_numero_de_clase_proximas_clases[0]['value'];    
+
     } else {
       // Mensaje de error
       \Drupal::messenger()->addMessage( \Drupal::translation()->translate('No se pudo cargar el nodo del formulario Asignar Clase a Estudiante con ID: @nid', ['@nid' => $nid] ), 'error');
     }
     //$field_clase_a_asignar   = 0;
     // Cargar el nodo con el id $field_clase_a_asignar y obtener los valores del campo referencia de entidad field_logros_de_la_clase
-    $node = Node::load($field_clase_a_asignar);
-    $field_logros_de_la_clase = $node->get('field_logros_de_la_clase')->getValue();    
+    //$node = Node::load($field_clase_a_asignar);
+    $node = Node::load($nodos_proximas_clases);
+    $field_logros_de_la_clase = $node->get('field_logros_de_la_clase')->getValue();
+    $field_numero_de_clase = $node->get('field_numero_de_clase')->getValue();
+    $field_numero_de_clase = (int) $field_numero_de_clase[0]['value'];
+   
     /* 
       Del nodo node_asignar_clase_a_estudiante_edit_form editar el campo field_logros_cumplidos para que solo muestre los tid de los logros que no han sido cumplidos
     */
@@ -46,6 +65,27 @@ function calificar_clase_form_alter(&$form, FormStateInterface $form_state, $for
       $nombre_del_logro = $term->getName();
       $form['field_logros_cumplidos']['widget']['#options'][$tid] = $nombre_del_logro;
     }
+
+    // //Agregar un campo de texto para las observaciones en caso de que sea la primera vez que se califica la clase
+    // $field_observaciones = $form['field_observaciones']['widget'];
+    // $field_observaciones['#type'] = 'textarea';
+    // $field_observaciones['#title'] = new TranslatableMarkup('Observaciones');
+    // $field_observaciones['#description'] = new TranslatableMarkup('Escriba las observaciones que considere necesarias');
+    // $form['field_observaciones']['widget'] = $field_observaciones;
+
+
+
+    // //Agregar un campo de texto para las observaciones en caso de que sea la primera vez que se califica la clase. Debe ir despues de field_logros_cumplidos. Campo obligatorio
+    if( $field_numero_de_clase == 0) {
+      $form['field_observaciones_de_la_clase_'] = [
+        '#type' => 'textarea',
+        '#title' => new TranslatableMarkup('Observaciones de la primera clase'),
+        '#description' => new TranslatableMarkup('Escriba las observaciones que considere necesarias para que la administración asigne el nivel correspondiente al estudiante'),
+        '#required' => TRUE,
+        '#weight' => 10,
+      ];
+    }
+
 
     //dump($form['field_logros_cumplidos']['widget']['#options']);
     foreach (array_keys($form['actions']) as $action) {
@@ -61,7 +101,16 @@ function callback_submit_asignar_clase_a_estudiante_submit(&$form, FormStateInte
   // $response->send();
   // Obtener el valor del campo boleano field_marcar_clase_como_finaliza
   $field_marcar_clase_como_finaliza = $form_state->getValue('field_marcar_clase_como_finaliza');
+
+  //Obtener el campo boleano field_el_nino_no_asistio_a_la_cl
+  $field_el_nino_no_asistio_a_la_clase = $form_state->getValue('field_el_nino_no_asistio_a_la_cl');
+  $field_observaciones_de_la_clase_ = $form_state->getValue('field_observaciones_de_la_clase_');  
+
   if (in_array(1, $field_marcar_clase_como_finaliza)) {
+
+    // Asignar el valor $field_observaciones_de_la_clase_ al campo field_observaciones_de_la_clase
+    $form_state->setValue('field_observaciones_de_la_clase', $field_observaciones_de_la_clase_);
+
     // Obtener el valor del campo field_clase_agendada
     $field_clase_agendada = $form_state->getValue('field_seleccionar_clase_agendada');
     $field_clase_agendada = $field_clase_agendada[0]['target_id'];
@@ -70,27 +119,37 @@ function callback_submit_asignar_clase_a_estudiante_submit(&$form, FormStateInte
     // Obtener el uid del usuario creador de la clase
     $uid = $node->get('uid')->getValue();
     $uid = $uid[0]['target_id'];
+
+    //get field_alumno_relacionado
+    $field_alumno_relacionado = $node->get('field_alumno_relacionado')->getValue();
+    $field_alumno_relacionado = $field_alumno_relacionado[0]['target_id'];
+
     // convertir uid a entero
     $uid = (int)$uid;
     $node->save();
 
-    /* 
-      Usar $uid para buscar los nodos de tipo "suscripciones" que tengan el uid del padre, tambien filtrar por el campo "field_fecha_de_finalizacion_de_l" que sea mayor a la fecha actual,
-      y ordenar de menor a mayor por el id del nodo, y obtener el primer elemento.
-    */
-    // $uid = 150;
-    // $query = \Drupal::entityQuery('node')
-    //   ->condition('type', 'suscripciones')
-    //   ->condition('uid', $uid)
-    //   ->sort('nid', 'ASC')
-    //   ->range(0, 1);
+    if (in_array(0,$field_el_nino_no_asistio_a_la_clase)){      
+      $field_clase_a_asignar = buscarProximasClases($field_alumno_relacionado);     
+      $node_clases_estudiantes = Node::load($field_clase_a_asignar);
+      $field_numero_de_clase = $node_clases_estudiantes->get('field_numero_de_clase')->getValue();
+      $field_numero_de_clase = (int) $field_numero_de_clase[0]['value'];
+      $nuevo_numero_de_clase = $field_numero_de_clase + 1;
+      $field_clase_a_asignar = buscarPorNumeroDeClase($nuevo_numero_de_clase);
+      // buscar el nodo de tipo proximas_clases_estudiantes_ con el campo field_alumno_relacionado igual al valor de $field_alumno_relacionado
+      $query_proximas_clases = \Drupal::entityQuery('node')
+      ->condition('type', 'proximas_clases_estudiantes_')
+      ->condition('field_alumno_relacionado', $field_alumno_relacionado);
+      $nids = $query_proximas_clases->execute();
+      $nodos = \Drupal\node\Entity\Node::loadMultiple($nids);
+      $nodo_proximas_clases_estudiantes = reset($nodos);
+      //set field_clase_a_asignar
+      $nodo_proximas_clases_estudiantes->set('field_clase_a_asignar', $field_clase_a_asignar);
+      $nodo_proximas_clases_estudiantes->save(); 
+    }
 
-    // $nids = $query->execute();
-    // dump($nids);
 
 
-    //$uid = 150; // Reemplazar por el valor correcto del uid del padre
-
+    // Obtener el nodo de tipo "suscripciones" con el uid obtenido
     $query = \Drupal::entityTypeManager()->getStorage('node')->getQuery();
     $query->condition('type', 'suscripciones')
     ->condition('uid', $uid)
@@ -146,4 +205,49 @@ function callback_submit_asignar_clase_a_estudiante_submit(&$form, FormStateInte
   }
 
 
+}
+
+
+/**
+ * Buscar nodos de tipo proximas_clases_estudiantes_ que tengan el campo field_alumno_relacionado igual al valor de $field_alumno_relacionado
+ * @param string $field_alumno_relacionado
+ * @return string $field_clase_a_asignar_x
+ */
+
+function buscarProximasClases($field_alumno_relacionado)  {
+  $query_proximas_clases = \Drupal::entityQuery('node')
+    ->condition('type', 'proximas_clases_estudiantes_')
+    ->condition('field_alumno_relacionado', $field_alumno_relacionado);
+  $nids = $query_proximas_clases->execute();
+
+  if (!empty($nids)) {
+    $nodos = \Drupal\node\Entity\Node::loadMultiple($nids);
+    $nodo_proximas_clases_estudiantes = reset($nodos);
+    //get field_clase_a_asignar
+    $field_clase_a_asignar_x = $nodo_proximas_clases_estudiantes->get('field_clase_a_asignar')->getValue();
+    
+    $field_clase_a_asignar_x = $field_clase_a_asignar_x[0]['target_id'];
+    
+    return $field_clase_a_asignar_x;
+  } else {
+    \Drupal::messenger()->addMessage( \Drupal::translation()->translate('No se encontraron nodos de tipo proximas_clases_estudiantes_'), 'error');
+  }
+}
+
+function buscarPorNumeroDeClase($numero_de_clase) {
+  $query_proximas_clases = \Drupal::entityQuery('node')
+    ->condition('type', 'clases_estudiantes')
+    ->condition('field_numero_de_clase', $numero_de_clase);
+  $nids = $query_proximas_clases->execute();
+
+  if (!empty($nids)) {
+    $nodos = \Drupal\node\Entity\Node::loadMultiple($nids);
+    $nodo_proximas_clases_estudiantes = reset($nodos);
+    // get node id
+    $field_clase_a_asignar_x = $nodo_proximas_clases_estudiantes->id();
+
+    return $field_clase_a_asignar_x;
+  } else {
+    \Drupal::messenger()->addMessage( \Drupal::translation()->translate('No se encontraron nodos de tipo clases_estudiantes'), 'error');
+  }
 }

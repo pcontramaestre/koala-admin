@@ -293,6 +293,22 @@ $form_state->setValue('field_pencil_id_clase', $space_id);
       $node_clase_asignada->set('field_clase_a_asignar', $nid_clases_estudiantes);
       $node_clase_asignada->save();
 
+    //Crea un nodo de tipo "proximas_clases_estudiantes_" con los campos field_alumno_relacionado y field_clase_a_asignar
+    $node_proximas_clases = Node::create([
+      'type' => 'proximas_clases_estudiantes_',
+      'title' => 'Proximas clases del estudiante ' . $nombre_nino,
+      'field_alumno_relacionado' => $newidhijo,
+      'field_clase_a_asignar' => $nid_clases_estudiantes,
+    ]); 
+    // Guarda el nodo creado.
+    if ($node_proximas_clases->save()) {
+      // Node saved successfully.
+      // Mensaje de exito. "El nodo se ha creado correctamente".
+      \Drupal::messenger()->addMessage(\Drupal::translation()->translate('El nodo se ha creado correctamente'). 'NID Clases Estudiantes: ' . $nid_clases_estudiantes . 'NID Clase Asignada: ' . $new_node_id);
+    } else {
+      // Mensaje de error. "El nodo no se ha creado correctamente".
+      \Drupal::messenger()->addMessage(\Drupal::translation()->translate('El nodo no se ha creado correctamente'));
+    }
 
     if ($node instanceof NodeInterface) {
       try {

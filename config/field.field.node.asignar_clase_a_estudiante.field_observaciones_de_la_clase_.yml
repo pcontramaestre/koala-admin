@@ -1,0 +1,19 @@
+uuid: dfaf5b50-93c2-4300-bf81-215638d82e07
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_observaciones_de_la_clase_
+    - node.type.asignar_clase_a_estudiante
+id: node.asignar_clase_a_estudiante.field_observaciones_de_la_clase_
+field_name: field_observaciones_de_la_clase_
+entity_type: node
+bundle: asignar_clase_a_estudiante
+label: 'Observaciones de la clase gratuita'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

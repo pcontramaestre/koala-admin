@@ -14,8 +14,8 @@ configuration:
   payment_method_types:
     - credit_card
   collect_billing_information: true
-  publishable_key: pk_test_51NmUKBIu7h86YAEanZVWdko7euWi3B97s5J3nIDFbXejdJEtSFNG9uljn4S52wdtCYTNetlXuEYYvP4c67RnUD2F00VtXvyOFl
-  secret_key: sk_test_51NmUKBIu7h86YAEa3iOKm3AnAmp3NMSIaqoQZZFUGWtd02IdpnShBBLTFIX84HTVn8vsPsM5oBkpjsEPM7o1erP500nuSNLiLO
+  publishable_key: pk_test_51NAWW1LZbE57rVAimqq2xenX4EZu38yTICi86dCrXRZswm0QP7YOHHwED4uWOqw6I5dO8f10mUJ6Ue3gLb4xdLza00gdLq3RKi
+  secret_key: sk_test_51NAWW1LZbE57rVAiw4CsJOZJEsa2BlnndAFjlNfCn9fkVsxoWqC8ttUwCIIEkZAwipZr1aIZaVXtKBKh05IPJEPH005CRjVcPS
   enable_credit_card_icons: true
 conditions:
   -

@@ -71,10 +71,16 @@ class EliminarUsuarioController extends ControllerBase {
       
       // Eliminar nodos de $suscripciones
       $this->eliminarNodosPorTipo($user_id, 'suscripciones');
+
+      // Eliminar nodos de proximas_clases_estudiantes_ 
+      $this->eliminarNodosPorTipo($user_id, 'proximas_clases_estudiantes_');
       
       // Eliminar $usuarios_hijos
       $usuarios_hijos = \Drupal::entityTypeManager()->getStorage('user')->loadByProperties(['field_padre' => $user_id]);
       foreach ($usuarios_hijos as $hijo) {
+        $hijo_id = $hijo->id();
+        // Eliminar nodos de proximas_clases_estudiantes_ con el field_alumno_relacionado
+        $this->eliminarNodosPorCampo($hijo_id, 'proximas_clases_estudiantes_');
         $hijo->delete();
       }
       
@@ -115,6 +121,21 @@ class EliminarUsuarioController extends ControllerBase {
    */
   protected function eliminarNodosPorTipo($user_id, $tipo) {
     $query = \Drupal::entityQuery('node')->condition('type', $tipo)->condition('uid', $user_id);
+    $nids = $query->execute();
+    $nodos = \Drupal\node\Entity\Node::loadMultiple($nids);
+    foreach ($nodos as $nodo) {
+      $nodo->delete();
+    }
+  }
+
+  /**
+   * Función auxiliar para eliminar nodos de un tipo específico al campo field_alumno_relacionado
+   * 
+   * @param integer $user_id ID del usuario.
+   * @param string $tipo Tipo de nodo a eliminar.
+   */
+  protected function eliminarNodosPorCampo($user_id, $tipo) {
+    $query = \Drupal::entityQuery('node')->condition('type', $tipo)->condition('field_alumno_relacionado', $user_id);
     $nids = $query->execute();
     $nodos = \Drupal\node\Entity\Node::loadMultiple($nids);
     foreach ($nodos as $nodo) {

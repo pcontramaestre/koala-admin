@@ -1,0 +1,49 @@
+uuid: ee4b1325-a88f-4903-af11-6acf0a049a89
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.field.node.proximas_clases_estudiantes_.field_alumno_relacionado
+    - field.field.node.proximas_clases_estudiantes_.field_clase_a_asignar
+    - field.field.node.proximas_clases_estudiantes_.field_comentarios_u_observacione
+    - node.type.proximas_clases_estudiantes_
+  module:
+    - user
+id: node.proximas_clases_estudiantes_.default
+targetEntityType: node
+bundle: proximas_clases_estudiantes_
+mode: default
+content:
+  field_alumno_relacionado:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_clase_a_asignar:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  field_comentarios_u_observacione:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  langcode: true

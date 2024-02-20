@@ -208,3 +208,4 @@ modification+hijo+user+user: user.user.default
 'use  The form mode default linked to  node entity( slider_clases_koalas )': node.slider_clases_koalas.default
 'use  The form mode default linked to  node entity( cancelar_suscripcion )': node.cancelar_suscripcion.default
 'use  The form mode cancelar_suscripcion linked to  node entity( cancelar_suscripcion )': node.cancelar_suscripcion.cancelar_suscripcion
+'use  The form mode default linked to  node entity( proximas_clases_estudiantes_ )': node.proximas_clases_estudiantes_.default
