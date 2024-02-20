@@ -1,0 +1,12 @@
+uuid: 3c96aac8-cfca-478d-8faa-61aab740eec6
+langcode: es
+status: true
+dependencies: {  }
+id: separacion_superior_mt_2
+label: 'Separación superior MT-2'
+classes: mt-2
+type: component
+group: default
+block_restrictions: {  }
+layout_restrictions: {  }
+weight: 0

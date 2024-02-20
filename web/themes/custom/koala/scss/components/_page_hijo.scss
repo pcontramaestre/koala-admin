@@ -220,17 +220,20 @@ body.node--type-mundos-detalle {
                         .titulo-numero {
                           background-color: white;
                           width: 100%;
-                          min-height: 60px;
+                          min-height: 80px;
                           padding: 0.5rem;
                           border-bottom-left-radius: 16px;
                           border-bottom-right-radius: 16px;
+                          display: flex;
+                          align-items: center;
+                          line-height: 1.1;
 
                           a {
                             text-decoration: none;
                             color: black;
 
                             .titulo {
-                              font-size: 24px;
+                              font-size: 1.2rem;
                               font-weight: 700;
                             }
 
@@ -794,5 +797,72 @@ body.node--type-mundos-detalle {
     border-bottom-left-radius: 16px;
     line-height: 1;
     border-bottom-right-radius: 16px;
+  }
+}
+
+// Superpoderes
+.path-hijo {
+  .block-views-blocksuperpoderes-block-1 {
+    > h2 {
+      font-size: 1.2rem;
+      font-weight: 500;
+      margin-bottom: 1rem;
+    }
+  }
+
+  .view-logros-por-estudiante.view-id-logros_por_estudiante {
+    display: none;
+  }
+  .view-superpoderes {
+    max-width: 350px;
+
+    .view-content.row {      
+      gap: 1rem;
+
+      .logros-superpoderes {
+        display: none;
+      }
+
+
+      .superpoder {
+        padding: 0.5rem;
+        border-radius: 32px;
+        background: var(--White, #FFF);
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+        display: flex;
+
+        .icono {
+          width: 18%;
+
+          img {
+            max-width: 100%;
+            height: auto;
+          }
+        }
+        .derecha {
+          width: 100%;
+          padding-left: 1rem;
+          padding-right: 1rem;
+
+          .title {
+            font-size: 0.9rem;
+            font-weight: 500;
+          }
+
+          .progress {
+            .progress-bar {
+              font-size: 10px;
+              padding-left: 5px;
+              padding-right: 5px;
+              width: 10%;
+              background: black;
+              min-width: 10%;
+            }
+          }
+        }
+      }
+    }
   }
 }

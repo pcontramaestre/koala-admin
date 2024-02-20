@@ -1,0 +1,21 @@
+uuid: a56f0e21-9de0-4348-9217-74980e720da8
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_color_del_superpoder
+    - node.type.superpoderes
+id: node.superpoderes.field_color_del_superpoder
+field_name: field_color_del_superpoder
+entity_type: node
+bundle: superpoderes
+label: 'Color del superpoder'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: '#FFFFFF'
+default_value_callback: ''
+settings: {  }
+field_type: string

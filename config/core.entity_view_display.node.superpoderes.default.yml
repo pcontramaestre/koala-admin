@@ -1,0 +1,68 @@
+uuid: b2ff7596-ba78-46fc-bc9a-aeb55f3bcd60
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.field.node.superpoderes.field_color_del_superpoder
+    - field.field.node.superpoderes.field_icono_del_superpoder
+    - field.field.node.superpoderes.field_logros
+    - field.field.node.superpoderes.field_posicion
+    - node.type.superpoderes
+  module:
+    - svg_image
+    - user
+id: node.superpoderes.default
+targetEntityType: node
+bundle: superpoderes
+mode: default
+content:
+  field_color_del_superpoder:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  field_icono_del_superpoder:
+    type: image
+    label: above
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_logros:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_posicion:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  langcode: true

@@ -1,0 +1,18 @@
+uuid: 422d5c88-64fd-42a6-84dc-6fd31a322d6b
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.superpoderes
+id: node.superpoderes.title
+field_name: title
+entity_type: node
+bundle: superpoderes
+label: 'Título del superpoder'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

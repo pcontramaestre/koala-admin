@@ -1,0 +1,32 @@
+uuid: 7f5165e8-c295-49f5-99dc-f01b6c82f7ca
+langcode: es
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.superpoderes.field_color_del_superpoder
+    - field.field.node.superpoderes.field_icono_del_superpoder
+    - field.field.node.superpoderes.field_logros
+    - field.field.node.superpoderes.field_posicion
+    - node.type.superpoderes
+  module:
+    - user
+id: node.superpoderes.teaser
+targetEntityType: node
+bundle: superpoderes
+mode: teaser
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  field_color_del_superpoder: true
+  field_icono_del_superpoder: true
+  field_logros: true
+  field_posicion: true
+  langcode: true

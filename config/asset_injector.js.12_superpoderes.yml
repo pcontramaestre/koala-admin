@@ -1,0 +1,58 @@
+uuid: b9720140-d4cd-4fb0-86ca-85bff62bbf72
+langcode: es
+status: true
+dependencies:
+  module:
+    - system
+id: 12_superpoderes
+label: '12. Superpoderes'
+code: |-
+  //jQuery dom loaded
+  jQuery(document).ready(function($) {
+
+    $('.view-superpoderes .superpoder .color').each(function(index, el) {
+      var color = $(el).text().trim();
+      $(el).parent().find('.progress').css('background-color', color);
+    });
+
+
+
+    var arreglo_logros_cumplidos = [];
+    var logroscumplidos = $('.views-field-field-logros-cumplidos > .field-content').text().trim();
+    arreglo_logros_cumplidos = logroscumplidos.split(',');
+    for (var i = 0; i < arreglo_logros_cumplidos.length; i++) {
+      arreglo_logros_cumplidos[i] = arreglo_logros_cumplidos[i].trim();
+    }
+    var logros_superpoderes = [];
+    $('.view-superpoderes .logros-superpoderes').each(function(index, el) {
+      var logros = $(el).text().trim();
+      logros_superpoderes = logros.split(',');
+      total100 = logros_superpoderes.length;
+      var contador = 0;
+      for (var i = 0; i < logros_superpoderes.length; i++) {
+        //contar cuantos logros se repiten
+        if (arreglo_logros_cumplidos.indexOf(logros_superpoderes[i].trim()) != -1) {
+          contador++;
+        }
+      }
+      //calcular porcentaje
+      var porcentaje = (contador * 100) / total100;
+      var porcentaje_redondeado = Math.round(porcentaje);
+      console.log(porcentaje_redondeado + "%");
+      $(el).parent().parent().find('.progress-bar').css('width', porcentaje_redondeado + '%');
+      $(el).parent().parent().find('.progress-bar').text(porcentaje_redondeado + '%');
+    });
+
+  });
+noscript: ''
+noscriptRegion: {  }
+jquery: true
+header: false
+preprocess: true
+conditions:
+  request_path:
+    id: request_path
+    negate: false
+    pages: "/hijo\r\n*/hijo\r\n*/hijo/*"
+contexts: {  }
+conditions_require_all: true

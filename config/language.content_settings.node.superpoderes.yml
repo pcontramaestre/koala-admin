@@ -1,0 +1,16 @@
+uuid: 43c999d1-0f52-499a-882b-36410820bbd3
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.superpoderes
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+id: node.superpoderes
+target_entity_type_id: node
+target_bundle: superpoderes
+default_langcode: site_default
+language_alterable: false

@@ -8,7 +8,9 @@ dependencies:
     - views.view.estrellas_acumuladas_koalas
     - views.view.hijo
     - views.view.koalas_avatares_ninos
+    - views.view.logros_por_estudiante
     - views.view.mis_mundos_perfil
+    - views.view.superpoderes
   module:
     - layout_builder
     - views
@@ -119,6 +121,40 @@ variant_settings:
           weight: 1
           additional:
             layout_builder_styles_style:
+              separacion_superior_mt_5: 0
+        36f70e38-80d4-48dd-ab19-2c8077c4df6a:
+          uuid: 36f70e38-80d4-48dd-ab19-2c8077c4df6a
+          region: third
+          configuration:
+            id: 'views_block:superpoderes-block_1'
+            label: ''
+            label_display: visible
+            provider: views
+            context_mapping: {  }
+            views_label: ''
+            items_per_page: none
+            exposed: {  }
+          weight: 2
+          additional:
+            layout_builder_styles_style:
+              separacion_superior_mt_2: separacion_superior_mt_2
+              separacion_superior_mt_5: 0
+        9592d6c3-8827-42b4-9daf-309ff9da0e20:
+          uuid: 9592d6c3-8827-42b4-9daf-309ff9da0e20
+          region: third
+          configuration:
+            id: 'views_block:logros_por_estudiante-block_1'
+            label: ''
+            label_display: '0'
+            provider: views
+            context_mapping: {  }
+            views_label: ''
+            items_per_page: none
+            exposed: {  }
+          weight: 3
+          additional:
+            layout_builder_styles_style:
+              separacion_superior_mt_2: 0
               separacion_superior_mt_5: 0
       third_party_settings: {  }
 page: inicio_hijo

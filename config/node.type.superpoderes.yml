@@ -1,0 +1,17 @@
+uuid: 402add20-2ebf-4420-8950-b456125d5bb8
+langcode: es
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Superpoderes
+type: superpoderes
+description: 'Crea las categorías de los superpoderes de los Koalas'
+help: ''
+new_revision: false
+preview_mode: 0
+display_submitted: true

@@ -37,6 +37,7 @@ permissions:
   - 'view any page content'
   - 'view any profesores content'
   - 'view any slider_clases_koalas content'
+  - 'view any superpoderes content'
   - 'view field_hora_clase'
   - 'view field_logros'
   - 'view own article content'
@@ -48,4 +49,5 @@ permissions:
   - 'view own horarios_de_trabajo content'
   - 'view own horarios_profesores content'
   - 'view own koala_ninos content'
+  - 'view own superpoderes content'
   - 'view user email addresses'
