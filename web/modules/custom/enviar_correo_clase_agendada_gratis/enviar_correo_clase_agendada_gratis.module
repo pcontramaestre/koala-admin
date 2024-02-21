@@ -271,6 +271,8 @@ $form_state->setValue('field_pencil_id_clase', $space_id);
     ]);
     // Establecer el valor del campo 'field_seleccionar_clase_agendada'
     $new_node->set('field_seleccionar_clase_agendada', $nid);
+    
+    $new_node->set('field_alumno_relacionado', $newidhijo);
     // Guardar el nodo
     $new_node->save();
     // Obtener el ID del nodo recién creado
@@ -299,6 +301,7 @@ $form_state->setValue('field_pencil_id_clase', $space_id);
       'title' => 'Proximas clases del estudiante ' . $nombre_nino,
       'field_alumno_relacionado' => $newidhijo,
       'field_clase_a_asignar' => $nid_clases_estudiantes,
+      'field_clase_gratis_asignada' => $new_node_id,
     ]); 
     // Guarda el nodo creado.
     if ($node_proximas_clases->save()) {
