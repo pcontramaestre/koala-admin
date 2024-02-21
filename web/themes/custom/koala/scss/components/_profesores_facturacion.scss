@@ -27,11 +27,58 @@
   }
 }
 .path-facturacion {
+
+  .view-resumen-de-clases-profesores {
+    .table-responsive {
+      margin-bottom: 3rem !important;
+      margin: 0 auto;
+      margin-top: 1rem;
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
+      padding: 0rem;
+      border-right: 1px solid var(--Grey-K200, #becaca);
+      border-left: 1px solid var(--Grey-K200, #becaca);
+      border-top: 1px solid var(--Grey-K200, #becaca);
+      table {
+        margin-bottom: 0rem;
+        thead {
+          background-color: #e6f1f1;
+          tr {
+            vertical-align: middle;
+            th {
+              font-weight: 500;
+              color: #727f7f;
+              padding: 1rem;
+              border-right: 1px solid #becaca;
+              line-height: 18px;
+            }
+            #view-field-fecha-de-la-clase-table-column {
+              width: 16%;
+            }
+            .views-field-field-sube-o-arrastra-tu-factura {
+              width: 14%;
+            }
+          }
+        }
+        tbody {
+          tr {
+            --bs-table-striped-bg: white;
+            td {
+              border-right: 1px solid #becaca;
+              padding: 1rem 0.5rem;
+              vertical-align: middle;
+            }            
+          }
+        }
+      }
+    }
+  }
+
   .section {
     #block-koala-content {
       .tab-content {
         #nav-profile {
-          .view-resumen-de-pagos {
+          .view-resumen-de-pagos,.view-resumen-de-clases-profesores {
             .table-responsive {
               margin-bottom: 3rem !important;
               margin: 0 auto;
