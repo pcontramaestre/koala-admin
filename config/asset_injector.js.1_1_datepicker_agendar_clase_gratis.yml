@@ -10,6 +10,10 @@ code: |-
   (function ($) {
     jQuery(document).ready(function($) {
 
+      $('input[id="edit-field-hora-clase-0-value').attr('required', 'required');
+      $('input[name="field_fecha_cita_oculta[0][value][date]"]').attr('required', 'required');        
+      $('input[name="field_fecha_cita_oculta[0][value][time]"]').attr('required', 'required');
+
       //Cambiar horas Local a GMT
       $('.profesor-tr').each(function() {
         var $horaInicio = $(this).find('.hora-inicial-clase');
