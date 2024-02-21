@@ -3,6 +3,7 @@ langcode: es
 status: true
 dependencies:
   config:
+    - dashboards.dashboard.nivelacion_de_alumnos
     - dashboards.dashboard.panel_de_control
     - filter.format.basic_html
     - filter.format.full_html
@@ -83,6 +84,7 @@ permissions:
   - 'administer registration roles'
   - 'administer url aliases'
   - 'administer users'
+  - 'can view nivelacion_de_alumnos dashboard'
   - 'can view panel_de_control dashboard'
   - 'cancel smart date recur instances'
   - 'create agendar_clase content'
