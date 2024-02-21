@@ -3,8 +3,10 @@ langcode: es
 status: true
 dependencies:
   config:
+    - field.field.node.proximas_clases_estudiantes_.field_alumno_nivelado
     - field.field.node.proximas_clases_estudiantes_.field_alumno_relacionado
     - field.field.node.proximas_clases_estudiantes_.field_clase_a_asignar
+    - field.field.node.proximas_clases_estudiantes_.field_clase_gratis_asignada
     - field.field.node.proximas_clases_estudiantes_.field_comentarios_u_observacione
     - node.type.proximas_clases_estudiantes_
   module:
@@ -14,6 +16,16 @@ targetEntityType: node
 bundle: proximas_clases_estudiantes_
 mode: default
 content:
+  field_alumno_nivelado:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 104
+    region: content
   field_alumno_relacionado:
     type: entity_reference_label
     label: above
@@ -29,6 +41,14 @@ content:
       link: true
     third_party_settings: {  }
     weight: 102
+    region: content
+  field_clase_gratis_asignada:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 105
     region: content
   field_comentarios_u_observacione:
     type: basic_string

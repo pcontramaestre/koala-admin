@@ -1,0 +1,22 @@
+uuid: 6587f756-950e-4daa-a785-ebb8430e80ef
+langcode: es
+status: true
+dependencies:
+  module:
+    - field_permissions
+    - node
+third_party_settings:
+  field_permissions:
+    permission_type: public
+id: node.field_alumno_nivelado
+field_name: field_alumno_nivelado
+entity_type: node
+type: boolean
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

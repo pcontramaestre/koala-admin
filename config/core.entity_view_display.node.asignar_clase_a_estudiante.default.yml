@@ -3,6 +3,7 @@ langcode: es
 status: true
 dependencies:
   config:
+    - field.field.node.asignar_clase_a_estudiante.field_alumno_relacionado
     - field.field.node.asignar_clase_a_estudiante.field_clase_a_asignar
     - field.field.node.asignar_clase_a_estudiante.field_el_nino_no_asistio_a_la_cl
     - field.field.node.asignar_clase_a_estudiante.field_logros_cumplidos
@@ -21,6 +22,14 @@ targetEntityType: node
 bundle: asignar_clase_a_estudiante
 mode: default
 content:
+  field_alumno_relacionado:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 111
+    region: content
   field_clase_a_asignar:
     type: entity_reference_label
     label: above

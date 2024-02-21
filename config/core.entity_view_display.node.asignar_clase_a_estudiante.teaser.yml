@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
+    - field.field.node.asignar_clase_a_estudiante.field_alumno_relacionado
     - field.field.node.asignar_clase_a_estudiante.field_clase_a_asignar
     - field.field.node.asignar_clase_a_estudiante.field_el_nino_no_asistio_a_la_cl
     - field.field.node.asignar_clase_a_estudiante.field_logros_cumplidos
@@ -31,6 +32,7 @@ hidden:
   entity_print_view_epub: true
   entity_print_view_pdf: true
   entity_print_view_word_docx: true
+  field_alumno_relacionado: true
   field_clase_a_asignar: true
   field_el_nino_no_asistio_a_la_cl: true
   field_logros_cumplidos: true

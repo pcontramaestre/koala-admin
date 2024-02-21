@@ -1,0 +1,29 @@
+uuid: a4fc1a44-4d7c-4548-8491-06a5f7fa13fd
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_clase_gratis_asignada
+    - node.type.asignar_clase_a_estudiante
+    - node.type.proximas_clases_estudiantes_
+id: node.proximas_clases_estudiantes_.field_clase_gratis_asignada
+field_name: field_clase_gratis_asignada
+entity_type: node
+bundle: proximas_clases_estudiantes_
+label: 'Clase gratis asignada'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      asignar_clase_a_estudiante: asignar_clase_a_estudiante
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

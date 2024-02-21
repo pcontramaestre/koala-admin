@@ -1,0 +1,23 @@
+uuid: b6b4c87e-b198-4c65-bc34-ae03b4c9a7fe
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_alumno_nivelado
+    - node.type.proximas_clases_estudiantes_
+id: node.proximas_clases_estudiantes_.field_alumno_nivelado
+field_name: field_alumno_nivelado
+entity_type: node
+bundle: proximas_clases_estudiantes_
+label: 'Alumno nivelado?'
+description: 'Selecciona aquí si el alumno ha sido ya nivelado después de recibir la clase gratuita'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: Si
+  off_label: 'No'
+field_type: boolean

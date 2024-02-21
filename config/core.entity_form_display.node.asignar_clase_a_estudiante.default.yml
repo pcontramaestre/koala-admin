@@ -3,6 +3,7 @@ langcode: es
 status: true
 dependencies:
   config:
+    - field.field.node.asignar_clase_a_estudiante.field_alumno_relacionado
     - field.field.node.asignar_clase_a_estudiante.field_clase_a_asignar
     - field.field.node.asignar_clase_a_estudiante.field_el_nino_no_asistio_a_la_cl
     - field.field.node.asignar_clase_a_estudiante.field_logros_cumplidos
@@ -166,6 +167,7 @@ content:
     settings: {  }
     third_party_settings: {  }
 hidden:
+  field_alumno_relacionado: true
   field_logros_cumplidos2: true
   field_observaciones_de_la_clase_: true
   field_ruta_video_clase: true

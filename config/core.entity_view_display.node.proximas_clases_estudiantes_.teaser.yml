@@ -4,8 +4,10 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
+    - field.field.node.proximas_clases_estudiantes_.field_alumno_nivelado
     - field.field.node.proximas_clases_estudiantes_.field_alumno_relacionado
     - field.field.node.proximas_clases_estudiantes_.field_clase_a_asignar
+    - field.field.node.proximas_clases_estudiantes_.field_clase_gratis_asignada
     - field.field.node.proximas_clases_estudiantes_.field_comentarios_u_observacione
     - node.type.proximas_clases_estudiantes_
   module:
@@ -24,7 +26,9 @@ hidden:
   entity_print_view_epub: true
   entity_print_view_pdf: true
   entity_print_view_word_docx: true
+  field_alumno_nivelado: true
   field_alumno_relacionado: true
   field_clase_a_asignar: true
+  field_clase_gratis_asignada: true
   field_comentarios_u_observacione: true
   langcode: true
