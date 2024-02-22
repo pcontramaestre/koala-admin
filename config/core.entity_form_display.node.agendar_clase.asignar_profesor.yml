@@ -37,7 +37,6 @@ dependencies:
     - field_layout
     - layout_discovery
     - readonly_field_widget
-    - time_field
     - timepicker
 third_party_settings:
   field_layout:
@@ -87,12 +86,14 @@ content:
       show_description: false
     third_party_settings: {  }
   field_hora_cita_oculta:
-    type: time_widget
+    type: readonly_field_widget
     weight: 6
     region: content
     settings:
-      enabled: false
-      step: 5
+      label: above
+      formatter_type: null
+      formatter_settings: {  }
+      show_description: false
     third_party_settings: {  }
   field_hora_clase:
     type: readonly_field_widget

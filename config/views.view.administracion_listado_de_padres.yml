@@ -1,29 +1,30 @@
-uuid: e4199588-367e-4de7-a4ff-260f54f444da
+uuid: 2a4c07f6-0300-4ce4-ac8e-483e308e5db7
 langcode: es
 status: true
 dependencies:
   config:
-    - field.storage.node.field_alumno_relacionado
-    - field.storage.node.field_asignar_profesor
-    - field.storage.node.field_clase_asignada
-    - field.storage.node.field_fecha_cita_oculta
-    - field.storage.node.field_observaciones_cancelar_cla
-    - field.storage.user.field_nombre_del_hijo
-    - field.storage.user.field_nombres_y_apellidos_del_pr
-    - node.type.cancelar_clases_profesores
+    - field.storage.user.field_celular
+    - field.storage.user.field_direccion
+    - field.storage.user.field_nombre_del_acudiente
+    - field.storage.user.field_pais
+    - field.storage.user.field_suscripcion_activa
+    - field.storage.user.user_picture
+    - image.style.thumbnail
+    - user.role.administrator
+    - user.role.content_editor
+    - user.role.padre
   module:
     - better_exposed_filters
-    - datetime
-    - node
-    - smart_date
+    - options
+    - svg_image
     - user
-id: clases_sin_profesor
-label: 'Clases sin profesor'
+id: administracion_listado_de_padres
+label: 'Administración - Listado de padres'
 module: views
 description: ''
 tag: ''
-base_table: node_field_data
-base_field: nid
+base_table: users_field_data
+base_field: uid
 display:
   default:
     id: default
@@ -31,213 +32,19 @@ display:
     display_plugin: default
     position: 0
     display_options:
-      title: 'Clases sin profesor'
+      title: 'Administración - Listado de padres'
       fields:
-        nid_1:
-          id: nid_1
-          table: node_field_data
-          field: nid
-          relationship: field_clase_agendada_que_cancelo
-          group_type: group
-          admin_label: ''
-          entity_type: node
-          entity_field: nid
-          plugin_id: field
-          label: 'ID de la clase'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: number_integer
-          settings:
-            thousand_separator: ''
-            prefix_suffix: true
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        title:
-          id: title
-          table: node_field_data
-          field: title
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: node
-          entity_field: title
-          plugin_id: field
-          label: ''
-          exclude: true
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: false
-            ellipsis: false
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: string
-          settings:
-            link_to_entity: false
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        field_clase_asignada:
-          id: field_clase_asignada
-          table: node__field_clase_asignada
-          field: field_clase_asignada
-          relationship: field_clase_agendada_que_cancelo
-          group_type: group
-          admin_label: ''
-          plugin_id: field
-          label: ''
-          exclude: true
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: target_id
-          type: entity_reference_label
-          settings:
-            link: false
-          group_column: target_id
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
         created:
           id: created
-          table: node_field_data
+          table: users_field_data
           field: created
           relationship: none
           group_type: group
           admin_label: ''
-          entity_type: node
+          entity_type: user
           entity_field: created
           plugin_id: field
-          label: 'Fecha de autoría'
+          label: Creado
           exclude: false
           alter:
             alter_text: false
@@ -294,15 +101,15 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        field_nombres_y_apellidos_del_pr:
-          id: field_nombres_y_apellidos_del_pr
-          table: user__field_nombres_y_apellidos_del_pr
-          field: field_nombres_y_apellidos_del_pr
-          relationship: field_asignar_profesor
+        user_picture:
+          id: user_picture
+          table: user__user_picture
+          field: user_picture
+          relationship: none
           group_type: group
           admin_label: ''
           plugin_id: field
-          label: 'Nombres del profesor'
+          label: Imagen
           exclude: false
           alter:
             alter_text: false
@@ -343,6 +150,78 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
+          click_sort_column: target_id
+          type: image
+          settings:
+            image_link: ''
+            image_style: thumbnail
+            image_loading:
+              attribute: lazy
+            svg_attributes:
+              width: null
+              height: null
+            svg_render_as_image: true
+          group_column: ''
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        name_1:
+          id: name_1
+          table: users_field_data
+          field: name
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: user
+          entity_field: name
+          plugin_id: field
+          label: 'Nombre de usuario'
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
           click_sort_column: value
           type: string
           settings:
@@ -357,15 +236,80 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        field_observaciones_cancelar_cla:
-          id: field_observaciones_cancelar_cla
-          table: node__field_observaciones_cancelar_cla
-          field: field_observaciones_cancelar_cla
+        field_nombre_del_acudiente:
+          id: field_nombre_del_acudiente
+          table: user__field_nombre_del_acudiente
+          field: field_nombre_del_acudiente
           relationship: none
           group_type: group
           admin_label: ''
           plugin_id: field
-          label: 'Observaciones de porque cancela el profesor'
+          label: 'Nombre de padre / Tutor legal'
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: false
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        init:
+          id: init
+          table: users_field_data
+          field: init
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: user
+          entity_field: init
+          plugin_id: field
+          label: 'Correo electrónico inicial'
           exclude: false
           alter:
             alter_text: false
@@ -419,155 +363,15 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        field_fecha_cita_oculta:
-          id: field_fecha_cita_oculta
-          table: node__field_fecha_cita_oculta
-          field: field_fecha_cita_oculta
-          relationship: field_clase_agendada_que_cancelo
+        field_celular:
+          id: field_celular
+          table: user__field_celular
+          field: field_celular
+          relationship: none
           group_type: group
           admin_label: ''
           plugin_id: field
-          label: 'Fecha y hora de la clase'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: smartdate_default
-          settings:
-            timezone_override: ''
-            format: default
-            force_chronological: true
-            add_classes: true
-            time_wrapper: true
-            localize: true
-            parts:
-              start: start
-              end: end
-              duration: '0'
-            duration:
-              separator: ' | '
-              unit: ''
-              decimals: 2
-              suffix: h
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        field_alumno_relacionado:
-          id: field_alumno_relacionado
-          table: node__field_alumno_relacionado
-          field: field_alumno_relacionado
-          relationship: field_clase_agendada_que_cancelo
-          group_type: group
-          admin_label: ''
-          plugin_id: field
-          label: 'Alumno relacionado'
-          exclude: true
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: target_id
-          type: entity_reference_label
-          settings:
-            link: false
-          group_column: target_id
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        field_nombre_del_hijo:
-          id: field_nombre_del_hijo
-          table: user__field_nombre_del_hijo
-          field: field_nombre_del_hijo
-          relationship: field_alumno_relacionado
-          group_type: group
-          admin_label: ''
-          plugin_id: field
-          label: 'Nombre del niño que recibe la clase'
+          label: Celular
           exclude: false
           alter:
             alter_text: false
@@ -622,16 +426,16 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        field_asignar_profesor:
-          id: field_asignar_profesor
-          table: node__field_asignar_profesor
-          field: field_asignar_profesor
-          relationship: field_clase_agendada_que_cancelo
+        field_pais:
+          id: field_pais
+          table: user__field_pais
+          field: field_pais
+          relationship: none
           group_type: group
           admin_label: ''
           plugin_id: field
-          label: 'Asignar profesor'
-          exclude: true
+          label: País
+          exclude: false
           alter:
             alter_text: false
             text: ''
@@ -671,11 +475,10 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          click_sort_column: target_id
-          type: entity_reference_label
-          settings:
-            link: false
-          group_column: target_id
+          click_sort_column: value
+          type: list_default
+          settings: {  }
+          group_column: value
           group_columns: {  }
           group_rows: true
           delta_limit: 0
@@ -685,21 +488,19 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        nid:
-          id: nid
-          table: node_field_data
-          field: nid
-          relationship: field_clase_agendada_que_cancelo
+        field_direccion:
+          id: field_direccion
+          table: user__field_direccion
+          field: field_direccion
+          relationship: none
           group_type: group
           admin_label: ''
-          entity_type: node
-          entity_field: nid
           plugin_id: field
-          label: 'Asignar profesor'
+          label: Dirección
           exclude: false
           alter:
-            alter_text: true
-            text: '<a href="/node/{{ nid }}/edit/asignar_profesor?destination=/dashboard/panel_de_control" target="_blank">Asignar profesor</a>'
+            alter_text: false
+            text: ''
             make_link: false
             path: ''
             absolute: false
@@ -737,10 +538,73 @@ display:
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: value
-          type: number_integer
+          type: basic_string
+          settings: {  }
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        field_suscripcion_activa:
+          id: field_suscripcion_activa
+          table: user__field_suscripcion_activa
+          field: field_suscripcion_activa
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: 'Suscripción activa'
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: boolean
           settings:
-            thousand_separator: ''
-            prefix_suffix: true
+            format: yes-no
+            format_custom_false: ''
+            format_custom_true: ''
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -755,7 +619,7 @@ display:
         type: some
         options:
           offset: 0
-          items_per_page: 10
+          items_per_page: 15
       exposed_form:
         type: bef
         options:
@@ -780,16 +644,26 @@ display:
               secondary_open: false
               reset_button_always_show: false
             filter:
-              field_fecha_cita_oculta_value:
-                plugin_id: bef_datepicker
+              uid:
+                plugin_id: default
+                advanced:
+                  placeholder_text: ''
+                  rewrite:
+                    filter_rewrite_values: ''
+                  collapsible: false
+                  is_secondary: false
+              field_nombre_del_acudiente_value:
+                plugin_id: default
                 advanced:
                   placeholder_text: ''
                   collapsible: false
                   is_secondary: false
       access:
-        type: perm
+        type: role
         options:
-          perm: 'access content'
+          role:
+            content_editor: content_editor
+            administrator: administrator
       cache:
         type: tag
         options: {  }
@@ -797,29 +671,15 @@ display:
       sorts:
         created:
           id: created
-          table: node_field_data
+          table: users_field_data
           field: created
           relationship: none
           group_type: group
           admin_label: ''
-          entity_type: node
+          entity_type: user
           entity_field: created
           plugin_id: date
           order: DESC
-          expose:
-            label: ''
-            field_identifier: ''
-          exposed: false
-          granularity: second
-        field_fecha_cita_oculta_value:
-          id: field_fecha_cita_oculta_value
-          table: node__field_fecha_cita_oculta
-          field: field_fecha_cita_oculta_value
-          relationship: field_clase_agendada_que_cancelo
-          group_type: group
-          admin_label: ''
-          plugin_id: datetime
-          order: ASC
           expose:
             label: ''
             field_identifier: ''
@@ -829,9 +689,9 @@ display:
       filters:
         status:
           id: status
-          table: node_field_data
+          table: users_field_data
           field: status
-          entity_type: node
+          entity_type: user
           entity_field: status
           plugin_id: boolean
           value: '1'
@@ -840,31 +700,19 @@ display:
             operator: ''
             operator_limit_selection: false
             operator_list: {  }
-        type:
-          id: type
-          table: node_field_data
-          field: type
-          entity_type: node
-          entity_field: type
-          plugin_id: bundle
-          value:
-            cancelar_clases_profesores: cancelar_clases_profesores
-          expose:
-            operator_limit_selection: false
-            operator_list: {  }
-        field_asignar_profesor_target_id:
-          id: field_asignar_profesor_target_id
-          table: node__field_asignar_profesor
-          field: field_asignar_profesor_target_id
-          relationship: field_clase_agendada_que_cancelo
+        roles_target_id:
+          id: roles_target_id
+          table: user__roles
+          field: roles_target_id
+          relationship: none
           group_type: group
           admin_label: ''
-          plugin_id: numeric
-          operator: empty
+          entity_type: user
+          entity_field: roles
+          plugin_id: user_roles
+          operator: or
           value:
-            min: ''
-            max: ''
-            value: ''
+            padre: padre
           group: 1
           exposed: false
           expose:
@@ -881,8 +729,99 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
-            min_placeholder: ''
-            max_placeholder: ''
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: true
+        uid:
+          id: uid
+          table: users_field_data
+          field: uid
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: user
+          entity_field: uid
+          plugin_id: user_name
+          operator: in
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: uid_op
+            label: 'Nombre de usuario'
+            description: ''
+            use_operator: false
+            operator: uid_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: uid
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              content_editor: '0'
+              administrator: '0'
+              profesor: '0'
+              padre: '0'
+              hijo: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+        field_nombre_del_acudiente_value:
+          id: field_nombre_del_acudiente_value
+          table: user__field_nombre_del_acudiente
+          field: field_nombre_del_acudiente_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: string
+          operator: contains
+          value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_nombre_del_acudiente_value_op
+            label: 'Nombre de padre / Tutor legal '
+            description: ''
+            use_operator: false
+            operator: field_nombre_del_acudiente_value_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: field_nombre_del_acudiente_value
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              content_editor: '0'
+              administrator: '0'
+              profesor: '0'
+              padre: '0'
+              hijo: '0'
             placeholder: ''
           is_grouped: false
           group_info:
@@ -904,18 +843,74 @@ display:
           row_class: ''
           default_row_class: true
           columns:
-            title: title
-            field_clase_asignada: field_clase_asignada
+            created: created
+            user_picture: user_picture
+            name_1: name_1
+            field_nombre_del_acudiente: field_nombre_del_acudiente
+            init: init
+            field_celular: field_celular
+            field_pais: field_pais
+            field_direccion: field_direccion
+            field_suscripcion_activa: field_suscripcion_activa
           default: '-1'
           info:
-            title:
+            created:
               sortable: false
               default_sort_order: asc
               align: ''
               separator: ''
               empty_column: false
               responsive: ''
-            field_clase_asignada:
+            user_picture:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            name_1:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            field_nombre_del_acudiente:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            init:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            field_celular:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            field_pais:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            field_direccion:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            field_suscripcion_activa:
               sortable: false
               default_sort_order: asc
               align: ''
@@ -930,6 +925,11 @@ display:
           description: ''
       row:
         type: fields
+        options:
+          default_field_elements: true
+          inline: {  }
+          separator: ''
+          hide_empty: false
       query:
         type: views_query
         options:
@@ -938,34 +938,8 @@ display:
           distinct: false
           replica: false
           query_tags: {  }
-      relationships:
-        field_clase_agendada_que_cancelo:
-          id: field_clase_agendada_que_cancelo
-          table: node__field_clase_agendada_que_cancelo
-          field: field_clase_agendada_que_cancelo
-          relationship: none
-          group_type: group
-          admin_label: 'field_clase_agendada_que_cancelo: Contenido'
-          plugin_id: standard
-          required: false
-        field_asignar_profesor:
-          id: field_asignar_profesor
-          table: node__field_asignar_profesor
-          field: field_asignar_profesor
-          relationship: none
-          group_type: group
-          admin_label: 'field_asignar_profesor: Usuario'
-          plugin_id: standard
-          required: false
-        field_alumno_relacionado:
-          id: field_alumno_relacionado
-          table: node__field_alumno_relacionado
-          field: field_alumno_relacionado
-          relationship: field_clase_agendada_que_cancelo
-          group_type: group
-          admin_label: 'field_alumno_relacionado: Usuario'
-          plugin_id: standard
-          required: false
+      relationships: {  }
+      use_ajax: true
       header: {  }
       footer: {  }
       display_extenders: {  }
@@ -974,16 +948,15 @@ display:
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
-        - 'user.node_grants:view'
-        - user.permissions
+        - url
+        - user.roles
       tags:
-        - 'config:field.storage.node.field_alumno_relacionado'
-        - 'config:field.storage.node.field_asignar_profesor'
-        - 'config:field.storage.node.field_clase_asignada'
-        - 'config:field.storage.node.field_fecha_cita_oculta'
-        - 'config:field.storage.node.field_observaciones_cancelar_cla'
-        - 'config:field.storage.user.field_nombre_del_hijo'
-        - 'config:field.storage.user.field_nombres_y_apellidos_del_pr'
+        - 'config:field.storage.user.field_celular'
+        - 'config:field.storage.user.field_direccion'
+        - 'config:field.storage.user.field_nombre_del_acudiente'
+        - 'config:field.storage.user.field_pais'
+        - 'config:field.storage.user.field_suscripcion_activa'
+        - 'config:field.storage.user.user_picture'
   block_1:
     id: block_1
     display_title: Block
@@ -996,13 +969,12 @@ display:
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
-        - 'user.node_grants:view'
-        - user.permissions
+        - url
+        - user.roles
       tags:
-        - 'config:field.storage.node.field_alumno_relacionado'
-        - 'config:field.storage.node.field_asignar_profesor'
-        - 'config:field.storage.node.field_clase_asignada'
-        - 'config:field.storage.node.field_fecha_cita_oculta'
-        - 'config:field.storage.node.field_observaciones_cancelar_cla'
-        - 'config:field.storage.user.field_nombre_del_hijo'
-        - 'config:field.storage.user.field_nombres_y_apellidos_del_pr'
+        - 'config:field.storage.user.field_celular'
+        - 'config:field.storage.user.field_direccion'
+        - 'config:field.storage.user.field_nombre_del_acudiente'
+        - 'config:field.storage.user.field_pais'
+        - 'config:field.storage.user.field_suscripcion_activa'
+        - 'config:field.storage.user.user_picture'

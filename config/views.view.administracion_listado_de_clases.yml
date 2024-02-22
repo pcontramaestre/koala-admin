@@ -1,24 +1,27 @@
-uuid: e4199588-367e-4de7-a4ff-260f54f444da
+uuid: 459fae37-2d94-4d45-909f-49bdabe170b7
 langcode: es
 status: true
 dependencies:
   config:
-    - field.storage.node.field_alumno_relacionado
-    - field.storage.node.field_asignar_profesor
-    - field.storage.node.field_clase_asignada
+    - field.storage.node.field_clase_a_asignar
+    - field.storage.node.field_el_nino_no_asistio_a_la_cl
     - field.storage.node.field_fecha_cita_oculta
-    - field.storage.node.field_observaciones_cancelar_cla
+    - field.storage.node.field_logros_cumplidos
+    - field.storage.node.field_mensaje_para_el_nino
+    - field.storage.node.field_observaciones_de_la_clase_
+    - field.storage.node.field_observaciones_del_profesor
+    - field.storage.user.field_nombre_del_acudiente
     - field.storage.user.field_nombre_del_hijo
     - field.storage.user.field_nombres_y_apellidos_del_pr
-    - node.type.cancelar_clases_profesores
+    - node.type.agendar_clase
   module:
     - better_exposed_filters
     - datetime
     - node
     - smart_date
     - user
-id: clases_sin_profesor
-label: 'Clases sin profesor'
+id: administracion_listado_de_clases
+label: 'Administración - Listado de clases'
 module: views
 description: ''
 tag: ''
@@ -31,19 +34,17 @@ display:
     display_plugin: default
     position: 0
     display_options:
-      title: 'Clases sin profesor'
+      title: 'Administración - Listado de clases'
       fields:
-        nid_1:
-          id: nid_1
-          table: node_field_data
-          field: nid
-          relationship: field_clase_agendada_que_cancelo
+        field_fecha_cita_oculta:
+          id: field_fecha_cita_oculta
+          table: node__field_fecha_cita_oculta
+          field: field_fecha_cita_oculta
+          relationship: none
           group_type: group
           admin_label: ''
-          entity_type: node
-          entity_field: nid
           plugin_id: field
-          label: 'ID de la clase'
+          label: 'Fecha de la clase'
           exclude: false
           alter:
             alter_text: false
@@ -85,205 +86,23 @@ display:
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: value
-          type: number_integer
+          type: smartdate_default
           settings:
-            thousand_separator: ''
-            prefix_suffix: true
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        title:
-          id: title
-          table: node_field_data
-          field: title
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: node
-          entity_field: title
-          plugin_id: field
-          label: ''
-          exclude: true
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: false
-            ellipsis: false
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: string
-          settings:
-            link_to_entity: false
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        field_clase_asignada:
-          id: field_clase_asignada
-          table: node__field_clase_asignada
-          field: field_clase_asignada
-          relationship: field_clase_agendada_que_cancelo
-          group_type: group
-          admin_label: ''
-          plugin_id: field
-          label: ''
-          exclude: true
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: target_id
-          type: entity_reference_label
-          settings:
-            link: false
-          group_column: target_id
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        created:
-          id: created
-          table: node_field_data
-          field: created
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: node
-          entity_field: created
-          plugin_id: field
-          label: 'Fecha de autoría'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: timestamp
-          settings:
-            date_format: medium
-            custom_date_format: ''
-            timezone: ''
+            timezone_override: ''
+            format: default
+            force_chronological: true
+            add_classes: true
+            time_wrapper: true
+            localize: true
+            parts:
+              start: start
+              end: end
+              duration: '0'
+            duration:
+              separator: ' | '
+              unit: ''
+              decimals: 2
+              suffix: h
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -357,217 +176,15 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        field_observaciones_cancelar_cla:
-          id: field_observaciones_cancelar_cla
-          table: node__field_observaciones_cancelar_cla
-          field: field_observaciones_cancelar_cla
-          relationship: none
+        field_nombre_del_acudiente:
+          id: field_nombre_del_acudiente
+          table: user__field_nombre_del_acudiente
+          field: field_nombre_del_acudiente
+          relationship: uid
           group_type: group
           admin_label: ''
           plugin_id: field
-          label: 'Observaciones de porque cancela el profesor'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: basic_string
-          settings: {  }
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        field_fecha_cita_oculta:
-          id: field_fecha_cita_oculta
-          table: node__field_fecha_cita_oculta
-          field: field_fecha_cita_oculta
-          relationship: field_clase_agendada_que_cancelo
-          group_type: group
-          admin_label: ''
-          plugin_id: field
-          label: 'Fecha y hora de la clase'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: smartdate_default
-          settings:
-            timezone_override: ''
-            format: default
-            force_chronological: true
-            add_classes: true
-            time_wrapper: true
-            localize: true
-            parts:
-              start: start
-              end: end
-              duration: '0'
-            duration:
-              separator: ' | '
-              unit: ''
-              decimals: 2
-              suffix: h
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        field_alumno_relacionado:
-          id: field_alumno_relacionado
-          table: node__field_alumno_relacionado
-          field: field_alumno_relacionado
-          relationship: field_clase_agendada_que_cancelo
-          group_type: group
-          admin_label: ''
-          plugin_id: field
-          label: 'Alumno relacionado'
-          exclude: true
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: target_id
-          type: entity_reference_label
-          settings:
-            link: false
-          group_column: target_id
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        field_nombre_del_hijo:
-          id: field_nombre_del_hijo
-          table: user__field_nombre_del_hijo
-          field: field_nombre_del_hijo
-          relationship: field_alumno_relacionado
-          group_type: group
-          admin_label: ''
-          plugin_id: field
-          label: 'Nombre del niño que recibe la clase'
+          label: 'Nombre de padre / Tutor legal'
           exclude: false
           alter:
             alter_text: false
@@ -622,16 +239,79 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        field_asignar_profesor:
-          id: field_asignar_profesor
-          table: node__field_asignar_profesor
-          field: field_asignar_profesor
-          relationship: field_clase_agendada_que_cancelo
+        field_nombre_del_hijo:
+          id: field_nombre_del_hijo
+          table: user__field_nombre_del_hijo
+          field: field_nombre_del_hijo
+          relationship: field_alumno_relacionado
           group_type: group
           admin_label: ''
           plugin_id: field
-          label: 'Asignar profesor'
-          exclude: true
+          label: 'Nombre del hijo'
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: false
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        field_clase_a_asignar:
+          id: field_clase_a_asignar
+          table: node__field_clase_a_asignar
+          field: field_clase_a_asignar
+          relationship: field_clase_asignada
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: 'Clase a asignar'
+          exclude: false
           alter:
             alter_text: false
             text: ''
@@ -685,21 +365,335 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
+        field_logros_cumplidos:
+          id: field_logros_cumplidos
+          table: node__field_logros_cumplidos
+          field: field_logros_cumplidos
+          relationship: field_clase_asignada
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: 'Logros cumplidos'
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: entity_reference_label
+          settings:
+            link: false
+          group_column: target_id
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        field_mensaje_para_el_nino:
+          id: field_mensaje_para_el_nino
+          table: node__field_mensaje_para_el_nino
+          field: field_mensaje_para_el_nino
+          relationship: field_clase_asignada
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: 'Mensaje para el niño'
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: basic_string
+          settings: {  }
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        field_observaciones_de_la_clase_:
+          id: field_observaciones_de_la_clase_
+          table: node__field_observaciones_de_la_clase_
+          field: field_observaciones_de_la_clase_
+          relationship: field_clase_asignada
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: 'Observaciones de la clase gratuita'
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: basic_string
+          settings: {  }
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        field_observaciones_del_profesor:
+          id: field_observaciones_del_profesor
+          table: node__field_observaciones_del_profesor
+          field: field_observaciones_del_profesor
+          relationship: field_clase_asignada
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: 'Observaciones del profesor'
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: basic_string
+          settings: {  }
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        field_el_nino_no_asistio_a_la_cl:
+          id: field_el_nino_no_asistio_a_la_cl
+          table: node__field_el_nino_no_asistio_a_la_cl
+          field: field_el_nino_no_asistio_a_la_cl
+          relationship: field_clase_asignada
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: 'Inasistente el niño?'
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: boolean
+          settings:
+            format: yes-no
+            format_custom_false: ''
+            format_custom_true: ''
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
         nid:
           id: nid
           table: node_field_data
           field: nid
-          relationship: field_clase_agendada_que_cancelo
+          relationship: none
           group_type: group
           admin_label: ''
           entity_type: node
           entity_field: nid
           plugin_id: field
-          label: 'Asignar profesor'
+          label: Operaciones
           exclude: false
           alter:
             alter_text: true
-            text: '<a href="/node/{{ nid }}/edit/asignar_profesor?destination=/dashboard/panel_de_control" target="_blank">Asignar profesor</a>'
+            text: '<a href="/node/{{ nid }}/edit/asignar_profesor?destination=/dashboard/clases_agendamiento">Reasignar profesor o cambiar fecha</a>'
             make_link: false
             path: ''
             absolute: false
@@ -752,15 +746,31 @@ display:
           separator: ', '
           field_api_classes: false
       pager:
-        type: some
+        type: full
         options:
           offset: 0
-          items_per_page: 10
+          items_per_page: 16
+          total_pages: null
+          id: 0
+          tags:
+            next: 'Next ›'
+            previous: '‹ Previous'
+            first: '« First'
+            last: 'Last »'
+          expose:
+            items_per_page: false
+            items_per_page_label: 'Items per page'
+            items_per_page_options: '5, 10, 25, 50'
+            items_per_page_options_all: false
+            items_per_page_options_all_label: '- All -'
+            offset: false
+            offset_label: Offset
+          quantity: 9
       exposed_form:
         type: bef
         options:
           submit_button: Aplicar
-          reset_button: false
+          reset_button: true
           reset_button_label: Reset
           exposed_sorts_label: 'Sort by'
           expose_sort_order: true
@@ -780,10 +790,20 @@ display:
               secondary_open: false
               reset_button_always_show: false
             filter:
+              field_marcar_clase_como_finaliza_value:
+                plugin_id: bef
+                advanced:
+                  sort_options: false
+                  rewrite:
+                    filter_rewrite_values: ''
+                  collapsible: false
+                  is_secondary: false
+                select_all_none: false
+                select_all_none_nested: false
+                display_inline: true
               field_fecha_cita_oculta_value:
                 plugin_id: bef_datepicker
                 advanced:
-                  placeholder_text: ''
                   collapsible: false
                   is_secondary: false
       access:
@@ -806,20 +826,6 @@ display:
           entity_field: created
           plugin_id: date
           order: DESC
-          expose:
-            label: ''
-            field_identifier: ''
-          exposed: false
-          granularity: second
-        field_fecha_cita_oculta_value:
-          id: field_fecha_cita_oculta_value
-          table: node__field_fecha_cita_oculta
-          field: field_fecha_cita_oculta_value
-          relationship: field_clase_agendada_que_cancelo
-          group_type: group
-          admin_label: ''
-          plugin_id: datetime
-          order: ASC
           expose:
             label: ''
             field_identifier: ''
@@ -848,41 +854,238 @@ display:
           entity_field: type
           plugin_id: bundle
           value:
-            cancelar_clases_profesores: cancelar_clases_profesores
+            agendar_clase: agendar_clase
           expose:
             operator_limit_selection: false
             operator_list: {  }
-        field_asignar_profesor_target_id:
-          id: field_asignar_profesor_target_id
-          table: node__field_asignar_profesor
-          field: field_asignar_profesor_target_id
-          relationship: field_clase_agendada_que_cancelo
+        field_marcar_clase_como_finaliza_value:
+          id: field_marcar_clase_como_finaliza_value
+          table: node__field_marcar_clase_como_finaliza
+          field: field_marcar_clase_como_finaliza_value
+          relationship: none
           group_type: group
           admin_label: ''
-          plugin_id: numeric
-          operator: empty
-          value:
-            min: ''
-            max: ''
-            value: ''
+          plugin_id: boolean
+          operator: '='
+          value: ''
           group: 1
-          exposed: false
+          exposed: true
           expose:
             operator_id: ''
-            label: ''
+            label: 'Clases finalizadas'
             description: ''
             use_operator: false
-            operator: ''
+            operator: field_marcar_clase_como_finaliza_value_op
             operator_limit_selection: false
             operator_list: {  }
-            identifier: ''
+            identifier: field_marcar_clase_como_finaliza_value
             required: false
             remember: false
             multiple: false
             remember_roles:
               authenticated: authenticated
+              anonymous: '0'
+              content_editor: '0'
+              administrator: '0'
+              profesor: '0'
+              padre: '0'
+              hijo: '0'
+          is_grouped: true
+          group_info:
+            label: 'Clases finalizadas'
+            description: ''
+            identifier: field_marcar_clase_como_finaliza_value
+            optional: true
+            widget: radios
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items:
+              1:
+                title: Si
+                operator: '='
+                value: '1'
+              2:
+                title: 'No'
+                operator: '='
+                value: '0'
+        field_fecha_cita_oculta_value:
+          id: field_fecha_cita_oculta_value
+          table: node__field_fecha_cita_oculta
+          field: field_fecha_cita_oculta_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: datetime
+          operator: between
+          value:
+            min: ''
+            max: ''
+            value: ''
+            type: date
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_fecha_cita_oculta_value_op
+            label: 'Filtro de fecha clase'
+            description: ''
+            use_operator: false
+            operator: field_fecha_cita_oculta_value_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: field_fecha_cita_oculta_value
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              content_editor: '0'
+              administrator: '0'
+              profesor: '0'
+              padre: '0'
+              hijo: '0'
             min_placeholder: ''
             max_placeholder: ''
+            placeholder: ''
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          use_tokens: false
+        field_nombres_y_apellidos_del_pr_value:
+          id: field_nombres_y_apellidos_del_pr_value
+          table: user__field_nombres_y_apellidos_del_pr
+          field: field_nombres_y_apellidos_del_pr_value
+          relationship: field_asignar_profesor
+          group_type: group
+          admin_label: ''
+          plugin_id: string
+          operator: contains
+          value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_nombres_y_apellidos_del_pr_value_op
+            label: 'Nombres del profesor'
+            description: ''
+            use_operator: false
+            operator: field_nombres_y_apellidos_del_pr_value_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: field_nombres_y_apellidos_del_pr_value
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              content_editor: '0'
+              administrator: '0'
+              profesor: '0'
+              padre: '0'
+              hijo: '0'
+            placeholder: ''
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          use_tokens: 0
+        field_nombre_del_acudiente_value:
+          id: field_nombre_del_acudiente_value
+          table: user__field_nombre_del_acudiente
+          field: field_nombre_del_acudiente_value
+          relationship: uid
+          group_type: group
+          admin_label: ''
+          plugin_id: string
+          operator: contains
+          value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_nombre_del_acudiente_value_op
+            label: 'Nombre de padre / Tutor legal'
+            description: ''
+            use_operator: false
+            operator: field_nombre_del_acudiente_value_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: field_nombre_del_acudiente_value
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              content_editor: '0'
+              administrator: '0'
+              profesor: '0'
+              padre: '0'
+              hijo: '0'
+            placeholder: ''
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          use_tokens: 0
+        field_nombre_del_hijo_value:
+          id: field_nombre_del_hijo_value
+          table: user__field_nombre_del_hijo
+          field: field_nombre_del_hijo_value
+          relationship: field_alumno_relacionado
+          group_type: group
+          admin_label: ''
+          plugin_id: string
+          operator: contains
+          value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_nombre_del_hijo_value_op
+            label: 'Nombre del hijo'
+            description: ''
+            use_operator: false
+            operator: field_nombre_del_hijo_value_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: field_nombre_del_hijo_value
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              content_editor: '0'
+              administrator: '0'
+              profesor: '0'
+              padre: '0'
+              hijo: '0'
             placeholder: ''
           is_grouped: false
           group_info:
@@ -905,17 +1108,9 @@ display:
           default_row_class: true
           columns:
             title: title
-            field_clase_asignada: field_clase_asignada
           default: '-1'
           info:
             title:
-              sortable: false
-              default_sort_order: asc
-              align: ''
-              separator: ''
-              empty_column: false
-              responsive: ''
-            field_clase_asignada:
               sortable: false
               default_sort_order: asc
               align: ''
@@ -939,15 +1134,6 @@ display:
           replica: false
           query_tags: {  }
       relationships:
-        field_clase_agendada_que_cancelo:
-          id: field_clase_agendada_que_cancelo
-          table: node__field_clase_agendada_que_cancelo
-          field: field_clase_agendada_que_cancelo
-          relationship: none
-          group_type: group
-          admin_label: 'field_clase_agendada_que_cancelo: Contenido'
-          plugin_id: standard
-          required: false
         field_asignar_profesor:
           id: field_asignar_profesor
           table: node__field_asignar_profesor
@@ -961,9 +1147,29 @@ display:
           id: field_alumno_relacionado
           table: node__field_alumno_relacionado
           field: field_alumno_relacionado
-          relationship: field_clase_agendada_que_cancelo
+          relationship: none
           group_type: group
           admin_label: 'field_alumno_relacionado: Usuario'
+          plugin_id: standard
+          required: false
+        field_clase_asignada:
+          id: field_clase_asignada
+          table: node__field_clase_asignada
+          field: field_clase_asignada
+          relationship: none
+          group_type: group
+          admin_label: 'field_clase_asignada: Contenido'
+          plugin_id: standard
+          required: false
+        uid:
+          id: uid
+          table: node_field_data
+          field: uid
+          relationship: none
+          group_type: group
+          admin_label: Usuario
+          entity_type: node
+          entity_field: uid
           plugin_id: standard
           required: false
       header: {  }
@@ -974,14 +1180,19 @@ display:
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
+        - url
+        - url.query_args
         - 'user.node_grants:view'
         - user.permissions
       tags:
-        - 'config:field.storage.node.field_alumno_relacionado'
-        - 'config:field.storage.node.field_asignar_profesor'
-        - 'config:field.storage.node.field_clase_asignada'
+        - 'config:field.storage.node.field_clase_a_asignar'
+        - 'config:field.storage.node.field_el_nino_no_asistio_a_la_cl'
         - 'config:field.storage.node.field_fecha_cita_oculta'
-        - 'config:field.storage.node.field_observaciones_cancelar_cla'
+        - 'config:field.storage.node.field_logros_cumplidos'
+        - 'config:field.storage.node.field_mensaje_para_el_nino'
+        - 'config:field.storage.node.field_observaciones_de_la_clase_'
+        - 'config:field.storage.node.field_observaciones_del_profesor'
+        - 'config:field.storage.user.field_nombre_del_acudiente'
         - 'config:field.storage.user.field_nombre_del_hijo'
         - 'config:field.storage.user.field_nombres_y_apellidos_del_pr'
   block_1:
@@ -996,13 +1207,18 @@ display:
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
+        - url
+        - url.query_args
         - 'user.node_grants:view'
         - user.permissions
       tags:
-        - 'config:field.storage.node.field_alumno_relacionado'
-        - 'config:field.storage.node.field_asignar_profesor'
-        - 'config:field.storage.node.field_clase_asignada'
+        - 'config:field.storage.node.field_clase_a_asignar'
+        - 'config:field.storage.node.field_el_nino_no_asistio_a_la_cl'
         - 'config:field.storage.node.field_fecha_cita_oculta'
-        - 'config:field.storage.node.field_observaciones_cancelar_cla'
+        - 'config:field.storage.node.field_logros_cumplidos'
+        - 'config:field.storage.node.field_mensaje_para_el_nino'
+        - 'config:field.storage.node.field_observaciones_de_la_clase_'
+        - 'config:field.storage.node.field_observaciones_del_profesor'
+        - 'config:field.storage.user.field_nombre_del_acudiente'
         - 'config:field.storage.user.field_nombre_del_hijo'
         - 'config:field.storage.user.field_nombres_y_apellidos_del_pr'
