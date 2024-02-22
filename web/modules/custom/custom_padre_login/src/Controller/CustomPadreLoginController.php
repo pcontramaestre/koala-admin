@@ -29,7 +29,9 @@ class CustomPadreLoginController extends ControllerBase {
         user_login_finalize($user);
         $this->messenger()->addMessage($this->t('Ahora estás logueado como el padre seleccionado.'));
       }
-      return new RedirectResponse('/padres');
+      //return new RedirectResponse('/padres');
+      // redireccionar al front <front>
+      return new RedirectResponse('/');
     } else {
       $this->messenger()->addMessage($this->t('No tienes permisos para realizar esta acción.'), MessengerInterface::TYPE_ERROR);
       return new RedirectResponse('/');
