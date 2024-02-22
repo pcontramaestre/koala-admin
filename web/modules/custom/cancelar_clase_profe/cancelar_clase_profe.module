@@ -1,0 +1,29 @@
+<?php
+
+/**
+ * Implements hook_theme().
+ */
+function cancelar_clase_profe_theme($existing, $type, $theme, $path) {
+  return [
+    'cancelar-clase' => [
+      'variables' => [
+        'valores' => NULL,
+      ],
+      'template' => 'cancelar-clase',      
+      'cache' => [
+        'max-age' => 0,
+      ],
+    ],
+    'cancelar-clase-confirmacion' => [
+      'variables' => [
+        'valores' => NULL,
+      ],
+      'template' => 'cancelar-clase-confirmacion',
+      'cache' => [
+        'max-age' => 0,
+      ],
+    ],
+  ];
+}
+
+

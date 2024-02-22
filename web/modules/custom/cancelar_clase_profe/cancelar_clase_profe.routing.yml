@@ -1,0 +1,14 @@
+cancelar_clase_profe.cancelar_clase:
+  path: '/cancelar-clase-profe'
+  defaults:
+    _controller: '\Drupal\cancelar_clase_profe\Controller\CancelarClaseProfeController::cancelarClase'
+    _title: 'Cancelación de Clase'
+  requirements:
+    _permission: 'access content'
+cancelar_clase_profe.confirmar_cancelacion:
+  path: '/confirmar-cancelacion'
+  defaults:
+    _controller: '\Drupal\cancelar_clase_profe\Controller\CancelarClaseProfeController::confirmarCancelacion'
+    _title: 'Confirmar Cancelación'
+  requirements:
+    _permission: 'access content'

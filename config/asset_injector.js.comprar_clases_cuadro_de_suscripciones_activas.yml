@@ -56,7 +56,7 @@ code: |
 
   // Obtener el elemento del div que contiene el valor de las suscripciones activas .derecha .suscripciones-activas span
   var divElement = document.querySelector('.suscripciones .derecha .suscripciones-activas span');
-  divElement.textContent = valorGuardadoSuscripciones;
+  //divElement.textContent = valorGuardadoSuscripciones;
 
 
 
