@@ -1,0 +1,30 @@
+<?php
+
+/**
+ * @file
+ * Custom module to allow parents to log in as their child.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function custom_padre_login_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    case 'help.page.custom_padre_login':
+      return '<p>' . 'Custom Father Login module allows Administrator to log in as their father.' . '</p>';
+  }
+}
+
+/**
+ * Implements hook_permission().
+ */
+function custom_padre_login_permission() {
+  return [
+    'access custom padre login' => [
+      'title' => 'Access Custom Padre Login',
+      'description' => 'Allows administrator to log in as their father.',
+    ],
+  ];
+}

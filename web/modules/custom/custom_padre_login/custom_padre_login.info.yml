@@ -1,0 +1,8 @@
+name: 'Custom Padre Login'
+type: module
+description: 'Permite que el administrador inicie sesion como un padre seleccionado.'
+core_version_requirement: ^9 || ^10
+package: Custom
+dependencies:
+  - drupal:views
+  - drupal:user

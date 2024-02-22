@@ -1,0 +1,7 @@
+custom_padre_login.start_session:
+  path: '/custom-padre-login/{uid}'
+  defaults:
+    _controller: '\Drupal\custom_padre_login\Controller\CustomPadreLoginController::startSession'
+    _title: 'Iniciar sesión como padre'
+  requirements:
+    _access: 'TRUE'
