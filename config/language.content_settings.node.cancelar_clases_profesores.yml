@@ -1,0 +1,11 @@
+uuid: 8f616da3-0a12-4138-9c1f-b9aebd289134
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.cancelar_clases_profesores
+id: node.cancelar_clases_profesores
+target_entity_type_id: node
+target_bundle: cancelar_clases_profesores
+default_langcode: site_default
+language_alterable: false

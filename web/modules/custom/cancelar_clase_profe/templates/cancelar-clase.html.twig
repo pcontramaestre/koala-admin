@@ -2,22 +2,28 @@
   <h2>Cancelación de la clase</h2>  
   {% if valores.permitido == TRUE %}
       <div class="informacion">
-        <p>Estimado profesor {{ valores.nombre_profesor }},</p>
+        <p>Estimado profesor <strong>{{ valores.nombre_profesor }}</strong>,</p>
         <p>Te informamos que la clase con ID: <strong>{{ valores.id_clase }}</strong> va a ser cancelada por usted</p>
-        <p>Fecha de la clase: {{ valores.fecha }}</p>
-        <p>A continuación presione el botón para confirmar la cancelación de la clase</p>
+        <p>Fecha de la clase: <strong>{{ valores.fecha }}</strong></p>
+        {# Agregar un campo textarea para guardar las observaciones del profesor #}
+        {% if valores.diferencia > 18 %}
+          <form action="/confirmar-cancelacion" method="get">
+            <input type="hidden" name="id_clase" value="{{ valores.id_clase }}">
+            <label for="observaciones">Por favor, indique el motivo de la cancelación de la clase (Maximo 300 caracteres)</label>
+            <textarea name="observaciones" id="observaciones" cols="30" rows="10" required  maxlength="300"></textarea>
+            {# Boton de enviar #}
+            <div class="acciones d-flex">
+              <input type="submit"class="btn-cancelar" value="Enviar">
+              <a href="/profesor/calendario" class="btn-volver">Volver</a>
+            </div>
+          </form>
+        {% else %}
+          <div class="informacion-horas">
+            <p>No se puede procesar la cancelación de la clase, ya que debe tener al menos 20 horas de anticipación</p>
+            <a href="/profesor/calendario" class="btn-volver">Volver</a>
+          </div>
+        {% endif %}
       </div>
-      {% if valores.diferencia > 18 %}
-        <div class="acciones d-flex">
-          <a href="/confirmar-cancelacion?id_clase={{valores.id_clase}}" class="btn-cancelar">Confirmar eliminación</a>
-          <a href="/profesor/calendario" class="btn-volver">Volver</a>
-        </div>        
-      {% else %}
-        <div class="informacion-horas">
-          <p>No se puede procesar la cancelación de la clase, ya que debe tener al menos 20 horas de anticipación</p>
-          <a href="/profesor/calendario" class="btn-volver">Volver</a>
-        </div>
-      {% endif %}
   {% else %}
     <div class="informacion-sin-premisos">
       <p>No tiene permisos para cancelar la clase.</p>

@@ -1,0 +1,30 @@
+uuid: 844ee735-0bf8-44d5-9e77-3ea19ad51a44
+langcode: es
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.cancelar_clases_profesores.field_asignar_profesor
+    - field.field.node.cancelar_clases_profesores.field_clase_agendada_que_cancelo
+    - field.field.node.cancelar_clases_profesores.field_observaciones_cancelar_cla
+    - node.type.cancelar_clases_profesores
+  module:
+    - user
+id: node.cancelar_clases_profesores.teaser
+targetEntityType: node
+bundle: cancelar_clases_profesores
+mode: teaser
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  field_asignar_profesor: true
+  field_clase_agendada_que_cancelo: true
+  field_observaciones_cancelar_cla: true
+  langcode: true

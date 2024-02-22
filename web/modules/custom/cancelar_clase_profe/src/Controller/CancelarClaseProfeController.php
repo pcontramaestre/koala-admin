@@ -34,9 +34,12 @@ class CancelarClaseProfeController extends ControllerBase {
   public function confirmarCancelacion(Request $request) {
     // Obtener el parámetro 'id_clase'
     $idClase = $request->query->get('id_clase');
+    $observaciones = $request->query->get('observaciones');
+    //limpiar la variable observaciones, eliminar html, php y tags
+    $observaciones = strip_tags($observaciones);
 
     $valor = array();
-    $valor = $this->verificarProfesor($idClase, 'eliminar');
+    $valor = $this->verificarProfesor($idClase, 'eliminar', $observaciones);
 
     // Lógica para cancelar la clase
     // Aquí podrías usar un render array o cargar directamente una plantilla Twig.
@@ -57,9 +60,7 @@ class CancelarClaseProfeController extends ControllerBase {
    * @param string $tipo (opcional) El tipo de verificación a realizar.
    * @return bool Retorna true si el profesor tiene permiso, de lo contrario retorna false.
    */
-  protected function verificarProfesor($idClase, $tipo = '') {
-    
-    
+  protected function verificarProfesor($idClase, $tipo = '', $observaciones = '') {        
     if ($idClase) {
         // Obtener el usuario actual
       $current_user = \Drupal::currentUser();
@@ -110,14 +111,26 @@ class CancelarClaseProfeController extends ControllerBase {
         $profesor = $node->get('field_asignar_profesor')->getValue();
         $profesor = $profesor[0]['target_id'];
         if ($user_id == $profesor) {
+          $permitido = true;
           $node->field_asignar_profesor->setValue(NULL);
           $success = $node->save();
           if ($success) {
+            //Crear un registro en el tipo de contenido cancelar_clases_profesores
+            $node = \Drupal\node\Entity\Node::create([
+              'type' => 'cancelar_clases_profesores',
+              'title' => 'Clase cancelada por el profesor',
+              'field_asignar_profesor' => $user_id,
+              'field_clase_agendada_que_cancelo' => $idClase,
+              'field_observaciones_cancelar_cla' => $observaciones,
+            ]);
+            $node->save();
+
             $arregloenviar = array(
               'id_clase' => $idClase,
               'profesor' => $profesor,
               'nombre_profesor' => $nombre_profesor,
               'mensaje' => 'La clase ha sido cancelada exitosamente.',
+              'permitido' => $permitido,
               'eliminado' => true,
             );
             return $arregloenviar;
@@ -132,11 +145,13 @@ class CancelarClaseProfeController extends ControllerBase {
             return $arregloenviar;
           }
         } else {
+          $permitido = false;
           $arregloenviar = array(
             'id_clase' => 0,
             'profesor' => 0,
             'nombre_profesor' => '',
             'mensaje' => 'No tienes permiso para cancelar esta clase.',
+            'permitido' => $permitido,
           );
           return $arregloenviar;
         }

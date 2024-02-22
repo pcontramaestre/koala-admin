@@ -1,0 +1,35 @@
+uuid: d527c9c1-997b-49cc-aacc-a213850b83e0
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_asignar_profesor
+    - node.type.cancelar_clases_profesores
+id: node.cancelar_clases_profesores.field_asignar_profesor
+field_name: field_asignar_profesor
+entity_type: node
+bundle: cancelar_clases_profesores
+label: 'Profesor que cancela la clase'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:user'
+  handler_settings:
+    target_bundles: null
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    filter:
+      type: role
+      role:
+        profesor: profesor
+        content_editor: '0'
+        administrator: '0'
+        padre: '0'
+        hijo: '0'
+    include_anonymous: false
+field_type: entity_reference

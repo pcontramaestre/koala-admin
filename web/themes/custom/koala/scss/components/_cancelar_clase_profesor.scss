@@ -1,4 +1,4 @@
-.path-cancelar-clase-profe {
+.path-cancelar-clase-profe,.path-confirmar-cancelacion {
   .cancelar-clase {
     display: flex;
     flex-direction: column;
@@ -20,10 +20,21 @@
       font-weight: 500;
     }
 
+    form {
+      textarea {
+        width: 100%;
+        border-radius: 15px;
+        margin-top: 0.5rem;
+        margin-bottom: 2rem;
+      }
+    }
+
     .acciones {
       gap: 2rem;
+      align-items: center;
+      justify-content: center;
 
-      > a {
+      > a, input[type="submit"] {
         align-items: center;
         gap: 12px;
         border-radius: 40px;        

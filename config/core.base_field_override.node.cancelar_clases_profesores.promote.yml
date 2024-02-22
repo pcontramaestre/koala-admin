@@ -1,0 +1,22 @@
+uuid: 25d6c484-6566-498e-9773-600a8dac9bb6
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.cancelar_clases_profesores
+id: node.cancelar_clases_profesores.promote
+field_name: promote
+entity_type: node
+bundle: cancelar_clases_profesores
+label: 'Promocionado a la página principal'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: Activado
+  off_label: Desactivado
+field_type: boolean

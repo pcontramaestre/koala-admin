@@ -1,0 +1,19 @@
+uuid: 5f52562c-b287-4885-ba4a-4dfcbd2e29fe
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_observaciones_cancelar_cla
+    - node.type.cancelar_clases_profesores
+id: node.cancelar_clases_profesores.field_observaciones_cancelar_cla
+field_name: field_observaciones_cancelar_cla
+entity_type: node
+bundle: cancelar_clases_profesores
+label: Observaciones
+description: 'Ingrese aquí el porqué decidió cancelar la clase'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

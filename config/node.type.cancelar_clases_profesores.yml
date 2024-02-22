@@ -1,0 +1,17 @@
+uuid: d4f73479-7c2d-44d7-b17b-6e0e1470f2f5
+langcode: es
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: 'Cancelar clases profesores'
+type: cancelar_clases_profesores
+description: 'Guarda el registro de las cancelaciones de clases por los profesores'
+help: ''
+new_revision: false
+preview_mode: 0
+display_submitted: true

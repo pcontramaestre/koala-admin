@@ -1,0 +1,29 @@
+uuid: 69840c52-7fdc-46a3-b1ee-da35cac50fb7
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_clase_agendada_que_cancelo
+    - node.type.agendar_clase
+    - node.type.cancelar_clases_profesores
+id: node.cancelar_clases_profesores.field_clase_agendada_que_cancelo
+field_name: field_clase_agendada_que_cancelo
+entity_type: node
+bundle: cancelar_clases_profesores
+label: 'Clase agendada que cancelo'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      agendar_clase: agendar_clase
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

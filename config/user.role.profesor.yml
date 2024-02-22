@@ -15,6 +15,7 @@ dependencies:
     - node.type.agendar_clase
     - node.type.agendar_clase_no_gratis
     - node.type.asignar_clase_a_estudiante
+    - node.type.cancelar_clases_profesores
     - node.type.clases_de_nivelacion
     - node.type.clases_estudiantes
     - node.type.facturacion_profesor
@@ -55,6 +56,7 @@ permissions:
   - access_all_form_modes
   - 'cancel smart date recur instances'
   - 'create audio media'
+  - 'create cancelar_clases_profesores content'
   - 'create document media'
   - 'create facturacion_profesor content'
   - 'create field_apodo'
@@ -150,6 +152,7 @@ permissions:
   - 'view own agendar_clase_no_gratis content'
   - 'view own article content'
   - 'view own asignar_clase_a_estudiante content'
+  - 'view own cancelar_clases_profesores content'
   - 'view own clases_de_nivelacion content'
   - 'view own clases_estudiantes content'
   - 'view own crear_hijos content'
