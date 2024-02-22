@@ -66,6 +66,7 @@ module:
   ctools_entity_mask: 0
   ctools_views: 0
   custom_child_login: 0
+  custom_padre_login: 0
   custom_role_redirect: 0
   custom_user_timezone: 0
   dashboards: 0
