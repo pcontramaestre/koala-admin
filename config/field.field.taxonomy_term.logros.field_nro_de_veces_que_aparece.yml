@@ -1,0 +1,25 @@
+uuid: cb3cb953-b9b7-41ea-9510-e8beaa278309
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_nro_de_veces_que_aparece
+    - taxonomy.vocabulary.logros
+id: taxonomy_term.logros.field_nro_de_veces_que_aparece
+field_name: field_nro_de_veces_que_aparece
+entity_type: taxonomy_term
+bundle: logros
+label: 'Nro de veces que aparece'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  min: 1
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

@@ -1,0 +1,35 @@
+uuid: db842938-bf76-412e-8065-630592516e5d
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.logros.field_nro_de_veces_que_aparece
+    - taxonomy.vocabulary.logros
+  module:
+    - text
+id: taxonomy_term.logros.default
+targetEntityType: taxonomy_term
+bundle: logros
+mode: default
+content:
+  description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_nro_de_veces_que_aparece:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  langcode: true
