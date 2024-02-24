@@ -55,4 +55,21 @@ sections:
           layout_builder_styles_style:
             separacion_superior_mt_5: separacion_superior_mt_5
             separacion_superior_mt_2: 0
+      6b3b9c83-d7b1-4e37-87f7-f196d6e72740:
+        uuid: 6b3b9c83-d7b1-4e37-87f7-f196d6e72740
+        region: content
+        configuration:
+          id: 'views_block:administracion_listado_de_profesores-block_1'
+          label: ''
+          label_display: visible
+          provider: views
+          context_mapping: {  }
+          views_label: ''
+          items_per_page: none
+          exposed: {  }
+        weight: 1
+        additional:
+          layout_builder_styles_style:
+            separacion_superior_mt_5: separacion_superior_mt_5
+            separacion_superior_mt_2: 0
     third_party_settings: {  }

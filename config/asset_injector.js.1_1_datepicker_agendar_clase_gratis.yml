@@ -164,6 +164,11 @@ code: |-
           }
         });
 
+        // Ordernar horasDisponibles por la hora (hora)
+        horasDisponibles.sort(function(a, b) {
+          return convertirHoraAMinutos(a.hora) - convertirHoraAMinutos(b.hora);
+        });
+
         var $divEscogerHorario = $('#id-escoger-horario');
         $divEscogerHorario.empty();
         $divEscogerHorario.append('<span class="w-100 mb-2">Escoge la hora de la clase</span>');
@@ -191,24 +196,24 @@ code: |-
 
           //var $horaAgendada = $(this).find('.hora-cita-agendada');
           //var horaAgendada = $horaAgendada.text().trim();
-          console.log("Hora Agendada: "+horaAgendada);
+          // console.log("Hora Agendada: "+horaAgendada);
           //horaAgendada = horaAgendada.split(':');
           //horaAgendada = horaAgendada[0]+":"+horaAgendada[1];
 
           var $idProfesor = $(this).find('.views-field-field-asignar-profesor-1');
           var idProfesor = $idProfesor.text().trim();
-          console.log("ID Profesor: "+idProfesor);
+          // console.log("ID Profesor: "+idProfesor);
           var fechaAgendada = $(this).find('.views-field-field-fecha-cita-oculta-1').text().trim();
-          console.log("Fecha Agendada: "+fechaAgendada);
+          // console.log("Fecha Agendada: "+fechaAgendada);
           if (fechaAgendada === fecha) {
-            console.log("Fecha encontrada: "+fechaAgendada);          
+            //console.log("Fecha encontrada: "+fechaAgendada);          
             $('.hora-enlace').each(function() {
               var IDprofegratis = $(this).attr('data-teacher-id');
               var DataHora = $(this).attr('data-hora');
-              console.log("Hora agendada: "+horaAgendada+" Profesor: "+idProfesor);
+              //console.log("Hora agendada: "+horaAgendada+" Profesor: "+idProfesor);
               if (IDprofegratis === idProfesor && DataHora === horaAgendada) {
                 $(this).addClass('disabled');
-                console.log("Consegui una para disabled: "+horaAgendada+" Profesor: "+idProfesor);
+                //console.log("Consegui una para disabled: "+horaAgendada+" Profesor: "+idProfesor);
               }
             });
           }
