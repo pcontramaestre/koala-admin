@@ -83,7 +83,7 @@
     altFormat: "dd/mm/yy",
     maxDate: "-6y",
     //minDate: new Date(2001, 1 - 1, 1),
-    minDate: "-18y",
+    minDate: "-14y",
   });
 
   jQuery("#edit-field-fecha-de-la-cita-0-value").datepicker({

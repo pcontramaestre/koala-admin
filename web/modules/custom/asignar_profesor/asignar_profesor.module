@@ -10,47 +10,47 @@ use Drupal\Core\Form\FormStateInterface;
 use Drupal\user\Entity\User;
 use Drupal\Core\StringTranslation\TranslatableMarkup;
 use Drupal\views\ViewExecutable;
+use \Drupal\Core\Entity\EntityFormInterface;
 
 /**
  * Implements hook_form_FORM_ID_alter() for the node_agendar_clase_form.
  */
 function asignar_profesor_form_alter(&$form, FormStateInterface $form_state, $form_id) {
-  //dump($form_id);
-  if ($form_id == 'node_agendar_clase_asignar_profesor_form') {
+  $current_user = \Drupal::currentUser();
+  $roles = $current_user->getRoles();
+  
+  // Al administrador para que le aparezca el metodo de pago.
+  if (in_array('content_editor', $roles) || in_array('administrator', $roles)) {
+    if ($form_id == 'node_facturacion_profesor_edit_form') {
+      if ($form_state->getFormObject() instanceOf EntityFormInterface) {
+        $nid = $form_state->getformObject()->getEntity()->id();
+        $node = Node::load($nid);
+        if ($node) {
+          $field_profesor = $node->get('field_asignar_profesor')->getValue();
+          $field_profesor = $field_profesor[0]['target_id'];
 
+          if (!empty($field_profesor)) {
+            $query = \Drupal::entityQuery('node')->condition('type', 'metodos_de_pago')->condition('field_profesor', $field_profesor);
+            $nids = $query->execute();
+            $nodos = \Drupal\node\Entity\Node::loadMultiple($nids);
+            $nodo_mostrar = reset($nodos);
+
+            $cuentas = $nodo_mostrar->get('field_cuentas_virtuales')->getValue();
+            $form['field_metodo_de_pago']['widget']['#options'] = [];
+
+            foreach ($cuentas as $key => $value) {
+              $id = $value['first'];
+              $name = $value['second'];
+              $form['field_metodo_de_pago']['widget']['#options'][$id] = $id.' - '.$name;
+            }
+          }
+        }     
+      } else {
+        return;
+      }
+    }
   }
 }
-
-/**
- * Implements hook_theme_suggestions_HOOK_alter() for node_edit_form.
- */
-// function asignar_profesor_theme_suggestions_node_edit_form_alter(array &$suggestions, array $variables) {
-//   $route_match = \Drupal::routeMatch();
-//   //Detextar el rol del usuario actual, si es editor o administrador.
-//   $user = \Drupal::currentUser();
-//   $roles = $user->getRoles();
-  
-
-
-//   if (in_array('editor', $roles) || in_array('administrator', $roles)) {
-//     if ($node = $route_match->getParameter('node')) {
-//       // When editing an existing node, add the node's bundle as the theme hook
-//       // suggestion.
-//       $suggestions[] = $variables['theme_hook_original'] . '__' . $node->bundle();
-//     }
-//     elseif ($node_type = $route_match->getParameter('node_type')) {
-//       // When a new node is created, the node type (object) is provided.
-//       $suggestions[] = $variables['theme_hook_original'] . '__' . $node_type->id();
-//     }
-//   }
-//   else {
-//     $suggestions[] = 'node_edit_form__' . $variables['node']->bundle() . '__' . $user->id();
-//   }
-
-
-//   return $suggestions;
-// }
-
 /**
  * Implements hook_theme_suggestions_HOOK_alter().
  *
@@ -63,5 +63,7 @@ function asignar_profesor_theme_suggestions_views_view_field_alter(array &$sugge
   // suggestion for field in view
   $suggestions[] = 'views_view_field__' . $variables['view']->id() . '__' . $variables['field']->field;
 }
+
+
 
 

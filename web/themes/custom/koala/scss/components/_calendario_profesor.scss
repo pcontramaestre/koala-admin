@@ -513,6 +513,7 @@ div[id^="windowManager_"] {
         justify-content: space-between;
         height: 100%;
         padding-bottom: 1rem;
+        font-size: 1rem;
 
         .imagen {
           img {
@@ -520,7 +521,7 @@ div[id^="windowManager_"] {
           }
         }
 
-        .alumno {
+        .alumno,.profesor {
           font-weight: 500;
           color: black;
 
@@ -528,7 +529,7 @@ div[id^="windowManager_"] {
             margin-bottom: 0.5rem !important;
           }
 
-          .datos-alumno {
+          .datos-alumno, .datos-profesor {
             background-color: white;
             width: 90%;
             border-radius: 32px;
@@ -545,46 +546,23 @@ div[id^="windowManager_"] {
               color: black;
               text-decoration: none;
               max-width: 79%;
+              pointer-events: none;
+              font-size: 1rem;
 
               &:hover {
                 text-decoration: underline;
               }
             }
 
-            &:before {
-              content: "";
-              display: block;
-              width: 40px;
-              height: 40px;
-              margin-right: 1rem;
-              background-image: url("/themes/custom/koala/images/Alumno-info.jpg");
+            img {
+              width: 45px;
+              height: 45px;
+              object-fit: cover;
+              margin-right: 5px;
+              border-radius:50%;
+              background: #297e88;
             }
-          }
-        }
 
-        .profesor {
-          margin-bottom: 1rem !important;
-          background-color: white;
-          width: 90%;
-          margin: 0 auto;
-          border-radius: 32px;
-          position: relative;
-          margin-top: 2rem;
-          height: 56px;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          font-weight: 700;
-          font-size: 20px;
-
-          p {
-            position: absolute;
-            bottom: 115%;
-            left: 0;
-            right: 0;
-            margin: 0 auto;
-            font-weight: 500;
-            font-size: 16px;
           }
         }
 
