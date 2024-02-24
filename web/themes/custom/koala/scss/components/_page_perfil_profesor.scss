@@ -118,6 +118,13 @@
                     display: none;
                   }
 
+                  .field--name-field-media-video-file {
+                    video {
+                      max-width: 100%;
+                      max-height: 300px;
+                    }
+                  }
+
                   .field-content {
                     .no-admin {
                       .field--name-thumbnail {
