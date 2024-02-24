@@ -24,7 +24,7 @@ function calificar_clase_form_alter(&$form, FormStateInterface $form_state, $for
     }
 
     // Cargo el nodo actual y obtener el valor del campo field_clase_a_asignar
-    $node = Node::load($nid);  
+    $node = Node::load($nid);
     if ($node) {
       $field_clase_a_asignar = $node->get('field_clase_a_asignar')->getValue();
       $field_clase_a_asignar = $field_clase_a_asignar[0]['target_id'];
