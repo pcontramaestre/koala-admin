@@ -50,8 +50,7 @@
               success: function (response) {
                 //$('#selector-para-mensajes').html(response[0].data);
                 console.log(response);
-                var stopuploadvideo = stopRecording();
-                console.log(stopuploadvideo);
+                stopRecording();
               },
               error: function (jqXHR, textStatus, errorThrown) {                
                 console.log(errorThrown);
@@ -271,11 +270,4 @@
           .then(data => console.log(data.message))
           .catch(error => console.error('Error:', error));
         }
-  
-        // Asociar las funciones con los botones
-        // document.getElementById("grabar-clase").addEventListener("click", startRecording);
-        // document.getElementById("pausar-grabacion").addEventListener("click", pauseRecording);
-        // document.getElementById("finalizar-grabacion").addEventListener("click", stopRecording);
-  
-
 })(jQuery, Drupal);
