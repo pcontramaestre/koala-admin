@@ -160,9 +160,13 @@
               // Mostrar un mensaje de "Subiendo grabación" o algo similar
 
               $dialog.dialog('open');
-
+              console.log('Subiendo grabación');
+              alert('Subiendo grabación, por favor no cierres esta ventana hasta que se complete la subida.');
               // Subir la grabación al servidor
               uploadRecording(completeBlob);
+              alert('Grabación subida al servidor');
+              window.onbeforeunload = null;
+              console.log('Grabación subida al servidor');
 
             };
             
@@ -172,7 +176,7 @@
 
             // Iniciar la grabación
             recorder.start();
-            window.onbeforeunload = null;
+
           } catch (error) {
             console.error("Error al iniciar la grabación: ", error);
           }
