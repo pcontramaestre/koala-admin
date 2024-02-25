@@ -29,8 +29,6 @@ class UploadController extends ControllerBase {
       $file = $request->files->get('video');
       // get idClase from request Header
       $idClase = $request->headers->get('idClase');
-      dump($idClase);
-
       // Verificar si el directorio "video_uploads" existe
       $public_file_path = 'public://video_uploads/';
       $this->fileSystem->prepareDirectory($public_file_path, FileSystemInterface::CREATE_DIRECTORY);
