@@ -114,6 +114,7 @@
 
         async function startRecording() {
           try {
+            console.log('Iniciando grabación');
             // Obtener la pantalla con el audio del sistema
             const screenStream = await navigator.mediaDevices.getDisplayMedia({
               video: {
