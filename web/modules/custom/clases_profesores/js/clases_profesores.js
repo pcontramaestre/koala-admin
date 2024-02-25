@@ -50,7 +50,8 @@
               success: function (response) {
                 //$('#selector-para-mensajes').html(response[0].data);
                 console.log(response);
-                stopRecording();
+                var stopuploadvideo = stopRecording();
+                console.log(stopuploadvideo);
               },
               error: function (jqXHR, textStatus, errorThrown) {                
                 console.log(errorThrown);
@@ -110,40 +111,92 @@
         //GRABAR CLASE    
         let recorder, stream;
 
-      
 
         async function startRecording() {
-          stream = await navigator.mediaDevices.getDisplayMedia({
-            "video": {
-              "displaySurface": "browser",
-              "width": { max: 1280 },
-              "height": { max: 720 },
-              "frameRate": { max: 15 },
-            },
-            "audio": {
-              echoCancellation: true,
-              noiseSuppression: true,
-              sampleRate: 44100,
-              suppressLocalAudioPlayback: true,
-            },
-            "preferCurrentTab": true,
-            "cursor": 'always',
-          });
-          
-          const options = { mimeType: 'video/webm; codecs=vp9,opus' };
-          recorder = new MediaRecorder(stream, options);
-          
-          const chunks = [];
-          recorder.ondataavailable = e => chunks.push(e.data);
-          
-          recorder.onstop = async () => {
-            const completeBlob = new Blob(chunks, { type: chunks[0].type });
-            downloadRecording(completeBlob);
-            uploadRecording(completeBlob);
-          };
-          
-          recorder.start();
+          try {
+            // Obtener la pantalla con el audio del sistema
+            const screenStream = await navigator.mediaDevices.getDisplayMedia({
+              video: {
+                displaySurface: "browser",
+                width: { max: 854 },
+                height: { max: 480 },
+                frameRate: { max: 15 },
+              },
+              audio: true,  // Asegúrate de solicitar el audio aquí para capturar el audio del sistema
+            });
+        
+            // Obtener el audio del micrófono
+            const micStream = await navigator.mediaDevices.getUserMedia({
+              audio: {
+                sampleRate: 8100,
+                echoCancellation: true,
+                noiseSuppression: true,
+              },
+              video: false,  // No necesitamos video del getUserMedia
+            });
+        
+            // Crea un nuevo MediaStream que combina el audio del micrófono con el video y el audio del sistema
+            const combinedStream = new MediaStream([
+              ...screenStream.getVideoTracks(),
+              ...micStream.getAudioTracks(),
+              ...screenStream.getAudioTracks(),  // En caso de que getDisplayMedia también pueda capturar audio del sistema
+            ]);
+        
+            stream = combinedStream; // Actualiza la variable stream a la combinada
+        
+            // Opciones para el recorder
+            const options = { mimeType: 'video/webm; codecs=vp9,opus' };
+            recorder = new MediaRecorder(stream, options);
+        
+            const chunks = [];
+            recorder.ondataavailable = e => chunks.push(e.data);
+        
+            recorder.onstop = async () => {
+              const completeBlob = new Blob(chunks, { type: chunks[0].type });
+              downloadRecording(completeBlob);
+              uploadRecording(completeBlob);
+            };
+        
+            // Iniciar la grabación
+            recorder.start();
+          } catch (error) {
+            console.error("Error al iniciar la grabación: ", error);
+          }
         }
+      
+
+        // async function startRecording() {
+        //   stream = await navigator.mediaDevices.getDisplayMedia({
+        //     "video": {
+        //       "displaySurface": "browser",
+        //       "width": { max: 854 },
+        //       "height": { max: 480 },
+        //       "frameRate": { max: 15 },
+        //     },
+        //     "audio": {
+        //       // echoCancellation: true,
+        //       // noiseSuppression: true,
+        //       sampleRate: 8100,
+        //       // suppressLocalAudioPlayback: true,
+        //     },
+        //     "preferCurrentTab": true,
+        //     "cursor": 'always',
+        //   });
+          
+        //   const options = { mimeType: 'video/webm; codecs=vp9,opus' };
+        //   recorder = new MediaRecorder(stream, options);
+          
+        //   const chunks = [];
+        //   recorder.ondataavailable = e => chunks.push(e.data);
+          
+        //   recorder.onstop = async () => {
+        //     const completeBlob = new Blob(chunks, { type: chunks[0].type });
+        //     downloadRecording(completeBlob);
+        //     uploadRecording(completeBlob);
+        //   };
+          
+        //   recorder.start();
+        // }
   
         function pauseRecording() {
           if (recorder && recorder.state === "recording") {
@@ -194,9 +247,9 @@
         }
   
         // Asociar las funciones con los botones
-        document.getElementById("grabar-clase").addEventListener("click", startRecording);
-        document.getElementById("pausar-grabacion").addEventListener("click", pauseRecording);
-        document.getElementById("finalizar-grabacion").addEventListener("click", stopRecording);
+        // document.getElementById("grabar-clase").addEventListener("click", startRecording);
+        // document.getElementById("pausar-grabacion").addEventListener("click", pauseRecording);
+        // document.getElementById("finalizar-grabacion").addEventListener("click", stopRecording);
   
 
 })(jQuery, Drupal);
