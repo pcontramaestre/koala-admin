@@ -159,21 +159,20 @@
               downloadRecording(completeBlob);
               // Mostrar un mensaje de "Subiendo grabación" o algo similar
 
-              $dialog.dialog('open');
+              
+              window.onbeforeunload = function() {
+                return "Tu grabación aún se está subiendo. ¿Estás seguro de que quieres cerrar esta página?";
+              };
               console.log('Subiendo grabación');
               alert('Subiendo grabación, por favor no cierres esta ventana hasta que se complete la subida.');
               // Subir la grabación al servidor
+              $dialog.dialog('open');
               uploadRecording(completeBlob);
               alert('Grabación subida al servidor');
               window.onbeforeunload = null;
               console.log('Grabación subida al servidor');
-
             };
             
-            window.onbeforeunload = function() {
-              return "Tu grabación aún se está subiendo. ¿Estás seguro de que quieres cerrar esta página?";
-            };
-
             // Iniciar la grabación
             recorder.start();
 
@@ -190,15 +189,6 @@
         .dialog({
           title: "Subiendo Archivo",
           modal: true,
-          buttons: {
-            Ok: function() {
-              $(this).dialog("close");
-            }
-          },
-          open: function () {
-            // Cuando el diálogo está abierto, inicia la carga del archivo
-            uploadRecording(completeBlob);
-          },
           close: function () {
             $(this).remove();
           }
