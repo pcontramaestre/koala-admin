@@ -7,6 +7,38 @@ label: 'Jquery Global'
 code: |-
   console.log('Cargando informacion al hacer clic dinamicamente');
   jQuery(document).ready(function($) {
+  	
+  	  $("#datepicker-seleccionar-fecha").datepicker({
+        inline: true, // Mostrar el Datepicker en línea
+        dateFormat: "mm/dd/yy", // Formato de la fecha
+        changeMonth: true, //Cambiar mes
+        defaultDate: "+1D",
+        minDate: "+1D",
+        maxDate: "+1M +10D",
+        onSelect: function (dateText) {
+          var fechaInput = dateText;
+          var fechaJS = new Date(fechaInput);
+          // Sumamos un día a la fecha.
+          fechaJS.setDate(fechaJS.getDate() + 1);
+          // Obtenemos los componentes de la nueva fecha (mes, día, año).
+          var nuevoMes = fechaJS.getMonth() + 1;
+          var nuevoDia = fechaJS.getDate();
+          var nuevoAnio = fechaJS.getFullYear();
+          // Formateamos la nueva fecha al formato "mm/dd/yyyy".
+          var nuevaFecha = nuevoMes + "/" + nuevoDia + "/" + nuevoAnio;
+        	
+          // Actualizar el valor del campo de entrada cuando se selecciona una fecha
+          $("#datepicker-input").val(dateText);
+          $("#edit-field-fechas-laborables-value-min").val(dateText);
+          $("#edit-field-fechas-laborables-value-max").val(nuevaFecha);
+          
+          console.log($('input[id^="hora-inicio"]').val());
+          console.log($('input[id^="hora-final"]').val());
+          console.log("Seleccionado");
+        },
+      });
+  	
+  	
     $(document).on('click', 'input[name="field_profesor"]', function() {
       var selectedValue = $(this).val();
       
@@ -25,11 +57,7 @@ code: |-
   			}
       	
       $('#boton-agendamos-clase').attr('href', linkUrl);
-      //console.log("Agendando cita");
-      //$('#boton-agendamos-clase').css('display','flex');
-      //console.log(linkUrl);
-  		window.location.href = linkUrl;
-  		
+  		window.location.href = linkUrl;		
     });
 
     function getLastParameterFromUrl() {
@@ -49,18 +77,7 @@ code: |-
         var fecha_usar = $("input[id^='edit-field-fechas-laborables-value-min']").val();
         var partesFecha = fecha_usar.split('/'); // Divide la cadena en partes usando el separador '/'
   			var fecha_formateada = partesFecha[2] + '-' + partesFecha[0].padStart(2, '0') + '-' + partesFecha[1].padStart(2, '0');      
-  			/*var idiomaIngles = $('#page-wrapper').hasClass('current_language-en');
-  			if (idiomaIngles) {
-        	var linkUrl = '/en/agendar_cita?id=' + getLastParameterFromUrl() + '&field_profesor=' + selectedValue + '&fecha='+fecha_formateada;
-        } else {
-        	var linkUrl = '/agendar_cita?id=' + getLastParameterFromUrl() + '&field_profesor=' + selectedValue + '&fecha='+fecha_formateada;
-        }*/
         var linkUrl = '/agendar_cita?id=' + getLastParameterFromUrl() + '&field_profesor=' + selectedValue + '&fecha='+fecha_formateada;
-        //$('#boton-agendamos-clase').attr('href', linkUrl);
-        //$('#boton-agendamos-clase').trigger('click');
-  			//window.location.href = linkUrl;
-  			//console.log(linkUrl);
-        
       });
     }
     
@@ -91,7 +108,7 @@ code: |-
   	console.log('Fecha: ', fecha);
   	
   	// Verificar si el input existe
-  	if ($('input[name="field_fecha_cita_oculta[0][value][date]"]').length) {
+  	if ($('input[name="field_fecha_cita_oculta[0][value][date]"]').length && fecha !== undefined) {
   	  // Obtén la fecha en formato "2023-08-23"
   	  var fechaOriginal = fecha;
   	
@@ -107,22 +124,33 @@ code: |-
   	  // Establece la fecha formateada como valor del input
   	  $('input[name="field_fecha_cita_oculta[0][value][date]"]').val(fechaFormateada);
   	  
-  	  
-  	  
-  	  
-  	  
   	  var horaInicio = $('.views-field-field-fechas-laborables-value .field-content').text();
   		var duracionMinutos = parseInt($('.views-field-field-fechas-laborables-duration .field-content').text());
   		var horaFinal = $('.views-field-field-fechas-laborables-end-value .field-content').text();
-  		console.log("Hora de inicio: "+horaInicio + " Duracion: "+duracionMinutos + "Hora final: "+horaFinal)
   		var horaInicioDate = new Date('2023-01-01 ' + horaInicio);
   		var horaFinalDate = new Date('2023-01-01 ' + horaFinal);
-  		
+
+  		var horainiciono = $('.views-field-field-fechas-laborables-value-1 .field-content').text().trim();
+  		var horafinalno = $('.views-field-field-fechas-laborables-end-value-1 .field-content').text().trim();
+
+  		var horainicionoDate = new Date(horainiciono);
+  		var horafinalnoDate = new Date(horafinalno);
+  		// Obtener el dia de horainiciono y horafinalno
+  		var diaInicio = horainicionoDate.getDate();
+  		var diaFinal = horafinalnoDate.getDate();
+
+  		// Si horafinalno es un dia siguiente a horainiciono, asignarle el mismo dia que horainiciono y la hora en 23:30
+  		if (diaFinal > diaInicio) {
+  			horafinalnoDate.setDate(diaInicio);
+  			horafinalnoDate.setHours(23);
+  			horafinalnoDate.setMinutes(30);
+  		}
+
   		
   		var intervaloMinutos = 30;
   		var horariosDiv = $('#select-horario .horario');
   		
-  		for (var tiempo = horaInicioDate; tiempo < horaFinalDate; tiempo.setMinutes(tiempo.getMinutes() + intervaloMinutos)) {
+  		for (var tiempo = horainicionoDate; tiempo < horafinalnoDate; tiempo.setMinutes(tiempo.getMinutes() + intervaloMinutos)) {
   		  var hora = tiempo.getHours();
   		  var minutos = tiempo.getMinutes();
   		  var horaFormateada = ('0' + hora).slice(-2) + ':' + ('0' + minutos).slice(-2);
@@ -189,6 +217,7 @@ code: |-
           });
   		
   	}
+
   	
   });
 

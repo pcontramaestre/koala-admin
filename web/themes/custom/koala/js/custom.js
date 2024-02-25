@@ -213,10 +213,13 @@
     return fecha;
   }
 
-  var horaInicio = $('input[id^="hora-inicio"]').val();
-  var horaFinal = $('input[id^="hora-final"]').val();
-  localStorage.setItem('horaInicio', horaInicio);
-  localStorage.setItem('horaFinal', horaFinal);
+  //comprobar que existe el campo de hora-inicio input[id^="hora-inicio"]
+  if ($('input[id^="hora-inicio"]').length) { 
+    var horaInicio = $('input[id^="hora-inicio"]').val();
+    var horaFinal = $('input[id^="hora-final"]').val();
+    localStorage.setItem('horaInicio', horaInicio);
+    localStorage.setItem('horaFinal', horaFinal);
+  }
 
   // Cuando se cambie o agregue un valor en el campo input[id^="hora-inicio"] o input[id^="hora-final"], guardar el valor en una variable de localStorage
   $('input[id^="hora-inicio"], input[id^="hora-final"]').on('change', function () {

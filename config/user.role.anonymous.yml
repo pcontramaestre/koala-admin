@@ -13,6 +13,7 @@ dependencies:
     - contact
     - filter
     - media
+    - node_view_permissions
     - search
     - system
 _core:
@@ -30,5 +31,6 @@ permissions:
   - 'search content'
   - 'use admin toolbar search'
   - 'use text format restricted_html'
+  - 'view any clases_estudiantes content'
   - 'view commerce_product'
   - 'view media'
