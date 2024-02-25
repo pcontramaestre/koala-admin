@@ -157,20 +157,16 @@
             recorder.onstop = async () => {
               const completeBlob = new Blob(chunks, { type: chunks[0].type });
               downloadRecording(completeBlob);
-              // Mostrar un mensaje de "Subiendo grabación" o algo similar
-
-              
-              window.onbeforeunload = function() {
-                return "Tu grabación aún se está subiendo. ¿Estás seguro de que quieres cerrar esta página?";
-              };
+              // Mostrar un mensaje de "Subiendo grabación" o algo similar                          
               console.log('Subiendo grabación');
-              alert('Subiendo grabación, por favor no cierres esta ventana hasta que se complete la subida.');
+
+              mensajesSubiendoGrabacion();
+              
               // Subir la grabación al servidor
-              $dialog.dialog('open');
               uploadRecording(completeBlob);
-              alert('Grabación subida al servidor');
-              window.onbeforeunload = null;
-              console.log('Grabación subida al servidor');
+              
+              mensajesSubidaCompleta();
+              console.log('Subida completa');
             };
             
             // Iniciar la grabación
@@ -181,19 +177,17 @@
           }
         }
 
-        
+        function mensajesSubiendoGrabacion() {
+          alert('Subiendo grabación, por favor no cierres esta ventana hasta que se complete la subida.');
+          window.onbeforeunload = function() {
+            return "Tu grabación aún se está subiendo. ¿Estás seguro de que quieres cerrar esta página?";
+          };
+        }
 
-        // Mostrar un diálogo de Drupal antes de subir el archivo
-        var $dialog = $('<div></div>')
-        .html('Se está subiendo tu archivo. Por favor, no cierres esta ventana.')
-        .dialog({
-          title: "Subiendo Archivo",
-          modal: true,
-          close: function () {
-            $(this).remove();
-          }
-        });
-      
+        function mensajesSubidaCompleta() {
+          alert('Grabación subida al servidor');
+          window.onbeforeunload = null;
+        }
 
         // async function startRecording() {
         //   stream = await navigator.mediaDevices.getDisplayMedia({
@@ -271,7 +265,9 @@
               'idClase': idClase
             },
           })
-          .then(response => response.json())
+          .then(
+            response => response.json()
+          )
           .then(data => console.log(data.message))
           .catch(error => console.error('Error:', error));
         }
