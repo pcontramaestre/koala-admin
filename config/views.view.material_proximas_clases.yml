@@ -8,10 +8,12 @@ dependencies:
     - field.storage.node.field_genially_de_la_clase
     - field.storage.node.field_genially_extra
     - field.storage.node.field_numero_de_clase
+    - field.storage.taxonomy_term.field_nombre_de_la_unidad
     - node.type.proximas_clases_estudiantes_
   module:
     - link
     - node
+    - taxonomy
     - user
 id: material_proximas_clases
 label: 'Material próximas clases'
@@ -303,7 +305,70 @@ display:
           admin_label: ''
           plugin_id: field
           label: ''
-          exclude: false
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: false
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        field_nombre_de_la_unidad:
+          id: field_nombre_de_la_unidad
+          table: taxonomy_term__field_nombre_de_la_unidad
+          field: field_nombre_de_la_unidad
+          relationship: field_nivel_de_la_clase
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: ''
+          exclude: true
           alter:
             alter_text: false
             text: ''
@@ -369,7 +434,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<div class=\"cuadro-proxima\">\r\n  <h3>Próxima clase</h3>\r\n  <div class=\"codigo-clase\">{{ field_codigo_de_la_clase_ }}</div>\r\n  {{ field_enlace_pdf_de_la_clase }}\r\n  {{ field_genially_de_la_clase }} \r\n  <div class=\"actividad-extra\">\r\n    <span class=\"d-block\">Actividades extra</span>\r\n    {{ field_genially_extra }}\r\n  </div>\r\n</div>"
+            text: "<div class=\"cuadro-proxima\">\r\n  <h3>Próxima clase</h3>\r\n  <div class=\"codigo-clase d-flex\">\r\n      <div class=\"codigo\">{{ field_codigo_de_la_clase_ }}</div>\r\n      <div class=\"nombre\">{{ field_nombre_de_la_unidad }}</div>\r\n  </div>\r\n  {{ field_enlace_pdf_de_la_clase }}\r\n  {{ field_genially_de_la_clase }} \r\n  <div class=\"actividad-extra\">\r\n    <span class=\"d-block\">Actividades extra</span>\r\n    {{ field_genially_extra }}\r\n  </div>\r\n</div>"
             make_link: false
             path: ''
             absolute: false
@@ -543,6 +608,15 @@ display:
           admin_label: 'field_alumno_relacionado: Usuario'
           plugin_id: standard
           required: false
+        field_nivel_de_la_clase:
+          id: field_nivel_de_la_clase
+          table: node__field_nivel_de_la_clase
+          field: field_nivel_de_la_clase
+          relationship: field_clase_a_asignar
+          group_type: group
+          admin_label: 'field_nivel_de_la_clase: Término de la taxonomía'
+          plugin_id: standard
+          required: false
       header: {  }
       footer: {  }
       display_extenders: {  }
@@ -560,6 +634,7 @@ display:
         - 'config:field.storage.node.field_genially_de_la_clase'
         - 'config:field.storage.node.field_genially_extra'
         - 'config:field.storage.node.field_numero_de_clase'
+        - 'config:field.storage.taxonomy_term.field_nombre_de_la_unidad'
   block_1:
     id: block_1
     display_title: Block
@@ -581,3 +656,4 @@ display:
         - 'config:field.storage.node.field_genially_de_la_clase'
         - 'config:field.storage.node.field_genially_extra'
         - 'config:field.storage.node.field_numero_de_clase'
+        - 'config:field.storage.taxonomy_term.field_nombre_de_la_unidad'
