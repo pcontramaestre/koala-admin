@@ -316,6 +316,25 @@
                       font-weight: 700;
                     }
 
+                    .codigo-clase {
+                      flex-direction: row;
+                      gap: 1rem;
+                      background: #e6f1f1;
+                      padding: 0.5rem;
+                      border-radius: 15px;
+                      font-size: 0.9rem;
+                      line-height: 1.2;
+                      font-weight: 700;
+                      align-items: center;
+
+                      .codigo {
+                        background: white;
+                        padding: 0.3rem 1.3rem;
+                        color: #297e88;
+                        font-size: 1rem;
+                        border-radius: 25px;
+                      }
+                    }
                     > div {
                       display: flex;
                       flex-direction: column;
