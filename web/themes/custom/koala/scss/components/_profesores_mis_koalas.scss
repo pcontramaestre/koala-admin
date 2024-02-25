@@ -379,6 +379,30 @@
 
     // Resumen de la clase.
     .view-resumen-de-clases {
+
+      .observaciones-profesor {
+        .codigo-clase {
+          flex-direction: row;
+          gap: 1rem;
+          background: white !important;
+          padding: 0.5rem;
+          border-radius: 15px;
+          font-size: 0.9rem;
+          line-height: 1.2;
+          font-weight: 700;
+          align-items: center;
+          margin-bottom: 0.5rem;
+
+          .codigo {
+            background: #e6f1f1 !important;
+            padding: 0.3rem 1.3rem;
+            color: #297e88;
+            font-size: 1rem;
+            border-radius: 25px;
+          }
+        }
+      }
+
       .no-mostrar {
         display: none;
       }
@@ -465,6 +489,9 @@
             line-height: normal;
           }
         }
+      
+      
+
         @media (min-width: 1200px){
           .comentarios-profesor,
           .observaciones-profesor {
@@ -475,7 +502,7 @@
             font-weight: 500;
             margin-bottom: -0.7rem;
             line-height: 22px;
-            min-width: 130%;
+            min-width: 100%;
             .titulo {
               h4 {
                 font-size: 16px;
@@ -484,6 +511,26 @@
             }
             .comentario {
               font-family: 500;
+            }
+
+            .codigo-clase {
+              flex-direction: row;
+              gap: 1rem;
+              background: #e6f1f1;
+              padding: 0.5rem;
+              border-radius: 15px;
+              font-size: 0.9rem;
+              line-height: 1.2;
+              font-weight: 700;
+              align-items: center;
+
+              .codigo {
+                background: white;
+                padding: 0.3rem 1.3rem;
+                color: #297e88;
+                font-size: 1rem;
+                border-radius: 25px;
+              }
             }
           }
         }

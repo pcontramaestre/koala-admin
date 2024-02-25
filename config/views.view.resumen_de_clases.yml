@@ -4,10 +4,12 @@ status: true
 dependencies:
   config:
     - field.storage.node.field_asignar_profesor
+    - field.storage.node.field_codigo_de_la_clase_
     - field.storage.node.field_logros_cumplidos
     - field.storage.node.field_mensaje_para_el_nino
     - field.storage.node.field_observaciones_del_profesor
     - field.storage.node.field_ruta_video_clase
+    - field.storage.taxonomy_term.field_nombre_de_la_unidad
     - field.storage.user.field_nombre_del_hijo
     - field.storage.user.field_nombres_y_apellidos_del_pr
     - field.storage.user.field_padre
@@ -17,6 +19,7 @@ dependencies:
   module:
     - node
     - svg_image
+    - taxonomy
     - user
 id: resumen_de_clases
 label: 'Resumen de clases'
@@ -2810,6 +2813,132 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
+        field_nombre_de_la_unidad:
+          id: field_nombre_de_la_unidad
+          table: taxonomy_term__field_nombre_de_la_unidad
+          field: field_nombre_de_la_unidad
+          relationship: field_nivel_de_la_clase
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: false
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        field_codigo_de_la_clase_:
+          id: field_codigo_de_la_clase_
+          table: node__field_codigo_de_la_clase_
+          field: field_codigo_de_la_clase_
+          relationship: field_clase_a_asignar
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: false
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
         nothing:
           id: nothing
           table: views
@@ -2822,7 +2951,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<div class=\"resumen-clase\" id=\"id-resumen-{{ nid }}\" user=\"{{ uid }}\">\r\n  <div class=\"header d-flex\">\r\n    <div>Resumen de la clase</div>\r\n    <div>{{ created }}</div>\r\n  </div>\r\n  <div class=\"resumen-video\">\r\n    <img src=\"/themes/custom/koala/images/resumen-clase.png\">\r\n  </div>\r\n  <div class=\"profesor-clase\">\r\n    <div class=\"avatar\">{{ user_picture }}</div>\r\n    <div class=\"nombre\">{{ field_nombres_y_apellidos_del_pr }}</div>\r\n  </div>\r\n  <div class=\"comentarios-profesor\">        \r\n  </div>\r\n  <div class=\"observaciones-profesor\">\r\n    <div class=\"titulo\"><h4>Observaciones del profesor</h4></div>\r\n    <div class=\"comentario\">{{ field_observaciones_del_profesor }}</div>\r\n  </div>\r\n  <div class=\"no-mostrar ids-logros-cumplidos\">{{ field_logros_cumplidos }}</div>\r\n</div>"
+            text: "<div class=\"resumen-clase\" id=\"id-resumen-{{ nid }}\" user=\"{{ uid }}\">\r\n  <div class=\"header d-flex\">\r\n    <div>Resumen de la clase</div>\r\n    <div>{{ created }}</div>\r\n  </div>\r\n  <div class=\"profesor-clase\">\r\n    <div class=\"avatar\">{{ user_picture }}</div>\r\n    <div class=\"nombre\">{{ field_nombres_y_apellidos_del_pr }}</div>\r\n  </div>\r\n  <div class=\"observaciones-profesor\">\r\n   <div class=\"codigo-clase d-flex \">\r\n      <div class=\"codigo\">{{ field_codigo_de_la_clase_ }}</div>\r\n      <div class=\"nombre\">{{ field_nombre_de_la_unidad }}</div>\r\n    </div>\r\n    <div class=\"titulo\"><h4>Observaciones del profesor</h4></div>\r\n    <div class=\"comentario\">{{ field_observaciones_del_profesor }}</div>\r\n  </div>\r\n  <div class=\"no-mostrar ids-logros-cumplidos\">{{ field_logros_cumplidos }}</div>\r\n</div>"
             make_link: false
             path: ''
             absolute: false
@@ -2900,8 +3029,55 @@ display:
           break_phrase: false
           not: false
       defaults:
+        relationships: false
         fields: false
         arguments: false
+      relationships:
+        field_seleccionar_clase_agendada:
+          id: field_seleccionar_clase_agendada
+          table: node__field_seleccionar_clase_agendada
+          field: field_seleccionar_clase_agendada
+          relationship: none
+          group_type: group
+          admin_label: 'field_seleccionar_clase_agendada: Contenido'
+          plugin_id: standard
+          required: false
+        field_alumno_relacionado:
+          id: field_alumno_relacionado
+          table: node__field_alumno_relacionado
+          field: field_alumno_relacionado
+          relationship: field_seleccionar_clase_agendada
+          group_type: group
+          admin_label: 'field_alumno_relacionado: Usuario'
+          plugin_id: standard
+          required: false
+        field_asignar_profesor:
+          id: field_asignar_profesor
+          table: node__field_asignar_profesor
+          field: field_asignar_profesor
+          relationship: field_seleccionar_clase_agendada
+          group_type: group
+          admin_label: 'field_asignar_profesor: Usuario'
+          plugin_id: standard
+          required: false
+        field_clase_a_asignar:
+          id: field_clase_a_asignar
+          table: node__field_clase_a_asignar
+          field: field_clase_a_asignar
+          relationship: none
+          group_type: group
+          admin_label: 'field_clase_a_asignar: Contenido'
+          plugin_id: standard
+          required: false
+        field_nivel_de_la_clase:
+          id: field_nivel_de_la_clase
+          table: node__field_nivel_de_la_clase
+          field: field_nivel_de_la_clase
+          relationship: field_clase_a_asignar
+          group_type: group
+          admin_label: 'field_nivel_de_la_clase: Término de la taxonomía'
+          plugin_id: standard
+          required: false
       display_description: ''
       display_extenders: {  }
       block_description: 'Resumen Clase - Profesores'
@@ -2915,9 +3091,11 @@ display:
         - user.permissions
       tags:
         - 'config:field.storage.node.field_asignar_profesor'
+        - 'config:field.storage.node.field_codigo_de_la_clase_'
         - 'config:field.storage.node.field_logros_cumplidos'
         - 'config:field.storage.node.field_mensaje_para_el_nino'
         - 'config:field.storage.node.field_observaciones_del_profesor'
+        - 'config:field.storage.taxonomy_term.field_nombre_de_la_unidad'
         - 'config:field.storage.user.field_nombre_del_hijo'
         - 'config:field.storage.user.field_nombres_y_apellidos_del_pr'
         - 'config:field.storage.user.field_padre'
