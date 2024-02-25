@@ -24,7 +24,8 @@
               },
               success: function (response) {
                 //$('#selector-para-mensajes').html(response[0].data);
-                console.log(response);                                
+                console.log(response);
+                startRecording();
               },
               error: function (jqXHR, textStatus, errorThrown) {
                 console.log(errorThrown);
@@ -49,6 +50,7 @@
               success: function (response) {
                 //$('#selector-para-mensajes').html(response[0].data);
                 console.log(response);
+                stopRecording();
               },
               error: function (jqXHR, textStatus, errorThrown) {                
                 console.log(errorThrown);
