@@ -123,6 +123,8 @@
                 frameRate: { max: 15 },
               },
               audio: true,  // Asegúrate de solicitar el audio aquí para capturar el audio del sistema
+              "preferCurrentTab": true,
+              "cursor": 'always',
             });
         
             // Obtener el audio del micrófono
