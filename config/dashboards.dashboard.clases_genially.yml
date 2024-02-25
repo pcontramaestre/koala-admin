@@ -1,0 +1,34 @@
+uuid: df302408-0430-46be-b92a-c7edeed8baf8
+langcode: es
+status: true
+dependencies: {  }
+id: clases_genially
+admin_label: 'Clases Genially'
+category: Home
+frontend: false
+weight: 6
+sections:
+  -
+    layout_id: layout_onecol
+    layout_settings:
+      label: ''
+      context_mapping: {  }
+    components:
+      9c8ac21a-981c-4f08-ae8a-aff328b017a9:
+        uuid: 9c8ac21a-981c-4f08-ae8a-aff328b017a9
+        region: content
+        configuration:
+          id: 'views_block:administracion_clases_genially-block_1'
+          label: ''
+          label_display: visible
+          provider: views
+          context_mapping: {  }
+          views_label: ''
+          items_per_page: none
+          exposed: {  }
+        weight: 0
+        additional:
+          layout_builder_styles_style:
+            separacion_superior_mt_5: separacion_superior_mt_5
+            separacion_superior_mt_2: 0
+    third_party_settings: {  }
