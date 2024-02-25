@@ -6,3 +6,4 @@ clases-profesores:
     - core/jquery
     - core/drupalSettings
     - core/drupal
+    - core/drupal.dialog.ajax

@@ -156,15 +156,48 @@
             recorder.onstop = async () => {
               const completeBlob = new Blob(chunks, { type: chunks[0].type });
               downloadRecording(completeBlob);
+              // Mostrar un mensaje de "Subiendo grabación" o algo similar
+
+              $dialog.dialog('open');
+
+              // Subir la grabación al servidor
               uploadRecording(completeBlob);
+
             };
-        
+            
+            window.onbeforeunload = function() {
+              return "Tu grabación aún se está subiendo. ¿Estás seguro de que quieres cerrar esta página?";
+            };
+
             // Iniciar la grabación
             recorder.start();
+            window.onbeforeunload = null;
           } catch (error) {
             console.error("Error al iniciar la grabación: ", error);
           }
         }
+
+        
+
+        // Mostrar un diálogo de Drupal antes de subir el archivo
+        var $dialog = $('<div></div>')
+        .html('Se está subiendo tu archivo. Por favor, no cierres esta ventana.')
+        .dialog({
+          title: "Subiendo Archivo",
+          modal: true,
+          buttons: {
+            Ok: function() {
+              $(this).dialog("close");
+            }
+          },
+          open: function () {
+            // Cuando el diálogo está abierto, inicia la carga del archivo
+            uploadRecording(completeBlob);
+          },
+          close: function () {
+            $(this).remove();
+          }
+        });
       
 
         // async function startRecording() {
