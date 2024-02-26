@@ -500,7 +500,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<div class=\"cuadro-proxima\">\r\n  <h3>Próxima clase</h3>\r\n  <div class=\"codigo-clase d-flex\">\r\n      <div class=\"codigo\">{{ field_codigo_de_la_clase_ }}</div>\r\n      <div class=\"nombre\">{{ field_nombre_de_la_unidad }}</div>\r\n  </div>\r\n  {{ field_enlace_pdf_de_la_clase }}\r\n  {{ field_genially_de_la_clase }} \r\n  <div class=\"actividad-extra\">\r\n    <span class=\"d-block\">Actividades extra</span>\r\n    {{ field_genially_extra }}\r\n  </div>\r\n  {{ nid }}\r\n</div>"
+            text: "<div class=\"cuadro-proxima\">\r\n  <h3>Próxima clase</h3>\r\n  <div class=\"codigo-clase d-flex\">\r\n      <div class=\"codigo\">{{ field_codigo_de_la_clase_ }}</div>\r\n      <div class=\"nombre\">{{ field_nombre_de_la_unidad }}</div>\r\n  </div>\r\n  {{ field_enlace_pdf_de_la_clase }}\r\n\r\n  <div class=\"actividad-extra\">\r\n    <span class=\"d-block\">Contenidos de la clase</span>\r\n      {{ nid }}\r\n  </div>\r\n\r\n</div>"
             make_link: false
             path: ''
             absolute: false
