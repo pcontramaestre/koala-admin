@@ -16,46 +16,7 @@ use \Drupal\Core\Entity\EntityFormInterface;
  * Implements hook_form_FORM_ID_alter() for the node_agendar_clase_form.
  */
 function asignar_profesor_form_alter(&$form, FormStateInterface $form_state, $form_id) {
-  $current_user = \Drupal::currentUser();
-  $roles = $current_user->getRoles();
   
-  // Al administrador para que le aparezca el metodo de pago.
-  if (in_array('content_editor', $roles) || in_array('administrator', $roles)) {
-    if ($form_id == 'node_facturacion_profesor_edit_form') {
-      if ($form_state->getFormObject() instanceOf EntityFormInterface) {
-        $nid = $form_state->getformObject()->getEntity()->id();
-        $node = Node::load($nid);
-        if ($node) {
-          $field_profesor = $node->get('field_asignar_profesor')->getValue();
-          $field_profesor = $field_profesor[0]['target_id'];
-
-          if (!empty($field_profesor)) {
-            $query = \Drupal::entityQuery('node')->condition('type', 'metodos_de_pago')->condition('field_profesor', $field_profesor);
-            $nids = $query->execute();
-            $nodos = \Drupal\node\Entity\Node::loadMultiple($nids);
-            $nodo_mostrar = reset($nodos);
-            
-            $nid = $nodo_mostrar->id();
-
-            $cuentas = $nodo_mostrar->get('field_cuentas_virtuales')->getValue();
-            $form['field_metodo_de_pago']['widget']['#options'] = [];
-
-            
-
-            foreach ($cuentas as $key => $value) {
-              //dump($value);
-              //dump($nid);
-              $id = $value['first'];
-              $name = $value['second'];
-              $form['field_metodo_de_pago']['widget']['#options'][$nid] = $id.' - '.$name;
-            }
-          }
-        }     
-      } else {
-        return;
-      }
-    }
-  }
 }
 /**
  * Implements hook_theme_suggestions_HOOK_alter().
