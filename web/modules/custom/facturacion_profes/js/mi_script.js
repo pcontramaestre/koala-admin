@@ -63,7 +63,7 @@
 
           var totalHorasAPagar = totalHoras + totalInasistenciasHoras;
           totalHorasAPagar = totalHorasAPagar.toFixed(2);
-          console.log(totalHorasAPagar);
+          
           // $('input[id^="edit-field-total-horas-a-pagar-0-value"]').val(totalHorasAPagar);
           $('input[id^="edit-field-horas-a-pagar-0-value"]').val(totalHorasAPagar);
 

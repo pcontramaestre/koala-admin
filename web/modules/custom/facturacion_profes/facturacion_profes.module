@@ -22,9 +22,9 @@ function facturacion_profes_form_alter(&$form, FormStateInterface $form_state, $
   $roles = $current_user->getRoles();
 
   if ($current_path == 'facturacion') {
-    if ($form_id == 'node_facturacion_profesor_edit_form' || $form_id == 'node_facturacion_profesor_form') {
+    //if ($form_id == 'node_facturacion_profesor_edit_form' || $form_id == 'node_facturacion_profesor_form') {
+    if ($form_id == 'node_facturacion_profesor_form') {
       $form['actions']['submit']['#value'] =  Drupal::translation()->translate('Enviar factura');
-
       
       foreach (array_keys($form['actions']) as $action) {
         if ($action != 'preview' && isset($form['actions'][$action]['#type']) && $form['actions'][$action]['#type'] === 'submit') {
