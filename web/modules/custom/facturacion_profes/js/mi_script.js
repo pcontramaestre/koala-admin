@@ -103,6 +103,14 @@
           // Obtén el valor seleccionado del filtro de fecha de la vista, debe se el texto y no el value
         //}
       });
+
+      // Change select id="edit-field-metodo-de-pago" get text option and set input id="edit-field-metodo-de-pago-seleccionad-0-value"
+      $('#edit-field-metodo-de-pago').change(function() {
+        var selectedOption = $(this).find('option:selected').text();
+        $('#edit-field-metodo-de-pago-seleccionad-0-value').val(selectedOption);
+      });
+
+
     }
   };
 })(jQuery, Drupal);
