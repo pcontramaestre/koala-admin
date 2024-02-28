@@ -506,6 +506,12 @@
       }
     }
   }
+
+  .field--name-field-metodo-de-pago-seleccionad {
+    display: none;
+  }
+
+  
   div[input^="edit-field-total-horas-a-pagar-0-value"],
   .js-form-item-field-total-horas-a-pagar-0-value {
     pointer-events: none;

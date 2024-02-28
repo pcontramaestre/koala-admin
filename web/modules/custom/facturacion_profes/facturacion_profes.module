@@ -6,6 +6,8 @@
 
  use Drupal\Core\Form\FormStateInterface;
  use Symfony\Component\HttpFoundation\RedirectResponse;
+ use Drupal\node\Entity\Node;
+ use \Drupal\Core\Entity\EntityFormInterface;
 
 /**
  * Implements hook_form_alter().
@@ -15,13 +17,19 @@ function facturacion_profes_form_alter(&$form, FormStateInterface $form_state, $
   $current_path = \Drupal::request()->getRequestUri();
   $current_path = explode('/', $current_path);
   $current_path = end($current_path);  
-  
-  if ($form_id == 'node_facturacion_profesor_edit_form' || $form_id == 'node_facturacion_profesor_form') {
-    $form['actions']['submit']['#value'] =  Drupal::translation()->translate('Enviar factura');
 
-    foreach (array_keys($form['actions']) as $action) {
-      if ($action != 'preview' && isset($form['actions'][$action]['#type']) && $form['actions'][$action]['#type'] === 'submit') {
-        $form['actions'][$action]['#submit'][] = 'callback_submit_facturacion_profes_facturacion_profesor_submit';
+  $current_user = \Drupal::currentUser();
+  $roles = $current_user->getRoles();
+
+  if ($current_path == 'facturacion') {
+    if ($form_id == 'node_facturacion_profesor_edit_form' || $form_id == 'node_facturacion_profesor_form') {
+      $form['actions']['submit']['#value'] =  Drupal::translation()->translate('Enviar factura');
+
+      
+      foreach (array_keys($form['actions']) as $action) {
+        if ($action != 'preview' && isset($form['actions'][$action]['#type']) && $form['actions'][$action]['#type'] === 'submit') {
+          $form['actions'][$action]['#submit'][] = 'callback_submit_facturacion_profes_facturacion_profesor_submit';
+        }
       }
     }
   }
@@ -46,6 +54,55 @@ function facturacion_profes_form_alter(&$form, FormStateInterface $form_state, $
       ];
     }    
   }
+
+
+  // Al administrador para que le aparezca el metodo de pago.
+  if (in_array('content_editor', $roles) || in_array('administrator', $roles)) {
+    if ($form_id == 'node_facturacion_profesor_edit_form') {
+      if ($form_state->getFormObject() instanceOf EntityFormInterface) {
+        $nid = $form_state->getformObject()->getEntity()->id();
+        $node = Node::load($nid);
+        if ($node) {
+          $field_profesor = $node->get('field_asignar_profesor')->getValue();
+          $field_profesor = $field_profesor[0]['target_id'];
+
+          if (!empty($field_profesor)) {
+            $query = \Drupal::entityQuery('node')->condition('type', 'metodos_de_pago')->condition('field_profesor', $field_profesor);
+            $nids = $query->execute();
+            $nodos = \Drupal\node\Entity\Node::loadMultiple($nids);
+            $nodo_mostrar = reset($nodos);
+            
+            $nid = $nodo_mostrar->id();
+
+            $cuentas = $nodo_mostrar->get('field_cuentas_virtuales')->getValue();
+            $form['field_metodo_de_pago']['widget']['#options'] = [];
+
+            // ocultar y no permitir editar el campo de metodo de pago
+            $form['field_metodo_de_pago']['#access'] = FALSE;
+            $form['field_metodo_de_pago']['widget']['#access'] = FALSE;
+
+            // field_metodo_de_pago_seleccionad de solo lectura, readonly 
+            
+
+ 
+
+            
+
+            foreach ($cuentas as $key => $value) {
+              //dump($value);
+              //dump($nid);
+              $id = $value['first'];
+              $name = $value['second'];
+              $form['field_metodo_de_pago']['widget']['#options'][$nid] = $id.' - '.$name;
+            }
+          }
+        }     
+      } else {
+        return;
+      }
+    }
+  }
+
 }
 
 function callback_submit_facturacion_profes_facturacion_profesor_submit(&$form, FormStateInterface $form_state) {
