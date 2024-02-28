@@ -1,0 +1,19 @@
+uuid: 34bc3e44-f5d7-4657-8333-c2d2441de74e
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_metodo_de_pago_seleccionad
+    - node.type.facturacion_profesor
+id: node.facturacion_profesor.field_metodo_de_pago_seleccionad
+field_name: field_metodo_de_pago_seleccionad
+entity_type: node
+bundle: facturacion_profesor
+label: 'Método de pago seleccionado'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -15,6 +15,7 @@ dependencies:
     - field.field.node.facturacion_profesor.field_inasistencias_del_profesor
     - field.field.node.facturacion_profesor.field_mes_de_la_clase
     - field.field.node.facturacion_profesor.field_metodo_de_pago
+    - field.field.node.facturacion_profesor.field_metodo_de_pago_seleccionad
     - field.field.node.facturacion_profesor.field_observaciones_agregadas_de
     - field.field.node.facturacion_profesor.field_sube_o_arrastra_tu_factura
     - node.type.facturacion_profesor
@@ -45,6 +46,7 @@ hidden:
   field_inasistencias_del_profesor: true
   field_mes_de_la_clase: true
   field_metodo_de_pago: true
+  field_metodo_de_pago_seleccionad: true
   field_observaciones_agregadas_de: true
   field_sube_o_arrastra_tu_factura: true
   langcode: true

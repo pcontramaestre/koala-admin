@@ -14,6 +14,7 @@ dependencies:
     - field.field.node.facturacion_profesor.field_inasistencias_del_profesor
     - field.field.node.facturacion_profesor.field_mes_de_la_clase
     - field.field.node.facturacion_profesor.field_metodo_de_pago
+    - field.field.node.facturacion_profesor.field_metodo_de_pago_seleccionad
     - field.field.node.facturacion_profesor.field_observaciones_agregadas_de
     - field.field.node.facturacion_profesor.field_sube_o_arrastra_tu_factura
     - node.type.facturacion_profesor
@@ -120,6 +121,14 @@ content:
       link: true
     third_party_settings: {  }
     weight: 110
+    region: content
+  field_metodo_de_pago_seleccionad:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 115
     region: content
   field_observaciones_agregadas_de:
     type: basic_string

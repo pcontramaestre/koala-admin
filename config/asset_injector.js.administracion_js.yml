@@ -1,0 +1,17 @@
+uuid: 64a3d25a-d821-457e-a7f5-3805b4626700
+langcode: es
+status: true
+dependencies: {  }
+id: administracion_js
+label: 'Administración JS'
+code: |-
+  // Campo de Facturacion de profesores - Administracion. 
+  jQuery('#edit-field-metodo-de-pago-seleccionad-0-value').attr('readonly','readonly');
+noscript: ''
+noscriptRegion: {  }
+jquery: false
+header: false
+preprocess: true
+conditions: {  }
+contexts: {  }
+conditions_require_all: true
