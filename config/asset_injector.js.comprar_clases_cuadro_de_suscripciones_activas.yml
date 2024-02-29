@@ -7,6 +7,8 @@ dependencies:
 id: comprar_clases_cuadro_de_suscripciones_activas
 label: 'Comprar clases - Cuadro de suscripciones activas'
 code: |
+  console.log('suscripcion activa')
+
   // 1) Guardar en una variable la cantidad de filas encontradas
   var filas = document.querySelectorAll('.view-clases-por-nino .vista-ninos .view-content.row .views-row').length;
 
@@ -184,6 +186,6 @@ conditions:
   request_path:
     id: request_path
     negate: false
-    pages: /zona-pagos
+    pages: "/zona-pagos\r\n*/zona-pagos\r\n*/eliminar_suscripcion\r\n/eliminar_suscripcion"
 contexts: {  }
 conditions_require_all: true

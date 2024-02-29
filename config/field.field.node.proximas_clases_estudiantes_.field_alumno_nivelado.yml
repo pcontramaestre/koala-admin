@@ -11,7 +11,7 @@ entity_type: node
 bundle: proximas_clases_estudiantes_
 label: 'Alumno nivelado?'
 description: 'Selecciona aquí si el alumno ha sido ya nivelado después de recibir la clase gratuita'
-required: false
+required: true
 translatable: false
 default_value:
   -

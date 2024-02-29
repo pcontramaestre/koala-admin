@@ -89,9 +89,9 @@ content:
     settings:
       start_minimized: true
       leaves_only: false
-      select_parents: true
-      cascading_selection: 3
-      max_depth: 0
+      select_parents: false
+      cascading_selection: 0
+      max_depth: 2
     third_party_settings: {  }
   field_nivel_de_la_clase:
     type: options_select

@@ -171,6 +171,7 @@ module:
   path_alias: 0
   phone_number: 0
   profile: 0
+  proximas_clases: 0
   quicktabs: 0
   quicktabs_accordion: 0
   quicktabs_jqueryui: 0
@@ -225,6 +226,7 @@ module:
   upgrade_status: 0
   user: 0
   user_view_mode: 0
+  validar_agendamiento: 0
   view_mode_select_by_token: 0
   view_password: 0
   viewfield: 0
