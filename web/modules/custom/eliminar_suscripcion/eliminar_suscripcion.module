@@ -60,9 +60,31 @@ function eliminar_suscripcion_form_alter(&$form, FormStateInterface $form_state,
     //Edit legend of field field_razones_cancelar
     $form['field_razones_cancelar']['widget']['#title'] = new TranslatableMarkup('Cuéntanos cuáles son las razones por las que deseas cancelar tu suscripción');
     
-    $form['#submit'][] = 'eliminar_suscripcion_form_submit';
+
+    foreach (array_keys($form['actions']) as $action) {
+      if ($action != 'preview' && isset($form['actions'][$action]['#type']) && $form['actions'][$action]['#type'] === 'submit') {
+        $form['actions'][$action]['#submit'][] = 'eliminar_suscripcion_form_submit';
+      }
+    }
   }
 };
+
+function eliminar_suscripcion_form_submit($form, FormStateInterface $form_state) {
+  //Get user current
+  $user = \Drupal::currentUser();
+  //load user
+  $user = User::load($user->id());
+  // get field_suscripcion_activa value
+  //$suscripcion_activa = $user->get('field_suscripcion_activa')->value;
+  // change value to false
+  $user->set('field_suscripcion_activa', FALSE);
+  // save user
+  $user->save();
+
+  // Message drupal 9 to show when the form is submitted. NOT drupal_set_message, not use in drupal 9
+  $messenger = \Drupal::messenger();
+  $messenger->addMessage(new TranslatableMarkup('Tu suscripción ha sido cancelada'), 'status');  
+}
 
 function eliminar_suscripcion_theme_suggestions_alter(array &$suggestions, array $variables, $hook) {
   if ($hook == 'node_edit_form') {
