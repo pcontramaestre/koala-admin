@@ -8,14 +8,15 @@
           // Oculta el campo de valor de título
           //$('input[name="title[0][value]"]').hide();
           var fechaSeleccionada = $('.views-exposed-form .form-select option:selected').text();
+          console.log(fechaSeleccionada);
           // Asigna el valor seleccionado al campo de valor de título
           $('input[name="title[0][value]"]').val(fechaSeleccionada);
           
 
           //Recorrer todos los divs con la clase .views-row
-          $('.view-facturacion-profesor .views-row').each(function() {
+          // $('.view-facturacion-profesor .views-row').each(function() {
 
-          });
+          // });
           
           // contar todos los divs con la clase .views-row
           var numeroDeFilas = $('.view-facturacion-profesor .views-row').length;

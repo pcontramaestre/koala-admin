@@ -1,0 +1,7 @@
+name: 'Validar Agendamiento'
+type: module
+description: 'Módulo para validar agendamiento de clases de estudiantes. No podra agendar si el alumno no esta nivelado'
+core_version_requirement: ^9 | ^10
+dependencies:
+  - drupal:node
+  - drupal:views

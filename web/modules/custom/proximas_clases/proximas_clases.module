@@ -1,0 +1,85 @@
+<?php
+
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\node\Entity\Node;
+
+
+/**
+ * @file
+ * Implementación del hook_form_alter().
+ */
+function proximas_clases_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+
+  if ($form_id == 'node_proximas_clases_estudiantes__edit_form') {
+    $node = $form_state->getFormObject()->getEntity();
+    $field_alumno_nivelado = $node->get('field_alumno_nivelado')->value;
+    // Cuando el alumno no esta nivelado
+    if (!$field_alumno_nivelado) {
+        // Obtener el valor del campo referenciado field_clase_a_asignar
+      $field_clase_a_asignar = $node->get('field_clase_a_asignar')->getValue();
+      $field_clase_a_asignar = $field_clase_a_asignar[0]['target_id'];
+      // Obtener el nodo referenciado
+      $nodo_clase = Node::load($field_clase_a_asignar);
+      // get field_numero_de_clase from the referenced node
+      $field_numero_de_clase = $nodo_clase->get('field_numero_de_clase')->value;
+      $field_numero_de_clase = (int) $field_numero_de_clase;
+
+
+      $form['actions']['submit']['#value'] =  Drupal::translation()->translate('Nivelar alumno y asignar clase');
+      foreach (array_keys($form['actions']) as $action) {
+        if ($action != 'preview' && isset($form['actions'][$action]['#type']) && $form['actions'][$action]['#type'] === 'submit') {
+          $form['actions'][$action]['#submit'][] = 'callback_submit_nivelar_submit';
+        }
+      }
+    } else {
+      
+    }
+  }
+}
+
+function callback_submit_nivelar_submit($form, FormStateInterface $form_state) {
+
+  // Clase agendada field field_clase_gratis_asignada. del tipo de contenido "Asignar clase a estudiante"
+  $field_clase_gratis_asignada = $form_state->getValue('field_clase_gratis_asignada')[0]['target_id'];
+
+  // get field_clase_a_asignar 
+  $field_clase_a_asignar = $form_state->getValue('field_clase_a_asignar')[0]['target_id'];
+  $nodo_clase = Node::load($field_clase_a_asignar);
+  $field_numero_de_clase = $nodo_clase->get('field_numero_de_clase')->value;
+  $field_numero_de_clase = (int) $field_numero_de_clase;
+
+  if ($field_numero_de_clase > 1) {
+    // tipo de contenido "clases_estudiantes" que tenga el campo field_numero_de_clase sea mayor a 0 y menor al valor de la variable $field_numero_de_clase
+    $query = \Drupal::entityQuery('node')
+      ->condition('type', 'clases_estudiantes')
+      ->condition('field_numero_de_clase', 0, '>')
+      ->condition('field_numero_de_clase', $field_numero_de_clase, '<');
+    $nids = $query->execute();
+    $nodos = \Drupal\node\Entity\Node::loadMultiple($nids);
+    //Logros por clase
+    $logros = [];
+    foreach($nodos as $nodo) {
+      // get field_logros_de_la_clase reference field
+      $field_logros_de_la_clase = $nodo->get('field_logros_de_la_clase')->getValue();      
+      
+      // $field_logros_de_la_clase es un array de referencias, recorrerlo y obtener el valor de cada referencia target_id
+      foreach ($field_logros_de_la_clase as $logro) {
+        $logro = $logro['target_id'];
+        // Buscar que $logro no este en el array de logros
+        if (!in_array($logro, $logros)) {
+          // agregar al array de logros
+          array_push($logros, $logro);        
+        }
+      }
+    }    
+    // Abrir la clase asignada para agregarle los logros de todos los niveles anteriores
+    $clase_asignada = Node::load($field_clase_gratis_asignada);
+    // agregar al campo field_logros_cumplidos el array de logros.
+    foreach ($logros as $logro) {
+      $clase_asignada->get('field_logros_cumplidos')->appendItem(
+       ['target_id' => $logro]
+      );
+    }
+    $clase_asignada->save();
+  }
+}

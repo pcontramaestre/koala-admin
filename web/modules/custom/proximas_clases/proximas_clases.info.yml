@@ -1,0 +1,6 @@
+name: 'Proximas Clases, dar logros a los estudiantes cuando adelantan clases'
+type: module
+description: 'Asignar los logros a los estudiantes cuando adelantan clases. Desde la clase de pruebas hasta la clase que adelantan'
+core_version_requirement: ^9 | ^10
+dependencies:
+  - drupal:node
