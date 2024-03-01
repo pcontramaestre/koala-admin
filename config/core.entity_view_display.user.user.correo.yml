@@ -1,0 +1,95 @@
+uuid: 0e09c47a-08b6-4ff4-acfa-97cf3206f514
+langcode: es
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.user.correo
+    - field.field.user.user.commerce_remote_id
+    - field.field.user.user.field_apellidos
+    - field.field.user.user.field_apodo
+    - field.field.user.user.field_avatar
+    - field.field.user.user.field_celular
+    - field.field.user.user.field_direcc
+    - field.field.user.user.field_direccion
+    - field.field.user.user.field_estrellas_acumuladas
+    - field.field.user.user.field_first_login
+    - field.field.user.user.field_nacionalidad
+    - field.field.user.user.field_nombre_del_acudiente
+    - field.field.user.user.field_nombre_del_hijo
+    - field.field.user.user.field_nombres_y_apellidos_del_pr
+    - field.field.user.user.field_numero_de_telefono
+    - field.field.user.user.field_padre
+    - field.field.user.user.field_pais
+    - field.field.user.user.field_pencil_email
+    - field.field.user.user.field_pencil_id
+    - field.field.user.user.field_suscripcion_activa
+    - field.field.user.user.field_tu_presentacion
+    - field.field.user.user.field_tu_video_
+    - field.field.user.user.field_zona_horaria_detectada
+    - field.field.user.user.user_picture
+  module:
+    - field_layout
+    - layout_builder
+    - show_email
+    - user
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+  layout_builder:
+    enabled: false
+    allow_custom: false
+_core:
+  default_config_hash: mZLyuWM9CQx2ZJVqFGSbzgFnHzudVbHBYmdU256A5Wk
+id: user.user.correo
+targetEntityType: user
+bundle: user
+mode: correo
+content:
+  mail:
+    type: show_email_address
+    label: hidden
+    settings:
+      hide_user_one: 0
+      email_mailto: '1'
+      hide_per_role:
+        administrator: administrator
+        profesor: profesor
+        padre: padre
+        authenticated: 0
+        content_editor: 0
+        hijo: 0
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  commerce_remote_id: true
+  customer_profiles: true
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  field_apellidos: true
+  field_apodo: true
+  field_avatar: true
+  field_celular: true
+  field_direcc: true
+  field_direccion: true
+  field_estrellas_acumuladas: true
+  field_first_login: true
+  field_nacionalidad: true
+  field_nombre_del_acudiente: true
+  field_nombre_del_hijo: true
+  field_nombres_y_apellidos_del_pr: true
+  field_numero_de_telefono: true
+  field_padre: true
+  field_pais: true
+  field_pencil_email: true
+  field_pencil_id: true
+  field_suscripcion_activa: true
+  field_tu_presentacion: true
+  field_tu_video_: true
+  field_zona_horaria_detectada: true
+  langcode: true
+  member_for: true
+  user_picture: true

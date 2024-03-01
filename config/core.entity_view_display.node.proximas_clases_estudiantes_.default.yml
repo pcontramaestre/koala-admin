@@ -6,6 +6,7 @@ dependencies:
     - field.field.node.proximas_clases_estudiantes_.field_alumno_nivelado
     - field.field.node.proximas_clases_estudiantes_.field_alumno_relacionado
     - field.field.node.proximas_clases_estudiantes_.field_clase_a_asignar
+    - field.field.node.proximas_clases_estudiantes_.field_clase_anterior
     - field.field.node.proximas_clases_estudiantes_.field_clase_gratis_asignada
     - field.field.node.proximas_clases_estudiantes_.field_comentarios_u_observacione
     - node.type.proximas_clases_estudiantes_
@@ -41,6 +42,14 @@ content:
       link: true
     third_party_settings: {  }
     weight: 102
+    region: content
+  field_clase_anterior:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 106
     region: content
   field_clase_gratis_asignada:
     type: entity_reference_label

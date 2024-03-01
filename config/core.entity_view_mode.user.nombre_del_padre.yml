@@ -1,0 +1,10 @@
+uuid: 72e10ed6-ad25-4fdb-a73e-792552ce636a
+langcode: es
+status: true
+dependencies:
+  module:
+    - user
+id: user.nombre_del_padre
+label: 'Nombre del padre'
+targetEntityType: user
+cache: true

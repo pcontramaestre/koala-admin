@@ -6,6 +6,7 @@ dependencies:
     - field.field.node.proximas_clases_estudiantes_.field_alumno_nivelado
     - field.field.node.proximas_clases_estudiantes_.field_alumno_relacionado
     - field.field.node.proximas_clases_estudiantes_.field_clase_a_asignar
+    - field.field.node.proximas_clases_estudiantes_.field_clase_anterior
     - field.field.node.proximas_clases_estudiantes_.field_clase_gratis_asignada
     - field.field.node.proximas_clases_estudiantes_.field_comentarios_u_observacione
     - node.type.proximas_clases_estudiantes_
@@ -50,15 +51,11 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_clase_gratis_asignada:
-    type: entity_reference_autocomplete
-    weight: 26
+  field_clase_anterior:
+    type: chosen_select
+    weight: 14
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   field_comentarios_u_observacione:
     type: string_textarea
@@ -131,4 +128,5 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  field_clase_gratis_asignada: true

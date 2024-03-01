@@ -1,0 +1,29 @@
+uuid: ab967450-ae48-4af8-8d13-28e74c271352
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_clase_anterior
+    - node.type.clases_estudiantes
+    - node.type.proximas_clases_estudiantes_
+id: node.proximas_clases_estudiantes_.field_clase_anterior
+field_name: field_clase_anterior
+entity_type: node
+bundle: proximas_clases_estudiantes_
+label: 'Clase anterior'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      clases_estudiantes: clases_estudiantes
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
