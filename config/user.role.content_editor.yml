@@ -245,6 +245,7 @@ permissions:
   - 'view any page content'
   - 'view any profesores content'
   - 'view any proximas_clases_estudiantes_ content'
+  - 'view any slider_clases_koalas content'
   - 'view any superpoderes content'
   - 'view any suscripciones content'
   - 'view config_pages entity'

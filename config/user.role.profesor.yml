@@ -140,6 +140,7 @@ permissions:
   - 'view any mundos_detalle content'
   - 'view any page content'
   - 'view any proximas_clases_estudiantes_ content'
+  - 'view any slider_clases_koalas content'
   - 'view any superpoderes content'
   - 'view any suscripciones content'
   - 'view asignar_clase_a_estudiante revisions'

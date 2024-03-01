@@ -74,6 +74,7 @@ permissions:
   - 'view any mundos content'
   - 'view any mundos_detalle content'
   - 'view any page content'
+  - 'view any slider_clases_koalas content'
   - 'view commerce_billing_schedule'
   - 'view commerce_product'
   - 'view field_apodo'

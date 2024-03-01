@@ -49,5 +49,6 @@ permissions:
   - 'view own horarios_de_trabajo content'
   - 'view own horarios_profesores content'
   - 'view own koala_ninos content'
+  - 'view own slider_clases_koalas content'
   - 'view own superpoderes content'
   - 'view user email addresses'

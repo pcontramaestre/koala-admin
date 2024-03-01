@@ -12,6 +12,7 @@ dependencies:
     - workflows.workflow.asignar_profesor
   module:
     - admin_toolbar_search
+    - cancelar_clase_gratis
     - commerce_order
     - commerce_payment
     - commerce_product
@@ -38,6 +39,7 @@ permissions:
   - 'access commerce_order overview'
   - 'access user profiles'
   - access_all_form_modes
+  - 'cancelar clase gratis'
   - 'create agendar_clase content'
   - 'create asignar_clase_a_estudiante content'
   - 'create cancelar_suscripcion content'
@@ -95,6 +97,7 @@ permissions:
   - 'view any clases_estudiantes content'
   - 'view any horarios_de_trabajo content'
   - 'view any horarios_profesores content'
+  - 'view any koala_ninos content'
   - 'view any mundos content'
   - 'view any mundos_detalle content'
   - 'view any page content'
@@ -133,6 +136,7 @@ permissions:
   - 'view own koala_ninos content'
   - 'view own profile'
   - 'view own proximas_clases_estudiantes_ content'
+  - 'view own slider_clases_koalas content'
   - 'view own superpoderes content'
   - 'view own suscripciones content'
   - 'view recurring commerce_order'

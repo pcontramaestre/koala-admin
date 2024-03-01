@@ -12,6 +12,7 @@ dependencies:
     - field.storage.node.field_nombre_del_nino_a
     - field.storage.node.field_pencil_id_estudiante
     - field.storage.node.field_pencil_url_clase
+    - field.storage.node.field_tipo_clase
     - field.storage.user.field_nombre_del_acudiente
     - field.storage.user.field_nombre_del_hijo
     - field.storage.user.field_nombres_y_apellidos_del_pr
@@ -4075,6 +4076,135 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
+        uid:
+          id: uid
+          table: users_field_data
+          field: uid
+          relationship: field_alumno_relacionado
+          group_type: group
+          admin_label: ''
+          entity_type: user
+          entity_field: uid
+          plugin_id: field
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: true
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: true
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: number_integer
+          settings:
+            thousand_separator: ''
+            prefix_suffix: true
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        field_tipo_clase:
+          id: field_tipo_clase
+          table: node__field_tipo_clase
+          field: field_tipo_clase
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: ''
+          exclude: true
+          alter:
+            alter_text: true
+            text: "{% set tipo_de_clase = field_tipo_clase__value %}\r\n{% if tipo_de_clase == \"Gratis\" %}\r\n  <div class=\"editar-horario\"><a href=\"/cancelar-clase-gratis/{{ uid }}/{{ nid }}\" class=\"cancelar-clase\" id=\"cancelarclase\">Reagendar clase</a></div>\r\n{% else %}\r\n  <div class=\"editar-horario\"><a href=\"/cancelar-clase?id={{ nid }}\" class=\"cancelar-clase\" id=\"cancelarclase\" data-url=\"/cancelar-clase?id={{ nid }}\">Cancelar clase</a></div>\r\n{% endif %}\r\n\r\n"
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: false
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
         nothing:
           id: nothing
           table: views
@@ -4087,7 +4217,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "{{ nothing_1 }}\r\n<div class=\"datos-clase\">\r\n  <div class=\"imagen\">\r\n\r\n  </div>\r\n  <div class=\"alumno text-center\">\r\n    <p>Alumno</p>\r\n    <div class=\"datos-alumno\">\r\n      <img src=\"{{ user_picture }}\" class=\"mw-100\">\r\n      {{ field_nombre_del_nino_a }} \r\n    </div>\r\n  </div>\r\n  <div class=\"profesor text-center\">\r\n    <p>Profesor</p>\r\n    <div class=\"datos-profesor\">\r\n      {{ user_picture_1 }}\r\n       {{ field_nombres_y_apellidos_del_pr }} \r\n    </div>\r\n  </div>\r\n  <div class=\"fecha text-center\">\r\n    <p>Fecha</p>\r\n    <div class=\"fecha\">{{ field_fecha_cita_oculta_1 }}</div>\r\n  </div>\r\n  <div class=\"boton\">\r\n        <a href=\"/clases?idestudiante={{ field_pencil_id_estudiante }}&url={{ field_pencil_url_clase }}&idClase={{ nid }}\" class=\"editar-clase\"target=\"_blank\">Entrar a Clase</a>\r\n   </div>\r\n  <div class=\"editar-horario\"><a href=\"/cancelar-clase?id={{ nid }}\" class=\"cancelar-clase\" id=\"cancelarclase\" data-url=\"/cancelar-clase?id={{ nid }}\">Cancelar clase</a></div>\r\n</div>"
+            text: "{{ nothing_1 }}\r\n<div class=\"datos-clase\">\r\n  <div class=\"imagen\">\r\n\r\n  </div>\r\n  <div class=\"alumno text-center\">\r\n    <p>Alumno</p>\r\n    <div class=\"datos-alumno\">\r\n      <img src=\"{{ user_picture }}\" class=\"mw-100\">\r\n      {{ field_nombre_del_nino_a }} \r\n    </div>\r\n  </div>\r\n  <div class=\"profesor text-center\">\r\n    <p>Profesor</p>\r\n    <div class=\"datos-profesor\">\r\n      {{ user_picture_1 }}\r\n       {{ field_nombres_y_apellidos_del_pr }} \r\n    </div>\r\n  </div>\r\n  <div class=\"fecha text-center\">\r\n    <p>Fecha</p>\r\n    <div class=\"fecha\">{{ field_fecha_cita_oculta_1 }}</div>\r\n  </div>\r\n  <div class=\"boton\">\r\n        <a href=\"/clases?idestudiante={{ field_pencil_id_estudiante }}&url={{ field_pencil_url_clase }}&idClase={{ nid }}\" class=\"editar-clase\"target=\"_blank\">Entrar a Clase</a>\r\n   </div>\r\n   {{ field_tipo_clase }}\r\n</div>"
             make_link: false
             path: ''
             absolute: false
@@ -4151,7 +4281,6 @@ display:
           operator: in
           value:
             agendar_clase: agendar_clase
-            agendar_clase_no_gratis: agendar_clase_no_gratis
           group: 1
           exposed: false
           expose:
@@ -4346,6 +4475,7 @@ display:
         - 'config:field.storage.node.field_nombre_del_nino_a'
         - 'config:field.storage.node.field_pencil_id_estudiante'
         - 'config:field.storage.node.field_pencil_url_clase'
+        - 'config:field.storage.node.field_tipo_clase'
         - 'config:field.storage.user.field_nombres_y_apellidos_del_pr'
         - 'config:field.storage.user.user_picture'
   block_6:

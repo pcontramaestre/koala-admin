@@ -28,6 +28,7 @@ module:
   calendar_link: 0
   calificar_clase: 0
   cancelar_clase: 0
+  cancelar_clase_gratis: 0
   cancelar_clase_profe: 0
   chosen: 0
   chosen_field: 0
