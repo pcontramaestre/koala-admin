@@ -97,8 +97,6 @@ function calificar_clase_form_alter(&$form, FormStateInterface $form_state, $for
 }
 
 function callback_submit_asignar_clase_a_estudiante_submit(&$form, FormStateInterface $form_state) {
-  // $response = new RedirectResponse('/profesor');
-  // $response->send();
   // Obtener el valor del campo boleano field_marcar_clase_como_finaliza
   $field_marcar_clase_como_finaliza = $form_state->getValue('field_marcar_clase_como_finaliza');
 
@@ -128,12 +126,18 @@ function callback_submit_asignar_clase_a_estudiante_submit(&$form, FormStateInte
     $uid = (int)$uid;
     $node->save();
 
-    if (in_array(0,$field_el_nino_no_asistio_a_la_clase)){      
-      $field_clase_a_asignar = buscarProximasClases($field_alumno_relacionado);     
+    if (in_array(0,$field_el_nino_no_asistio_a_la_clase)){    
+      $field_clase_a_asignar = buscarProximasClases($field_alumno_relacionado);
       $node_clases_estudiantes = Node::load($field_clase_a_asignar);
       $field_numero_de_clase = $node_clases_estudiantes->get('field_numero_de_clase')->getValue();
       $field_numero_de_clase = (int) $field_numero_de_clase[0]['value'];
-      $nuevo_numero_de_clase = $field_numero_de_clase + 1;
+      $field_numero_de_clase > 0 ? $nuevo_numero_de_clase = $field_numero_de_clase + 1 : $nuevo_numero_de_clase = $field_numero_de_clase;
+      // if ($field_numero_de_clase > 0) {
+      //   $nuevo_numero_de_clase = $field_numero_de_clase + 1;
+      // } else {
+      //   $nuevo_numero_de_clase = $field_numero_de_clase;
+      // }
+      
       $field_clase_a_asignar = buscarPorNumeroDeClase($nuevo_numero_de_clase);
       // buscar el nodo de tipo proximas_clases_estudiantes_ con el campo field_alumno_relacionado igual al valor de $field_alumno_relacionado
       $query_proximas_clases = \Drupal::entityQuery('node')
