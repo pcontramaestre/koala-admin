@@ -1,0 +1,14 @@
+cancelar_clase_gratis.cancelar_clase:
+  path: '/cancelar-clase-gratis/{id_estudiante}/{id_clase}'
+  defaults:
+    _controller: '\Drupal\cancelar_clase_gratis\Controller\CancelarClaseGratisController::cancelarClaseGratis'
+    _title: 'Cancelación de Clase'
+  requirements:
+    _permission: 'cancelar clase gratis'
+cancelar_clase_gratis.cancelar_confirmar:
+  path: '/cancelar-clase-gratis/{id_estudiante}/{id_clase}/confirmar'
+  defaults:
+    _controller: '\Drupal\cancelar_clase_gratis\Controller\CancelarClaseGratisController::cancelarClaseGratisConfirmar'
+    _title: 'Confirmación de Cancelación de Clase'
+  requirements:
+    _permission: 'cancelar clase gratis'

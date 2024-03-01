@@ -121,7 +121,3 @@
   };
 
 })(jQuery, Drupal, drupalSettings);
-
-
-
- 

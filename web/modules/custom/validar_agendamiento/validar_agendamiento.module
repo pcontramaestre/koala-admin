@@ -1,6 +1,6 @@
 <?php
 use \Drupal\views\ViewExecutable;
-
+use \Drupal\Core\StringTranslation\TranslatableMarkup;
 
 /**
  * Implements hook_views_pre_render().
@@ -25,11 +25,11 @@ function validar_agendamiento_views_pre_render(ViewExecutable $view) {
     $field_alumno_nivelado = (int) $field_alumno_nivelado;
 
     if (!$field_alumno_nivelado) {
-      // mostrar un html con el mensaje "Tu hijo no ha sido nivelado, por favor espera a que un administrador lo haga"
+      $mensaje = new TranslatableMarkup('Tu hijo no ha sido nivelado o no ha visto la clase gratuita, por favor espera a que un administrador lo haga');
       $view->result = [];
       $view->empty = TRUE;
       $view->attachment_after = [
-        '#markup' => '<div class="alert alert-warning" role="alert">Tu hijo no ha sido nivelado, por favor espera a que un administrador lo haga</div>',
+        '#markup' => '<div class="alert alert-warning" role="alert">'.$mensaje.'</div>',
       ];
 
       // no mostrar el footer de la vista
