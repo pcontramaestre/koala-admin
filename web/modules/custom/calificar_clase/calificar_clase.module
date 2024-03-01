@@ -145,6 +145,34 @@ function callback_submit_asignar_clase_a_estudiante_submit(&$form, FormStateInte
       //set field_clase_a_asignar
       $nodo_proximas_clases_estudiantes->set('field_clase_a_asignar', $field_clase_a_asignar);
       $nodo_proximas_clases_estudiantes->save(); 
+
+      // Buscar todas las clases agendadas del alumno mayor a la fecha de hoy, tipo de contenido agendar_clase
+      $query_agendar_clase = \Drupal::entityQuery('node')
+      ->condition('type', 'agendar_clase')
+      ->condition('field_alumno_relacionado', $field_alumno_relacionado)
+      ->condition('field_fecha_cita_oculta', date('Y-m-d'), '>')
+      ->condition('field_marcar_clase_como_finaliza', 0);
+      $nids = $query_agendar_clase->execute();
+      
+      // Recorrer los nodos obtenidos y obtener el valor referenciado de field_clase_asignada.
+      if ($nids) {
+        $nodos = \Drupal\node\Entity\Node::loadMultiple($nids);
+        foreach ($nodos as $nodo) {
+          $field_clase_asignada = $nodo->get('field_clase_asignada')->getValue();
+          $field_clase_asignada = $field_clase_asignada[0]['target_id'];
+          
+          $query_asignar_clase_a_estudiante = \Drupal::entityQuery('node')
+            ->condition('type', 'asignar_clase_a_estudiante')
+            ->condition('nid', $field_clase_asignada);
+          $nids = $query_asignar_clase_a_estudiante->execute();
+          $nodos = \Drupal\node\Entity\Node::loadMultiple($nids);
+
+          foreach ($nodos as $nodo) {
+            $nodo->set('field_clase_a_asignar', $field_clase_a_asignar);
+            $nodo->save();
+          }
+        }
+      }
     }
 
 
