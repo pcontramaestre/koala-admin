@@ -317,13 +317,7 @@ function callback_submit_agendar_clase(&$form, FormStateInterface $form_state) {
     // Guardar field_pencil_id_clase 
     $node->set('field_pencil_id_clase', $space_id);
 
-    // dump($url_access_estudiante);
-    // dump($url_access_profesor);
-    // dump($space_lync_url);
-
     $node->save();
-
-    //dump($alumno_relacionado);
 
     // Buscar los nodos de tipo agendar_clase que tengan el campo field_alumno_relacionado con el id del alumno.
     // Get the EntityTypeManager.
@@ -333,44 +327,51 @@ function callback_submit_agendar_clase(&$form, FormStateInterface $form_state) {
     $query = $entityTypeManager->getStorage('node')->getQuery();
 
     // Add conditions to the query.
-    $query->condition('type', 'agendar_clase');
+    $query->condition('type', 'proximas_clases_estudiantes_');
     $query->condition('field_alumno_relacionado', $alumno_relacionado[0]['target_id']);
 
     // Execute the query and get the result.
     $nids = $query->execute();
-    //dump("Nodos encontrados para el alumno con id $alumno_relacionado[0]['target_id']");
-    //dump($nids);
-    // Obtener el numero de nodos encontrados.
-    $numero_nodos = count($nids);
-    $numero_nodos = $numero_nodos - 1;
-    //dump("Numero de nodos encontrados: $numero_nodos");
+    // load the node. get entity reference field_clase_a_asignar
+    $nid_proximas_clases_estudiantes = array_shift($nids);
+    $node_proximas_clases_estudiantes = Node::load($nid_proximas_clases_estudiantes);
+    $field_clase_a_asignar = $node_proximas_clases_estudiantes->get('field_clase_a_asignar')->getValue();
+    
 
-    $numero_clase = $numero_nodos ? $numero_nodos : 0;
-    //dump($numero_clase);
-      // Buscar en el tipo de contenido clases_estudiantes el campo field_numero_de_clase y que sea igual al numero de nodos encontrados. (Ambos son numeros).
-      // Get the EntityTypeManager.
-      $entityTypeManager = \Drupal::service('entity_type.manager');
+          // // Obtener el numero de nodos encontrados.
+          // $numero_nodos = count($nids);
+          // $numero_nodos = $numero_nodos - 1;
+          // //dump("Numero de nodos encontrados: $numero_nodos");
 
-      // Get the Node entity Query service.
-      $query = $entityTypeManager->getStorage('node')->getQuery();
+          // $numero_clase = $numero_nodos ? $numero_nodos : 0;
+          // //dump($numero_clase);
+          //   // Buscar en el tipo de contenido clases_estudiantes el campo field_numero_de_clase y que sea igual al numero de nodos encontrados. (Ambos son numeros).
+          //   // Get the EntityTypeManager.
+          //   $entityTypeManager = \Drupal::service('entity_type.manager');
 
-      // Add conditions to the query.
-      $query->condition('type', 'clases_estudiantes');
-      $query->condition('field_numero_de_clase', $numero_clase);
+          //   // Get the Node entity Query service.
+          //   $query = $entityTypeManager->getStorage('node')->getQuery();
 
-      // Execute the query and get the result.
-      $nids = $query->execute();
-      //dump("El numero de clase es");
-      //dump($nids);
+          //   // Add conditions to the query.
+          //   $query->condition('type', 'clases_estudiantes');
+          //   $query->condition('field_numero_de_clase', $numero_clase);
 
-      // Obtener el id del nodo clases_estudiantes.
-      $nid_clases_estudiantes = array_shift($nids);
-      //dump("El id del nodo clases_estudiantes es");
-      //dump($nid_clases_estudiantes);
+          //   // Execute the query and get the result.
+          //   $nids = $query->execute();
+          //   //dump("El numero de clase es");
+          //   //dump($nids);
+
+          //   // Obtener el id del nodo clases_estudiantes.
+          //   $nid_clases_estudiantes = array_shift($nids);
+          //   //dump("El id del nodo clases_estudiantes es");
+          //   //dump($nid_clases_estudiantes);
+
+
+
 
       // Agregar el id del nodo clases_estudiantes al campo field_clase_a_asignar que es una referencia de entidad del nodo asignar_clase_a_estudiante.
       $node = Node::load($new_node_id);
-      $node->set('field_clase_a_asignar', $nid_clases_estudiantes);
+      $node->set('field_clase_a_asignar', $field_clase_a_asignar);
       $node->set('field_alumno_relacionado', $field_alumno_relacionado);
       $node->save();
 
