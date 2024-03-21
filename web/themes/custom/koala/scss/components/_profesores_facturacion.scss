@@ -205,15 +205,16 @@
     .derecha {
       .form-actions {
         position: absolute;
-        width: 15%;
+        width: 22%;
         left: 0;
         right: 0;
         margin: 0 auto;
         top: 630px;
         .button--primary {
-          font-size: 20px;
+          font-size: 1rem;
           font-weight: 700;
           padding: 0.5rem 2rem;
+          line-height: 1.1;
           &:hover {
             background-color: #297e88 !important;
             color: white !important;

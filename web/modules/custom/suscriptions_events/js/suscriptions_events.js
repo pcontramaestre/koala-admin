@@ -8,7 +8,7 @@
         console.log(response);
       };
 
-      console.log('Suscriptions Events');
+      //console.log('Suscriptions Events');
       // Leer valor del localStorage
       var semanas = localStorage.getItem('semanas');
       var totalClases = localStorage.getItem('totalClases');

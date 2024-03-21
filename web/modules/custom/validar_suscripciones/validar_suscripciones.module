@@ -1,0 +1,113 @@
+<?php
+use \Drupal\views\ViewExecutable;
+use \Drupal\Core\StringTranslation\TranslatableMarkup;
+use Drupal\node\Entity\Node;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\user\Entity\User;
+use \Drupal\user\UserInterface;
+
+
+/**
+ * Implements hook_ENTITY_TYPE_insert().
+ * @param \Drupal\Core\Entity\EntityInterface $entity
+ * Agregar un nodo de tipo suscripcion al usuario que se acaba de registrar
+ */
+
+// function validar_suscripciones_user_insert(Drupal\Core\Entity\EntityInterface $entity) {
+//   // $roles = [];
+//   // if ($entity instanceof User) {
+//   //   $roles = $entity->getRoles(); // Obtén los roles del usuario.
+//   //   // verificar si el usuario es nuevo
+//   //   if ($entity->isNew()) {
+//   //     // Verifica si el rol del usuario incluye "padre".
+//   //     if (in_array('padre', $roles)) {
+//   //       // Crear un nodo de tipo suscripcion
+//   //       $node = Node::create([
+//   //         'type' => 'suscripciones_activas',
+//   //         'title' => 'Suscripción de ' . $entity->getAccountName(),
+//   //         'uid' => $entity->id(),
+//   //         'field_padre_suscrito' => $entity->id(),
+//   //         'field_suscripcion_activa_' => 0,
+//   //         'field_nro_clases_restantes' => 0,
+//   //         'field_nro_clases_disponiblles' => 0,
+//   //       ]);
+//   //       $node->save();
+//   //     }
+//   //   }
+//   // }
+// }
+
+
+
+/**
+ * Implements hook_user_login().
+ */
+
+ function validar_suscripciones_user_login(UserInterface $account) {
+  // $roles = $account->getRoles();
+  // if (in_array('padre',$roles)){
+  //   $nids = \Drupal::entityQuery('node')
+  //     ->condition('type', 'suscripcion')
+  //     ->condition('field_usuario_suscriptor', $account->id())
+  //     ->execute();
+  //   $nodos = \Drupal\node\Entity\Node::loadMultiple($nids);
+
+  // }
+  
+  // if (in_array('suscriptor', $roles)) {
+  //   $nids = \Drupal::entityQuery('node')
+  //     ->condition('type', 'suscripcion')
+  //     ->condition('field_usuario_suscriptor', $account->id())
+  //     ->execute();
+  //   $nodos = \Drupal\node\Entity\Node::loadMultiple($nids);
+  //   $nodo = reset($nodos);
+  //   $field_suscripcion_estado = $nodo->get('field_suscripcion_estado')->value;
+  //   $field_suscripcion_estado = (int) $field_suscripcion_estado;
+  //   if ($field_suscripcion_estado == 0) {
+  //     $mensaje = new TranslatableMarkup('Tu suscripción no ha sido aprobada, por favor espera a que un administrador la apruebe');
+  //     drupal_set_message($mensaje, 'warning');
+  //   }
+  // }
+ }
+
+
+
+
+
+
+/**
+ * Implements hook_views_pre_render().
+ * @param ViewExecutable $view
+ * @return void
+ * Edit view suscripciones block_2
+ */
+
+ function validar_suscripciones_views_pre_render(ViewExecutable $view) {
+  $current_user = \Drupal::currentUser();
+  $current_user_id = $current_user->id();
+  $roles = $current_user->getRoles();
+
+  if ($view->id() == 'suscripciones' && $view->current_display == 'block_2') {
+    // $nids = \Drupal::entityQuery('node')
+    //   ->condition('type', 'suscripcion')
+    //   ->condition('field_usuario_suscriptor', $current_user_id)
+    //   ->execute();
+    // $nodos = \Drupal\node\Entity\Node::loadMultiple($nids);
+
+
+
+    // $nodo = reset($nodos);
+    // $field_suscripcion_estado = $nodo->get('field_suscripcion_estado')->value;
+    // $field_suscripcion_estado = (int) $field_suscripcion_estado;
+    // if ($field_suscripcion_estado == 0) {
+    //   $mensaje = new TranslatableMarkup('Tu suscripción no ha sido aprobada, por favor espera a que un administrador la apruebe');
+    //   $view->result = [];
+    //   $view->empty = TRUE;
+    //   $view->attachment_after = [
+    //     '#markup' => '<div class="alert alert-warning" role="alert">'.$mensaje.'</div>',
+    //   ];
+    //   // no mostrar el footer de la vista
+    //   $view->footer = [];
+    // }
+  }
+ }

@@ -21,11 +21,244 @@ use Drupal\views\ViewExecutable;
  * Implements hook_form_FORM_ID_alter() for agendar_clase node edit form.
  */
 function enviar_correo_clase_agendada_gratis_form_alter(array &$form, FormStateInterface $form_state, $form_id) {
-  // Agregar un #submit handler personalizado para enviar el correo.  
+    $request_stack = \Drupal::service('request_stack');
+    $request = $request_stack->getCurrentRequest();
+    $esEscuela = $request->query->get('escuela');
+    $id_user_nino = $request->query->get('uid');
+  
+  if ($form_id =='node_agendar_clase_agendar_clases_form' && !empty($esEscuela) && !empty($id_user_nino)) { 
+    // cargar usuario actual y obtener el id current user
+    $id_padre_actual = \Drupal::currentUser()->id();
+
+    //load user nino
+    $user = \Drupal\user\Entity\User::load($id_user_nino);
+    //load field_nombre_del_hijo
+    $nombre_nino = $user->get('field_nombre_del_hijo')->value;
+    // load field_apellidos
+    $apellidos_nino = $user->get('field_apellidos')->value;
+    /// get entity reference field_padre from user
+    $field_padre_id = $user->get('field_padre')->target_id;
+
+
+    // si $id_padre_actual no es igual a $field_padre_id, mostrar mensaje de error y no acceder al formulario.
+    if ($id_padre_actual != $field_padre_id) {
+      // Mensaje de error. "No tienes permisos para acceder a este formulario".
+      \Drupal::messenger()->addError(\Drupal::translation()->translate('No tienes permisos para acceder a este formulario'));
+      // Redirigir a la página de inicio.
+      // not access 
+      $form['#access'] = FALSE;
+      return;
+    }
+    // load content type crear_hijos by field_hijo_relacionado = $id_user_nino
+    $nids = \Drupal::entityQuery('node')
+      ->condition('type', 'crear_hijos')
+      ->condition('field_hijo_relacionado', $id_user_nino)
+      ->execute();
+    $nodos = \Drupal\node\Entity\Node::loadMultiple($nids);
+    $nodohijo = reset($nodos);
+    $field_fecha_nacimiento = $nodohijo->get('field_fecha_nacimiento')->value;
+
+
+    // agregar al form field_nombre_del_nino_a, field_fecha_nac, field_sexo_n (radio) y de solo lectura.
+    $form['field_nombre_del_nino_a']['widget'][0]['value']['#default_value'] = $nombre_nino;
+    $form['field_nombre_del_nino_a']['widget'][0]['value']['#attributes']['readonly'] = 'readonly';
+    $form['field_apellidos_del_nino_a']['widget'][0]['value']['#default_value'] = $apellidos_nino;
+    $form['field_apellidos_del_nino_a']['widget'][0]['value']['#attributes']['readonly'] = 'readonly';
+    $form['field_fecha_nac']['widget'][0]['value']['#default_value'] = $field_fecha_nacimiento;
+    $form['field_fecha_nac']['widget'][0]['value']['#attributes']['readonly'] = 'readonly';
+  
+
+    // add class disabled to field_nombre_del_nino_a, field_fecha_nac, field_sexo_n, field_apellidos_del_nino_a
+    $form['field_nombre_del_nino_a']['widget'][0]['value']['#attributes']['class'][] = 'disabled';
+    $form['field_fecha_nac']['widget'][0]['value']['#attributes']['class'][] = 'disabled';
+    $form['field_sexo_n']['widget'][0]['value']['#attributes']['class'][] = 'disabled';
+    $form['field_apellidos_del_nino_a']['widget'][0]['value']['#attributes']['class'][] = 'disabled';
+
+    // hiden field_sexo_n
+    $form['field_sexo_n']['#access'] = FALSE;
+
+    $form['actions']['submit']['#submit'][] = 'clase_gratis_estudiantes_escuelas';
+  } else {
+     // Agregar un #submit handler personalizado para enviar el correo.  
     if ($form_id === 'agendar_clase_node_form' || $form_id === 'node_agendar_clase_agendar_clases_form') {
       $form['actions']['submit']['#submit'][] = 'enviar_correo_clase_agendada_gratis_send_email';
     }
+  }
 }
+
+
+function clase_gratis_estudiantes_escuelas(array &$form, FormStateInterface $form_state) {
+  $request_stack = \Drupal::service('request_stack');
+  $request = $request_stack->getCurrentRequest();
+  $id_user_nino = $request->query->get('uid');
+
+  $user = \Drupal\user\Entity\User::load($id_user_nino);
+  $field_pencil_id_estudiante = $user->get('field_pencil_id')->value;
+  $field_pencil_email = $user->get('field_pencil_email')->value;
+
+  $fecha_clase_save = $form_state->getValue('field_fecha_de_la_cita');  
+  $fecha_clase_save = $fecha_clase_save[0]['value'];
+
+  $hora_clase_save = $form_state->getValue('field_hora_clase');
+  $hora_clase_save = $hora_clase_save[0]['value'];
+
+  // Convierte los segundos a horas y minutos
+  $horas = gmdate('H', $hora_clase_save);
+  $minutos = gmdate('i', $hora_clase_save);
+  $segundos = gmdate('s', $hora_clase_save);
+
+  // Formatea la hora como HH:mm:ss
+  $horaFormateada = $horas . ':' . $minutos . ':' . $segundos;
+  
+  $fechaHoraTexto = $fecha_clase_save .' '. $horaFormateada;
+
+  // Crea un objeto DateTime a partir del texto combinado
+  $fechaHoraObjeto = \DateTime::createFromFormat('d-m-Y H:i:s', $fechaHoraTexto);
+
+  //convertir $fechaHoraObjeto a 'd-m-Y\TH:i:s format for datetime field in drupal
+  // Obtiene la fecha formateada
+  $fechaFormateada = $fechaHoraObjeto->format('d-m-Y\TH:i:s');
+  $form_state->setValue('field_alumno_relacionado', $id_user_nino);
+  $form_state->setValue('field_id_texto_alumno', $id_user_nino);
+  $form_state->setValue('field_pencil_id_estudiante', $field_pencil_id_estudiante);
+
+  // get field_pencil_id_profesor value.
+  $field_pencil_id_profesor = $form_state->getValue('field_pencil_id_profesor');
+  $field_pencil_id_profesor = $field_pencil_id_profesor[0]['value'];
+  $correo_profesor_pencil = $field_pencil_id_profesor.'@pencilspaces.com';
+
+  $field_pencil_id_estudiante = $field_pencil_id_estudiante;
+  $correo_estudiante_pencil = $field_pencil_email;
+
+  $nombre_nino = $form_state->getValue('field_nombre_del_nino_a');
+  $nombre_nino = $nombre_nino[0]['value'];
+  $apellidos_nino = $form_state->getValue('field_apellidos_del_nino_a');
+  $apellidos_nino = $apellidos_nino[0]['value'];
+
+  $nombre_nino = $nombre_nino . ' ' . $apellidos_nino;
+  
+
+  // Nombre de la clase a crear
+  $nombre_clase = "Class free for ".$nombre_nino;
+
+  //Datos para crear un espacio de prueba con la API de Pencil Connect.
+  $data = [
+    'title' => $nombre_clase,
+    'hosts' => [
+      [
+        'email' => $correo_profesor_pencil,
+        'userId' => $field_pencil_id_profesor,
+      ],
+    ],
+    'participants' => [
+      [
+        'email' => $correo_estudiante_pencil,
+        'userId' => $field_pencil_id_estudiante,
+      ],
+    ],
+    'visibility' => 'public',
+    'notifyInvitees' => false,
+  ];
+
+  // Crear un espacio con la API de Pencil Connect.
+  $create_space = api_pencil_connect_create_space($data);
+  if ($create_space !== FALSE) {
+    $space_id = $create_space['spaceId'];
+    $space_lync_url = $create_space['link'];  
+    //\Drupal::messenger()->addError(new TranslatableMarkup('Creating space in the API - module create koala' . dump($create_space) . "Data: " . dump($data) ));
+  } else {
+    \Drupal::messenger()->addError(new TranslatableMarkup('Error creating space in the API - module create koala' . $create_space ));
+  }
+
+  // field_pencil_url_clase and field_pencil_id_clase
+  $form_state->setValue('field_pencil_url_clase', $space_lync_url);
+  $form_state->setValue('field_pencil_id_clase', $space_id);
+
+  $formObject = $form_state->getFormObject();
+  if (!($formObject instanceof \Drupal\Core\Entity\EntityFormInterface)) {
+    // Not an entity form, nothin to alter.
+    return;
+  }
+  $node = $formObject->getEntity();
+  $node->save();
+
+  // Verifica si el objeto es una instancia de NodeInterface y obtiene el ID del nodo.
+  if ($node instanceof NodeInterface) {
+    $nid = $node->id();
+    $node = Node::load($nid);
+    // Titulo del nodo asignar_clase_a_estudiante. Asignar clase a estudiante + nombre del niño.
+    $title = 'Asignar clase a estudiante ' . $nombre_nino;
+    // Crea un nodo de tipo "asignar_clase_a_estudiante".
+    $new_node = Node::create([
+      'type' => 'asignar_clase_a_estudiante',
+      'title' => $title,
+    ]);
+    // Establecer el valor del campo 'field_seleccionar_clase_agendada'
+    $new_node->set('field_seleccionar_clase_agendada', $nid);
+    
+    $new_node->set('field_alumno_relacionado', $id_user_nino);
+    // Guardar el nodo
+    $new_node->save();
+    // Obtener el ID del nodo recién creado
+    $new_node_id = $new_node->id();
+    $numero_clase = 0;
+
+        // Buscar en el tipo de contenido clases_estudiantes el campo field_numero_de_clase y que sea igual al numero de nodos encontrados. (Ambos son numeros).
+      // Get the EntityTypeManager.
+      $entityTypeManager = \Drupal::service('entity_type.manager');
+      // Get the Node entity Query service.
+      $query = $entityTypeManager->getStorage('node')->getQuery();
+      // Add conditions to the query.
+      $query->condition('type', 'clases_estudiantes');
+      $query->condition('field_numero_de_clase', $numero_clase);
+      // Execute the query and get the result.
+      $nids = $query->execute();
+
+      $nid_clases_estudiantes = array_shift($nids);
+      $node_clase_asignada = Node::load($new_node_id);
+      $node_clase_asignada->set('field_clase_a_asignar', $nid_clases_estudiantes);
+      $node_clase_asignada->save();
+
+    //Crea un nodo de tipo "proximas_clases_estudiantes_" con los campos field_alumno_relacionado y field_clase_a_asignar
+    $node_proximas_clases = Node::create([
+      'type' => 'proximas_clases_estudiantes_',
+      'title' => 'Proximas clases del estudiante ' . $nombre_nino,
+      'field_alumno_relacionado' => $id_user_nino,
+      'field_clase_a_asignar' => $nid_clases_estudiantes,
+      'field_clase_gratis_asignada' => $new_node_id,
+    ]); 
+    // Guarda el nodo creado.
+    if ($node_proximas_clases->save()) {
+      // Node saved successfully.
+      // Mensaje de exito. "El nodo se ha creado correctamente".
+      \Drupal::messenger()->addMessage(\Drupal::translation()->translate('El nodo se ha creado correctamente'). 'NID Clases Estudiantes: ' . $nid_clases_estudiantes . 'NID Clase Asignada: ' . $new_node_id);
+    } else {
+      // Mensaje de error. "El nodo no se ha creado correctamente".
+      \Drupal::messenger()->addMessage(\Drupal::translation()->translate('El nodo no se ha creado correctamente'));
+    }
+
+    if ($node instanceof NodeInterface) {
+      try {
+        //$node->set('field_fecha_cita_oculta', date('Y-m-d\TH:i:s', strtotime($fechaHoraTexto)));        
+        $node->set('field_alumno_relacionado', $id_user_nino);
+        $node->set('field_id_texto_alumno', $id_user_nino);
+        $node->set('field_pencil_id_estudiante', $field_pencil_id_estudiante);
+        $node->set('field_pencil_url_clase', $space_lync_url);
+        $node->set('field_pencil_id_clase', $space_id);   
+        $node->set('field_clase_asignada', $new_node_id);             
+        $node->save();
+        \Drupal::messenger()->addMessage('Node saved successfully ID: '.$id_user_nino); 
+      }
+      catch (\Exception $e) {
+        \Drupal::messenger()->addMessage($e->getMessage(), 'error');  
+      }
+    }
+  }
+
+}
+
+
+
 
 
 // Implementar form submit para guardar la fecha y hora de la clase en un campo oculto
@@ -77,12 +310,14 @@ function enviar_correo_clase_agendada_gratis_form_submit(array &$form, FormState
 
 
 
+
 /**
  * Submit handler para enviar el correo.
  */
 function enviar_correo_clase_agendada_gratis_send_email(array &$form, FormStateInterface $form_state) {
   //$values = $form_state->getValues();
-  
+  // get parameter url
+
   $user = \Drupal::currentUser();
   $uid = $user->id();
   // Obtener el displayname del usuario actual drupal 9.
@@ -181,254 +416,254 @@ function enviar_correo_clase_agendada_gratis_send_email(array &$form, FormStateI
   // Formatea la hora como HH:mm:ss
   $horaFormateada = $horas . ':' . $minutos . ':' . $segundos;
   
-$fechaHoraTexto = $fecha_clase_save .' '. $horaFormateada;
+  $fechaHoraTexto = $fecha_clase_save .' '. $horaFormateada;
 
-// Crea un objeto DateTime a partir del texto combinado
-$fechaHoraObjeto = \DateTime::createFromFormat('d-m-Y H:i:s', $fechaHoraTexto);
+  // Crea un objeto DateTime a partir del texto combinado
+  $fechaHoraObjeto = \DateTime::createFromFormat('d-m-Y H:i:s', $fechaHoraTexto);
 
-//convertir $fechaHoraObjeto a 'd-m-Y\TH:i:s format for datetime field in drupal
-// Obtiene la fecha formateada
-$fechaFormateada = $fechaHoraObjeto->format('d-m-Y\TH:i:s');
-$form_state->setValue('field_alumno_relacionado', $newidhijo);
-$form_state->setValue('field_id_texto_alumno', $newidhijo);
+  //convertir $fechaHoraObjeto a 'd-m-Y\TH:i:s format for datetime field in drupal
+  // Obtiene la fecha formateada
+  $fechaFormateada = $fechaHoraObjeto->format('d-m-Y\TH:i:s');
+  $form_state->setValue('field_alumno_relacionado', $newidhijo);
+  $form_state->setValue('field_id_texto_alumno', $newidhijo);
 
-// field_pencil_id_estudiante
-$form_state->setValue('field_pencil_id_estudiante', $create_user_pencil['userId']);
+  // field_pencil_id_estudiante
+  $form_state->setValue('field_pencil_id_estudiante', $create_user_pencil['userId']);
 
 
-// get field_pencil_id_profesor value.
-$field_pencil_id_profesor = $form_state->getValue('field_pencil_id_profesor');
-$field_pencil_id_profesor = $field_pencil_id_profesor[0]['value'];
-$correo_profesor_pencil = $field_pencil_id_profesor.'@pencilspaces.com';
+  // get field_pencil_id_profesor value.
+  $field_pencil_id_profesor = $form_state->getValue('field_pencil_id_profesor');
+  $field_pencil_id_profesor = $field_pencil_id_profesor[0]['value'];
+  $correo_profesor_pencil = $field_pencil_id_profesor.'@pencilspaces.com';
 
-// get field_pencil_id_estudiante value.
-$field_pencil_id_estudiante = $create_user_pencil['userId'];
-$correo_estudiante_pencil = $create_user_pencil['email'];
+  // get field_pencil_id_estudiante value.
+  $field_pencil_id_estudiante = $create_user_pencil['userId'];
+  $correo_estudiante_pencil = $create_user_pencil['email'];
 
-$nombre_nino = $form_state->getValue('field_nombre_del_nino_a');
-$nombre_nino = $nombre_nino[0]['value'];
+  $nombre_nino = $form_state->getValue('field_nombre_del_nino_a');
+  $nombre_nino = $nombre_nino[0]['value'];
 
-// Nombre de la clase a crear
-$nombre_clase = "Class free for ".$nombre_nino;
+  // Nombre de la clase a crear
+  $nombre_clase = "Class free for ".$nombre_nino;
 
-//Datos para crear un espacio de prueba con la API de Pencil Connect.
-$data = [
-  'title' => $nombre_clase,
-  'hosts' => [
-    [
-      'email' => $correo_profesor_pencil,
-      'userId' => $field_pencil_id_profesor,
+  //Datos para crear un espacio de prueba con la API de Pencil Connect.
+  $data = [
+    'title' => $nombre_clase,
+    'hosts' => [
+      [
+        'email' => $correo_profesor_pencil,
+        'userId' => $field_pencil_id_profesor,
+      ],
     ],
-  ],
-  'participants' => [
-    [
-      'email' => $correo_estudiante_pencil,
-      'userId' => $field_pencil_id_estudiante,
+    'participants' => [
+      [
+        'email' => $correo_estudiante_pencil,
+        'userId' => $field_pencil_id_estudiante,
+      ],
     ],
-  ],
-  'visibility' => 'public',
-  'notifyInvitees' => false,
-];
+    'visibility' => 'public',
+    'notifyInvitees' => false,
+  ];
 
-// Crear un espacio con la API de Pencil Connect.
-$create_space = api_pencil_connect_create_space($data);
+  // Crear un espacio con la API de Pencil Connect.
+  $create_space = api_pencil_connect_create_space($data);
 
-if ($create_space !== FALSE) {
-  $space_id = $create_space['spaceId'];
-  $space_lync_url = $create_space['link'];  
-  //\Drupal::messenger()->addError(new TranslatableMarkup('Creating space in the API - module create koala' . dump($create_space) . "Data: " . dump($data) ));
-} else {
-  \Drupal::messenger()->addError(new TranslatableMarkup('Error creating space in the API - module create koala' . $create_space ));
-}
-
-// field_pencil_url_clase and field_pencil_id_clase
-$form_state->setValue('field_pencil_url_clase', $space_lync_url);
-$form_state->setValue('field_pencil_id_clase', $space_id);
-
-
-// Guarda la fecha formateada en el campo oculto
-
-  //$form_state->setValue('field_fecha_cita_oculta', $fechaFormateada);
-
-    $formObject = $form_state->getFormObject();
-    if (!($formObject instanceof \Drupal\Core\Entity\EntityFormInterface)) {
-      // Not an entity form, nothin to alter.
-      return;
-    }
-     $node = $formObject->getEntity();
-      $node->save();
-
-  // Verifica si el objeto es una instancia de NodeInterface y obtiene el ID del nodo.
-  if ($node instanceof NodeInterface) {
-    $nid = $node->id();
-    $node = Node::load($nid);
-    // Titulo del nodo asignar_clase_a_estudiante. Asignar clase a estudiante + nombre del niño.
-    $title = 'Asignar clase a estudiante ' . $nombre_nino;
-    // Crea un nodo de tipo "asignar_clase_a_estudiante".
-    $new_node = Node::create([
-      'type' => 'asignar_clase_a_estudiante',
-      'title' => $title,
-    ]);
-    // Establecer el valor del campo 'field_seleccionar_clase_agendada'
-    $new_node->set('field_seleccionar_clase_agendada', $nid);
-    
-    $new_node->set('field_alumno_relacionado', $newidhijo);
-    // Guardar el nodo
-    $new_node->save();
-    // Obtener el ID del nodo recién creado
-    $new_node_id = $new_node->id();
-    $numero_clase = 0;
-
-        // Buscar en el tipo de contenido clases_estudiantes el campo field_numero_de_clase y que sea igual al numero de nodos encontrados. (Ambos son numeros).
-      // Get the EntityTypeManager.
-      $entityTypeManager = \Drupal::service('entity_type.manager');
-      // Get the Node entity Query service.
-      $query = $entityTypeManager->getStorage('node')->getQuery();
-      // Add conditions to the query.
-      $query->condition('type', 'clases_estudiantes');
-      $query->condition('field_numero_de_clase', $numero_clase);
-      // Execute the query and get the result.
-      $nids = $query->execute();
-
-      $nid_clases_estudiantes = array_shift($nids);
-      $node_clase_asignada = Node::load($new_node_id);
-      $node_clase_asignada->set('field_clase_a_asignar', $nid_clases_estudiantes);
-      $node_clase_asignada->save();
-
-    //Crea un nodo de tipo "proximas_clases_estudiantes_" con los campos field_alumno_relacionado y field_clase_a_asignar
-    $node_proximas_clases = Node::create([
-      'type' => 'proximas_clases_estudiantes_',
-      'title' => 'Proximas clases del estudiante ' . $nombre_nino,
-      'field_alumno_relacionado' => $newidhijo,
-      'field_clase_a_asignar' => $nid_clases_estudiantes,
-      'field_clase_gratis_asignada' => $new_node_id,
-    ]); 
-    // Guarda el nodo creado.
-    if ($node_proximas_clases->save()) {
-      // Node saved successfully.
-      // Mensaje de exito. "El nodo se ha creado correctamente".
-      \Drupal::messenger()->addMessage(\Drupal::translation()->translate('El nodo se ha creado correctamente'). 'NID Clases Estudiantes: ' . $nid_clases_estudiantes . 'NID Clase Asignada: ' . $new_node_id);
-    } else {
-      // Mensaje de error. "El nodo no se ha creado correctamente".
-      \Drupal::messenger()->addMessage(\Drupal::translation()->translate('El nodo no se ha creado correctamente'));
-    }
-
-    if ($node instanceof NodeInterface) {
-      try {
-        //$node->set('field_fecha_cita_oculta', date('Y-m-d\TH:i:s', strtotime($fechaHoraTexto)));        
-        $node->set('field_alumno_relacionado', $newidhijo);
-        $node->set('field_id_texto_alumno', $newidhijo);
-        $node->set('field_pencil_id_estudiante', $create_user_pencil['userId']);
-        $node->set('field_pencil_url_clase', $space_lync_url);
-        $node->set('field_pencil_id_clase', $space_id);   
-        $node->set('field_clase_asignada', $new_node_id);             
-        $node->save();
-        \Drupal::messenger()->addMessage('Node saved successfully ID: '.$newidhijo); 
-      }
-      catch (\Exception $e) {
-        \Drupal::messenger()->addMessage($e->getMessage(), 'error');  
-      }
-    }
-    
-  }
-
-    
-  
- 
-  //AQUI ENVIAMOS EL CORREO. DESCOMENTAR MAS ADELANTE CUANDO SE ARREGLE EL PROBLEMA DE ENVIO DE CORREO
-/*
-  $fecha_clase = $form_state->getValue('field_fecha_de_la_cita');
-  $hora_clase = $form_state->getValue('field_hora_clase');
-  $titulo = $form_state->getValue('title');
-  $titulo = $titulo['0']['value'];
-  $fecha_clase = $fecha_clase['0']['value'];
-  $hora_clase = $hora_clase['0']['value'];
-  //dump($fecha_clase, $hora_clase, $titulo);
-  //exit;
-
-
-  // Crear el contenido del correo.
-  $message = new FormattableMarkup('<p>Aquí está el archivo invite.ics adjunto para tu clase agendada.</p>
-  <br/>
-  <p>Fecha: @fecha</p><br>
-  <p>Hora: @hora</p><br>
-  <p>Título: @titulo</p><br>
-  ', [
-    '@fecha' => $fecha_clase,
-    '@hora' => $hora_clase,
-    '@titulo' => $titulo,
-  ]);
-  
-  // Obtener el correo del usuario actual.
-  $user = \Drupal::currentUser();
-  $email = $user->getEmail();
-  $email = 'pablo@icreativadigital.com';
-  // Generar el archivo invite.ics
-  $file_content = 'BEGIN:VCALENDAR
-VERSION:2.0
-PRODID:-//Drupal//Envío de Correo//ES
-BEGIN:VEVENT
-SUMMARY:' . $titulo . '
-DTSTART:' . $fecha_clase . 'T' . $hora_clase . '00
-DTEND:' . $fecha_clase . 'T' . $hora_clase . '25
-END:VEVENT
-END:VCALENDAR';
-  
-  dump($file_content);
-  // Guardar el archivo en la carpeta temporal de Drupal.
-  
-  //$temporary_path = \Drupal::service('file_system')->getTempDirectory() . '/invite.ics';
-  //Create  $temporary_path file on sites/default/files/invite.ics drupal 9
-  $temporary_path = \Drupal::service('file_system')->realpath('public://invite.ics');
-
-  
-
-  //dump($temporary_path);
-
-  file_put_contents($temporary_path, $file_content);
-
-  
-  // Adjuntar el archivo al correo.
-  $attachments[] = $temporary_path;
-  //dump($attachments);
-  
-  // Obtener la configuración de correo del sitio.
-  $config = \Drupal::config('system.site');
-  $site_mail = $config->get('mail');
-  
-  //convertir $message en html para que se pueda enviar el correo
-  $message = new FormattableMarkup($message, []);
-  
-  // Crear el objeto de correo.
-  $params['message'] = $message;
-  $params['subject'] = 'Invitación a la clase agendada';
-  $params['attachments'] = [$temporary_path];
-  $params['to'] = $email;
-  $params['from'] = $site_mail;
-  $params['headers']['Content-Type'] = 'text/html; charset=UTF-8';
-  
-  // Enviar el correo.
- $mailManager = \Drupal::service('plugin.manager.mail');
- $result = $mailManager->mail('enviar_correo_clase_agendada_gratis', 'enviar_correo', $email, 'es', $params, NULL);
- 
-
-
- 
-  // Verificar si ocurrió un error al enviar el correo.
-  if ($result['result'] !== TRUE) {
-    // drupal_set_message(t('Hubo un problema al enviar el correo. Por favor, intenta nuevamente más tarde.'), 'error');
-    // messenger()->addError(t('Hubo un problema al enviar el correo. Por favor, intenta nuevamente más tarde.'));
-    //\Drupal::messenger()->addError(t('Hubo un problema al enviar el correo. Por favor, intenta nuevamente más tarde.'));
-     \Drupal::messenger()->addError(new TranslatableMarkup('Hubo un problema al enviar el correo. Por favor, intenta nuevamente más tarde.'));    
+  if ($create_space !== FALSE) {
+    $space_id = $create_space['spaceId'];
+    $space_lync_url = $create_space['link'];  
+    //\Drupal::messenger()->addError(new TranslatableMarkup('Creating space in the API - module create koala' . dump($create_space) . "Data: " . dump($data) ));
   } else {
-    // Mensaje de éxito.
-    // drupal_set_message(t('El correo fue enviado correctamente.'));
-    // messenger()->addMessage(t('El correo fue enviado correctamente.'));
-    //\Drupal::messenger()->addMessage(t('El correo fue enviado correctamente.'));
-    \Drupal::messenger()->addMessage(new TranslatableMarkup('El correo fue enviado correctamente.'));
+    \Drupal::messenger()->addError(new TranslatableMarkup('Error creating space in the API - module create koala' . $create_space ));
   }
 
-*/
+  // field_pencil_url_clase and field_pencil_id_clase
+  $form_state->setValue('field_pencil_url_clase', $space_lync_url);
+  $form_state->setValue('field_pencil_id_clase', $space_id);
+
+
+  // Guarda la fecha formateada en el campo oculto
+
+    //$form_state->setValue('field_fecha_cita_oculta', $fechaFormateada);
+
+      $formObject = $form_state->getFormObject();
+      if (!($formObject instanceof \Drupal\Core\Entity\EntityFormInterface)) {
+        // Not an entity form, nothin to alter.
+        return;
+      }
+      $node = $formObject->getEntity();
+        $node->save();
+
+    // Verifica si el objeto es una instancia de NodeInterface y obtiene el ID del nodo.
+    if ($node instanceof NodeInterface) {
+      $nid = $node->id();
+      $node = Node::load($nid);
+      // Titulo del nodo asignar_clase_a_estudiante. Asignar clase a estudiante + nombre del niño.
+      $title = 'Asignar clase a estudiante ' . $nombre_nino;
+      // Crea un nodo de tipo "asignar_clase_a_estudiante".
+      $new_node = Node::create([
+        'type' => 'asignar_clase_a_estudiante',
+        'title' => $title,
+      ]);
+      // Establecer el valor del campo 'field_seleccionar_clase_agendada'
+      $new_node->set('field_seleccionar_clase_agendada', $nid);
+      
+      $new_node->set('field_alumno_relacionado', $newidhijo);
+      // Guardar el nodo
+      $new_node->save();
+      // Obtener el ID del nodo recién creado
+      $new_node_id = $new_node->id();
+      $numero_clase = 0;
+
+          // Buscar en el tipo de contenido clases_estudiantes el campo field_numero_de_clase y que sea igual al numero de nodos encontrados. (Ambos son numeros).
+        // Get the EntityTypeManager.
+        $entityTypeManager = \Drupal::service('entity_type.manager');
+        // Get the Node entity Query service.
+        $query = $entityTypeManager->getStorage('node')->getQuery();
+        // Add conditions to the query.
+        $query->condition('type', 'clases_estudiantes');
+        $query->condition('field_numero_de_clase', $numero_clase);
+        // Execute the query and get the result.
+        $nids = $query->execute();
+
+        $nid_clases_estudiantes = array_shift($nids);
+        $node_clase_asignada = Node::load($new_node_id);
+        $node_clase_asignada->set('field_clase_a_asignar', $nid_clases_estudiantes);
+        $node_clase_asignada->save();
+
+      //Crea un nodo de tipo "proximas_clases_estudiantes_" con los campos field_alumno_relacionado y field_clase_a_asignar
+      $node_proximas_clases = Node::create([
+        'type' => 'proximas_clases_estudiantes_',
+        'title' => 'Proximas clases del estudiante ' . $nombre_nino,
+        'field_alumno_relacionado' => $newidhijo,
+        'field_clase_a_asignar' => $nid_clases_estudiantes,
+        'field_clase_gratis_asignada' => $new_node_id,
+      ]); 
+      // Guarda el nodo creado.
+      if ($node_proximas_clases->save()) {
+        // Node saved successfully.
+        // Mensaje de exito. "El nodo se ha creado correctamente".
+        \Drupal::messenger()->addMessage(\Drupal::translation()->translate('El nodo se ha creado correctamente'). 'NID Clases Estudiantes: ' . $nid_clases_estudiantes . 'NID Clase Asignada: ' . $new_node_id);
+      } else {
+        // Mensaje de error. "El nodo no se ha creado correctamente".
+        \Drupal::messenger()->addMessage(\Drupal::translation()->translate('El nodo no se ha creado correctamente'));
+      }
+
+      if ($node instanceof NodeInterface) {
+        try {
+          //$node->set('field_fecha_cita_oculta', date('Y-m-d\TH:i:s', strtotime($fechaHoraTexto)));        
+          $node->set('field_alumno_relacionado', $newidhijo);
+          $node->set('field_id_texto_alumno', $newidhijo);
+          $node->set('field_pencil_id_estudiante', $create_user_pencil['userId']);
+          $node->set('field_pencil_url_clase', $space_lync_url);
+          $node->set('field_pencil_id_clase', $space_id);   
+          $node->set('field_clase_asignada', $new_node_id);             
+          $node->save();
+          \Drupal::messenger()->addMessage('Node saved successfully ID: '.$newidhijo); 
+        }
+        catch (\Exception $e) {
+          \Drupal::messenger()->addMessage($e->getMessage(), 'error');  
+        }
+      }
+      
+    }
+
+      
+    
+  
+    //AQUI ENVIAMOS EL CORREO. DESCOMENTAR MAS ADELANTE CUANDO SE ARREGLE EL PROBLEMA DE ENVIO DE CORREO
+  /*
+    $fecha_clase = $form_state->getValue('field_fecha_de_la_cita');
+    $hora_clase = $form_state->getValue('field_hora_clase');
+    $titulo = $form_state->getValue('title');
+    $titulo = $titulo['0']['value'];
+    $fecha_clase = $fecha_clase['0']['value'];
+    $hora_clase = $hora_clase['0']['value'];
+    //dump($fecha_clase, $hora_clase, $titulo);
+    //exit;
+
+
+    // Crear el contenido del correo.
+    $message = new FormattableMarkup('<p>Aquí está el archivo invite.ics adjunto para tu clase agendada.</p>
+    <br/>
+    <p>Fecha: @fecha</p><br>
+    <p>Hora: @hora</p><br>
+    <p>Título: @titulo</p><br>
+    ', [
+      '@fecha' => $fecha_clase,
+      '@hora' => $hora_clase,
+      '@titulo' => $titulo,
+    ]);
+    
+    // Obtener el correo del usuario actual.
+    $user = \Drupal::currentUser();
+    $email = $user->getEmail();
+    $email = 'pablo@icreativadigital.com';
+    // Generar el archivo invite.ics
+    $file_content = 'BEGIN:VCALENDAR
+  VERSION:2.0
+  PRODID:-//Drupal//Envío de Correo//ES
+  BEGIN:VEVENT
+  SUMMARY:' . $titulo . '
+  DTSTART:' . $fecha_clase . 'T' . $hora_clase . '00
+  DTEND:' . $fecha_clase . 'T' . $hora_clase . '25
+  END:VEVENT
+  END:VCALENDAR';
+    
+    dump($file_content);
+    // Guardar el archivo en la carpeta temporal de Drupal.
+    
+    //$temporary_path = \Drupal::service('file_system')->getTempDirectory() . '/invite.ics';
+    //Create  $temporary_path file on sites/default/files/invite.ics drupal 9
+    $temporary_path = \Drupal::service('file_system')->realpath('public://invite.ics');
+
+    
+
+    //dump($temporary_path);
+
+    file_put_contents($temporary_path, $file_content);
+
+    
+    // Adjuntar el archivo al correo.
+    $attachments[] = $temporary_path;
+    //dump($attachments);
+    
+    // Obtener la configuración de correo del sitio.
+    $config = \Drupal::config('system.site');
+    $site_mail = $config->get('mail');
+    
+    //convertir $message en html para que se pueda enviar el correo
+    $message = new FormattableMarkup($message, []);
+    
+    // Crear el objeto de correo.
+    $params['message'] = $message;
+    $params['subject'] = 'Invitación a la clase agendada';
+    $params['attachments'] = [$temporary_path];
+    $params['to'] = $email;
+    $params['from'] = $site_mail;
+    $params['headers']['Content-Type'] = 'text/html; charset=UTF-8';
+    
+    // Enviar el correo.
+  $mailManager = \Drupal::service('plugin.manager.mail');
+  $result = $mailManager->mail('enviar_correo_clase_agendada_gratis', 'enviar_correo', $email, 'es', $params, NULL);
+  
+
+
+  
+    // Verificar si ocurrió un error al enviar el correo.
+    if ($result['result'] !== TRUE) {
+      // drupal_set_message(t('Hubo un problema al enviar el correo. Por favor, intenta nuevamente más tarde.'), 'error');
+      // messenger()->addError(t('Hubo un problema al enviar el correo. Por favor, intenta nuevamente más tarde.'));
+      //\Drupal::messenger()->addError(t('Hubo un problema al enviar el correo. Por favor, intenta nuevamente más tarde.'));
+      \Drupal::messenger()->addError(new TranslatableMarkup('Hubo un problema al enviar el correo. Por favor, intenta nuevamente más tarde.'));    
+    } else {
+      // Mensaje de éxito.
+      // drupal_set_message(t('El correo fue enviado correctamente.'));
+      // messenger()->addMessage(t('El correo fue enviado correctamente.'));
+      //\Drupal::messenger()->addMessage(t('El correo fue enviado correctamente.'));
+      \Drupal::messenger()->addMessage(new TranslatableMarkup('El correo fue enviado correctamente.'));
+    }
+
+  */
 }
 
 /**

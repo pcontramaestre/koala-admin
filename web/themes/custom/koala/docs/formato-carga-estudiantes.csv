@@ -1,0 +1,6 @@
+correo_del_nino;clave_ingreso;nombres_nino;apellidos_nino;sexo;fecha_nacimiento;correo_padre;clave_padre;nombre_padre;apellido_padre;celular_padre
+correo1@correo.com;123456;Pablo;Contramaestre;M;31/05/18;correo1padre@correo.com;123456;Pablo Antonio;Contramaestre Barragan;3232907169
+correo3@correo.com;123456;Paosli;Contramaestre;F;18/08/18;correo1padre@correo.com;123456;Pablo Antonio;Contramaestre Barragan;3232907169
+correo2@correo.com;123456;Maria;Zambrano Osorio;F;24/06/19;correo2padre@correo.com;123456;Lisbeth;Osorio;3136296496
+correo4@correo.com;123456;Maria 2;Zambrano Osorio;F;24/12/19;correo2padre@correo.com;123456;Lisbeth;Osorio;3136296496
+correo5@correo.com;123456;Maria 3;Zambrano Osorio;F;24/11/19;correo2padre@correo.com;123456;Lisbeth;Osorio;3136296496

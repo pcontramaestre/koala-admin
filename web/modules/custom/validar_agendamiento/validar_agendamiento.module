@@ -6,41 +6,44 @@ use \Drupal\Core\StringTranslation\TranslatableMarkup;
  * Implements hook_views_pre_render().
  */
 
-function validar_agendamiento_views_pre_render(ViewExecutable $view) {
+function validar_agendamiento_views_pre_render(ViewExecutable $view) : void  {
   if ($view->id() == 'mis_koalas' && $view->current_display == 'page_1') {
-    $id_user_nino = \Drupal::routeMatch()->getParameter('arg_1');    
-    $user = \Drupal\user\Entity\User::load($id_user_nino);    
+    $id_user_nino = \Drupal::routeMatch()->getParameter('arg_1');
+    $user = \Drupal\user\Entity\User::load($id_user_nino);
 
     $nids = \Drupal::entityQuery('node')
       ->condition('type', 'proximas_clases_estudiantes_')
       ->condition('field_alumno_relacionado', $id_user_nino)
       ->execute();
-      
+
     $nodos = \Drupal\node\Entity\Node::loadMultiple($nids);
     // solo es un nodo
     $nodo = reset($nodos);
 
-    // get field_alumno_nivelado from $nodos
-    $field_alumno_nivelado = $nodo->get('field_alumno_nivelado')->value;
-    $field_alumno_nivelado = (int) $field_alumno_nivelado;
+    if ($nodo) {
+      // get field_alumno_nivelado from $nodos
+      $field_alumno_nivelado = $nodo->get('field_alumno_nivelado')->value;
+      $field_alumno_nivelado = (int) $field_alumno_nivelado;
 
-    if (!$field_alumno_nivelado) {
-      $mensaje = new TranslatableMarkup('Tu hijo no ha sido nivelado o no ha visto la clase gratuita, por favor espera a que un administrador lo haga');
-      $view->result = [];
-      $view->empty = TRUE;
-      $view->attachment_after = [
-        '#markup' => '<div class="alert alert-warning" role="alert">'.$mensaje.'</div>',
-      ];
-
-      // no mostrar el footer de la vista
-      $view->footer = [];
-
-
-      
-
+      if (!$field_alumno_nivelado) {
+        $mensaje = new TranslatableMarkup('Tu hijo no ha sido nivelado o no ha visto la clase gratuita, por favor espera a que un administrador lo haga');
+        $view->result = [];
+        $view->empty = TRUE;
+        $view->attachment_after = [
+          '#markup' => '<div class="alert alert-warning" role="alert">'.$mensaje.'</div>',
+        ];
+        // no mostrar el footer de la vista
+        $view->footer = [];
+      }
+    } else {
+      // $mensaje = new TranslatableMarkup('Tu hijo no tiene clases agendadas');
+      // $view->result = [];
+      // $view->empty = TRUE;
+      // $view->attachment_after = [
+      //   '#markup' => '<div class="alert alert-warning" role="alert">'.$mensaje.'</div>',
+      // ];
+      // // no mostrar el footer de la vista
+      // $view->footer = [];
     }
-    
-
-
   }
 }

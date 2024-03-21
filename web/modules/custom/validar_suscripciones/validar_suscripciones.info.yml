@@ -1,0 +1,5 @@
+name: 'validar_suscripciones'
+type: module
+description: 'Validar suscripciones'
+core_version_requirement: ^9 | ^10
+package: 'Custom'

@@ -28,8 +28,7 @@ class SuscriptionsEventsEventSubscriber implements EventSubscriberInterface {
    *   The workflow transition event.
    */
   public function onOrderPlace(WorkflowTransitionEvent $event) {
-    // Implementa tu lógica personalizada aquí.
-    // @todo Write code that will run when the subscribed event fires.
+
     // You can use $event->getEntity() to get the entity. print
     // $event->getToState()->getLabel() to see the state label.
     // You can use $event->getTransition()->getLabel() to see the transition
@@ -68,39 +67,16 @@ class SuscriptionsEventsEventSubscriber implements EventSubscriberInterface {
     $response = new AjaxResponse();
     $response->addCommand(new InvokeCommand(NULL, 'localStorage.clear'));
     $response->addCommand(new InvokeCommand(NULL, 'location.reload'));
-
-
-    /* Crear un nodo de tipo suscripciones. 
-      Campos:
-      field_clases_compradas = $totalclases
-      field_clases_restantes = $totalclases
-      field_clases_usadas = 0
-      field_fecha_de_finalizacion_de_l = ( si $numerosemanas = 4 es un mes, si $numerosemanas = 12 es tres meses, si $numerosemanas = 24 es seis meses)
-      field_fecha_de_inicio_de_la_susc = fecha actual
-      field_nro_de_orden = $order_id (Entidad relacionada)
-      field_plan_comprado = $numerosemanas
-      field_usuario_padre = $user_id (Entidad relacionada)
-    */
     $this->crearSuscripcion($order_id, $user_id, $numerosemanas, $totalclases);
 
   }
 
 
-     /* Funcion para Crear un nodo de tipo suscripciones. 
-      Campos:
-      field_clases_compradas = $totalclases
-      field_clases_restantes = $totalclases
-      field_clases_usadas = 0
-      field_fecha_de_finalizacion_de_l = ( si $numerosemanas = 4 es un mes, si $numerosemanas = 12 es tres meses, si $numerosemanas = 24 es seis meses)
-      field_fecha_de_inicio_de_la_susc = fecha actual
-      field_nro_de_orden = $order_id (Entidad relacionada)
-      field_plan_comprado = $numerosemanas
-      field_usuario_padre = $user_id (Entidad relacionada)
+     /* 
+      Funcion para Crear un nodo de tipo suscripciones. 
     */
   public function crearSuscripcion($order_id, $user_id, $numerosemanas, $totalclases) {
-    // Obtener fecha actual.
     $fecha_actual = date("Y-m-d");
-
     // Total de clases transformar a entero.
     $totalclases = (int)$totalclases;
 

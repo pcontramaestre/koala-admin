@@ -21,28 +21,17 @@ function facturacion_profes_form_alter(&$form, FormStateInterface $form_state, $
   $current_user = \Drupal::currentUser();
   $roles = $current_user->getRoles();
 
-  
-  if ($current_path == 'facturacion') {
-    // $form['#attached']['library'][] = 'facturacion_profes/facturacion_profes_js';
-    // $form['#attached']['library'][] = 'facturacion_profes/facturacion_profes_css';
-    // Verifica que sea el formulario de la vista específica
-   
-  }
-
   if ($current_path == 'facturacion') {
     //if ($form_id == 'node_facturacion_profesor_edit_form' || $form_id == 'node_facturacion_profesor_form') {
     if ($form_id == 'node_facturacion_profesor_form') {
-
       // Asignar un nuevo valor al titulo del nodo, campo title
-      $form['title']['widget'][0]['value']['#default_value'] = 'Factura';
-      
-      $form['actions']['submit']['#value'] =  Drupal::translation()->translate('Cargar factura y enviar');
-      
-      foreach (array_keys($form['actions']) as $action) {
-        if ($action != 'preview' && isset($form['actions'][$action]['#type']) && $form['actions'][$action]['#type'] === 'submit') {
-          $form['actions'][$action]['#submit'][] = 'callback_submit_facturacion_profes_facturacion_profesor_submit';
-        }
-      }
+      $form['title']['widget'][0]['value']['#default_value'] = 'Factura';      
+      //$form['actions']['submit']['#value'] =  Drupal::translation()->translate('Cargar factura y enviar');
+      $form['actions']['submit']['#value'] = 'Enviar factura';
+      // ADD ID "enviar_factura" AL BOTON DE SUBMIT, hay dos formularios activos, verificar si es el correcto
+      $form['actions']['submit']['#attributes']['id'] = 'enviar_factura';
+      // al hacer clic en el boton de submit, se ejecutara la funcion callback_submit_facturacion_profes_facturacion_profesor_submit
+      $form['actions']['submit']['#submit'][] = 'callback_submit_facturacion_profes_facturacion_profesor_submit';
     }
 
     if ($form_id == 'views_exposed_form') {    
@@ -90,20 +79,13 @@ function facturacion_profes_form_alter(&$form, FormStateInterface $form_state, $
             $form['field_metodo_de_pago']['#access'] = FALSE;
             $form['field_metodo_de_pago']['widget']['#access'] = FALSE;
 
-            // field_metodo_de_pago_seleccionad de solo lectura, readonly 
-            
-
- 
-
-            
-
-            foreach ($cuentas as $key => $value) {
-              //dump($value);
-              //dump($nid);
-              $id = $value['first'];
-              $name = $value['second'];
-              $form['field_metodo_de_pago']['widget']['#options'][$nid] = $id.' - '.$name;
-            }
+            // foreach ($cuentas as $key => $value) {
+            //   //dump($value);
+            //   //dump($nid);
+            //   $id = $value['first'];
+            //   $name = $value['second'];
+            //   $form['field_metodo_de_pago']['widget']['#options'][$nid] = $id.' - '.$name;
+            // }
           }
         }     
       } else {

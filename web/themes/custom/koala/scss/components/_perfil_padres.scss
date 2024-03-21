@@ -422,3 +422,29 @@
     }
   }
 }
+
+
+.rol-padre_escuela {
+  //Barra de navegacion - menu
+  #header {
+    #navbar-main {
+      .menu--padres {
+        .nav {
+          .nav-item {
+            .nav-link--zona-pagos {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+
+ .block-views-blockmis-koalas-block-1 {
+  .view-footer {
+    a {
+      display: none;
+    }
+  }
+ } 
+}

@@ -147,6 +147,13 @@ function create_koalas_form_alter(&$form, FormStateInterface $form_state, $form_
   $editando = TRUE;
   if ($routeName == 'node.add.agendar_clases') {
     $editando = FALSE;
+    
+    $request_stack = \Drupal::service('request_stack');
+    $request = $request_stack->getCurrentRequest();
+    // get parameter agregar
+    $agregar = $request->query->get('agregar');
+
+
   }
 
   if ($form_id == 'node_agendar_clase_form' || $form_id == 'node_agendar_clase_agendar_clases_form') {

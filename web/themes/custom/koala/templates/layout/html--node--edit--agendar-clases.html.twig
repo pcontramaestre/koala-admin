@@ -24,6 +24,8 @@
  * @see template_preprocess_html()
  */
 #}
+{% set lang = language.getId() %}
+{% set roles = user.getRoles() %}
 {%
   set body_classes = [
     logged_in ? 'user-logged-in',
@@ -31,6 +33,8 @@
     node_type ? 'node--type-' ~ node_type|clean_class,
     db_offline ? 'db-offline',
     'node-edit-agendar-clases',
+    lang ? 'lang-' ~ lang,
+    roles ? 'rol-' ~ roles|join(' rol-'),
   ]
 %}
 <!DOCTYPE html>

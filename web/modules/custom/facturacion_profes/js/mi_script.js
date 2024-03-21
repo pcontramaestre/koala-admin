@@ -8,47 +8,29 @@
           // Oculta el campo de valor de título
           //$('input[name="title[0][value]"]').hide();
           var fechaSeleccionada = $('.views-exposed-form .form-select option:selected').text();
-          console.log(fechaSeleccionada);
           // Asigna el valor seleccionado al campo de valor de título
           $('input[name="title[0][value]"]').val(fechaSeleccionada);
-          
-
-          //Recorrer todos los divs con la clase .views-row
-          // $('.view-facturacion-profesor .views-row').each(function() {
-
-          // });
-          
           // contar todos los divs con la clase .views-row
           var numeroDeFilas = $('.view-facturacion-profesor .views-row').length;
-
           // Ir a la última fila
           $('.view-facturacion-profesor .views-row').last().addClass('ultima-fila');
-
           // Leer el contenido de la última fila .views-field-field-cumulative-field .field-content y guardarlo en una variable
           var totalInasistencias = $('.ultima-fila .views-field-field-cumulative-field .field-content').text();
           var totalClases = $('.ultima-fila .views-field-field-cumulative-field-1 .field-content').text();
-
           // Eliminar espacios en blanco y saltos de línea
           totalInasistencias = totalInasistencias.replace(/\s/g, '');
           totalClases = totalClases.replace(/\s/g, '');
-
-
           $('input[name="field_clases_impartidas[0][value]"]').val(totalClases);
           $('input[name="field_inasistencias_del_estudian[0][value]"]').val(totalInasistencias);
-
           $('.cuadro.impartidas .valor').text(totalClases);
           $('.cuadro.inasistencias .valor').text(totalInasistencias);
-
           //Convertir los valores a enteros
           totalInasistencias = parseInt(totalInasistencias);
           totalClases = parseInt(totalClases);
-
           // Calcular el total de horas. 
           var totalHoras = totalClases / 2;
           // Redondear el valor de totalHoras a dos decimales
           totalHoras = totalHoras.toFixed(2);
-
-          
           var totalInasistenciasHoras = totalInasistencias / 4;
           totalInasistenciasHoras = totalInasistenciasHoras.toFixed(2);          
 
@@ -99,10 +81,6 @@
 
           }
         }
-
-        // if (settings.extraData && settings.extraData.view_name === 'nombre_de_la_vista' && settings.extraData.view_display_id === 'nombre_del_display') {
-          // Obtén el valor seleccionado del filtro de fecha de la vista, debe se el texto y no el value
-        //}
       });
 
       // Change select id="edit-field-metodo-de-pago" get text option and set input id="edit-field-metodo-de-pago-seleccionad-0-value"
@@ -110,8 +88,6 @@
         var selectedOption = $(this).find('option:selected').text();
         $('#edit-field-metodo-de-pago-seleccionad-0-value').val(selectedOption);
       });
-
-
     }
   };
 })(jQuery, Drupal);

@@ -125,6 +125,9 @@ function koala_theme_suggestions_alter(array &$suggestions, array &$variables, $
       $variables['agendar_clase'] = 'agendando_clase';
     }
 
+    if (!$content_type) {
+      $content_type = '';
+    }
     $suggestions[] = 'node_edit_form__' . $content_type;
   }
   if ($hook == 'node_add_form') {
