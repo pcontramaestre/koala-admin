@@ -867,7 +867,20 @@ display:
           field_api_classes: false
       defaults:
         fields: false
+        header: false
       display_description: ''
+      header:
+        area_text_custom:
+          id: area_text_custom
+          table: views
+          field: area_text_custom
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text_custom
+          empty: false
+          content: "<hr>\r\n<h3 class=\"mt-5 mb-5\">Listado de padres de la institución</h3>"
+          tokenize: false
       display_extenders: {  }
       block_description: 'Padres escuelas'
     cache_metadata:
@@ -1470,9 +1483,9 @@ display:
           group_type: group
           admin_label: ''
           plugin_id: text_custom
-          empty: false
+          empty: true
           content: "<hr>\r\n<h3 class=\"mt-5 mb-5\">Listado de niños</h3>"
-          tokenize: false
+          tokenize: true
       display_extenders: {  }
       block_description: 'Hijos escuelas'
     cache_metadata:
