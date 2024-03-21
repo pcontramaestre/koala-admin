@@ -1128,8 +1128,21 @@ display:
         access: false
         filters: false
         filter_groups: false
+        header: false
         footer: false
       display_description: ''
+      header:
+        area_text_custom:
+          id: area_text_custom
+          table: views
+          field: area_text_custom
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text_custom
+          empty: true
+          content: "<div class=\"row accesos-directos\">\r\n  <div class=\"col=3\"><a class=\"button button--primary js-form-submit form-submit ui-button ui-corner-all ui-widget\" href=\"/node/add/colegios\" target=\"_blank\">Agregar nuevo colegio</a></div> \r\n  <div class=\"col=3\"><a class=\"button button--primary js-form-submit form-submit ui-button ui-corner-all ui-widget\" href=\"/node/add/coordinadores_de_colegios\" target=\"_blank\">Agregar nuevo coordinador</a></div> \r\n  <div class=\"col=3\"><a class=\"button button--primary js-form-submit form-submit ui-button ui-corner-all ui-widget\" href=\"/node/add/colegios_grupos\" target=\"_blank\">Agregar nuevo grupo al colegio</a></div> \r\n  <div class=\"col=3\"><a class=\"button button--primary js-form-submit form-submit ui-button ui-corner-all ui-widget\" href=\"/admin/cargar-estudiantes\" target=\"_blank\">Cargar padres y estudiantes</a></div> \r\n</div>"
+          tokenize: false
       footer:
         area_text_custom:
           id: area_text_custom

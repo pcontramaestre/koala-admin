@@ -11,12 +11,16 @@ code: |-
   	font-weight: bold;
     margin-bottom: 1rem;
   }
+
+  .row.accesos-directos {
+  	display:flex;
+  }
 media: all
 preprocess: true
 conditions:
   request_path:
     id: request_path
     negate: false
-    pages: "/admin/*\r\n/admin/"
+    pages: "/admin/*\r\n/admin/\r\n/dashboard/\r\n/dashboard/*"
 contexts: {  }
 conditions_require_all: true
