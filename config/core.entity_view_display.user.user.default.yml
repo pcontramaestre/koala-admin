@@ -8,12 +8,15 @@ dependencies:
     - field.field.user.user.field_apodo
     - field.field.user.user.field_avatar
     - field.field.user.user.field_celular
+    - field.field.user.user.field_colegio_al_que_pertenece_e
     - field.field.user.user.field_direcc
     - field.field.user.user.field_direccion
     - field.field.user.user.field_estrellas_acumuladas
     - field.field.user.user.field_first_login
+    - field.field.user.user.field_grupo_al_que_pertenece_el_
     - field.field.user.user.field_nacionalidad
     - field.field.user.user.field_nombre_del_acudiente
+    - field.field.user.user.field_nombre_del_director
     - field.field.user.user.field_nombre_del_hijo
     - field.field.user.user.field_nombres_y_apellidos_del_pr
     - field.field.user.user.field_numero_de_telefono
@@ -85,6 +88,14 @@ content:
     third_party_settings: {  }
     weight: 3
     region: content
+  field_colegio_al_que_pertenece_e:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 24
+    region: content
   field_direcc:
     type: address_default
     label: above
@@ -118,6 +129,14 @@ content:
     third_party_settings: {  }
     weight: 19
     region: content
+  field_grupo_al_que_pertenece_el_:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 26
+    region: content
   field_nacionalidad:
     type: country_default
     label: above
@@ -132,6 +151,14 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     weight: 2
+    region: content
+  field_nombre_del_director:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 25
     region: content
   field_nombre_del_hijo:
     type: string

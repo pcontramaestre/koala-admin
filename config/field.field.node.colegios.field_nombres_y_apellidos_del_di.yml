@@ -1,0 +1,19 @@
+uuid: 5671e1df-7e74-4251-a461-f3ae1bbef502
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_nombres_y_apellidos_del_di
+    - node.type.colegios
+id: node.colegios.field_nombres_y_apellidos_del_di
+field_name: field_nombres_y_apellidos_del_di
+entity_type: node
+bundle: colegios
+label: 'Nombres y apellidos del director'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

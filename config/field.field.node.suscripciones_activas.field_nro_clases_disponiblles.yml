@@ -1,0 +1,25 @@
+uuid: 13a7bb77-e34f-4c2c-9a94-78bdaedf5587
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_nro_clases_disponiblles
+    - node.type.suscripciones_activas
+id: node.suscripciones_activas.field_nro_clases_disponiblles
+field_name: field_nro_clases_disponiblles
+entity_type: node
+bundle: suscripciones_activas
+label: 'Numero de clases disponibles'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  min: 0
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

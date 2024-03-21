@@ -6,7 +6,7 @@ id: nivelacion_de_alumnos
 admin_label: 'Nivelación de alumnos'
 category: Home
 frontend: false
-weight: 1
+weight: -9
 sections:
   -
     layout_id: layout_onecol

@@ -1,0 +1,18 @@
+uuid: bf509837-4380-43db-90b8-2f01221e77c8
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.colegios
+id: node.colegios.title
+field_name: title
+entity_type: node
+bundle: colegios
+label: 'Nombre del colegio'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

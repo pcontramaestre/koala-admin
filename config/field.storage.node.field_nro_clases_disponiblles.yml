@@ -1,0 +1,24 @@
+uuid: 7d95e586-71d0-4e6b-9c91-5cc39461e84c
+langcode: es
+status: true
+dependencies:
+  module:
+    - field_permissions
+    - node
+third_party_settings:
+  field_permissions:
+    permission_type: public
+id: node.field_nro_clases_disponiblles
+field_name: field_nro_clases_disponiblles
+entity_type: node
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

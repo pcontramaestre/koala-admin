@@ -11,7 +11,7 @@ _core:
 id: koala_primary_admin_actions
 theme: koala
 region: content
-weight: -5
+weight: -14
 provider: null
 plugin: local_actions_block
 settings:

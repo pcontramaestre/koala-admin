@@ -1,0 +1,25 @@
+uuid: c729a2bd-cb46-4545-aa14-74c86f0328bb
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_nro_clases_restantes
+    - node.type.suscripciones_activas
+id: node.suscripciones_activas.field_nro_clases_restantes
+field_name: field_nro_clases_restantes
+entity_type: node
+bundle: suscripciones_activas
+label: 'Nro clases restantes'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  min: 0
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

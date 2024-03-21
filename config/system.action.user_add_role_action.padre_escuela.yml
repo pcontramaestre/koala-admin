@@ -1,0 +1,14 @@
+uuid: 0ad18e8e-746b-4f93-876b-011ae3426426
+langcode: es
+status: true
+dependencies:
+  config:
+    - user.role.padre_escuela
+  module:
+    - user
+id: user_add_role_action.padre_escuela
+label: 'Añade el rol Padre escuela al(los) usuario(s) seleccionado(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: padre_escuela

@@ -1,0 +1,35 @@
+uuid: 0571d794-9ee2-464f-a1e5-045e75d2b4ca
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_padre_suscrito
+    - node.type.suscripciones_activas
+id: node.suscripciones_activas.field_padre_suscrito
+field_name: field_padre_suscrito
+entity_type: node
+bundle: suscripciones_activas
+label: 'Padre suscrito'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:user'
+  handler_settings:
+    target_bundles: null
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    filter:
+      type: role
+      role:
+        padre: padre
+        content_editor: '0'
+        administrator: '0'
+        profesor: '0'
+        hijo: '0'
+    include_anonymous: false
+field_type: entity_reference

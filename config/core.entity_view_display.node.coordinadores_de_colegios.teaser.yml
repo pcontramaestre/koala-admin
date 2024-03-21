@@ -1,0 +1,32 @@
+uuid: e2299428-1b42-4ae1-ba9d-4d1b2b5a42ef
+langcode: es
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.coordinadores_de_colegios.field_clave_de_acceso_del_coordi
+    - field.field.node.coordinadores_de_colegios.field_colegio_al_que_pertenece_c
+    - field.field.node.coordinadores_de_colegios.field_correo_del_coordinador
+    - field.field.node.coordinadores_de_colegios.field_usuario_relacionado
+    - node.type.coordinadores_de_colegios
+  module:
+    - user
+id: node.coordinadores_de_colegios.teaser
+targetEntityType: node
+bundle: coordinadores_de_colegios
+mode: teaser
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  field_clave_de_acceso_del_coordi: true
+  field_colegio_al_que_pertenece_c: true
+  field_correo_del_coordinador: true
+  field_usuario_relacionado: true
+  langcode: true

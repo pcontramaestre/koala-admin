@@ -1,0 +1,11 @@
+uuid: c1519233-a238-4d22-ae9f-04a00745119e
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.colegios
+id: node.colegios
+target_entity_type_id: node
+target_bundle: colegios
+default_langcode: site_default
+language_alterable: false

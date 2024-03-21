@@ -1,0 +1,33 @@
+uuid: 86aeed5e-16c2-495f-adfb-8cfbf3e70f14
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_nombre_del_director
+  module:
+    - multiple_registration
+    - user
+third_party_settings:
+  multiple_registration:
+    user_additional_register_form_required:
+      authenticated: 0
+      profesor: 0
+      padre: 0
+      hijo: 0
+    user_additional_register_form:
+      authenticated: 0
+      profesor: 0
+      padre: 0
+      hijo: 0
+id: user.user.field_nombre_del_director
+field_name: field_nombre_del_director
+entity_type: user
+bundle: user
+label: 'Nombres y apellidos'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

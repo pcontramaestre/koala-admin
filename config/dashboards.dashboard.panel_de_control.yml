@@ -6,7 +6,7 @@ id: panel_de_control
 admin_label: 'Panel de Control'
 category: Home
 frontend: false
-weight: 0
+weight: -10
 sections:
   -
     layout_id: layout_onecol

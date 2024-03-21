@@ -1,0 +1,10 @@
+uuid: de652ee7-480f-4a1b-aacc-0aad4787b037
+langcode: es
+status: true
+dependencies:
+  module:
+    - user
+id: user.director_colegio
+label: director_colegio
+targetEntityType: user
+cache: true

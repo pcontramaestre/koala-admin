@@ -1,0 +1,17 @@
+uuid: b28bf916-5049-4993-83c5-de8ef3a5c1c7
+langcode: es
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Colegios
+type: colegios
+description: 'Este formulario permite agregar colegios (escuelas) nuevos al sistema. '
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: true

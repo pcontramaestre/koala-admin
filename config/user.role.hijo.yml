@@ -19,7 +19,7 @@ third_party_settings:
     view_mode: compact
 id: hijo
 label: Hijo
-weight: 7
+weight: -3
 is_admin: null
 permissions:
   - 'access user profiles'

@@ -1,0 +1,19 @@
+uuid: 720b7d80-81c7-4744-9441-920277de3d20
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_clave_de_acceso_del_coordi
+    - node.type.coordinadores_de_colegios
+id: node.coordinadores_de_colegios.field_clave_de_acceso_del_coordi
+field_name: field_clave_de_acceso_del_coordi
+entity_type: node
+bundle: coordinadores_de_colegios
+label: 'Clave de acceso del coordinador'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

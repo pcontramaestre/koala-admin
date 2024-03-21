@@ -1,0 +1,14 @@
+uuid: d830b0e5-c586-4b38-a0b1-5e7cc55e7560
+langcode: es
+status: true
+dependencies:
+  config:
+    - user.role.director_colegio
+  module:
+    - user
+id: user_remove_role_action.director_colegio
+label: 'Elimina el rol Director colegio al(los) usuario(s) seleccionado(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: director_colegio

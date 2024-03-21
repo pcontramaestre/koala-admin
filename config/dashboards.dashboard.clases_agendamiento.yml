@@ -6,7 +6,7 @@ id: clases_agendamiento
 admin_label: 'Clases - Agendamiento'
 category: Home
 frontend: false
-weight: 3
+weight: -7
 sections:
   -
     layout_id: layout_onecol

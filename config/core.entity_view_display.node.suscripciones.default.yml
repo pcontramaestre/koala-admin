@@ -10,6 +10,8 @@ dependencies:
     - field.field.node.suscripciones.field_fecha_de_inicio_de_la_susc
     - field.field.node.suscripciones.field_nro_de_orden
     - field.field.node.suscripciones.field_plan_comprado
+    - field.field.node.suscripciones.field_suscripcion_finalizada_
+    - field.field.node.suscripciones.field_suscripcion_sin_clases
     - field.field.node.suscripciones.field_usuario_padre
     - node.type.suscripciones
   module:
@@ -81,6 +83,26 @@ content:
     third_party_settings: {  }
     weight: 102
     region: content
+  field_suscripcion_finalizada_:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 109
+    region: content
+  field_suscripcion_sin_clases:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 110
+    region: content
   field_usuario_padre:
     type: entity_reference_label
     label: above
@@ -95,4 +117,7 @@ content:
     weight: 100
     region: content
 hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
   langcode: true

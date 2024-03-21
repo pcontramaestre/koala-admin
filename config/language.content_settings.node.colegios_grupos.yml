@@ -1,0 +1,11 @@
+uuid: 675a3d8d-dad4-4206-a836-f3094b5437d9
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.colegios_grupos
+id: node.colegios_grupos
+target_entity_type_id: node
+target_bundle: colegios_grupos
+default_langcode: site_default
+language_alterable: false

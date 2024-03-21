@@ -1,0 +1,18 @@
+uuid: 89c5ceda-5b56-4e42-8b58-d3650554998b
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.colegios_grupos
+id: node.colegios_grupos.title
+field_name: title
+entity_type: node
+bundle: colegios_grupos
+label: 'Título del grupo o sección'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

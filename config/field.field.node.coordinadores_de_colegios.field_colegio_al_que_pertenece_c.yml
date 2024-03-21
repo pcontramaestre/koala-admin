@@ -1,0 +1,29 @@
+uuid: d3493609-e717-4ba4-b2fe-d2ff494284c7
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_colegio_al_que_pertenece_c
+    - node.type.colegios
+    - node.type.coordinadores_de_colegios
+id: node.coordinadores_de_colegios.field_colegio_al_que_pertenece_c
+field_name: field_colegio_al_que_pertenece_c
+entity_type: node
+bundle: coordinadores_de_colegios
+label: 'Colegio al que pertenece el coordinador'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      colegios: colegios
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

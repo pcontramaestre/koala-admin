@@ -1,0 +1,11 @@
+uuid: 747b7892-a8f3-47fe-9dc4-0115992ed79c
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.coordinadores_de_colegios
+id: node.coordinadores_de_colegios
+target_entity_type_id: node
+target_bundle: coordinadores_de_colegios
+default_langcode: site_default
+language_alterable: false

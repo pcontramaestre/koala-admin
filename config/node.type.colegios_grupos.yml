@@ -1,0 +1,17 @@
+uuid: 8d4c9ea6-1767-4184-806e-42c31bad5c2e
+langcode: es
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: 'Colegios - Grupos'
+type: colegios_grupos
+description: 'Permite crear grupos o secciones para los colegios'
+help: ''
+new_revision: false
+preview_mode: 0
+display_submitted: true

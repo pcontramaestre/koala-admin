@@ -28,7 +28,7 @@ display:
       fields:
         nothing_1:
           alter:
-            text: "<div class=\"boton-agendar\"><a href=\"/en/padres/mis-koalas/agendar_clase/{{ nid }}/{{ uid }}\" class=\"agendar-clase btn btn-primary mt-5 mb-5\">Schedule class</a></div>\r\n<div class=\"boton-agendar boton-editar-nino\"><a href=\"/en/node/{{ nid }}/edit/editar_hijo\" class=\"agendar-clase btn btn-primary mt-5 mb-5\">Edit child</a></div>\r\n<div class=\"boton-agendar boton-editar-nino\"><a href=\"/custom-child-login/{{ nid }}\" class=\"agendar-clase btn btn-primary mt-5 mb-5 entrar-nino\">Enter the child's section</a></div>"
+            text: "{% set suscripcion_activa = field_suscripcion_activa %}\r\n{% if suscripcion_activa == \"1\" %}\r\n   <div class=\"boton-agendar\"><a href=\"/en/padres/mis-koalas/agendar_clase/{{ nid }}/{{ uid }}\" class=\"agendar-clase btn btn-primary mt-5 mb-5\">Schedule class</a></div>\r\n{% else %}\r\n   <div class=\"boton-agendar\"><a href=\"/node/add/agendar_clase/agendar_clases?escuela=1&uid={{ uid }}\" class=\"agendar-clase btn btn-primary mt-5 mb-5\">Proof class</a></div>\r\n{% endif %}\r\n\r\n<div class=\"boton-agendar boton-editar-nino\"><a href=\"/en/node/{{ nid }}/edit/editar_hijo\" class=\"agendar-clase btn btn-primary mt-5 mb-5\">Edit child</a></div>\r\n<div class=\"boton-agendar boton-editar-nino\"><a href=\"/custom-child-login/{{ nid }}\" class=\"agendar-clase btn btn-primary mt-5 mb-5 entrar-nino\">Enter the child's section</a></div>"
       header:
         area_text_custom:
           content: '<a href="/node/add/agendar_clase/agendar_clases?agregar=1" class="btn btn-primary mt-5 mb-5" data-drupal-link-system-path="/en/node/add/agendar_clase/agendar_clases">Add Koalas</a>'

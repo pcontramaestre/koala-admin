@@ -1,0 +1,14 @@
+uuid: 738a2f2e-19ca-4ee5-ad3f-90f30e6b33df
+langcode: es
+status: true
+dependencies:
+  config:
+    - user.role.padre_escuela
+  module:
+    - user
+id: user_remove_role_action.padre_escuela
+label: 'Elimina el rol Padre escuela al(los) usuario(s) seleccionado(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: padre_escuela

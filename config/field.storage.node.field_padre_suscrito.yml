@@ -1,0 +1,24 @@
+uuid: a59b25a6-f8f5-4f8e-9461-78bcb3a96fa8
+langcode: es
+status: true
+dependencies:
+  module:
+    - field_permissions
+    - node
+    - user
+third_party_settings:
+  field_permissions:
+    permission_type: public
+id: node.field_padre_suscrito
+field_name: field_padre_suscrito
+entity_type: node
+type: entity_reference
+settings:
+  target_type: user
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

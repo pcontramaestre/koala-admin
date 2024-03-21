@@ -1,0 +1,23 @@
+uuid: dcf16d9c-6436-4bd8-b9b5-61874e61211d
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_suscripcion_finalizada_
+    - node.type.suscripciones
+id: node.suscripciones.field_suscripcion_finalizada_
+field_name: field_suscripcion_finalizada_
+entity_type: node
+bundle: suscripciones
+label: 'Suscripción finalizada?'
+description: 'Guarda si una suscripción ya esta finalizada, en este caso es porque la fecha ya pasó y no han pagado.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: Si
+  off_label: 'No'
+field_type: boolean

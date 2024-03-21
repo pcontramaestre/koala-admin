@@ -1,0 +1,38 @@
+uuid: 665c167a-86f9-416a-aa17-4a33a828ab53
+langcode: es
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.colegios_grupos.body
+    - field.field.node.colegios_grupos.field_colegio_al_que_pertenece_c
+    - field.field.node.colegios_grupos.field_coordinador_del_grupo
+    - node.type.colegios_grupos
+  module:
+    - text
+    - user
+id: node.colegios_grupos.teaser
+targetEntityType: node
+bundle: colegios_grupos
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  field_colegio_al_que_pertenece_c: true
+  field_coordinador_del_grupo: true
+  langcode: true

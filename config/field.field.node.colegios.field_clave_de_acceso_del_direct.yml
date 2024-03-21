@@ -1,0 +1,19 @@
+uuid: 4236cb1b-242d-42d8-b727-6540e65a1ab9
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_clave_de_acceso_del_direct
+    - node.type.colegios
+id: node.colegios.field_clave_de_acceso_del_direct
+field_name: field_clave_de_acceso_del_direct
+entity_type: node
+bundle: colegios
+label: 'Clave de acceso del director'
+description: 'Aquí asignaremos la clave de acceso con la que va a ingresar por primera vez el director del colegio.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

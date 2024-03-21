@@ -1,0 +1,14 @@
+uuid: e32e61dc-6304-4568-b2f7-8754c760a377
+langcode: es
+status: true
+dependencies:
+  config:
+    - user.role.hijo_escuela
+  module:
+    - user
+id: user_add_role_action.hijo_escuela
+label: 'Añade el rol Hijo escuela al(los) usuario(s) seleccionado(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: hijo_escuela

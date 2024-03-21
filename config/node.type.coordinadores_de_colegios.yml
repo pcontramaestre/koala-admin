@@ -1,0 +1,17 @@
+uuid: 043b0a6a-2fae-441d-9aa1-a6faabb710fb
+langcode: es
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: 'Coordinadores de colegios'
+type: coordinadores_de_colegios
+description: 'Este formulario permite agregar coordinadores a los colegios. '
+help: ''
+new_revision: false
+preview_mode: 0
+display_submitted: true

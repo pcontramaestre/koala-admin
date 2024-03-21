@@ -1,0 +1,171 @@
+uuid: dbec6d53-7ed9-4544-9b02-af5ad7336bb4
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.field.node.colegios.field_clave_de_acceso_del_direct
+    - field.field.node.colegios.field_correo_electronico_del_col
+    - field.field.node.colegios.field_correo_electronico_del_dir
+    - field.field.node.colegios.field_direc
+    - field.field.node.colegios.field_nombres_y_apellidos_del_di
+    - field.field.node.colegios.field_numeros_de_telefonos_del_d
+    - field.field.node.colegios.field_telefonos_del_colegio_
+    - field.field.node.colegios.field_zona_horaria_del_colegio
+    - node.type.colegios
+  module:
+    - address
+    - field_group
+    - field_layout
+    - layout_discovery
+    - phone_number
+    - tzfield
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+  field_group:
+    group_datos_del_colegio:
+      children:
+        - title
+        - field_direc
+        - field_telefonos_del_colegio_
+        - field_correo_electronico_del_col
+        - field_zona_horaria_del_colegio
+      label: 'Datos del colegio'
+      region: content
+      parent_name: ''
+      weight: 0
+      format_type: details
+      format_settings:
+        classes: datos-del-colegio
+        show_empty_fields: true
+        id: datos-del-colegio
+        open: true
+        description: 'A continuación agregue los datos del colegio'
+        required_fields: true
+    group_datos_del_director_del_col:
+      children:
+        - field_nombres_y_apellidos_del_di
+        - field_numeros_de_telefonos_del_d
+        - group_datos_del_acceso_del_direc
+      label: 'Datos del director del colegio'
+      region: content
+      parent_name: ''
+      weight: 1
+      format_type: details
+      format_settings:
+        classes: datos-director-colegio
+        show_empty_fields: true
+        id: datos-director-colegio
+        open: true
+        description: ''
+        required_fields: true
+    group_datos_del_acceso_del_direc:
+      children:
+        - field_correo_electronico_del_dir
+        - field_clave_de_acceso_del_direct
+      label: 'Datos del acceso del director'
+      region: content
+      parent_name: group_datos_del_director_del_col
+      weight: 4
+      format_type: fieldset
+      format_settings:
+        classes: ''
+        show_empty_fields: true
+        id: ''
+        description: ''
+        required_fields: true
+id: node.colegios.default
+targetEntityType: node
+bundle: colegios
+mode: default
+content:
+  field_clave_de_acceso_del_direct:
+    type: string_textfield
+    weight: 6
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_correo_electronico_del_col:
+    type: email_default
+    weight: 4
+    region: content
+    settings:
+      placeholder: ''
+      size: 60
+    third_party_settings: {  }
+  field_correo_electronico_del_dir:
+    type: email_default
+    weight: 5
+    region: content
+    settings:
+      placeholder: ''
+      size: 60
+    third_party_settings: {  }
+  field_direc:
+    type: address_default
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_nombres_y_apellidos_del_di:
+    type: string_textfield
+    weight: 2
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_numeros_de_telefonos_del_d:
+    type: phone_number_default
+    weight: 3
+    region: content
+    settings:
+      default_country: US
+      placeholder: 'Número de teléfono'
+      phone_size: 60
+      extension_size: 5
+    third_party_settings: {  }
+  field_telefonos_del_colegio_:
+    type: phone_number_default
+    weight: 3
+    region: content
+    settings:
+      default_country: US
+      placeholder: 'Número de teléfono'
+      phone_size: 60
+      extension_size: 5
+    third_party_settings: {  }
+  field_zona_horaria_del_colegio:
+    type: tzfield_default
+    weight: 5
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 3
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  langcode: true
+  moderation_state: true
+  path: true
+  promote: true
+  sticky: true
+  uid: true
+  url_redirects: true

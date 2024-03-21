@@ -39,6 +39,22 @@ bundles_roles_grants:
       grant_view: 0
       grant_update: 0
       grant_delete: 0
+    director_colegio:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    coordinador_colegio:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    hijo_escuela:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    padre_escuela:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
   crear_hijos:
     anonymous:
       grant_view: 0
@@ -69,6 +85,22 @@ bundles_roles_grants:
       grant_update: 0
       grant_delete: 0
     hijo:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    director_colegio:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    coordinador_colegio:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    hijo_escuela:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    padre_escuela:
       grant_view: 0
       grant_update: 0
       grant_delete: 0
@@ -105,6 +137,22 @@ bundles_roles_grants:
       grant_view: 0
       grant_update: 0
       grant_delete: 0
+    director_colegio:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    coordinador_colegio:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    hijo_escuela:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    padre_escuela:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
   agendar_clase:
     anonymous:
       grant_view: 0
@@ -135,6 +183,22 @@ bundles_roles_grants:
       grant_update: 0
       grant_delete: 0
     hijo:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    director_colegio:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    coordinador_colegio:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    hijo_escuela:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    padre_escuela:
       grant_view: 0
       grant_update: 0
       grant_delete: 0
@@ -171,6 +235,22 @@ bundles_roles_grants:
       grant_view: 0
       grant_update: 0
       grant_delete: 0
+    director_colegio:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    coordinador_colegio:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    hijo_escuela:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    padre_escuela:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
   horarios_de_trabajo:
     anonymous:
       grant_view: 0
@@ -201,6 +281,22 @@ bundles_roles_grants:
       grant_update: 0
       grant_delete: 0
     author:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    director_colegio:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    coordinador_colegio:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    hijo_escuela:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    padre_escuela:
       grant_view: 0
       grant_update: 0
       grant_delete: 0
@@ -237,6 +333,22 @@ bundles_roles_grants:
       grant_view: 0
       grant_update: 0
       grant_delete: 0
+    director_colegio:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    coordinador_colegio:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    hijo_escuela:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    padre_escuela:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
   event:
     anonymous:
       grant_view: 0
@@ -267,6 +379,22 @@ bundles_roles_grants:
       grant_update: 0
       grant_delete: 0
     author:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    director_colegio:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    coordinador_colegio:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    hijo_escuela:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    padre_escuela:
       grant_view: 0
       grant_update: 0
       grant_delete: 0
@@ -303,6 +431,22 @@ bundles_roles_grants:
       grant_view: 0
       grant_update: 0
       grant_delete: 0
+    director_colegio:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    coordinador_colegio:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    hijo_escuela:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    padre_escuela:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
   mundos:
     anonymous:
       grant_view: 0
@@ -333,6 +477,22 @@ bundles_roles_grants:
       grant_update: 0
       grant_delete: 0
     author:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    director_colegio:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    coordinador_colegio:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    hijo_escuela:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    padre_escuela:
       grant_view: 0
       grant_update: 0
       grant_delete: 0
@@ -369,6 +529,22 @@ bundles_roles_grants:
       grant_view: 0
       grant_update: 0
       grant_delete: 0
+    director_colegio:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    coordinador_colegio:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    hijo_escuela:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    padre_escuela:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
   koala_ninos:
     anonymous:
       grant_view: 0
@@ -399,6 +575,22 @@ bundles_roles_grants:
       grant_update: 0
       grant_delete: 0
     author:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    director_colegio:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    coordinador_colegio:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    hijo_escuela:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    padre_escuela:
       grant_view: 0
       grant_update: 0
       grant_delete: 0
@@ -435,6 +627,22 @@ bundles_roles_grants:
       grant_view: 0
       grant_update: 0
       grant_delete: 0
+    director_colegio:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    coordinador_colegio:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    hijo_escuela:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    padre_escuela:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
   clases_estudiantes:
     anonymous:
       grant_view: 0
@@ -465,6 +673,22 @@ bundles_roles_grants:
       grant_update: 0
       grant_delete: 0
     author:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    director_colegio:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    coordinador_colegio:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    hijo_escuela:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    padre_escuela:
       grant_view: 0
       grant_update: 0
       grant_delete: 0
@@ -501,6 +725,22 @@ bundles_roles_grants:
       grant_view: 0
       grant_update: 0
       grant_delete: 0
+    director_colegio:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    coordinador_colegio:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    hijo_escuela:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    padre_escuela:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
   suscripciones:
     anonymous:
       grant_view: 0
@@ -531,6 +771,22 @@ bundles_roles_grants:
       grant_update: 0
       grant_delete: 0
     author:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    director_colegio:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    coordinador_colegio:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    hijo_escuela:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    padre_escuela:
       grant_view: 0
       grant_update: 0
       grant_delete: 0
@@ -567,6 +823,22 @@ bundles_roles_grants:
       grant_view: 0
       grant_update: 0
       grant_delete: 0
+    director_colegio:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    coordinador_colegio:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    hijo_escuela:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    padre_escuela:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
   agregar_horarios_de_clases_grati:
     anonymous:
       grant_view: 0
@@ -597,6 +869,22 @@ bundles_roles_grants:
       grant_update: 0
       grant_delete: 0
     author:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    director_colegio:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    coordinador_colegio:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    hijo_escuela:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    padre_escuela:
       grant_view: 0
       grant_update: 0
       grant_delete: 0
@@ -633,6 +921,22 @@ bundles_roles_grants:
       grant_view: 0
       grant_update: 0
       grant_delete: 0
+    director_colegio:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    coordinador_colegio:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    hijo_escuela:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    padre_escuela:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
   clases_de_nivelacion:
     anonymous:
       grant_view: 0
@@ -663,6 +967,22 @@ bundles_roles_grants:
       grant_update: 0
       grant_delete: 0
     author:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    director_colegio:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    coordinador_colegio:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    hijo_escuela:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    padre_escuela:
       grant_view: 0
       grant_update: 0
       grant_delete: 0
@@ -699,6 +1019,22 @@ bundles_roles_grants:
       grant_view: 0
       grant_update: 0
       grant_delete: 0
+    director_colegio:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    coordinador_colegio:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    hijo_escuela:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    padre_escuela:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
   slider_clases_koalas:
     anonymous:
       grant_view: 0
@@ -729,6 +1065,22 @@ bundles_roles_grants:
       grant_update: 0
       grant_delete: 0
     author:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    director_colegio:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    coordinador_colegio:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    hijo_escuela:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    padre_escuela:
       grant_view: 0
       grant_update: 0
       grant_delete: 0
@@ -765,6 +1117,22 @@ bundles_roles_grants:
       grant_view: 0
       grant_update: 0
       grant_delete: 0
+    director_colegio:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    coordinador_colegio:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    hijo_escuela:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    padre_escuela:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
   proximas_clases_estudiantes_:
     anonymous:
       grant_view: 0
@@ -795,6 +1163,22 @@ bundles_roles_grants:
       grant_update: 0
       grant_delete: 0
     author:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    director_colegio:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    coordinador_colegio:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    hijo_escuela:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    padre_escuela:
       grant_view: 0
       grant_update: 0
       grant_delete: 0
@@ -831,6 +1215,22 @@ bundles_roles_grants:
       grant_view: 0
       grant_update: 0
       grant_delete: 0
+    director_colegio:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    coordinador_colegio:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    hijo_escuela:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    padre_escuela:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
   cancelar_clases_profesores:
     anonymous:
       grant_view: 0
@@ -864,6 +1264,218 @@ bundles_roles_grants:
       grant_view: 0
       grant_update: 0
       grant_delete: 0
+    director_colegio:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    coordinador_colegio:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    hijo_escuela:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    padre_escuela:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+  suscripciones_activas:
+    anonymous:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    authenticated:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    content_editor:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    administrator:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    profesor:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    padre:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    hijo:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    author:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    director_colegio:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    coordinador_colegio:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    hijo_escuela:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    padre_escuela:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+  colegios:
+    anonymous:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    authenticated:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    content_editor:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    administrator:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    profesor:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    padre:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    hijo:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    author:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    director_colegio:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    coordinador_colegio:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    hijo_escuela:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    padre_escuela:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+  coordinadores_de_colegios:
+    anonymous:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    authenticated:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    content_editor:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    administrator:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    profesor:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    padre:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    hijo:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    director_colegio:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    author:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    coordinador_colegio:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    hijo_escuela:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    padre_escuela:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+  colegios_grupos:
+    anonymous:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    authenticated:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    content_editor:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    administrator:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    profesor:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    padre:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    hijo:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    director_colegio:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    coordinador_colegio:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    author:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    hijo_escuela:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    padre_escuela:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
 grants_tab_availability:
   agendar_clase: false
   profesores: false
@@ -888,6 +1500,10 @@ grants_tab_availability:
   proximas_clases_estudiantes_: false
   superpoderes: false
   cancelar_clases_profesores: false
+  suscripciones_activas: false
+  colegios: false
+  coordinadores_de_colegios: false
+  colegios_grupos: false
 map_rid_gid:
   anonymous: 0
   authenticated: 1
@@ -896,6 +1512,10 @@ map_rid_gid:
   profesor: 4
   padre: 5
   hijo: 7
+  director_colegio: 8
+  coordinador_colegio: 9
+  hijo_escuela: 10
+  padre_escuela: 11
 roles_settings:
   anonymous:
     display_name: 'Usuario anónimo'
@@ -930,5 +1550,25 @@ roles_settings:
   hijo:
     display_name: Hijo
     name: Hijo
+    weight: 0
+    selected: false
+  director_colegio:
+    display_name: 'Director colegio'
+    name: 'Director colegio'
+    weight: 0
+    selected: false
+  coordinador_colegio:
+    display_name: 'Coordinador colegio'
+    name: 'Coordinador colegio'
+    weight: 0
+    selected: false
+  hijo_escuela:
+    display_name: 'Hijo escuela'
+    name: 'Hijo escuela'
+    weight: 0
+    selected: false
+  padre_escuela:
+    display_name: 'Padre escuela'
+    name: 'Padre escuela'
     weight: 0
     selected: false

@@ -1,0 +1,25 @@
+uuid: 14c0db9c-8ddc-4b45-8332-568c2d1b3cb9
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.colegios
+  module:
+    - form_mode_control
+    - form_mode_manager
+    - node
+    - node_view_permissions
+    - user_view_mode
+third_party_settings:
+  user_view_mode:
+    weight: null
+    view_mode: compact
+id: director_colegio
+label: 'Director colegio'
+weight: -1
+is_admin: null
+permissions:
+  - 'edit own colegios content'
+  - 'use  The form mode director_colegio linked to  user entity( user )'
+  - 'use user.director_colegio form mode'
+  - 'view own colegios content'

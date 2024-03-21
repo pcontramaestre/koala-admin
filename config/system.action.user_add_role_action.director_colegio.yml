@@ -1,0 +1,14 @@
+uuid: b1d31ae9-3727-45c8-bd80-ba16e3e14a7b
+langcode: es
+status: true
+dependencies:
+  config:
+    - user.role.director_colegio
+  module:
+    - user
+id: user_add_role_action.director_colegio
+label: 'Añade el rol Director colegio al(los) usuario(s) seleccionado(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: director_colegio

@@ -1,0 +1,93 @@
+uuid: 740e234c-a7d6-4eb1-a2fe-58f42d196d0f
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.field.node.colegios.field_clave_de_acceso_del_direct
+    - field.field.node.colegios.field_correo_electronico_del_col
+    - field.field.node.colegios.field_correo_electronico_del_dir
+    - field.field.node.colegios.field_direc
+    - field.field.node.colegios.field_nombres_y_apellidos_del_di
+    - field.field.node.colegios.field_numeros_de_telefonos_del_d
+    - field.field.node.colegios.field_telefonos_del_colegio_
+    - field.field.node.colegios.field_zona_horaria_del_colegio
+    - node.type.colegios
+  module:
+    - address
+    - phone_number
+    - user
+id: node.colegios.default
+targetEntityType: node
+bundle: colegios
+mode: default
+content:
+  field_clave_de_acceso_del_direct:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 108
+    region: content
+  field_correo_electronico_del_col:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_correo_electronico_del_dir:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 105
+    region: content
+  field_direc:
+    type: address_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_nombres_y_apellidos_del_di:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  field_numeros_de_telefonos_del_d:
+    type: phone_number_international
+    label: above
+    settings:
+      as_link: false
+    third_party_settings: {  }
+    weight: 106
+    region: content
+  field_telefonos_del_colegio_:
+    type: phone_number_international
+    label: above
+    settings:
+      as_link: false
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  field_zona_horaria_del_colegio:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 107
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  langcode: true

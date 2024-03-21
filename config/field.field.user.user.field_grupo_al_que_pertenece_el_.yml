@@ -1,0 +1,43 @@
+uuid: b46d4913-f121-4e71-9564-857f7ba0655d
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_grupo_al_que_pertenece_el_
+    - node.type.colegios_grupos
+  module:
+    - multiple_registration
+    - user
+third_party_settings:
+  multiple_registration:
+    user_additional_register_form_required:
+      authenticated: 0
+      profesor: 0
+      padre: 0
+      hijo: 0
+    user_additional_register_form:
+      authenticated: 0
+      profesor: 0
+      padre: 0
+      hijo: 0
+id: user.user.field_grupo_al_que_pertenece_el_
+field_name: field_grupo_al_que_pertenece_el_
+entity_type: user
+bundle: user
+label: 'Grupo al que pertenece el niño'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      colegios_grupos: colegios_grupos
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

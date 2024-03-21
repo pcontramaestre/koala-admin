@@ -11,6 +11,8 @@ dependencies:
     - field.field.node.suscripciones.field_fecha_de_inicio_de_la_susc
     - field.field.node.suscripciones.field_nro_de_orden
     - field.field.node.suscripciones.field_plan_comprado
+    - field.field.node.suscripciones.field_suscripcion_finalizada_
+    - field.field.node.suscripciones.field_suscripcion_sin_clases
     - field.field.node.suscripciones.field_usuario_padre
     - node.type.suscripciones
   module:
@@ -26,6 +28,9 @@ content:
     weight: 100
     region: content
 hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
   field_clases_compradas: true
   field_clases_restantes: true
   field_clases_usadas: true
@@ -33,5 +38,7 @@ hidden:
   field_fecha_de_inicio_de_la_susc: true
   field_nro_de_orden: true
   field_plan_comprado: true
+  field_suscripcion_finalizada_: true
+  field_suscripcion_sin_clases: true
   field_usuario_padre: true
   langcode: true

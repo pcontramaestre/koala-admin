@@ -1,0 +1,22 @@
+uuid: e59f2662-46fd-4dac-8cce-48275bc5ab2f
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.colegios_grupos
+id: node.colegios_grupos.promote
+field_name: promote
+entity_type: node
+bundle: colegios_grupos
+label: 'Promocionado a la página principal'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: Activado
+  off_label: Desactivado
+field_type: boolean

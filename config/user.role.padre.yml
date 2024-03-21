@@ -9,6 +9,7 @@ dependencies:
     - node.type.crear_hijos
     - node.type.koala_ninos
     - node.type.suscripciones
+    - node.type.suscripciones_activas
     - workflows.workflow.asignar_profesor
   module:
     - admin_toolbar_search
@@ -33,7 +34,7 @@ dependencies:
     - profile
 id: padre
 label: Padre
-weight: 5
+weight: -5
 is_admin: null
 permissions:
   - 'access commerce_order overview'
@@ -48,6 +49,7 @@ permissions:
   - 'create field_hora_clase'
   - 'create koala_ninos content'
   - 'create suscripciones content'
+  - 'create suscripciones_activas content'
   - 'date_recur_modular use sierra form'
   - 'delete own agendar_clase content'
   - 'delete own asignar_clase_a_estudiante content'
@@ -60,6 +62,7 @@ permissions:
   - 'edit own field_hora_clase'
   - 'edit own koala_ninos content'
   - 'edit own suscripciones content'
+  - 'edit own suscripciones_activas content'
   - 'entity print access type commerce_product'
   - 'manage default commerce_order_item'
   - 'manage own commerce_payment_method'
@@ -79,6 +82,7 @@ permissions:
   - 'use  The form mode default linked to  node entity( cancelar_suscripcion )'
   - 'use  The form mode default linked to  node entity( crear_hijos )'
   - 'use  The form mode default linked to  node entity( suscripciones )'
+  - 'use  The form mode default linked to  node entity( suscripciones_activas )'
   - 'use  The form mode editar_hijo linked to  node entity( crear_hijos )'
   - 'use  The form mode editar_hijo linked to  user entity( user )'
   - 'use admin toolbar search'
@@ -139,5 +143,7 @@ permissions:
   - 'view own slider_clases_koalas content'
   - 'view own superpoderes content'
   - 'view own suscripciones content'
+  - 'view own suscripciones_activas content'
   - 'view recurring commerce_order'
+  - 'view suscripciones_activas revisions'
   - 'view user email addresses'

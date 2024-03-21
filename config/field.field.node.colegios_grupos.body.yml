@@ -1,0 +1,23 @@
+uuid: 9a1be1d4-50af-4d4b-bdfe-6ee13504eb6a
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.colegios_grupos
+  module:
+    - text
+id: node.colegios_grupos.body
+field_name: body
+entity_type: node
+bundle: colegios_grupos
+label: 'Descripción u observaciones del grupo'
+description: 'Aquí puedes incluir observaciones o una descripción del grupo que vas a crear'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: false
+  required_summary: false
+field_type: text_with_summary

@@ -1,0 +1,40 @@
+uuid: 195bba86-35d5-4738-91e0-9b3dd935040b
+langcode: es
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.colegios.field_clave_de_acceso_del_direct
+    - field.field.node.colegios.field_correo_electronico_del_col
+    - field.field.node.colegios.field_correo_electronico_del_dir
+    - field.field.node.colegios.field_direc
+    - field.field.node.colegios.field_nombres_y_apellidos_del_di
+    - field.field.node.colegios.field_numeros_de_telefonos_del_d
+    - field.field.node.colegios.field_telefonos_del_colegio_
+    - field.field.node.colegios.field_zona_horaria_del_colegio
+    - node.type.colegios
+  module:
+    - user
+id: node.colegios.teaser
+targetEntityType: node
+bundle: colegios
+mode: teaser
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  field_clave_de_acceso_del_direct: true
+  field_correo_electronico_del_col: true
+  field_correo_electronico_del_dir: true
+  field_direc: true
+  field_nombres_y_apellidos_del_di: true
+  field_numeros_de_telefonos_del_d: true
+  field_telefonos_del_colegio_: true
+  field_zona_horaria_del_colegio: true
+  langcode: true

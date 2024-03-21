@@ -1,0 +1,25 @@
+uuid: 7cd6ea52-6bda-42ee-866d-0142062cf875
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_telefonos_del_colegio_
+    - node.type.colegios
+  module:
+    - phone_number
+id: node.colegios.field_telefonos_del_colegio_
+field_name: field_telefonos_del_colegio_
+entity_type: node
+bundle: colegios
+label: 'Teléfonos del colegio '
+description: 'Puedes agregar 1 o varios números de teléfonos del colegio. Todos son números de Estados Unidos, por ende, no es necesario agregar el +1'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_countries:
+    US: US
+  allowed_types: {  }
+  extension_field: true
+field_type: phone_number

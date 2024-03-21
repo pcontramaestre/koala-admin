@@ -1,0 +1,15 @@
+uuid: 3b83f9d3-57e7-4098-8d85-43830f46ae10
+langcode: es
+status: true
+dependencies:
+  module:
+    - user_view_mode
+third_party_settings:
+  user_view_mode:
+    weight: null
+    view_mode: compact
+id: padre_escuela
+label: 'Padre escuela'
+weight: -4
+is_admin: null
+permissions: {  }

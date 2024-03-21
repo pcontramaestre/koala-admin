@@ -1,0 +1,58 @@
+uuid: 41838971-e26a-4e09-9d5b-b231db2dfcc7
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.field.node.coordinadores_de_colegios.field_clave_de_acceso_del_coordi
+    - field.field.node.coordinadores_de_colegios.field_colegio_al_que_pertenece_c
+    - field.field.node.coordinadores_de_colegios.field_correo_del_coordinador
+    - field.field.node.coordinadores_de_colegios.field_usuario_relacionado
+    - node.type.coordinadores_de_colegios
+  module:
+    - user
+id: node.coordinadores_de_colegios.default
+targetEntityType: node
+bundle: coordinadores_de_colegios
+mode: default
+content:
+  field_clave_de_acceso_del_coordi:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_colegio_al_que_pertenece_c:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_correo_del_coordinador:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  field_usuario_relacionado:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  langcode: true

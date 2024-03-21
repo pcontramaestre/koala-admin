@@ -1,0 +1,17 @@
+uuid: 8c8b08ac-c824-44ed-b865-7fc4e3392911
+langcode: es
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: 'Suscripciones activas'
+type: suscripciones_activas
+description: 'Este formulario guarda solo la suscripción que se encuentra activa en el padre, contiene la fecha de finalización de dicha suscripción, el número de clases totales de todas las suscripciones y el numero de clases restantes, tambien contiene un boleano si hay una suscripcion activa, y otro boleano si se le acabaron los clases.'
+help: ''
+new_revision: true
+preview_mode: 0
+display_submitted: true

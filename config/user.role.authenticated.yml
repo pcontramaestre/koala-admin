@@ -27,7 +27,7 @@ _core:
   default_config_hash: I44QAB4es39lNzMQWiJLq2dfjX7VRSOzT_5KzAcUq_M
 id: authenticated
 label: 'Usuario autenticado'
-weight: 1
+weight: -9
 is_admin: false
 permissions:
   - 'acceso clases content'

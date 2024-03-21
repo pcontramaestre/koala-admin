@@ -1,0 +1,19 @@
+uuid: 3291be72-dec1-45cd-992c-d8fc5b776f88
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_correo_electronico_del_dir
+    - node.type.colegios
+id: node.colegios.field_correo_electronico_del_dir
+field_name: field_correo_electronico_del_dir
+entity_type: node
+bundle: colegios
+label: 'Correo electrónico del director del colegio'
+description: '<b>Nota:</b> el correo agregado aquí, va a ser usado como usuario para acceder como director del colegio y poder acceder a las opciones establecidas para su rol. '
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: email

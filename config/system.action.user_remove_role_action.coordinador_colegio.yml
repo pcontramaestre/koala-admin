@@ -1,0 +1,14 @@
+uuid: 968ec075-92ec-4568-a07d-8c71b0549c83
+langcode: es
+status: true
+dependencies:
+  config:
+    - user.role.coordinador_colegio
+  module:
+    - user
+id: user_remove_role_action.coordinador_colegio
+label: 'Elimina el rol Coordinador colegio al(los) usuario(s) seleccionado(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: coordinador_colegio

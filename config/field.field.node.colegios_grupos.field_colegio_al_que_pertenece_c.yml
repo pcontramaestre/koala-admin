@@ -1,0 +1,29 @@
+uuid: 7e5bc0cd-1d8e-4d98-a9b6-198d80e51aa2
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_colegio_al_que_pertenece_c
+    - node.type.colegios
+    - node.type.colegios_grupos
+id: node.colegios_grupos.field_colegio_al_que_pertenece_c
+field_name: field_colegio_al_que_pertenece_c
+entity_type: node
+bundle: colegios_grupos
+label: 'Colegio al que pertenece el grupo'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      colegios: colegios
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

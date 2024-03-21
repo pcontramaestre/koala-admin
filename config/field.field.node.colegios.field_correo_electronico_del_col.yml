@@ -1,0 +1,19 @@
+uuid: 86cbe4ec-0065-475c-9e2d-19b6564dd22b
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_correo_electronico_del_col
+    - node.type.colegios
+id: node.colegios.field_correo_electronico_del_col
+field_name: field_correo_electronico_del_col
+entity_type: node
+bundle: colegios
+label: 'Correos electrónicos del colegio'
+description: 'Puedes agregar 1 o varios correos electrónicos del colegio'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: email

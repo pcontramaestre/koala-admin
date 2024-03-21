@@ -9,12 +9,15 @@ dependencies:
     - field.field.user.user.field_apodo
     - field.field.user.user.field_avatar
     - field.field.user.user.field_celular
+    - field.field.user.user.field_colegio_al_que_pertenece_e
     - field.field.user.user.field_direcc
     - field.field.user.user.field_direccion
     - field.field.user.user.field_estrellas_acumuladas
     - field.field.user.user.field_first_login
+    - field.field.user.user.field_grupo_al_que_pertenece_el_
     - field.field.user.user.field_nacionalidad
     - field.field.user.user.field_nombre_del_acudiente
+    - field.field.user.user.field_nombre_del_director
     - field.field.user.user.field_nombre_del_hijo
     - field.field.user.user.field_nombres_y_apellidos_del_pr
     - field.field.user.user.field_numero_de_telefono
@@ -122,11 +125,14 @@ hidden:
   field_apellidos: true
   field_apodo: true
   field_avatar: true
+  field_colegio_al_que_pertenece_e: true
   field_direcc: true
   field_direccion: true
   field_estrellas_acumuladas: true
   field_first_login: true
+  field_grupo_al_que_pertenece_el_: true
   field_nacionalidad: true
+  field_nombre_del_director: true
   field_nombres_y_apellidos_del_pr: true
   field_numero_de_telefono: true
   field_pais: true

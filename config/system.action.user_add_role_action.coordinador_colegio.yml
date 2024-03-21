@@ -1,0 +1,14 @@
+uuid: bfbec56d-4d1e-4372-9246-1d0b9b00edbb
+langcode: es
+status: true
+dependencies:
+  config:
+    - user.role.coordinador_colegio
+  module:
+    - user
+id: user_add_role_action.coordinador_colegio
+label: 'Añade el rol Coordinador colegio al(los) usuario(s) seleccionado(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: coordinador_colegio

@@ -20,7 +20,7 @@ _core:
   default_config_hash: 6WavjUYXIegP9AAg2zXGx54MWIVoomC3SZhNiqe-Dyk
 id: anonymous
 label: 'Usuario anónimo'
-weight: 0
+weight: -10
 is_admin: false
 permissions:
   - 'acceso clases content'

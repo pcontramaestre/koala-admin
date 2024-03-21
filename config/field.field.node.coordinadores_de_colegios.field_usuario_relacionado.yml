@@ -1,0 +1,37 @@
+uuid: 68c5ac9f-84a8-42a5-b77b-cf18bd70bc0e
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_usuario_relacionado
+    - node.type.coordinadores_de_colegios
+id: node.coordinadores_de_colegios.field_usuario_relacionado
+field_name: field_usuario_relacionado
+entity_type: node
+bundle: coordinadores_de_colegios
+label: 'Usuario relacionado'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:user'
+  handler_settings:
+    target_bundles: null
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    filter:
+      type: role
+      role:
+        coordinador_colegio: coordinador_colegio
+        content_editor: '0'
+        administrator: '0'
+        profesor: '0'
+        padre: '0'
+        hijo: '0'
+        director_colegio: '0'
+    include_anonymous: true
+field_type: entity_reference

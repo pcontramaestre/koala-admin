@@ -1,0 +1,15 @@
+uuid: 24b989f3-b92f-4045-bab0-e479b46991af
+langcode: es
+status: true
+dependencies:
+  module:
+    - user_view_mode
+third_party_settings:
+  user_view_mode:
+    weight: null
+    view_mode: compact
+id: coordinador_colegio
+label: 'Coordinador colegio'
+weight: 0
+is_admin: null
+permissions: {  }

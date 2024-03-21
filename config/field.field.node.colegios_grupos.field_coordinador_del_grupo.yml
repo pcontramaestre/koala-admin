@@ -1,0 +1,29 @@
+uuid: 438d5465-53a8-4890-b422-d7a5b1d551bf
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_coordinador_del_grupo
+    - node.type.colegios_grupos
+    - node.type.coordinadores_de_colegios
+id: node.colegios_grupos.field_coordinador_del_grupo
+field_name: field_coordinador_del_grupo
+entity_type: node
+bundle: colegios_grupos
+label: 'Coordinador del grupo'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      coordinadores_de_colegios: coordinadores_de_colegios
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

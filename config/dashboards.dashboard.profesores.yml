@@ -6,7 +6,7 @@ id: profesores
 admin_label: Profesores
 category: Home
 frontend: false
-weight: 2
+weight: -8
 sections:
   -
     layout_id: layout_onecol

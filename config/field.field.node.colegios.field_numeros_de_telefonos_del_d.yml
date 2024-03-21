@@ -1,0 +1,25 @@
+uuid: ae665cd6-6125-4888-8f4d-8a7a3235a080
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_numeros_de_telefonos_del_d
+    - node.type.colegios
+  module:
+    - phone_number
+id: node.colegios.field_numeros_de_telefonos_del_d
+field_name: field_numeros_de_telefonos_del_d
+entity_type: node
+bundle: colegios
+label: 'Número de teléfono del director del colegio'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_countries:
+    US: US
+  allowed_types: {  }
+  extension_field: false
+field_type: phone_number

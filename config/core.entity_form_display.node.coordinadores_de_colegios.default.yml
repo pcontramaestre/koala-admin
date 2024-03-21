@@ -1,0 +1,88 @@
+uuid: 4fe381d5-4af7-41e9-aeb7-8be7310d5363
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.field.node.coordinadores_de_colegios.field_clave_de_acceso_del_coordi
+    - field.field.node.coordinadores_de_colegios.field_colegio_al_que_pertenece_c
+    - field.field.node.coordinadores_de_colegios.field_correo_del_coordinador
+    - field.field.node.coordinadores_de_colegios.field_usuario_relacionado
+    - node.type.coordinadores_de_colegios
+  module:
+    - chosen_field
+    - field_group
+    - field_layout
+    - layout_discovery
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+  field_group:
+    group_datos_de_acceso_del_coordi:
+      children:
+        - field_correo_del_coordinador
+        - field_clave_de_acceso_del_coordi
+      label: 'Datos de acceso del coordinador'
+      region: content
+      parent_name: ''
+      weight: 2
+      format_type: fieldset
+      format_settings:
+        classes: ''
+        show_empty_fields: true
+        id: ''
+        description: 'Incluya a continuación los datos con los que va acceder el coordinado al administrador de hola koala'
+        required_fields: true
+id: node.coordinadores_de_colegios.default
+targetEntityType: node
+bundle: coordinadores_de_colegios
+mode: default
+content:
+  field_clave_de_acceso_del_coordi:
+    type: string_textfield
+    weight: 4
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_colegio_al_que_pertenece_c:
+    type: chosen_select
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_correo_del_coordinador:
+    type: email_default
+    weight: 3
+    region: content
+    settings:
+      placeholder: ''
+      size: 60
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 3
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  field_usuario_relacionado: true
+  langcode: true
+  moderation_state: true
+  path: true
+  promote: true
+  sticky: true
+  uid: true
+  url_redirects: true

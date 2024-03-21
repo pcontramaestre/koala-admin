@@ -57,6 +57,16 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_clase_gratis_asignada:
+    type: entity_reference_autocomplete
+    weight: 15
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
   field_comentarios_u_observacione:
     type: string_textarea
     weight: 12
@@ -128,5 +138,4 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-hidden:
-  field_clase_gratis_asignada: true
+hidden: {  }

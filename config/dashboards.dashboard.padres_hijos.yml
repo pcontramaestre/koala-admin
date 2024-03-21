@@ -6,7 +6,7 @@ id: padres_hijos
 admin_label: 'Padres / Hijos'
 category: Home
 frontend: false
-weight: 5
+weight: -6
 sections:
   -
     layout_id: layout_onecol

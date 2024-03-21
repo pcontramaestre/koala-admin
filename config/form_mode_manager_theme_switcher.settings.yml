@@ -10,6 +10,14 @@ type:
   node_asignar_profesor: admin
   node_editar_horarios: admin
   user_register: _none
+  commerce_subscription_customer: _none
+  node_agendando_clase: _none
+  node_cancelar_suscripcion: _none
+  node_editar_hijo: _none
+  node_editar_metodos_de_pago: _none
+  user_agregar_padre: _none
+  user_director_colegio: _none
+  user_editar_hijo: _none
 form_mode:
   media_media_library: null
   node_agendar_clases: null
@@ -22,3 +30,11 @@ form_mode:
   node_asignar_profesor: null
   node_editar_horarios: null
   user_register: null
+  commerce_subscription_customer: null
+  node_agendando_clase: null
+  node_cancelar_suscripcion: null
+  node_editar_hijo: null
+  node_editar_metodos_de_pago: null
+  user_agregar_padre: null
+  user_director_colegio: null
+  user_editar_hijo: null

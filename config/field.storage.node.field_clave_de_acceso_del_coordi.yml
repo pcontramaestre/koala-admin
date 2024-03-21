@@ -1,0 +1,25 @@
+uuid: 9e39cf56-8370-4cc6-aee9-da50928cc233
+langcode: es
+status: true
+dependencies:
+  module:
+    - field_permissions
+    - node
+third_party_settings:
+  field_permissions:
+    permission_type: public
+id: node.field_clave_de_acceso_del_coordi
+field_name: field_clave_de_acceso_del_coordi
+entity_type: node
+type: string
+settings:
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

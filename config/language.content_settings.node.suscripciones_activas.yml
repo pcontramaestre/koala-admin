@@ -1,0 +1,11 @@
+uuid: f3c2cc56-a7dc-4f32-9023-0e722f0bfa8c
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.suscripciones_activas
+id: node.suscripciones_activas
+target_entity_type_id: node
+target_bundle: suscripciones_activas
+default_langcode: site_default
+language_alterable: false
