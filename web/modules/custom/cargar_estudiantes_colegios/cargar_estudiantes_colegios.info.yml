@@ -1,0 +1,7 @@
+name: 'Cargar Estudiantes de Colegios'
+type: module
+description: 'Permite cargar estudiantes mediante un formulario que selecciona colegios y coordinadores.'
+package: Custom
+core_version_requirement: ^8 || ^9
+dependencies:
+  - drupal:node

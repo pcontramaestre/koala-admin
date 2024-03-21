@@ -1,0 +1,7 @@
+cargar_estudiantes_colegios.form:
+  path: '/admin/cargar-estudiantes'
+  defaults:
+    _form: '\Drupal\cargar_estudiantes_colegios\Form\CargarEstudiantesForm'
+    _title: 'Cargar Estudiantes'
+  requirements:
+    _permission: 'access content'
