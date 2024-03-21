@@ -1,0 +1,260 @@
+<?php
+
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Entity\EntityTypeManagerInterface;
+use Drupal\user\Entity\User;
+use Drupal\node\Entity\Node;
+use Symfony\Component\HttpFoundation\RedirectResponse;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\StringTranslation\TranslatableMarkup;
+
+/**
+ * implements hook_form_alter 
+ */
+
+function colegios_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  //CREAR UN NUEVO COLEGIO
+  if ($form_id == 'node_colegios_form') {
+    $form['actions']['submit']['#value'] =  Drupal::translation()->translate('Guardar colegio');
+    // validate form before submit, prevent submit if the form is not valid
+    $form_state->setValidateHandlers([]);
+    $form['#validate'][] = 'callback_validate_colegios_colegios_submit';
+    foreach (array_keys($form['actions']) as $action) {
+      if ($action != 'preview' && isset($form['actions'][$action]['#type']) && $form['actions'][$action]['#type'] === 'submit') {
+        $form['actions'][$action]['#submit'][] = 'callback_submit_colegios_colegios_submit';
+      }
+    }
+  }
+
+  // EDITAR UN COLEGIO
+  
+  if ($form_id == 'node_colegios_edit_form') {
+    // disabled field correo electronico del director
+    $form['field_correo_electronico_del_dir']['widget'][0]['value']['#attributes']['disabled'] = 'disabled';
+    // not show field clave de acceso del director
+    $form['field_clave_de_acceso_del_direct']['widget'][0]['value']['#access'] = FALSE;
+    
+    $form['actions']['submit']['#value'] =  Drupal::translation()->translate('Actualizar colegio');
+    // validate form before submit, prevent submit if the form is not valid
+    foreach (array_keys($form['actions']) as $action) {
+      if ($action != 'preview' && isset($form['actions'][$action]['#type']) && $form['actions'][$action]['#type'] === 'submit') {
+        $form['actions'][$action]['#submit'][] = 'callback_edit_colegios_colegios_submit';
+      }
+    }
+  }
+
+  // CREAR UN NUEVO COORDINADOR DE COLEGIO
+  if ($form_id =='node_coordinadores_de_colegios_form') {
+    $form['actions']['submit']['#value'] =  Drupal::translation()->translate('Agregar coordinador');
+    // validate form before submit, prevent submit if the form is not valid
+    $form_state->setValidateHandlers([]);
+    $form['#validate'][] = 'callback_validate_coordinadores_colegios_submit';
+    foreach (array_keys($form['actions']) as $action) {
+      if ($action != 'preview' && isset($form['actions'][$action]['#type']) && $form['actions'][$action]['#type'] === 'submit') {
+        $form['actions'][$action]['#submit'][] = 'callback_submit_colegios_coordinadores_de_colegios_submit';
+      }
+    }
+  }
+
+  // EDITAR UN COORDINADOR DE COLEGIO
+  if ($form_id == 'node_coordinadores_de_colegios_edit_form') {
+    // disabled field correo del coordinador
+    $form['field_correo_del_coordinador']['widget'][0]['value']['#attributes']['disabled'] = 'disabled';
+    // not show field clave de acceso del coordinador
+    $form['field_clave_de_acceso_del_coordi']['widget'][0]['value']['#access'] = FALSE;
+    $form['actions']['submit']['#value'] =  Drupal::translation()->translate('Actualizar coordinador');
+  }
+
+  // AGREGAR NUEVO GRUPO A UN COORDINADOR DE COLEGIO Y A UN COLEGIO. TIPO DE CONTENIDO colegios_grupos
+  if ($form_id == 'node_colegios_grupos_form' || $form_id == 'node_coordinadores_de_colegios_grupos_form') {
+    $form['actions']['submit']['#value'] =  Drupal::translation()->translate('Guardar grupo');
+
+    //field_colegio_al_que_pertenece_c AJAX callback ON CHANGE. 
+    $form['field_colegio_al_que_pertenece_c']['widget']['#ajax'] = [
+      'callback' => 'callback_colegios_grupos_form',
+      'event' => 'change',
+      'wrapper' => 'colegios-grupos-form',
+      'progress' => [
+        'type' => 'throbber',
+        'message' => new TranslatableMarkup('Cargando...'),
+      ],
+    ];
+
+    $form['field_coordinador_del_grupo']['#prefix'] = '<div id="colegios-grupos-form">';
+    $form['field_coordinador_del_grupo']['#suffix'] = '</div>';
+  }
+
+}
+
+function callback_submit_colegios_colegios_submit($form, FormStateInterface $form_state) {
+    // get field field_correo_electronico_del_dir on variable $correo_director
+    $correo_director = $form_state->getValue('field_correo_electronico_del_dir');
+    $correo_director = $correo_director[0]['value'];
+    // get field_clave_de_acceso_del_direct
+    $clave_acceso = $form_state->getValue('field_clave_de_acceso_del_direct');
+    $clave_acceso = $clave_acceso[0]['value'];
+    
+    // get field_zona_horaria_del_colegio
+    $zona_horaria = $form_state->getValue('field_zona_horaria_del_colegio');
+    $zona_horaria = $zona_horaria[0]['value'];
+    // get field_nombres_y_apellidos_del_di
+    $nombres_director = $form_state->getValue('field_nombres_y_apellidos_del_di');
+    $nombres_director = $nombres_director[0]['value'];
+
+
+
+  // get node id
+  $node_id = $form_state->getValue('nid');
+
+  // create a new user
+  $user = User::create();
+  $user->setPassword($clave_acceso);
+  $user->enforceIsNew();
+  $user->setEmail($correo_director);
+  $user->setUsername($correo_director);
+  $user->set("init", $correo_director);
+  // lagcode is english us
+  $user->set("langcode", 'en');
+  $user->set("preferred_langcode", 'en');
+  $user->addRole('director_colegio');
+  // add zone horary
+  $user->set("timezone", $zona_horaria);
+  // add entity reference field_colegio_al_que_pertenece_e
+  $user->set("field_colegio_al_que_pertenece_e", $node_id);
+  // add field_nombre_del_director 
+  $user->set("field_nombre_del_director", $nombres_director);
+  
+  $user->activate();
+  $user->save();
+
+  // redirec to /dashboard/colegios after submit
+  $response = new RedirectResponse('/dashboard/colegios');
+  $response->send();
+  return;
+
+}
+
+function callback_validate_colegios_colegios_submit($form, FormStateInterface $form_state) {
+  // get field field_correo_electronico_del_dir on variable $correo_director
+  $correo_director = $form_state->getValue('field_correo_electronico_del_dir');
+  $correo_director = $correo_director[0]['value'];
+  // get field_clave_de_acceso_del_direct
+  $clave_acceso = $form_state->getValue('field_clave_de_acceso_del_direct');
+  $clave_acceso = $clave_acceso[0]['value'];
+  
+  // get field_zona_horaria_del_colegio
+  $zona_horaria = $form_state->getValue('field_zona_horaria_del_colegio');
+  $zona_horaria = $zona_horaria[0]['value'];
+  // get field_nombres_y_apellidos_del_di
+  $nombres_director = $form_state->getValue('field_nombres_y_apellidos_del_di');
+  $nombres_director = $nombres_director[0]['value'];
+
+  // validar que el correo del director no exista, si existe mostrar un mensaje de error
+  $query = \Drupal::entityQuery('user')
+    ->condition('mail', $correo_director)
+    ->execute();
+
+  if (!empty($query)) {
+    $form_state->setErrorByName('field_correo_electronico_del_dir', new TranslatableMarkup('El correo ya existe'));
+  }
+
+  // validar que no hayan campos vacios
+  if (empty($correo_director) || empty($clave_acceso) || empty($zona_horaria) || empty($nombres_director)) {
+    $form_state->setErrorByName('field_correo_electronico_del_dir', new TranslatableMarkup('Todos los campos son requeridos'));
+  }
+
+}
+
+function callback_edit_colegios_colegios_submit($form, FormStateInterface $form_state) {
+}
+
+function callback_submit_colegios_coordinadores_de_colegios_submit($form, FormStateInterface $form_state) {
+  // get title of node coordinadores_de_colegios save variable $nombre_coordinador
+  $nombre_coordinador = $form_state->getValue('title');
+  // get field_correo_del_coordinador
+  $correo_coordinador = $form_state->getValue('field_correo_del_coordinador');
+  $correo_coordinador = $correo_coordinador[0]['value'];
+  $clave_acceso = $form_state->getValue('field_clave_de_acceso_del_coordi');
+  $clave_acceso = $clave_acceso[0]['value'];
+  $rol = 'coordinador_colegio';
+
+  // get entity referece field_colegio_al_que_pertenece_c save in variable $id_colegio
+  $id_colegio = $form_state->getValue('field_colegio_al_que_pertenece_c');
+  $id_colegio = $id_colegio[0]['target_id'];
+
+  // load node colegios and get field field_zona_horaria_del_colegio
+  $node = Node::load($id_colegio);
+  $zona_horaria = $node->field_zona_horaria_del_colegio->value;
+  
+
+
+  // get node id
+  $node_id = $form_state->getValue('nid');
+
+  // create a new user
+  $user = User::create();
+  $user->setPassword($clave_acceso);
+  $user->enforceIsNew();
+  $user->setEmail($correo_coordinador);
+  $user->setUsername($correo_coordinador);
+  $user->set("init", $correo_coordinador);
+  // lagcode is english us
+  $user->set("langcode", 'en');
+  $user->set("preferred_langcode", 'en');
+  $user->addRole($rol);
+  // add entity reference field_colegio_al_que_pertenece_e
+  $user->set("field_colegio_al_que_pertenece_e", $id_colegio);
+  // add field_nombre_del_director
+  $user->set("field_nombre_del_director", $nombre_coordinador);
+  // add zone horary
+  $user->set("timezone", $zona_horaria);
+  $user->activate();
+  $user->save();
+
+  // get user id and save in field field_usuario_relacionado of node
+  $user_id = $user->id();
+  $node = Node::load($node_id);
+  $node->field_usuario_relacionado->target_id = $user_id;
+  $node->save();
+
+  // redirec to /dashboard/colegios after submit
+  $response = new RedirectResponse('/dashboard/colegios');
+  $response->send();
+  return;
+}
+
+function callback_validate_coordinadores_colegios_submit($form, FormStateInterface $form_state) {
+  //validar que el correo del coordinador no exista, si existe mostrar un mensaje de error
+  $correo_coordinador = $form_state->getValue('field_correo_del_coordinador');
+  $correo_coordinador = $correo_coordinador[0]['value'];
+  $query = \Drupal::entityQuery('user')
+    ->condition('mail', $correo_coordinador)
+    ->execute();
+
+  if (!empty($query)) {
+    $form_state->setErrorByName('field_correo_del_coordinador', new TranslatableMarkup('El correo ya existe'));
+  }
+}
+
+
+function callback_colegios_grupos_form(array &$form, \Drupal\Core\Form\FormStateInterface $form_state) {
+  //get field_colegio_al_que_pertenece_c 
+  $id_colegio = $form_state->getValue('field_colegio_al_que_pertenece_c');
+  $id_colegio = $id_colegio[0]['target_id'];
+
+  // obtener del tipo de contenido coordinadores_de_colegios los coordinadores que pertenecen al colegio seleccionado
+  $query = \Drupal::entityQuery('node')
+    ->condition('type', 'coordinadores_de_colegios')
+    ->condition('field_colegio_al_que_pertenece_c', $id_colegio)
+    ->execute();
+
+  $nids = array_values($query);
+  $options = [];
+  foreach ($nids as $nid) {
+    $node = Node::load($nid);
+    $options[$nid] = $node->getTitle();
+  }
+
+  $form['field_coordinador_del_grupo']['widget']['#options'] = $options;
+  return $form['field_coordinador_del_grupo'];
+}

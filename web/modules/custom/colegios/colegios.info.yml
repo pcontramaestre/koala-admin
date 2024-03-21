@@ -1,0 +1,5 @@
+name: 'Colegios'
+type: module
+description: 'Módulo para la gestión de colegios'
+core_version_requirement: ^8 || ^9 || ^10
+package: Custom
