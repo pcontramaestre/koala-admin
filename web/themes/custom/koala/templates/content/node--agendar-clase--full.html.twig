@@ -84,7 +84,7 @@
 
 	<div{{content_attributes.addClass('node__content','clearfix')}}>
 		<div class="superior text-center">
-			<img src="/themes/custom/koala/images/perfecto.png">
+			<img src="/themes/custom/koala/images/tigre.svg">
 			{% if current_language == 'es' %}
 				<h2>¡Perfecto! Lo has conseguido</h2>
 				<p>Te hemos enviado un correo con los detalles de tu clase</p>						
@@ -118,7 +118,7 @@
 					{% endif %}
 				</div>
 				<div>
-					<p>{{ content.field_nombre_del_nino_a.0 }}</p>
+					<p>{{ content.field_nombre_del_nino_a.0 }} {{content.field_apellidos_del_nino_a.0}}</p>
 				</div>
 			</div>
 			<div class="col-md-12 col-lg-6">
