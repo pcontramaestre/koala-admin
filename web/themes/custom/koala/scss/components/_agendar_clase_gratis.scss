@@ -3,6 +3,29 @@
   background-repeat: no-repeat;
   background-size: cover;
 
+  &.clase-gratis {
+    .menu--padres {
+      opacity: 0;
+      .nav-item {
+        a {
+          pointer-events: none;
+        }
+      }
+    }
+    footer.site-footer {
+      display: none;
+    }
+  }
+  .vista-horarios-disponibles, .vista-clases-no-disponibles{
+    display: none;
+  }
+
+  label[for="edit-field-he-leido-y-estoy-de-acuerd-value"] {
+    display: flex;
+  }
+
+
+
   #main-wrapper {
     .main-content {
       .section {
@@ -53,6 +76,9 @@
                     padding: 1rem 0.5rem 0rem 0rem;
                     @media screen and (max-width: 1024px) {
                       width: 100%;
+                      margin-bottom: 0 !important;
+                      padding: 0;
+                      margin-top: 1rem;
                     }
                   }
 
@@ -63,6 +89,8 @@
                     padding: 1rem 0rem 0rem 0.5rem;
                     @media screen and (max-width: 1024px) {
                       width: 100%;
+                      margin-bottom: 0 !important;
+                      padding: 0;
                     }
                   }
                   .field--name-field-apellidos-del-nino-a {
@@ -71,6 +99,8 @@
                     padding: 1rem 0rem 0rem 0.5rem;
                     @media screen and (max-width: 1024px) {
                       width: 100%;
+                      margin-bottom: 0 !important;
+                      padding: 0;
                     }
                   }
 
