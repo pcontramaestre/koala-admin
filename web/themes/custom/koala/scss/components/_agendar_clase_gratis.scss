@@ -359,9 +359,10 @@
 // AGENDAR CLASE GRATIS
 .node-agendar-clases {
   a.hora-enlace.disabled {
-    background: red;
-    color: white !important;
+    background: #E6F1F1;
+    color: #727F7F !important;
     pointer-events: none;
+    border: 1px solid !important;
   }
   .fechas-horarios-agendamiento {
     display: flex;
@@ -404,7 +405,7 @@
       a {
         text-decoration: none;
         padding: 0.5rem 1rem 0.3125rem 1rem;
-        border: 2px solid #becaca;
+        border: 1px solid #727F7F;
         border-radius: 32px;
         color: black;
         font-size: 1rem;
@@ -414,9 +415,11 @@
 
         &:hover {
           background-color: #2ff7ee;
+          border-color: black;
         }
         &.active {
           background-color: #2ff7ee;
+          border-color: black;
         }
       }
     }
