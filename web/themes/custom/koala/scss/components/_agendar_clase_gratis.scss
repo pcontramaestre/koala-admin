@@ -51,6 +51,9 @@
                     width: 33%;
                     float: left;
                     padding: 1rem 0.5rem 0rem 0rem;
+                    @media screen and (max-width: 1024px) {
+                      width: 100%;
+                    }
                   }
 
 
@@ -58,11 +61,17 @@
                     width: 33%;
                     float: left;
                     padding: 1rem 0rem 0rem 0.5rem;
+                    @media screen and (max-width: 1024px) {
+                      width: 100%;
+                    }
                   }
                   .field--name-field-apellidos-del-nino-a {
                     width: 33%;
                     float: left;
                     padding: 1rem 0rem 0rem 0.5rem;
+                    @media screen and (max-width: 1024px) {
+                      width: 100%;
+                    }
                   }
 
                   .field--name-field-fecha-de-la-cita {
@@ -70,6 +79,9 @@
                     width: 50%;
                     float: left;
                     padding: 0rem 0.5rem 0rem 0rem;
+                    @media screen and (max-width: 1024px) {
+                      width: 100%;
+                    }
                   }
 
                   .field--name-field-hora-clase {
@@ -332,6 +344,10 @@
     #id-escoger-fecha {
       width: 35%;
       flex: 0 35%;
+      @media screen and (max-width: 1024px) {
+        width: 100% !important;
+        flex: 0 100% !important;          
+      }
       > .ui-datepicker-inline {
         margin-left: 0px;
         width: 100%;
