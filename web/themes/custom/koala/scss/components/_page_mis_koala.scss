@@ -98,7 +98,7 @@
                                   border-radius: 200px;
                                   margin-right: 3px;
                                   margin-left: 5px;
-                                  background-image: url("/themes/custom/koala/images/Avatar1.png");
+                                  background-image: url("/themes/custom/koala/images/avatar.png");
                                   background-size: cover;
                                 }
                               }
@@ -124,37 +124,37 @@
                                 }
                               }
 
-                              &:nth-child(2n) {
-                                button {
-                                  background: #f5f8d8;
-                                  color: #869021;
-                                  &:before {
-                                    content: "";
-                                    display: block;
-                                    width: 24px;
-                                    height: 24px;
-                                    border-radius: 200px;
-                                    margin-right: 0.5rem;
-                                    background-image: url("/themes/custom/koala/images/Avatar2.jpg");
-                                  }
-                                }
-                              }
+                              // &:nth-child(2n) {
+                              //   button {
+                              //     background: #f5f8d8;
+                              //     color: #869021;
+                              //     &:before {
+                              //       content: "";
+                              //       display: block;
+                              //       width: 24px;
+                              //       height: 24px;
+                              //       border-radius: 200px;
+                              //       margin-right: 0.5rem;
+                              //       background-image: url("/themes/custom/koala/images/Avatar2.jpg");
+                              //     }
+                              //   }
+                              // }
 
-                              &:nth-child(3n) {
-                                button {
-                                  background: #f8e5de;
-                                  color: #af654a;
-                                  &:before {
-                                    content: "";
-                                    display: block;
-                                    width: 24px;
-                                    height: 24px;
-                                    border-radius: 200px;
-                                    margin-right: 0.5rem;
-                                    background-image: url("/themes/custom/koala/images/Avatar3.jpg");
-                                  }
-                                }
-                              }
+                              // &:nth-child(3n) {
+                              //   button {
+                              //     background: #f8e5de;
+                              //     color: #af654a;
+                              //     &:before {
+                              //       content: "";
+                              //       display: block;
+                              //       width: 24px;
+                              //       height: 24px;
+                              //       border-radius: 200px;
+                              //       margin-right: 0.5rem;
+                              //       background-image: url("/themes/custom/koala/images/Avatar3.jpg");
+                              //     }
+                              //   }
+                              // }
                             }
                           }
                           .nav-tabs::-webkit-scrollbar {
