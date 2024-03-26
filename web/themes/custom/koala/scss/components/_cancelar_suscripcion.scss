@@ -1,4 +1,14 @@
 .path-eliminar-suscripcion {
+
+  .navigation.menu--padres {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  footer.site-footer {
+    display: none;
+  }
+
   .node-cancelar-suscripcion-form {
     margin-top: 2rem;
 
