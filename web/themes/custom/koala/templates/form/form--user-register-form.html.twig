@@ -15,7 +15,7 @@
   {% if current_language == 'es' %}
     <div class="col-12 title text-center pt-4 pb-5"><h2>{{ 'Crea tu cuenta y agenda una clase de prueba gratis'|t }}</h2></div>
   {% else %}
-    <div class="col-12 title text-center pt-4 pb-5"><h2>{{ 'Create your account and schedule a free trial class in English'|t }}</h2></div>
+    <div class="col-12 title text-center pt-4 pb-5"><h2>{{ 'Create your account and schedule a free trial class'|t }}</h2></div>
   {% endif %}
   <div class="col-12 iconos text-center d-flex">
     <div class="col-4">
@@ -51,3 +51,9 @@
 <form{{ attributes }}>
   {{ children }}
 </form>
+
+<style>
+  .description.text-muted {
+    display: none;
+  }
+</style>
