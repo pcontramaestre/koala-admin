@@ -406,7 +406,19 @@ function callback_submit_agendar_clase(&$form, FormStateInterface $form_state) {
 
 function callback_submit_koala_ninos(&$form, FormStateInterface $form_state) {
   \Drupal::messenger()->addMessage(\Drupal::translation()->translate('Información actualizada'));
-  $form_state->setRedirect('view.koalas_avatares_ninos.page_1');
+  // $form_state->setRedirect('view.koalas_avatares_ninos.page_1');
+  //redirect a la ruta /hijo con RedirectResponse
+  
+  // si el idioma es español redirigir a /hijo si es ingles redirigir a /en/hijo
+
+  $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
+  if ($language == 'es') {
+    $response = new RedirectResponse('/hijo');
+  }
+  else {
+    $response = new RedirectResponse('/en/hijo');
+  }
+  $response->send();
 }
 
 

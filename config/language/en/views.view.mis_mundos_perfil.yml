@@ -1,0 +1,9 @@
+display:
+  default:
+    display_options:
+      header:
+        area_text_custom:
+          content: "<div class=\"text-center titulo\"><strong>Your worlds</strong></div>\r\n<div class=\"text-center subtitulo\">Let's enjoy games together and practice a lot of Spanish.</div>"
+      footer:
+        area_text_custom:
+          content: "<a href=\"/mis-mundos\">\r\n  Go to your worlds\r\n</a>"

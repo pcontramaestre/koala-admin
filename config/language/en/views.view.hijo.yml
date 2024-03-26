@@ -1,0 +1,10 @@
+display:
+  default:
+    display_options:
+      fields:
+        nothing:
+          alter:
+            text: '<p>You can customize your character and track their progress within your world.</p>'
+        field_nombre_del_hijo:
+          alter:
+            text: "<p>\r\n<strong>Hello, {{ field_nombre_del_hijo__value }}\r\n<br>\r\nSo nice to see you here!</strong\r\n</p>"

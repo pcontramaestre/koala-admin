@@ -192,10 +192,16 @@ body.node--type-mundos-detalle {
             .view-content {
               .horizontal {
                 .views-row {
-                  width: 84% !important;
+                  width: 100%;
+                  display: flex;
+                  flex-direction: row;
+                  flex-wrap: nowrap;
+                  position: relative;
+                  overflow: hidden;
+
                   .views-col {
-                    margin-right: 7%;
-                    width: 46.5% !important;
+                    margin-right: 2%;
+                    width: 81% !important;
 
                     &:last-child {
                       margin-right: 0rem;
@@ -208,6 +214,11 @@ body.node--type-mundos-detalle {
                         border-radius: 16px;
                         border: 1px solid #becaca;
                         overflow: hidden;
+
+                        &:hover {
+                          transition: all 0.3s ease-in-out;
+                          box-shadow: 1px 1px 8px 2px #297e888c;
+                        }
 
                         .imagen {
                           img {
@@ -230,6 +241,7 @@ body.node--type-mundos-detalle {
 
                           a {
                             text-decoration: none;
+                            width: 100%;
                             color: black;
 
                             .titulo {
@@ -251,15 +263,18 @@ body.node--type-mundos-detalle {
             }
 
             .view-footer {
-              position: absolute;
-              right: 0%;
-              bottom: 33%;
-
+              text-align: center;
               a {
-                img {
-                  background: white;
-                  box-shadow: 0px 0px 7px 0px #becaca;
-                  border-radius: 8px;
+                border-radius: 28px;
+                border: 2px solid #297e88;
+                background-color: white;
+                color: #165F68;
+                text-decoration: none;
+                padding: 0.3rem 1.5rem;
+
+                &:hover {
+                  background-color: #297e88;
+                  color: white;
                 }
               }
             }
@@ -733,7 +748,7 @@ body.node--type-mundos-detalle {
     .block-views-blockmis-mundos-perfil-block-1
       .view-mis-mundos-perfil
       .view-footer {
-      display: none;
+      // display: none;
     }
   }
   .layout__region--second {
@@ -915,5 +930,11 @@ body.node--type-mundos-detalle {
         }
       }
     }
+  }
+}
+
+a, button {
+  &:hover {
+    transition: all 0.3s ease-in-out;
   }
 }

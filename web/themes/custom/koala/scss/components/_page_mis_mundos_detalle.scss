@@ -64,6 +64,20 @@
           align-items: center;
           margin-left: 3rem;
 
+          @media screen and (max-width: 1024px) {
+            left: 0%;
+            width: 94%;
+            font-size: 1.2rem;
+            transform: unset;
+            top: 37%;
+            line-height: 1;
+            margin-left: 4%;
+
+            &::after {
+              left: 5% !important;
+            }
+          }
+
           &:hover {
             transition: all 0.3s ease-in-out;
             box-shadow: 1px 1px 8px 2px #297e888c;
@@ -111,6 +125,16 @@
             float: unset;
             width: 20%;
 
+            @media screen and (max-width: 1024px) {
+              width: 30%;
+            }
+            @media screen and (max-width: 768px) {
+              width: 50%;
+            }
+            @media screen and (max-width: 480px) {
+              width: 100%;
+            }
+    
             .views-field-title {
               padding: 1rem 0rem 1rem 1rem;
 

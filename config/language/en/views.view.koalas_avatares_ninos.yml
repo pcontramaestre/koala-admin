@@ -1,0 +1,10 @@
+display:
+  block_2:
+    display_options:
+      fields:
+        nothing:
+          alter:
+            text: "<div class=\"estrella\">\r\n   <img src=\"/themes/custom/koala/images/estrella.png\">\r\n   <div class=\"texto\"><span class=\"total-estrellas\">1.250</span>  <span>Starts</span></div>\r\n</div>"
+        nothing_1:
+          alter:
+            text: "<div class=\"enlace-personalizar\">\r\n  <a href=\"/en/hijo/mis-koalas-avatares\" class=\"boton\">Customize my Koala</a>\r\n</div>"

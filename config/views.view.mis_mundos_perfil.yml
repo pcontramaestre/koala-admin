@@ -301,7 +301,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<div class=\"categoria\">\r\n  <div class=\"imagen\">{{ field_imagen_del_mundo }}</div>\r\n  <div class=\"titulo-numero\">\r\n   <a href=\"/mis-mundos/{{ nid }}\">\r\n       <div class=\"titulo\">{{ title }} </div>\r\n       <div class=\"nro\"></div>\r\n    </a>\r\n  </div>\r\n</div>"
+            text: "<div class=\"categoria\">\r\n  <div class=\"imagen\">   <a href=\"/mis-mundos/{{ nid }}\">{{ field_imagen_del_mundo }}</a></div>\r\n  <div class=\"titulo-numero\">\r\n   <a href=\"/mis-mundos/{{ nid }}\">\r\n       <div class=\"titulo\">{{ title }} </div>\r\n       <div class=\"nro\"></div>\r\n    </a>\r\n  </div>\r\n</div>"
             make_link: false
             path: ''
             absolute: false
@@ -437,7 +437,7 @@ display:
           admin_label: ''
           plugin_id: text_custom
           empty: false
-          content: "<div class=\"text-center titulo\"><strong>Mis mundos</strong></div>\r\n<div class=\"text-center subtitulo\">Disfrutemos juntos de juegos, música y audiolibros. Practica mucho español </div>"
+          content: "<div class=\"text-center titulo\"><strong>Tus mundos</strong></div>\r\n<div class=\"text-center subtitulo\">Disfrutemos juntos de juegos y practica mucho español </div>"
           tokenize: false
       footer:
         area_text_custom:
@@ -449,7 +449,7 @@ display:
           admin_label: ''
           plugin_id: text_custom
           empty: false
-          content: "<a href=\"/mis-mundos\">\r\n  <img src=\"/themes/custom/koala/images/boton-mas.svg\" width=\"40\" height=\"40>\r\n</a>"
+          content: "<a href=\"/mis-mundos\">\r\n  Ir a tus mundos\r\n</a>"
           tokenize: false
       display_extenders: {  }
     cache_metadata:
