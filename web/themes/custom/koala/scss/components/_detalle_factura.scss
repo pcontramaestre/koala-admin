@@ -1,6 +1,20 @@
 .rol-padre {
+
+  &.user-orders {
+    background: #e6f1f1;
+  }
+
+
+
   #block-koala-content {
     .informacion-orden {
+
+      background: white;
+      padding: 1rem;
+      margin-top: 3rem;
+      border-radius: 24px;
+      margin-bottom: 2rem;
+
       .titulo {
         margin: 1rem 0rem;
         a {
