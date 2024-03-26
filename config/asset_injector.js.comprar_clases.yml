@@ -269,7 +269,7 @@ code: |-
     function incrementarTotal(event) {
       const totalElement = event.target.previousElementSibling;
       let total = parseInt(totalElement.textContent);
-      if (total < 7) {
+      if (total < 8) {
         total++;
       }
       totalElement.textContent = total;
@@ -444,7 +444,7 @@ code: |-
 
         precio24Semanas = parseInt(totalclasesSeleccionadas.textContent) * 24;
         console.log('precio24Semanas', precio24Semanas);
-        
+      
         datosCosteClases.forEach((clase) => {
           if (clase.clases == precio12Semanas) {
             precioClase12 = clase.costePorClase;
@@ -475,6 +475,7 @@ code: |-
             ahorro = ahorro.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
             // Convertir precioCoste24 a moneda con formato $ 0,000.00
             precioCoste24 = precioCoste24.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
+
 
             if (idiomaIngles) { 
               texto = "If you select 24 weeks, it will cost you " + precioCoste24 + " and you will save " + ahorro;

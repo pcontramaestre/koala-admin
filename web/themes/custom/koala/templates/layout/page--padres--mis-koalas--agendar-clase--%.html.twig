@@ -152,18 +152,7 @@
               <main{{ content_attributes }}>
                 <section class="section">
                   <a href="#main-content" id="main-content" tabindex="-1"></a>
-                  <div class="superpuesto">
-                    <div class="texto">
-                      {% if current_language == 'es' %}        
-                        <p>Estamos procesando tu suscripción, espera unos segundos</p>
-                      {% else %}
-                        <p>We are processing your subscription, wait a few seconds</p>
-                      {% endif %}
-                    </div>
-                  </div>
-                  <div class="opacity-0" style="opacity:0;">
-                    {{ page.content }}
-                  </div>
+                  {{ page.content }}
                 </section>
               </main>
             {% if sidebar_first_exists %}
@@ -193,7 +182,7 @@
         </aside>
       </div>
     {% endif %}
-    <footer class="site-footer">
+    <footer class="site-footer footer-mis-koalas">
       {% block footer %}
         <div class="{{ container }}">
           {% if page.footer_first or page.footer_second or page.footer_third or page.footer_fourth %}
@@ -212,27 +201,58 @@
   </div>
 </div>
 
-<!-- Modal Confirmación entrar como niño-->
-<div class="modal fade" id="confirmarEntrarNino" tabindex="-1" aria-labelledby="confirmarEntrarNinoTitle" style="display: none;" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="confirmarEntrarNinoTitle">Entrar a la sección del niño</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <p>Para continuar, ten en cuenta las siguientes acciones:</p>
-        <p>1. Vas a entrar a nombre del niño seleccionado.</p>
-        <p>2. Se va a cerrar tu sesión y se abrirá la de niño.</p>
-        <p>3. Si deseas entrar nuevamente como Tutor / Padre debes ingresar nuevamente tu usuario y tu contraseña.</p>
 
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary" id="botonEntrarNino">Confirmar y continuar</button>
+{% set language = current_language %}
+
+{% if current_language == 'es' %}
+  <!-- Modal Confirmación entrar como niño-->
+  <div class="modal fade" id="confirmarEntrarNino" tabindex="-1" aria-labelledby="confirmarEntrarNinoTitle" style="display: none;" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p class="text-center"><strong>Entrar a la sección del niño</strong></p>
+          <p>Para continuar, ten en cuenta las siguientes acciones:</p>
+          <p>
+            1. Vas a entrar a nombre del niño seleccionado. <br>
+            2. Se va a cerrar tu sesión y se abrirá la de niño. <br>
+            3. Si deseas entrar nuevamente como Tutor / Padre debes ingresar nuevamente tu usuario y tu contraseña.<br>
+          </p>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" id="botonEntrarNino">Confirmar y continuar</button>
+        </div>
       </div>
     </div>
   </div>
-</div>
+{% else %}
+  <!-- Modal Confirmación entrar como niño-->
+  <div class="modal fade" id="confirmarEntrarNino" tabindex="-1" aria-labelledby="confirmarEntrarNinoTitle" style="display: none;" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p class="text-center"><strong>Enter the child's section</strong></p>
+          <p>To continue, consider the following actions:</p>
+          <p>
+            1. You are going to enter on behalf of the selected child. <br>
+            2. Your session will be closed and the child's session will be opened. <br>
+            3. If you want to enter again as a Tutor / Parent, you must enter your username and password again.<br>
+          </p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" id="botonEntrarNino">Confirm and continue</button>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endif %}
+
 
 
 <!-- Modal Confirmación entrar como niño-->
@@ -253,3 +273,14 @@
     </div>
   </div>
 </div>
+
+<style>
+  #block-views-block-suscripciones-block-2 {
+    display: none;
+  }
+
+  .view-content-detail .views-field-field-fechas-laborables-value, 
+  .view-content-detail .views-field-field-fechas-laborables-end-value {
+    display: none;
+  }
+</style>

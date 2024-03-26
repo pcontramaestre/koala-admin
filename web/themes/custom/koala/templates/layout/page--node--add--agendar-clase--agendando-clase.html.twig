@@ -152,18 +152,7 @@
               <main{{ content_attributes }}>
                 <section class="section">
                   <a href="#main-content" id="main-content" tabindex="-1"></a>
-                  <div class="superpuesto">
-                    <div class="texto">
-                      {% if current_language == 'es' %}        
-                        <p>Estamos procesando tu suscripción, espera unos segundos</p>
-                      {% else %}
-                        <p>We are processing your subscription, wait a few seconds</p>
-                      {% endif %}
-                    </div>
-                  </div>
-                  <div class="opacity-0" style="opacity:0;">
-                    {{ page.content }}
-                  </div>
+                  {{ page.content }}
                 </section>
               </main>
             {% if sidebar_first_exists %}
@@ -253,3 +242,21 @@
     </div>
   </div>
 </div>
+
+<style>
+  .vista-clases-no-disponibles {
+      display: none;
+  }
+  .field--name-field-pencil-id-profesor,
+  .field--name-field-pencil-id-estudiante {
+    display: none;
+  }
+
+  .datos-del-koala .titulo-bloque > h3::after {
+    display:none;
+  }
+
+  .datos-del-koala .titulo-bloque {
+    margin-bottom: 0.5rem;
+  }
+</style>

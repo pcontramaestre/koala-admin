@@ -844,3 +844,40 @@ footer.site-footer {
     }
   }
 }
+
+
+.modal {
+  .modal-dialog {
+    .modal-content {
+      background: #FFF0CC;
+      border-radius: 25px;
+
+      .modal-header {
+        border: unset;
+      }
+      .modal-body {
+        padding-left: 2rem;
+        padding-right: 2rem;
+        padding-top: 0;
+        padding-bottom: 0;
+
+        p {
+          strong {
+            font-size: 1.25rem;
+          }
+        }
+      }
+      .modal-footer {
+        border: unset;
+        button {
+          background: white !important;
+
+          &:hover {
+            background-color: #297e88 !important;
+            color: white !important;
+          }
+        }
+      }
+    }
+  }
+}
