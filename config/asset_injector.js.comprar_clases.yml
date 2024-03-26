@@ -269,7 +269,9 @@ code: |-
     function incrementarTotal(event) {
       const totalElement = event.target.previousElementSibling;
       let total = parseInt(totalElement.textContent);
-      total++;
+      if (total < 7) {
+        total++;
+      }
       totalElement.textContent = total;
       // actualizarTotal();
       // actualizarClasesPorSemana();
