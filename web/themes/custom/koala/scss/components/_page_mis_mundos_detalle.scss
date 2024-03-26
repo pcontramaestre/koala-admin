@@ -64,6 +64,11 @@
           align-items: center;
           margin-left: 3rem;
 
+          &:hover {
+            transition: all 0.3s ease-in-out;
+            box-shadow: 1px 1px 8px 2px #297e888c;
+          }
+
           &::after {
             display: block;
             top: 50%;
@@ -119,6 +124,11 @@
                 border-radius: 8px;
                 position: relative;
 
+                &:hover {
+                  transition: all 0.3s ease-in-out;
+                  box-shadow: 1px 1px 8px 2px #297e888c;
+                }
+
                 a {
                   display: block;
                   width: 100%;
@@ -133,6 +143,7 @@
                   position: relative;
                   &:hover{
                     text-decoration: underline
+
                   }
                   &:after{
                     content: "\f04b";

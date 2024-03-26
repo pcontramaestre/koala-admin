@@ -17,15 +17,29 @@
 		{% if content.first %}
 			<div {{ region_attributes.first.addClass('layout__region', 'layout__region--first') }}>
 				<div class="texto-perfil">
-					<h3>Personalizar mi Koala</h3>
-					<p class="text-center">Acumula muchos Koalapuntos para desbloquear nuevos trajes y profesiones</p>
-					<div class="estrella">
-						<img src="/themes/custom/koala/images/estrella.png">
-						<div class="texto">
-							<span class="total-estrellas">0</span>
-							<span>Estrellas</span>
+					{% set language = current_language %}
+					{% if language == 'es' %}
+						<h3>Personalizar mi Koala</h3>
+						<p class="text-center">Acumula muchos Koalapuntos para desbloquear nuevos trajes y profesiones</p>
+						<div class="estrella">
+							<img src="/themes/custom/koala/images/estrella.png">
+							<div class="texto">
+								<span class="total-estrellas">0</span>
+								<span>Estrellas</span>
+							</div>
 						</div>
-					</div>
+					{% else %}
+						<h3>Customize my Koala</h3>
+						<p class="text-center">Accumulate many Koalapoints to unlock new costumes and professions</p>
+						<div class="estrella">
+							<img src="/themes/custom/koala/images/estrella.png">
+							<div class="texto">
+								<span class="total-estrellas">0</span>
+								<span>Stars</span>
+							</div>
+						</div>
+					{% endif %}
+
 					{{ drupal_view('koalas_avatares_ninos', 'block_1') }}
 				</div>
 				{{ content.first }}

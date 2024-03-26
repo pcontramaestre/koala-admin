@@ -552,6 +552,40 @@ body.node--type-mundos-detalle {
           padding: 1rem;
           border-radius: 16px;
           margin-left: 1.5rem;
+          max-height: 705px;
+          height: 705px;
+          overflow: auto;
+
+          &::-webkit-scrollbar {
+            -webkit-appearance: none;
+          }
+  
+          &::-webkit-scrollbar:vertical {
+            width: 7px;
+          }
+  
+          &::-webkit-scrollbar-button:increment {
+            display: none;
+          }
+  
+          &::-webkit-scrollbar-button {
+            display: none;
+          }
+  
+          &::-webkit-scrollbar:horizontal {
+            height: 8px;
+          }
+  
+          &::-webkit-scrollbar-thumb {
+            background-color: #297e88;
+            border-radius   : 20px;
+            border          : 2px solid #297e88;
+          }
+  
+          &::-webkit-scrollbar-track {
+            border-radius: 10px;
+          }
+
 
           @media screen and (max-width: 800px) {
             margin-left: 0rem;
@@ -860,6 +894,23 @@ body.node--type-mundos-detalle {
               background: black;
               min-width: 10%;
             }
+          }
+        }
+      }
+    }
+  }
+}
+
+.page-view-koalas-avatares-ninos {
+  .current_language-en {
+    .field--type-entity-reference {
+      fieldset {
+        .fieldset-wrapper {
+          &:before {
+            content: "Professions";
+            font-weight: 700;
+            font-size: 16px;
+            color: black;
           }
         }
       }
