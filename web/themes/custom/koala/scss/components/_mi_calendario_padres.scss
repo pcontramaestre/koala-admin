@@ -24,6 +24,12 @@
             border-bottom: 2px solid #e6f1f1;
             padding: 1rem 2rem 0.5rem 2rem;
             font-weight: 700;
+
+            &:hover {
+              color: #ff6669;
+              transition: all 0.3s ease-in-out;
+            }
+
           }
 
           &.active {
@@ -125,6 +131,7 @@
             &:hover {
               background: #2ff7ee;
               border: 1px solid #297e88;
+              transition: all 0.3s ease-in-out;
             }
 
             .access-acudiente {

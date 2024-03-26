@@ -173,7 +173,13 @@
                         align-items: center;
                         justify-content: space-between;
                         margin-bottom: 1rem;
-                        gap: 1rem;                        
+                        gap: 1rem;    
+                        
+                        &:hover {
+                          box-shadow: 1px 1px 11px 1px #8080804f;
+                          transition: all 0.4s ease-in-out;
+                        }
+                        
                         &:after {
                           content: "\f054";
                           font-family: "Font Awesome 5 Free";

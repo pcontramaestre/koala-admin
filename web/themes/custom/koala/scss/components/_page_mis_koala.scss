@@ -258,6 +258,11 @@
       background: var(--White, #fff);
       padding: 1rem;
 
+      &:hover {
+        transition: all 0.4s ease-in-out;
+        box-shadow: 1px 1px 8px 1px #8080804f;
+      }
+
       > h3 {
         font-size: 1rem;
         font-weight: 500;
