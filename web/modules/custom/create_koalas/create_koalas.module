@@ -24,7 +24,7 @@ use Drupal\Core\Entity\EntityTypeManagerInterface;
  * Implements hook_form_FORM_ID_alter() for the node_agendar_clase_form.
  */
 function create_koalas_form_alter(&$form, FormStateInterface $form_state, $form_id) {
-  // Obtener el usuario actual.  
+  // Obtener el usuario actual.    
   $user = \Drupal::currentUser();
   $uid = $user->id();
   // Obtener el displayname del usuario actual drupal 9.

@@ -32,6 +32,26 @@ function editar_hijo_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $fo
       }
     }
   }
+
+  if ($form_id == 'user_editar_perfil_padre_form') {
+    $form['actions']['submit']['#value'] =  Drupal::translation()->translate('Actualizar información');
+    foreach (array_keys($form['actions']) as $action) {
+      if ($action != 'preview' && isset($form['actions'][$action]['#type']) && $form['actions'][$action]['#type'] === 'submit') {
+        $form['actions'][$action]['#submit'][] = 'callback_submit_editar_padre_submit';
+      }
+    }
+  }
+}
+
+function callback_submit_editar_padre_submit(&$form, FormStateInterface $form_state) {
+  // si idioma es español ir a /editar-padre y si es ingles ir a /en/editar-padre
+  $idioma = \Drupal::languageManager()->getCurrentLanguage()->getId();
+  if ($idioma == 'es') {
+    $response = new RedirectResponse('/editar-padre');
+  } else {
+    $response = new RedirectResponse('/en/editar-padre');
+  }
+  $response->send();
 }
 
 function callback_submit_editar_hijo_submit(&$form, FormStateInterface $form_state) {
@@ -67,7 +87,13 @@ function callback_submit_editar_hijo_submit(&$form, FormStateInterface $form_sta
   $user->set('field_nombre_del_hijo', $titulo_nombre_hijo);
   $user->save();
 
-  $response = new RedirectResponse('/padres/mis-koalas');
+  // si idioma es español ir a /editar-padre y si es ingles ir a /en/editar-padre
+  $idioma = \Drupal::languageManager()->getCurrentLanguage()->getId();
+  if ($idioma == 'es') {
+    $response = new RedirectResponse('/editar-padre');
+  } else {
+    $response = new RedirectResponse('/en/editar-padre');
+  }
   $response->send();
 }
 

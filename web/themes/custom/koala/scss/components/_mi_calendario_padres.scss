@@ -122,6 +122,10 @@
             width: 390px !important;
             border-radius: 32px;
             height: 112px;
+            &:hover {
+              background: #2ff7ee;
+              border: 1px solid #297e88;
+            }
 
             .access-acudiente {
               display: flex;

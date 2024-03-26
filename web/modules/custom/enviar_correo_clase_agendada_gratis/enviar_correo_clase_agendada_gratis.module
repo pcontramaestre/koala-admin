@@ -333,6 +333,8 @@ function enviar_correo_clase_agendada_gratis_send_email(array &$form, FormStateI
   $random = rand(100, 999);
   $correo = 'correo-' . $uid . '-' . $random . '@correohijo.com';
   $nombre = $form_state->getValue('field_nombre_del_nino_a');
+  $apellidos = $form_state->getValue('field_apellidos_del_nino_a');
+  $apellidos = $apellidos[0]['value'];
 
   // Create user account programmatically.
   $user = User::create();
@@ -341,6 +343,7 @@ function enviar_correo_clase_agendada_gratis_send_email(array &$form, FormStateI
   $user->setEmail($correo);
   $user->setUsername($correo);
   $user->set("field_nombre_del_hijo", $nombre);
+  $user->set("field_apellidos", $apellidos);
 
   // Set field_padre entity reference to user padre.
   $user->set("field_padre", $uid);
@@ -352,6 +355,7 @@ function enviar_correo_clase_agendada_gratis_send_email(array &$form, FormStateI
   //Eliminar caracteres especiales del nombre del niño.  
   $nombre = $form_state->getValue('field_nombre_del_nino_a');
   $nombre = $nombre[0]['value'];  
+
   // Crear usuario en Pencil Connect.
   $create_user_pencil = api_pencil_connect_create_user($nombre,'Student');  
   if ($create_user_pencil !== FALSE) {
@@ -361,6 +365,7 @@ function enviar_correo_clase_agendada_gratis_send_email(array &$form, FormStateI
   } else {
     \Drupal::messenger()->addError(new TranslatableMarkup('Error creating user student in the API'. $create_user_pencil ));
   }
+
 
   $user->activate();
   $user->save();

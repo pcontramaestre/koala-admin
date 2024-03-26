@@ -64,9 +64,17 @@
   {% if rows %}
     <div class="view-content row">
       {% if current_language == 'es' %}
-        <div class="texto-logros">Aqui verás los logros de tu Koala. Selecciona el nivel a continuación</div>
+        <div class="texto-logros">
+          <h3>Logros del estudiante</h3>
+          <p>Aqui verás los logros de tu Koala. Selecciona el nivel a continuación</p>
+        </div>
+        <div id="botones-acciones"></div>
       {% else %}
-        <div class="texto-logros">Here you will see your Koala's achievements. Select the level below</div>
+        <div class="texto-logros">
+          <h3>Student's achievements</h3>
+          <p>Here you will see your Koala's achievements. Select the level below</p>
+        </div>
+        <div id="botones-acciones"></div>
       {% endif %}
 
       {{ rows }}

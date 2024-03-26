@@ -15,6 +15,7 @@
       gap: 2rem;
       display: flex;
       justify-content: space-evenly;
+      margin-bottom: 2rem;
     }
 
     .nombres-apellidos-avatar {
@@ -25,6 +26,8 @@
       gap: 1rem;
       border-radius: 16px;
       background: $TurqK100;
+
+
 
       > .label {
         flex-direction: row;
@@ -45,6 +48,18 @@
         align-self: stretch;
         border-radius: 56px;
         background: var(--White, #FFF);
+
+        .imagen {
+          img {
+            object-fit: contain;
+            max-width: 60px;
+            max-height: 60px;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            background: #d8eff236;  
+          }
+        }
       }
 
       .botones {
@@ -99,6 +114,74 @@
         background: var(--Grey-K100, #E6F1F1);
         display: flex;
       }
+    }
+  }
+}
+
+.mis-koalas-padres {
+  opacity: 0;
+  transition: opacity 0.5s;
+  margin-top: 1rem;
+  h2 {
+    text-align: center;
+    font-size: 1.25rem;
+    font-weight: 700;
+  }
+  .view-id-mis_koalas.view-display-id-block_7 {
+    .view-content.row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+
+      .views-row {
+        max-width: 22%;
+
+        .imagen-hijo {
+          a.editat {
+            position: relative;
+            display: flex;
+            width: fit-content;
+            width: -moz-fit-content;
+            margin: 0 auto;
+
+            img {
+              max-width: 100%;
+              height: auto;
+              height: auto;
+              border-radius: 50%;
+              object-fit: cover;
+              max-width: 65px;
+              max-height: 65px;
+            }
+            img.editarhijo {
+              position: absolute;
+              right: 3px;
+              max-width: 15px;
+              top: 4px;
+            }
+          }
+        }
+        .nombre-hijo {
+          text-align: center;
+          line-height: 1.1;
+          font-size: 0.9rem;
+
+          span {
+            display: block;
+            word-wrap: break-word;
+          }
+        }
+
+      }
+    }
+  }
+}
+
+
+.page-view-editar-padre {
+  #page-wrapper {
+    #main-wrapper {
+      min-height: 70vh;
     }
   }
 }
