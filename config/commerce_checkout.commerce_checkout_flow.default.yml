@@ -49,7 +49,7 @@ configuration:
       step: complete
       weight: 6
       message:
-        value: '<div class="confirmacion-compra"><div class="imagen-koalas"><img class="koalas-tres" src="/themes/custom/koala/images/koalas-3.svg" alt="Logo Hola Koala"></div><div class="texto-confirmacion"><div class="logo"><img class="logo-k" src="/themes/custom/koala/images/logo-k.svg" alt="Logo Hola Koala"></div><div class="texto"><div class="titulo"><h2>¡Lo hemos conseguido!</h2></div><div class="agradecer-usuario">¡Muchas gracias [commerce_order:uid:entity:field_nombre_del_acudiente] por la adquisición de un plan</div><div class="nombre-plan"><h3>[commerce_order:order_items:0:entity]</h3></div></div><div class="botones"><div class="boton"><a href="[commerce_order:url]" target="blank">Ver factura</a></div><div class="boton"><a href="/padres">Ir a mi perfil</a></div></div></div></div>'
+        value: '<div class="confirmacion-compra"><div class="imagen-koalas"><img class="koalas-tres" src="/themes/custom/koala/images/koalas-3.svg" alt="Logo Hola Koala"></div><div class="texto-confirmacion"><div class="logo"><img class="logo-k" src="/themes/custom/koala/images/logo-k.svg" alt="Logo Hola Koala"></div><div class="texto"><div class="titulo"><h2>¡Lo hemos conseguido!</h2></div><div class="agradecer-usuario">¡Muchas gracias [commerce_order:uid:entity:field_nombre_del_acudiente] por la adquisición de un plan</div><div class="nombre-plan"><h3>[commerce_order:order_items:0:entity]</h3></div></div><div class="botones"><div class="boton"><a href="[commerce_order:url]">Ver factura</a></div><div class="boton"><a href="/padres">Ir a mi perfil</a></div></div></div></div>'
         format: full_html
     completion_register:
       step: complete

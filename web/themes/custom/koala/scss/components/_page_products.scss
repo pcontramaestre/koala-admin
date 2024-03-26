@@ -134,9 +134,19 @@
 }
 
 // Pagina de informacion de la orden
+@media screen and (max-width: 1024px) {
+  .path-checkout .checkout-complete .confirmacion-compra .texto-confirmacion .botones .boton:nth-child(1) {
+    margin-right: 0 !important;
+  }
+}
+
+
 .path-checkout {
-  background-color: #d7eff2;
-  background-image: url("/themes/custom/koala/images/background-checkout.png");
+
+  &.confirmar-pago {
+    background-color: #d7eff2;
+    background-image: url("/themes/custom/koala/images/background-checkout.png");
+  }
   display: block;
   background-repeat: no-repeat;
   background-size: contain;
@@ -203,6 +213,18 @@
 
     .layout-checkout-form {
       .row {
+        @media screen and (max-width: 1024px) {
+          > .col-sm-6:nth-child(1) {
+            order: 2;
+            width: 100%;
+            max-width: 100%;
+          }
+          > .col-sm-6:nth-child(2) {
+            order: 1;
+            width: 100%;
+            max-width: 100%;
+          }
+        }
         > .col-sm-6:nth-child(1) {
           .checkout-pane-payment-information {
             > legend {
@@ -504,9 +526,22 @@
     justify-content: center;
     display: flex;
     flex-direction: column;
+
+    @media screen and (max-width: 1024px) {
+      margin-top: 2rem;
+      height: auto;
+      margin-bottom: 3rem;
+    }
+
     .confirmacion-compra {
       .imagen-koalas {
         text-align: center;
+        @media screen and (max-width: 1024px) {
+          img {
+            width: 100%;
+            max-width: 100%;
+          }
+        }
       }
       .texto-confirmacion {
         background-color: white;
@@ -515,6 +550,31 @@
         margin-top: -1.3rem;
         display: flex;
         justify-content: space-between;
+        @media screen and (max-width: 1024px) {
+          display: flex;
+          flex-direction: column;
+          gap: 1rem;
+
+          .logo {
+            text-align: center;
+          }
+          .texto {
+            text-align: center;
+          }
+          .botones {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+
+            .boton:nth-child(1) {
+              margin-right: 0;
+            }
+
+          }
+        }
         .texto {
           .titulo {
             h2 {
@@ -582,7 +642,7 @@
   }
 }
 
-@media (max-width: 700px) and (min-width: 300px) {
+@media (max-width: 1024px) and (min-width: 200px) {
   .path-product {
     #block-koala-content {
       .layout__region--content {
@@ -613,7 +673,7 @@
       .layout-checkout-form {
         .row {
           > .col-sm-6:nth-child(1) {
-            order: 2;
+            order: 1;
             .checkout-pane-payment-information {
               > legend {
                 width: 92% !important;
@@ -624,7 +684,7 @@
           }
           > .col-sm-6:nth-child(2) {
             margin-top: 2rem !important;
-            order: 1;
+            order: 2;
             margin-bottom: 1rem;
           }
           .col-sm-6 {

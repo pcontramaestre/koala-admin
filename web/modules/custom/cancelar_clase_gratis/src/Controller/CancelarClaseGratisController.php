@@ -37,8 +37,8 @@ class CancelarClaseGratisController extends ControllerBase {
         $titulo = new TranslatableMarkup('Reagendar clase gratis');
         $mensaje = new TranslatableMarkup('¿Estás seguro de reagendar la clase gratis?');
         $mensaje2 = new TranslatableMarkup('Si reagendas la clase, se cancelará la clase actual y se asignará una nueva clase gratis. Se le solicitarán nuevamente los datos del niño');
-        $texto_enlace_si = new TranslatableMarkup('Si, reagendar');
-        $texto_enlace_no = new TranslatableMarkup('No, cancelar');
+        $texto_enlace_si = new TranslatableMarkup('Reagendar clase');
+        $texto_enlace_no = new TranslatableMarkup('Regresar');
 
         $valor = [
           'id_estudiante' => $id_estudiante,
@@ -47,7 +47,7 @@ class CancelarClaseGratisController extends ControllerBase {
 
         $html = '<div class="cancelar-clase">';
         $html .= '<h2>'.$titulo.'</h2>';
-        $html .= '<p class="text-center">' . $mensaje .'<br><br>'.$mensaje2.'</p>';
+        $html .= '<p class="text-center">'.$mensaje2.'</p>';
         $html .= '<div class="acciones d-flex"><a href="/cancelar-clase-gratis/' . $valor['id_estudiante'] . '/' . $valor['id_clase'] . '/confirmar" class="btn-cancelar">'.$texto_enlace_si.'</a>';
         $html .= '<a href="/padres/mi-calendario" class="btn-volver">'.$texto_enlace_no.'</a></div>';
         $html .= '</div>';
