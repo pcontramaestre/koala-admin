@@ -12,6 +12,7 @@ dependencies:
     - field.storage.node.field_pencil_url_access_estudian
     - field.storage.node.field_pencil_url_clase
     - field.storage.node.field_tipo_clase
+    - field.storage.user.field_apellidos
     - field.storage.user.field_nombres_y_apellidos_del_pr
     - field.storage.user.user_picture
     - image.style.thumbnail
@@ -2552,6 +2553,69 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
+        field_apellidos:
+          id: field_apellidos
+          table: user__field_apellidos
+          field: field_apellidos
+          relationship: field_alumno_relacionado
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: false
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
         nothing:
           id: nothing
           table: views
@@ -2564,7 +2628,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "{% set tipodeclase = field_tipo_clase %}\r\n{% if tipodeclase == \"paga\" %}\r\n  <div class=\"row clases-proximas\">\r\n      <div class=\"dato-del-nino d-flex col-md-3\">\r\n        <div class=\"imagen\">{{ user_picture }}</div>\r\n         <div>Alumno</div>\r\n        <div class=\"datos\"> \r\n            {{ field_nombre_del_nino_a }} \r\n        </div>\r\n      </div>\r\n      <div class=\"dato-del-nino d-flex col-md-3\">\r\n        <div class=\"imagen\">{{ user_picture_1 }}</div>\r\n        <div>Profesor</div>\r\n        <div class=\"datos\"> \r\n            {{ field_nombres_y_apellidos_del_pr }}\r\n        </div>\r\n      </div>\r\n      <div class=\"datos-clase d-flex col-md-6\">\r\n        <div class=\"titulo\">Tu clase comenzará el</div>\r\n        <div class=\"datos-fecha\">\r\n          <div class=\"fecha-clase\">{{ field_fecha_cita_oculta }}</div>\r\n          <div class=\"hora-inicio-clase mt-1 mb-1\"><div class=\"fecha-mostrar\">{{ field_fecha_cita_oculta_1 }}</div><div class=\"d-none fecha-utc\">{{ field_fecha_cita_oculta_3 }}</div></div>\r\n        </div>      \r\n        <div class=\"boton\">      \r\n        <a href=\"/clases?idestudiante={{ field_pencil_id_estudiante }}&url={{ field_pencil_url_clase }}&idClase={{ nid }}\" class=\"editar-clase\"target=\"_blank\">Entrar a Clase</a>\r\n        </div>\r\n      </div>\r\n    </div>\r\n{% else %}\r\n  <div class=\"row clases-proximas\">\r\n    <div class=\"dato-del-nino d-flex col-md-3\">\r\n      <div class=\"imagen\">{{ user_picture }}</div>\r\n          <div>Alumno</div>\r\n      <div class=\"datos\"> \r\n          {{ field_nombre_del_nino_a }} \r\n      </div>\r\n    </div>\r\n    <div class=\"dato-del-nino d-flex col-md-3\">\r\n      <div class=\"imagen\">{{ user_picture_1 }}</div>\r\n      <div>Profesor</div>\r\n      <div class=\"datos\">           \r\n          {{ field_nombres_y_apellidos_del_pr }}\r\n      </div>\r\n    </div>\r\n    <div class=\"datos-clase d-flex col-md-6\">\r\n      <div class=\"titulo\">Tu clase gratuita</div>\r\n      <div class=\"datos-fecha\">\r\n        <div class=\"fecha-clase\">{{ field_fecha_cita_oculta_2 }}</div>\r\n        <div class=\"hora-inicio-clase mt-1 mb-1\">\r\n          <div class=\"fecha-mostrar\">{{ field_fecha_cita_oculta_1 }}</div>\r\n          <div class=\"d-none fecha-utc\">{{ field_fecha_cita_oculta_3 }}</div>\r\n        </div>\r\n      </div>\r\n      <div class=\"boton\">      \r\n      <a href=\"/clases?idestudiante={{ field_pencil_id_estudiante }}&url={{ field_pencil_url_clase }}&idClase={{ nid }}\" class=\"editar-clase\"target=\"_blank\">Entrar a Clase</a>\r\n      </div>\r\n    </div>\r\n  </div>\r\n{% endif %}\r\n"
+            text: "{% set tipodeclase = field_tipo_clase %}\r\n{% if tipodeclase == \"paga\" %}\r\n  <div class=\"row clases-proximas\">\r\n      <div class=\"dato-del-nino d-flex col-md-3\">\r\n        <div class=\"imagen\">{{ user_picture }}</div>\r\n         <div>Alumno</div>\r\n        <div class=\"datos\"> \r\n            {{ field_nombre_del_nino_a }} {{ field_apellidos }}\r\n        </div>\r\n      </div>\r\n      <div class=\"dato-del-nino d-flex col-md-3\">\r\n        <div class=\"imagen\">{{ user_picture_1 }}</div>\r\n        <div>Profesor</div>\r\n        <div class=\"datos\"> \r\n            {{ field_nombres_y_apellidos_del_pr }}\r\n        </div>\r\n      </div>\r\n      <div class=\"datos-clase d-flex col-md-6\">\r\n        <div class=\"titulo\">Tu clase comenzará el</div>\r\n        <div class=\"datos-fecha\">\r\n          <div class=\"fecha-clase\">{{ field_fecha_cita_oculta }}</div>\r\n          <div class=\"hora-inicio-clase mt-1 mb-1\"><div class=\"fecha-mostrar\">{{ field_fecha_cita_oculta_1 }}</div><div class=\"d-none fecha-utc\">{{ field_fecha_cita_oculta_3 }}</div></div>\r\n        </div>      \r\n        <div class=\"boton\">      \r\n        <a href=\"/clases?idestudiante={{ field_pencil_id_estudiante }}&url={{ field_pencil_url_clase }}&idClase={{ nid }}\" class=\"editar-clase\"target=\"_blank\">Entrar a Clase</a>\r\n        </div>\r\n      </div>\r\n    </div>\r\n{% else %}\r\n  <div class=\"row clases-proximas\">\r\n    <div class=\"dato-del-nino d-flex col-md-3\">\r\n      <div class=\"imagen\">{{ user_picture }}</div>\r\n          <div>Alumno</div>\r\n      <div class=\"datos\"> \r\n          {{ field_nombre_del_nino_a }} \r\n      </div>\r\n    </div>\r\n    <div class=\"dato-del-nino d-flex col-md-3\">\r\n      <div class=\"imagen\">{{ user_picture_1 }}</div>\r\n      <div>Profesor</div>\r\n      <div class=\"datos\">           \r\n          {{ field_nombres_y_apellidos_del_pr }}\r\n      </div>\r\n    </div>\r\n    <div class=\"datos-clase d-flex col-md-6\">\r\n      <div class=\"titulo\">Tu clase gratuita</div>\r\n      <div class=\"datos-fecha\">\r\n        <div class=\"fecha-clase\">{{ field_fecha_cita_oculta_2 }}</div>\r\n        <div class=\"hora-inicio-clase mt-1 mb-1\">\r\n          <div class=\"fecha-mostrar\">{{ field_fecha_cita_oculta_1 }}</div>\r\n          <div class=\"d-none fecha-utc\">{{ field_fecha_cita_oculta_3 }}</div>\r\n        </div>\r\n      </div>\r\n      <div class=\"boton\">      \r\n      <a href=\"/clases?idestudiante={{ field_pencil_id_estudiante }}&url={{ field_pencil_url_clase }}&idClase={{ nid }}\" class=\"editar-clase\"target=\"_blank\">Entrar a Clase</a>\r\n      </div>\r\n    </div>\r\n  </div>\r\n{% endif %}\r\n"
             make_link: false
             path: ''
             absolute: false
@@ -2969,5 +3033,6 @@ display:
         - 'config:field.storage.node.field_pencil_url_access_estudian'
         - 'config:field.storage.node.field_pencil_url_clase'
         - 'config:field.storage.node.field_tipo_clase'
+        - 'config:field.storage.user.field_apellidos'
         - 'config:field.storage.user.field_nombres_y_apellidos_del_pr'
         - 'config:field.storage.user.user_picture'

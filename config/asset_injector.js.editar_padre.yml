@@ -1,0 +1,24 @@
+uuid: 77717010-ab12-45e3-a795-681cec14778f
+langcode: es
+status: true
+dependencies: {  }
+id: editar_padre
+label: 'Editar padre'
+code: |
+  jQuery(document).ready(function($) {
+  	if($(window).width() > 1024){
+      $('.nombres-apellidos-avatar').after($('.mis-koalas-padres'));
+      $('.mis-koalas-padres').css('opacity','1');
+  	} else {
+  		$('.mis-koalas-padres').css('opacity','1');
+  		$('.mis-koalas-padres').css('margin-bottom','2rem');
+  	}
+  });
+noscript: ''
+noscriptRegion: {  }
+jquery: true
+header: false
+preprocess: true
+conditions: {  }
+contexts: {  }
+conditions_require_all: true

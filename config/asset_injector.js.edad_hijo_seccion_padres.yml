@@ -34,9 +34,11 @@ code: |-
     });
     
     // Si existen clases agendadas, no mostrar el banner
+    /*
     if ($('.clase-agendada').length > 0) {
     	$('.banner-padres-perfil').css('display', 'none');
     }
+    */
   });
 noscript: ''
 noscriptRegion: {  }
