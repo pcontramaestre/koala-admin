@@ -46,8 +46,13 @@
   <body{{ attributes.addClass(body_classes) }}>
     
     <div class="barra-superior">
-      <div class="atras"><a href="/"><i class="bi bi-arrow-left-circle"></i></a></div>
-      <div class="logo"><a href="/"><img src="/themes/custom/koala/images/logo-koala.png" alt="Logo"></a></div>
+      {% if current_language == 'es' %}
+        <div class="atras"><a href="https://holakoala.com/es"><i class="bi bi-arrow-left-circle"></i></a></div>
+        <div class="logo"><a href="https://holakoala.com/es"><img src="/themes/custom/koala/images/logo-koala.png" alt="Logo"></a></div>
+      {% else %}
+        <div class="atras"><a href="https://holakoala.com/"><i class="bi bi-arrow-left-circle"></i></a></div>
+        <div class="logo"><a href="https://holakoala.com/"><img src="/themes/custom/koala/images/logo-koala.png" alt="Logo"></a></div>
+      {% endif %}
       {{ page.primary_menu }}
     </div>
 
