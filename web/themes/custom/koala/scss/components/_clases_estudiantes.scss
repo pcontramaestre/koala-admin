@@ -26,50 +26,54 @@ body.path-clases {
       margin: 50px 0;
       position: relative;
       display: block;
-      color: red;
-      width: 0px;
-      height: 0px;
-      border-right: 100px solid transparent;
-      border-bottom: 70px solid yellow;
-      border-left: 100px solid transparent;
-      transform: rotate(35deg);
+      // color: red;
+      // width: 0px;
+      // height: 0px;
+      // border-right: 100px solid transparent;
+      // border-bottom: 70px solid yellow;
+      // border-left: 100px solid transparent;
+      // transform: rotate(35deg);
       animation: agrandarYReducir 4s infinite;
       &.estrella-animada {
         //animation: aparecerestrella 4s forwards;
         animation: agrandarYReducir 4s infinite;
       }
+
+      img {
+        max-width: 281px;
+      }
     }
 
-    /* Pseudoelemento ::before para la estrella */
-    .estrella::before {
-      border-bottom: 80px solid yellow;
-      border-left: 30px solid transparent;
-      border-right: 30px solid transparent;
-      position: absolute;
-      height: 0;
-      width: 0;
-      top: -45px;
-      left: -65px;
-      display: block;
-      content: "";
-      transform: rotate(-35deg);
-    }
+    // /* Pseudoelemento ::before para la estrella */
+    // .estrella::before {
+    //   border-bottom: 80px solid yellow;
+    //   border-left: 30px solid transparent;
+    //   border-right: 30px solid transparent;
+    //   position: absolute;
+    //   height: 0;
+    //   width: 0;
+    //   top: -45px;
+    //   left: -65px;
+    //   display: block;
+    //   content: "";
+    //   transform: rotate(-35deg);
+    // }
 
-    /* Pseudoelemento ::after para la estrella */
-    .estrella::after {
-      position: absolute;
-      display: block;
-      color: yellow;
-      top: 3px;
-      left: -105px;
-      width: 0px;
-      height: 0px;
-      border-right: 100px solid transparent;
-      border-bottom: 70px solid yellow;
-      border-left: 100px solid transparent;
-      transform: rotate(-70deg);
-      content: "";
-    }
+    // /* Pseudoelemento ::after para la estrella */
+    // .estrella::after {
+    //   position: absolute;
+    //   display: block;
+    //   color: yellow;
+    //   top: 3px;
+    //   left: -105px;
+    //   width: 0px;
+    //   height: 0px;
+    //   border-right: 100px solid transparent;
+    //   border-bottom: 70px solid yellow;
+    //   border-left: 100px solid transparent;
+    //   transform: rotate(-70deg);
+    //   content: "";
+    // }
 
     .estrella-animada {
       animation: aparecerestrella 1s forwards;
@@ -247,6 +251,7 @@ body.path-clases {
                   align-items: center;
                   gap: 1rem;
                   justify-content: space-between;
+                  
 
                   .my_teacher {
                     max-width: 35%;
@@ -269,12 +274,17 @@ body.path-clases {
                       background-color: white;
                       border-top-left-radius: 64px;
                       border-bottom-left-radius: 64px;
-                      padding: 3.5px 0px;
+                      padding: 4px 0px;
+                      border: 3px solid $GreyK200;
+                      border-right: 0px transparent;
+                      
 
                       img {
                         width: 45px;
                         height: 45px;
                         border-radius: 200px;
+                        object-fit: contain;
+                        margin-left: 5px;
                       }
                     }
 
@@ -287,6 +297,8 @@ body.path-clases {
                       padding: 13px 0px;
                       font-size: 18px;
                       font-weight: 700;
+                      border: 3px solid $GreyK200;
+                      border-left: 0px;
                     }
                   }
 
