@@ -1,0 +1,34 @@
+uuid: c32a0965-4cdf-4555-9cb8-39327a69bb18
+langcode: es
+status: true
+dependencies:
+  module:
+    - system
+id: redirigir_page_user_a_padres
+label: 'Redirigir page user a /padres'
+code: |
+  jQuery(document).ready(function($) {
+      // Verificar si el body tiene la clase .rol-padre
+      if ($('body').hasClass('rol-padre')) {
+          // Obtener la ruta de la página
+          var ruta = window.location.pathname;
+
+          // Verificar si la ruta coincide con /user/XXX
+          if (ruta.match(/^\/user\/\d+$/)) {
+              // Redirigir a /padres
+              window.location.href = '/padres';
+          }
+      }
+  });
+noscript: ''
+noscriptRegion: {  }
+jquery: true
+header: false
+preprocess: true
+conditions:
+  request_path:
+    id: request_path
+    negate: false
+    pages: "/user\r\n/en/user\r\n/user/*\r\n/en/user/*"
+contexts: {  }
+conditions_require_all: true

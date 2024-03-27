@@ -9,7 +9,7 @@ dependencies:
     - field.storage.user.field_nombre_del_acudiente
     - field.storage.user.field_pais
     - field.storage.user.user_picture
-    - image.style.icono
+    - image.style.thumbnail
     - user.role.administrator
     - user.role.content_editor
     - user.role.padre
@@ -215,7 +215,7 @@ display:
           type: image
           settings:
             image_link: ''
-            image_style: icono
+            image_style: thumbnail
             image_loading:
               attribute: lazy
             svg_attributes:
