@@ -96,16 +96,18 @@
             if (respuesta == '0') {
               console.log('Clase no iniciada');
               $('.cuadro-clases-noiniciada-finalizada').addClass('d-flex').removeClass('d-none');
-              $('.cuadro-clases-noiniciada-finalizada .titulo h1').text('Clase no iniciada');
-              $('.cuadro-clases-noiniciada-finalizada .texto strong').text('La clase aún no ha iniciado, por favor espera a que el profesor inicie la clase.');
+              // $('.cuadro-clases-noiniciada-finalizada .titulo h1').text('Clase no iniciada');
+              //$('.cuadro-clases-noiniciada-finalizada .texto strong').text('La clase aún no ha iniciado, por favor espera a que el profesor inicie la clase.');
             } else if (respuesta == '1') {
               console.log('Clase iniciada');
               $('.cuadro-clases-noiniciada-finalizada').addClass('d-none').removeClass('d-flex');
             } else if (respuesta == '2') {
               console.log('Clase finalizada');
+              $('.cuadro-clases-noiniciada-finalizada .slider-final-de-clases').removeClass('d-none');
+              $('.cuadro-clases-noiniciada-finalizada .slider-inicio-de-clases').addClass('d-none');
               $('.cuadro-clases-noiniciada-finalizada').addClass('d-flex').removeClass('d-none');
-              $('.cuadro-clases-noiniciada-finalizada .titulo h1').text('Clase finalizada');
-              $('.cuadro-clases-noiniciada-finalizada .texto strong').text('La clase ha finalizado, gracias por tu participación.');
+              // $('.cuadro-clases-noiniciada-finalizada .titulo h1').text('Clase finalizada');
+              // $('.cuadro-clases-noiniciada-finalizada .texto strong').text('La clase ha finalizado, gracias por tu participación.');
             } else {
               console.log('No se ha recibido respuesta');
             }            

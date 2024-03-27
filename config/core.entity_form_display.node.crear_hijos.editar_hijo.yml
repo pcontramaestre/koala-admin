@@ -11,7 +11,7 @@ dependencies:
     - field.field.node.crear_hijos.field_logros
     - field.field.node.crear_hijos.field_puntos_acumulados
     - field.field.node.crear_hijos.field_sexo
-    - image.style.responsive_img
+    - image.style.sin_modificar_imagen
     - node.type.crear_hijos
   module:
     - field_layout
@@ -35,7 +35,7 @@ content:
     region: first
     settings:
       progress_indicator: throbber
-      preview_image_style: responsive_img
+      preview_image_style: sin_modificar_imagen
     third_party_settings: {  }
   field_hijo_relacionado:
     type: readonly_field_widget

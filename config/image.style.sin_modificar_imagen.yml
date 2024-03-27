@@ -1,0 +1,15 @@
+uuid: e121b978-408a-488d-91ae-4ad75611905d
+langcode: es
+status: true
+dependencies: {  }
+name: sin_modificar_imagen
+label: 'Escalar y recortar a 150'
+effects:
+  b6ad35ee-b16f-4b37-8b97-56c904f851d8:
+    uuid: b6ad35ee-b16f-4b37-8b97-56c904f851d8
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 150
+      height: 150
+      anchor: center-center

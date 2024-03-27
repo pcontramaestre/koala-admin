@@ -6,9 +6,11 @@ id: cambios_de_texto
 label: 'Cambios de texto'
 code: |-
   jQuery(document).ready(function($) {
-  	var texto = "Escoge la fecha y hora en la que deseas la clase de prueba. Ten en cuenta que debido a la disponibilidad de profesores puedes encontrar horas repetidas.";
-  	//agregar texto a un elemento
-  	$('data-drupal-selector="edit-group-horario-clase" > .titulo-fecha-clase-gratis').text(texto);
+  	if($('.titulo-fecha-clase-gratis').length > 0) {
+  		var texto = "Escoge la fecha y hora en la que deseas la clase de prueba. Ten en cuenta que debido a la disponibilidad de profesores puedes encontrar horas repetidas.";
+  		//agregar texto a un elemento
+  		$('.titulo-fecha-clase-gratis').text(texto);
+  	}
   });
 noscript: ''
 noscriptRegion: {  }

@@ -19,6 +19,11 @@
       border: 2px solid #becaca;
       border-radius: 32px;
       font-weight: 700;
+      
+      &[type="radio"] {
+        background: white;
+        border: 1px solid rgba(0, 0, 0, 0.3490196078);
+      }
     }
     .form-check-input{
       height: 1.3rem;
@@ -153,6 +158,7 @@
                 border-radius: 40px;
                 border       : 1px solid white;
                 margin       : 0px;
+                object-fit: cover !important;
               }
             }
 
