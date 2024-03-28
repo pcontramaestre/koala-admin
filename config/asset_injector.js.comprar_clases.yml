@@ -595,7 +595,16 @@ code: |-
     decrementaButtons.forEach((button) => {
       button.addEventListener('click', decrementarTotal);
     });
+      
     
+    //dom load jquery
+  jQuery(document).ready(function($){
+    if ($('#quicktabs-tabpage-zona_de_pagos-1 .views-element-container').length == 0) {
+      $('#quicktabs-tab-zona_de_pagos-1').hide();
+    } else {
+      $('#quicktabs-tab-zona_de_pagos-1').show();
+    }
+  });
 noscript: ''
 noscriptRegion: {  }
 jquery: true
