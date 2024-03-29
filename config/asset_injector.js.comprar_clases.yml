@@ -269,7 +269,7 @@ code: |-
     function incrementarTotal(event) {
       const totalElement = event.target.previousElementSibling;
       let total = parseInt(totalElement.textContent);
-      if (total < 8) {
+      if (total <= 6) {
         total++;
       }
       totalElement.textContent = total;
@@ -603,6 +603,45 @@ code: |-
       $('#quicktabs-tab-zona_de_pagos-1').hide();
     } else {
       $('#quicktabs-tab-zona_de_pagos-1').show();
+    }
+    
+    
+    if ($('.path-zona-pagos').length > 0) {
+      $('.mensaje-plan-de-ahorro').hide();
+
+  	    $('#edit-suscription-0').click(function() {
+        totaldeclases();
+        //$('.mensaje-plan-de-ahorro').show();
+      });
+      $('#edit-suscription-1').click(function() {
+        totaldeclases();
+        //$('.mensaje-plan-de-ahorro').show();
+      });
+      $('#edit-suscription-2').click(function() {
+        $('.mensaje-plan-de-ahorro').hide();
+      });
+
+      var valorInicial = $('.incrementa-decrementa > .total').text();
+      // Observar cambios en el div
+      $('.incrementa-decrementa > .total').bind('DOMSubtreeModified', function() {
+        totaldeclases();
+      });
+    }
+    
+    function totaldeclases(){
+      var totalclases = 0;
+      $('.incrementa-decrementa > .total').each(function() {
+        var total = $(this).text();
+        // convertir el valor a entero
+        var total = parseInt(total);
+        // sumar todos los valores
+        totalclases += total;
+      });
+      if (totalclases > 0) {
+        $('.mensaje-plan-de-ahorro').show();
+      } else {
+        $('.mensaje-plan-de-ahorro').hide();
+      }
     }
   });
 noscript: ''

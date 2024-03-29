@@ -9,6 +9,8 @@ label: '1.1 Datepicker Agendar Clase Gratis'
 code: |-
   (function ($) {
     jQuery(document).ready(function($) {
+    	
+    	
 
       $('input[id="edit-field-hora-clase-0-value').attr('required', 'required');
       $('input[name="field_fecha_cita_oculta[0][value][date]"]').attr('required', 'required');        
@@ -341,6 +343,9 @@ code: |-
   		  horas = horas ? horas : 12; // Si es 0, cambiar a 12
   		  return horas + ':' + minutos + ampm;
   		}
+  		
+  		
+  	
 
     });
   })(jQuery);

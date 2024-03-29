@@ -293,6 +293,41 @@
     $('.filtro-agendar a.ui-state-active').click();
     $('#boton-agendamos-clase').css('display','none');
 
+        //localstorage hora_inicio_buscar y hora_fin_buscar
+        if (localStorage.getItem('hora_inicio_buscar') != null) {
+          $('#hora-inicio-select').val(localStorage.getItem('hora_inicio_buscar'));
+          $('#hora-inicio').val(localStorage.getItem('hora_inicio_buscar'));
+        }
+        if (localStorage.getItem('hora_fin_buscar') != null) {
+          $('#hora-final-select').val(localStorage.getItem('hora_fin_buscar'));
+          $('#hora-final').val(localStorage.getItem('hora_fin_buscar'));
+        }
+    
+        
+        if ($('.filtro-agendar').length > 0) {
+          //Si el select #hora-inicio-select cambiar de valor, asignarlo al input #hora-inicio
+          $('#hora-inicio-select').change(function(){
+            $('#hora-inicio').val($(this).val());
+            localStorage.setItem('hora_inicio_buscar', $(this).val());
+            localStorage.setItem('horaInicio', $(this).val());
+          });
+          //Si el select #hora-fin-select cambiar de valor, asignarlo al input #hora-final
+          $('#hora-final-select').change(function(){
+            $('#hora-final').val($(this).val());
+            localStorage.setItem('hora_fin_buscar', $(this).val());  
+            localStorage.setItem('horaFinal', $(this).val());      
+          });
+        }
+    if (window.innerWidth < 1024) {
+      if ($('input[id^="field_profesor_"]').length) {
+        var targetId = $('input[id^="field_profesor_"]').first().attr('id');
+        posicion = $('#' + targetId).offset().top - 150;
+        console.log(posicion);
+        $('html, body').animate({
+          scrollTop: posicion
+        }, 1000);
+      }
+    }
 
     // Convertir texto de hora a un objeto Date
     function parseHora(hora) {
@@ -313,6 +348,8 @@
 
     $('input[id^="hora-inicio"]').val(horaInicio);
     $('input[id^="hora-final"]').val(horaFinal);
+    $('#hora-inicio').val(localStorage.getItem('hora_inicio_buscar'));
+    $('#hora-final').val(localStorage.getItem('hora_fin_buscar'));
 
     // Comprobar si alguna de las horas está dentro del rango
     function algunaHoraEnRango(horaInicio, horaFin, filtroInicio, filtroFin) {

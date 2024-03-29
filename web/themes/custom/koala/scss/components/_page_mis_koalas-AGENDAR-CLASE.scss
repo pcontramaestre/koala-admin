@@ -447,6 +447,20 @@
           }
         }
 
+        #hora-inicio, #hora-final {
+          display: none;
+        }
+        #hora-inicio-select,#hora-final-select {
+          border: 2px solid #becaca;
+          border-radius: 32px;
+          height: 48px;
+          margin-top: 0.5rem;
+          padding: 0rem 1rem;
+          text-align: center;
+          color: black;
+          font-weight: 500;
+        }
+
         .datepicker-container {
           #datepicker-input {
             border: 2px solid #becaca;
@@ -458,6 +472,11 @@
             width: 188px;
             color: black;
             font-weight: 500;
+            border: unset;
+            font-weight: 700;
+            pointer-events: none;
+            background: #FFE8E8;
+            border-radius: unset;
           }
         }
         .horas-inicio-final {

@@ -34,6 +34,23 @@
 				<label for="hora-inicio">From</label>
 			{% endif %}
 			<input type="time" id="hora-inicio" name="hora-inicio" value="07:00" step="1800" class="w-100">
+			{# 
+				Create select con valores de hora, desde 07:00 a 22:00 en intervalos de 30 minutos 
+				// Option default 07:00
+			#}
+			<select name="hora-inicio-select" id="hora-inicio-select" class="w-100">
+				{% for i in range(7, 21) %}
+					{% set hora = i < 10 ? '0' ~ i ~ ':00' : i ~ ':00' %}
+					{% if i == 7 %}
+						<option value="{{ hora }}" selected>{{ hora }}</option>
+					{% else %}
+						<option value="{{ hora }}">{{ hora }}</option>
+					{% endif %}
+					{% set hora = i < 10 ? '0' ~ i ~ ':30' : i ~ ':30' %}
+					<option value="{{ hora }}">{{ hora }}</option>
+				{% endfor %}
+			</select>
+			
 		</div>
 		<div class="hora-final w-100">
 			{% if current_language == 'es' %}
@@ -42,6 +59,23 @@
 				<label for="hora-final">To</label>
 			{% endif %}
 			<input type="time" id="hora-final" name="hora-final" value="22:00" step="1800" class="w-100">
+			{# 
+				Create select con valores de hora, desde 07:30 a 22:00 en intervalos de 30 minutos 
+				Option default 22:00
+			#}
+			<select name="hora-final-select" id="hora-final-select" class="w-100">
+				{% for i in range(7, 22) %}
+					{% set hora = i < 10 ? '0' ~ i ~ ':00' : i ~ ':00' %}
+					{% if i == 22 %}
+						<option value="{{ hora }}" selected>{{ hora }}</option>
+					{% else %}
+						<option value="{{ hora }}">{{ hora }}</option>
+						{% set hora = i < 10 ? '0' ~ i ~ ':30' : i ~ ':30' %}
+						<option value="{{ hora }}">{{ hora }}</option>
+					{% endif %}
+					
+				{% endfor %}
+			</select>
 		</div>
 	</div>
 	<form{{attributes}}>
