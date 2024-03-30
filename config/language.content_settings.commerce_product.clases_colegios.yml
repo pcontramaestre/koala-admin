@@ -1,0 +1,11 @@
+uuid: 0261c747-3120-437d-865e-278e76fc9408
+langcode: es
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.clases_colegios
+id: commerce_product.clases_colegios
+target_entity_type_id: commerce_product
+target_bundle: clases_colegios
+default_langcode: en
+language_alterable: false

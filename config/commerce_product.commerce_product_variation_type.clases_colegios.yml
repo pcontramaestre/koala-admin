@@ -1,0 +1,10 @@
+uuid: 2c9435ff-74d2-477a-83bd-b5c58704ee8f
+langcode: es
+status: true
+dependencies: {  }
+id: clases_colegios
+label: 'Clases colegios'
+traits: {  }
+locked: false
+orderItemType: default
+generateTitle: null

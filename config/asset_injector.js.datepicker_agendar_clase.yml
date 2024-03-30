@@ -39,6 +39,8 @@ code: |+
           $("#edit-field-fechas-laborables-value-min").val(dateText);
           $("#edit-field-fechas-laborables-value-max").val(nuevaFecha);
           
+          localStorage.setItem('fecha_seleccionada', dateText);
+          
           console.log($('input[id^="hora-inicio"]').val());
           console.log($('input[id^="hora-final"]').val());
           console.log("Seleccionado");

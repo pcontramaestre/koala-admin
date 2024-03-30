@@ -1,0 +1,21 @@
+uuid: 41a7d8a4-1ba4-4466-a5f7-8f21a961e576
+langcode: es
+status: true
+dependencies:
+  config:
+    - config_pages.type.home_padres
+    - field.storage.config_pages.field_texto_del_banner_activa
+  module:
+    - text
+id: config_pages.home_padres.field_texto_del_banner_activa
+field_name: field_texto_del_banner_activa
+entity_type: config_pages
+bundle: home_padres
+label: 'Texto del banner (Activa)'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

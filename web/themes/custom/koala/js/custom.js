@@ -277,6 +277,8 @@
         $('input[id^="edit-field-fechas-laborables-value-max"]').val(
           nuevaFecha
         );
+        // guardar en localStorage la fecha seleccionada
+        localStorage.setItem('fecha_seleccionada', dateText);
       },     
     });
     $(
@@ -285,19 +287,18 @@
     var fechaseleccionada = $(
       'input[id^="edit-field-fechas-laborables-value-min"]'
     ).val();
-    var fechaJS = new Date(fechaseleccionada);
-    var nuevoDia = fechaJS.getDate();
-    // console.log("Dia seleccionado " + nuevoDia);
-    $("a[data-date='" + nuevoDia + "']").addClass("ui-state-active");
+
+
+    $("#datepicker-seleccionar-fecha").datepicker("setDate", fechaseleccionada);
 
     $('.filtro-agendar a.ui-state-active').click();
     $('#boton-agendamos-clase').css('display','none');
 
-        //localstorage hora_inicio_buscar y hora_fin_buscar
-        if (localStorage.getItem('hora_inicio_buscar') != null) {
-          $('#hora-inicio-select').val(localStorage.getItem('hora_inicio_buscar'));
-          $('#hora-inicio').val(localStorage.getItem('hora_inicio_buscar'));
-        }
+    //localstorage hora_inicio_buscar y hora_fin_buscar
+    if (localStorage.getItem('hora_inicio_buscar') != null) {
+      $('#hora-inicio-select').val(localStorage.getItem('hora_inicio_buscar'));
+      $('#hora-inicio').val(localStorage.getItem('hora_inicio_buscar'));
+    }
         if (localStorage.getItem('hora_fin_buscar') != null) {
           $('#hora-final-select').val(localStorage.getItem('hora_fin_buscar'));
           $('#hora-final').val(localStorage.getItem('hora_fin_buscar'));

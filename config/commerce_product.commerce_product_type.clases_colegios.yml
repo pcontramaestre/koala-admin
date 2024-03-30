@@ -1,0 +1,14 @@
+uuid: 6969da92-8f85-4722-b701-54c43ed51fa9
+langcode: es
+status: true
+dependencies: {  }
+id: clases_colegios
+label: 'Clases colegios'
+traits: {  }
+locked: false
+description: 'Clases de colegios. '
+variationType: clases_colegios
+variationTypes:
+  - clases_colegios
+multipleVariations: true
+injectVariationFields: true

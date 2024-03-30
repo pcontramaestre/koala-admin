@@ -5,9 +5,13 @@ dependencies:
   config:
     - config_pages.type.home_padres
     - field.field.config_pages.home_padres.field_enlace_boton_banner
+    - field.field.config_pages.home_padres.field_enlace_boton_banner_activa
     - field.field.config_pages.home_padres.field_imagen_banner
+    - field.field.config_pages.home_padres.field_imagen_banner_activa
     - field.field.config_pages.home_padres.field_texto_del_banner
+    - field.field.config_pages.home_padres.field_texto_del_banner_activa
   module:
+    - field_group
     - field_layout
     - layout_discovery
     - link
@@ -18,6 +22,39 @@ third_party_settings:
     id: layout_onecol
     settings:
       label: ''
+  field_group:
+    group_suscripcion_inactiva:
+      children:
+        - field_imagen_banner
+        - field_texto_del_banner
+        - field_enlace_boton_banner
+      label: 'Suscripción inactiva'
+      region: content
+      parent_name: ''
+      weight: 0
+      format_type: fieldset
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        description: 'Información a mostrar en el banner del padre cuando la suscripción es inactiva'
+        required_fields: true
+    group_suscripcion_activa:
+      children:
+        - field_imagen_banner_activa
+        - field_texto_del_banner_activa
+        - field_enlace_boton_banner_activa
+      label: 'Suscripción Activa'
+      region: content
+      parent_name: ''
+      weight: 1
+      format_type: fieldset
+      format_settings:
+        classes: ''
+        show_empty_fields: true
+        id: ''
+        description: "Información a mostrar en el banner del padre cuando la suscripción es activa\r\n"
+        required_fields: true
 id: config_pages.home_padres.default
 targetEntityType: config_pages
 bundle: home_padres
@@ -25,7 +62,15 @@ mode: default
 content:
   field_enlace_boton_banner:
     type: link_default
-    weight: 2
+    weight: 3
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  field_enlace_boton_banner_activa:
+    type: link_default
+    weight: 5
     region: content
     settings:
       placeholder_url: ''
@@ -33,14 +78,29 @@ content:
     third_party_settings: {  }
   field_imagen_banner:
     type: media_library_widget
-    weight: 0
+    weight: 1
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+  field_imagen_banner_activa:
+    type: media_library_widget
+    weight: 3
     region: content
     settings:
       media_types: {  }
     third_party_settings: {  }
   field_texto_del_banner:
     type: text_textarea
-    weight: 1
+    weight: 2
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_texto_del_banner_activa:
+    type: text_textarea
+    weight: 4
     region: content
     settings:
       rows: 5

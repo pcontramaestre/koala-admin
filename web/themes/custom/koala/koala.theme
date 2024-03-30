@@ -259,6 +259,9 @@ function koala_preprocess_node(&$variables) {
   
   // Almacena el idioma actual en una variable.
   $variables['current_language'] = $current_language;
+  
+  $user = \Drupal\user\Entity\User::load(\Drupal::currentUser()->id());
+  $variables['suscripcion_activa'] = $user->get('field_suscripcion_activa')->value;
 }
 
 /**
@@ -280,8 +283,11 @@ function koala_preprocess_page(&$variables) {
   $current_language = \Drupal::languageManager()->getCurrentLanguage()->getId();
   
   // Almacena el idioma actual en una variable.
-  $variables['current_language'] = $current_language;
-  
+  $variables['current_language'] = $current_language;  
+
+  //obtener el id del usuario actual
+  $user = \Drupal\user\Entity\User::load(\Drupal::currentUser()->id());
+  $variables['suscripcion_activa'] = $user->get('field_suscripcion_activa')->value;
 }
 
 /**
@@ -299,6 +305,8 @@ function koala_preprocess_user_login(&$variables) {
   $current_language = \Drupal::languageManager()->getCurrentLanguage()->getId();
   $variables['current_language'] = $current_language;
   
+  $user = \Drupal\user\Entity\User::load(\Drupal::currentUser()->id());
+  $variables['suscripcion_activa'] = $user->get('field_suscripcion_activa')->value;
 }
 
 /**
@@ -307,4 +315,8 @@ function koala_preprocess_user_login(&$variables) {
 function koala_preprocess(&$variables, $hook) {
   $current_language = \Drupal::languageManager()->getCurrentLanguage()->getId();
   $variables['current_language'] = $current_language;
+
+  $user = \Drupal\user\Entity\User::load(\Drupal::currentUser()->id());
+  $variables['suscripcion_activa'] = $user->get('field_suscripcion_activa')->value;
+
 }

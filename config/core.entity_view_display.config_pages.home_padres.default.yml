@@ -5,8 +5,11 @@ dependencies:
   config:
     - config_pages.type.home_padres
     - field.field.config_pages.home_padres.field_enlace_boton_banner
+    - field.field.config_pages.home_padres.field_enlace_boton_banner_activa
     - field.field.config_pages.home_padres.field_imagen_banner
+    - field.field.config_pages.home_padres.field_imagen_banner_activa
     - field.field.config_pages.home_padres.field_texto_del_banner
+    - field.field.config_pages.home_padres.field_texto_del_banner_activa
   module:
     - link
     - text
@@ -27,6 +30,18 @@ content:
     third_party_settings: {  }
     weight: 2
     region: content
+  field_enlace_boton_banner_activa:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 3
+    region: content
   field_imagen_banner:
     type: entity_reference_entity_view
     label: above
@@ -36,6 +51,15 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
+  field_imagen_banner_activa:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 4
+    region: content
   field_texto_del_banner:
     type: text_default
     label: above
@@ -43,4 +67,14 @@ content:
     third_party_settings: {  }
     weight: 1
     region: content
-hidden: {  }
+  field_texto_del_banner_activa:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 5
+    region: content
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true

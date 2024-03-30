@@ -15,6 +15,25 @@
 }
 
 
+.suscripcion-activa {
+  .banner-padres-perfil.no-suscripcion {
+    display: none;
+  }
+  .banner-padres-perfil.si-suscrito {
+    display: block;
+  }
+}
+
+.suscripcion-inactiva {
+  .banner-padres-perfil.no-suscripcion {
+    display: block;
+  }
+  .banner-padres-perfil.si-suscrito {
+    display: none;
+  }
+}
+
+
 // banner principal padres
 
 #block-koala-content {
@@ -38,6 +57,7 @@
 
                   p {
                     line-height: 35px;
+                    text-shadow: 1px 1px 2px white;
                   }
                 }
 

@@ -217,3 +217,4 @@ modification+hijo+user+user: user.user.default
 'use  The form mode director_colegio linked to  user entity( user )': user.user.director_colegio
 'use  The form mode default linked to  node entity( coordinadores_de_colegios )': node.coordinadores_de_colegios.default
 'use  The form mode default linked to  node entity( colegios_grupos )': node.colegios_grupos.default
+'use  The form mode default linked to  commerce_product entity( clases_colegios )': commerce_product.clases_colegios.default

@@ -24,5 +24,6 @@ conditions:
       roles:
         - administrator
         - authenticated
+        - director_colegio
         - padre
 conditionOperator: AND

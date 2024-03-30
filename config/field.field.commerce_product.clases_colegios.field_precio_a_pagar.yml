@@ -1,0 +1,24 @@
+uuid: 02e9ad9b-bcdc-4ad7-bc5f-0c0e8956241c
+langcode: es
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.clases_colegios
+    - field.storage.commerce_product.field_precio_a_pagar
+  module:
+    - commerce_price
+id: commerce_product.clases_colegios.field_precio_a_pagar
+field_name: field_precio_a_pagar
+entity_type: commerce_product
+bundle: clases_colegios
+label: 'Precio a pagar'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  available_currencies:
+    - USD
+  allow_negative: false
+field_type: commerce_price

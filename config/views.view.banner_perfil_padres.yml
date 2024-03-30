@@ -5,8 +5,11 @@ dependencies:
   config:
     - config_pages.type.home_padres
     - field.storage.config_pages.field_enlace_boton_banner
+    - field.storage.config_pages.field_enlace_boton_banner_activa
     - field.storage.config_pages.field_imagen_banner
+    - field.storage.config_pages.field_imagen_banner_activa
     - field.storage.config_pages.field_texto_del_banner
+    - field.storage.config_pages.field_texto_del_banner_activa
   module:
     - config_pages
     - link
@@ -231,7 +234,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<div class=\"banner-padres-perfil\">\r\n   {{ field_imagen_banner }}\r\n   <div class=\"texto\">{{ field_texto_del_banner }}</div>\r\n  <div class=\"boton-comprar\">{{ field_enlace_boton_banner }}</div>\r\n</div>"
+            text: "<div class=\"banner-padres-perfil no-suscripcion\">\r\n   {{ field_imagen_banner }}\r\n   <div class=\"texto\">{{ field_texto_del_banner }}</div>\r\n  <div class=\"boton-comprar\">{{ field_enlace_boton_banner }}</div>\r\n</div>"
             make_link: false
             path: ''
             absolute: false
@@ -332,6 +335,247 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
+        field_enlace_boton_banner_activa:
+          id: field_enlace_boton_banner_activa
+          table: config_pages__field_enlace_boton_banner_activa
+          field: field_enlace_boton_banner_activa
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: uri
+          type: link
+          settings:
+            trim_length: 80
+            url_only: false
+            url_plain: false
+            rel: '0'
+            target: '0'
+          group_column: ''
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        field_imagen_banner_activa:
+          id: field_imagen_banner_activa
+          table: config_pages__field_imagen_banner_activa
+          field: field_imagen_banner_activa
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: entity_reference_entity_view
+          settings:
+            view_mode: full
+          group_column: target_id
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        field_texto_del_banner_activa:
+          id: field_texto_del_banner_activa
+          table: config_pages__field_texto_del_banner_activa
+          field: field_texto_del_banner_activa
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: text_default
+          settings: {  }
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        nothing_1:
+          id: nothing_1
+          table: views
+          field: nothing
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: custom
+          label: ''
+          exclude: false
+          alter:
+            alter_text: true
+            text: "<div class=\"banner-padres-perfil si-suscrito\">\r\n   {{ field_imagen_banner_activa }}\r\n   <div class=\"texto\">{{ field_texto_del_banner_activa }}</div>\r\n  <div class=\"boton-comprar\">{{ field_enlace_boton_banner_activa }}</div>\r\n</div>"
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: false
       pager:
         type: some
         options:
@@ -434,8 +678,11 @@ display:
         - 'languages:language_interface'
       tags:
         - 'config:field.storage.config_pages.field_enlace_boton_banner'
+        - 'config:field.storage.config_pages.field_enlace_boton_banner_activa'
         - 'config:field.storage.config_pages.field_imagen_banner'
+        - 'config:field.storage.config_pages.field_imagen_banner_activa'
         - 'config:field.storage.config_pages.field_texto_del_banner'
+        - 'config:field.storage.config_pages.field_texto_del_banner_activa'
   block_1:
     id: block_1
     display_title: 'Block ESP'
@@ -452,8 +699,11 @@ display:
         - 'languages:language_interface'
       tags:
         - 'config:field.storage.config_pages.field_enlace_boton_banner'
+        - 'config:field.storage.config_pages.field_enlace_boton_banner_activa'
         - 'config:field.storage.config_pages.field_imagen_banner'
+        - 'config:field.storage.config_pages.field_imagen_banner_activa'
         - 'config:field.storage.config_pages.field_texto_del_banner'
+        - 'config:field.storage.config_pages.field_texto_del_banner_activa'
   block_2:
     id: block_2
     display_title: 'Block EN'
@@ -532,5 +782,8 @@ display:
         - 'languages:language_interface'
       tags:
         - 'config:field.storage.config_pages.field_enlace_boton_banner'
+        - 'config:field.storage.config_pages.field_enlace_boton_banner_activa'
         - 'config:field.storage.config_pages.field_imagen_banner'
+        - 'config:field.storage.config_pages.field_imagen_banner_activa'
         - 'config:field.storage.config_pages.field_texto_del_banner'
+        - 'config:field.storage.config_pages.field_texto_del_banner_activa'
