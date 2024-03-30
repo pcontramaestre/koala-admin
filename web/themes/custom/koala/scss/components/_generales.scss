@@ -942,3 +942,48 @@ footer.site-footer {
     display: none;
   }
 }
+
+#page-wrapper #main main.main-content{
+  view-transition-name: page;
+  transition: all 1s;
+  animation-name: fadepage;
+  animation-duration: 1.5s;
+}
+
+#page-wrapper header#header {
+  transition: all 1s;
+  animation-name: fademenu;
+  animation-duration: 2s;
+
+}
+
+
+::view-transition-old(page) {
+  animation: fadepage 0.2s linear forwards;
+}
+
+::view-transition-new(page) {
+  animation: fadepage 0.3s linear reverse;
+}
+
+@keyframes fadepage {
+  0% {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+@keyframes fademenu {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}

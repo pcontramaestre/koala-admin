@@ -12,6 +12,41 @@
         .view-mis-koalas.view-display-id-page_1 {
           text-align: center;
 
+          //Cuando no tienen acceso a las clases
+          .no-access-class {
+            min-height: 70vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            .alert.alert-warning {
+              background-color: #d7f0f2;
+              border-color: #297e88;
+              color: #297e88;
+              font-weight: 700;
+              padding-top: 3rem;
+              padding-bottom: 2rem;
+
+              a.btn-primary {
+                background: #ffffff;
+                border: 2px solid #297e88;
+                border-radius: 28px;
+                color: black !important;
+                padding: 0.5rem 2.2rem 0.5rem 2.2rem;
+                text-decoration: none;
+                font-weight: 700;
+                font-size: 1rem;
+                margin-bottom: 0rem !important;
+                margin-top: 0rem !important;
+
+                &:hover {
+                  background-color: #297e88;
+                  color: white !important;
+                }
+              }
+            }
+          }
+
           //Fila de los datos del niño
           .view-footer {
             .view-id-mis_koalas.view-display-id-block_3 {
@@ -142,6 +177,7 @@
                           height: 48px;
                           border-radius: 132px;
                           border: 2px solid white;
+                          object-fit: cover;
                         }
                       }
                     }

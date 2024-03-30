@@ -20,6 +20,8 @@ use Drupal\Component\Utility\Unicode;
 use Drupal\Core\Entity\Query\QueryFactory;
 use Drupal\Core\Entity\EntityTypeManager;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
+use Drupal\Core\File\FileSystemInterface;
+
 /**
  * Implements hook_form_FORM_ID_alter() for the node_agendar_clase_form.
  */
@@ -457,7 +459,7 @@ function callback_submit_crear_hijo($form, &$form_state) {
   // buscar si el correo ya existe.
   $email_repetido = buscar_email_repetido($correo);
   while ($email_repetido) {
-    $random = rand(100, 9999);
+    $random = rand(100, 9999); 
     $correo = 'correo-' . $uid . '-' . $random . '@correohijo.com';
     $email_repetido = buscar_email_repetido($correo);
   }
@@ -471,6 +473,28 @@ function callback_submit_crear_hijo($form, &$form_state) {
   $user->setEmail($correo);
   $user->setUsername($correo);
   $user->set("field_nombre_del_hijo", $nombre);
+
+   // Obtener la ruta absoluta del tema
+   $theme_path = \Drupal::service('theme_handler')->getTheme('koala')->getPath();
+   // Ruta del archivo dentro de la carpeta del tema
+   $filename = 'images/avatares/avatar1.png';
+   $filepath = $theme_path . '/' . $filename;
+ 
+   $directory = 'public://avatares';
+   /** @var \Drupal\Core\File\FileSystemInterface $file_system */
+   $file_system = \Drupal::service('file_system');
+   $file_system->prepareDirectory($directory, FileSystemInterface:: CREATE_DIRECTORY | FileSystemInterface::MODIFY_PERMISSIONS);
+   $file_system->copy($filepath, $directory . '/' . basename($filepath), FileSystemInterface::EXISTS_REPLACE);
+   $file = \Drupal\file\Entity\File::create([
+     'uid' => $uid,
+     'filename' => basename($filepath),
+     'uri' => $directory . '/' . basename($filepath),
+     'status' => 1,
+   ]);
+   $file->save();
+   
+   $user->set('user_picture', $file->id());
+
   // Set field_padre entity reference to user padre.
   $user->set("field_padre", $uid);
   // Add role hijo.

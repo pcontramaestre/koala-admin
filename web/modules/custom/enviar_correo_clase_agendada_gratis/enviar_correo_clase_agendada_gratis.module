@@ -16,6 +16,8 @@ use Drupal\Core\Render\Element;
 use Drupal\node\NodeInterface;
 use Drupal\user\Entity\User;
 use Drupal\views\ViewExecutable;
+use Drupal\Core\File\FileSystemInterface;
+
 
 /**
  * Implements hook_form_FORM_ID_alter() for agendar_clase node edit form.
@@ -344,6 +346,38 @@ function enviar_correo_clase_agendada_gratis_send_email(array &$form, FormStateI
   $user->setUsername($correo);
   $user->set("field_nombre_del_hijo", $nombre);
   $user->set("field_apellidos", $apellidos);
+
+  // Obtener la ruta absoluta del tema
+  $theme_path = \Drupal::service('theme_handler')->getTheme('koala')->getPath();
+  // Ruta del archivo dentro de la carpeta del tema
+  $filename = 'images/avatares/avatar1.png';
+  $filepath = $theme_path . '/' . $filename;
+
+  $directory = 'public://avatares';
+  /** @var \Drupal\Core\File\FileSystemInterface $file_system */
+  $file_system = \Drupal::service('file_system');
+  $file_system->prepareDirectory($directory, FileSystemInterface:: CREATE_DIRECTORY | FileSystemInterface::MODIFY_PERMISSIONS);
+  $file_system->copy($filepath, $directory . '/' . basename($filepath), FileSystemInterface::EXISTS_REPLACE);
+  $file = \Drupal\file\Entity\File::create([
+    'uid' => $uid,
+    'filename' => basename($filepath),
+    'uri' => $directory . '/' . basename($filepath),
+    'status' => 1,
+  ]);
+  $file->save();
+  
+  $user->set('user_picture', $file->id());
+
+  
+  
+  
+  
+  // $file = File::create([
+  //   'uri' => 'public://koala.png',
+  // ]);
+  // $file->save();
+  // $user->set('user_picture', $file->id());
+
 
   // Set field_padre entity reference to user padre.
   $user->set("field_padre", $uid);

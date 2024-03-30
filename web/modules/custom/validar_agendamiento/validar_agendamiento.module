@@ -26,11 +26,13 @@ function validar_agendamiento_views_pre_render(ViewExecutable $view) : void  {
       $field_alumno_nivelado = (int) $field_alumno_nivelado;
 
       if (!$field_alumno_nivelado) {
-        $mensaje = new TranslatableMarkup('Tu hijo no ha sido nivelado o no ha visto la clase gratuita, por favor espera a que un administrador lo haga');
+        $mensaje = new TranslatableMarkup('<p>Tu hijo no ha sido nivelado o no ha visto la clase gratuita, por favor espera a que un administrador lo haga</p>');
+        //boton de volver a la pagina anterior
+        $mensaje .= '<br><a href="/padres/mis-koalas" class="btn btn-primary">Volver</a>';
         $view->result = [];
         $view->empty = TRUE;
         $view->attachment_after = [
-          '#markup' => '<div class="alert alert-warning" role="alert">'.$mensaje.'</div>',
+          '#markup' => '<div class="no-access-class"><div class="alert alert-warning" role="alert">'.$mensaje.'</div></div>',
         ];
         // no mostrar el footer de la vista
         $view->footer = [];
