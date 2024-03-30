@@ -947,7 +947,7 @@ footer.site-footer {
   view-transition-name: page;
   transition: all 1s;
   animation-name: fadepage;
-  animation-duration: 1.5s;
+  animation-duration: 1s;
 }
 
 #page-wrapper header#header {
@@ -969,7 +969,7 @@ footer.site-footer {
 @keyframes fadepage {
   0% {
     opacity: 0;
-    transform: translateY(100px);
+    transform: translateY(-50px);
   }
 
   100% {
