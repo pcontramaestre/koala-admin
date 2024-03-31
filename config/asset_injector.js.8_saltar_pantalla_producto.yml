@@ -10,7 +10,7 @@ label: '8. Saltar pantalla producto'
 code: |-
   jQuery(document).ready(function($) {
   	console.log('Pantalla de producto');
-  	$('.button--add-to-cart').click();
+  	//$('.button--add-to-cart').click();
   });
 noscript: ''
 noscriptRegion: {  }

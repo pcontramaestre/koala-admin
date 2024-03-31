@@ -1,0 +1,51 @@
+uuid: a28f8c92-5cc2-479a-8936-bf216dd332e6
+langcode: es
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_variation_type.suscripcion_de_12_semanas
+    - field.field.commerce_product_variation.suscripcion_de_12_semanas.attribute_clases_12_semanas_3_me
+    - field.field.commerce_product_variation.suscripcion_de_12_semanas.field_cantidad_de_clases
+  module:
+    - commerce_price
+id: commerce_product_variation.suscripcion_de_12_semanas.default
+targetEntityType: commerce_product_variation
+bundle: suscripcion_de_12_semanas
+mode: default
+content:
+  field_cantidad_de_clases:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  list_price:
+    type: commerce_price_default
+    label: above
+    settings:
+      strip_trailing_zeroes: false
+      currency_display: symbol
+    third_party_settings: {  }
+    weight: -1
+    region: content
+  price:
+    type: commerce_price_default
+    label: above
+    settings:
+      strip_trailing_zeroes: false
+      currency_display: symbol
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  attribute_clases_12_semanas_3_me: true
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  langcode: true
+  product_id: true
+  sku: true
+  title: true

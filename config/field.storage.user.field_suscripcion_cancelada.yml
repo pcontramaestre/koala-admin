@@ -1,0 +1,22 @@
+uuid: adb81e56-1fa7-42ef-8d0e-12898cc0a68d
+langcode: es
+status: true
+dependencies:
+  module:
+    - field_permissions
+    - user
+third_party_settings:
+  field_permissions:
+    permission_type: public
+id: user.field_suscripcion_cancelada
+field_name: field_suscripcion_cancelada
+entity_type: user
+type: boolean
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

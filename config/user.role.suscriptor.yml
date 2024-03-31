@@ -1,0 +1,15 @@
+uuid: d395dac2-8def-4430-8652-8172df853e33
+langcode: es
+status: true
+dependencies:
+  module:
+    - user_view_mode
+third_party_settings:
+  user_view_mode:
+    weight: null
+    view_mode: compact
+id: suscriptor
+label: suscriptor
+weight: 1
+is_admin: null
+permissions: {  }

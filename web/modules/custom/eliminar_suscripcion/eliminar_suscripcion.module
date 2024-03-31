@@ -78,8 +78,31 @@ function eliminar_suscripcion_form_submit($form, FormStateInterface $form_state)
   //$suscripcion_activa = $user->get('field_suscripcion_activa')->value;
   // change value to false
   $user->set('field_suscripcion_activa', FALSE);
+
+  $user->set('field_suscripcion_cancelada', TRUE);
   // save user
   $user->save();
+
+  $id_user = $user->id();
+  $current_date = \Drupal::time()->getRequestTime();
+  $formatted_date = \Drupal::service('date.formatter')->format($current_date, 'custom', 'Y-m-d');
+
+  $nids = \Drupal::entityQuery('node')
+      ->condition('type', 'suscripciones')
+      ->condition('field_usuario_padre', $id_user)
+      ->condition('field_fecha_de_finalizacion_de_l', $formatted_date, '>')
+      ->execute();
+    
+  $nodos = \Drupal\node\Entity\Node::loadMultiple($nids);
+  // recorrer nodos y al campo field_suscripcion_finalizada_ cambiar a true
+  if ($nodos) {
+    foreach ($nodos as $nodo) {
+      $nodo->set('field_suscripcion_finalizada_', TRUE);
+      $nodo->save();
+    }
+  }
+
+
 
   // Message drupal 9 to show when the form is submitted. NOT drupal_set_message, not use in drupal 9
   $messenger = \Drupal::messenger();

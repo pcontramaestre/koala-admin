@@ -1,0 +1,51 @@
+uuid: aef26124-9fe0-4d7a-93fa-cd8e8c26800f
+langcode: es
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_variation_type.suscripcion_de_24_semanas_
+    - field.field.commerce_product_variation.suscripcion_de_24_semanas_.attribute_clases_24_semanas_3_me
+    - field.field.commerce_product_variation.suscripcion_de_24_semanas_.field_cantidad_de_clases
+  module:
+    - commerce_price
+id: commerce_product_variation.suscripcion_de_24_semanas_.default
+targetEntityType: commerce_product_variation
+bundle: suscripcion_de_24_semanas_
+mode: default
+content:
+  field_cantidad_de_clases:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  list_price:
+    type: commerce_price_default
+    label: above
+    settings:
+      strip_trailing_zeroes: false
+      currency_display: symbol
+    third_party_settings: {  }
+    weight: -1
+    region: content
+  price:
+    type: commerce_price_default
+    label: above
+    settings:
+      strip_trailing_zeroes: false
+      currency_display: symbol
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  attribute_clases_24_semanas_3_me: true
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  langcode: true
+  product_id: true
+  sku: true
+  title: true

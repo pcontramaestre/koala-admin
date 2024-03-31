@@ -5,6 +5,7 @@ dependencies:
   config:
     - commerce_product.commerce_product_variation_type.4_semanas_mes
     - field.field.commerce_product_variation.4_semanas_mes.attribute_1_clase_por_semana_4_p
+    - field.field.commerce_product_variation.4_semanas_mes.field_cantidad_de_clases
   module:
     - commerce_price
     - field_layout
@@ -21,32 +22,39 @@ mode: default
 content:
   attribute_1_clase_por_semana_4_p:
     type: options_select
-    weight: 1
+    weight: 4
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_cantidad_de_clases:
+    type: number
+    weight: 3
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
   langcode:
     type: language_select
-    weight: 2
+    weight: 5
     region: content
     settings:
       include_locked: true
     third_party_settings: {  }
   list_price:
     type: commerce_list_price
-    weight: -1
+    weight: 1
     region: content
     settings: {  }
     third_party_settings: {  }
   price:
     type: commerce_price_default
-    weight: 0
+    weight: 2
     region: content
     settings: {  }
     third_party_settings: {  }
   sku:
     type: string_textfield
-    weight: -4
+    weight: 0
     region: content
     settings:
       size: 60
@@ -54,10 +62,15 @@ content:
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 90
+    weight: 7
     region: content
     settings:
       display_label: true
+    third_party_settings: {  }
+  translation:
+    weight: 6
+    region: content
+    settings: {  }
     third_party_settings: {  }
 hidden:
   created: true

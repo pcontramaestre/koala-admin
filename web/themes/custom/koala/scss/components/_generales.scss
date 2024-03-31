@@ -949,12 +949,24 @@ footer.site-footer {
   animation-name: fadepage;
   animation-duration: 1s;
 }
+.path-product #page-wrapper #main main.main-content {
+  view-transition-name: unset;
+  transition: unset;
+  animation-name: unset;
+  animation-duration: unset;
+}
 
 #page-wrapper header#header {
   transition: all 1s;
   animation-name: fademenu;
   animation-duration: 2s;
 
+}
+
+.superpuesto {
+  transition: all 4s;
+  animation-name: opacidad;
+  animation-duration: 4s;
 }
 
 
@@ -987,3 +999,26 @@ footer.site-footer {
     opacity: 1;
   }
 }
+
+@keyframes opacidad {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+#block-views-block-variaciones-de-productos-block-1 {
+  display: none;
+}
+
+.tab-pane.fade.active.show {
+  transition: all 0.7s ease-in;
+}
+
+.path-zona-pagos {
+  background-image: url(/themes/custom/koala/images/Group463.png);
+}
+

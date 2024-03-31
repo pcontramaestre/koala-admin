@@ -1,0 +1,37 @@
+uuid: 5b82a6e0-9bed-4b67-8128-542eb7836739
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_suscripcion_cancelada
+  module:
+    - multiple_registration
+    - user
+third_party_settings:
+  multiple_registration:
+    user_additional_register_form_required:
+      authenticated: 0
+      profesor: 0
+      padre: 0
+      hijo: 0
+    user_additional_register_form:
+      authenticated: 0
+      profesor: 0
+      padre: 0
+      hijo: 0
+id: user.user.field_suscripcion_cancelada
+field_name: field_suscripcion_cancelada
+entity_type: user
+bundle: user
+label: 'Suscripción cancelada'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: Activado
+  off_label: Desactivado
+field_type: boolean

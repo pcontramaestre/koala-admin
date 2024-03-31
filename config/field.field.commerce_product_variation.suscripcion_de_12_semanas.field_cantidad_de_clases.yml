@@ -1,0 +1,23 @@
+uuid: 7792dc20-60ef-4c02-95e9-c44406146b18
+langcode: es
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_variation_type.suscripcion_de_12_semanas
+    - field.storage.commerce_product_variation.field_cantidad_de_clases
+id: commerce_product_variation.suscripcion_de_12_semanas.field_cantidad_de_clases
+field_name: field_cantidad_de_clases
+entity_type: commerce_product_variation
+bundle: suscripcion_de_12_semanas
+label: 'Cantidad total de clases'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: 1
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

@@ -1,0 +1,14 @@
+uuid: 4fb25ff8-5aa3-4544-ad88-4778980424f3
+langcode: es
+status: true
+dependencies:
+  config:
+    - user.role.suscriptor
+  module:
+    - user
+id: user_add_role_action.suscriptor
+label: 'Añade el rol suscriptor al(los) usuario(s) seleccionado(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: suscriptor

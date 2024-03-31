@@ -412,157 +412,167 @@ code: |-
       const botonComprar = document.querySelector('.btn-comprar');
       const suscription = document.querySelector('input[name="suscription"]:checked');
       const totalClases = document.querySelector('.total-clases');
-      var idiomaIngles = jQuery('#page-wrapper').hasClass('current_language-en');
-      let enlace = '';
-      if (suscription.value == 4) {
-        if (idiomaIngles) { 
-          enlace = '/en/product/3';
-        } else {
-          enlace = '/product/3';
-        }
-        
-        // Buscar en el arreglo clasesComprar4Semanas el valor de totalClases, y guardar el valor de id en una variable
-        clasesComprar4Semanas.forEach((clase) => {
-          // posicion del array
-          if (clase.clases == parseInt(totalClases.textContent)) {
-            id_producto = clase.id;
-          }
-        });
-
-        if(parseInt(totalClases.textContent) > 0) {
-            //ocultar linea 1
-            document.querySelector('.linea1').style.display = 'block';
-            //ocultar linea 2
-            document.querySelector('.linea2').style.display = 'block';
-        }
-
-
-        //Buscar el total de clases en el arreglo datosCosteClases, tomando en cuenta el total de clases
-        totalclasesSeleccionadas = document.querySelector('.total-de-clases');
-        precio12Semanas = parseInt(totalclasesSeleccionadas.textContent) * 12;
-        console.log('precio12Semanas', precio12Semanas);
-
-        precio24Semanas = parseInt(totalclasesSeleccionadas.textContent) * 24;
-        console.log('precio24Semanas', precio24Semanas);
-      
-        datosCosteClases.forEach((clase) => {
-          if (clase.clases == precio12Semanas) {
-            precioClase12 = clase.costePorClase;
-            precioCoste12 = clase.coste;
-
-            ahorro = (17.5 * precio12Semanas) - precioCoste12;
-            // Convertir ahorro a moneda con formato $ 0,000.00
-            ahorro = ahorro.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
-            // Convertir precioCoste12 a moneda con formato $ 0,000.00
-            precioCoste12 = precioCoste12.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
-            
-            if (idiomaIngles) {
-              texto = "If you select 12 weeks, it will cost you " + precioCoste12 + " and you will save " + ahorro;
-            } else {
-              texto = "Si seleccionas 12 semanas, te saldrá por " + precioCoste12 + " y ahorrarás " + ahorro;
-            }
-            
-            document.querySelector('.linea1').textContent = texto;          
-          }
-        });
-
-        datosCosteClases.forEach((clase) => {
-          if (clase.clases == precio24Semanas) {
-            precioClase24 = clase.costePorClase;
-            precioCoste24 = clase.coste;
-            ahorro = (17.5 * precio24Semanas) - precioCoste24;
-            // Convertir ahorro a moneda con formato $ 0,000.00
-            ahorro = ahorro.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
-            // Convertir precioCoste24 a moneda con formato $ 0,000.00
-            precioCoste24 = precioCoste24.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
-
-
-            if (idiomaIngles) { 
-              texto = "If you select 24 weeks, it will cost you " + precioCoste24 + " and you will save " + ahorro;
-            } else {
-              texto = "Si seleccionas 24 semanas, te saldrá por " + precioCoste24 + " y ahorrarás " + ahorro;
-            }
-            
-            document.querySelector('.linea2').textContent = texto;          
-          }
-        });
-        
-
-
-      } else if (suscription.value == 12) {
-        if (idiomaIngles) { 
-          enlace = '/en/product/4';
-        } else {  
-          enlace = '/product/4';
-        }
-        
-        // Buscar en el arreglo clasesComprar12Semanas el valor de totalClases, y guardar el valor de id en una variable
-        clasesComprar12Semanas.forEach((clase) => {
-          if (clase.clases == parseInt(totalClases.textContent)) {
-            id_producto = clase.id;
-          }
-        });
-
-        precio24Semanas = parseInt(totalclasesSeleccionadas.textContent) * 24;
-        console.log('precio24Semanas', precio24Semanas);
-
-        datosCosteClases.forEach((clase) => {
-          if (clase.clases == precio24Semanas) {
-            precioClase24 = clase.costePorClase;
-            precioCoste24 = clase.coste;
-
-
-            ahorro = (17.5 * precio24Semanas) - precioCoste24;
-            // Convertir ahorro a moneda con formato $ 0,000.00
-            ahorro = ahorro.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
-            // Convertir precioCoste24 a moneda con formato $ 0,000.00
-            precioCoste24 = precioCoste24.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
-
-            if (idiomaIngles) { 
-              texto = "If you select 24 weeks, it will cost you " + precioCoste24 + " and you will save " + ahorro;
-            } else {
-              texto = "Si seleccionas 24 semanas, te saldrá por " + precioCoste24 + " y ahorrarás " + ahorro;
-            }
-            document.querySelector('.linea2').textContent = texto;          
-          }
-        });
-
-        if(parseInt(totalClases.textContent) > 0) {
-          //ocultar linea 1
-          document.querySelector('.linea1').style.display = 'none';
-          document.querySelector('.linea2').style.display = 'block';
-        }
-      } else if (suscription.value == 24) {
-        if (idiomaIngles) { 
-          enlace = '/en/product/5';
-        } else {
-          enlace = '/product/5';
-        }
-        // Buscar en el arreglo clasesComprar24Semanas el valor de totalClases, y guardar el valor de id en una variable
-        clasesComprar24Semanas.forEach((clase) => {
-          if (clase.clases == parseInt(totalClases.textContent)) {
-            id_producto = clase.id;
-          }
-        });
-              //ocultar linea 1
-              document.querySelector('.linea1').style.display = 'none';
-              //ocultar linea 2
-              document.querySelector('.linea2').style.display = 'none';
-
-      }
-      enlace += '?clases=' + totalClases.textContent + '&v=' + id_producto;
-      botonComprar.setAttribute('href', enlace);
-
-      // Comprobar que el total de clases sea mayor que 0, si es asi
-      // remover la clase .disabled del boton .btn-comprar de lo contrario agregar la clase .disabled
+      var id_del_producto = '';
       if (parseInt(totalClases.textContent) > 0) {
-        botonComprar.classList.remove('disabled');
-      } else {
-        botonComprar.classList.add('disabled');
-        // display none a linea 1 y linea 2
-        document.querySelector('.linea1').style.display = 'none';
-        document.querySelector('.linea2').style.display = 'none';
-      }    
+        var idiomaIngles = jQuery('#page-wrapper').hasClass('current_language-en');
+        let enlace = '';
+        if (suscription.value == 4) {
+          id_del_producto = '3';
+          if (idiomaIngles) { 
+            enlace = '/en/product/3';
+          } else {
+            enlace = '/product/3';
+          }
+          
+          // Buscar en el arreglo clasesComprar4Semanas el valor de totalClases, y guardar el valor de id en una variable
+          clasesComprar4Semanas.forEach((clase) => {
+            // posicion del array
+            if (clase.clases == parseInt(totalClases.textContent)) {
+              id_producto = clase.id;
+            }
+          });
+
+          if(parseInt(totalClases.textContent) > 0) {
+              //ocultar linea 1
+              document.querySelector('.linea1').style.display = 'block';
+              //ocultar linea 2
+              document.querySelector('.linea2').style.display = 'block';
+          }
+
+
+          //Buscar el total de clases en el arreglo datosCosteClases, tomando en cuenta el total de clases
+          totalclasesSeleccionadas = document.querySelector('.total-de-clases');
+          precio12Semanas = parseInt(totalclasesSeleccionadas.textContent) * 12;
+          console.log('precio12Semanas', precio12Semanas);
+
+          precio24Semanas = parseInt(totalclasesSeleccionadas.textContent) * 24;
+          console.log('precio24Semanas', precio24Semanas);
+        
+          datosCosteClases.forEach((clase) => {
+            if (clase.clases == precio12Semanas) {
+              precioClase12 = clase.costePorClase;
+              precioCoste12 = clase.coste;
+
+              ahorro = (17.5 * precio12Semanas) - precioCoste12;
+              // Convertir ahorro a moneda con formato $ 0,000.00
+              ahorro = ahorro.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
+              // Convertir precioCoste12 a moneda con formato $ 0,000.00
+              precioCoste12 = precioCoste12.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
+              
+              if (idiomaIngles) {
+                texto = "If you select 12 weeks, it will cost you " + precioCoste12 + " and you will save " + ahorro;
+              } else {
+                texto = "Si seleccionas 12 semanas, te saldrá por " + precioCoste12 + " y ahorrarás " + ahorro;
+              }
+              
+              document.querySelector('.linea1').textContent = texto;          
+            }
+          });
+
+          datosCosteClases.forEach((clase) => {
+            if (clase.clases == precio24Semanas) {
+              precioClase24 = clase.costePorClase;
+              precioCoste24 = clase.coste;
+              ahorro = (17.5 * precio24Semanas) - precioCoste24;
+              // Convertir ahorro a moneda con formato $ 0,000.00
+              ahorro = ahorro.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
+              // Convertir precioCoste24 a moneda con formato $ 0,000.00
+              precioCoste24 = precioCoste24.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
+
+              if (idiomaIngles) { 
+                texto = "If you select 24 weeks, it will cost you " + precioCoste24 + " and you will save " + ahorro;
+              } else {
+                texto = "Si seleccionas 24 semanas, te saldrá por " + precioCoste24 + " y ahorrarás " + ahorro;
+              }
+              
+              document.querySelector('.linea2').textContent = texto;          
+            }
+          });
+          
+
+
+        } else if (suscription.value == 12) {
+          id_del_producto = '4';
+          if (idiomaIngles) { 
+            enlace = '/en/product/4';
+          } else {  
+            enlace = '/product/4';
+          }
+          
+          // Buscar en el arreglo clasesComprar12Semanas el valor de totalClases, y guardar el valor de id en una variable
+          clasesComprar12Semanas.forEach((clase) => {
+            if (clase.clases == parseInt(totalClases.textContent)) {
+              id_producto = clase.id;
+            }
+          });
+          totalclasesSeleccionadas = document.querySelector('.total-de-clases');
+          precio24Semanas = parseInt(totalclasesSeleccionadas.textContent) * 24;
+          console.log('precio24Semanas', precio24Semanas);
+
+          datosCosteClases.forEach((clase) => {
+            if (clase.clases == precio24Semanas) {
+              precioClase24 = clase.costePorClase;
+              precioCoste24 = clase.coste;
+
+
+              ahorro = (17.5 * precio24Semanas) - precioCoste24;
+              // Convertir ahorro a moneda con formato $ 0,000.00
+              ahorro = ahorro.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
+              // Convertir precioCoste24 a moneda con formato $ 0,000.00
+              precioCoste24 = precioCoste24.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
+
+              if (idiomaIngles) { 
+                texto = "If you select 24 weeks, it will cost you " + precioCoste24 + " and you will save " + ahorro;
+              } else {
+                texto = "Si seleccionas 24 semanas, te saldrá por " + precioCoste24 + " y ahorrarás " + ahorro;
+              }
+              document.querySelector('.linea2').textContent = texto;          
+            }
+          });
+
+          if(parseInt(totalClases.textContent) > 0) {
+            //ocultar linea 1
+            document.querySelector('.linea1').style.display = 'none';
+            document.querySelector('.linea2').style.display = 'block';
+          }
+        } else if (suscription.value == 24) {
+          id_del_producto = '5';
+          if (idiomaIngles) { 
+            enlace = '/en/product/5';
+          } else {
+            enlace = '/product/5';
+          }
+          // Buscar en el arreglo clasesComprar24Semanas el valor de totalClases, y guardar el valor de id en una variable
+          clasesComprar24Semanas.forEach((clase) => {
+            if (clase.clases == parseInt(totalClases.textContent)) {
+              id_producto = clase.id;
+            }
+          });
+                //ocultar linea 1
+                document.querySelector('.linea1').style.display = 'none';
+                //ocultar linea 2
+                document.querySelector('.linea2').style.display = 'none';
+
+        }
+        //enlace += '?clases=' + totalClases.textContent + '&v=' + id_producto;
+        enlace += '?clases=' + totalClases.textContent;
+
+        var idVariacion = jQuery('div[id-producto="' + id_del_producto + '"][cantidad-clases="' + totalClases.textContent + '"]').attr('id-variacion');
+        enlace += '&v=' + idVariacion;
+
+        botonComprar.setAttribute('href', enlace);
+
+        // Comprobar que el total de clases sea mayor que 0, si es asi
+        // remover la clase .disabled del boton .btn-comprar de lo contrario agregar la clase .disabled
+        if (parseInt(totalClases.textContent) > 0) {
+          botonComprar.classList.remove('disabled');
+        } else {
+          botonComprar.classList.add('disabled');
+          // display none a linea 1 y linea 2
+          document.querySelector('.linea1').style.display = 'none';
+          document.querySelector('.linea2').style.display = 'none';
+        }   
+      } 
     }
 
 

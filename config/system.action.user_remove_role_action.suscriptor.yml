@@ -1,0 +1,14 @@
+uuid: 09bd371c-f8c8-472e-ba2e-b21c0355064f
+langcode: es
+status: true
+dependencies:
+  config:
+    - user.role.suscriptor
+  module:
+    - user
+id: user_remove_role_action.suscriptor
+label: 'Elimina el rol suscriptor al(los) usuario(s) seleccionado(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: suscriptor
