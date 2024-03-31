@@ -44,6 +44,42 @@ use \Drupal\user\UserInterface;
  */
 
  function validar_suscripciones_user_login(UserInterface $account) {
+  $roles = $account->getRoles();
+  if (in_array('padre', $roles)) {
+    $id_user = $account->id();
+    /* 
+    * buscar los nodos de tipo suscripción que tengan el campo field_usuario_padre con el id del usuario
+    * y que el campo field_fecha_de_finalizacion_de_l sea mayor a la fecha actual
+    * y field_clases_restantes sea mayor a 0
+    */
+    $nids = \Drupal::entityQuery('node')
+      ->condition('type', 'suscripciones')
+      ->condition('field_usuario_padre', $id_user)
+      ->condition('field_fecha_de_finalizacion_de_l', time(), '>')
+      ->condition('field_clases_restantes', 0, '>')
+      ->execute();
+    
+    $nodos = \Drupal\node\Entity\Node::loadMultiple($nids);
+    
+    if (empty($nodos)) {
+      // abrir el usuario actual y quitar el rol de suscriptor si lo tiene
+      if (in_array('suscriptor', $roles)) {
+        $account->removeRole('suscriptor');
+        $account->field_suscripcion_activa->value = 0;
+        $account->save();
+      }
+    } else {
+      // si el usuario tiene el rol de suscriptor dejarlo, sino agregarlo
+      if (!in_array('suscriptor', $roles)) {
+        $account->addRole('suscriptor');
+        $account->field_suscripcion_activa->value = 1;
+        $account->save();
+      }
+    }
+
+  }
+
+
   // $roles = $account->getRoles();
   // if (in_array('padre',$roles)){
   //   $nids = \Drupal::entityQuery('node')
