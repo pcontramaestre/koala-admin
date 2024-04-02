@@ -18,3 +18,11 @@ custom_role_redirect.profesor:
     _controller: '\Drupal\custom_role_redirect\Controller\CustomRoleRedirectController::redirectToProfesor'
   requirements:
     _permission: "access content"
+
+custom_role_redirect.director_colegio:
+  path: "/director"
+  defaults:
+    _controller: '\Drupal\custom_role_redirect\Controller\CustomRoleRedirectController::redirectToDirectorColegio'
+  requirements:
+    _permission: "access content"
+

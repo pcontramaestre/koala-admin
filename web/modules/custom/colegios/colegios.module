@@ -123,9 +123,17 @@ function callback_submit_colegios_colegios_submit($form, FormStateInterface $for
   $user->set("field_colegio_al_que_pertenece_e", $node_id);
   // add field_nombre_del_director 
   $user->set("field_nombre_del_director", $nombres_director);
+  $user->set("field_nombre_del_acudiente", $nombres_director);
+  
   
   $user->activate();
   $user->save();
+
+  //get usar id and save in field field_usuario_director_del_coleg
+  $user_id = $user->id();
+  $node = Node::load($node_id);
+  $node->field_usuario_director_del_coleg->target_id = $user_id;
+  $node->save();
 
   // redirec to /dashboard/colegios after submit
   $response = new RedirectResponse('/dashboard/colegios');

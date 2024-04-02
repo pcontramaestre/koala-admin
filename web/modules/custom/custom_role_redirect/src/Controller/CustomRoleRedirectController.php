@@ -25,6 +25,8 @@ class CustomRoleRedirectController extends ControllerBase
       return $this->redirectToProfesor();
     } elseif (in_array('hijo', $roles)) {
       return $this->redirectToHijo();
+    } elseif (in_array('director_colegio', $roles)) {
+      return $this->redirectToDirectorColegio();
     } else {
       return $this->redirect('<front>');
     }
@@ -63,5 +65,12 @@ class CustomRoleRedirectController extends ControllerBase
   public function redirectToHijo()
   {
     return new RedirectResponse('/hijo');
-  }  
+  }
+
+  /**
+   * Redirige a la página '/director'.
+   */
+  public function redirectToDirectorColegio() {
+    return new RedirectResponse('/director');
+  }
 }

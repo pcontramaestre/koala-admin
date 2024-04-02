@@ -1,0 +1,381 @@
+<?php
+use \Drupal\views\ViewExecutable;
+use \Drupal\Core\StringTranslation\TranslatableMarkup;
+use Drupal\node\Entity\Node;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\user\Entity\User;
+use \Drupal\user\UserInterface;
+use Symfony\Component\HttpFoundation\RedirectResponse;
+use \Drupal\Core\Entity\EntityFormInterface;
+
+/**
+ * Implements hook_form_alter().
+ */
+
+function pagos_colegios_form_alter(&$form,FormStateInterface $form_state, $form_id) {
+  //AGREGAR UN NUEVO REGISTRO DE ORDEN DE PAGO
+  if ($form_id == 'node_orden_de_pago_colegios_form') {
+    $form['field_orden_de_pagada']['#access'] = FALSE;
+    $form['field_enlace_de_pago']['#access'] = FALSE;
+    $form['field_formulario_de_pago_relacio']['#access'] = FALSE;
+    $form['field_pago_procesado']['#access'] = FALSE;
+    $form['field_nro_de_orden']['#access'] = FALSE;
+
+    // show field_variaciones if field_tipo_de_pago = '02
+    $form['field_variaciones']['#states'] = [
+      'visible' => [
+        ':input[name="field_tipo_de_pago"]' => ['value' => '02'],
+      ],
+    ];
+
+    $form['actions']['submit']['#submit'][] = 'callback_submit_pagos_colegios_orden_de_pago_colegios_submit';
+  }
+
+  //EDITAR UN REGISTRO DE ORDEN DE PAGO
+  if ($form_id == 'node_orden_de_pago_colegios_edit_form') {
+    $form['field_colegio_al_que_pertenece_c']['#disabled'] = TRUE;
+    $form['field_colegio_al_que_pertenece_c']['#attributes']['readonly'] = 'readonly';
+
+    $form['field_formulario_de_pago_relacio']['#disabled'] = TRUE;
+    $form['field_formulario_de_pago_relacio']['#attributes']['readonly'] = 'readonly';
+
+    $form['field_enlace_de_pago']['#disabled'] = TRUE;
+    $form['field_enlace_de_pago']['#attributes']['readonly'] = 'readonly';
+
+    $form['field_nro_de_orden']['#disabled'] = TRUE;
+    $form['field_nro_de_orden']['#attributes']['readonly'] = 'readonly';
+
+
+    //obtener el valor del campo tipo check field_pago_procesado
+    $field_pago_procesado = $form['field_pago_procesado']['widget']['value']['#default_value'];
+
+    if ($field_pago_procesado) {
+      //field_tipo_de_pago
+      $form['field_tipo_de_pago']['#disabled'] = TRUE;
+      $form['field_tipo_de_pago']['#attributes']['readonly'] = 'readonly';
+      //field_tipo_de_suscripcion
+      $form['field_tipo_de_suscripcion']['#disabled'] = TRUE;
+      $form['field_tipo_de_suscripcion']['#attributes']['readonly'] = 'readonly';
+      //field_nro_de_clases_a_comprar
+      $form['field_nro_de_clases_a_comprar']['#disabled'] = TRUE;
+      $form['field_nro_de_clases_a_comprar']['#attributes']['readonly'] = 'readonly';
+      // field_monto_a_cancelar
+      $form['field_monto_a_cancelar']['#disabled'] = TRUE;
+      $form['field_monto_a_cancelar']['#attributes']['readonly'] = 'readonly';
+      //field_monto_a_cancelar
+      $form['field_monto_a_cancelar']['#disabled'] = TRUE;
+      $form['field_monto_a_cancelar']['#attributes']['readonly'] = 'readonly';
+    }
+    
+    // show field_variaciones if field_tipo_de_pago = '02
+    $form['field_variaciones']['#states'] = [
+      'visible' => [
+        ':input[name="field_tipo_de_pago"]' => ['value' => '02'],
+      ],
+    ];
+
+
+    $form['actions']['submit']['#submit'][] = 'callback_edit_submit_pagos_colegios_orden_de_pago_colegios_submit';
+  }
+
+  if ($form_id == 'node_pagos_colegios_edit_form'){
+    //change value submit button
+    $form['actions']['submit']['#value'] = 'Upload file and send';
+    //add custom submit function
+    $form['actions']['submit']['#submit'][] = 'callback_submit_pagos_orden_de_pago_colegios_submit';
+  }
+}
+
+
+function callback_submit_pagos_colegios_orden_de_pago_colegios_submit($form, FormStateInterface $form_state) {
+  //Obtener el id del nodo actual
+  $form_object = $form_state->getFormObject();
+  if ($form_object instanceof \Drupal\Core\Entity\EntityFormInterface) {
+    $node_actual = $form_object->getEntity();
+    $node_id_actual = $node_actual->id();  
+    
+    //$node_actual = $form_state->getFormObject()->getEntity();
+    //$node_id_actual = $node_actual->id();  
+
+    //Obtener el valor del campo referenciado field_colegio_al_que_pertenece_c
+    $field_colegio_al_que_pertenece_c = $form_state->getValue('field_colegio_al_que_pertenece_c');
+    $field_colegio_al_que_pertenece_c = $field_colegio_al_que_pertenece_c[0]['target_id'];
+
+    //obtner el title del colegio, node type colegios
+    $node_colegio = Node::load($field_colegio_al_que_pertenece_c);
+    $field_colegio_title = $node_colegio->getTitle();
+
+    // get value of select field field_tipo_de_pago
+    $field_tipo_de_pago = $form_state->getValue('field_tipo_de_pago');
+    $field_tipo_de_pago = $field_tipo_de_pago[0]['value'];
+
+    // get value select field field_tipo_de_suscripcion
+    $field_tipo_de_suscripcion = $form_state->getValue('field_tipo_de_suscripcion');
+    $field_tipo_de_suscripcion = $field_tipo_de_suscripcion[0]['value'];
+
+    //obtener el valor del campo field_nro_de_clases_a_comprar
+    $field_nro_de_clases_a_comprar = $form_state->getValue('field_nro_de_clases_a_comprar');
+    $field_nro_de_clases_a_comprar = $field_nro_de_clases_a_comprar[0]['value'];
+
+    //obtener el valor del campo referenciado field_variaciones
+    $field_variaciones = $form_state->getValue('field_variaciones');
+    $field_variaciones = $field_variaciones[0]['target_id'];
+
+    // en caso de que  $field_tipo_de_suscripcion sea igual a 3 $texto = 4 semanas, igual 4 $texto = 12 semanas, igual 5 $texto = 24 semanas
+    $texto = '';
+    if ($field_tipo_de_suscripcion == '3') {
+      $texto = '4 semanas';
+    } elseif ($field_tipo_de_suscripcion == '4') {
+      $texto = '12 semanas';
+    } elseif ($field_tipo_de_suscripcion == '5') {
+      $texto = '24 semanas';
+    }
+
+    // buscar los usuario con el rol de director_escuela y que pertenezcan al colegio seleccionado (field_colegio_al_que_pertenece_e)
+    $query = \Drupal::entityQuery('user')
+      ->condition('roles', 'director_colegio')
+      ->condition('field_colegio_al_que_pertenece_e', $field_colegio_al_que_pertenece_c)
+      ->execute();
+    //obtener un unico usuario, en caso de que existan varios
+    $usuarios_directores = User::loadMultiple($query);
+
+    foreach ($usuarios_directores as $usuario) {
+      $usuarios_directores_ids = $usuario->id();
+    }
+
+
+
+    //obtener el dominio de la pagina
+    $domain = \Drupal::request()->getSchemeAndHttpHost();
+
+    if ($field_tipo_de_pago == '01') {
+      //fecha actual en formato d-m-Y
+      $fecha_actual = date("d-m-Y"); 
+
+      $title = 'Orden de pago de '.$field_colegio_title. ' de fecha ' . $fecha_actual . ' por ' . $texto;
+      //creamos el nodo de tipo pagos_colegios
+      $node = Node::create([
+        'type' => 'pagos_colegios',
+        'title' => $title,
+        'field_colegio_al_que_pertenece_c' => $field_colegio_al_que_pertenece_c,
+        'field_director_relacionado' => $usuarios_directores_ids,
+        'uid' => $usuarios_directores_ids,
+      ]);
+      $node->save();
+      //obtener el id del nodo creado
+      $node_id = $node->id();
+
+
+      //crear el enlace de pago
+      $enlace_de_pago = $domain . '/en/node/' . $node_id . '/edit?destination=/director';
+
+      //actualizar el campo field_enlace_de_pago
+      $node = Node::load($node_id_actual);
+      $node->set('field_enlace_de_pago', $enlace_de_pago);
+      $node->set('field_formulario_de_pago_relacio', $node_id);
+      //uid del usuario director
+      $node->set('uid', $usuarios_directores_ids);
+      $node->save();
+    } else {
+      $enlace_de_pago = $domain . '/en/product/'.$field_tipo_de_suscripcion.'?clases='.$field_nro_de_clases_a_comprar.'&v='.$field_variaciones;
+      //actualizar el campo field_enlace_de_pago
+      $node = Node::load($node_id_actual);
+      $node->set('field_enlace_de_pago', $enlace_de_pago);
+      $node->set('uid', $usuarios_directores_ids);
+      $node->save();
+    }
+     //redirect /dashboard/colegios
+     $response = new RedirectResponse('/dashboard/colegios');
+     $response->send();
+  }
+}
+
+function callback_edit_submit_pagos_colegios_orden_de_pago_colegios_submit($form, FormStateInterface $form_state) {
+  $form_object = $form_state->getFormObject();
+  if ($form_object instanceof \Drupal\Core\Entity\EntityFormInterface) {
+    $node_actual = $form_object->getEntity();
+    $node_id_actual = $node_actual->id();  
+    
+
+    // get value of check field field_pago_procesado
+    $field_pago_procesado = $form_state->getValue('field_pago_procesado');
+    $field_pago_procesado = $field_pago_procesado['value'];
+
+    if (!$field_pago_procesado) {
+      // crear el enlace de pago
+      $field_tipo_de_pago = $form_state->getValue('field_tipo_de_pago');
+      $field_tipo_de_pago = $field_tipo_de_pago[0]['value'];
+
+      $field_tipo_de_suscripcion = $form_state->getValue('field_tipo_de_suscripcion');
+      $field_tipo_de_suscripcion = $field_tipo_de_suscripcion[0]['value'];
+
+      $field_nro_de_clases_a_comprar = $form_state->getValue('field_nro_de_clases_a_comprar');
+      $field_nro_de_clases_a_comprar = $field_nro_de_clases_a_comprar[0]['value'];
+
+      $field_variaciones = $form_state->getValue('field_variaciones');
+      $field_variaciones = $field_variaciones[0]['target_id'];
+
+      $field_colegio_al_que_pertenece_c = $form_state->getValue('field_colegio_al_que_pertenece_c');
+      $field_colegio_al_que_pertenece_c = $field_colegio_al_que_pertenece_c[0]['target_id'];
+
+      //get entity reference field_formulario_de_pago_relacio
+      $field_formulario_de_pago_relacio = $form_state->getValue('field_formulario_de_pago_relacio');
+      $field_formulario_de_pago_relacio = $field_formulario_de_pago_relacio[0]['target_id'];
+
+      // buscar los usuario con el rol de director_escuela y que pertenezcan al colegio seleccionado (field_colegio_al_que_pertenece_e)
+      $query = \Drupal::entityQuery('user')
+      ->condition('roles', 'director_colegio')
+      ->condition('field_colegio_al_que_pertenece_e', $field_colegio_al_que_pertenece_c)
+      ->execute();
+      //obtener un unico usuario, en caso de que existan varios
+      $usuarios_directores = User::loadMultiple($query);
+
+      foreach ($usuarios_directores as $usuario) {
+        $usuarios_directores_ids = $usuario->id();
+      }
+
+      
+      $domain = \Drupal::request()->getSchemeAndHttpHost();
+
+      if ($field_tipo_de_pago == '01') {
+        $enlace_de_pago = $domain . '/en/node/' . $field_formulario_de_pago_relacio . '/edit?destination=/director';
+        //actualizar el campo field_enlace_de_pago
+        $node = Node::load($node_id_actual);
+        $node->set('field_enlace_de_pago', $enlace_de_pago);
+        $node->set('uid', $usuarios_directores_ids);
+        $node->save();
+      } else {
+        $enlace_de_pago = $domain . '/en/product/'.$field_tipo_de_suscripcion.'?clases='.$field_nro_de_clases_a_comprar.'&v='.$field_variaciones;
+        //actualizar el campo field_enlace_de_pago
+        $node = Node::load($node_id_actual);
+        $node->set('field_enlace_de_pago', $enlace_de_pago);
+        $node->set('uid', $usuarios_directores_ids);
+        $node->save();
+      }       
+    }
+
+
+    //field_orden_de_pagada get value
+    $field_orden_de_pagada = $form_state->getValue('field_orden_de_pagada');
+    $field_orden_de_pagada = $field_orden_de_pagada['value'];
+    
+    if ($field_orden_de_pagada) {
+      $field_colegio_al_que_pertenece_c = $form_state->getValue('field_colegio_al_que_pertenece_c');
+      $field_colegio_al_que_pertenece_c = $field_colegio_al_que_pertenece_c[0]['target_id'];
+
+      $field_tipo_de_suscripcion = $form_state->getValue('field_tipo_de_suscripcion');
+      $field_tipo_de_suscripcion = $field_tipo_de_suscripcion[0]['value'];
+
+      $numerosemanas = 0;
+      if ($field_tipo_de_suscripcion == '3'){
+        $numerosemanas = 4;
+      } elseif ($field_tipo_de_suscripcion == '4') {
+        $numerosemanas = 12;
+      } elseif ($field_tipo_de_suscripcion == '5') {
+        $numerosemanas = 24;
+      }
+
+
+      //field_nro_de_clases_maxima_por_e CLASES POR ESTUDIANTE A ASIGNAR
+      $field_nro_de_clases_maxima_por_e = $form_state->getValue('field_nro_de_clases_maxima_por_e');
+      $numero_clases = $field_nro_de_clases_maxima_por_e[0]['value'];
+
+
+      // buscar todos los usuarios con el rol de padre_escuela y que pertenezcan al colegio seleccionado (field_colegio_al_que_pertenece_c) 
+      $query = \Drupal::entityQuery('user')
+        ->condition('roles', 'padre_escuela')
+        ->condition('field_colegio_al_que_pertenece_e', $field_colegio_al_que_pertenece_c)
+        ->execute();
+      $usuarios_padres = User::loadMultiple($query);
+
+      // recorrer los usuarios 
+      foreach ($usuarios_padres as $usuario) {
+        $usuarios_padres_ids = $usuario->id();
+        
+        // contar cuantos usuarios hay con rol hijo_escuela que pertenezca al colegio seleccionado (field_colegio_al_que_pertenece_c) 
+        // y que field_padre = $usuarios_padres_ids
+        $query = \Drupal::entityQuery('user')
+          ->condition('roles', 'hijo_escuela')
+          ->condition('field_colegio_al_que_pertenece_e', $field_colegio_al_que_pertenece_c)
+          ->condition('field_padre', $usuarios_padres_ids)
+          ->execute();
+
+        $numero_hijos = count($query);
+
+        $numero_clases_estudiante = (int)$numero_clases * (int)$numero_hijos;
+
+        // dump('El usuario padre con id: ' . $usuarios_padres_ids . ' tiene ' . $numero_hijos . ' hijos en el colegio ' . $field_colegio_al_que_pertenece_c. ' y ha comprado ' . $numero_clases_estudiante . ' clases');
+        // hacer dump $usuarios_padres_ids, $numerosemanas, $numero_clases, $field_colegio_al_que_pertenece_c
+        // dump($usuarios_padres_ids, $numerosemanas, $numero_clases_estudiante, $field_colegio_al_que_pertenece_c); 
+        crearSuscripcionColegio($usuarios_padres_ids, $numerosemanas, $numero_clases_estudiante, $field_colegio_al_que_pertenece_c);
+      }
+
+    }
+
+    //redirect /dashboard/colegios
+    $response = new RedirectResponse('/dashboard/colegios');
+    $response->send();
+  }
+}
+
+function callback_submit_pagos_orden_de_pago_colegios_submit($form, FormStateInterface $form_state) {
+  //obtener el id del nodo actual
+  $form_object = $form_state->getFormObject();
+  if ($form_object instanceof \Drupal\Core\Entity\EntityFormInterface) {
+    $node_actual = $form_object->getEntity();
+    $node_id_actual = $node_actual->id();
+
+    //buscar el nodo de tipo orden_de_pago_colegios que tengan el campo field_formulario_de_pago_relacio igual al nodo actual
+    $query = \Drupal::entityQuery('node')
+      ->condition('type', 'orden_de_pago_colegios')
+      ->condition('field_formulario_de_pago_relacio', $node_id_actual)
+      ->execute();
+
+    $nodos = Node::loadMultiple($query);
+
+    //recorrer los nodos
+    foreach ($nodos as $nodo) {
+      $nodo_id = $nodo->id();
+      //actualizar el campo field_pago_procesado
+      $nodo = Node::load($nodo_id);
+      $nodo->set('field_pago_procesado', 1);
+      $nodo->save();
+    }
+    
+  } 
+}
+
+/* 
+    Funcion para Crear un nodo de tipo suscripciones. 
+*/
+function crearSuscripcionColegio($user_id, $numerosemanas, $totalclases,$colegio_al_que_pertenece) {
+  $fecha_actual = date("Y-m-d");
+  // Total de clases transformar a entero.
+  $totalclases = (int)$totalclases;
+
+  // Obtener fecha de finalizacion de la suscripcion.
+  $fecha_finalizacion = date("Y-m-d", strtotime($fecha_actual . "+ $numerosemanas week"));
+
+  // Crear nodo de tipo suscripciones.
+  $node = \Drupal::entityTypeManager()->getStorage('node')->create([
+    'type' => 'suscripciones',
+    'title' => 'Suscripción de padre de escuela' . $user_id,
+    'field_clases_compradas' => $totalclases,
+    'field_clases_restantes' => $totalclases,
+    'field_clases_usadas' => 0,
+    'field_fecha_de_finalizacion_de_l' => $fecha_finalizacion,
+    'field_fecha_de_inicio_de_la_susc' => $fecha_actual,
+    'field_plan_comprado' => $numerosemanas,
+    'field_suscripcion_padre_de_escue' => true,
+    'field_usuario_padre' => $user_id,
+    'field_colegio_al_que_pertenece_c' => $colegio_al_que_pertenece,
+
+  ]);
+  $node->save();
+
+  // Load user by id.
+  $user = \Drupal\user\Entity\User::load($user_id);
+  // add true to field_suscripcion_activa and save.
+  $user->field_suscripcion_activa->value = true;
+  $user->save();
+}

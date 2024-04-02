@@ -1,6 +1,9 @@
 <?php
 use \Drupal\views\ViewExecutable;
 use \Drupal\Core\StringTranslation\TranslatableMarkup;
+use \Drupal\node\Entity\Node;
+use \Drupal\Core\Entity\Query\QueryInterface;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 
 /**
  * Implements hook_views_pre_render().
@@ -26,9 +29,8 @@ function validar_agendamiento_views_pre_render(ViewExecutable $view) : void  {
       $field_alumno_nivelado = (int) $field_alumno_nivelado;
 
       if (!$field_alumno_nivelado) {
-        $mensaje = new TranslatableMarkup('<p>Tu hijo no ha sido nivelado o no ha visto la clase gratuita, por favor espera a que un administrador lo haga</p>');
+        $mensaje = new TranslatableMarkup('<p>Tu hijo no ha sido nivelado o no ha visto la clase gratuita, por favor espera a que un administrador lo haga</p><br><a href="/padres/mis-koalas" class="btn btn-primary">Volver</a>');
         //boton de volver a la pagina anterior
-        $mensaje .= '<br><a href="/padres/mis-koalas" class="btn btn-primary">Volver</a>';
         $view->result = [];
         $view->empty = TRUE;
         $view->attachment_after = [
@@ -48,4 +50,171 @@ function validar_agendamiento_views_pre_render(ViewExecutable $view) : void  {
       // $view->footer = [];
     }
   }
+}
+
+function validar_agendamiento_preprocess_views_view_fields(&$variables) {
+  $view = $variables['view'];
+  $field = $variables['field'];
+
+   if ($view->id() == 'mis_koalas' && $view->current_display == 'block_2') {    
+    $tBotonSeccionNino = new TranslatableMarkup('Entrar a la sección del niño');
+    $tBotonComprarClases = new TranslatableMarkup('Comprar clases');
+    $tBotonAgendarClase = new TranslatableMarkup('Agendar clase');
+    $tBotonClasePrueba = new TranslatableMarkup('Agendar clase de prueba');
+    $textoSinSuscription = new TranslatableMarkup('No tienes suscripción activa');
+    $tBotonSinSuscription ='
+      <div class="boton-agendar">
+        <a href="#" class="agendar-clase btn btn-primary mt-5 mb-5 disabled" disabled>
+          '.$textoSinSuscription.'
+        </a>
+      </div>
+    ';
+    $textoSinNivelar = new TranslatableMarkup('Esperar nivelación para agendar clase');
+    $tBotonSinNivelar = '
+      <div class="boton-agendar">
+        <a href="#" class="agendar-clase btn btn-primary mt-5 mb-5 disabled" disabled>
+          '.$textoSinNivelar.'
+        </a>
+      </div>
+    ';
+
+    $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
+    $current_user = \Drupal::currentUser();
+    $uid = $current_user->id();
+    $roles = $current_user->getRoles();
+    $rol = in_array('padre', $roles) && in_array('padre_escuela', $roles)  ? 'padre_escuela' : '';
+    if (empty($rol)) {
+     $rol = in_array('padre', $roles) ? 'padre' : ''; 
+    }
+
+    //$suscripciones = callback_search_suscriptions($uid);
+
+    $current_date = \Drupal::time()->getRequestTime();
+    $formatted_date = \Drupal::service('date.formatter')->format($current_date, 'custom', 'Y-m-d');
+  //node type suscripciones
+    $nids = \Drupal::entityQuery('node')
+      ->condition('type', 'suscripciones')
+      ->condition('field_usuario_padre', $uid)
+      ->condition('field_fecha_de_finalizacion_de_l', $formatted_date, '>')
+      ->condition('field_clases_restantes', 0, '>')
+      ->execute();  
+    
+    $nodos = \Drupal\node\Entity\Node::loadMultiple($nids);
+    if ($nodos){
+      $suscripciones = true;
+    } else {
+      $suscripciones = false;
+    }
+
+    
+    if ($rol == 'padre_escuela') {
+     foreach ($view->field as $id => $field) {
+      if ($field->field == 'nothing') {
+        $nodo_id = $variables['row']->nid;
+        $uid_nino = $variables['row']->users_field_data_node__field_hijo_relacionado_uid;
+        
+        if ($suscripciones){
+          $html = validar_agendamientos($nodo_id,$uid_nino,$rol,$tBotonComprarClases,$tBotonAgendarClase,$tBotonSinSuscription,$tBotonSinNivelar,$tBotonClasePrueba,$suscripciones,$language);
+        } else {
+          $html = $tBotonSinSuscription;
+        }
+        
+        $html = $html.'
+          <div class="boton-agendar boton-editar-nino">
+            <a href="/custom-child-login/'.$uid_nino.'" class="agendar-clase btn btn-primary mt-5 mb-5 entrar-nino">'
+             .$tBotonSeccionNino. 
+            '</a>
+          </div>
+        ';
+        $variables['fields']['nothing_1']->content = [
+          '#markup' => $html,
+          '#allowed_tags' => ['div', 'a'], // Lista las etiquetas HTML permitidas
+        ];
+        //$variables['fields']['nothing_1']->content=$html;  
+      }
+     }
+    }
+
+   }  
+}
+
+
+function callback_search_suscriptions($userid){
+  $current_date = \Drupal::time()->getRequestTime();
+    $formatted_date = \Drupal::service('date.formatter')->format($current_date, 'custom', 'Y-m-d');
+  //node type suscripciones
+  $nids = \Drupal::entityQuery('node')
+    ->condition('type', 'suscripciones')
+    ->condition('field_usuario_padre', $userid)
+    ->condition('field_fecha_de_finalizacion_de_l', $formatted_date, '>')
+    ->condition('field_clases_restantes', 0, '>')
+    ->execute();  
+    dump($userid, $formatted_date);
+  $nodos = \Drupal\node\Entity\Node::loadMultiple($nids);
+  if ($nodos){
+    return true;
+  } else {
+    return false;
+  }
+}
+
+function validar_agendamientos($nodo_id,$uid_nino,$rol,$tBotonComprarClases,$tBotonAgendarClase,$tBotonSinSuscription,$tBotonSinNivelar,$tBotonClasePrueba,$suscripciones,$language){
+  $nids = \Drupal::entityQuery('node')
+    ->condition('type', 'proximas_clases_estudiantes_')
+    ->condition('field_alumno_relacionado', $uid_nino)
+    ->execute();
+  $nodos = \Drupal\node\Entity\Node::loadMultiple($nids);
+  $nodo = reset($nodos);
+  
+
+  if ($nodo) {
+    $field_alumno_nivelado = $nodo->get('field_alumno_nivelado')->value;
+    $field_alumno_nivelado = (int) $field_alumno_nivelado;
+    if ($field_alumno_nivelado) {
+      if ($language == 'en'){
+        $html = '
+          <div class="boton-agendar">
+            <a href="/en/padres/mis-koalas/agendar_clase/'.$nodo_id.'/'.$uid_nino.'" class="agendar-clase btn btn-primary mt-5 mb-5">
+              '.$tBotonAgendarClase.'
+            </a>
+          </div>
+        ';
+      } else {
+        $html = '
+          <div class="boton-agendar">
+            <a href="/padres/mis-koalas/agendar_clase/'.$nodo_id.'/'.$uid_nino.'" class="agendar-clase btn btn-primary mt-5 mb-5">
+              '.$tBotonAgendarClase.'
+            </a>
+          </div>
+        ';
+      }
+    } else {
+      $html = $tBotonSinNivelar;
+    }
+
+
+  } else {
+    if (!$suscripciones) {
+      $html = $tBotonSinSuscription;
+    } else {
+      if ($language == 'en'){
+        $html = '
+          <div class="boton-agendar">
+            <a href="/en/node/add/agendar_clase/agendar_clases?escuela=1&uid='.$uid_nino.'" class="agendar-clase btn btn-primary mt-5 mb-5">
+              '.$tBotonClasePrueba.'
+            </a>
+          </div>
+        ';
+      } else {
+        $html = '
+          <div class="boton-agendar">
+            <a href="/node/add/agendar_clase/agendar_clases?escuela=1&uid='.$uid_nino.'" class="agendar-clase btn btn-primary mt-5 mb-5">
+            '.$tBotonClasePrueba.'
+            </a>
+          </div>
+        ';
+      }
+    }
+  }
+  return $html;
 }

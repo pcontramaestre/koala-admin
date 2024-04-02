@@ -65,14 +65,14 @@ body #main-wrapper {
   }
 }
 
-// header profesor
+// header profesor y director
 #header {
   #navbar-main {
     #CollapsingNavbar {
       .offcanvas-body {
         display: flex;
         align-items: center;
-        #block-profesor {
+        #block-profesor,#block-director {
           width: 73%;
           .nav {
             gap: 30px;

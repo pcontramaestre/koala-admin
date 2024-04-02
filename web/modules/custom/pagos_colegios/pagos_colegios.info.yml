@@ -1,0 +1,7 @@
+name: 'Pagos de colegios'
+type: module
+description: 'Módulo para validar todos los pagos de los colegios.'
+core_version_requirement: ^9 | ^10
+dependencies:
+  - drupal:node
+  - drupal:views

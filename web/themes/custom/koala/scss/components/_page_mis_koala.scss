@@ -198,6 +198,10 @@
                                         color: white;
                                       }
                                     }
+                                    .agendar-clase.disabled {
+                                      border: 1px solid gray;
+                                      color: gray;
+                                    }
                                   }
 
                                   .texto-logros {
