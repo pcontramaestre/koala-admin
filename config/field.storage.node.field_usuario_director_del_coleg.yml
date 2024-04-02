@@ -1,0 +1,24 @@
+uuid: 243457e6-d09e-44f8-9b77-2de18820e622
+langcode: es
+status: true
+dependencies:
+  module:
+    - field_permissions
+    - node
+    - user
+third_party_settings:
+  field_permissions:
+    permission_type: public
+id: node.field_usuario_director_del_coleg
+field_name: field_usuario_director_del_coleg
+entity_type: node
+type: entity_reference
+settings:
+  target_type: user
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

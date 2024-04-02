@@ -220,8 +220,8 @@ code: |-
   });
 
   jQuery(document).ready(function($) {
-  //Comprobar que el body tenga las clases .path-product y .rol-padre 
-  if ($('body').hasClass('path-product') && $('body').hasClass('rol-padre')) {
+  //Comprobar que el body tenga las clases .path-product y .rol-padre .rol-director_colegio
+  if ($('body').hasClass('path-product') && $('body').hasClass('rol-padre') || $('body').hasClass('path-product') && $('body').hasClass('rol-director_colegio') ) {
     // Verificar que exista el botón de agregar al carrito, en caso contrario se repite la acción
     var intervalo = setInterval(function() {
       if ($('#commerce-product-add-to-cart-form .form-actions .button--add-to-cart').length && $('.field--widget-commerce-product-variation-attributes select').length) {

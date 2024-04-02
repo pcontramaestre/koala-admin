@@ -1,0 +1,22 @@
+uuid: bd5e21ac-4526-49fe-9aff-5269c470b74f
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.pagos_colegios
+id: node.pagos_colegios.promote
+field_name: promote
+entity_type: node
+bundle: pagos_colegios
+label: 'Promocionado a la página principal'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: Activado
+  off_label: Desactivado
+field_type: boolean

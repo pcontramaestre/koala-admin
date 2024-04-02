@@ -1,0 +1,66 @@
+uuid: 3581ab4d-7337-4499-9aa1-1faceb5271c8
+langcode: es
+status: true
+dependencies:
+  config:
+    - page_manager.page.pagos_realizados
+    - views.view.commerce_user_orders
+    - views.view.pagos_colegios
+  module:
+    - layout_discovery
+    - views
+id: pagos_realizados-layout_builder-0
+label: 'Layout Builder'
+weight: 0
+variant: layout_builder
+variant_settings:
+  id: layout_builder
+  label: null
+  weight: 0
+  uuid: 4a44a257-e028-47c8-889b-034cfd691e16
+  sections:
+    -
+      layout_id: layout_onecol
+      layout_settings:
+        label: ''
+        context_mapping: {  }
+      components:
+        64415e81-adc6-4d2b-a8a4-a0dc0f681885:
+          uuid: 64415e81-adc6-4d2b-a8a4-a0dc0f681885
+          region: content
+          configuration:
+            id: 'views_block:commerce_user_orders-block_1'
+            label: ''
+            label_display: visible
+            provider: views
+            context_mapping: {  }
+            views_label: ''
+            items_per_page: none
+            exposed: {  }
+          weight: 0
+          additional:
+            layout_builder_styles_style:
+              separacion_superior_mt_2: separacion_superior_mt_2
+              separacion_superior_mt_5: 0
+        5a77e878-4a03-43d6-a845-2c14a3dcfcf8:
+          uuid: 5a77e878-4a03-43d6-a845-2c14a3dcfcf8
+          region: content
+          configuration:
+            id: 'views_block:pagos_colegios-block_3'
+            label: ''
+            label_display: visible
+            provider: views
+            context_mapping: {  }
+            views_label: ''
+            items_per_page: none
+            exposed: {  }
+          weight: 1
+          additional:
+            layout_builder_styles_style:
+              separacion_superior_mt_2: 0
+              separacion_superior_mt_5: 0
+      third_party_settings: {  }
+page: pagos_realizados
+selection_criteria: {  }
+selection_logic: and
+static_context: {  }

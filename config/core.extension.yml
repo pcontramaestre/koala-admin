@@ -170,6 +170,7 @@ module:
   page_cache: 0
   page_manager: 0
   page_manager_ui: 0
+  pagos_colegios: 0
   path: 0
   path_alias: 0
   phone_number: 0

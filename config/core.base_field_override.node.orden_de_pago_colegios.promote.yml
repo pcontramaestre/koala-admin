@@ -1,0 +1,22 @@
+uuid: 19b04a2d-c514-4c5e-8b4e-f002c0e0ebbc
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.orden_de_pago_colegios
+id: node.orden_de_pago_colegios.promote
+field_name: promote
+entity_type: node
+bundle: orden_de_pago_colegios
+label: 'Promocionado a la página principal'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: Activado
+  off_label: Desactivado
+field_type: boolean

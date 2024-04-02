@@ -4,7 +4,14 @@ status: true
 dependencies:
   config:
     - node.type.colegios
+    - node.type.orden_de_pago_colegios
+    - node.type.pagos_colegios
   module:
+    - commerce_cart_redirection
+    - commerce_order
+    - commerce_product
+    - commerce_promotion
+    - commerce_store
     - form_mode_control
     - form_mode_manager
     - node
@@ -19,7 +26,40 @@ label: 'Director colegio'
 weight: -1
 is_admin: null
 permissions:
+  - 'access commerce_order overview'
+  - 'access user profiles'
+  - 'configure commerce_cart_redirection'
+  - 'create default commerce_order'
+  - 'edit any orden_de_pago_colegios content'
   - 'edit own colegios content'
+  - 'edit own orden_de_pago_colegios content'
+  - 'edit own pagos_colegios content'
+  - 'manage default commerce_order_item'
+  - 'manage recurring_product_variation commerce_order_item'
+  - 'manage recurring_standalone commerce_order_item'
+  - 'update default commerce_order'
+  - 'use  The form mode default linked to  node entity( orden_de_pago_colegios )'
+  - 'use  The form mode default linked to  node entity( pagos_colegios )'
   - 'use  The form mode director_colegio linked to  user entity( user )'
+  - 'use node.default form mode'
+  - 'use user.default form mode'
   - 'use user.director_colegio form mode'
+  - 'view any colegios content'
+  - 'view any colegios_grupos content'
+  - 'view any coordinadores_de_colegios content'
+  - 'view any orden_de_pago_colegios content'
+  - 'view clases commerce_product'
+  - 'view commerce_order'
+  - 'view commerce_product_attribute'
+  - 'view commerce_promotion'
+  - 'view commerce_store'
+  - 'view default commerce_order'
+  - 'view default commerce_product'
+  - 'view online commerce_store'
   - 'view own colegios content'
+  - 'view own colegios_grupos content'
+  - 'view own coordinadores_de_colegios content'
+  - 'view own orden_de_pago_colegios content'
+  - 'view own pagos_colegios content'
+  - 'view recurring commerce_order'
+  - 'view user email addresses'

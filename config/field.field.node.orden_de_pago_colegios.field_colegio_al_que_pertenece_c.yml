@@ -1,0 +1,29 @@
+uuid: b5d305e8-65d8-4868-bc0f-6ef0d6fb9f3c
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_colegio_al_que_pertenece_c
+    - node.type.colegios
+    - node.type.orden_de_pago_colegios
+id: node.orden_de_pago_colegios.field_colegio_al_que_pertenece_c
+field_name: field_colegio_al_que_pertenece_c
+entity_type: node
+bundle: orden_de_pago_colegios
+label: Colegio
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      colegios: colegios
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

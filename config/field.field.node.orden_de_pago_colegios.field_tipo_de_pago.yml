@@ -1,0 +1,21 @@
+uuid: 6db5e52a-cab9-4494-8978-3a6926191c2e
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_tipo_de_pago
+    - node.type.orden_de_pago_colegios
+  module:
+    - options
+id: node.orden_de_pago_colegios.field_tipo_de_pago
+field_name: field_tipo_de_pago
+entity_type: node
+bundle: orden_de_pago_colegios
+label: 'Tipo de pago'
+description: '<b>Si el tipo de pago es por transferencia o depósito, no es necesario seleccionar una variación</b>'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

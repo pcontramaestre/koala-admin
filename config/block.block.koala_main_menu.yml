@@ -14,7 +14,7 @@ _core:
 id: koala_main_menu
 theme: koala
 region: primary_menu
-weight: -13
+weight: -16
 provider: null
 plugin: 'system_menu_block:main'
 settings:

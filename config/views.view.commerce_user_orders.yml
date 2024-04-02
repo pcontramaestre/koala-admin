@@ -5,6 +5,7 @@ dependencies:
   config:
     - user.role.administrator
     - user.role.content_editor
+    - user.role.director_colegio
     - user.role.padre
   module:
     - commerce_order
@@ -968,6 +969,7 @@ display:
             content_editor: content_editor
             administrator: administrator
             padre: padre
+            director_colegio: director_colegio
       arguments:
         uid:
           id: uid

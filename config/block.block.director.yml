@@ -1,0 +1,33 @@
+uuid: 7e3b677c-cf68-491a-9708-72ed27545f82
+langcode: es
+status: true
+dependencies:
+  config:
+    - system.menu.director
+  module:
+    - system
+    - user
+  theme:
+    - koala
+id: director
+theme: koala
+region: primary_menu
+weight: -12
+provider: null
+plugin: 'system_menu_block:director'
+settings:
+  id: 'system_menu_block:director'
+  label: Director
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility:
+  user_role:
+    id: user_role
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+    roles:
+      director_colegio: director_colegio

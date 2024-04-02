@@ -10,7 +10,7 @@ dependencies:
 id: cart
 theme: koala
 region: primary_menu
-weight: 0
+weight: -9
 provider: null
 plugin: commerce_cart
 settings:

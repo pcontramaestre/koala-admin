@@ -1,0 +1,17 @@
+uuid: 9c591a7d-e034-4968-949b-b05dbb01f3cd
+langcode: es
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: 'Orden de pago colegios'
+type: orden_de_pago_colegios
+description: ''
+help: ''
+new_revision: false
+preview_mode: 0
+display_submitted: true

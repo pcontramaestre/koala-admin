@@ -1,0 +1,17 @@
+uuid: d7446286-52db-49ce-acf5-5500792fafd1
+langcode: es
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: 'Pagos colegios'
+type: pagos_colegios
+description: '<b>Este formulario guarda los registros de pagos realizados por los colegios. La información es diligenciada por el director del colegio cuando realiza un pago por transferencia-deposito</b>'
+help: ''
+new_revision: false
+preview_mode: 0
+display_submitted: true

@@ -108,6 +108,7 @@ permissions:
   - 'view any profesores content'
   - 'view any slider_clases_koalas content'
   - 'view any superpoderes content'
+  - 'view any suscripciones content'
   - 'view clases commerce_product'
   - 'view commerce_order'
   - 'view commerce_product'

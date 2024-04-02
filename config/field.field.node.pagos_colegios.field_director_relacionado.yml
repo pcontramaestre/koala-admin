@@ -1,0 +1,40 @@
+uuid: 500d1370-55a2-4ab9-a2c6-c728552f35f3
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_director_relacionado
+    - node.type.pagos_colegios
+id: node.pagos_colegios.field_director_relacionado
+field_name: field_director_relacionado
+entity_type: node
+bundle: pagos_colegios
+label: 'Director relacionado'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:user'
+  handler_settings:
+    target_bundles: null
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    filter:
+      type: role
+      role:
+        director_colegio: director_colegio
+        content_editor: '0'
+        administrator: '0'
+        profesor: '0'
+        padre: '0'
+        padre_escuela: '0'
+        hijo: '0'
+        hijo_escuela: '0'
+        coordinador_colegio: '0'
+        suscriptor: '0'
+    include_anonymous: true
+field_type: entity_reference

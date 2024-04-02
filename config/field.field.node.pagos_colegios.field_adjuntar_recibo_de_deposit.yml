@@ -1,0 +1,46 @@
+uuid: 41196280-a0e3-4b92-9cb5-934c1137ca7c
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_adjuntar_recibo_de_deposit
+    - node.type.pagos_colegios
+  module:
+    - file
+    - filefield_paths
+third_party_settings:
+  filefield_paths:
+    enabled: false
+    file_path:
+      value: '[date:custom:Y]-[date:custom:m]'
+      options:
+        slashes: false
+        pathauto: false
+        transliterate: false
+    file_name:
+      value: '[file:ffp-name-only-original].[file:ffp-extension-original]'
+      options:
+        slashes: false
+        pathauto: false
+        transliterate: false
+    redirect: false
+    retroactive_update: false
+    active_updating: false
+id: node.pagos_colegios.field_adjuntar_recibo_de_deposit
+field_name: field_adjuntar_recibo_de_deposit
+entity_type: node
+bundle: pagos_colegios
+label: 'Adjuntar recibo de depósito o transferencia'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'jpg png pdf docx'
+  max_filesize: '10 MB'
+  description_field: false
+field_type: file

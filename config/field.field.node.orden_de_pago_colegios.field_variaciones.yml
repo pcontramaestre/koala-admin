@@ -1,0 +1,33 @@
+uuid: bb400daa-7d39-4e04-958b-4c652201ad7d
+langcode: es
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_variation_type.4_semanas_mes
+    - commerce_product.commerce_product_variation_type.suscripcion_de_12_semanas
+    - commerce_product.commerce_product_variation_type.suscripcion_de_24_semanas_
+    - field.storage.node.field_variaciones
+    - node.type.orden_de_pago_colegios
+id: node.orden_de_pago_colegios.field_variaciones
+field_name: field_variaciones
+entity_type: node
+bundle: orden_de_pago_colegios
+label: Variaciones
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:commerce_product_variation'
+  handler_settings:
+    target_bundles:
+      4_semanas_mes: 4_semanas_mes
+      suscripcion_de_12_semanas: suscripcion_de_12_semanas
+      suscripcion_de_24_semanas_: suscripcion_de_24_semanas_
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: 4_semanas_mes
+field_type: entity_reference

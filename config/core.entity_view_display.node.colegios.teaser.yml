@@ -8,9 +8,11 @@ dependencies:
     - field.field.node.colegios.field_correo_electronico_del_col
     - field.field.node.colegios.field_correo_electronico_del_dir
     - field.field.node.colegios.field_direc
+    - field.field.node.colegios.field_imagen_del_colegio_banner
     - field.field.node.colegios.field_nombres_y_apellidos_del_di
     - field.field.node.colegios.field_numeros_de_telefonos_del_d
     - field.field.node.colegios.field_telefonos_del_colegio_
+    - field.field.node.colegios.field_usuario_director_del_coleg
     - field.field.node.colegios.field_zona_horaria_del_colegio
     - node.type.colegios
   module:
@@ -33,8 +35,10 @@ hidden:
   field_correo_electronico_del_col: true
   field_correo_electronico_del_dir: true
   field_direc: true
+  field_imagen_del_colegio_banner: true
   field_nombres_y_apellidos_del_di: true
   field_numeros_de_telefonos_del_d: true
   field_telefonos_del_colegio_: true
+  field_usuario_director_del_coleg: true
   field_zona_horaria_del_colegio: true
   langcode: true

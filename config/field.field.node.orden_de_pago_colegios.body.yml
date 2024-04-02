@@ -1,0 +1,23 @@
+uuid: 1b41466d-05f8-4c7b-a881-e6c8a4a446f8
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.orden_de_pago_colegios
+  module:
+    - text
+id: node.orden_de_pago_colegios.body
+field_name: body
+entity_type: node
+bundle: orden_de_pago_colegios
+label: 'Observaciones de la orden de pago'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary

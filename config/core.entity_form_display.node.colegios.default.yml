@@ -7,9 +7,11 @@ dependencies:
     - field.field.node.colegios.field_correo_electronico_del_col
     - field.field.node.colegios.field_correo_electronico_del_dir
     - field.field.node.colegios.field_direc
+    - field.field.node.colegios.field_imagen_del_colegio_banner
     - field.field.node.colegios.field_nombres_y_apellidos_del_di
     - field.field.node.colegios.field_numeros_de_telefonos_del_d
     - field.field.node.colegios.field_telefonos_del_colegio_
+    - field.field.node.colegios.field_usuario_director_del_coleg
     - field.field.node.colegios.field_zona_horaria_del_colegio
     - node.type.colegios
   module:
@@ -17,6 +19,7 @@ dependencies:
     - field_group
     - field_layout
     - layout_discovery
+    - media_library
     - phone_number
     - tzfield
 third_party_settings:
@@ -111,6 +114,13 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_imagen_del_colegio_banner:
+    type: media_library_widget
+    weight: 2
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
   field_nombres_y_apellidos_del_di:
     type: string_textfield
     weight: 2
@@ -162,6 +172,7 @@ content:
     third_party_settings: {  }
 hidden:
   created: true
+  field_usuario_director_del_coleg: true
   langcode: true
   moderation_state: true
   path: true

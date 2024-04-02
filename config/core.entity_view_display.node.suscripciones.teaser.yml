@@ -7,11 +7,13 @@ dependencies:
     - field.field.node.suscripciones.field_clases_compradas
     - field.field.node.suscripciones.field_clases_restantes
     - field.field.node.suscripciones.field_clases_usadas
+    - field.field.node.suscripciones.field_colegio_al_que_pertenece_c
     - field.field.node.suscripciones.field_fecha_de_finalizacion_de_l
     - field.field.node.suscripciones.field_fecha_de_inicio_de_la_susc
     - field.field.node.suscripciones.field_nro_de_orden
     - field.field.node.suscripciones.field_plan_comprado
     - field.field.node.suscripciones.field_suscripcion_finalizada_
+    - field.field.node.suscripciones.field_suscripcion_padre_de_escue
     - field.field.node.suscripciones.field_suscripcion_sin_clases
     - field.field.node.suscripciones.field_usuario_padre
     - node.type.suscripciones
@@ -34,11 +36,13 @@ hidden:
   field_clases_compradas: true
   field_clases_restantes: true
   field_clases_usadas: true
+  field_colegio_al_que_pertenece_c: true
   field_fecha_de_finalizacion_de_l: true
   field_fecha_de_inicio_de_la_susc: true
   field_nro_de_orden: true
   field_plan_comprado: true
   field_suscripcion_finalizada_: true
+  field_suscripcion_padre_de_escue: true
   field_suscripcion_sin_clases: true
   field_usuario_padre: true
   langcode: true

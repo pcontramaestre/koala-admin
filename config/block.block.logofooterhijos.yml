@@ -12,7 +12,7 @@ dependencies:
 id: logofooterhijos
 theme: koala
 region: footer_first
-weight: 0
+weight: -16
 provider: null
 plugin: 'block_content:d2f77bf8-d75f-485b-8a60-e5e9b62a72de'
 settings:
@@ -35,3 +35,5 @@ visibility:
       profesor: profesor
       padre: padre
       hijo: hijo
+      director_colegio: director_colegio
+      coordinador_colegio: coordinador_colegio

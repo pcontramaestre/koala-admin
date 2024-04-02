@@ -1,0 +1,89 @@
+uuid: ec88038e-f007-4573-8ec3-9923c3f2f0d4
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.field.node.pagos_colegios.field_adjuntar_recibo_de_deposit
+    - field.field.node.pagos_colegios.field_colegio_al_que_pertenece_c
+    - field.field.node.pagos_colegios.field_director_relacionado
+    - node.type.pagos_colegios
+  module:
+    - field_group
+    - field_layout
+    - file
+    - layout_discovery
+    - readonly_field_widget
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+  field_group:
+    group_informacion_del_pago_reali:
+      children:
+        - field_colegio_al_que_pertenece_c
+        - field_adjuntar_recibo_de_deposit
+      label: 'Payment information provided'
+      region: content
+      parent_name: ''
+      weight: 0
+      format_type: fieldset
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        description: 'Upload the proof of payment made, after the process is done, wait for administration to verify the payment so that it becomes active and you can enjoy our services.'
+        required_fields: true
+        open: '1'
+id: node.pagos_colegios.default
+targetEntityType: node
+bundle: pagos_colegios
+mode: default
+content:
+  field_adjuntar_recibo_de_deposit:
+    type: file_generic
+    weight: 2
+    region: content
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+  field_colegio_al_que_pertenece_c:
+    type: readonly_field_widget
+    weight: 1
+    region: content
+    settings:
+      label: above
+      formatter_type: entity_reference_label
+      formatter_settings:
+        view_mode_select_by_token_rendered_with_select:
+          view_mode: default
+        entity_reference_entity_view:
+          view_mode: default
+        formatter_suite_general_entity_reference:
+          entityReferenceStyle: title
+          titleCustomText: ''
+          classes: ''
+          showLink: '1'
+          openLinkIn: _self
+          linkTopic: any
+        formatter_suite_entity_reference_render_list:
+          view_mode: default
+          listStyle: span
+          listSeparator: ','
+        entity_reference_label:
+          link: false
+      show_description: false
+    third_party_settings: {  }
+hidden:
+  created: true
+  field_director_relacionado: true
+  langcode: true
+  moderation_state: true
+  path: true
+  promote: true
+  status: true
+  sticky: true
+  title: true
+  translation: true
+  uid: true
+  url_redirects: true

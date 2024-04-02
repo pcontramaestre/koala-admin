@@ -1,0 +1,74 @@
+uuid: d58a086f-47ab-4854-99f0-ef1c3e2b75ff
+langcode: es
+status: true
+dependencies:
+  module:
+    - system
+    - user
+id: 1_2_director
+label: '1.2 Director'
+code: |+
+  jQuery(document).ready(function($) {
+    if ($('body.rol-director_colegio').length > 0) {
+      if ($('.enlace-pago').length > 0) {
+        let dataNroclases = $('.enlace-pago').attr('data-nroclases');
+        let dataSemanas = $('.enlace-pago').attr('data-semanas');
+        let dataId = $('.enlace-pago').attr('data-id');
+        //dataSemanas hago un split para obtener el valor de la semana, ya que viene en formato "12 semanas"
+        let semanas = dataSemanas.split(' ');
+        let semana = semanas[0];
+
+        // Guardar en localStorage
+        localStorage.setItem('semanas', semana);
+        localStorage.setItem('totalClases', dataNroclases);
+        localStorage.setItem('idPago', dataId);
+
+        semanas = localStorage.getItem('semanas');
+        totalClases = localStorage.getItem('totalClases');
+        idPago = localStorage.getItem('idPago');
+            
+        if (semanas) {
+          console.log(semanas);
+          // Crear cookie con el valor del localStorage
+          document.cookie = "numerosemanas=" + semanas + "; path=/";
+        } 
+        // Si no hay valor, se crea el objeto
+        if (totalClases) {
+          console.log(totalClases);
+          // Crear cookie con el valor del localStorage
+          document.cookie = "totalclases=" + totalClases + "; path=/";
+        }
+        if (idPago) {
+          console.log(idPago);
+          // Crear cookie con el valor del localStorage
+          document.cookie = "idpago=" + idPago + "; path=/";
+        }
+      }
+      
+      //pagina checkout checkout-complete
+      if ($('.checkout-complete').length > 0) {
+        $('.texto-confirmacion .botones > .boton:nth-child(2) a').attr('href', '/en/director');
+      }
+      
+    }
+  });
+
+noscript: ''
+noscriptRegion: {  }
+jquery: true
+header: false
+preprocess: true
+conditions:
+  request_path:
+    id: request_path
+    negate: false
+    pages: "/director\r\n*/director\r\n*/checkout/*/complete"
+  user_role:
+    id: user_role
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+    roles:
+      director_colegio: director_colegio
+contexts: {  }
+conditions_require_all: true

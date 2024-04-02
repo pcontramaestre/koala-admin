@@ -1,0 +1,22 @@
+uuid: 8e0c2720-4d43-4d64-a45f-7472c5b1acfe
+langcode: es
+status: true
+dependencies:
+  module:
+    - user
+id: pagos_realizados
+label: 'Pagos realizados'
+description: ''
+use_admin_theme: false
+path: /pagos-realizados
+access_logic: and
+access_conditions:
+  -
+    id: user_role
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+    roles:
+      administrator: administrator
+      director_colegio: director_colegio
+parameters: {  }

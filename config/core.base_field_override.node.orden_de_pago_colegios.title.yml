@@ -1,0 +1,18 @@
+uuid: 7e3fac62-9b75-424f-80d0-6a63f2f9002d
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.orden_de_pago_colegios
+id: node.orden_de_pago_colegios.title
+field_name: title
+entity_type: node
+bundle: orden_de_pago_colegios
+label: 'Título de referencia'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

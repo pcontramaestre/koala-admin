@@ -1,0 +1,23 @@
+uuid: c81a289a-0be6-430d-9c1c-6a1717d803ae
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_pago_procesado
+    - node.type.orden_de_pago_colegios
+id: node.orden_de_pago_colegios.field_pago_procesado
+field_name: field_pago_procesado
+entity_type: node
+bundle: orden_de_pago_colegios
+label: 'Pago procesado por el colegio'
+description: '<b>Esta opción se activa cuando el pago ha sido procesado por el colegio y ha cargado la información del pago</b>'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: Si
+  off_label: 'No'
+field_type: boolean

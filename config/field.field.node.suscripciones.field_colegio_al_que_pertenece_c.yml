@@ -1,0 +1,29 @@
+uuid: 2737cc2d-2429-4dd7-897d-49170ec50d6d
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_colegio_al_que_pertenece_c
+    - node.type.colegios
+    - node.type.suscripciones
+id: node.suscripciones.field_colegio_al_que_pertenece_c
+field_name: field_colegio_al_que_pertenece_c
+entity_type: node
+bundle: suscripciones
+label: 'Colegio al que pertenece el padre'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      colegios: colegios
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

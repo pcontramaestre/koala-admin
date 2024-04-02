@@ -1,0 +1,23 @@
+uuid: 06558945-c712-4ca4-bf4a-2ba79fa7dd82
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_orden_de_pagada
+    - node.type.orden_de_pago_colegios
+id: node.orden_de_pago_colegios.field_orden_de_pagada
+field_name: field_orden_de_pagada
+entity_type: node
+bundle: orden_de_pago_colegios
+label: 'Orden de pagada'
+description: '<b>Cuando activas esta opción se asume que el director ya canceló la suscripción</b>'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: Si
+  off_label: 'No'
+field_type: boolean

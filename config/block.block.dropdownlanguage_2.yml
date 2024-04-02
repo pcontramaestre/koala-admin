@@ -28,3 +28,5 @@ visibility:
     roles:
       profesor: profesor
       padre: padre
+      director_colegio: director_colegio
+      coordinador_colegio: coordinador_colegio

@@ -1,0 +1,30 @@
+uuid: 281b84d6-8e5a-4754-aad5-c8b6749857f3
+langcode: es
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.pagos_colegios.field_adjuntar_recibo_de_deposit
+    - field.field.node.pagos_colegios.field_colegio_al_que_pertenece_c
+    - field.field.node.pagos_colegios.field_director_relacionado
+    - node.type.pagos_colegios
+  module:
+    - user
+id: node.pagos_colegios.teaser
+targetEntityType: node
+bundle: pagos_colegios
+mode: teaser
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  field_adjuntar_recibo_de_deposit: true
+  field_colegio_al_que_pertenece_c: true
+  field_director_relacionado: true
+  langcode: true

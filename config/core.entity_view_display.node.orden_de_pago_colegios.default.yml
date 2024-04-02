@@ -1,0 +1,147 @@
+uuid: bdc9dcd3-1015-4481-84f0-d446439f4963
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.field.node.orden_de_pago_colegios.body
+    - field.field.node.orden_de_pago_colegios.field_colegio_al_que_pertenece_c
+    - field.field.node.orden_de_pago_colegios.field_enlace_de_pago
+    - field.field.node.orden_de_pago_colegios.field_formulario_de_pago_relacio
+    - field.field.node.orden_de_pago_colegios.field_monto_a_cancelar
+    - field.field.node.orden_de_pago_colegios.field_nro_de_clases_a_comprar
+    - field.field.node.orden_de_pago_colegios.field_nro_de_clases_maxima_por_e
+    - field.field.node.orden_de_pago_colegios.field_nro_de_orden
+    - field.field.node.orden_de_pago_colegios.field_orden_de_pagada
+    - field.field.node.orden_de_pago_colegios.field_pago_procesado
+    - field.field.node.orden_de_pago_colegios.field_tipo_de_pago
+    - field.field.node.orden_de_pago_colegios.field_tipo_de_suscripcion
+    - field.field.node.orden_de_pago_colegios.field_variaciones
+    - node.type.orden_de_pago_colegios
+  module:
+    - commerce_price
+    - options
+    - text
+    - user
+id: node.orden_de_pago_colegios.default
+targetEntityType: node
+bundle: orden_de_pago_colegios
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_colegio_al_que_pertenece_c:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 105
+    region: content
+  field_enlace_de_pago:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 110
+    region: content
+  field_formulario_de_pago_relacio:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 111
+    region: content
+  field_monto_a_cancelar:
+    type: commerce_price_default
+    label: above
+    settings:
+      strip_trailing_zeroes: false
+      currency_display: symbol
+    third_party_settings: {  }
+    weight: 106
+    region: content
+  field_nro_de_clases_a_comprar:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_nro_de_clases_maxima_por_e:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 108
+    region: content
+  field_nro_de_orden:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 113
+    region: content
+  field_orden_de_pagada:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 107
+    region: content
+  field_pago_procesado:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 112
+    region: content
+  field_tipo_de_pago:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 109
+    region: content
+  field_tipo_de_suscripcion:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  field_variaciones:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  langcode: true

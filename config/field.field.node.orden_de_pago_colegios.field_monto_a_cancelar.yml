@@ -1,0 +1,24 @@
+uuid: a8ebb673-61a2-4602-8268-3c4fc5f3cf83
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_monto_a_cancelar
+    - node.type.orden_de_pago_colegios
+  module:
+    - commerce_price
+id: node.orden_de_pago_colegios.field_monto_a_cancelar
+field_name: field_monto_a_cancelar
+entity_type: node
+bundle: orden_de_pago_colegios
+label: 'Monto a cancelar'
+description: '<b>Este monto es de referencia para ser mostrado al director antes de pagar, no es usado por stripe para realizar el pago</b>'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  available_currencies:
+    - USD
+  allow_negative: false
+field_type: commerce_price

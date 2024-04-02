@@ -1,0 +1,51 @@
+uuid: 341d400d-1035-49c4-b8e8-564a0bffe786
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.field.node.pagos_colegios.field_adjuntar_recibo_de_deposit
+    - field.field.node.pagos_colegios.field_colegio_al_que_pertenece_c
+    - field.field.node.pagos_colegios.field_director_relacionado
+    - node.type.pagos_colegios
+  module:
+    - file
+    - user
+id: node.pagos_colegios.default
+targetEntityType: node
+bundle: pagos_colegios
+mode: default
+content:
+  field_adjuntar_recibo_de_deposit:
+    type: file_default
+    label: above
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_colegio_al_que_pertenece_c:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_director_relacionado:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  langcode: true

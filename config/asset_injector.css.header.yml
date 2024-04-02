@@ -386,5 +386,7 @@ conditions:
       profesor: profesor
       padre: padre
       hijo: hijo
+      director_colegio: director_colegio
+      coordinador_colegio: coordinador_colegio
 contexts: {  }
 conditions_require_all: true

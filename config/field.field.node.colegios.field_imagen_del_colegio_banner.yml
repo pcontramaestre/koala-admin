@@ -1,0 +1,34 @@
+uuid: 0163c3ab-6a76-4320-8e11-0fcfff8212bf
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_imagen_del_colegio_banner
+    - media.type.image
+    - node.type.colegios
+  content:
+    - 'media:image:7e63e06a-9f91-46e9-ab57-9908724ab9e9'
+id: node.colegios.field_imagen_del_colegio_banner
+field_name: field_imagen_del_colegio_banner
+entity_type: node
+bundle: colegios
+label: 'Imagen del colegio - banner'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    target_uuid: 7e63e06a-9f91-46e9-ab57-9908724ab9e9
+    weight: 0
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

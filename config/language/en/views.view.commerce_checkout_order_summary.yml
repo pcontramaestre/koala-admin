@@ -4,3 +4,7 @@ display:
       fields:
         title:
           label: 'Selected plan'
+      exposed_form:
+        options:
+          submit_button: Aplicar
+    display_title: Máster

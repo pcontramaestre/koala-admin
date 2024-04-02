@@ -12,4 +12,6 @@ id: coordinador_colegio
 label: 'Coordinador colegio'
 weight: 0
 is_admin: null
-permissions: {  }
+permissions:
+  - 'access user profiles'
+  - 'view user email addresses'

@@ -1,0 +1,11 @@
+uuid: b2ad8308-05a3-4d02-86ce-939e4dbfad7e
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.orden_de_pago_colegios
+id: node.orden_de_pago_colegios
+target_entity_type_id: node
+target_bundle: orden_de_pago_colegios
+default_langcode: site_default
+language_alterable: false

@@ -7,6 +7,7 @@ dependencies:
     - field.storage.node.field_correo_electronico_del_col
     - field.storage.node.field_correo_electronico_del_dir
     - field.storage.node.field_direc
+    - field.storage.node.field_imagen_del_colegio_banner
     - field.storage.node.field_nombres_y_apellidos_del_di
     - field.storage.node.field_numeros_de_telefonos_del_d
     - field.storage.node.field_telefonos_del_colegio_
@@ -16,6 +17,7 @@ dependencies:
     - node.type.coordinadores_de_colegios
     - user.role.administrator
     - user.role.content_editor
+    - user.role.director_colegio
     - views.view.padres_hijos_escuelas
   module:
     - address
@@ -1141,7 +1143,7 @@ display:
           admin_label: ''
           plugin_id: text_custom
           empty: true
-          content: "<div class=\"row accesos-directos\">\r\n  <div class=\"col=3\"><a class=\"button button--primary js-form-submit form-submit ui-button ui-corner-all ui-widget\" href=\"/node/add/colegios\" target=\"_blank\">Agregar nuevo colegio</a></div> \r\n  <div class=\"col=3\"><a class=\"button button--primary js-form-submit form-submit ui-button ui-corner-all ui-widget\" href=\"/node/add/coordinadores_de_colegios\" target=\"_blank\">Agregar nuevo coordinador</a></div> \r\n  <div class=\"col=3\"><a class=\"button button--primary js-form-submit form-submit ui-button ui-corner-all ui-widget\" href=\"/node/add/colegios_grupos\" target=\"_blank\">Agregar nuevo grupo al colegio</a></div> \r\n  <div class=\"col=3\"><a class=\"button button--primary js-form-submit form-submit ui-button ui-corner-all ui-widget\" href=\"/admin/cargar-estudiantes\" target=\"_blank\">Cargar padres y estudiantes</a></div> \r\n</div>"
+          content: "<div class=\"row accesos-directos\">\r\n  <div class=\"col\"><a class=\"button button--primary js-form-submit form-submit ui-button ui-corner-all ui-widget\" href=\"/node/add/colegios\" target=\"_blank\">Agregar nuevo colegio</a></div> \r\n  <div class=\"col\"><a class=\"button button--primary js-form-submit form-submit ui-button ui-corner-all ui-widget\" href=\"/node/add/coordinadores_de_colegios\" target=\"_blank\">Agregar nuevo coordinador</a></div> \r\n  <div class=\"col\"><a class=\"button button--primary js-form-submit form-submit ui-button ui-corner-all ui-widget\" href=\"/node/add/colegios_grupos\" target=\"_blank\">Agregar nuevo grupo al colegio</a></div> \r\n  <div class=\"col\"><a class=\"button button--primary js-form-submit form-submit ui-button ui-corner-all ui-widget\" href=\"/admin/cargar-estudiantes\" target=\"_blank\">Cargar padres y estudiantes</a></div>\r\n  <div class=\"col\"><a class=\"button button--primary js-form-submit form-submit ui-button ui-corner-all ui-widget\" href=\"/node/add/orden_de_pago_colegios\" target=\"_blank\">Crear orden de pago a colegio</a></div>\r\n</div>"
           tokenize: false
       footer:
         area_text_custom:
@@ -1174,6 +1176,1028 @@ display:
         - 'config:field.storage.node.field_numeros_de_telefonos_del_d'
         - 'config:field.storage.node.field_telefonos_del_colegio_'
         - 'config:field.storage.node.field_zona_horaria_del_colegio'
+  block_2:
+    id: block_2
+    display_title: 'Mi Colegio'
+    display_plugin: block
+    position: 4
+    display_options:
+      title: 'Mi colegio'
+      fields:
+        title:
+          id: title
+          table: node_field_data
+          field: title
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: node
+          entity_field: title
+          plugin_id: field
+          label: 'Nombre del colegio'
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: false
+            ellipsis: false
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: false
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        field_direc:
+          id: field_direc
+          table: node__field_direc
+          field: field_direc
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: 'Dirección del colegio'
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: langcode
+          type: address_default
+          settings: {  }
+          group_column: ''
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        field_correo_electronico_del_col:
+          id: field_correo_electronico_del_col
+          table: node__field_correo_electronico_del_col
+          field: field_correo_electronico_del_col
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: 'Correos electrónicos del colegio'
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: basic_string
+          settings: {  }
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        field_telefonos_del_colegio_:
+          id: field_telefonos_del_colegio_
+          table: node__field_telefonos_del_colegio_
+          field: field_telefonos_del_colegio_
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: 'Teléfonos del colegio '
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: phone_number_international
+          settings:
+            as_link: false
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        field_zona_horaria_del_colegio:
+          id: field_zona_horaria_del_colegio
+          table: node__field_zona_horaria_del_colegio
+          field: field_zona_horaria_del_colegio
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: 'Zona horaria del colegio'
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: basic_string
+          settings: {  }
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        field_nombres_y_apellidos_del_di:
+          id: field_nombres_y_apellidos_del_di
+          table: node__field_nombres_y_apellidos_del_di
+          field: field_nombres_y_apellidos_del_di
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: 'Nombres y apellidos del director'
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: false
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        field_correo_electronico_del_dir:
+          id: field_correo_electronico_del_dir
+          table: node__field_correo_electronico_del_dir
+          field: field_correo_electronico_del_dir
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: 'Correo del director'
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: basic_string
+          settings: {  }
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        field_numeros_de_telefonos_del_d:
+          id: field_numeros_de_telefonos_del_d
+          table: node__field_numeros_de_telefonos_del_d
+          field: field_numeros_de_telefonos_del_d
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: 'Teléfono del director'
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: phone_number_international
+          settings:
+            as_link: false
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        nothing:
+          id: nothing
+          table: views
+          field: nothing
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: custom
+          label: ''
+          exclude: false
+          alter:
+            alter_text: true
+            text: "<div class=\"datos-del-colegio cuadro-borde-gris\">\r\n   <h3>School information</h3>\r\n   <div class=\"datos-colegio\">\r\n     <div class=\"title\">{{ title }}</div>\r\n     <div class=\"direccion\">{{ field_direc }}</div>\r\n     <div class=\"telefonos\">{{ field_telefonos_del_colegio_ }}</div> \r\n     <div class=\"correos\">{{ field_correo_electronico_del_col }} </div> \r\n  </div>\r\n   <div class=\"datos-director\">\r\n     <div class=\"titulo\">School principal's information</div>\r\n     <div class=\"nombres\">{{ field_nombres_y_apellidos_del_di }}</div>\r\n     <div class=\"telefonos\">{{ field_numeros_de_telefonos_del_d }}</div>\r\n     <div class=\"correos\">{{ field_correo_electronico_del_dir }}</div>   \r\n  </div>\r\n</div>"
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: false
+      arguments:
+        uid:
+          id: uid
+          table: users_field_data
+          field: uid
+          relationship: reverse__user__field_colegio_al_que_pertenece_e
+          group_type: group
+          admin_label: ''
+          entity_type: user
+          entity_field: uid
+          plugin_id: user_uid
+          default_action: default
+          exception:
+            value: all
+            title_enable: false
+            title: All
+          title_enable: false
+          title: ''
+          default_argument_type: current_user
+          default_argument_options: {  }
+          default_argument_skip_url: false
+          summary_options:
+            base_path: ''
+            count: true
+            override: false
+            items_per_page: 25
+          summary:
+            sort_order: asc
+            number_of_records: 0
+            format: default_summary
+          specify_validation: false
+          validate:
+            type: none
+            fail: 'not found'
+          validate_options: {  }
+          break_phrase: false
+          not: false
+      style:
+        type: default
+        options:
+          grouping: {  }
+          row_class: ''
+          default_row_class: true
+      row:
+        type: fields
+        options: {  }
+      defaults:
+        title: false
+        style: false
+        row: false
+        relationships: false
+        fields: false
+        arguments: false
+      relationships:
+        reverse__user__field_colegio_al_que_pertenece_e:
+          id: reverse__user__field_colegio_al_que_pertenece_e
+          table: node_field_data
+          field: reverse__user__field_colegio_al_que_pertenece_e
+          relationship: none
+          group_type: group
+          admin_label: field_colegio_al_que_pertenece_e
+          entity_type: node
+          plugin_id: entity_reverse
+          required: false
+      display_description: ''
+      display_extenders: {  }
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url
+        - url.query_args
+        - user
+        - 'user.node_grants:view'
+        - user.permissions
+      tags:
+        - 'config:field.storage.node.field_correo_electronico_del_col'
+        - 'config:field.storage.node.field_correo_electronico_del_dir'
+        - 'config:field.storage.node.field_direc'
+        - 'config:field.storage.node.field_nombres_y_apellidos_del_di'
+        - 'config:field.storage.node.field_numeros_de_telefonos_del_d'
+        - 'config:field.storage.node.field_telefonos_del_colegio_'
+        - 'config:field.storage.node.field_zona_horaria_del_colegio'
+  block_3:
+    id: block_3
+    display_title: 'Mi Colegio - Banner'
+    display_plugin: block
+    position: 4
+    display_options:
+      title: 'Mi colegio'
+      fields:
+        field_imagen_del_colegio_banner:
+          id: field_imagen_del_colegio_banner
+          table: node__field_imagen_del_colegio_banner
+          field: field_imagen_del_colegio_banner
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: entity_reference_entity_view
+          settings:
+            view_mode: full
+          group_column: target_id
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+      arguments:
+        uid:
+          id: uid
+          table: users_field_data
+          field: uid
+          relationship: reverse__user__field_colegio_al_que_pertenece_e
+          group_type: group
+          admin_label: ''
+          entity_type: user
+          entity_field: uid
+          plugin_id: user_uid
+          default_action: default
+          exception:
+            value: all
+            title_enable: false
+            title: All
+          title_enable: false
+          title: ''
+          default_argument_type: current_user
+          default_argument_options: {  }
+          default_argument_skip_url: false
+          summary_options:
+            base_path: ''
+            count: true
+            override: false
+            items_per_page: 25
+          summary:
+            sort_order: asc
+            number_of_records: 0
+            format: default_summary
+          specify_validation: false
+          validate:
+            type: none
+            fail: 'not found'
+          validate_options: {  }
+          break_phrase: false
+          not: false
+      style:
+        type: default
+        options:
+          grouping: {  }
+          row_class: ''
+          default_row_class: true
+      row:
+        type: fields
+        options: {  }
+      defaults:
+        title: false
+        style: false
+        row: false
+        relationships: false
+        fields: false
+        arguments: false
+      relationships:
+        reverse__user__field_colegio_al_que_pertenece_e:
+          id: reverse__user__field_colegio_al_que_pertenece_e
+          table: node_field_data
+          field: reverse__user__field_colegio_al_que_pertenece_e
+          relationship: none
+          group_type: group
+          admin_label: field_colegio_al_que_pertenece_e
+          entity_type: node
+          plugin_id: entity_reverse
+          required: false
+      display_description: ''
+      display_extenders: {  }
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url
+        - url.query_args
+        - user
+        - 'user.node_grants:view'
+        - user.permissions
+      tags:
+        - 'config:field.storage.node.field_imagen_del_colegio_banner'
+  block_4:
+    id: block_4
+    display_title: 'Coordinadores - Colegio Block'
+    display_plugin: block
+    position: 2
+    display_options:
+      title: 'School coordinators'
+      fields:
+        title:
+          id: title
+          table: node_field_data
+          field: title
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: node
+          entity_field: title
+          plugin_id: field
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: false
+            ellipsis: false
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: false
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+      access:
+        type: role
+        options:
+          role:
+            content_editor: content_editor
+            administrator: administrator
+            director_colegio: director_colegio
+      arguments:
+        uid:
+          id: uid
+          table: users_field_data
+          field: uid
+          relationship: field_usuario_director_del_coleg
+          group_type: group
+          admin_label: ''
+          entity_type: user
+          entity_field: uid
+          plugin_id: user_uid
+          default_action: default
+          exception:
+            value: all
+            title_enable: false
+            title: All
+          title_enable: false
+          title: ''
+          default_argument_type: current_user
+          default_argument_options: {  }
+          default_argument_skip_url: false
+          summary_options:
+            base_path: ''
+            count: true
+            override: false
+            items_per_page: 25
+          summary:
+            sort_order: asc
+            number_of_records: 0
+            format: default_summary
+          specify_validation: false
+          validate:
+            type: none
+            fail: 'not found'
+          validate_options: {  }
+          break_phrase: false
+          not: false
+      filters:
+        status:
+          id: status
+          table: node_field_data
+          field: status
+          entity_type: node
+          entity_field: status
+          plugin_id: boolean
+          value: '1'
+          group: 1
+          expose:
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+        type:
+          id: type
+          table: node_field_data
+          field: type
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: node
+          entity_field: type
+          plugin_id: bundle
+          operator: in
+          value:
+            coordinadores_de_colegios: coordinadores_de_colegios
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+      query:
+        type: views_query
+        options:
+          query_comment: ''
+          disable_sql_rewrite: false
+          distinct: true
+          replica: false
+          query_tags: {  }
+      defaults:
+        access: false
+        query: false
+        title: false
+        relationships: false
+        fields: false
+        arguments: false
+        filters: false
+        filter_groups: false
+        header: false
+        footer: false
+      relationships:
+        field_colegio_al_que_pertenece_c:
+          id: field_colegio_al_que_pertenece_c
+          table: node__field_colegio_al_que_pertenece_c
+          field: field_colegio_al_que_pertenece_c
+          relationship: none
+          group_type: group
+          admin_label: 'field_colegio_al_que_pertenece_c: Contenido'
+          plugin_id: standard
+          required: false
+        field_usuario_director_del_coleg:
+          id: field_usuario_director_del_coleg
+          table: node__field_usuario_director_del_coleg
+          field: field_usuario_director_del_coleg
+          relationship: field_colegio_al_que_pertenece_c
+          group_type: group
+          admin_label: 'field_usuario_director_del_coleg: Usuario'
+          plugin_id: standard
+          required: false
+      display_description: ''
+      header: {  }
+      footer: {  }
+      display_extenders: {  }
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url
+        - url.query_args
+        - user
+        - 'user.node_grants:view'
+        - user.roles
+      tags: {  }
   page_1:
     id: page_1
     display_title: 'Coordinadores '

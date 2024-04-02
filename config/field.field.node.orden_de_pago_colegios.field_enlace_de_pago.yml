@@ -1,0 +1,19 @@
+uuid: addc7813-4597-4214-9731-5b2f18387b0e
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_enlace_de_pago
+    - node.type.orden_de_pago_colegios
+id: node.orden_de_pago_colegios.field_enlace_de_pago
+field_name: field_enlace_de_pago
+entity_type: node
+bundle: orden_de_pago_colegios
+label: 'Enlace de pago'
+description: '<b>No se debe editar, de esto se encarga el sistema</b>'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

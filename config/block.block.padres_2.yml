@@ -12,7 +12,7 @@ dependencies:
 id: padres_2
 theme: koala
 region: footer_first
-weight: 0
+weight: -14
 provider: null
 plugin: 'system_menu_block:padres'
 settings:

@@ -1,0 +1,21 @@
+uuid: cf2da318-c83a-4158-8b45-7f182acba56f
+langcode: es
+status: true
+dependencies:
+  module:
+    - user
+id: directores
+label: Directores
+description: ''
+use_admin_theme: false
+path: /director
+access_logic: and
+access_conditions:
+  -
+    id: user_role
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+    roles:
+      director_colegio: director_colegio
+parameters: {  }

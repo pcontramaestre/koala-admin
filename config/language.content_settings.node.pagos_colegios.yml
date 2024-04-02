@@ -1,0 +1,16 @@
+uuid: 2c93b323-6375-4759-a4ae-61a7f5bf9ee1
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.pagos_colegios
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+id: node.pagos_colegios
+target_entity_type_id: node
+target_bundle: pagos_colegios
+default_langcode: site_default
+language_alterable: false

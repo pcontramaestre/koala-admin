@@ -1,0 +1,202 @@
+uuid: f18c3da4-1ed1-42f3-8810-5f5aee1924db
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.field.node.orden_de_pago_colegios.body
+    - field.field.node.orden_de_pago_colegios.field_colegio_al_que_pertenece_c
+    - field.field.node.orden_de_pago_colegios.field_enlace_de_pago
+    - field.field.node.orden_de_pago_colegios.field_formulario_de_pago_relacio
+    - field.field.node.orden_de_pago_colegios.field_monto_a_cancelar
+    - field.field.node.orden_de_pago_colegios.field_nro_de_clases_a_comprar
+    - field.field.node.orden_de_pago_colegios.field_nro_de_clases_maxima_por_e
+    - field.field.node.orden_de_pago_colegios.field_nro_de_orden
+    - field.field.node.orden_de_pago_colegios.field_orden_de_pagada
+    - field.field.node.orden_de_pago_colegios.field_pago_procesado
+    - field.field.node.orden_de_pago_colegios.field_tipo_de_pago
+    - field.field.node.orden_de_pago_colegios.field_tipo_de_suscripcion
+    - field.field.node.orden_de_pago_colegios.field_variaciones
+    - node.type.orden_de_pago_colegios
+  module:
+    - commerce_price
+    - content_moderation
+    - field_layout
+    - layout_discovery
+    - path
+    - text
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+id: node.orden_de_pago_colegios.default
+targetEntityType: node
+bundle: orden_de_pago_colegios
+mode: default
+content:
+  body:
+    type: text_textarea_with_summary
+    weight: 11
+    region: content
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+      show_summary: false
+    third_party_settings: {  }
+  created:
+    type: datetime_timestamp
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_colegio_al_que_pertenece_c:
+    type: options_select
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_enlace_de_pago:
+    type: string_textfield
+    weight: 20
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_formulario_de_pago_relacio:
+    type: entity_reference_autocomplete
+    weight: 21
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_monto_a_cancelar:
+    type: commerce_price_default
+    weight: 17
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_nro_de_clases_a_comprar:
+    type: number
+    weight: 14
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_nro_de_clases_maxima_por_e:
+    type: number
+    weight: 16
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_nro_de_orden:
+    type: entity_reference_autocomplete
+    weight: 26
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_orden_de_pagada:
+    type: boolean_checkbox
+    weight: 18
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  field_pago_procesado:
+    type: boolean_checkbox
+    weight: 19
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  field_tipo_de_pago:
+    type: options_select
+    weight: 12
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_tipo_de_suscripcion:
+    type: options_select
+    weight: 13
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_variaciones:
+    type: options_select
+    weight: 15
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 1
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  moderation_state:
+    type: moderation_state_default
+    weight: 8
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 6
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  promote:
+    type: boolean_checkbox
+    weight: 4
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 9
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  sticky:
+    type: boolean_checkbox
+    weight: 5
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 2
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  url_redirects:
+    weight: 7
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

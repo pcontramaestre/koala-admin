@@ -1,0 +1,21 @@
+uuid: 8db0b51d-d11e-4f1c-bffd-ddb8d5f2eebb
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_tipo_de_suscripcion
+    - node.type.orden_de_pago_colegios
+  module:
+    - options
+id: node.orden_de_pago_colegios.field_tipo_de_suscripcion
+field_name: field_tipo_de_suscripcion
+entity_type: node
+bundle: orden_de_pago_colegios
+label: 'Tipo de suscripción'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

@@ -1,0 +1,29 @@
+uuid: 376637c2-f917-451b-a31f-d0912028163e
+langcode: es
+status: true
+dependencies:
+  config:
+    - commerce_order.commerce_order_type.default
+    - field.storage.node.field_nro_de_orden
+    - node.type.orden_de_pago_colegios
+id: node.orden_de_pago_colegios.field_nro_de_orden
+field_name: field_nro_de_orden
+entity_type: node
+bundle: orden_de_pago_colegios
+label: 'Nro de orden stripe'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:commerce_order'
+  handler_settings:
+    target_bundles:
+      default: default
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

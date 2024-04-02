@@ -1,0 +1,29 @@
+display:
+  block_3:
+    display_options:
+      fields:
+        field_nombre_del_director:
+          label: 'Father''s first and last name'
+        mail:
+          label: 'Father''s email'
+        field_celular:
+          label: 'Cell phone'
+      header:
+        area_text_custom:
+          content: "<hr>\r\n<h3 class=\"mt-5 mb-5\">List of parents of the institution</h3>"
+      filters:
+        field_nombre_del_director_value:
+          expose:
+            label: 'First and last names'
+  block_4:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Search
+          text_input_required: 'Select any filter and click Apply to see the results'
+      header:
+        area_text_custom:
+          content: '<h3 class="mt-5 mb-5">List of students in the school</h3>'
+      footer:
+        result:
+          content: 'Total number of students: <b>@total</b>'

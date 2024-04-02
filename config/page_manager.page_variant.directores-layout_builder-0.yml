@@ -1,0 +1,152 @@
+uuid: d16a250b-3fad-462c-a28c-c6aa86fd991c
+langcode: es
+status: true
+dependencies:
+  config:
+    - page_manager.page.directores
+    - views.view.colegios
+    - views.view.padres_hijos_escuelas
+    - views.view.pagos_colegios
+  module:
+    - layout_builder
+    - layout_discovery
+    - views
+id: directores-layout_builder-0
+label: 'Layout Builder'
+weight: 0
+variant: layout_builder
+variant_settings:
+  id: layout_builder
+  label: null
+  weight: 0
+  uuid: 2f33fab8-4f0b-4b68-8660-e9b9ec3759f7
+  sections:
+    -
+      layout_id: layout_onecol
+      layout_settings:
+        label: ''
+        context_mapping: {  }
+      components:
+        67adba63-fc5b-4ed5-b48a-0af58363cf87:
+          uuid: 67adba63-fc5b-4ed5-b48a-0af58363cf87
+          region: content
+          configuration:
+            id: 'views_block:colegios-block_3'
+            label: ''
+            label_display: '0'
+            provider: views
+            context_mapping: {  }
+            views_label: ''
+            items_per_page: none
+            exposed: {  }
+          weight: 0
+          additional:
+            layout_builder_styles_style:
+              separacion_superior_mt_2: separacion_superior_mt_2
+              separacion_superior_mt_5: 0
+      third_party_settings: {  }
+    -
+      layout_id: layout_threecol_section
+      layout_settings:
+        label: ''
+        context_mapping: {  }
+        column_widths: 33-34-33
+      components: {  }
+      third_party_settings: {  }
+    -
+      layout_id: layout_twocol_section
+      layout_settings:
+        label: ''
+        context_mapping: {  }
+        column_widths: 33-67
+      components:
+        52dd687a-9a1d-4c9f-8cb3-9f9dcc55abaf:
+          uuid: 52dd687a-9a1d-4c9f-8cb3-9f9dcc55abaf
+          region: first
+          configuration:
+            id: 'views_block:colegios-block_2'
+            label: ''
+            label_display: '0'
+            provider: views
+            context_mapping: {  }
+            views_label: ''
+            items_per_page: none
+            exposed: {  }
+          weight: 1
+          additional:
+            layout_builder_styles_style:
+              separacion_superior_mt_2: separacion_superior_mt_2
+              separacion_superior_mt_5: 0
+        382f8811-c39d-4725-8091-79a03400dbba:
+          uuid: 382f8811-c39d-4725-8091-79a03400dbba
+          region: first
+          configuration:
+            id: 'views_block:colegios-block_4'
+            label: ''
+            label_display: visible
+            provider: views
+            context_mapping: {  }
+            views_label: ''
+            items_per_page: none
+            exposed: {  }
+          weight: 3
+          additional:
+            layout_builder_styles_style:
+              separacion_superior_mt_2: separacion_superior_mt_2
+              separacion_superior_mt_5: 0
+        1cefb608-b05d-4c99-bc36-7d4d5e8206c1:
+          uuid: 1cefb608-b05d-4c99-bc36-7d4d5e8206c1
+          region: first
+          configuration:
+            id: 'views_block:pagos_colegios-block_2'
+            label: ''
+            label_display: '0'
+            provider: views
+            context_mapping: {  }
+            views_label: ''
+            items_per_page: none
+            exposed: {  }
+          weight: 2
+          additional:
+            layout_builder_styles_style:
+              separacion_superior_mt_2: separacion_superior_mt_2
+              separacion_superior_mt_5: 0
+        a1a821ca-7132-43d8-af9a-6761d8ad9b9a:
+          uuid: a1a821ca-7132-43d8-af9a-6761d8ad9b9a
+          region: second
+          configuration:
+            id: 'views_block:padres_hijos_escuelas-block_3'
+            label: ''
+            label_display: '0'
+            provider: views
+            context_mapping: {  }
+            views_label: ''
+            items_per_page: none
+            exposed: {  }
+          weight: 0
+          additional:
+            layout_builder_styles_style:
+              separacion_superior_mt_2: separacion_superior_mt_2
+              separacion_superior_mt_5: 0
+        dd23864b-3cce-4920-b1e0-a5f3f361c5c3:
+          uuid: dd23864b-3cce-4920-b1e0-a5f3f361c5c3
+          region: second
+          configuration:
+            id: 'views_block:padres_hijos_escuelas-block_4'
+            label: ''
+            label_display: '0'
+            provider: views
+            context_mapping: {  }
+            views_label: ''
+            items_per_page: none
+            exposed: {  }
+          weight: 1
+          additional:
+            layout_builder_styles_style:
+              separacion_superior_mt_2: separacion_superior_mt_2
+              separacion_superior_mt_5: 0
+      third_party_settings: {  }
+page: directores
+selection_criteria: {  }
+selection_logic: and
+static_context: {  }

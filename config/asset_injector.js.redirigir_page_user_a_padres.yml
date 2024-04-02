@@ -19,6 +19,17 @@ code: |
               window.location.href = '/padres';
           }
       }
+      if ($('body').hasClass('rol-hijo')) {
+          // Obtener la ruta de la página
+          var ruta = window.location.pathname;
+
+          // Verificar si la ruta coincide con /user/XXX
+          if (ruta.match(/^\/user\/\d+$/)) {
+              // Redirigir a /padres
+              window.location.href = '/hijo';
+          }
+      }
+      
   });
 noscript: ''
 noscriptRegion: {  }

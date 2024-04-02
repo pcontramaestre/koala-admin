@@ -1,0 +1,23 @@
+uuid: 86131151-91b1-48ba-912a-47f919a47c0d
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_nro_de_clases_maxima_por_e
+    - node.type.orden_de_pago_colegios
+id: node.orden_de_pago_colegios.field_nro_de_clases_maxima_por_e
+field_name: field_nro_de_clases_maxima_por_e
+entity_type: node
+bundle: orden_de_pago_colegios
+label: 'Nro de clases máxima por estudiante'
+description: '<b>Indique aquí cuántas clases en total va a recibir cada estudiante registrado en el colegio.</b>'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: 1
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer
