@@ -61,6 +61,19 @@
       <span class="ml-2 d-none d-md-inline">{{ site_name }}</span>
     </a>
   {% endif %} 
+     {% if 'coordinador_colegio' in user.getroles(TRUE)  %}
+      {% if current_language == 'es' %}
+        <a href="/coordinador" title="{{ 'Home'|t }}" rel="home" class="navbar-brand">
+      {% else %}
+        <a href="/en/coordinador" title="{{ 'Home'|t }}" rel="home" class="navbar-brand">
+      {% endif %}
+      {% if site_logo %}
+        <img src="{{ site_logo }}" alt="{{ 'Home'|t }}" class="img-fluid d-inline-block align-top" />
+      {% endif %}
+      <span class="ml-2 d-none d-md-inline">{{ site_name }}</span>
+    </a>
+  {% endif %} 
+
 
 {% endif %}
 

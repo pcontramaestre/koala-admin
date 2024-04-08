@@ -7,6 +7,7 @@ use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\node\Entity\Node;
 use Drupal\Core\StringTranslation\TranslatableMarkup;
+use Drupal\Core\File\FileSystemInterface;
 
 /**
  * Proporciona un formulario para cargar estudiantes a colegios.
@@ -191,6 +192,11 @@ class CargarEstudiantesForm extends FormBase {
     $colegio_id = $form_state->getValue('colegio');
     $grupo_id = $form_state->getValue('grupos');
 
+    $grupo = Node::load($grupo_id);
+    //get entity reference field_coordinador_del_grupo
+    $coordinador_grupo = $grupo->get('field_coordinador_del_grupo')->target_id;
+    
+
     //load colegio and get field_zona_horaria_del_colegio
     $colegio = Node::load($colegio_id);
     $zona_horaria = $colegio->get('field_zona_horaria_del_colegio')->value;
@@ -245,7 +251,7 @@ class CargarEstudiantesForm extends FormBase {
                   $idPadre = $this->validateEmailPadre($correoPadre, $clavePadre, $nombrePadre, $apellidoPadre, $celularPadre, $colegio_id, $zona_horaria);
 
                   // crear usuario niño
-                  $idNino = $this->createUserNino($correoNino, $claveIngreso, $nombresNino, $apellidosNino, $sexo,$fechaNacimiento, $colegio_id, $grupo_id, $idPadre, $zona_horaria,$nombrePadre, $apellidoPadre);
+                  $idNino = $this->createUserNino($correoNino, $claveIngreso, $nombresNino, $apellidosNino, $sexo,$fechaNacimiento, $colegio_id, $grupo_id, $idPadre, $zona_horaria,$nombrePadre, $apellidoPadre,$coordinador_grupo);
 
                   if ($idNino) {
                     $this->messenger()->addMessage($this->t('El niño ha sido creado correctamente.' . $idNino));
@@ -310,14 +316,38 @@ class CargarEstudiantesForm extends FormBase {
     $user->set('preferred_langcode', 'en'); 
     // zona horaria
     $user->set('timezone', $zona_horaria);
-    
-
+  
     $user->activate();
     $user->save();
+
+    $uid = $user->id();
+
+    // Obtener la ruta absoluta del tema
+    $theme_path = \Drupal::service('theme_handler')->getTheme('koala')->getPath();
+    // Ruta del archivo dentro de la carpeta del tema
+    $filename = 'images/avatares/avatar1.png';
+    $filepath = $theme_path . '/' . $filename;
+
+    $directory = 'public://avatares';
+    /** @var \Drupal\Core\File\FileSystemInterface $file_system */
+    $file_system = \Drupal::service('file_system');
+    $file_system->prepareDirectory($directory, FileSystemInterface:: CREATE_DIRECTORY | FileSystemInterface::MODIFY_PERMISSIONS);
+    $file_system->copy($filepath, $directory . '/' . basename($filepath), FileSystemInterface::EXISTS_REPLACE);
+    $file = \Drupal\file\Entity\File::create([
+      'uid' => $uid,
+      'filename' => basename($filepath),
+      'uri' => $directory . '/' . basename($filepath),
+      'status' => 1,
+    ]);
+    $file->save();
+    
+    $user->set('user_picture', $file->id());
+    $user->save();
+
     return $user->id();
   }
 
-  private function createUserNino($correoNino, $claveIngreso, $nombresNino, $apellidosNino, $sexo, $fechaNacimiento, $colegio_id, $grupo_id, $idPadre, $zona_horaria, $nombrePadre, $apellidoPadre){
+  private function createUserNino($correoNino, $claveIngreso, $nombresNino, $apellidosNino, $sexo, $fechaNacimiento, $colegio_id, $grupo_id, $idPadre, $zona_horaria, $nombrePadre, $apellidoPadre,$coordinador_grupo){
     // si $sexo es M, $sexo - Niño, si $sexo es F, $sexo - Niña, default $sexo - NA
     if ($sexo == 'M') {
       $sexo = 'Niño';
@@ -339,6 +369,7 @@ class CargarEstudiantesForm extends FormBase {
     $user->set('field_grupo_al_que_pertenece_el_', $grupo_id);
     $user->set('field_nombre_del_hijo', $nombresNino);
     $user->set('field_apellidos', $apellidosNino);
+    $user->set('field_coordinador_relacionado', $coordinador_grupo);
     //field_nombre_del_acudiente
     $user->set('field_nombre_del_acudiente', $nombrePadre . ' ' . $apellidoPadre);
     $user->set('field_padre', $idPadre);
@@ -360,6 +391,28 @@ class CargarEstudiantesForm extends FormBase {
     $user->activate();
     $user->save();
     $newidhijo = $user->id();
+
+    // Obtener la ruta absoluta del tema
+    $theme_path = \Drupal::service('theme_handler')->getTheme('koala')->getPath();
+    // Ruta del archivo dentro de la carpeta del tema
+    $filename = 'images/avatares/avatar1.png';
+    $filepath = $theme_path . '/' . $filename;
+
+    $directory = 'public://avatares';
+    /** @var \Drupal\Core\File\FileSystemInterface $file_system */
+    $file_system = \Drupal::service('file_system');
+    $file_system->prepareDirectory($directory, FileSystemInterface:: CREATE_DIRECTORY | FileSystemInterface::MODIFY_PERMISSIONS);
+    $file_system->copy($filepath, $directory . '/' . basename($filepath), FileSystemInterface::EXISTS_REPLACE);
+    $file = \Drupal\file\Entity\File::create([
+      'uid' => $newidhijo,
+      'filename' => basename($filepath),
+      'uri' => $directory . '/' . basename($filepath),
+      'status' => 1,
+    ]);
+    $file->save();
+    
+    $user->set('user_picture', $file->id());
+    $user->save();
 
     //convertir $fechaNacimiento que esta en formato dd/mm/yy a dd-mm-yyyy
     $fechaNacimiento = str_replace('/', '-', $fechaNacimiento);
@@ -395,4 +448,3 @@ class CargarEstudiantesForm extends FormBase {
     return $user->id();
   }
 }
-

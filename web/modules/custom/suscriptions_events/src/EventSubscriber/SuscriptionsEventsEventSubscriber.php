@@ -140,8 +140,19 @@ class SuscriptionsEventsEventSubscriber implements EventSubscriberInterface {
           ->condition('field_padre', $usuarios_padres_ids)
           ->execute();
         $numero_hijos = count($query);
-        $numero_clases_estudiante = (int)$totalclases * (int)$numero_hijos;
+        $numero_clases_estudiante = (int)$field_nro_de_clases_maxima_por_e * (int)$numero_hijos;
         $this->crearSuscripcionColegios($usuarios_padres_ids, $numerosemanas, $numero_clases_estudiante, $field_colegio_al_que_pertenece);
+
+        $tipo_suscripcion = '';
+        if ($numerosemanas == '4') {
+          $tipo_suscripcion = '3';
+        } elseif ($numerosemanas == '12') {
+          $tipo_suscripcion = '4';
+        } elseif ($numerosemanas == '24') {
+          $tipo_suscripcion = '5';
+        }
+
+        $this->crearSuscripcionNinosEscuelasM($usuarios_padres_ids, $numerosemanas, $field_nro_de_clases_maxima_por_e,$tipo_suscripcion);
       }
 
     }
@@ -183,10 +194,10 @@ class SuscriptionsEventsEventSubscriber implements EventSubscriberInterface {
   /* 
     Funcion para Crear un nodo de tipo suscripciones. 
   */
-  public function crearSuscripcionColegios($user_id, $numerosemanas, $totalclases,$colegio_al_que_pertenece) {
+  public function crearSuscripcionColegios($user_id, $numerosemanas, $numero_clases_estudiante,$colegio_al_que_pertenece) {
     $fecha_actual = date("Y-m-d");
     // Total de clases transformar a entero.
-    $totalclases = (int)$totalclases;
+    $totalclases = (int)$numero_clases_estudiante;
 
     // Obtener fecha de finalizacion de la suscripcion.
     $fecha_finalizacion = date("Y-m-d", strtotime($fecha_actual . "+ $numerosemanas week"));
@@ -214,5 +225,49 @@ class SuscriptionsEventsEventSubscriber implements EventSubscriberInterface {
     $user->field_suscripcion_activa->value = true;
     $user->save();
   }
+
+  /* 
+    Funcion para Crear un nodo de tipo suscripciones_ninos_escuelas. 
+    $user_id: id del usuario padre de escuela.
+    $numerosemanas: numero de semanas de la suscripcion.
+    $totalclases: total de clases a asignar al niño.
+*/
+public function crearSuscripcionNinosEscuelasM($user_id, $numerosemanas, $totalclases, $field_tipo_de_suscripcion) {
+  $fecha_actual = date("Y-m-d");
+  // Total de clases transformar a entero.
+  $totalclases = (int)$totalclases;
+
+  // Obtener fecha de finalizacion de la suscripcion.
+  $fecha_finalizacion = date("Y-m-d", strtotime($fecha_actual . "+ $numerosemanas week"));
+
+  // buscar los usuarios con el rol hijo_escuela que tengan el campo field_padre = $user_id
+  $query = \Drupal::entityQuery('user')
+    ->condition('roles', 'hijo_escuela')
+    ->condition('field_padre', $user_id)
+    ->execute();
+  $usuarios_hijos = User::loadMultiple($query);
+
+  if ($usuarios_hijos) {
+    foreach ($usuarios_hijos as $usuario) {
+      $usuario_id = $usuario->id();
+      // Crear nodo de tipo suscripciones_ninos_escuelas.
+      $node = \Drupal::entityTypeManager()->getStorage('node')->create([
+        'type' => 'suscripciones_ninos_escuelas',
+        'title' => 'Suscripción de niño de escuela ' . $usuario_id,
+        'field_clases_asignadas_en_la_sus' => $totalclases,
+        'field_clases_restantes_de_la_sus' => $totalclases,
+        'field_clases_consumidas_de_la_su' => 0,
+        'field_inasistencias_del_nino' => 0,
+        'field_fecha_de_finalizacion_de_l' => $fecha_finalizacion,
+        'field_fecha_de_inicio_de_la_susc' => $fecha_actual,
+        'field_tipo_de_suscripcion' => $field_tipo_de_suscripcion,
+        'field_suscripcion_finalizada	' => false,
+        'field_alumno_relacionado' => $usuario_id,
+        'uid' => $user_id,
+      ]);
+      $node->save();
+    }
+  }
+}
 
 }

@@ -94,10 +94,67 @@ use Symfony\Component\HttpFoundation\RedirectResponse;
     ->execute();
     $nodos = \Drupal\node\Entity\Node::loadMultiple($nids);
     // recorrer los nodos
-    foreach($nodos as $nodo) {
-      $nodo->set('field_suscripcion_finalizada_', TRUE);
-      $nodo->set('field_clases_restantes',0);
-      $nodo->save();
+    if (!empty($nodos)) {
+      foreach($nodos as $nodo) {
+        $nodo->set('field_suscripcion_finalizada_', TRUE);
+        $nodo->set('field_clases_restantes',0);
+        $nodo->save();
+      }
+    }
+
+    //Comprobar si el usuario tiene el rol de padre_escuela para validar la suscripcion de los hijos
+    if (in_array('padre_escuela', $roles)) {
+      //Buscar los usuarios con el rol hijo_escuela que tengan el campo field_padre = $id_user
+      $uids = \Drupal::entityQuery('user')
+        ->condition('roles', 'hijo_escuela')
+        ->condition('field_padre', $id_user)
+        ->execute();
+      $usuarios = \Drupal\user\Entity\User::loadMultiple($uids);
+      
+      if (!empty($usuarios)) {
+        foreach ($usuarios as $usuario) {
+          $id_hijo = $usuario->id();
+          $nids = \Drupal::entityQuery('node')
+            ->condition('type', 'suscripciones_ninos_escuelas')
+            ->condition('field_alumno_relacionado', $id_hijo)
+            ->condition('field_suscripcion_finalizada', 0)
+            ->execute();
+          $nodos = \Drupal\node\Entity\Node::loadMultiple($nids);
+          if (!empty($nodos)) {
+            foreach ($nodos as $nodo) {
+              //obtener el campo field_fecha_de_finalizacion_de_l y comparar con la fecha actual
+              $field_fecha_de_finalizacion_de_l = $nodo->get('field_fecha_de_finalizacion_de_l')->value;
+              $field_fecha_de_finalizacion_de_l = strtotime($field_fecha_de_finalizacion_de_l);
+              if ($field_fecha_de_finalizacion_de_l < $current_date) {
+                $nodo->set('field_suscripcion_finalizada', TRUE);
+                $nodo->save();
+              }
+            }
+          }         
+        }
+      }
+    }
+  }
+
+  // VALIDAR SUSCRIPCIONES DE LOS NIÑOS
+  if (in_array('hijo_escuela', $roles)) {
+    $id_user = $account->id();
+    $nids = \Drupal::entityQuery('node')
+      ->condition('type', 'suscripciones_ninos_escuelas')
+      ->condition('field_alumno_relacionado', $id_user)
+      ->condition('field_suscripcion_finalizada', 0)
+      ->execute();
+    $nodos = \Drupal\node\Entity\Node::loadMultiple($nids);
+    if (!empty($nodos)) {
+      foreach ($nodos as $nodo) {
+        //obtener el campo field_fecha_de_finalizacion_de_l y comparar con la fecha actual
+        $field_fecha_de_finalizacion_de_l = $nodo->get('field_fecha_de_finalizacion_de_l')->value;
+        $field_fecha_de_finalizacion_de_l = strtotime($field_fecha_de_finalizacion_de_l);
+        if ($field_fecha_de_finalizacion_de_l < $current_date) {
+          $nodo->set('field_suscripcion_finalizada', TRUE);
+          $nodo->save();
+        }
+      }
     }
   }
 

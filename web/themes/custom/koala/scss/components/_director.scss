@@ -1,4 +1,4 @@
-.path-director {
+.path-director,.path-coordinador {
   background-image: url(/themes/custom/koala/images/Group463.png);
 
   .view-id-colegios.view-display-id-block_3,
@@ -26,6 +26,13 @@
   #block-koala-content .content {
     .layout--twocol-section.layout--twocol-section--33-67 {
       width: 100%;
+
+      .layout__region.layout__region--first {
+        flex: 0 1 25% !important;
+      }
+      .layout__region.layout__region--second {
+        flex: 0 1 75% !important;
+      }
     }
   }
   
@@ -35,6 +42,14 @@
     border-radius: 24px;
     padding: 1.5rem 1.5rem 1rem 1.5rem;
     max-width: 95%;
+
+    &.orden-pago {
+      background: #f5f8d8;
+      color: #000;
+      > h2,h3 {
+        color: black;
+      }
+    }
     > h3,h2 {
       color: #727f7f;
       font-weight: 700;
@@ -63,14 +78,90 @@
     }
   }
 
-  .block-views-blockpadres-hijos-escuelas-block-3,.block-views-blockpadres-hijos-escuelas-block-4 {
+  .block-views-blockpadres-hijos-escuelas-block-3,.block-views-blockpadres-hijos-escuelas-block-4,.block-views-blocksuscripciones-hijos-escuelas-block-1 {
     border: 2px solid #e6f1f1;
     border-radius: 24px;
     padding: 1.5rem 1.5rem 1rem 1.5rem;
     max-width: 100%;
   }
 
-  .view-id-padres_hijos_escuelas {
+  .view-suscripciones-hijos-escuelas {
+    .table-responsive,.view-content.row {
+      margin: 0 auto;
+      margin-top: 1rem;
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
+      padding: 0rem;
+      border-right: 1px solid var(--Grey-K200, #becaca);
+      border-left: 1px solid var(--Grey-K200, #becaca);
+      border-top: 1px solid var(--Grey-K200, #becaca);
+      table {
+        margin-bottom: 0rem;
+        thead {
+          background-color: #e6f1f1;
+          tr {
+            th {
+              font-weight: 500;
+              color: #727f7f;
+              padding: 1rem;
+              border-right: 1px solid #becaca;
+              &:last-child {
+                border-right: none;
+              }
+              a {
+                text-decoration: none;
+                font-weight: 500;
+                color: #727f7f;
+              }
+            }
+          }
+        }
+        tbody {
+          tr {
+            td {
+              border-right: 1px solid #becaca;
+              padding: 1rem;
+              &:last-child {
+                border-right: none;
+              }
+            }
+            --bs-table-striped-bg: white;
+            .views-field-order-number {
+              a {
+                font-weight: 700;
+                color: #000;
+              }
+            }
+            .views-field-placed {
+              font-weight: 500;
+              color: #000;
+            }
+            .views-field-state {
+              --bs-table-accent-bg: #9ff8f4;
+              color: #297e88;
+              font-weight: 700;
+            }
+            .views-field-total-price__number {
+              font-weight: 500;
+              color: #000;
+            }
+            .views-field-entity-print-commerce-order {
+              a {
+                font-weight: 700;
+                color: #000;
+                &:hover {
+                  opacity: 0.7;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+
+  .view-id-padres_hijos_escuelas,.view-suscripciones-hijos-escuelas {
     .view-header {
       > hr {
         display: none;

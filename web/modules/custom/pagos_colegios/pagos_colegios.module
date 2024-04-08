@@ -20,6 +20,8 @@ function pagos_colegios_form_alter(&$form,FormStateInterface $form_state, $form_
     $form['field_formulario_de_pago_relacio']['#access'] = FALSE;
     $form['field_pago_procesado']['#access'] = FALSE;
     $form['field_nro_de_orden']['#access'] = FALSE;
+    $form['field_fecha_de_finalizacion_de_l']['#access'] = FALSE;
+    $form['field_fecha_de_inicio_de_la_susc']['#access'] = FALSE;
 
     // show field_variaciones if field_tipo_de_pago = '02
     $form['field_variaciones']['#states'] = [
@@ -33,6 +35,9 @@ function pagos_colegios_form_alter(&$form,FormStateInterface $form_state, $form_
 
   //EDITAR UN REGISTRO DE ORDEN DE PAGO
   if ($form_id == 'node_orden_de_pago_colegios_edit_form') {
+    $form['field_fecha_de_finalizacion_de_l']['#access'] = FALSE;
+    $form['field_fecha_de_inicio_de_la_susc']['#access'] = FALSE;
+
     $form['field_colegio_al_que_pertenece_c']['#disabled'] = TRUE;
     $form['field_colegio_al_que_pertenece_c']['#attributes']['readonly'] = 'readonly';
 
@@ -94,6 +99,7 @@ function callback_submit_pagos_colegios_orden_de_pago_colegios_submit($form, For
     $node_actual = $form_object->getEntity();
     $node_id_actual = $node_actual->id();  
     
+
     //$node_actual = $form_state->getFormObject()->getEntity();
     //$node_id_actual = $node_actual->id();  
 
@@ -276,6 +282,7 @@ function callback_edit_submit_pagos_colegios_orden_de_pago_colegios_submit($form
       }
 
 
+
       //field_nro_de_clases_maxima_por_e CLASES POR ESTUDIANTE A ASIGNAR
       $field_nro_de_clases_maxima_por_e = $form_state->getValue('field_nro_de_clases_maxima_por_e');
       $numero_clases = $field_nro_de_clases_maxima_por_e[0]['value'];
@@ -304,14 +311,19 @@ function callback_edit_submit_pagos_colegios_orden_de_pago_colegios_submit($form
 
         $numero_clases_estudiante = (int)$numero_clases * (int)$numero_hijos;
 
-        // dump('El usuario padre con id: ' . $usuarios_padres_ids . ' tiene ' . $numero_hijos . ' hijos en el colegio ' . $field_colegio_al_que_pertenece_c. ' y ha comprado ' . $numero_clases_estudiante . ' clases');
-        // hacer dump $usuarios_padres_ids, $numerosemanas, $numero_clases, $field_colegio_al_que_pertenece_c
-        // dump($usuarios_padres_ids, $numerosemanas, $numero_clases_estudiante, $field_colegio_al_que_pertenece_c); 
         crearSuscripcionColegio($usuarios_padres_ids, $numerosemanas, $numero_clases_estudiante, $field_colegio_al_que_pertenece_c);
+
+        crearSuscripcionNinosEscuelas($usuarios_padres_ids, $numerosemanas, $numero_clases, $field_tipo_de_suscripcion);
+
+        //Guardar en el nodo de tipo orden_de_pago_colegios la fecha de inicio y finalizacion de la suscripcion
+        $fecha_actual = date("Y-m-d");
+        $fecha_finalizacion = date("Y-m-d", strtotime($fecha_actual . "+ $numerosemanas week"));
+        $node = Node::load($node_id_actual);
+        $node->set('field_fecha_de_inicio_de_la_susc', $fecha_actual);
+        $node->set('field_fecha_de_finalizacion_de_l', $fecha_finalizacion);
+        $node->save(); 
       }
-
     }
-
     //redirect /dashboard/colegios
     $response = new RedirectResponse('/dashboard/colegios');
     $response->send();
@@ -341,7 +353,6 @@ function callback_submit_pagos_orden_de_pago_colegios_submit($form, FormStateInt
       $nodo->set('field_pago_procesado', 1);
       $nodo->save();
     }
-    
   } 
 }
 
@@ -379,3 +390,49 @@ function crearSuscripcionColegio($user_id, $numerosemanas, $totalclases,$colegio
   $user->field_suscripcion_activa->value = true;
   $user->save();
 }
+
+/* 
+    Funcion para Crear un nodo de tipo suscripciones_ninos_escuelas. 
+    $user_id: id del usuario padre de escuela.
+    $numerosemanas: numero de semanas de la suscripcion.
+    $totalclases: total de clases a asignar al niño.
+*/
+function crearSuscripcionNinosEscuelas($user_id, $numerosemanas, $totalclases, $field_tipo_de_suscripcion) {
+  $fecha_actual = date("Y-m-d");
+  // Total de clases transformar a entero.
+  $totalclases = (int)$totalclases;
+
+  // Obtener fecha de finalizacion de la suscripcion.
+  $fecha_finalizacion = date("Y-m-d", strtotime($fecha_actual . "+ $numerosemanas week"));
+
+  // buscar los usuarios con el rol hijo_escuela que tengan el campo field_padre = $user_id
+  $query = \Drupal::entityQuery('user')
+    ->condition('roles', 'hijo_escuela')
+    ->condition('field_padre', $user_id)
+    ->execute();
+  $usuarios_hijos = User::loadMultiple($query);
+
+  if ($usuarios_hijos) {
+    foreach ($usuarios_hijos as $usuario) {
+      $usuario_id = $usuario->id();
+      // Crear nodo de tipo suscripciones_ninos_escuelas.
+      $node = \Drupal::entityTypeManager()->getStorage('node')->create([
+        'type' => 'suscripciones_ninos_escuelas',
+        'title' => 'Suscripción de niño de escuela ' . $usuario_id,
+        'field_clases_asignadas_en_la_sus' => $totalclases,
+        'field_clases_restantes_de_la_sus' => $totalclases,
+        'field_clases_consumidas_de_la_su' => 0,
+        'field_inasistencias_del_nino' => 0,
+        'field_fecha_de_finalizacion_de_l' => $fecha_finalizacion,
+        'field_fecha_de_inicio_de_la_susc' => $fecha_actual,
+        'field_tipo_de_suscripcion' => $field_tipo_de_suscripcion,
+        'field_suscripcion_finalizada	' => false,
+        'field_alumno_relacionado' => $usuario_id,
+        'uid' => $user_id,
+      ]);
+      $node->save();
+    }
+  }
+}
+
+// OJO, AGREGAR PERMISOS A suscripciones_ninos_escuelas PARA QUE SEA LEIDO POR DIRECTORES DE ESCUELA, HIJOS DE ESCUELA Y PADRES DE ESCUELA

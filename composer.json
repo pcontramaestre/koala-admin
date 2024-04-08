@@ -151,6 +151,7 @@
         "drupal/view_mode_select_by_token": "^1.0@beta",
         "drupal/view_password": "^6.0",
         "drupal/viewfield": "^3.0@beta",
+        "drupal/views_aggregator": "^2.0",
         "drupal/views_bootstrap": "^5.5@alpha",
         "drupal/views_conditional": "^1.5",
         "drupal/views_cumulative_field": "^2.0",
