@@ -1,0 +1,21 @@
+uuid: fe93c9d4-b492-4407-b60c-2b3a8f8ecc71
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_fecha_de_inicio_de_la_susc
+    - node.type.orden_de_pago_colegios
+  module:
+    - datetime
+id: node.orden_de_pago_colegios.field_fecha_de_inicio_de_la_susc
+field_name: field_fecha_de_inicio_de_la_susc
+entity_type: node
+bundle: orden_de_pago_colegios
+label: 'Fecha de inicio de la suscripción'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

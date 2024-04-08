@@ -1,0 +1,21 @@
+uuid: 5bd50fa6-f4c7-4db3-9920-25839b9dde2c
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_fecha_de_finalizacion_de_l
+    - node.type.orden_de_pago_colegios
+  module:
+    - datetime
+id: node.orden_de_pago_colegios.field_fecha_de_finalizacion_de_l
+field_name: field_fecha_de_finalizacion_de_l
+entity_type: node
+bundle: orden_de_pago_colegios
+label: 'Fecha de finalización de la suscripción'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

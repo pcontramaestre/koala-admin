@@ -1,0 +1,99 @@
+uuid: 1133b14b-ab13-4d7f-907c-8336475ae0a7
+langcode: es
+status: true
+dependencies:
+  config:
+    - page_manager.page.coordinador
+    - views.view.colegios
+    - views.view.suscripciones_hijos_escuelas
+  module:
+    - layout_builder
+    - layout_discovery
+    - views
+id: coordinador-layout_builder-0
+label: 'Layout Builder'
+weight: 0
+variant: layout_builder
+variant_settings:
+  id: layout_builder
+  label: null
+  weight: 0
+  uuid: 58b3a709-fe4f-4164-9a9e-737ac1e41ed7
+  sections:
+    -
+      layout_id: layout_twocol_section
+      layout_settings:
+        label: ''
+        context_mapping: {  }
+        column_widths: 50-50
+      components:
+        edd515bd-91d7-4e97-a590-3361789d241e:
+          uuid: edd515bd-91d7-4e97-a590-3361789d241e
+          region: first
+          configuration:
+            id: 'views_block:colegios-block_3'
+            label: ''
+            label_display: '0'
+            provider: views
+            context_mapping: {  }
+            views_label: ''
+            items_per_page: none
+            exposed: {  }
+          weight: 0
+          additional:
+            layout_builder_styles_style:
+              separacion_superior_mt_2: separacion_superior_mt_2
+              separacion_superior_mt_5: 0
+        801dfbfc-39d3-4d50-b186-2b718f732978:
+          uuid: 801dfbfc-39d3-4d50-b186-2b718f732978
+          region: second
+          configuration:
+            id: 'views_block:colegios-block_2'
+            label: ''
+            label_display: '0'
+            provider: views
+            context_mapping: {  }
+            views_label: ''
+            items_per_page: none
+            exposed: {  }
+          weight: 0
+          additional:
+            layout_builder_styles_style:
+              separacion_superior_mt_2: separacion_superior_mt_2
+              separacion_superior_mt_5: 0
+      third_party_settings: {  }
+    -
+      layout_id: layout_onecol
+      layout_settings:
+        label: ''
+        context_mapping: {  }
+      components: {  }
+      third_party_settings: {  }
+    -
+      layout_id: layout_onecol
+      layout_settings:
+        label: ''
+        context_mapping: {  }
+      components:
+        a13c1f29-8b21-430d-a02a-a31f0108aca2:
+          uuid: a13c1f29-8b21-430d-a02a-a31f0108aca2
+          region: content
+          configuration:
+            id: 'views_block:suscripciones_hijos_escuelas-block_2'
+            label: ''
+            label_display: '0'
+            provider: views
+            context_mapping: {  }
+            views_label: ''
+            items_per_page: none
+            exposed: {  }
+          weight: 1
+          additional:
+            layout_builder_styles_style:
+              separacion_superior_mt_2: separacion_superior_mt_2
+              separacion_superior_mt_5: 0
+      third_party_settings: {  }
+page: coordinador
+selection_criteria: {  }
+selection_logic: and
+static_context: {  }

@@ -7,6 +7,8 @@ dependencies:
     - field.field.node.orden_de_pago_colegios.body
     - field.field.node.orden_de_pago_colegios.field_colegio_al_que_pertenece_c
     - field.field.node.orden_de_pago_colegios.field_enlace_de_pago
+    - field.field.node.orden_de_pago_colegios.field_fecha_de_finalizacion_de_l
+    - field.field.node.orden_de_pago_colegios.field_fecha_de_inicio_de_la_susc
     - field.field.node.orden_de_pago_colegios.field_formulario_de_pago_relacio
     - field.field.node.orden_de_pago_colegios.field_monto_a_cancelar
     - field.field.node.orden_de_pago_colegios.field_nro_de_clases_a_comprar
@@ -45,6 +47,8 @@ hidden:
   entity_print_view_word_docx: true
   field_colegio_al_que_pertenece_c: true
   field_enlace_de_pago: true
+  field_fecha_de_finalizacion_de_l: true
+  field_fecha_de_inicio_de_la_susc: true
   field_formulario_de_pago_relacio: true
   field_monto_a_cancelar: true
   field_nro_de_clases_a_comprar: true

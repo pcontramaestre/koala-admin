@@ -9,6 +9,7 @@ dependencies:
     - field.field.user.user.field_avatar
     - field.field.user.user.field_celular
     - field.field.user.user.field_colegio_al_que_pertenece_e
+    - field.field.user.user.field_coordinador_relacionado
     - field.field.user.user.field_direcc
     - field.field.user.user.field_direccion
     - field.field.user.user.field_estrellas_acumuladas
@@ -96,6 +97,14 @@ content:
       link: true
     third_party_settings: {  }
     weight: 24
+    region: content
+  field_coordinador_relacionado:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 28
     region: content
   field_direcc:
     type: address_default

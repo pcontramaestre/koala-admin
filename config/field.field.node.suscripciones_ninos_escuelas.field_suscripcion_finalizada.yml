@@ -1,0 +1,23 @@
+uuid: 4b1c1306-3950-4688-9474-867e743ef1b5
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_suscripcion_finalizada
+    - node.type.suscripciones_ninos_escuelas
+id: node.suscripciones_ninos_escuelas.field_suscripcion_finalizada
+field_name: field_suscripcion_finalizada
+entity_type: node
+bundle: suscripciones_ninos_escuelas
+label: 'Suscripción finalizada'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: Si
+  off_label: 'No'
+field_type: boolean

@@ -172,5 +172,6 @@ permissions:
   - 'view own proximas_clases_estudiantes_ content'
   - 'view own superpoderes content'
   - 'view own suscripciones content'
+  - 'view own suscripciones_ninos_escuelas content'
   - 'view proximas_clases_estudiantes_ revisions'
   - 'view user email addresses'

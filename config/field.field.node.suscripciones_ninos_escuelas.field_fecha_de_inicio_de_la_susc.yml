@@ -1,0 +1,21 @@
+uuid: 40afcc8f-5934-4b52-99cb-17b42d6eba30
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_fecha_de_inicio_de_la_susc
+    - node.type.suscripciones_ninos_escuelas
+  module:
+    - datetime
+id: node.suscripciones_ninos_escuelas.field_fecha_de_inicio_de_la_susc
+field_name: field_fecha_de_inicio_de_la_susc
+entity_type: node
+bundle: suscripciones_ninos_escuelas
+label: 'Fecha de inicio de la suscripción'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

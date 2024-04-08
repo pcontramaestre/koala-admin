@@ -1,0 +1,54 @@
+uuid: 7cf1cf09-9a6c-49d0-85cb-f6225c8de724
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_coordinador_relacionado
+  module:
+    - multiple_registration
+    - user
+third_party_settings:
+  multiple_registration:
+    user_additional_register_form_required:
+      authenticated: 0
+      profesor: 0
+      padre: 0
+      hijo: 0
+    user_additional_register_form:
+      authenticated: 0
+      profesor: 0
+      padre: 0
+      hijo: 0
+id: user.user.field_coordinador_relacionado
+field_name: field_coordinador_relacionado
+entity_type: user
+bundle: user
+label: 'Coordinador relacionado'
+description: '<b>Coordinador relacionado, se usa cuando el niño pertenece a un colegio</b>'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:user'
+  handler_settings:
+    target_bundles: null
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    filter:
+      type: role
+      role:
+        coordinador_colegio: coordinador_colegio
+        content_editor: '0'
+        administrator: '0'
+        profesor: '0'
+        padre: '0'
+        padre_escuela: '0'
+        hijo: '0'
+        hijo_escuela: '0'
+        director_colegio: '0'
+        suscriptor: '0'
+    include_anonymous: false
+field_type: entity_reference

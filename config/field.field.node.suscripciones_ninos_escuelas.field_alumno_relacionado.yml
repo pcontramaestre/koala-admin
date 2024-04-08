@@ -1,0 +1,40 @@
+uuid: 443e1080-8724-461b-9ba6-f239393e1797
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_alumno_relacionado
+    - node.type.suscripciones_ninos_escuelas
+id: node.suscripciones_ninos_escuelas.field_alumno_relacionado
+field_name: field_alumno_relacionado
+entity_type: node
+bundle: suscripciones_ninos_escuelas
+label: 'Alumno relacionado'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:user'
+  handler_settings:
+    target_bundles: null
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    filter:
+      type: role
+      role:
+        hijo_escuela: hijo_escuela
+        content_editor: '0'
+        administrator: '0'
+        profesor: '0'
+        padre: '0'
+        padre_escuela: '0'
+        hijo: '0'
+        director_colegio: '0'
+        coordinador_colegio: '0'
+        suscriptor: '0'
+    include_anonymous: true
+field_type: entity_reference

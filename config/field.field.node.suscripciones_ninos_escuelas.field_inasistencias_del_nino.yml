@@ -1,0 +1,25 @@
+uuid: 780fe767-df4b-4c5d-98d3-a843a6a6bab4
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_inasistencias_del_nino
+    - node.type.suscripciones_ninos_escuelas
+id: node.suscripciones_ninos_escuelas.field_inasistencias_del_nino
+field_name: field_inasistencias_del_nino
+entity_type: node
+bundle: suscripciones_ninos_escuelas
+label: 'Inasistencias del niño'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  min: 0
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

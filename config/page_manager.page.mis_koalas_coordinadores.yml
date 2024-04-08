@@ -1,0 +1,22 @@
+uuid: 693c9c54-6f40-4976-9c17-1e6e25a7e335
+langcode: es
+status: true
+dependencies:
+  module:
+    - user
+id: mis_koalas_coordinadores
+label: 'Mis Koalas - Coordinadores'
+description: '<b>Página para mostrar el koala seleccionado por el coordinador</b>'
+use_admin_theme: false
+path: /coordinador/koala
+access_logic: and
+access_conditions:
+  -
+    id: user_role
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+    roles:
+      director_colegio: director_colegio
+      coordinador_colegio: coordinador_colegio
+parameters: {  }

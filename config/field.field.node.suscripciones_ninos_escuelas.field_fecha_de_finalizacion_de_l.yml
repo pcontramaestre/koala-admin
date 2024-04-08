@@ -1,0 +1,21 @@
+uuid: ab597d55-88f2-43f9-80dc-6ba16fb7ce37
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_fecha_de_finalizacion_de_l
+    - node.type.suscripciones_ninos_escuelas
+  module:
+    - datetime
+id: node.suscripciones_ninos_escuelas.field_fecha_de_finalizacion_de_l
+field_name: field_fecha_de_finalizacion_de_l
+entity_type: node
+bundle: suscripciones_ninos_escuelas
+label: 'Fecha de finalización de la suscripción'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

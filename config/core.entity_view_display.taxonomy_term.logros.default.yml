@@ -3,6 +3,7 @@ langcode: es
 status: true
 dependencies:
   config:
+    - field.field.taxonomy_term.logros.field_nivel_principal
     - field.field.taxonomy_term.logros.field_nro_de_veces_que_aparece
     - taxonomy.vocabulary.logros
   module:
@@ -18,6 +19,14 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 0
+    region: content
+  field_nivel_principal:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 2
     region: content
   field_nro_de_veces_que_aparece:
     type: number_integer

@@ -12,7 +12,7 @@ dependencies:
 id: hijos
 theme: koala
 region: primary_menu
-weight: -13
+weight: -14
 provider: null
 plugin: 'system_menu_block:hijos'
 settings:

@@ -1,0 +1,29 @@
+uuid: 8094cbe4-4c37-4321-bbab-bc6c261c40a8
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_nivel_principal
+    - taxonomy.vocabulary.logros
+    - taxonomy.vocabulary.nombres_de_niveles_principales
+id: taxonomy_term.logros.field_nivel_principal
+field_name: field_nivel_principal
+entity_type: taxonomy_term
+bundle: logros
+label: 'Nivel Principal'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      nombres_de_niveles_principales: nombres_de_niveles_principales
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

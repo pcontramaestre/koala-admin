@@ -1,0 +1,8 @@
+uuid: 3bd56cc5-79c2-4856-a86e-fa819667b88a
+langcode: en
+status: true
+dependencies: {  }
+id: menu-coordinador
+label: 'Menú coordinador'
+description: ''
+locked: false

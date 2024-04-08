@@ -19,4 +19,5 @@ access_conditions:
     roles:
       administrator: administrator
       padre: padre
+      coordinador_colegio: coordinador_colegio
 parameters: {  }

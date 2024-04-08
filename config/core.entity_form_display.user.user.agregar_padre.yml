@@ -10,6 +10,7 @@ dependencies:
     - field.field.user.user.field_avatar
     - field.field.user.user.field_celular
     - field.field.user.user.field_colegio_al_que_pertenece_e
+    - field.field.user.user.field_coordinador_relacionado
     - field.field.user.user.field_direcc
     - field.field.user.user.field_direccion
     - field.field.user.user.field_estrellas_acumuladas
@@ -148,6 +149,7 @@ hidden:
   field_avatar: true
   field_celular: true
   field_colegio_al_que_pertenece_e: true
+  field_coordinador_relacionado: true
   field_direccion: true
   field_estrellas_acumuladas: true
   field_first_login: true

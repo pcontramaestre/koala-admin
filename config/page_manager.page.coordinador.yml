@@ -1,0 +1,23 @@
+uuid: ef5dc406-2d77-408a-8cd5-1ec252156060
+langcode: es
+status: true
+dependencies:
+  module:
+    - user
+id: coordinador
+label: Coordinador
+description: ''
+use_admin_theme: false
+path: /coordinador
+access_logic: and
+access_conditions:
+  -
+    id: user_role
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+    roles:
+      content_editor: content_editor
+      administrator: administrator
+      coordinador_colegio: coordinador_colegio
+parameters: {  }

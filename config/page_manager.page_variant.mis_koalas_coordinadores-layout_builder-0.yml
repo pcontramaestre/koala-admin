@@ -1,0 +1,93 @@
+uuid: 1a366885-f1b3-4da6-8d86-e6072237b8d4
+langcode: es
+status: true
+dependencies:
+  config:
+    - page_manager.page.mis_koalas_coordinadores
+    - views.view.logros_taxonomia
+    - views.view.resumen_de_clases
+    - views.view.suscripciones_hijos_escuelas
+  module:
+    - layout_builder
+    - layout_discovery
+    - views
+id: mis_koalas_coordinadores-layout_builder-0
+label: 'Layout Builder'
+weight: 0
+variant: layout_builder
+variant_settings:
+  id: layout_builder
+  label: null
+  weight: 0
+  uuid: 75db81a4-1277-4754-98ff-8cf08cba4ef3
+  sections:
+    -
+      layout_id: layout_onecol
+      layout_settings:
+        label: ''
+        context_mapping: {  }
+      components:
+        6219dbda-e933-4630-b0a2-142589e68e8a:
+          uuid: 6219dbda-e933-4630-b0a2-142589e68e8a
+          region: content
+          configuration:
+            id: 'views_block:suscripciones_hijos_escuelas-block_3'
+            label: ''
+            label_display: '0'
+            provider: views
+            context_mapping: {  }
+            views_label: ''
+            items_per_page: none
+            exposed: {  }
+          weight: 0
+          additional:
+            layout_builder_styles_style:
+              separacion_superior_mt_2: separacion_superior_mt_2
+              separacion_superior_mt_5: 0
+      third_party_settings: {  }
+    -
+      layout_id: layout_twocol_section
+      layout_settings:
+        label: ''
+        context_mapping: {  }
+        column_widths: 33-67
+      components:
+        b45eff62-eea0-4afe-b963-ac0ac3ead3d6:
+          uuid: b45eff62-eea0-4afe-b963-ac0ac3ead3d6
+          region: first
+          configuration:
+            id: 'views_block:resumen_de_clases-block_3'
+            label: ''
+            label_display: '0'
+            provider: views
+            context_mapping: {  }
+            views_label: ''
+            items_per_page: none
+            exposed: {  }
+          weight: 0
+          additional:
+            layout_builder_styles_style:
+              separacion_superior_mt_2: 0
+              separacion_superior_mt_5: 0
+        dd34ab7e-9ed0-4f30-81c2-c8bee7c057cf:
+          uuid: dd34ab7e-9ed0-4f30-81c2-c8bee7c057cf
+          region: second
+          configuration:
+            id: 'views_block:logros_taxonomia-block_1'
+            label: ''
+            label_display: '0'
+            provider: views
+            context_mapping: {  }
+            views_label: ''
+            items_per_page: none
+            exposed: {  }
+          weight: 0
+          additional:
+            layout_builder_styles_style:
+              separacion_superior_mt_2: 0
+              separacion_superior_mt_5: 0
+      third_party_settings: {  }
+page: mis_koalas_coordinadores
+selection_criteria: {  }
+selection_logic: and
+static_context: {  }

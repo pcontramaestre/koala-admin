@@ -1,0 +1,23 @@
+uuid: 1e86431d-5d0b-4840-a311-eaecdfa009ce
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_clases_consumidas_de_la_su
+    - node.type.suscripciones_ninos_escuelas
+id: node.suscripciones_ninos_escuelas.field_clases_consumidas_de_la_su
+field_name: field_clases_consumidas_de_la_su
+entity_type: node
+bundle: suscripciones_ninos_escuelas
+label: 'Clases consumidas de la suscripción'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: 0
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

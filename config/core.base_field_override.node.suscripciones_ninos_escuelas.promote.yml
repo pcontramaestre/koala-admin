@@ -1,0 +1,22 @@
+uuid: 8ead9b47-f951-44fc-9de7-01a2e2f7015b
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.suscripciones_ninos_escuelas
+id: node.suscripciones_ninos_escuelas.promote
+field_name: promote
+entity_type: node
+bundle: suscripciones_ninos_escuelas
+label: 'Promocionado a la página principal'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: Activado
+  off_label: Desactivado
+field_type: boolean

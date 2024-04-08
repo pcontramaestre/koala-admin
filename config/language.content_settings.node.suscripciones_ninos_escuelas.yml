@@ -1,0 +1,11 @@
+uuid: 06f6151c-4ecb-454f-869a-8f319812cc12
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.suscripciones_ninos_escuelas
+id: node.suscripciones_ninos_escuelas
+target_entity_type_id: node
+target_bundle: suscripciones_ninos_escuelas
+default_langcode: site_default
+language_alterable: false

@@ -1,0 +1,18 @@
+uuid: e7e4a477-9534-4955-975c-97f74354acd1
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.suscripciones_ninos_escuelas
+id: node.suscripciones_ninos_escuelas.title
+field_name: title
+entity_type: node
+bundle: suscripciones_ninos_escuelas
+label: 'Título de referencia'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

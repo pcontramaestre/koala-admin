@@ -1,0 +1,164 @@
+uuid: 18fac425-3b87-45fd-be6e-17a3e03b543c
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.field.node.suscripciones_ninos_escuelas.field_alumno_relacionado
+    - field.field.node.suscripciones_ninos_escuelas.field_clases_asignadas_en_la_sus
+    - field.field.node.suscripciones_ninos_escuelas.field_clases_consumidas_de_la_su
+    - field.field.node.suscripciones_ninos_escuelas.field_clases_restantes_de_la_sus
+    - field.field.node.suscripciones_ninos_escuelas.field_fecha_de_finalizacion_de_l
+    - field.field.node.suscripciones_ninos_escuelas.field_fecha_de_inicio_de_la_susc
+    - field.field.node.suscripciones_ninos_escuelas.field_inasistencias_del_nino
+    - field.field.node.suscripciones_ninos_escuelas.field_suscripcion_finalizada
+    - field.field.node.suscripciones_ninos_escuelas.field_tipo_de_suscripcion
+    - node.type.suscripciones_ninos_escuelas
+  module:
+    - content_moderation
+    - datetime
+    - field_layout
+    - layout_discovery
+    - path
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+id: node.suscripciones_ninos_escuelas.default
+targetEntityType: node
+bundle: suscripciones_ninos_escuelas
+mode: default
+content:
+  created:
+    type: datetime_timestamp
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_alumno_relacionado:
+    type: entity_reference_autocomplete
+    weight: 121
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_clases_asignadas_en_la_sus:
+    type: number
+    weight: 123
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_clases_consumidas_de_la_su:
+    type: number
+    weight: 122
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_clases_restantes_de_la_sus:
+    type: number
+    weight: 124
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_fecha_de_finalizacion_de_l:
+    type: datetime_default
+    weight: 126
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_fecha_de_inicio_de_la_susc:
+    type: datetime_default
+    weight: 125
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_inasistencias_del_nino:
+    type: number
+    weight: 129
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_suscripcion_finalizada:
+    type: boolean_checkbox
+    weight: 128
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  field_tipo_de_suscripcion:
+    type: options_select
+    weight: 127
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  moderation_state:
+    type: moderation_state_default
+    weight: 100
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 30
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  promote:
+    type: boolean_checkbox
+    weight: 15
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 120
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  sticky:
+    type: boolean_checkbox
+    weight: 16
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: -5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 5
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  url_redirects:
+    weight: 50
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

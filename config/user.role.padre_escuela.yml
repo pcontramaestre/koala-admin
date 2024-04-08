@@ -16,4 +16,6 @@ is_admin: null
 permissions:
   - 'view any superpoderes content'
   - 'view any suscripciones content'
+  - 'view any suscripciones_ninos_escuelas content'
   - 'view own suscripciones content'
+  - 'view own suscripciones_ninos_escuelas content'

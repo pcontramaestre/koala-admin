@@ -220,3 +220,4 @@ modification+hijo+user+user: user.user.default
 'use  The form mode default linked to  commerce_product entity( clases_colegios )': commerce_product.clases_colegios.default
 'use  The form mode default linked to  node entity( orden_de_pago_colegios )': node.orden_de_pago_colegios.default
 'use  The form mode default linked to  node entity( pagos_colegios )': node.pagos_colegios.default
+'use  The form mode default linked to  node entity( suscripciones_ninos_escuelas )': node.suscripciones_ninos_escuelas.default

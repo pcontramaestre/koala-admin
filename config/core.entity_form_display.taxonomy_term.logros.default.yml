@@ -3,6 +3,7 @@ langcode: es
 status: true
 dependencies:
   config:
+    - field.field.taxonomy_term.logros.field_nivel_principal
     - field.field.taxonomy_term.logros.field_nro_de_veces_que_aparece
     - taxonomy.vocabulary.logros
   module:
@@ -21,30 +22,36 @@ bundle: logros
 mode: default
 content:
   description:
-    type: text_textfield
-    weight: 0
+    type: text_textarea
+    weight: 2
     region: content
     settings:
-      size: 60
+      rows: 5
       placeholder: ''
+    third_party_settings: {  }
+  field_nivel_principal:
+    type: options_select
+    weight: 0
+    region: content
+    settings: {  }
     third_party_settings: {  }
   field_nro_de_veces_que_aparece:
     type: number
-    weight: 101
+    weight: 7
     region: content
     settings:
       placeholder: ''
     third_party_settings: {  }
   langcode:
     type: language_select
-    weight: 2
+    weight: 3
     region: content
     settings:
       include_locked: true
     third_party_settings: {  }
   name:
     type: string_textfield
-    weight: -5
+    weight: 1
     region: content
     settings:
       size: 60
@@ -52,19 +59,19 @@ content:
     third_party_settings: {  }
   path:
     type: path
-    weight: 30
+    weight: 5
     region: content
     settings: {  }
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 100
+    weight: 6
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   translation:
-    weight: 10
+    weight: 4
     region: content
     settings: {  }
     third_party_settings: {  }

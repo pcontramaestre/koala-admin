@@ -1,0 +1,61 @@
+uuid: 0fe7b341-692f-4b45-bb3c-a1d18d561a99
+langcode: es
+status: true
+dependencies:
+  module:
+    - system
+id: acordeon_logros_coordinadores
+label: 'Acordeon logros - Coordinadores'
+code: |
+  // Toggle accordeon
+  const acordeon = document.querySelectorAll('.item-list-accordeon');
+
+  acordeon.forEach(item => {
+    item.addEventListener('click', function() {
+      this.classList.toggle('activa');
+    });
+  });
+
+  // Función para procesar logros cumplidos
+  function procesarLogrosCumplidos() {
+    const logrosCumplidosTemp = [];
+    
+    const div = document.querySelector('.resumen-clase');
+    const idNino = div.getAttribute('user');
+    console.log("Id del niño: " + idNino);
+
+    const resumenClase = document.querySelectorAll('.resumen-clase[user="' + idNino + '"]');
+    resumenClase.forEach(item => {
+      item.classList.add('mostrar');
+      
+      const logrosCumplidos = item.querySelector('.ids-logros-cumplidos').innerText.trim().split('|');
+      logrosCumplidosTemp.push(...logrosCumplidos);
+    });
+
+    logrosCumplidosTemp.forEach(logro => {
+      const logrosCumplidosElements = document.querySelectorAll('div[data-logro="' + logro + '"]');
+      logrosCumplidosElements.forEach(element => {
+        const parentElement = element.closest('li');
+        if (parentElement) {
+          parentElement.classList.add('habilitado');
+        }
+      });
+    });
+  }
+
+  // Procesar logros cumplidos para las dos primeras tabs
+  for (let i = 0; i < 2; i++) {
+    procesarLogrosCumplidos();
+  }
+noscript: ''
+noscriptRegion: {  }
+jquery: false
+header: false
+preprocess: true
+conditions:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /coordinador/koala
+contexts: {  }
+conditions_require_all: true

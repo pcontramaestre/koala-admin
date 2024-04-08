@@ -1,0 +1,42 @@
+uuid: 69ec70a6-92a5-44e4-b892-adec9a01187e
+langcode: es
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.suscripciones_ninos_escuelas.field_alumno_relacionado
+    - field.field.node.suscripciones_ninos_escuelas.field_clases_asignadas_en_la_sus
+    - field.field.node.suscripciones_ninos_escuelas.field_clases_consumidas_de_la_su
+    - field.field.node.suscripciones_ninos_escuelas.field_clases_restantes_de_la_sus
+    - field.field.node.suscripciones_ninos_escuelas.field_fecha_de_finalizacion_de_l
+    - field.field.node.suscripciones_ninos_escuelas.field_fecha_de_inicio_de_la_susc
+    - field.field.node.suscripciones_ninos_escuelas.field_inasistencias_del_nino
+    - field.field.node.suscripciones_ninos_escuelas.field_suscripcion_finalizada
+    - field.field.node.suscripciones_ninos_escuelas.field_tipo_de_suscripcion
+    - node.type.suscripciones_ninos_escuelas
+  module:
+    - user
+id: node.suscripciones_ninos_escuelas.teaser
+targetEntityType: node
+bundle: suscripciones_ninos_escuelas
+mode: teaser
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  field_alumno_relacionado: true
+  field_clases_asignadas_en_la_sus: true
+  field_clases_consumidas_de_la_su: true
+  field_clases_restantes_de_la_sus: true
+  field_fecha_de_finalizacion_de_l: true
+  field_fecha_de_inicio_de_la_susc: true
+  field_inasistencias_del_nino: true
+  field_suscripcion_finalizada: true
+  field_tipo_de_suscripcion: true
+  langcode: true

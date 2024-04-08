@@ -9,6 +9,7 @@ dependencies:
     - field.field.user.user.field_avatar
     - field.field.user.user.field_celular
     - field.field.user.user.field_colegio_al_que_pertenece_e
+    - field.field.user.user.field_coordinador_relacionado
     - field.field.user.user.field_direcc
     - field.field.user.user.field_direccion
     - field.field.user.user.field_estrellas_acumuladas
@@ -103,6 +104,16 @@ content:
   field_colegio_al_que_pertenece_e:
     type: entity_reference_autocomplete
     weight: 51
+    region: first
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_coordinador_relacionado:
+    type: entity_reference_autocomplete
+    weight: 55
     region: first
     settings:
       match_operator: CONTAINS

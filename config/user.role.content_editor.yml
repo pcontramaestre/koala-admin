@@ -291,6 +291,7 @@ permissions:
   - 'view own proximas_clases_estudiantes_ content'
   - 'view own superpoderes content'
   - 'view own suscripciones content'
+  - 'view own suscripciones_ninos_escuelas content'
   - 'view own unpublished content'
   - 'view own unpublished media'
   - 'view suscripciones_activas revisions'

@@ -6,6 +6,8 @@ dependencies:
     - field.field.node.orden_de_pago_colegios.body
     - field.field.node.orden_de_pago_colegios.field_colegio_al_que_pertenece_c
     - field.field.node.orden_de_pago_colegios.field_enlace_de_pago
+    - field.field.node.orden_de_pago_colegios.field_fecha_de_finalizacion_de_l
+    - field.field.node.orden_de_pago_colegios.field_fecha_de_inicio_de_la_susc
     - field.field.node.orden_de_pago_colegios.field_formulario_de_pago_relacio
     - field.field.node.orden_de_pago_colegios.field_monto_a_cancelar
     - field.field.node.orden_de_pago_colegios.field_nro_de_clases_a_comprar
@@ -19,6 +21,7 @@ dependencies:
     - node.type.orden_de_pago_colegios
   module:
     - commerce_price
+    - datetime
     - options
     - text
     - user
@@ -49,6 +52,24 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     weight: 110
+    region: content
+  field_fecha_de_finalizacion_de_l:
+    type: datetime_default
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: medium
+    third_party_settings: {  }
+    weight: 115
+    region: content
+  field_fecha_de_inicio_de_la_susc:
+    type: datetime_default
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: medium
+    third_party_settings: {  }
+    weight: 114
     region: content
   field_formulario_de_pago_relacio:
     type: entity_reference_label

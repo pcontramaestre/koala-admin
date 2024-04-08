@@ -1,0 +1,33 @@
+uuid: 9029aaa0-9a57-41c3-aaf4-5f5212b419fb
+langcode: es
+status: true
+dependencies:
+  config:
+    - system.menu.menu-coordinador
+  module:
+    - system
+    - user
+  theme:
+    - koala
+id: menucoordinador_2
+theme: koala
+region: footer_first
+weight: 0
+provider: null
+plugin: 'system_menu_block:menu-coordinador'
+settings:
+  id: 'system_menu_block:menu-coordinador'
+  label: 'Menú coordinador'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility:
+  user_role:
+    id: user_role
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+    roles:
+      coordinador_colegio: coordinador_colegio

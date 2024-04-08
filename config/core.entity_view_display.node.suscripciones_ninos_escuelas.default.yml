@@ -1,0 +1,113 @@
+uuid: 4be95df9-3b41-4aad-860a-299c36db12d1
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.field.node.suscripciones_ninos_escuelas.field_alumno_relacionado
+    - field.field.node.suscripciones_ninos_escuelas.field_clases_asignadas_en_la_sus
+    - field.field.node.suscripciones_ninos_escuelas.field_clases_consumidas_de_la_su
+    - field.field.node.suscripciones_ninos_escuelas.field_clases_restantes_de_la_sus
+    - field.field.node.suscripciones_ninos_escuelas.field_fecha_de_finalizacion_de_l
+    - field.field.node.suscripciones_ninos_escuelas.field_fecha_de_inicio_de_la_susc
+    - field.field.node.suscripciones_ninos_escuelas.field_inasistencias_del_nino
+    - field.field.node.suscripciones_ninos_escuelas.field_suscripcion_finalizada
+    - field.field.node.suscripciones_ninos_escuelas.field_tipo_de_suscripcion
+    - node.type.suscripciones_ninos_escuelas
+  module:
+    - datetime
+    - options
+    - user
+id: node.suscripciones_ninos_escuelas.default
+targetEntityType: node
+bundle: suscripciones_ninos_escuelas
+mode: default
+content:
+  field_alumno_relacionado:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_clases_asignadas_en_la_sus:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_clases_consumidas_de_la_su:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  field_clases_restantes_de_la_sus:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  field_fecha_de_finalizacion_de_l:
+    type: datetime_default
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: medium
+    third_party_settings: {  }
+    weight: 106
+    region: content
+  field_fecha_de_inicio_de_la_susc:
+    type: datetime_default
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: medium
+    third_party_settings: {  }
+    weight: 105
+    region: content
+  field_inasistencias_del_nino:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 109
+    region: content
+  field_suscripcion_finalizada:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 108
+    region: content
+  field_tipo_de_suscripcion:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 107
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  langcode: true

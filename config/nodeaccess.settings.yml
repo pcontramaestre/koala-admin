@@ -1702,6 +1702,59 @@ bundles_roles_grants:
       grant_view: 0
       grant_update: 0
       grant_delete: 0
+  suscripciones_ninos_escuelas:
+    anonymous:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    authenticated:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    content_editor:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    administrator:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    profesor:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    padre:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    padre_escuela:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    hijo:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    hijo_escuela:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    director_colegio:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    coordinador_colegio:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    suscriptor:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
+    author:
+      grant_view: 0
+      grant_update: 0
+      grant_delete: 0
 grants_tab_availability:
   agendar_clase: false
   profesores: false
@@ -1732,6 +1785,7 @@ grants_tab_availability:
   colegios_grupos: false
   orden_de_pago_colegios: false
   pagos_colegios: false
+  suscripciones_ninos_escuelas: false
 map_rid_gid:
   anonymous: 0
   authenticated: 1

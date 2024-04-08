@@ -11,7 +11,7 @@ id: node.orden_de_pago_colegios.field_monto_a_cancelar
 field_name: field_monto_a_cancelar
 entity_type: node
 bundle: orden_de_pago_colegios
-label: 'Monto a cancelar'
+label: 'Monto a pagar'
 description: '<b>Este monto es de referencia para ser mostrado al director antes de pagar, no es usado por stripe para realizar el pago</b>'
 required: true
 translatable: false

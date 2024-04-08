@@ -1,0 +1,21 @@
+uuid: 466af37f-a1e9-4ee4-abc5-fe0b2f9b0a7f
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_tipo_de_suscripcion
+    - node.type.suscripciones_ninos_escuelas
+  module:
+    - options
+id: node.suscripciones_ninos_escuelas.field_tipo_de_suscripcion
+field_name: field_tipo_de_suscripcion
+entity_type: node
+bundle: suscripciones_ninos_escuelas
+label: 'Tipo de suscripción'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

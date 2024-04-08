@@ -14,5 +14,7 @@ label: 'Hijo escuela'
 weight: -2
 is_admin: null
 permissions:
+  - 'view any suscripciones_ninos_escuelas content'
   - 'view own slider_clases_koalas content'
   - 'view own superpoderes content'
+  - 'view own suscripciones_ninos_escuelas content'
