@@ -827,6 +827,9 @@ display:
     display_plugin: block
     position: 1
     display_options:
+      defaults:
+        use_ajax: false
+      use_ajax: true
       display_extenders: {  }
     cache_metadata:
       max-age: -1
@@ -1439,11 +1442,28 @@ display:
             content_editor: content_editor
             administrator: administrator
             profesor: profesor
+      empty:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text
+          empty: true
+          content:
+            value: '<div class="text-center mt-5"><strong>No se encuentran pagos registrados</strong></div>'
+            format: basic_html
+          tokenize: false
       defaults:
+        empty: false
         access: false
+        use_ajax: false
         relationships: false
         fields: false
       relationships: {  }
+      use_ajax: true
       display_extenders: {  }
     cache_metadata:
       max-age: -1

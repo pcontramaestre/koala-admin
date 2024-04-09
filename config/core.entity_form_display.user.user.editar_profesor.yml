@@ -56,7 +56,7 @@ third_party_settings:
         - field_nombres_y_apellidos_del_pr
         - field_apellidos
         - user_picture
-      label: Datos
+      label: 'Editar perfil del profesor'
       region: first
       parent_name: ''
       weight: 0
@@ -67,13 +67,6 @@ third_party_settings:
         id: ''
         description: ''
         required_fields: true
-        element: div
-        show_label: true
-        label_element: h3
-        label_element_classes: ''
-        attributes: ''
-        effect: none
-        speed: fast
     group_presentacion:
       children:
         - field_nacionalidad
@@ -146,13 +139,10 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_nacionalidad:
-    type: country_autocomplete
+    type: country_default
     weight: 2
     region: first
-    settings:
-      size: '60'
-      autocomplete_route_name: country.autocomplete
-      placeholder: 'Start typing a country name ...'
+    settings: {  }
     third_party_settings: {  }
   field_nombres_y_apellidos_del_pr:
     type: string_textfield

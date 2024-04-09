@@ -2172,6 +2172,18 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: false
+      empty:
+        area_text_custom:
+          id: area_text_custom
+          table: views
+          field: area_text_custom
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text_custom
+          empty: true
+          content: '<div class="text-center mt-5"><strong>No tiene actividades programadas<strong></div>'
+          tokenize: false
       arguments:
         field_asignar_profesor_target_id:
           id: field_asignar_profesor_target_id
@@ -2371,6 +2383,7 @@ display:
         type: fields
         options: {  }
       defaults:
+        empty: false
         style: false
         row: false
         relationships: false

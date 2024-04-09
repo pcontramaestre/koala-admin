@@ -72,6 +72,7 @@ permissions:
   - 'create video media'
   - 'date_recur manage interpreters'
   - 'date_recur_modular use sierra form'
+  - 'delete media'
   - 'delete own audio media'
   - 'delete own document media'
   - 'delete own facturacion_profesor content'

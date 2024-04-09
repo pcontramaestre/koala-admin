@@ -1,9 +1,11 @@
 menus:
   - account
+  - director
   - footer
   - hijos
   - legal
   - main
+  - menu-coordinador
   - padres
   - profesor
   - tools
