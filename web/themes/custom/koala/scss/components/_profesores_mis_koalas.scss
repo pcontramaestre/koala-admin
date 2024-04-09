@@ -420,14 +420,19 @@
         flex-direction: column;
         justify-content: center;
         align-items: flex-start;
-        gap: 1.5rem;
+        gap: 1rem;
         margin-bottom: 1rem;
+
+        .titulo-profe {
+          margin-bottom: -0.5rem;
+        }
 
         .header {
           justify-content: space-between;
           flex-direction: row;
           width: 100%;
           order: 3;
+          margin-top: 0.5rem;
           // margin-top: -2rem;
 
           div:nth-child(1) {
@@ -447,6 +452,12 @@
             font-style: normal;
             font-weight: 700;
             line-height: normal;
+          }
+
+          .observaciones-profesor {
+            .titulo {
+              display: none;
+            }
           }
         }
 
@@ -510,7 +521,9 @@
               }
             }
             .comentario {
-              font-family: 500;
+              font-weight: 500;
+              margin-top: 1rem;
+              margin-bottom: 1rem;
             }
 
             .codigo-clase {

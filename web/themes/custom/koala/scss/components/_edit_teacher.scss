@@ -3,11 +3,124 @@
   a {
     text-decoration: unset !important;
   }
+
+  .media-library-widget-modal {
+    background: white !important;
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+
+    .ui-dialog-titlebar {
+      background: white !important;
+    }
+
+    #drupal-modal.ui-dialog-content {
+      > #media-library-wrapper {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 1rem;
+
+        &::before {
+          content: 'Por favor agregue el video que desea mostrar, puede ser de youtube o cargarlo desde su computador';
+          display: block;
+          text-align: center;
+          flex: 0 100%;
+          font-weight: 700;
+        }
+
+        > ul.js-media-library-menu {
+          list-style-type: none;
+          flex: 1 auto;
+          padding: 0;
+
+          li {
+            position: relative;
+            a {
+              border: 2px solid #297e88;
+              border-radius: 28px;
+              color: black;
+              padding: 0.3rem 1.5rem 0.3rem 1.5rem;
+              text-decoration: none;
+              font-weight: 700;
+              font-size: 1.2rem;
+              margin-top: 1rem;
+              font-size: 0.9rem;
+              transition: all 0.3s ease-in-out;
+              display: block;
+
+              &:hover {
+                background-color: #297e88;
+                color: white;
+              }
+
+              &.active {
+                background-color: #297e88;
+                color: white;
+                position: relative;
+                &::after {
+                  content: '>';
+                  color: white;
+                  font-weight: 700;
+                  position: absolute;
+                  right: 10px;
+                  top: 13%;
+                }
+              }
+            }
+
+
+          }
+        }
+
+        #media-library-content {
+          flex: 10 auto;
+          max-width: 85%;
+          
+          input {
+            max-width: 600px;
+            text-align: left;
+          }
+
+          .view-media-library {
+            .view-header, .view-filters {
+              display: none;
+            }
+
+            .view-content {
+              .js-media-library-views-form {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+
+                .js-media-library-item {
+                  display: flex;
+                }
+
+                div.form-actions {
+                  grid-column: 1 / -1;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+  }
 }
 
 #block-koala-content {
   .content {
     .user-editar-profesor-form {
+      div[id="edit_field_nacionalidad_0_value_chosen"] {
+        border-radius: 32px;
+        border: 2px solid #becaca;
+
+        .chosen-single {
+          background: transparent;
+          border: unset;
+          box-shadow: unset;
+        }
+      }
       .layout--twocol-section {
         max-width: 1400px;
         flex-wrap: initial !important;
@@ -412,12 +525,19 @@
                   }
                   .no-admin {
                     text-align: center;
+                    width: 100%;
+                    
+                    > div:nth-child(2) {
+                      display: none;
+                    }
+
                     .js-media-library-item-preview {
                       .field--name-thumbnail {
                         img {
-                          border-radius: 13px;
-                          width: 146px;
+                          border-radius: 16px;
+                          width: 100%;
                           height: auto;
+                          object-fit: cover;
                         }
                       }
                     }

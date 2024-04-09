@@ -412,6 +412,20 @@
                     align-items: center;
                     margin-bottom: 1.8rem;
                     position: relative;
+                    border-radius: 24px;
+                    transition: all 0.4s ease-in-out;
+
+                    &:hover {
+                      background: #E6F1F1;
+                      box-shadow: 1px 1px 10px 1px #80808063;
+                    }
+
+                    a {
+                      border-radius: 24px;
+                      display: flex;
+                      flex-direction: row;
+                      align-items: center;
+                    }
 
                     .imagen {
                       max-width: 32px;
@@ -445,7 +459,7 @@
                       font-family: "Font Awesome 5 Free";
                       font-weight: 900;
                       position: absolute;
-                      left: 95%;
+                      left: 92%;
                       margin-left: 1rem;
                     }
                   }
