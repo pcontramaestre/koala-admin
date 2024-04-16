@@ -15,7 +15,7 @@ display:
     display_options:
       empty:
         area_text_custom:
-          content: "<div class=\"sin-proximas-clases\">\r\n  You don't have classes scheduled for your children. you can do it from the menu <b><a href=\"/en/padres/mis-koalas\">My children</a></b>, Select the child for whom you want to create the class and click on the <b>Schedule Class</b> button\r\n</div>"
+          content: "<div class=\"sin-proximas-clases\">\r\n<div class=\"izquierda\">\r\n <img src=\"/themes/custom/koala/images/Mecanico.svg\">\r\n</div>\r\n<div class=\"derecha\">  \r\n There are no classes scheduled at this point.\r\n</div>\r\n</div>"
       footer:
         area_text_custom:
           content: "<div class=\"text-align-right\">\r\n   <a href=\"/en/padres/mi-calendario\">Go to class calendar</a>\r\n</div>"
