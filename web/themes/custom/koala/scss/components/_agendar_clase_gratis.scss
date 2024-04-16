@@ -107,6 +107,11 @@
                     width: 33%;
                     float: left;
                     padding: 1rem 0rem 0rem 0.5rem;
+
+                    .description.text-muted {
+                      display: none;
+                    }
+
                     @media screen and (max-width: 1024px) {
                       width: 100%;
                       margin-bottom: 0 !important;
@@ -219,6 +224,13 @@
                       }
                     }
                   }
+
+                  div[data-drupal-selector="edit-group-horario-clase"] {
+                    float: left;
+                    width: 100%;
+                  }
+
+
                 }
               }
             }

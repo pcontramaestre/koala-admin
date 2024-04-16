@@ -7,8 +7,11 @@ label: 'Cambios de texto'
 code: |-
   jQuery(document).ready(function($) {
   	if($('.titulo-fecha-clase-gratis').length > 0) {
-  		var texto = "Escoge la fecha y hora en la que deseas la clase de prueba. Ten en cuenta que debido a la disponibilidad de profesores puedes encontrar horas repetidas.";
-  		//agregar texto a un elemento
+  		if ($('.current_language-en').length > 0) {
+  			var texto = "Select the trial class's date and hour. Remember that multiple appointments may be available at the same time depending on the teacher's availability.";
+  		} else {
+  			var texto = "Escoge la fecha y hora en la que deseas la clase de prueba. Ten en cuenta que debido a la disponibilidad de profesores puedes encontrar horas repetidas.";
+  		}
   		$('.titulo-fecha-clase-gratis').text(texto);
   	}
   });

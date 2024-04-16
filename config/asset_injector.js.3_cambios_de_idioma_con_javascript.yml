@@ -21,6 +21,10 @@ code: |-
   	$('.current_language-en .node-agendar-clase-agendar-clases-form .form-item-field-hora-clase-0-value input').attr("placeholder","Class time");
   	$('.current_language-en .node-agendar-clase-agendar-clases-form button.form-submit').text("Schedule class");
   	
+  	
+  	//NUEVO HIJO, AGENDAR CLASE GRATIS
+  	$('.current_language-en #edit-field-apellidos-del-nino-a-0-value').attr("placeholder","Child's lastname");
+  	
   	//EDITAR HIJOS
   	$('.current_language-en .node-crear-hijos-editar-hijo-form button.form-submit').text("Update information");
   });

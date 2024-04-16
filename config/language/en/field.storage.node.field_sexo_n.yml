@@ -1,6 +1,8 @@
 settings:
   allowed_values:
     -
-      label: Boy
+      label: Male
     -
-      label: Girl
+      label: Female
+    -
+      label: N/A
