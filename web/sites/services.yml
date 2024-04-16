@@ -1,0 +1,6 @@
+services:
+  twig.sandbox.policy:
+    class: Drupal\Core\Template\TwigSandboxPolicy
+    arguments: ['@twig.sandbox.policy']
+    calls:
+      - [addAllowedMethod, ['DateTime', 'format']]
