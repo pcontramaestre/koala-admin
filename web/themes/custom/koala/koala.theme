@@ -262,6 +262,17 @@ function koala_preprocess_node(&$variables) {
   
   $user = \Drupal\user\Entity\User::load(\Drupal::currentUser()->id());
   $variables['suscripcion_activa'] = $user->get('field_suscripcion_activa')->value;
+
+  if ($current_language == 'en') {
+    if (isset($variables['node'])) {
+      //comprombar si el campo existe
+      if ($variables['node']->hasField('field_fecha_cita_oculta')) {
+        //obtener el valor del campo
+        $date_field = $variables['node']->get('field_fecha_cita_oculta')->date;
+        $variables['formatted_date_fecha_cita_oculta'] = $date_field->format('D, m/d/Y - H:i');
+      }
+    }
+  }
 }
 
 /**
