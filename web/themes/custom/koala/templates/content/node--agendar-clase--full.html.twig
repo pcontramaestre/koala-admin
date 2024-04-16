@@ -89,7 +89,7 @@
 				<h2>¡Perfecto! Lo has conseguido</h2>
 				<p>Te hemos enviado un correo con los detalles de tu clase</p>						
 			{% else %}
-				<h2>Perfect! You did it</h2>
+				<h2>Great! You made it!</h2>
 				<p>We have sent you an email with the details of your class</p>
 			{% endif %}
 		</div>
@@ -105,7 +105,7 @@
 					{% if current_language == 'es' %}
 						<h3>{{ 'Tu clase gratuita ha sido reservada'|t }}</h3>
 					{% else %}
-						<h3>{{ 'Your free class has been booked'|t }}</h3>
+						<h3>{{ 'Your trial class has been booked'|t }}</h3>
 					{% endif %}
 				{% endif %}
 			</div>
@@ -130,7 +130,12 @@
 					{% endif %}
 				</div>
 				<div>
-					<p>{{ content.field_fecha_cita_oculta.0 }}</p>
+					{% if current_language == 'es' %}
+						<p>{{ content.field_fecha_cita_oculta.0 }}</p>
+					{% else %}
+						<p>{{formatted_date_fecha_cita_oculta}}</p>
+						{# <p>{{dump(content.field_fecha_cita_oculta.0)}}</p> #}
+					{% endif %}
 				</div>
 			</div>
 
