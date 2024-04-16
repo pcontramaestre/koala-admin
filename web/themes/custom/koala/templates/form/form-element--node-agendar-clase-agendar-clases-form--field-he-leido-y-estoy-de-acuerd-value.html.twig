@@ -105,9 +105,9 @@
 		{% if label_display in ['before', 'invisible'] %}
 			<label {{ label_attributes.addClass(labelclass).setAttribute('for', input_attributes.id) }}>
 				{% if current_language == 'es' %}
-					{{ input_title | raw }}&nbsp;&nbsp;<a href="https://holakoala.com/es/politicas" target="_blank">Política de privacidad</a>&nbsp;&nbsp;<a href="https://koalaotro.icreativadigital.com/terminos" target="_blank">Términos y condiciones</a>
+					{{ input_title | raw }}&nbsp;&nbsp;<a href="https://holakoala.com/es/politicas" target="_blank">Política de privacidad</a>&nbsp;&nbsp;<a href="https://www.holakoala.com/es/terminos" target="_blank">Términos y condiciones</a>
 				{% else %}
-					{{ input_title | raw }}&nbsp;&nbsp;<a href="https://holakoala.com/politicas" target="_blank">Privacy policy</a>&nbsp;&nbsp;<a href="https://koalaotro.icreativadigital.com/terminos" target="_blank">Terms and conditions</a>
+					{{ input_title | raw }}&nbsp;&nbsp;<a href="https://holakoala.com/en/privacy-policy" target="_blank">Privacy policy</a>&nbsp;&nbsp;<a href="https://www.holakoala.com/en/terms-and-conditions" target="_blank">Terms and conditions</a>
 				{% endif %}
 			</label>
 		{% endif %}
@@ -119,9 +119,9 @@
 				{% if label_display == 'after' %}
 					<label {{ label_attributes.addClass(labelclass).setAttribute('for', input_attributes.id) }}>
 						{% if current_language == 'es' %}
-							{{ input_title | raw }}&nbsp;&nbsp;<a href="https://holakoala.com/es/politicas" target="_blank">Política de privacidad</a>&nbsp;&nbsp;<a href="https://koalaotro.icreativadigital.com/terminos" target="_blank">Términos y condiciones</a>
+							{{ input_title | raw }}&nbsp;&nbsp;<a href="https://holakoala.com/es/politicas" target="_blank">Política de privacidad</a>&nbsp;&nbsp;<a href="https://www.holakoala.com/es/terminos" target="_blank">Términos y condiciones</a>
 						{% else %}
-							{{ input_title | raw }}&nbsp;&nbsp;<a href="https://holakoala.com/politicas" target="_blank">Privacy policy</a>&nbsp;&nbsp;<a href="https://koalaotro.icreativadigital.com/terminos" target="_blank">Terms and conditions</a>
+							{{ input_title | raw }}&nbsp;&nbsp;<a href="https://holakoala.com/en/privacy-policy" target="_blank">Privacy policy</a>&nbsp;&nbsp;<a href="https://www.holakoala.com/en/terms-and-conditions" target="_blank">Terms and conditions</a>
 						{% endif %}
 					</label>
 				{% endif %}
