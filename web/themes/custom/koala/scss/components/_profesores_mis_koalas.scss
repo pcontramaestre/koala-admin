@@ -106,6 +106,15 @@
 
     // Acordeon de logros
     .view-id-logros_taxonomia.view-display-id-block_1 {
+
+      .view-grouping {
+        .view-grouping-header {
+          font-weight: 700;
+          margin-top: 1rem;
+          margin-bottom: 1rem;
+        }
+      }
+
       .view-content.row {
         // border-radius: 1.5rem;
         // background   : var(--Grey-K100, #e6f1f1);
@@ -122,6 +131,34 @@
           font-style: normal;
           font-weight: 600;
           line-height: normal;
+          text-align: center;
+        }
+      }
+      
+      .title-acordeon {
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: 2.5fr 2fr;
+        align-items: center;
+      
+        @media screen and (max-width: 768px) {
+          grid-template-columns: 1fr;
+        }
+      
+        .progress {
+          max-width: 90%;
+          border-radius: unset;
+          height: 12px;
+      
+          .progress-bar {
+            font-size: 0.625rem;
+            padding-left: 0.3125rem;
+            padding-right: 0.3125rem;
+            width: 7%;
+            background: #297e88;
+            color: white;
+            min-width: 7%;
+          }
         }
       }
 
@@ -136,7 +173,7 @@
           font-weight: 500;
           margin-bottom: 0rem;
           cursor: pointer;
-          display: block;
+          //display: block;
           position: relative;
           color: black;
 
