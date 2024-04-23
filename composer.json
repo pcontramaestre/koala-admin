@@ -48,6 +48,7 @@
         "drupal/commerce_recurring": "1.x-dev@dev",
         "drupal/commerce_stripe": "^1.0",
         "drupal/computed_field": "^4.0@alpha",
+        "drupal/config_ignore": "^3.3",
         "drupal/config_pages": "^2.14",
         "drupal/context_stack": "^1.1",
         "drupal/core-composer-scaffold": "^9.5",
