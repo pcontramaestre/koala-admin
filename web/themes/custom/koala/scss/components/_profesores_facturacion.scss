@@ -39,6 +39,10 @@
       border-right: 1px solid var(--Grey-K200, #becaca);
       border-left: 1px solid var(--Grey-K200, #becaca);
       border-top: 1px solid var(--Grey-K200, #becaca);
+      @media screen and (max-width: 800px) {
+        border-top-left-radius: 0px;
+        border-top-right-radius: .0px;
+      }
       table {
         margin-bottom: 0rem;
         thead {
@@ -51,6 +55,7 @@
               padding: 1rem;
               border-right: 1px solid #becaca;
               line-height: 18px;
+              min-width: 100px;
             }
             #view-field-fecha-de-la-clase-table-column {
               width: 16%;
