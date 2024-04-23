@@ -22,6 +22,9 @@ code: |+
   // Seleccionar los elementos con la clase .view-id-mis_koalas.view-display-id-block_2 .tab-content .tab-pane
   const tabs = document.querySelectorAll('.view-id-mis_koalas.view-display-id-block_2 .tab-content .tab-pane');
 
+  var cantidadtabs = tabs.length;
+  console.log("Cantidad de tabs: "+cantidadtabs);
+
   /* 
     Recorrer los elementos seleccionados y buscar el elemento con la clase .views-field-uid > .field-content > id-del-nino
   */
@@ -29,9 +32,10 @@ code: |+
   var logrosCumplidosTemp = new Array();
   for (i=0; i<tabs.length; i++) {
     const idNino = tabs[i].querySelector('.views-field-uid > .id-del-nino').innerText.trim();
+    console.log("ID del niño: "+idNino);
     // Buscar el elemento con la clase .resumen-clase[user="'+idNino+'"] y agregar la clase .mostrar
     const resumenClase = tabs[i].querySelectorAll('.resumen-clase[user="'+idNino+'"]');
-    
+    console.log("Cantidad de resumenClase: "+resumenClase.length);
     for (j=0; j<resumenClase.length; j++) {
       // Desactivar resumenSinClases con la clase .resumen-sin-clases y eliminar d-block si tiene clases evaluadas
       const resumenSinClase = tabs[i].querySelectorAll('.resumen-sin-clases');
@@ -46,21 +50,27 @@ code: |+
       for (k=0; k<logrosCumplidos.length; k++) {
         logrosCumplidosTemp.push(logrosCumplidos[k]);
       }
+      console.log("Logros cumplidos: "+logrosCumplidosTemp);
     
     }
 
-    //Recorrer logrosCumplidosTemp
-    for (k = 0; k < logrosCumplidosTemp.length; k++) {
-      var logro = logrosCumplidosTemp[k];
-      const logrosCumplidosElements = tabs[i].querySelectorAll('div[data-logro="' + logro + '"]');
-      for (l = 0; l < logrosCumplidosElements.length; l++) {
-        const logroCumplidoElement = logrosCumplidosElements[l];
-        const parentElement = logroCumplidoElement.parentElement.parentElement.parentElement;
-        if (parentElement.tagName === 'LI') {
-          parentElement.classList.add('habilitado');
+    //comprobar si logrosCumplidosTemp tiene elementos
+    if (logrosCumplidosTemp.length > 0) {
+      //Recorrer logrosCumplidosTemp
+      for (k = 0; k < logrosCumplidosTemp.length; k++) {
+        var logro = logrosCumplidosTemp[k];
+        const logrosCumplidosElements = tabs[i].querySelectorAll('div[data-logro="' + logro + '"]');
+        
+        for (l = 0; l < logrosCumplidosElements.length; l++) {
+          const logroCumplidoElement = logrosCumplidosElements[l];
+          const parentElement = logroCumplidoElement.parentElement.parentElement.parentElement;
+          if (parentElement.tagName === 'LI') {
+            parentElement.classList.add('habilitado');
+          }
         }
       }
     }
+    logrosCumplidosTemp = []; 
   }
 
   jQuery(document).ready(function($) {

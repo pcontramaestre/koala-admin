@@ -3,6 +3,7 @@ langcode: es
 status: true
 dependencies:
   config:
+    - field.storage.taxonomy_term.field_nivel_principal
     - field.storage.taxonomy_term.field_nro_de_veces_que_aparece
     - taxonomy.vocabulary.logros
   module:
@@ -24,6 +25,69 @@ display:
     display_options:
       title: 'Logros - Taxonomia'
       fields:
+        field_nivel_principal:
+          id: field_nivel_principal
+          table: taxonomy_term__field_nivel_principal
+          field: field_nivel_principal
+          relationship: parent_target_id
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: entity_reference_label
+          settings:
+            link: false
+          group_column: target_id
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
         name_1:
           id: name_1
           table: taxonomy_term_field_data
@@ -90,6 +154,72 @@ display:
           separator: ', '
           field_api_classes: false
           convert_spaces: false
+        tid_1:
+          id: tid_1
+          table: taxonomy_term_field_data
+          field: tid
+          relationship: parent_target_id
+          group_type: group
+          admin_label: ''
+          entity_type: taxonomy_term
+          entity_field: tid
+          plugin_id: field
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: number_integer
+          settings:
+            thousand_separator: ''
+            prefix_suffix: false
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
         tid:
           id: tid
           table: taxonomy_term_field_data
@@ -232,7 +362,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<div id=\"{{ tid }}\" data-logro=\"{{ tid }}\" data-cantidad=\"{{ field_nro_de_veces_que_aparece }}\">\r\n   {{ name }}\r\n</div>"
+            text: "<div id=\"{{ tid }}\" data-logro=\"{{ tid }}\" data-cantidad=\"{{ field_nro_de_veces_que_aparece }}\" data-padre=\"{{ tid_1 }}\">\r\n   {{ name }}\r\n</div>"
             make_link: false
             path: ''
             absolute: false
@@ -387,6 +517,10 @@ display:
         options:
           grouping:
             -
+              field: field_nivel_principal
+              rendered: true
+              rendered_strip: false
+            -
               field: name_1
               rendered: true
               rendered_strip: false
@@ -427,6 +561,7 @@ display:
         - 'languages:language_interface'
         - user.permissions
       tags:
+        - 'config:field.storage.taxonomy_term.field_nivel_principal'
         - 'config:field.storage.taxonomy_term.field_nro_de_veces_que_aparece'
   block_1:
     id: block_1
@@ -442,4 +577,5 @@ display:
         - 'languages:language_interface'
         - user.permissions
       tags:
+        - 'config:field.storage.taxonomy_term.field_nivel_principal'
         - 'config:field.storage.taxonomy_term.field_nro_de_veces_que_aparece'

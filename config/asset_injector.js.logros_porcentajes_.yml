@@ -1,0 +1,39 @@
+uuid: fb0a3c42-ca00-4bdc-bbba-11a3966d6bc8
+langcode: es
+status: true
+dependencies:
+  module:
+    - system
+id: logros_porcentajes_
+label: 'Logros porcentajes '
+code: |-
+  jQuery(document).ready(function($){
+    $('.item-list-accordeon').each(function(){
+      var cantidad = 0;
+      var habilitados = 0;
+
+      var cantidad = $(this).find('li').length;
+
+      var habilitados = $(this).find('li.habilitado').length;
+      if (habilitados > 0 ) {
+        var porcentaje = (habilitados * 100) / cantidad;
+        var porcentaje = Math.round(porcentaje);
+    
+        $(this).find('.progress-bar').css('width', porcentaje + '%');
+        $(this).find('.progress-bar').text(porcentaje + '%');
+        $(this).find('.progress-bar').attr('aria-valuenow', porcentaje);
+      }
+    });
+  });
+noscript: ''
+noscriptRegion: {  }
+jquery: true
+header: false
+preprocess: true
+conditions:
+  request_path:
+    id: request_path
+    negate: false
+    pages: "/padres/mis-koalas\r\n*/padres/mis-koalas"
+contexts: {  }
+conditions_require_all: true
