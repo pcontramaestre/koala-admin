@@ -460,11 +460,17 @@
       .dos-columnas-izquierda {
         input {
           font-weight: 500;
+          background: #E6F1F1;
+          color: black;
+          border: unset;
         }
       }
       .dos-columnas-derecha {
         input {
           font-weight: 700;
+          background: #E6F1F1;
+          color: black;
+          border: unset;
         }
       }
     }
@@ -472,6 +478,10 @@
       .js-form-item {
         input {
           font-weight: 700;
+          background: #E6F1F1;
+          color: black;
+          border: unset;
+          pointer-events: none;
         }
       }
     }
