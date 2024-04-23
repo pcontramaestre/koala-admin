@@ -180,48 +180,53 @@ function callback_submit_asignar_clase_a_estudiante_submit(&$form, FormStateInte
     }
 
 
+    $buscarClaseActual = buscarProximasClases($field_alumno_relacionado);
+    $node_clases_estudiantes = Node::load($buscarClaseActual);
+    $field_numero_de_clase = $node_clases_estudiantes->get('field_numero_de_clase')->getValue();
+    $field_numero_de_clase = (int) $field_numero_de_clase[0]['value'];
+    if ($field_numero_de_clase > 0) {
+      // Obtener el nodo de tipo "suscripciones" con el uid obtenido
+      $query = \Drupal::entityTypeManager()->getStorage('node')->getQuery();
+      $query->condition('type', 'suscripciones')
+      ->condition('uid', $uid)
+      ->sort('nid', 'ASC')
+      ->range(0, 1);
+      $nids = $query->execute();
 
-    // Obtener el nodo de tipo "suscripciones" con el uid obtenido
-    $query = \Drupal::entityTypeManager()->getStorage('node')->getQuery();
-    $query->condition('type', 'suscripciones')
-    ->condition('uid', $uid)
-    ->sort('nid', 'ASC')
-    ->range(0, 1);
-    $nids = $query->execute();
-
-    $node = NULL;
-    if (!empty($nids)) {
-      $nid = reset($nids);
-      $node = Node::load($nid);
-    }
-    if (!empty($nids)) {
-      // Obtener el nodo de tipo "suscripciones" con el id obtenido
-      $node = Node::load(reset($nids));
-    } else {
-      $node = false;
-    }
-
-    if ($node ){ 
-      // obtener los valores numericos de los campos field_clases_restantes, field_clases_usadas    
-      $field_clases_restantes = $node->get('field_clases_restantes')->getValue();
-      $field_clases_restantes = $field_clases_restantes[0]['value'];
-      //$field_clases_restantes = 0;
-      //dump($field_clases_restantes);
-      if ($field_clases_restantes > 0) {
-        $field_clases_usadas = $node->get('field_clases_usadas')->getValue();
-        // Sumar 1 al valor numerico de field_clases_usadas, convertir $field_clases_usadas[0]['value'] a entero
-        $field_clases_usadas = (int)$field_clases_usadas[0]['value'] + 1;      
-        // Restar 1 al valor numerico de field_clases_restantes
-        $field_clases_restantes = $node->get('field_clases_restantes')->getValue();
-        $field_clases_restantes = (int)$field_clases_restantes[0]['value'] - 1;
-        // Actualizar los valores numericos de los campos field_clases_restantes, field_clases_usadas
-        $node->set('field_clases_restantes', $field_clases_restantes);
-        $node->set('field_clases_usadas', $field_clases_usadas);
-        $node->save();
+      $node = NULL;
+      if (!empty($nids)) {
+        $nid = reset($nids);
+        $node = Node::load($nid);
       }
-    } else {
-      // Mensaje de error
-      \Drupal::messenger()->addMessage( \Drupal::translation()->translate('No se pudo cargar el nodo de tipo "suscripciones" con el uid: @uid', ['@uid' => $uid] ), 'error');
+      if (!empty($nids)) {
+        // Obtener el nodo de tipo "suscripciones" con el id obtenido
+        $node = Node::load(reset($nids));
+      } else {
+        $node = false;
+      }
+
+      if ($node ){ 
+        // obtener los valores numericos de los campos field_clases_restantes, field_clases_usadas    
+        $field_clases_restantes = $node->get('field_clases_restantes')->getValue();
+        $field_clases_restantes = $field_clases_restantes[0]['value'];
+        //$field_clases_restantes = 0;
+        //dump($field_clases_restantes);
+        if ($field_clases_restantes > 0) {
+          $field_clases_usadas = $node->get('field_clases_usadas')->getValue();
+          // Sumar 1 al valor numerico de field_clases_usadas, convertir $field_clases_usadas[0]['value'] a entero
+          $field_clases_usadas = (int)$field_clases_usadas[0]['value'] + 1;      
+          // Restar 1 al valor numerico de field_clases_restantes
+          $field_clases_restantes = $node->get('field_clases_restantes')->getValue();
+          $field_clases_restantes = (int)$field_clases_restantes[0]['value'] - 1;
+          // Actualizar los valores numericos de los campos field_clases_restantes, field_clases_usadas
+          $node->set('field_clases_restantes', $field_clases_restantes);
+          $node->set('field_clases_usadas', $field_clases_usadas);
+          $node->save();
+        }
+      } else {
+        // Mensaje de error
+        \Drupal::messenger()->addMessage( \Drupal::translation()->translate('No se pudo cargar el nodo de tipo "suscripciones" con el uid: @uid', ['@uid' => $uid] ), 'error');
+      }
     }
   }
 
