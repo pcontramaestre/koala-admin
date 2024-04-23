@@ -34,6 +34,6 @@ conditions:
   request_path:
     id: request_path
     negate: false
-    pages: "/padres/mis-koalas\r\n*/padres/mis-koalas"
+    pages: "/padres/mis-koalas\r\n*/padres/mis-koalas\r\n/profesor/mis-koalas\r\n*/profesor/mis-koalas\r\n*/mis-koalas"
 contexts: {  }
 conditions_require_all: true
