@@ -1,3 +1,30 @@
+.title-acordeon {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 2.5fr 2fr;
+  align-items: center;
+
+  @media screen and (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+
+  .progress {
+    max-width: 90%;
+    border-radius: unset;
+    height: 12px;
+
+    .progress-bar {
+      font-size: 0.625rem;
+      padding-left: 0.3125rem;
+      padding-right: 0.3125rem;
+      width: 7%;
+      background: #297e88;
+      color: white;
+      min-width: 7%;
+    }
+  }
+}
+
 .path-padres,.path-coordinador {
   #page-wrapper {
     #main-wrapper {
