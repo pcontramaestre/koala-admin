@@ -312,6 +312,11 @@ function koala_preprocess_views_view(&$variables) {
   $variables['current_language'] = $current_language;
 }
 
+
+function koala_theme_suggestions_views_view_list_alter(array &$suggestions, array $variables) {
+  $suggestions[] = 'views_view_list__' . $variables['view']->id();
+}
+
 function koala_preprocess_user_login(&$variables) {
   $current_language = \Drupal::languageManager()->getCurrentLanguage()->getId();
   $variables['current_language'] = $current_language;
