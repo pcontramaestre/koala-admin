@@ -64,17 +64,19 @@
   {% if rows %}
     <div class="view-content row">
       {% if current_language == 'es' %}
+        <div id="botones-acciones"></div>
         <div class="texto-logros">
           <h3>Logros del estudiante</h3>
           <p>Aqui verás los logros de tu Koala. Selecciona el nivel a continuación</p>
         </div>
-        <div id="botones-acciones"></div>
+        {# <div class="nombre-unidad">Unidad 1: Bienvenido amigo koala</div> #}
       {% else %}
+        <div id="botones-acciones"></div>
         <div class="texto-logros">
-          <h3>Student's achievements</h3>
+          <h3>Milestones</h3>
           <p>Here you will see your Koala's achievements. Select the level below</p>
         </div>
-        <div id="botones-acciones"></div>
+        {# <div class="nombre-unidad">Unit 1: Welcome koala friend</div> #}
       {% endif %}
 
       {{ rows }}
