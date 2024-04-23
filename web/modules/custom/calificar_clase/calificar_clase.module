@@ -179,7 +179,7 @@ function callback_submit_asignar_clase_a_estudiante_submit(&$form, FormStateInte
       }
     }
 
-
+    //Comprobar que no sea una clase gratuita, de lo contrario restar una clase
     $buscarClaseActual = buscarProximasClases($field_alumno_relacionado);
     $node_clases_estudiantes = Node::load($buscarClaseActual);
     $field_numero_de_clase = $node_clases_estudiantes->get('field_numero_de_clase')->getValue();
