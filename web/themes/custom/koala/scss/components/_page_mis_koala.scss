@@ -190,8 +190,8 @@
                                       color: black;
                                       font-weight: 700;
                                       font-size: 20px;
-                                      margin-top: 0rem !important;
-                                      margin-bottom: 2rem !important;
+                                      margin-top: 1rem !important;
+                                      margin-bottom: 0rem !important;
 
                                       &:hover {
                                         background-color: #297e88;
@@ -230,6 +230,22 @@
 
   // Acordeon de logros
   .view-id-logros_taxonomia.view-display-id-block_1 {
+
+    .nombre-unidad {
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+      font-weight: 700;
+      font-size: 1.1rem;
+    }
+
+    .view-grouping {
+      .view-grouping-header {
+        font-weight: 700;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+      }
+    }
+
     .view-content.row {
       border-radius: 1.5rem;
       padding: 1rem 3rem 2rem 3rem;
@@ -265,6 +281,33 @@
       &:hover {
         transition: all 0.4s ease-in-out;
         box-shadow: 1px 1px 8px 1px #8080804f;
+      }
+
+      .title-acordeon {
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: 1fr 2fr;
+        align-items: center;
+
+        @media screen and (max-width: 768px) {
+          grid-template-columns: 1fr;
+        }
+
+        .progress {
+          max-width: 96%;
+          border-radius: unset;
+          height: 12px;
+
+          .progress-bar {
+            font-size: 0.625rem;
+            padding-left: 0.3125rem;
+            padding-right: 0.3125rem;
+            width: 5%;
+            background: #297e88;
+            color: white;
+            min-width: 5%;
+          }
+        }
       }
 
       > h3 {
