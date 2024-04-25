@@ -106,6 +106,7 @@
         "drupal/media_video_micromodal": "^1.0",
         "drupal/menu_export": "^1.4",
         "drupal/menu_token": "9.1.x-dev@dev",
+        "drupal/mimemail": "^1.0@alpha",
         "drupal/multiple_fields_remove_button": "^2.2",
         "drupal/multiple_registration": "^3.2",
         "drupal/node_view_permissions": "^1.5",
