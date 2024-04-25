@@ -1,0 +1,5 @@
+name: 'Capture Insert Data'
+type: module
+description: 'Ejecuta acciones en eventos específicos de entidad. Captura al momento de agregar usuario o datos.'
+package: Custom
+core_version_requirement: ^9 || ^10
