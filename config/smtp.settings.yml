@@ -15,8 +15,8 @@ smtp_fromname: 'Hola Koala'
 smtp_client_hostname: ''
 smtp_client_helo: ''
 smtp_allowhtml: '1'
-smtp_test_address: ''
+smtp_test_address: admin.webpage@holakoala.com
 smtp_reroute_address: admin@administracion.holakoala.com
-smtp_debugging: false
+smtp_debugging: true
 prev_mail_system: php_mail
 smtp_keepalive: false

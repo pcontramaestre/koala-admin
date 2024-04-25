@@ -1,0 +1,14 @@
+settings:
+  allowed_values:
+    -
+      label: 'I have found a better deal'
+    -
+      label: 'The service is very expensive'
+    -
+      label: 'I would have liked to find more variety in the professors'
+    -
+      label: 'The classes are going very fast and I feel like my son is not learning.'
+    -
+      label: 'They have very few teaching resources'
+    -
+      label: 'I don''t want to continue.'

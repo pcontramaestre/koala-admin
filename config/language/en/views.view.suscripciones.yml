@@ -1,0 +1,22 @@
+label: Subscriptions
+display:
+  default:
+    display_options:
+      title: Subscriptions
+      header:
+        area_text_custom:
+          content: "<div class=\"text-center suscripcion-title\">\r\n  <h1>Active subscriptions</h1>\r\n</div>\r\n<div class=\"suscripciones d-flex\">\r\n  <div class=\"izquierda\">\r\n    <div class=\"imagenes-ninos\">\r\n      <img src=\"/themes/custom/koala/images/Avatar1.svg\" alt=\"Nino\">\r\n      <img src=\"/themes/custom/koala/images/Avatar2.svg\" alt=\"Nino\">\r\n      <img src=\"/themes/custom/koala/images/Avatar3.svg\" alt=\"Nino\">\r\n    </div>\r\n    <div class=\"clases-restantes\">\r\n      <div class=\"titulo\">Classes remaining</div>\r\n      <div class=\"numero-clases\">\r\n        <div class=\"restantes\">18</div>\r\n        /\r\n        <div class=\"compradas\">70</div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n  <div class=\"centro\">\r\n    <div class=\"fila1 d-flex\">\r\n      <div class=\"cuadro-blanco ninos\">\r\n        <div class=\"texto text-left\">Number / Children</div>\r\n        <div class=\"valor text-right\">3</div>\r\n      </div>\r\n      <div class=\"cuadro-blanco semanas\">\r\n        <div class=\"texto text-left\">Weeks</div>\r\n        <div class=\"valor text-right\">12</div>\r\n      </div>\r\n    </div>\r\n\r\n    <div class=\"fila2 fechas-inicio-fin\">\r\n      <div class=\"inicio\">\r\n        <div class=\"texto text-left\">Your plan started on</div>\r\n        <div class=\"valor text-right\">12/12/2020</div>\r\n      </div>\r\n      <div class=\"fin\">\r\n        <div class=\"texto text-left\">Your plan renews in</div>\r\n        <div class=\"valor text-right\">12/12/2020</div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n  <div class=\"derecha\">\r\n    <div class=\"suscripciones-activas\">\r\n      You have <span>2</span> active subscriptions\r\n    </div>\r\n    <div class=\"ver-suscripciones\">\r\n      <a href=\"/suscripciones\">Ver suscripciones</a>\r\n    </div>\r\n  </div>\r\n</div>"
+  block_1:
+    display_options:
+      header:
+        area_text_custom:
+          content: "{% set tipo_suscripcion = field_suscripcion_activa %}\r\n\r\n<div class=\"text-center suscripcion-title\">\r\n  <h1>Active subscriptions</h1>\r\n</div>\r\n<div class=\"suscripciones d-flex\">\r\n  <div class=\"izquierda\">\r\n    <div class=\"imagenes-ninos\">\r\n      <img src=\"/themes/custom/koala/images/Avatar1.svg\" alt=\"Nino\" width=\"44\" height=\"45\">\r\n      <img src=\"/themes/custom/koala/images/Avatar2.svg\" alt=\"Nino\" width=\"44\" height=\"45\">\r\n      <img src=\"/themes/custom/koala/images/Avatar3.svg\" alt=\"Nino\"  width=\"44\" height=\"45\">\r\n    </div>\r\n    <div class=\"clases-restantes\">\r\n      <div class=\"titulo\">Remaining classes</div>\r\n      <div class=\"numero-clases\">\r\n        <div class=\"restantes\">18</div>\r\n        /\r\n        <div class=\"compradas\">70</div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n  <div class=\"centro\">\r\n    <div class=\"fila1 d-flex\">\r\n      <div class=\"cuadro-blanco ninos\">\r\n        <div class=\"texto text-left\">Number / Children</div>\r\n        <div class=\"valor text-right\">3</div>\r\n      </div>\r\n      <div class=\"cuadro-blanco semanas\">\r\n        <div class=\"texto text-left\">Weeks</div>\r\n        <div class=\"valor text-right\">12</div>\r\n      </div>\r\n    </div>\r\n\r\n    <div class=\"fila2 fechas-inicio-fin\">\r\n      <div class=\"inicio\">\r\n        <div class=\"texto text-left\">Your plan started at</div>\r\n        <div class=\"valor text-right\">12/12/2020</div>\r\n      </div>\r\n      <div class=\"fin\">\r\n        <div class=\"texto text-left\">Your plan renews in</div>\r\n        <div class=\"valor text-right\">12/12/2020</div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n\r\n\r\n  <div class=\"derecha\">\r\n     {{ field_suscripcion_activa }}\r\n  </div>\r\n</div>"
+      fields:
+        field_suscripcion_activa:
+          alter:
+            text: "{% set tiposuscripcion = field_suscripcion_activa__value %}\r\n{% if tiposuscripcion == '1' %}\r\n    <div class=\"activa\">\r\n       <a href=\"/en/eliminar_suscripcion\">Cancel subscription</a>\r\n   </div>\r\n{% else %}\r\n   <div class=\"no_activa\">\r\n     You do not have an active subscription\r\n   </div>\r\n{% endif %}"
+  page_1:
+    display_options:
+      header:
+        area_text_custom:
+          content: '<div class="text-center titulo mt-5 mb-4"><h2>My active subscriptions</h2></div>'

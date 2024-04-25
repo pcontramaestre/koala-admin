@@ -1,0 +1,11 @@
+display:
+  block_2:
+    display_options:
+      empty:
+        area:
+          content:
+            value: '<p><strong>There are no payments registered at this moment.</strong></p>'
+            format: basic_html
+      fields:
+        field_escribe_el_numero_de_tu_fa:
+          label: Invoice

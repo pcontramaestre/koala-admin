@@ -1,0 +1,11 @@
+display:
+  default:
+    display_options:
+      header:
+        area_text_custom:
+          content: "<div class=\"row encabezado-ninos\">\r\n   <div class=\"col-7\">My Koalas</div>\r\n   <div class=\"col-5\">Classes / Week</div>\r\n</div>"
+      footer:
+        area:
+          content:
+            value: '<p>Total</p><div class="total-de-clases">0</div>'
+            format: full_html

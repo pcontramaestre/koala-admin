@@ -30,6 +30,7 @@ module:
   cancelar_clase: 0
   cancelar_clase_gratis: 0
   cancelar_clase_profe: 0
+  capture_insert_data: 0
   cargar_estudiantes_colegios: 0
   chosen: 0
   chosen_field: 0
@@ -161,6 +162,7 @@ module:
   menu_link_content: 0
   menu_token: 0
   menu_ui: 0
+  mimemail: 0
   multiple_fields_remove_button: 0
   multiple_registration: 0
   mysql: 0

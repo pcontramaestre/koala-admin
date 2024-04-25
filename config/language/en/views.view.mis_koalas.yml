@@ -76,3 +76,4 @@ display:
         nothing:
           alter:
             text: "{{ nothing_1 }}\r\n<div class=\"datos-clase\">\r\n  <div class=\"imagen\">\r\n    <img src=\"/themes/custom/koala/images/fondo-calendario-horario.png\" class=\"mw-100\">\r\n  </div>\r\n  <div class=\"alumno text-center\">\r\n    <p>Student</p>\r\n    <div class=\"datos-alumno\">\r\n      {{ field_nombre_del_nino_a }} \r\n    </div>\r\n  </div>\r\n  <div class=\"profesor text-center\">\r\n    <p>Teacher</p>\r\n   {{ field_nombres_y_apellidos_del_pr }} \r\n  </div>\r\n  <div class=\"fecha text-center\">\r\n    <p>Date</p>\r\n    <div class=\"fecha\">{{ field_fecha_cita_oculta_1 }}</div>\r\n  </div>\r\n  <div class=\"boton\">\r\n        <a href=\"/clases?idestudiante={{ field_pencil_id_estudiante }}&url={{ field_pencil_url_clase }}&idClase={{ nid }}\" class=\"editar-clase\"target=\"_blank\">Get into class</a>\r\n   </div>\r\n  <div class=\"editar-horario\">Cancel class</div>\r\n</div>"
+label: 'My Koalas'

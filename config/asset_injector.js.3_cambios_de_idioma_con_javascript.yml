@@ -27,6 +27,9 @@ code: |-
   	
   	//EDITAR HIJOS
   	$('.current_language-en .node-crear-hijos-editar-hijo-form button.form-submit').text("Update information");
+  	
+  	//titulo mis koalas
+  	$('.current_language-en .block-views block-views-blockmis-koalas-block-2 > h2').text("My Koalas");
   });
 noscript: ''
 noscriptRegion: {  }

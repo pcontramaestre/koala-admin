@@ -1524,6 +1524,7 @@ display:
     display_plugin: block
     position: 1
     display_options:
+      title: 'My Koalas'
       fields:
         nid:
           id: nid
@@ -2139,6 +2140,7 @@ display:
         type: fields
         options: {  }
       defaults:
+        title: false
         exposed_form: false
         style: false
         row: false
@@ -4558,13 +4560,15 @@ display:
           left_buttons: 'prev,next today'
           right_buttons: 'dayGridMonth,timeGridWeek,timeGridDay,listYear'
           default_view: dayGridMonth
+          default_mobile_view: listYear
+          mobile_width: '768'
           firstDay: '1'
           nav_links: 1
           timeFormat: 'hh:mm a'
           allowEventOverlap: 1
           updateAllowed: 0
           updateConfirm: 0
-          defaultLanguage: es-us
+          defaultLanguage: current_lang
           languageSelector: 0
           dialogWindow: 1
           openEntityInNewTab: 1
@@ -4574,13 +4578,19 @@ display:
           vocabularies: ''
           color_bundle:
             1_fecha_hora_inicio_fin: '#3a87ad'
+            2_ninos_clases: '#3a87ad'
             agendar_clase: '#3a87ad'
             agendar_clase_no_gratis: '#3a87ad'
             agregar_horarios_de_clases_grati: '#3a87ad'
             article: '#3a87ad'
             asignar_clase_a_estudiante: '#3a87ad'
+            cancelar_clases_profesores: '#3a87ad'
+            cancelar_suscripcion: '#3a87ad'
             clases_de_nivelacion: '#3a87ad'
             clases_estudiantes: '#3a87ad'
+            colegios: '#3a87ad'
+            colegios_grupos: '#3a87ad'
+            coordinadores_de_colegios: '#3a87ad'
             crear_hijos: '#3a87ad'
             event: '#3a87ad'
             facturacion_profesor: '#3a87ad'
@@ -4590,19 +4600,25 @@ display:
             metodos_de_pago: '#3a87ad'
             mundos: '#3a87ad'
             mundos_detalle: '#3a87ad'
+            orden_de_pago_colegios: '#3a87ad'
             page: '#3a87ad'
+            pagos_colegios: '#3a87ad'
             profesores: '#3a87ad'
+            proximas_clases_estudiantes_: '#3a87ad'
+            slider_clases_koalas: '#3a87ad'
+            superpoderes: '#3a87ad'
             suscripciones: '#3a87ad'
+            suscripciones_activas: '#3a87ad'
+            suscripciones_ninos_escuelas: '#3a87ad'
           rrule: ''
+          dialogModal: false
+          dialogCanvas: false
           duration: ''
-          bundle_type: ''
-          classes: ''
-          default_mobile_view: listYear
-          mobile_width: '768'
+          slotDuration: '00:25:00'
           minTime: '00:00:00'
           maxTime: '23:59:59'
-          dialogModal: 0
-          slotDuration: '00:25:00'
+          bundle_type: ''
+          classes: ''
       row:
         type: fields
         options:
@@ -7492,13 +7508,13 @@ display:
             page: '#3a87ad'
             profesores: '#3a87ad'
           rrule: ''
+          dialogModal: false
           duration: ''
-          bundle_type: ''
-          classes: ''
+          slotDuration: '00:25:00'
           minTime: '00:00:00'
           maxTime: '23:59:59'
-          dialogModal: 0
-          slotDuration: '00:25:00'
+          bundle_type: ''
+          classes: ''
       row:
         type: fields
         options:
