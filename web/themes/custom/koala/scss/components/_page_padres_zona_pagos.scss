@@ -458,6 +458,13 @@
         }
         .col-4 {
           font-weight: 700;
+
+          small {
+            margin-right: 0.5rem;
+            font-style: italic;
+            color: gray;
+            text-decoration: line-through;
+          }
         }
       }
       .mensaje-plan-de-ahorro {
