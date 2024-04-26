@@ -23,6 +23,8 @@ class CancelarClaseGratisController extends ControllerBase {
       $id_clase = $request->get('id_clase');
       $current_user = \Drupal::currentUser();
       $id_user = $current_user->id();
+      //current language
+      $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
       // Load user by id
       $user = \Drupal\user\Entity\User::load($id_estudiante);
       // get field_padre      
@@ -48,8 +50,13 @@ class CancelarClaseGratisController extends ControllerBase {
         $html = '<div class="cancelar-clase">';
         $html .= '<h2>'.$titulo.'</h2>';
         $html .= '<p class="text-center">'.$mensaje2.'</p>';
-        $html .= '<div class="acciones d-flex"><a href="/cancelar-clase-gratis/' . $valor['id_estudiante'] . '/' . $valor['id_clase'] . '/confirmar" class="btn-cancelar">'.$texto_enlace_si.'</a>';
-        $html .= '<a href="/padres/mi-calendario" class="btn-volver">'.$texto_enlace_no.'</a></div>';
+        if ($language == 'es'){
+          $html .= '<div class="acciones d-flex"><a href="/cancelar-clase-gratis/' . $valor['id_estudiante'] . '/' . $valor['id_clase'] . '/confirmar" class="btn-cancelar">'.$texto_enlace_si.'</a>';
+          $html .= '<a href="/padres/mi-calendario" class="btn-volver">'.$texto_enlace_no.'</a></div>';
+        } else {
+          $html .= '<div class="acciones d-flex"><a href="/en/cancelar-clase-gratis/' . $valor['id_estudiante'] . '/' . $valor['id_clase'] . '/confirmar" class="btn-cancelar">'.$texto_enlace_si.'</a>';
+          $html .= '<a href="/en/padres/mi-calendario" class="btn-volver">'.$texto_enlace_no.'</a></div>';
+        }
         $html .= '</div>';
         // Mostrar html con el mensaje "¿Estás seguro de cancelar la clase gratis?"
         return [
