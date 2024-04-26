@@ -9,3 +9,12 @@ display:
       fields:
         field_escribe_el_numero_de_tu_fa:
           label: Invoice
+  page_1:
+    display_options:
+      fields:
+        field_escribe_el_numero_de_tu_fa:
+          label: Invoice
+        field_estado_de_la_factura:
+          label: Status
+        field_fecha_de_la_clase:
+          label: Date

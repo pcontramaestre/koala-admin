@@ -3,12 +3,12 @@ settings:
     -
       label: 'I have found a better deal'
     -
-      label: 'The service is very expensive'
+      label: 'This service is too expensive'
     -
-      label: 'I would have liked to find more variety in the professors'
+      label: 'I would have loved to find more variety of professors'
     -
-      label: 'The classes are going very fast and I feel like my son is not learning.'
+      label: 'My kid is not learning because the pace of the classes is very fast.'
     -
-      label: 'They have very few teaching resources'
+      label: 'You have very few teaching resources'
     -
-      label: 'I don''t want to continue.'
+      label: 'I just don''t want to continue.'

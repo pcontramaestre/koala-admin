@@ -1,7 +1,23 @@
 display:
   default:
-    display_title: Máster
     display_options:
       exposed_form:
-        options:
-          submit_button: Aplicar
+        options: {  }
+      empty:
+        area:
+          content:
+            value: '<p>You have not placed any orders with us yet.</p>'
+            format: basic_html
+  block_1:
+    display_options:
+      fields:
+        order_number:
+          label: Invoice
+        placed:
+          label: Date
+        state:
+          label: Status
+        total_price__number:
+          label: 'Paid amount'
+        entity_print_commerce_order:
+          label: Print
