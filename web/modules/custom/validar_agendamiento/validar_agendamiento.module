@@ -54,7 +54,9 @@ function validar_agendamiento_views_pre_render(ViewExecutable $view) : void  {
 
 function validar_agendamiento_preprocess_views_view_fields(&$variables) {
   $view = $variables['view'];
-  $field = $variables['field'];
+  if (isset($variables['field'])) {
+    $field = $variables['field'];
+  }
 
    if ($view->id() == 'mis_koalas' && $view->current_display == 'block_2') {    
     $tBotonSeccionNino = new TranslatableMarkup('Entrar a la sección del niño');

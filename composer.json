@@ -88,6 +88,7 @@
         "drupal/gin": "^3.0@RC",
         "drupal/gin_toolbar": "^1.0@rc",
         "drupal/html_field_formatter": "^2.2",
+        "drupal/ics_link_field": "^2.0",
         "drupal/iframe": "^2.22",
         "drupal/inline_entity_form": "^1.0@RC",
         "drupal/jquery_ui": "^1.6",

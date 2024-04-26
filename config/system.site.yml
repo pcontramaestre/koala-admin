@@ -12,4 +12,4 @@ page:
 admin_compact_mode: false
 weight_select_max: 100
 default_langcode: es
-mail_notification: ''
+mail_notification: admin.webpage@holakoala.com
