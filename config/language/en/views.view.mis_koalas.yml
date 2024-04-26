@@ -23,6 +23,10 @@ display:
       footer:
         area_text_custom:
           content: "<a href=\"/node/add/agendar_clase/agendar_clases?agregar=1\" class=\"btn btn-primary mt-5 mb-5\" data-drupal-link-system-path=\"/node/add/agendar_clase/agendar_clases\">Add Koalas</a>\r\n\r\n\r\n"
+      fields:
+        title:
+          alter:
+            text: "<a href=\"/en/padres/mis-koalas?id={{ field_hijo_relacionado }}\">{{ user_picture }}  <span>{{ title__value }} {{ field_apellidos }}</span></a>\r\n"
   block_2:
     display_options:
       fields:
