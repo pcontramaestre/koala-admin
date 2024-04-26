@@ -1,0 +1,7 @@
+display:
+  default:
+    display_options:
+      fields:
+        nothing:
+          alter:
+            text: "<div class=\"koala-nino\" id=\"{{ tid }}\">\r\n   <div class=\"title\">{{ name }} </div>\r\n   <div class=\"descripcion\">{{ description__value }}</div>\r\n   <div class=\"imagen\">{{ field_imagen_del_koala }}</div>\r\n   <span class=\"puntos d-none\">{{ field_puntos_requeridos }}</span>\r\n</div>\r\n<span class=\"mensaje-bloqueado d-none\">\r\n{{ field_puntos_requeridos }} stars are required to unlock this Koala\r\n</span>"
