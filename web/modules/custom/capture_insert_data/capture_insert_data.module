@@ -139,27 +139,49 @@ function capture_insert_data_entity_insert(EntityInterface $entity) {
 
       $enlace_orden = "/admin/commerce/orders/".$field_nro_de_orden;
 
+      $enlace_order_print = "/print/pdf/commerce_order/".$field_nro_de_orden;
+
       $field_fecha_de_inicio_de_la_susc = date('Y-m-d', strtotime($field_fecha_de_inicio_de_la_susc));
       $field_fecha_de_finalizacion_de_l = date('Y-m-d', strtotime($field_fecha_de_finalizacion_de_l));
 
       $message = new TranslatableMarkup('<p>New subscription has been created successfully with the following information.</p>
       <br/>
-      <p>Plan: <strong>@plan</strong></p>
+      <p>Plan: <strong>@plan</strong> weeks </p>
       <p>Start date: <strong>@fecha_inicio</strong></p>
       <p>End date: <strong>@fecha_final</strong></p>
       <p>Number of classes: <strong>@clases</strong></p>
-      <p>Order: <a href="@enlace">View order</a></p>', [
+      <p>Order: <a href="@enlace">View order</a></p>
+      <p>Print order: <a href="@enlace_print">Print order</a></p>', [
         '@plan' => $field_plan_comprado,
         '@fecha_inicio' => $field_fecha_de_inicio_de_la_susc,
         '@fecha_final' => $field_fecha_de_finalizacion_de_l,
         '@clases' => $field_clases_compradas,
         '@enlace' => $enlace_orden,
+        '@enlace_print' => $enlace_order_print,
       ]);
       $subject = new TranslatableMarkup('New subscription created in Holakoala.com');
 
       $keysend = 'nueva_suscripcion_creada';
       //enviar al administrador 
       enviar_correos_administrativos($correo_administrativo, $subject, $message, $keysend);
+
+      //mensaje para el usuario
+      $message = new TranslatableMarkup('<p>Your subscription has been created successfully with the following information.</p>
+      <br/>
+      <p>Plan: <strong>@plan</strong> weeks</p>
+      <p>Start date: <strong>@fecha_inicio</strong></p>
+      <p>End date: <strong>@fecha_final</strong></p>
+      <p>Number of classes: <strong>@clases</strong></p>
+      <p>Print order: <a href="@enlace_print">Print order</a></p>', [
+        '@plan' => $field_plan_comprado,
+        '@fecha_inicio' => $field_fecha_de_inicio_de_la_susc,
+        '@fecha_final' => $field_fecha_de_finalizacion_de_l,
+        '@clases' => $field_clases_compradas,
+        '@enlace_print' => $enlace_order_print,
+      ]);
+      $keysend = 'nueva_suscripcion_creada_usuario';
+      //enviar al usuario
+      enviar_correos_administrativos($correo_usuario, $subject, $message, $keysend);
     }
 
   }
