@@ -308,7 +308,8 @@ code: |-
       const duracion = document.querySelector('.duracion');
       const totalClases = document.querySelector('.total-clases');
       const suscription = document.querySelector('input[name="suscription"]:checked');
-      duracion.textContent = suscription.getAttribute('texto');
+      //duracion.textContent = suscription.getAttribute('texto');
+      duracion.textContent = suscription.getAttribute('value') + ' weeks';
       duracion.setAttribute('semanas', suscription.value);
       totalClases.textContent = parseInt(totalDeClases.textContent) * parseInt(duracion.getAttribute('semanas'));
     }
@@ -379,11 +380,19 @@ code: |-
 
 
       precioClase.textContent = '$' + precio;
+      precioClase.innerHTML = '<small>$17.50</small>  ' + precioClase.textContent;
       precioClase.setAttribute('precio', precio);
       redondeoTotal = Math.round(parseInt(totalClases.textContent) * parseFloat(precioClase.getAttribute('precio')) * 100) / 100;
       // Convertir redondeoTotal a moneda con formato $ 0,000.00
       redondeoTotal = redondeoTotal.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
       valorTotal.textContent = '' + redondeoTotal ;
+      
+         //valor sin descuento, es decir total de clases por precio de la clase que es 17.5
+      valorTotalSinDescuento = parseInt(totalClases.textContent) * 17.5;
+      //redondear a dos decimales
+      valorTotalSinDescuento = Math.round(valorTotalSinDescuento * 100) / 100;
+
+      valorTotal.innerHTML = '<small>$'+valorTotalSinDescuento+'</small>   ' + valorTotal.textContent; 
       
       // Agregar valor a descuento ".descuento". Se obtiene de restar el valor del atributo precio de ".precio-clase" menos el primer valor del arreglo clases4Semanas
       const descuento = document.querySelector('.descuento');
