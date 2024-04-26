@@ -1,0 +1,7 @@
+display:
+  default:
+    display_options:
+      fields:
+        uid:
+          alter:
+            text: '<a href="/en/editar-padre"><img src="/themes/custom/koala/images/edit.png"></a>'
