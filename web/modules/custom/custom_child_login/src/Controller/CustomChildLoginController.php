@@ -28,7 +28,7 @@ class CustomChildLoginController extends ControllerBase {
     //dump($uid);
     //dump("No es padre");
     //return $this->redirect('<front>');
-    return new RedirectResponse('/hijo');
+    return new RedirectResponse('/en/hijo');
   }
 
 
