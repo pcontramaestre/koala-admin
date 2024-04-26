@@ -25,102 +25,143 @@ function capture_insert_data_entity_insert(EntityInterface $entity) {
     
   } elseif ($entity instanceof NodeInterface) {
     $content_type = $entity->bundle();
+    // Obtener el correo del usuario actual.
+    $current_user = \Drupal::currentUser();
+    $correo_usuario = $current_user->getEmail();
+    $correo_administrativo = "admin.webpage@holakoala.com";
     //agendar_clase 
     //cancelar_suscripcion
     //pagos_colegios
+    //suscripciones
 
     if ($content_type == 'agendar_clase') {
+      //get zona horaria del usuario
+      $timezone = $current_user->getTimeZone();
       $field_alumno_relacionado = $entity->get('field_alumno_relacionado')->value;
       //field_nombre_del_nino_a, field_apellidos_del_nino_a
       $field_nombre_del_nino_a = $entity->get('field_nombre_del_nino_a')->value;
       $field_apellidos_del_nino_a = $entity->get('field_apellidos_del_nino_a')->value;
 
-
       //field_fecha_cita_oculta es datetime
-      $field_fecha_cita_oculta = $entity->get('field_fecha_cita_oculta')->value;
+      $field_fecha_cita_oculta = $entity->get('field_fecha_cita_oculta')->value;      
       $field_fecha_cita_oculta = date('Y-m-d H:i:s', strtotime($field_fecha_cita_oculta));
+
+      //convertir la fecha a la zona horaria del usuario
+      $date = new DateTime($field_fecha_cita_oculta, new DateTimeZone('UTC'));
+      $date->setTimezone(new DateTimeZone($timezone));
+      $field_fecha_cita_oculta = $date->format('Y-m-d H:i:s');
+
+      // obtener solo la fecha y la hora
       $fecha_clase = date('m/d/Y', strtotime($field_fecha_cita_oculta));
       $hora_clase = date('H:i', strtotime($field_fecha_cita_oculta));
 
-      // Obtener el correo del usuario actual.
-      $current_user = \Drupal::currentUser();
-      $correo_usuario = $current_user->getEmail();
-      $correo_administrativo = "admin.webpage@holakoala.com";
-
       //get field_tipo_clase
       $field_tipo_clase = $entity->get('field_tipo_clase')->value;
+
       if ($field_tipo_clase == 'Gratis'){
         $message = new TranslatableMarkup('<p>Your trial class has been created successfully with the following information.</p>
         <br/>
-        <p>Date: @fecha</p><br>
-        <p>Time: @hora</p><br>
-        <p>Student: @nombre @apellidos</p>', [
+        <p>Date: <strong>@fecha</strong></p>
+        <p>Time: <strong>@hora</strong></p>
+        <p>Student: <strong>@nombre @apellidos</strong></p>', [
           '@fecha' => $fecha_clase,
           '@hora' => $hora_clase,
           '@nombre' => $field_nombre_del_nino_a,
           '@apellidos' => $field_apellidos_del_nino_a,
         ]);
         $subject = new TranslatableMarkup('Trial class created in Holakoala.com');
-
-        // Generar el archivo invite.ics
-        // $file_content = "BEGIN:VCALENDAR
-        // VERSION:2.0
-        // PRODID:-//Drupal iCal API//EN
-        // BEGIN:VEVENT
-        // DTSTAMP:" . date('Ymd\THis\Z') . "
-        // DTSTART:" . date('Ymd\THis\Z', strtotime($field_fecha_cita_oculta)) . "
-        // DTEND:" . date('Ymd\THis\Z', strtotime($field_fecha_cita_oculta . '+1 hour')) . "
-        // SUMMARY:Trial class
-        // DESCRIPTION:Trial class
-        // LOCATION:Trial class
-        // END:VEVENT
-        // END:VCALENDAR";
-        $file_content = "BEGIN:VCALENDAR\r\n"
-          . "VERSION:2.0\r\n"
-          . "PRODID:-//Drupal iCal API//EN\r\n"
-          . "BEGIN:VEVENT\r\n"
-          . "DTSTAMP:" . gmdate('Ymd\THis\Z') . "\r\n"
-          . "DTSTART:" . gmdate('Ymd\THis\Z', strtotime($field_fecha_cita_oculta)) . "\r\n"
-          . "DTEND:" . gmdate('Ymd\THis\Z', strtotime($field_fecha_cita_oculta . ' +1 hour')) . "\r\n"
-          . "SUMMARY:Trial class\r\n"
-          . "DESCRIPTION:Trial class\r\n"
-          . "LOCATION:Trial class\r\n"
-          . "END:VEVENT\r\n"
-          . "END:VCALENDAR\r\n";
-
-        // Guardar el archivo en la carpeta temporal de Drupal.
-        //$temporary_path = \Drupal::service('file_system')->realpath('public://invite.ics');
-        //file_put_contents($temporary_path, $file_content);
-        $attachments = [];
-        // Ruta del archivo en el sistema de archivos temporal
-        $uri = "temporary://invite.ics";
-
-
-        //obtener ruta del archivo
-        $file_system = \Drupal::service('file_system');
-        $file_path = '/tmp/invite.ics';
-
-        \Drupal::logger('capture_insert_data')->notice('File path: ' . $file_path . ' - URI: ' . $uri);
-
-        if ($file_system->saveData($file_content, $uri, FileSystemInterface::EXISTS_REPLACE) === FALSE) {
-          \Drupal::logger('capture_insert_data')->error('Failed to create the iCal file.');
-        } else {
-          // Enviar el correo con el archivo adjunto.
-          $attachments = [
-            ['filepath' => $file_path, 'filename' => 'invite.ics', 'filemime' => 'text/calendar'],
-          ];
-          \Drupal::logger('capture_insert_data')->notice('iCal file created successfully.');
-          //Enviar al log la informacion del archivo adjunto
-          \Drupal::logger('capture_insert_data')->notice('Attachments: ' . json_encode($attachments));
-        }
-        $keysend = 'clase_gratis_agendada';
-        //envio al usuario con el rol de padre y archivo adjunto
-        enviar_correos_administrativos($correo_administrativo, $subject, $message, $keysend);
-        //envio al administrador sin archivo adjunto
-        enviar_correos_administrativos($correo_administrativo, $subject, $message, $keysend);
+      } else {
+        $message = new TranslatableMarkup('<p>Your class has been created successfully with the following information.</p>
+        <br/>
+        <p>Date: <strong>@fecha</strong></p>
+        <p>Time: <strong>@hora</strong></p>
+        <p>Student: <strong>@nombre @apellidos</strong></p>', [
+          '@fecha' => $fecha_clase,
+          '@hora' => $hora_clase,
+          '@nombre' => $field_nombre_del_nino_a,
+          '@apellidos' => $field_apellidos_del_nino_a,
+        ]);
       }
+
+      $file_content = "BEGIN:VCALENDAR\r\n"
+        . "VERSION:2.0\r\n"
+        . "PRODID:-//Drupal iCal API//EN\r\n"
+        . "BEGIN:VEVENT\r\n"
+        . "DTSTAMP:" . date('Ymd\THis\Z') . "\r\n"
+        . "DTSTART:" . date('Ymd\THis\Z', strtotime($field_fecha_cita_oculta)) . "\r\n"
+        . "DTEND:" . date('Ymd\THis\Z', strtotime($field_fecha_cita_oculta . ' +1 hour')) . "\r\n"
+        . "SUMMARY:Trial class\r\n"
+        . "DESCRIPTION:Trial class\r\n"
+        . "LOCATION:Trial class\r\n"
+        . "END:VEVENT\r\n"
+        . "END:VCALENDAR\r\n";
+
+      // Guardar el archivo en la carpeta temporal de Drupal.
+      //$temporary_path = \Drupal::service('file_system')->realpath('public://invite.ics');
+      //file_put_contents($temporary_path, $file_content);
+      $attachments = [];
+      // Ruta del archivo en el sistema de archivos temporal
+      $uri = "temporary://invite.ics";
+
+
+      //obtener ruta del archivo
+      $file_system = \Drupal::service('file_system');
+      $file_path = '/tmp/invite.ics';
+
+      \Drupal::logger('capture_insert_data')->notice('File path: ' . $file_path . ' - URI: ' . $uri);
+
+      if ($file_system->saveData($file_content, $uri, FileSystemInterface::EXISTS_REPLACE) === FALSE) {
+        \Drupal::logger('capture_insert_data')->error('Failed to create the iCal file.');
+      } else {
+        // Enviar el correo con el archivo adjunto.
+        $attachments = [
+          ['filepath' => '/tmp/invite.ics', 'filename' => 'invite.ics', 'filemime' => 'text/calendar'],
+        ];
+        \Drupal::logger('capture_insert_data')->notice('iCal file created successfully.');
+        //Enviar al log la informacion del archivo adjunto
+        \Drupal::logger('capture_insert_data')->notice('Attachments: ' . json_encode($attachments));
+      }
+      $keysend = 'clase_gratis_agendada';
+      //envio al usuario con el rol de padre y archivo adjunto
+      enviar_correos_administrativos($correo_usuario, $subject, $message, $keysend);
+      //envio al administrador sin archivo adjunto
+      enviar_correos_administrativos($correo_administrativo, $subject, $message, $keysend);
     }
-    
+
+    if ($content_type == 'suscripciones') {
+      //field_clases_compradas, field_plan_comprado, field_fecha_de_inicio_de_la_susc, field_fecha_de_finalizacion_de_l, field_nro_de_orden (entity reference)
+      $field_clases_compradas = $entity->get('field_clases_compradas')->value;
+      $field_plan_comprado = $entity->get('field_plan_comprado')->value;
+      $field_fecha_de_inicio_de_la_susc = $entity->get('field_fecha_de_inicio_de_la_susc')->value;
+      $field_fecha_de_finalizacion_de_l = $entity->get('field_fecha_de_finalizacion_de_l')->value;
+      //obtener el id de la orden
+      $field_nro_de_orden = $entity->get('field_nro_de_orden')->target_id;
+
+      $enlace_orden = "/admin/commerce/orders/".$field_nro_de_orden;
+
+      $field_fecha_de_inicio_de_la_susc = date('Y-m-d', strtotime($field_fecha_de_inicio_de_la_susc));
+      $field_fecha_de_finalizacion_de_l = date('Y-m-d', strtotime($field_fecha_de_finalizacion_de_l));
+
+      $message = new TranslatableMarkup('<p>New subscription has been created successfully with the following information.</p>
+      <br/>
+      <p>Plan: <strong>@plan</strong></p>
+      <p>Start date: <strong>@fecha_inicio</strong></p>
+      <p>End date: <strong>@fecha_final</strong></p>
+      <p>Number of classes: <strong>@clases</strong></p>
+      <p>Order: <a href="@enlace">View order</a></p>', [
+        '@plan' => $field_plan_comprado,
+        '@fecha_inicio' => $field_fecha_de_inicio_de_la_susc,
+        '@fecha_final' => $field_fecha_de_finalizacion_de_l,
+        '@clases' => $field_clases_compradas,
+        '@enlace' => $enlace_orden,
+      ]);
+      $subject = new TranslatableMarkup('New subscription created in Holakoala.com');
+
+      $keysend = 'nueva_suscripcion_creada';
+      //enviar al administrador 
+      enviar_correos_administrativos($correo_administrativo, $subject, $message, $keysend);
+    }
+
   }
 }
 
@@ -160,7 +201,7 @@ function capture_insert_data_mail($key, &$message, $params) {
     $message['body'][] = $params['body'];
     if (!empty($params['attachments'])) {
       foreach ($params['attachments'] as $attachment) {
-        $file_path = '/tmp/' . $attachment['filename'];
+        $file_path = '/tmp/invite.ics';
         $message['params']['attachments'][] = [
           'filepath' => $file_path,
           'filename' => $attachment['filename'],
