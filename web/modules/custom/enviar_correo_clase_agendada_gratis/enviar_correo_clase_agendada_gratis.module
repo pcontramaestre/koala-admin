@@ -344,6 +344,7 @@ function enviar_correo_clase_agendada_gratis_send_email(array &$form, FormStateI
   $user->setUsername($correo);
   $user->set("field_nombre_del_hijo", $nombre);
   $user->set("field_apellidos", $apellidos);
+  $user->set("langcode", 'en');
 
   // Obtener la ruta absoluta del tema
   $theme_path = \Drupal::service('theme_handler')->getTheme('koala')->getPath();
