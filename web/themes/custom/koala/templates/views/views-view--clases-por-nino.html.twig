@@ -83,9 +83,9 @@
   <div class="select-suscription">
     <div class="form-item form-type-radios form-item-suscription">
       {% if current_language == 'es' %}
-        <label for="edit-suscription">Ciclo de facturación {{current_language}} </label>
+        <label for="edit-suscription">Ciclo de facturación</label>
       {% else %}
-        <label for="edit-suscription">Billing cycle {{current_language}} </label>
+        <label for="edit-suscription">Billing cycle</label>
       {% endif %}
       <div id="edit-suscription" class="form-radios">
         <div class="form-item form-type-radio form-item-suscription">
@@ -135,24 +135,24 @@
         <div class="col-4 total-clases">0</div>
         <div class="col-8 texto texto-precio-clase">Precio por clase</div>
         <div class="col-4 precio-clase" precio="17.50">$ 17.50</div>
-        <div class="col-8 texto texto-descuento">Descuento</div>
-        <div class="col-4 descuento">$ 0</div>
         <div class="col-8 texto texto-valor-total">Valor total</div>
         <div class="col-4 valor-total">$ 0</div>
+        <div class="col-8 texto texto-descuento">Descuento</div>
+        <div class="col-4 descuento">$ 0</div>
         <div class="col-8 texto texto-ahorro">Tu ahorro</div>
         <div class="col-4 ahorro">$ 0</div>
       {% else %}
         <div class="col-4 clase-por-semana">0</div>
-        <div class="col-8 texto texto-duracion">Duration</div>
+        <div class="col-8 texto texto-duracion">Period</div>
         <div class="col-4 duracion" semanas="4">4 weeks</div>
         <div class="col-8 texto texto-total-clases">Total number of classes</div>
         <div class="col-4 total-clases">0</div>
         <div class="col-8 texto texto-precio-clase">Price per class</div>
         <div class="col-4 precio-clase" precio="17.50">$ 17.50</div>
-        <div class="col-8 texto texto-descuento">Discount</div>
-        <div class="col-4 descuento">$ 0</div>
         <div class="col-8 texto texto-valor-total">Total value</div>
         <div class="col-4 valor-total"> 0</div>
+        <div class="col-8 texto texto-descuento">Discount</div>
+        <div class="col-4 descuento">$ 0</div>
         <div class="col-8 texto texto-ahorro">Your savings</div>
         <div class="col-4 ahorro">$ 0</div>
       {% endif %}
@@ -183,7 +183,7 @@
   {% if current_language == 'es' %}
     <div class="titulo">Conoce nuestros métodos de pago</div>
   {% else %}
-    <div class="titulo">Know our payment methods</div>
+    <div class="titulo">These are our payment methods</div>
   {% endif %}
   <div class="imagen d-flex">
     <div class="metodo-pago-img-svg">

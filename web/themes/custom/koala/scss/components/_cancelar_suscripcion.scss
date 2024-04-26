@@ -1,4 +1,12 @@
-.path-eliminar-suscripcion {
+body.path-eliminar-suscripcion {
+
+  #page-wrapper {
+    #page {
+      #main-wrapper.layout-main-wrapper {
+        min-height: 70vh;
+      }
+    }
+  }
 
   .navigation.menu--padres {
     opacity: 0;
@@ -148,6 +156,7 @@
   .suscribcion-activa {
     margin-top: 2rem;
     margin-bottom: 2rem;
+    display: none;
   }
 
 

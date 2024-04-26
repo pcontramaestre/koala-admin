@@ -185,10 +185,17 @@
       </div>
     {% endif %}
 
-    <div class="elimina-usuario">
-      <p>Otras acciones</p>
-      <p><a href="/eliminar_usuario">Eliminar mi cuenta</a></p>
-    </div>
+    {% if current_language == 'es' %}
+      <div class="elimina-usuario">
+        <p>Otras acciones</p>
+        <p><a href="/eliminar_usuario">Eliminar mi cuenta</a></p>
+      </div>
+    {% else %}
+      <div class="elimina-usuario">
+        <p>Other actions</p>
+        <p><a href="/en/eliminar_usuario">Delete my account</a></p>
+      </div>
+    {% endif %}
 
     <footer class="site-footer">
       {% block footer %}
