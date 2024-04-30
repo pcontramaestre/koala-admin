@@ -1,0 +1,10 @@
+display:
+  default:
+    display_options:
+      fields:
+        nothing:
+          alter:
+            text: "<div class=\"categoria\">\r\n  <div class=\"imagen\"><a href=\"/en/mis-mundos/{{ nid }}\">{{ field_imagen_del_mundo }}</a></div>\r\n  <div class=\"titulo-numero\">\r\n   <a href=\"/en/mis-mundos/{{ nid }}\">\r\n       <div class=\"titulo\">{{ title }} </div>\r\n       <div class=\"nro\"></div>\r\n    </a>\r\n  </div>\r\n</div>"
+      header:
+        area_text_custom:
+          content: "<div class=\"text-center titulo\"><strong>My Worlds</strong></div>\r\n<div class=\"text-center subtitulo\">Let's enjoy games, music, and audiobooks together. Practice a lot of Spanish. </div>"

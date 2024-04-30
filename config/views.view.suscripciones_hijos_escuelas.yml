@@ -768,7 +768,7 @@ display:
               aggr_column: views_aggregator_sum
               aggr_par_column: ''
           override: true
-          sticky: false
+          sticky: true
           summary: ''
           empty_table: false
           caption: ''

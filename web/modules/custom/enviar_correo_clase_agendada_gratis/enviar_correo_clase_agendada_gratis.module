@@ -417,8 +417,8 @@ function enviar_correo_clase_agendada_gratis_send_email(array &$form, FormStateI
   // Crear un nuevo nodo de tipo koala_ninos. con los campos 
   // field_describe_tu_koala, field_hijo_relacionado
   // Crea un nodo de tipo "horarios_profesores".
-  $title = 'Mi primer Koala';
-  $description = 'Mi primer Koala descripción';
+  $title = 'My firts Koala';
+  $description = 'My first Koala description';
 
 
   $nodekoalas = Node::create([

@@ -416,6 +416,10 @@
   }
 }
 
+.current_language-en #block-koala-content .content .user-editar-perfil-padre-form:before {
+  content: "Your personal information";
+}
+
 @media (max-width: 767px) and (min-width: 300px) {
   #block-koala-content {
     .content {

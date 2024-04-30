@@ -5,6 +5,8 @@ use Drupal\node\NodeInterface;
 use Drupal\user\UserInterface;
 use \Drupal\Core\StringTranslation\TranslatableMarkup;
 use Drupal\Core\File\FileSystemInterface;
+use Drupal\user\Entity\User;
+
 
 /**
  * Implements hook_entity_insert().
@@ -137,6 +139,14 @@ function capture_insert_data_entity_insert(EntityInterface $entity) {
       //obtener el id de la orden
       $field_nro_de_orden = $entity->get('field_nro_de_orden')->target_id;
 
+      //get field_usuario_padre
+      $field_usuario_padre = $entity->get('field_usuario_padre')->target_id;
+
+      //load user $field_usuario_padre
+      $user_padre = User::load($field_usuario_padre);
+      $correo_padre = $user_padre->getEmail();
+      
+
       $enlace_orden = "/admin/commerce/orders/".$field_nro_de_orden;
 
       $enlace_order_print = "/print/pdf/commerce_order/".$field_nro_de_orden;
@@ -151,13 +161,15 @@ function capture_insert_data_entity_insert(EntityInterface $entity) {
       <p>End date: <strong>@fecha_final</strong></p>
       <p>Number of classes: <strong>@clases</strong></p>
       <p>Order: <a href="@enlace">View order</a></p>
-      <p>Print order: <a href="@enlace_print">Print order</a></p>', [
+      <p>Print order: <a href="@enlace_print">Print order</a></p>
+      <p>Parent email: <strong>@correo_padre</strong></p', [
         '@plan' => $field_plan_comprado,
         '@fecha_inicio' => $field_fecha_de_inicio_de_la_susc,
         '@fecha_final' => $field_fecha_de_finalizacion_de_l,
         '@clases' => $field_clases_compradas,
         '@enlace' => $enlace_orden,
         '@enlace_print' => $enlace_order_print,
+        '@correo_padre' => $correo_padre,
       ]);
       $subject = new TranslatableMarkup('New subscription created in Holakoala.com');
 
