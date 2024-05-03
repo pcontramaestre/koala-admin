@@ -2473,7 +2473,7 @@ display:
           click_sort_column: value
           type: formatter_suite_datetime_time_ago_list
           settings:
-            future_format: 'Starts at @interval'
+            future_format: 'Starts in @interval'
             past_format: 'Clase iniciada hace @interval'
             granularity: '2'
             listStyle: span
