@@ -73,6 +73,7 @@ function capture_insert_data_entity_insert(EntityInterface $entity) {
         ]);
         $subject = new TranslatableMarkup('Trial class created in Holakoala.com');
       } else {
+        $subject = new TranslatableMarkup('Class created in Holakoala.com');
         $message = new TranslatableMarkup('<p>Your class has been created successfully with the following information.</p>
         <br/>
         <p>Date: <strong>@fecha</strong></p>
@@ -193,7 +194,7 @@ function capture_insert_data_entity_insert(EntityInterface $entity) {
       ]);
       $keysend = 'nueva_suscripcion_creada_usuario';
       //enviar al usuario
-      enviar_correos_administrativos($correo_usuario, $subject, $message, $keysend);
+      //enviar_correos_administrativos($correo_usuario, $subject, $message, $keysend);
     }
 
   }
