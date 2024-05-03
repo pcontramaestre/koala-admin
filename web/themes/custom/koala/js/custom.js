@@ -390,12 +390,31 @@
       if (algunaHoraEnRango(horaInicio, horaFin, filtroHoraInicio, filtroHoraFin)) {
           // Si se cumple la condición, podrías simplemente dejarlas visibles o aplicar alguna acción
           $(this).show(); 
+          $(this).addClass('visible');
+          $(this).removeClass('hidden');
       } else {
           // Si no, puedes decidir ocultarlas o hacer otra acción
           $(this).hide();
+          $(this).removeClass('visible');
+          $(this).addClass('hidden');
       }
-  });
+    });
 
+    // Recorrer cada fila de la vista y contar los que tienen la clase visible
+    var contador_visible = 0;
+    $('.view-content-detail > .views-row').each(function() {
+      if ($(this).hasClass('visible')) {
+        contador_visible++;
+      }
+    });
+
+    if (contador_visible == 0) {
+      // Agregar el texto There are no teachers for the selected time.
+      $('.view-content-detail').text(
+        'There are no teachers for the selected time.'
+      );
+    }
+    
 
     /*
 
