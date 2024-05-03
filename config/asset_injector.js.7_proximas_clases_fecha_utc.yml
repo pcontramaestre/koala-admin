@@ -7,7 +7,6 @@ dependencies:
 id: 7_proximas_clases_fecha_utc
 label: '7. Proximas clases, fecha UTC'
 code: |+
-
   // Ejecutar jquery cuando el documento este listo
   jQuery(document).ready(function($) {
     $('.view-display-id-block_proximas_clases .clase-paga').each(function(){
@@ -29,7 +28,7 @@ code: |+
       // Combinar la hora en formato de 12 horas con la zona horaria
       var horaConZonaHoraria = hora12h + " - " + zonaHoraria;
     
-      var fechaMostrar = $(this).find('.datos-fecha .hora-inicio-clase .fecha-mostrar');
+      var fechaMostrar = $(this).find('.datos-fecha .hora-inicio-clase .fecha-mostrar .oculta');
       fechaMostrar.text(horaConZonaHoraria);
     });
 
@@ -56,7 +55,7 @@ code: |+
       // Combinar la hora en formato de 12 horas con la zona horaria
       var horaConZonaHoraria = fecha + "-" + hora12h + " - " + zonaHoraria;
     
-      var fechaMostrar = $(this).find('.datos-fecha .hora-inicio-clase .fecha-mostrar');
+      var fechaMostrar = $(this).find('.datos-fecha .hora-inicio-clase .fecha-mostrar .oculta');
       fechaMostrar.text(horaConZonaHoraria);
     });
   });

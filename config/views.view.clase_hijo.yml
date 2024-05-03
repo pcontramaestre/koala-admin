@@ -375,7 +375,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<p class=\"titulo\">Tu próxima clase</p>\r\n<p class=\"fecha\">{{ field_fecha_cita_oculta_1 }}<br>\r\nel {{ field_fecha_cita_oculta }}</p>\r\n<p class=\"enlace\">\r\n<a href=\"/clases?idestudiante={{ field_pencil_id_estudiante }}&url={{ field_pencil_url_clase }}&idClase={{ nid }}\" class=\"editar-clase\"target=\"_blank\">Entrar a Clase</a>\r\n</p>"
+            text: "<p class=\"titulo\">Tu próxima clase</p>\r\n<p class=\"fecha\">{{ field_fecha_cita_oculta_1 }}<br>\r\n{{ field_fecha_cita_oculta }}</p>\r\n<p class=\"enlace\">\r\n<a href=\"/clases?idestudiante={{ field_pencil_id_estudiante }}&url={{ field_pencil_url_clase }}&idClase={{ nid }}\" class=\"editar-clase\"target=\"_blank\">Entrar a Clase</a>\r\n</p>"
             make_link: false
             path: ''
             absolute: false
@@ -415,7 +415,7 @@ display:
           click_sort_column: value
           type: formatter_suite_datetime_time_ago_list
           settings:
-            future_format: 'Comienza en @interval'
+            future_format: 'Starts at @interval'
             past_format: '@interval ago'
             granularity: '2'
             listStyle: span

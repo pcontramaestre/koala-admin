@@ -173,7 +173,7 @@ code: |-
 
         var $divEscogerHorario = $('#id-escoger-horario');
         $divEscogerHorario.empty();
-        $divEscogerHorario.append('<span class="w-100 mb-2">Escoge la hora de la clase</span>');
+        $divEscogerHorario.append('<span class="w-100 mb-2">Select time</span>');
         // Agregar las horas disponibles al div con id 'id-escoger-horario'
         horasDisponibles.forEach(function(horaDisponible) {
           var $a = $('<a href="#" class="hora-enlace" data-teacher-id="' + horaDisponible.dataTeacher + '" data-pencil-id="'+ horaDisponible.pencilId +'" data-hora="' + horaDisponible.hora + '">' + horaDisponible.hora + '</a>');

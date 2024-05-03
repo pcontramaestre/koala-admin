@@ -22,7 +22,7 @@ display:
     display_options:
       footer:
         area_text_custom:
-          content: "<a href=\"/node/add/agendar_clase/agendar_clases?agregar=1\" class=\"btn btn-primary mt-5 mb-5\" data-drupal-link-system-path=\"/node/add/agendar_clase/agendar_clases\">Add Koalas</a>\r\n\r\n\r\n"
+          content: "<a href=\"/en/node/add/agendar_clase/agendar_clases?agregar=1\" class=\"btn btn-primary mt-5 mb-5\" data-drupal-link-system-path=\"/en/node/add/agendar_clase/agendar_clases\">Add Koalas</a>\r\n\r\n\r\n"
       fields:
         title:
           alter:
