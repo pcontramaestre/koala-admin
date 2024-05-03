@@ -2676,6 +2676,18 @@ display:
       cache:
         type: none
         options: {  }
+      empty:
+        area_text_custom:
+          id: area_text_custom
+          table: views
+          field: area_text_custom
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text_custom
+          empty: true
+          content: 'There are no teachers for the selected day and time.'
+          tokenize: false
       arguments: {  }
       filters:
         roles_target_id:
@@ -2843,6 +2855,7 @@ display:
           replica: false
           query_tags: {  }
       defaults:
+        empty: false
         cache: false
         query: false
         title: false
@@ -2880,7 +2893,7 @@ display:
           group_type: group
           admin_label: ''
           plugin_id: text_custom
-          empty: false
+          empty: true
           content: "<div class=\"titulo-profesores\">Profesores recomendados</div>\r\n<div>Selecciona a tu profesor para agendar y ver más información sobre su perfil </div>"
           tokenize: true
       footer: {  }
@@ -5937,6 +5950,18 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
+      empty:
+        area_text_custom:
+          id: area_text_custom
+          table: views
+          field: area_text_custom
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text_custom
+          empty: true
+          content: 'There are no teachers for the selected day and time.'
+          tokenize: false
       filters:
         status:
           id: status
@@ -5998,6 +6023,7 @@ display:
         groups:
           1: AND
       defaults:
+        empty: false
         relationships: false
         fields: false
         filters: false
@@ -6476,6 +6502,18 @@ display:
                     filter_rewrite_values: ''
                   collapsible: false
                   is_secondary: false
+      empty:
+        area_text_custom:
+          id: area_text_custom
+          table: views
+          field: area_text_custom
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text_custom
+          empty: true
+          content: 'There are no teachers for the selected day and time.'
+          tokenize: false
       arguments:
         nid:
           id: nid
@@ -6576,6 +6614,7 @@ display:
         groups:
           1: AND
       defaults:
+        empty: false
         title: false
         exposed_form: false
         relationships: false
