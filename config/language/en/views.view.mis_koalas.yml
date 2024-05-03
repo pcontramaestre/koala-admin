@@ -32,7 +32,7 @@ display:
       fields:
         nothing_1:
           alter:
-            text: "{% set suscripcion_activa = field_suscripcion_activa %}\r\n{% if suscripcion_activa == \"1\" %}\r\n   <div class=\"boton-agendar\"><a href=\"/en/padres/mis-koalas/agendar_clase/{{ nid }}/{{ uid }}\" class=\"agendar-clase btn btn-primary mt-5 mb-5\">Schedule class</a></div>\r\n{% else %}\r\n   <div class=\"boton-agendar\"><a href=\"/node/add/agendar_clase/agendar_clases?escuela=1&uid={{ uid }}\" class=\"agendar-clase btn btn-primary mt-5 mb-5\">Proof class</a></div>\r\n{% endif %}\r\n\r\n<div class=\"boton-agendar boton-editar-nino\"><a href=\"/custom-child-login/{{ nid }}\" class=\"agendar-clase btn btn-primary mt-5 mb-5 entrar-nino\">Enter the child's section</a></div>"
+            text: "{% set suscripcion_activa = field_suscripcion_activa %}\r\n{% if suscripcion_activa == \"1\" %}\r\n   <div class=\"boton-agendar\"><a href=\"/en/padres/mis-koalas/agendar_clase/{{ nid }}/{{ uid }}\" class=\"agendar-clase btn btn-primary mt-5 mb-5\">Schedule class</a></div>\r\n{% else %}\r\n   <div class=\"boton-agendar\"><a href=\"/node/add/agendar_clase/agendar_clases?escuela=1&uid={{ uid }}\" class=\"agendar-clase btn btn-primary mt-5 mb-5\">Trial class</a></div>\r\n{% endif %}\r\n\r\n<div class=\"boton-agendar boton-editar-nino\"><a href=\"/custom-child-login/{{ nid }}\" class=\"agendar-clase btn btn-primary mt-5 mb-5 entrar-nino\">Go to koala's world</a></div>"
       header:
         area_text_custom:
           content: '<a href="/node/add/agendar_clase/agendar_clases?agregar=1" class="btn btn-primary mt-5 mb-5" data-drupal-link-system-path="/en/node/add/agendar_clase/agendar_clases">Add Koalas</a>'
@@ -51,7 +51,7 @@ display:
       fields:
         nothing:
           alter:
-            text: "  <div class=\"access-acudiente\">\r\n    <div class=\"imagen\"><a href=\"/en/padres/mis-koalas/agendar_clase/{{ nid }}/{{ uid }}\">{{ user_picture }}</a></div>\r\n    <div class=\"nombre-datos\">\r\n      <div class=\"nombre\"><a href=\"/en/padres/mis-koalas/agendar_clase/{{ nid }}/{{ uid }}\">{{ title }}</a></div>\r\n      <div class=\"tipo\"></div>\r\n    </div>\r\n  </div>\r\n"
+            text: "{% if field_suscripcion_activa == \"0\" %}\r\n   <div class=\"text-center \">You do not have an active subscription</div> \r\n   <div class=\"boton-agendar\"><a href=\"/en/zona-pagos\" class=\"agendar-clase\">Buy classes</a></div>\r\n{% else %}\r\n  <div class=\"access-acudiente suscripcion-{{ field_suscripcion_activa }}\">\r\n   <a href=\"/en/padres/mis-koalas/agendar_clase/{{ nid }}/{{ uid }}\" class=\"enlace-agendar-completo\"></a>\r\n    <div class=\"imagen\"><a href=\"/en/padres/mis-koalas/agendar_clase/{{ nid }}/{{ uid }}\">{{ user_picture }}</a></div>\r\n    <div class=\"nombre-datos\">\r\n      <div class=\"nombre\"><a href=\"/en/padres/mis-koalas/agendar_clase/{{ nid }}/{{ uid }}\">{{ title }}</a></div>\r\n      <div class=\"tipo\"></div>\r\n    </div>\r\n  </div>\r\n{% endif %}\r\n\r\n"
         title:
           alter:
             text: "<a href=\"/en/padres/mis-koalas/agendar_clase/{{ nid }}/{{ uid }}\">{{ title__value }}</a>\r\n"
