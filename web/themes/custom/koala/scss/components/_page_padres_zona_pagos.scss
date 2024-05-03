@@ -466,6 +466,12 @@
             text-decoration: line-through;
           }
         }
+        .valor-total {
+          font-size: 1.3rem;
+          small {
+            font-size: 14px !important;
+          }
+        }
       }
       .mensaje-plan-de-ahorro {
         background-color: #f5f8d8;
