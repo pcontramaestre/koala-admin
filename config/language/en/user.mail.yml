@@ -1,0 +1,9 @@
+password_reset:
+  subject: 'Reset login information for [user:display-name] at [site:name]'
+  body: "[user:display-name],\r\n\r\nA request to reset your account password has been made on [site:name].\r\n\r\nYou can now log in by clicking this link or by copying and pasting it into your browser:\r\n\r\n[user:one-time-login-url]\r\n\r\nThis link can only be used once to log in, and it will take you to a page where you can set your password. It expires after one day.\r\n\r\n-- The [site:name] team"
+register_no_approval_required:
+  subject: 'Account details for [user:display-name] at [site:name]'
+  body: "[user:display-name],\r\n\r\nThank you for registering at [site:name]. You can now log in by clicking this link or by copying and pasting it into your browser:\r\n\r\nKeep in mind that your username is:\r\n\r\nUsername: [user:name]\r\n\r\n--  The [site:name] team"
+status_canceled:
+  subject: 'Account details for [user:display-name] at [site:name] (canceled)'
+  body: "[user:display-name],\r\n\r\nYour account at [site:name] has been cancelled.\r\n\r\n--  The [site:name] team"
