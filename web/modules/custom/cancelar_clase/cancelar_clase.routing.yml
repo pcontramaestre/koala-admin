@@ -5,3 +5,11 @@ cancelar_clase.cancelar:
     _title: 'Cancelar Clase'
   requirements:
     _permission: 'access content'
+cancelar_clase.cancelar_confirmar:
+  path: '/cancelar-clase/{id_clase}/confirmar'
+  defaults:
+    _controller: '\Drupal\cancelar_clase\Controller\CancelarClaseController::cancelarConfirmar'
+    _title: 'Cancelar Clase Confirmar'
+  requirements:
+    _permission: 'access content'
+  
