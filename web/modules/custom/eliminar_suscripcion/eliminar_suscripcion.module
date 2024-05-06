@@ -5,6 +5,8 @@ use Drupal\user\Entity\User;
 use Drupal\Core\StringTranslation\TranslatableMarkup;
 use Drupal\views\ViewExecutable;
 use \Drupal\node\NodeInterface;
+use Drupal\Core\Url;
+
 
 /**
  * Implements hook_theme().
@@ -51,7 +53,7 @@ function eliminar_suscripcion_form_alter(&$form, FormStateInterface $form_state,
     $form['actions']['cancel'] = [
       '#type' => 'link',
       '#title' =>  new TranslatableMarkup('No, quiero seguir suscrito'),
-      '#url' => \Drupal\Core\Url::fromRoute('<front>'),
+      '#url' => Url::fromUri('internal:/padres'),
       '#attributes' => [
         'class' => ['button'],
       ],
