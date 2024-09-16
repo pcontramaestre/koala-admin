@@ -516,3 +516,52 @@ body.node--type-pagos-colegios.rol-director_colegio {
 }
 
 
+.path-pagos-realizados.rol-director_colegio {
+  background-color: #c9e0e2;
+  background-image: url(/themes/custom/koala/images/Group463.png);
+
+  #main-wrapper {
+    min-height: 95vh;
+
+    .layout__region--content {
+      margin-top: 2rem;
+
+      .block-views-blockcommerce-user-orders-block-1 {
+        background: white;
+        padding: 1rem;
+        margin-bottom: 2rem;
+        border-radius: 16px;
+
+        h2 {
+          font-size: 18px;
+          font-weight: 700;
+        }
+      }
+
+      .block-views-blockpagos-colegios-block-3 {
+        background: white;
+        padding: 1rem;
+        margin-bottom: 2rem;
+        border-radius: 16px;
+
+        h2 {
+          font-size: 18px;
+          font-weight: 700;
+        }
+
+        .view-filters {
+          .views-exposed-form {
+            > .d-flex {
+              gap: 1rem;
+            }
+
+            label {
+              font-size: 14px;
+              font-weight: 600;
+            }
+          }
+        }
+      }
+    }
+  }
+}
