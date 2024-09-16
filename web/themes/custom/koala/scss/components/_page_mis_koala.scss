@@ -18,9 +18,9 @@
       padding-left: 0.3125rem;
       padding-right: 0.3125rem;
       width: 7%;
-      background: #297e88;
       color: white;
       min-width: 7%;
+      border-radius: 32px;
     }
   }
 }
@@ -301,9 +301,9 @@
     }
     .item-list-accordeon {
       margin-bottom: 0.5rem;
-      border-radius: 1rem;
+      border-radius: 2rem;
       background: var(--White, #fff);
-      padding: 1rem;
+      padding: 0.8rem 1rem;
 
       &:hover {
         transition: all 0.4s ease-in-out;
@@ -329,10 +329,11 @@
             font-size: 0.625rem;
             padding-left: 0.3125rem;
             padding-right: 0.3125rem;
-            width: 7%;
+            width: 9%;
             background: #297e88;
             color: white;
-            min-width: 7%;
+            min-width: 9%;
+            
           }
         }
       }
@@ -812,4 +813,28 @@
 
 footer.site-footer.footer-mis-koalas {
   margin-top: 0rem;
+}
+
+
+.progress {
+  .progress-bar {
+    &.background-10{
+      background: #727F7F !important;
+    }
+    &.background-30{
+      background: #297E88 !important;
+    }
+    &.background-50{
+      background: #FF6669 !important;
+    }
+    &.background-70{
+      background: #FBAF00 !important;
+    }
+    &.background-85{
+      background: #869021 !important;
+    }
+    &.background-100{
+      background: #00D2C2 !important;
+    }
+  }
 }

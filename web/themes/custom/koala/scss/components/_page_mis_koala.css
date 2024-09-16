@@ -1,0 +1,601 @@
+.title-acordeon {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 2.5fr 2fr;
+  align-items: center;
+}
+@media screen and (max-width: 768px) {
+  .title-acordeon {
+    grid-template-columns: 1fr;
+  }
+}
+.title-acordeon .progress {
+  max-width: 90%;
+  border-radius: unset;
+  height: 12px;
+}
+.title-acordeon .progress .progress-bar {
+  font-size: 0.625rem;
+  padding-left: 0.3125rem;
+  padding-right: 0.3125rem;
+  width: 7%;
+  color: white;
+  min-width: 7%;
+  border-radius: 32px;
+}
+
+.path-padres #page-wrapper #main-wrapper .container #block-koala-content .content .layout--onecol .layout__region--content .block-views-blockmis-koalas-block-2, .path-coordinador #page-wrapper #main-wrapper .container #block-koala-content .content .layout--onecol .layout__region--content .block-views-blockmis-koalas-block-2 {
+  margin-top: 1rem;
+}
+.path-padres #page-wrapper #main-wrapper .container #block-koala-content .content .layout--onecol .layout__region--content .block-views-blockmis-koalas-block-2 h2, .path-coordinador #page-wrapper #main-wrapper .container #block-koala-content .content .layout--onecol .layout__region--content .block-views-blockmis-koalas-block-2 h2 {
+  text-align: center;
+  margin-top: 3rem;
+  font-weight: 700;
+  font-size: 20px;
+  margin-bottom: 2rem;
+}
+.path-padres #page-wrapper #main-wrapper .container #block-koala-content .content .layout--onecol .layout__region--content .block-views-blockmis-koalas-block-2 .content .view-display-id-block_2, .path-coordinador #page-wrapper #main-wrapper .container #block-koala-content .content .layout--onecol .layout__region--content .block-views-blockmis-koalas-block-2 .content .view-display-id-block_2 {
+  position: relative;
+}
+.path-padres #page-wrapper #main-wrapper .container #block-koala-content .content .layout--onecol .layout__region--content .block-views-blockmis-koalas-block-2 .content .view-display-id-block_2 #views-bootstrap-tab-views-bootstrap-mis-koalas-block-2 > .tab-content, .path-coordinador #page-wrapper #main-wrapper .container #block-koala-content .content .layout--onecol .layout__region--content .block-views-blockmis-koalas-block-2 .content .view-display-id-block_2 #views-bootstrap-tab-views-bootstrap-mis-koalas-block-2 > .tab-content {
+  margin-top: 0.8rem;
+}
+.path-padres #page-wrapper #main-wrapper .container #block-koala-content .content .layout--onecol .layout__region--content .block-views-blockmis-koalas-block-2 .content .view-display-id-block_2 > .view-header, .path-coordinador #page-wrapper #main-wrapper .container #block-koala-content .content .layout--onecol .layout__region--content .block-views-blockmis-koalas-block-2 .content .view-display-id-block_2 > .view-header {
+  position: absolute;
+  right: 1rem;
+  top: -5.7%;
+  z-index: 100;
+}
+.path-padres #page-wrapper #main-wrapper .container #block-koala-content .content .layout--onecol .layout__region--content .block-views-blockmis-koalas-block-2 .content .view-display-id-block_2 > .view-header a, .path-coordinador #page-wrapper #main-wrapper .container #block-koala-content .content .layout--onecol .layout__region--content .block-views-blockmis-koalas-block-2 .content .view-display-id-block_2 > .view-header a {
+  padding: 16px;
+  border: 2px solid #297e88;
+  color: black;
+  font-weight: 700;
+  font-size: 16px;
+  width: 197px;
+  height: 54px;
+  background: white;
+  border-radius: 32px;
+  display: flex;
+  align-items: center;
+}
+.path-padres #page-wrapper #main-wrapper .container #block-koala-content .content .layout--onecol .layout__region--content .block-views-blockmis-koalas-block-2 .content .view-display-id-block_2 > .view-header a:after, .path-coordinador #page-wrapper #main-wrapper .container #block-koala-content .content .layout--onecol .layout__region--content .block-views-blockmis-koalas-block-2 .content .view-display-id-block_2 > .view-header a:after {
+  content: "";
+  display: block;
+  width: 25px;
+  height: 20px;
+  background-image: url("/themes/custom/koala/images/icon-koalas.png");
+  position: absolute;
+  top: 65px;
+  left: 151px;
+}
+.path-padres #page-wrapper #main-wrapper .container #block-koala-content .content .layout--onecol .layout__region--content .block-views-blockmis-koalas-block-2 .content .view-display-id-block_2 > .view-header a:hover, .path-coordinador #page-wrapper #main-wrapper .container #block-koala-content .content .layout--onecol .layout__region--content .block-views-blockmis-koalas-block-2 .content .view-display-id-block_2 > .view-header a:hover {
+  text-decoration: underline;
+}
+.path-padres #page-wrapper #main-wrapper .container #block-koala-content .content .layout--onecol .layout__region--content .block-views-blockmis-koalas-block-2 .content .view-display-id-block_2 .view-content #views-bootstrap-tab-views-bootstrap-mis-koalas-block-2 .nav-tabs, .path-coordinador #page-wrapper #main-wrapper .container #block-koala-content .content .layout--onecol .layout__region--content .block-views-blockmis-koalas-block-2 .content .view-display-id-block_2 .view-content #views-bootstrap-tab-views-bootstrap-mis-koalas-block-2 .nav-tabs {
+  overflow-x: auto;
+  display: flex;
+  flex-wrap: nowrap;
+  border-bottom: 2px solid #e6f1f1;
+  width: 82%;
+}
+.path-padres #page-wrapper #main-wrapper .container #block-koala-content .content .layout--onecol .layout__region--content .block-views-blockmis-koalas-block-2 .content .view-display-id-block_2 .view-content #views-bootstrap-tab-views-bootstrap-mis-koalas-block-2 .nav-tabs .nav-item, .path-coordinador #page-wrapper #main-wrapper .container #block-koala-content .content .layout--onecol .layout__region--content .block-views-blockmis-koalas-block-2 .content .view-display-id-block_2 .view-content #views-bootstrap-tab-views-bootstrap-mis-koalas-block-2 .nav-tabs .nav-item {
+  margin-right: 1.8rem;
+}
+.path-padres #page-wrapper #main-wrapper .container #block-koala-content .content .layout--onecol .layout__region--content .block-views-blockmis-koalas-block-2 .content .view-display-id-block_2 .view-content #views-bootstrap-tab-views-bootstrap-mis-koalas-block-2 .nav-tabs .nav-item a,
+.path-padres #page-wrapper #main-wrapper .container #block-koala-content .content .layout--onecol .layout__region--content .block-views-blockmis-koalas-block-2 .content .view-display-id-block_2 .view-content #views-bootstrap-tab-views-bootstrap-mis-koalas-block-2 .nav-tabs .nav-item button, .path-coordinador #page-wrapper #main-wrapper .container #block-koala-content .content .layout--onecol .layout__region--content .block-views-blockmis-koalas-block-2 .content .view-display-id-block_2 .view-content #views-bootstrap-tab-views-bootstrap-mis-koalas-block-2 .nav-tabs .nav-item a,
+.path-coordinador #page-wrapper #main-wrapper .container #block-koala-content .content .layout--onecol .layout__region--content .block-views-blockmis-koalas-block-2 .content .view-display-id-block_2 .view-content #views-bootstrap-tab-views-bootstrap-mis-koalas-block-2 .nav-tabs .nav-item button {
+  border: none;
+  background: #ffe8e8;
+  border-radius: 16px;
+  color: #ff6669;
+  border: 1px solid #ff6669;
+  font-weight: 700;
+  font-size: 16px;
+  min-width: 100px;
+  height: 37px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 1rem;
+  text-wrap: nowrap;
+  padding: 0.5rem 0.5rem 0.5rem 0rem;
+  position: relative;
+}
+.path-padres #page-wrapper #main-wrapper .container #block-koala-content .content .layout--onecol .layout__region--content .block-views-blockmis-koalas-block-2 .content .view-display-id-block_2 .view-content #views-bootstrap-tab-views-bootstrap-mis-koalas-block-2 .nav-tabs .nav-item a:before,
+.path-padres #page-wrapper #main-wrapper .container #block-koala-content .content .layout--onecol .layout__region--content .block-views-blockmis-koalas-block-2 .content .view-display-id-block_2 .view-content #views-bootstrap-tab-views-bootstrap-mis-koalas-block-2 .nav-tabs .nav-item button:before, .path-coordinador #page-wrapper #main-wrapper .container #block-koala-content .content .layout--onecol .layout__region--content .block-views-blockmis-koalas-block-2 .content .view-display-id-block_2 .view-content #views-bootstrap-tab-views-bootstrap-mis-koalas-block-2 .nav-tabs .nav-item a:before,
+.path-coordinador #page-wrapper #main-wrapper .container #block-koala-content .content .layout--onecol .layout__region--content .block-views-blockmis-koalas-block-2 .content .view-display-id-block_2 .view-content #views-bootstrap-tab-views-bootstrap-mis-koalas-block-2 .nav-tabs .nav-item button:before {
+  content: "";
+  display: block;
+  width: 30px;
+  height: 30px;
+  border-radius: 200px;
+  margin-right: 3px;
+  margin-left: 5px;
+  background-image: url("/themes/custom/koala/images/avatar.png");
+  background-size: cover;
+}
+.path-padres #page-wrapper #main-wrapper .container #block-koala-content .content .layout--onecol .layout__region--content .block-views-blockmis-koalas-block-2 .content .view-display-id-block_2 .view-content #views-bootstrap-tab-views-bootstrap-mis-koalas-block-2 .nav-tabs .nav-item .nav-link.active:after, .path-coordinador #page-wrapper #main-wrapper .container #block-koala-content .content .layout--onecol .layout__region--content .block-views-blockmis-koalas-block-2 .content .view-display-id-block_2 .view-content #views-bootstrap-tab-views-bootstrap-mis-koalas-block-2 .nav-tabs .nav-item .nav-link.active:after {
+  top: 36px;
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 9px solid #ff6669;
+}
+.path-padres #page-wrapper #main-wrapper .container #block-koala-content .content .layout--onecol .layout__region--content .block-views-blockmis-koalas-block-2 .content .view-display-id-block_2 .view-content #views-bootstrap-tab-views-bootstrap-mis-koalas-block-2 .nav-tabs::-webkit-scrollbar, .path-coordinador #page-wrapper #main-wrapper .container #block-koala-content .content .layout--onecol .layout__region--content .block-views-blockmis-koalas-block-2 .content .view-display-id-block_2 .view-content #views-bootstrap-tab-views-bootstrap-mis-koalas-block-2 .nav-tabs::-webkit-scrollbar {
+  width: 5px;
+  height: 3px;
+}
+.path-padres #page-wrapper #main-wrapper .container #block-koala-content .content .layout--onecol .layout__region--content .block-views-blockmis-koalas-block-2 .content .view-display-id-block_2 .view-content #views-bootstrap-tab-views-bootstrap-mis-koalas-block-2 .nav-tabs::-webkit-scrollbar-thumb, .path-coordinador #page-wrapper #main-wrapper .container #block-koala-content .content .layout--onecol .layout__region--content .block-views-blockmis-koalas-block-2 .content .view-display-id-block_2 .view-content #views-bootstrap-tab-views-bootstrap-mis-koalas-block-2 .nav-tabs::-webkit-scrollbar-thumb {
+  background-color: grey;
+}
+.path-padres #page-wrapper #main-wrapper .container #block-koala-content .content .layout--onecol .layout__region--content .block-views-blockmis-koalas-block-2 .content .view-display-id-block_2 .view-content #views-bootstrap-tab-views-bootstrap-mis-koalas-block-2 .tab-content .tab-pane .views-field.views-field-uid, .path-coordinador #page-wrapper #main-wrapper .container #block-koala-content .content .layout--onecol .layout__region--content .block-views-blockmis-koalas-block-2 .content .view-display-id-block_2 .view-content #views-bootstrap-tab-views-bootstrap-mis-koalas-block-2 .tab-content .tab-pane .views-field.views-field-uid {
+  display: none;
+}
+.path-padres #page-wrapper #main-wrapper .container #block-koala-content .content .layout--onecol .layout__region--content .block-views-blockmis-koalas-block-2 .content .view-display-id-block_2 .view-content #views-bootstrap-tab-views-bootstrap-mis-koalas-block-2 .tab-content .tab-pane .views-field .field-content, .path-coordinador #page-wrapper #main-wrapper .container #block-koala-content .content .layout--onecol .layout__region--content .block-views-blockmis-koalas-block-2 .content .view-display-id-block_2 .view-content #views-bootstrap-tab-views-bootstrap-mis-koalas-block-2 .tab-content .tab-pane .views-field .field-content {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+.path-padres #page-wrapper #main-wrapper .container #block-koala-content .content .layout--onecol .layout__region--content .block-views-blockmis-koalas-block-2 .content .view-display-id-block_2 .view-content #views-bootstrap-tab-views-bootstrap-mis-koalas-block-2 .tab-content .tab-pane .views-field .field-content .boton-agendar, .path-coordinador #page-wrapper #main-wrapper .container #block-koala-content .content .layout--onecol .layout__region--content .block-views-blockmis-koalas-block-2 .content .view-display-id-block_2 .view-content #views-bootstrap-tab-views-bootstrap-mis-koalas-block-2 .tab-content .tab-pane .views-field .field-content .boton-agendar {
+  text-align: center;
+}
+.path-padres #page-wrapper #main-wrapper .container #block-koala-content .content .layout--onecol .layout__region--content .block-views-blockmis-koalas-block-2 .content .view-display-id-block_2 .view-content #views-bootstrap-tab-views-bootstrap-mis-koalas-block-2 .tab-content .tab-pane .views-field .field-content .boton-agendar .agendar-clase,
+.path-padres #page-wrapper #main-wrapper .container #block-koala-content .content .layout--onecol .layout__region--content .block-views-blockmis-koalas-block-2 .content .view-display-id-block_2 .view-content #views-bootstrap-tab-views-bootstrap-mis-koalas-block-2 .tab-content .tab-pane .views-field .field-content .boton-agendar a, .path-coordinador #page-wrapper #main-wrapper .container #block-koala-content .content .layout--onecol .layout__region--content .block-views-blockmis-koalas-block-2 .content .view-display-id-block_2 .view-content #views-bootstrap-tab-views-bootstrap-mis-koalas-block-2 .tab-content .tab-pane .views-field .field-content .boton-agendar .agendar-clase,
+.path-coordinador #page-wrapper #main-wrapper .container #block-koala-content .content .layout--onecol .layout__region--content .block-views-blockmis-koalas-block-2 .content .view-display-id-block_2 .view-content #views-bootstrap-tab-views-bootstrap-mis-koalas-block-2 .tab-content .tab-pane .views-field .field-content .boton-agendar a {
+  min-width: 190px;
+  height: 45px;
+  background: white;
+  border: 2px solid #297e88;
+  border-radius: 32px;
+  color: black;
+  font-weight: 700;
+  font-size: 20px;
+  margin-top: 1rem !important;
+  margin-bottom: 0rem !important;
+}
+.path-padres #page-wrapper #main-wrapper .container #block-koala-content .content .layout--onecol .layout__region--content .block-views-blockmis-koalas-block-2 .content .view-display-id-block_2 .view-content #views-bootstrap-tab-views-bootstrap-mis-koalas-block-2 .tab-content .tab-pane .views-field .field-content .boton-agendar .agendar-clase:hover,
+.path-padres #page-wrapper #main-wrapper .container #block-koala-content .content .layout--onecol .layout__region--content .block-views-blockmis-koalas-block-2 .content .view-display-id-block_2 .view-content #views-bootstrap-tab-views-bootstrap-mis-koalas-block-2 .tab-content .tab-pane .views-field .field-content .boton-agendar a:hover, .path-coordinador #page-wrapper #main-wrapper .container #block-koala-content .content .layout--onecol .layout__region--content .block-views-blockmis-koalas-block-2 .content .view-display-id-block_2 .view-content #views-bootstrap-tab-views-bootstrap-mis-koalas-block-2 .tab-content .tab-pane .views-field .field-content .boton-agendar .agendar-clase:hover,
+.path-coordinador #page-wrapper #main-wrapper .container #block-koala-content .content .layout--onecol .layout__region--content .block-views-blockmis-koalas-block-2 .content .view-display-id-block_2 .view-content #views-bootstrap-tab-views-bootstrap-mis-koalas-block-2 .tab-content .tab-pane .views-field .field-content .boton-agendar a:hover {
+  background-color: #297e88;
+  color: white;
+}
+.path-padres #page-wrapper #main-wrapper .container #block-koala-content .content .layout--onecol .layout__region--content .block-views-blockmis-koalas-block-2 .content .view-display-id-block_2 .view-content #views-bootstrap-tab-views-bootstrap-mis-koalas-block-2 .tab-content .tab-pane .views-field .field-content .boton-agendar .agendar-clase.disabled, .path-coordinador #page-wrapper #main-wrapper .container #block-koala-content .content .layout--onecol .layout__region--content .block-views-blockmis-koalas-block-2 .content .view-display-id-block_2 .view-content #views-bootstrap-tab-views-bootstrap-mis-koalas-block-2 .tab-content .tab-pane .views-field .field-content .boton-agendar .agendar-clase.disabled {
+  border: 1px solid gray;
+  color: gray;
+}
+.path-padres #page-wrapper #main-wrapper .container #block-koala-content .content .layout--onecol .layout__region--content .block-views-blockmis-koalas-block-2 .content .view-display-id-block_2 .view-content #views-bootstrap-tab-views-bootstrap-mis-koalas-block-2 .tab-content .tab-pane .views-field .field-content .texto-logros, .path-coordinador #page-wrapper #main-wrapper .container #block-koala-content .content .layout--onecol .layout__region--content .block-views-blockmis-koalas-block-2 .content .view-display-id-block_2 .view-content #views-bootstrap-tab-views-bootstrap-mis-koalas-block-2 .tab-content .tab-pane .views-field .field-content .texto-logros {
+  font-weight: 600;
+  font-size: 16px;
+}
+.path-padres #page-wrapper #main-wrapper .container #block-koala-content .content .layout--onecol .layout__region--content .block-views-blockmis-koalas-block-2 .content .view-display-id-block_2 .view-content #views-bootstrap-tab-views-bootstrap-mis-koalas-block-2 .tab-content .tab-pane .row, .path-coordinador #page-wrapper #main-wrapper .container #block-koala-content .content .layout--onecol .layout__region--content .block-views-blockmis-koalas-block-2 .content .view-display-id-block_2 .view-content #views-bootstrap-tab-views-bootstrap-mis-koalas-block-2 .tab-content .tab-pane .row {
+  background: var(--Grey-K100, #e6f1f1);
+}
+.path-padres .view-id-logros_taxonomia.view-display-id-block_1 .nombre-unidad, .path-coordinador .view-id-logros_taxonomia.view-display-id-block_1 .nombre-unidad {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+.path-padres .view-id-logros_taxonomia.view-display-id-block_1 .view-grouping .view-grouping-header, .path-coordinador .view-id-logros_taxonomia.view-display-id-block_1 .view-grouping .view-grouping-header {
+  font-weight: 700;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+.path-padres .view-id-logros_taxonomia.view-display-id-block_1 .view-content.row, .path-coordinador .view-id-logros_taxonomia.view-display-id-block_1 .view-content.row {
+  border-radius: 1.5rem;
+  padding: 1rem 3rem 2rem 3rem;
+  margin-bottom: 3rem;
+  margin-left: 0rem;
+}
+.path-padres .view-id-logros_taxonomia.view-display-id-block_1 .view-content.row .texto-logros, .path-coordinador .view-id-logros_taxonomia.view-display-id-block_1 .view-content.row .texto-logros {
+  margin-top: 1rem;
+  margin-bottom: 0rem;
+  color: #000;
+  font-family: Nunito;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+.path-padres .view-id-logros_taxonomia.view-display-id-block_1 .view-content.row .texto-logros h3, .path-coordinador .view-id-logros_taxonomia.view-display-id-block_1 .view-content.row .texto-logros h3 {
+  font-size: 1.25rem;
+  text-align: center;
+  font-weight: 700;
+}
+.path-padres .view-id-logros_taxonomia.view-display-id-block_1 .view-content.row .texto-logros p, .path-coordinador .view-id-logros_taxonomia.view-display-id-block_1 .view-content.row .texto-logros p {
+  text-align: center;
+}
+.path-padres .view-id-logros_taxonomia.view-display-id-block_1 .item-list-accordeon, .path-coordinador .view-id-logros_taxonomia.view-display-id-block_1 .item-list-accordeon {
+  margin-bottom: 0.5rem;
+  border-radius: 2rem;
+  background: var(--White, #fff);
+  padding: 0.8rem 1rem;
+}
+.path-padres .view-id-logros_taxonomia.view-display-id-block_1 .item-list-accordeon:hover, .path-coordinador .view-id-logros_taxonomia.view-display-id-block_1 .item-list-accordeon:hover {
+  transition: all 0.4s ease-in-out;
+  box-shadow: 1px 1px 8px 1px rgba(128, 128, 128, 0.3098039216);
+}
+.path-padres .view-id-logros_taxonomia.view-display-id-block_1 .item-list-accordeon .title-acordeon, .path-coordinador .view-id-logros_taxonomia.view-display-id-block_1 .item-list-accordeon .title-acordeon {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 2.5fr 2fr;
+  align-items: center;
+}
+@media screen and (max-width: 768px) {
+  .path-padres .view-id-logros_taxonomia.view-display-id-block_1 .item-list-accordeon .title-acordeon, .path-coordinador .view-id-logros_taxonomia.view-display-id-block_1 .item-list-accordeon .title-acordeon {
+    grid-template-columns: 1fr;
+  }
+}
+.path-padres .view-id-logros_taxonomia.view-display-id-block_1 .item-list-accordeon .title-acordeon .progress, .path-coordinador .view-id-logros_taxonomia.view-display-id-block_1 .item-list-accordeon .title-acordeon .progress {
+  max-width: 90%;
+  border-radius: unset;
+  height: 12px;
+}
+.path-padres .view-id-logros_taxonomia.view-display-id-block_1 .item-list-accordeon .title-acordeon .progress .progress-bar, .path-coordinador .view-id-logros_taxonomia.view-display-id-block_1 .item-list-accordeon .title-acordeon .progress .progress-bar {
+  font-size: 0.625rem;
+  padding-left: 0.3125rem;
+  padding-right: 0.3125rem;
+  width: 9%;
+  background: #297e88;
+  color: white;
+  min-width: 9%;
+}
+.path-padres .view-id-logros_taxonomia.view-display-id-block_1 .item-list-accordeon > h3, .path-coordinador .view-id-logros_taxonomia.view-display-id-block_1 .item-list-accordeon > h3 {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 0rem;
+  cursor: pointer;
+  display: block;
+  position: relative;
+  color: black;
+}
+.path-padres .view-id-logros_taxonomia.view-display-id-block_1 .item-list-accordeon > h3:before, .path-coordinador .view-id-logros_taxonomia.view-display-id-block_1 .item-list-accordeon > h3:before {
+  content: "+";
+  color: black;
+  position: absolute;
+  top: 50%;
+  right: -5px;
+  font-size: 30px;
+  transform: translateY(-50%);
+}
+.path-padres .view-id-logros_taxonomia.view-display-id-block_1 .item-list-accordeon ul.listado-de-logros, .path-coordinador .view-id-logros_taxonomia.view-display-id-block_1 .item-list-accordeon ul.listado-de-logros {
+  display: none;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+  list-style-type: none;
+  padding: 0;
+  transition: 0.5s;
+}
+.path-padres .view-id-logros_taxonomia.view-display-id-block_1 .item-list-accordeon ul.listado-de-logros li, .path-coordinador .view-id-logros_taxonomia.view-display-id-block_1 .item-list-accordeon ul.listado-de-logros li {
+  display: flex;
+  align-items: center;
+  border-radius: 1rem;
+  padding: 0.5rem 1rem 0.5rem 2rem;
+  background: white;
+}
+.path-padres .view-id-logros_taxonomia.view-display-id-block_1 .item-list-accordeon ul.listado-de-logros li a, .path-coordinador .view-id-logros_taxonomia.view-display-id-block_1 .item-list-accordeon ul.listado-de-logros li a {
+  font-size: 0.8rem;
+  font-style: normal;
+  font-weight: 700;
+  color: var(--Grey-K500, #727f7f);
+  text-decoration: none;
+  pointer-events: none;
+  position: relative;
+  line-height: 1.2;
+  display: block;
+}
+.path-padres .view-id-logros_taxonomia.view-display-id-block_1 .item-list-accordeon ul.listado-de-logros li a:before, .path-coordinador .view-id-logros_taxonomia.view-display-id-block_1 .item-list-accordeon ul.listado-de-logros li a:before {
+  content: "";
+  background-image: url("../images/icon-star-disable.svg");
+  margin-right: 0.5rem;
+  width: 19px;
+  height: 19px;
+  position: absolute;
+  left: -24px;
+  font-weight: 300;
+  top: -4px;
+}
+.path-padres .view-id-logros_taxonomia.view-display-id-block_1 .item-list-accordeon ul.listado-de-logros li.habilitado, .path-coordinador .view-id-logros_taxonomia.view-display-id-block_1 .item-list-accordeon ul.listado-de-logros li.habilitado {
+  background: var(--Red-K100, #ffe8e8);
+}
+.path-padres .view-id-logros_taxonomia.view-display-id-block_1 .item-list-accordeon ul.listado-de-logros li.habilitado a, .path-coordinador .view-id-logros_taxonomia.view-display-id-block_1 .item-list-accordeon ul.listado-de-logros li.habilitado a {
+  font-size: 0.8rem;
+  font-style: normal;
+  font-weight: 700;
+  color: black;
+  text-decoration: none;
+  pointer-events: none;
+  position: relative;
+  line-height: 1.2;
+  display: block;
+}
+.path-padres .view-id-logros_taxonomia.view-display-id-block_1 .item-list-accordeon ul.listado-de-logros li.habilitado a:before, .path-coordinador .view-id-logros_taxonomia.view-display-id-block_1 .item-list-accordeon ul.listado-de-logros li.habilitado a:before {
+  content: "";
+  background-image: url("../images/icon-start.svg");
+  margin-right: 0.5rem;
+  width: 19px;
+  height: 19px;
+  position: absolute;
+  left: -24px;
+  color: white;
+  top: -4px;
+}
+.path-padres .view-id-logros_taxonomia.view-display-id-block_1 .item-list-accordeon ul.listado-de-logros li:nth-child(2n).habilitado, .path-coordinador .view-id-logros_taxonomia.view-display-id-block_1 .item-list-accordeon ul.listado-de-logros li:nth-child(2n).habilitado {
+  background: var(--Yellow-K100, #fff0cc);
+}
+.path-padres .view-id-logros_taxonomia.view-display-id-block_1 .item-list-accordeon ul.listado-de-logros li:nth-child(4n).habilitado, .path-coordinador .view-id-logros_taxonomia.view-display-id-block_1 .item-list-accordeon ul.listado-de-logros li:nth-child(4n).habilitado {
+  background: var(--Turq-K100, #d7eff2);
+}
+.path-padres .view-id-logros_taxonomia.view-display-id-block_1 .item-list-accordeon.activa > h3, .path-coordinador .view-id-logros_taxonomia.view-display-id-block_1 .item-list-accordeon.activa > h3 {
+  margin-bottom: 0.8rem;
+}
+.path-padres .view-id-logros_taxonomia.view-display-id-block_1 .item-list-accordeon.activa > h3:before, .path-coordinador .view-id-logros_taxonomia.view-display-id-block_1 .item-list-accordeon.activa > h3:before {
+  content: "-";
+}
+.path-padres .view-id-logros_taxonomia.view-display-id-block_1 .item-list-accordeon.activa ul.listado-de-logros, .path-coordinador .view-id-logros_taxonomia.view-display-id-block_1 .item-list-accordeon.activa ul.listado-de-logros {
+  display: grid;
+}
+.path-padres .view-resumen-de-clases > .view-header, .path-coordinador .view-resumen-de-clases > .view-header {
+  margin-top: 1.5rem;
+}
+.path-padres .view-resumen-de-clases > .view-header .titulo-saludos h3, .path-coordinador .view-resumen-de-clases > .view-header .titulo-saludos h3 {
+  color: black;
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.path-padres .view-resumen-de-clases > .view-header .subtitulo-saludos p, .path-coordinador .view-resumen-de-clases > .view-header .subtitulo-saludos p {
+  font-family: Nunito;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  color: black;
+}
+.path-padres .view-resumen-de-clases .no-mostrar, .path-coordinador .view-resumen-de-clases .no-mostrar {
+  display: none;
+}
+.path-padres .view-resumen-de-clases .resumen-clase:not(.mostrar), .path-coordinador .view-resumen-de-clases .resumen-clase:not(.mostrar) {
+  display: none;
+}
+.path-padres .view-resumen-de-clases .resumen-clase, .path-coordinador .view-resumen-de-clases .resumen-clase {
+  border-radius: 1.5rem;
+  border: 2px solid var(--Grey-K100, #e6f1f1);
+  display: flex;
+  padding: 1rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+  background: white;
+}
+.path-padres .view-resumen-de-clases .resumen-clase .header, .path-coordinador .view-resumen-de-clases .resumen-clase .header {
+  justify-content: space-between;
+  flex-direction: row;
+  width: 100%;
+}
+.path-padres .view-resumen-de-clases .resumen-clase .header div:nth-child(1), .path-coordinador .view-resumen-de-clases .resumen-clase .header div:nth-child(1) {
+  color: #000;
+  font-family: Nunito;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.path-padres .view-resumen-de-clases .resumen-clase .header div:nth-child(2), .path-coordinador .view-resumen-de-clases .resumen-clase .header div:nth-child(2) {
+  color: var(--Grey-K500, #727f7f);
+  font-family: Nunito;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.path-padres .view-resumen-de-clases .resumen-clase .resumen-video img, .path-coordinador .view-resumen-de-clases .resumen-clase .resumen-video img {
+  max-width: 100%;
+  height: auto;
+}
+.path-padres .view-resumen-de-clases .resumen-clase .profesor-clase, .path-coordinador .view-resumen-de-clases .resumen-clase .profesor-clase {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  flex-wrap: nowrap;
+}
+.path-padres .view-resumen-de-clases .resumen-clase .profesor-clase .avatar, .path-coordinador .view-resumen-de-clases .resumen-clase .profesor-clase .avatar {
+  margin-right: 0.5rem;
+}
+.path-padres .view-resumen-de-clases .resumen-clase .profesor-clase .avatar img, .path-coordinador .view-resumen-de-clases .resumen-clase .profesor-clase .avatar img {
+  border-radius: 8.25963rem;
+  background: url(<path-to-image>), lightgray 50%/cover no-repeat;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+.path-padres .view-resumen-de-clases .resumen-clase .profesor-clase .nombre, .path-coordinador .view-resumen-de-clases .resumen-clase .profesor-clase .nombre {
+  color: var(--Black, #000);
+  font-family: Nunito;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.path-padres .view-resumen-de-clases .resumen-clase .comentarios-profesor, .path-coordinador .view-resumen-de-clases .resumen-clase .comentarios-profesor {
+  color: var(--Black, #000);
+  font-family: Nunito;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.path-padres .view-resumen-de-clases .resumen-clase .comentarios-profesor .fondo-gris, .path-coordinador .view-resumen-de-clases .resumen-clase .comentarios-profesor .fondo-gris {
+  display: none;
+}
+.path-padres #main-wrapper #main.contenedor-full, .path-coordinador #main-wrapper #main.contenedor-full {
+  max-width: 100% !important;
+  width: 100% !important;
+  padding: 0 !important;
+}
+.path-padres #main-wrapper #main.contenedor-full .view-id-mis_koalas.view-display-id-block_2 #views-bootstrap-tab-views-bootstrap-mis-koalas-block-2 > .nav.nav-tabs, .path-coordinador #main-wrapper #main.contenedor-full .view-id-mis_koalas.view-display-id-block_2 #views-bootstrap-tab-views-bootstrap-mis-koalas-block-2 > .nav.nav-tabs {
+  max-width: 1400px;
+  width: 90%;
+  margin: 0 auto;
+}
+.path-padres #main-wrapper #main.contenedor-full .view-id-mis_koalas.view-display-id-block_2 #views-bootstrap-tab-views-bootstrap-mis-koalas-block-2 .tab-content, .path-coordinador #main-wrapper #main.contenedor-full .view-id-mis_koalas.view-display-id-block_2 #views-bootstrap-tab-views-bootstrap-mis-koalas-block-2 .tab-content {
+  margin-top: 0rem !important;
+  background: var(--Grey-K100, #e6f1f1);
+}
+.path-padres #main-wrapper #main.contenedor-full .view-id-mis_koalas.view-display-id-block_2 #views-bootstrap-tab-views-bootstrap-mis-koalas-block-2 .tab-content > .tab-pane, .path-coordinador #main-wrapper #main.contenedor-full .view-id-mis_koalas.view-display-id-block_2 #views-bootstrap-tab-views-bootstrap-mis-koalas-block-2 .tab-content > .tab-pane {
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 90%;
+}
+.path-padres #main-wrapper #main.contenedor-full #block-views-block-suscripciones-block-2, .path-coordinador #main-wrapper #main.contenedor-full #block-views-block-suscripciones-block-2 {
+  display: none;
+}
+@media screen and (max-width: 1110px) {
+  .path-padres #main-wrapper #main.contenedor-full .block-views-blockmis-koalas-block-2 .view-id-mis_koalas.view-display-id-block_2 .view-header, .path-coordinador #main-wrapper #main.contenedor-full .block-views-blockmis-koalas-block-2 .view-id-mis_koalas.view-display-id-block_2 .view-header {
+    display: none;
+  }
+  .path-padres #main-wrapper #main.contenedor-full .block-views-blockmis-koalas-block-2 .view-id-mis_koalas.view-display-id-block_2 .view-content.row #views-bootstrap-tab-views-bootstrap-mis-koalas-block-2 .nav.nav-tabs, .path-coordinador #main-wrapper #main.contenedor-full .block-views-blockmis-koalas-block-2 .view-id-mis_koalas.view-display-id-block_2 .view-content.row #views-bootstrap-tab-views-bootstrap-mis-koalas-block-2 .nav.nav-tabs {
+    width: 100% !important;
+    height: 74px !important;
+  }
+}
+
+@media (min-width: 200px) and (max-width: 1100px) {
+  .path-padres #page-wrapper #main-wrapper .container #block-koala-content .content .layout--onecol .layout__region--content .block-views-blockmis-koalas-block-2 h2 {
+    margin-top: 24px !important;
+  }
+  .path-padres #page-wrapper #main-wrapper .container #block-koala-content .content .layout--onecol .layout__region--content .block-views-blockmis-koalas-block-2 .content .view-display-id-block_2 .view-header {
+    top: 0% !important;
+    right: 0% !important;
+    left: 0%;
+    bottom: 91% !important;
+    margin: 0 auto;
+    width: auto;
+  }
+  .path-padres #page-wrapper #main-wrapper .container #block-koala-content .content .layout--onecol .layout__region--content .block-views-blockmis-koalas-block-2 .content .view-display-id-block_2 .view-header a {
+    width: 56px !important;
+    height: 56px;
+    border-radius: 32px !important;
+    color: transparent !important;
+    position: absolute;
+    right: 0% !important;
+    overflow: hidden;
+    top: -48px !important;
+    background-color: white !important;
+    border: 1px solid #297e88;
+  }
+  .path-padres #page-wrapper #main-wrapper .container #block-koala-content .content .layout--onecol .layout__region--content .block-views-blockmis-koalas-block-2 .content .view-display-id-block_2 .view-header a:after {
+    left: 17px !important;
+    top: 17px !important;
+  }
+  .path-padres #page-wrapper #main-wrapper .container #block-koala-content .content .layout--onecol .layout__region--content .block-views-blockmis-koalas-block-2 .content .view-display-id-block_2 .view-content {
+    margin-top: 0rem;
+  }
+  .path-padres #page-wrapper #main-wrapper .container #block-koala-content .content .layout--onecol .layout__region--content .block-views-blockmis-koalas-block-2 .content .view-display-id-block_2 .view-content #views-bootstrap-tab-views-bootstrap-mis-koalas-block-2 .nav-tabs {
+    margin-left: 1rem;
+    max-width: 100vw;
+    height: 73px;
+    padding: 1rem;
+    border: unset;
+    border-radius: 16px;
+    display: flex;
+  }
+  .path-padres #page-wrapper #main-wrapper .container #block-koala-content .content .layout--onecol .layout__region--content .block-views-blockmis-koalas-block-2 .content .view-display-id-block_2 .view-content #views-bootstrap-tab-views-bootstrap-mis-koalas-block-2 .nav-tabs .nav-item {
+    margin-right: 1rem;
+  }
+  .path-padres #page-wrapper #main-wrapper .container #block-koala-content .content .layout--onecol .layout__region--content .block-views-blockmis-koalas-block-2 .content .view-display-id-block_2 .view-content #views-bootstrap-tab-views-bootstrap-mis-koalas-block-2 .nav-tabs .nav-item button {
+    margin-bottom: 0rem !important;
+  }
+  .path-padres #page-wrapper #main-wrapper .container #block-koala-content .content .layout--onecol .layout__region--content .block-views-blockmis-koalas-block-2 .content .view-display-id-block_2 .view-content #views-bootstrap-tab-views-bootstrap-mis-koalas-block-2 .tab-content .tab-pane .views-field .field-content .boton-agendar {
+    width: 100%;
+    z-index: 10;
+  }
+  .path-padres #page-wrapper #main-wrapper .container #block-koala-content .content .layout--onecol .layout__region--content .block-views-blockmis-koalas-block-2 .content .view-display-id-block_2 .view-content #views-bootstrap-tab-views-bootstrap-mis-koalas-block-2 .tab-content .tab-pane .views-field .field-content .boton-agendar .agendar-clase,
+.path-padres #page-wrapper #main-wrapper .container #block-koala-content .content .layout--onecol .layout__region--content .block-views-blockmis-koalas-block-2 .content .view-display-id-block_2 .view-content #views-bootstrap-tab-views-bootstrap-mis-koalas-block-2 .tab-content .tab-pane .views-field .field-content .boton-agendar a {
+    width: 100% !important;
+  }
+  .path-padres .view-resumen-de-clases {
+    padding-top: 2rem;
+  }
+  .path-padres .view-id-logros_taxonomia.view-display-id-block_1 .view-content.row {
+    padding: 1rem 1rem 1rem 0.3rem !important;
+  }
+  .path-padres .view-id-logros_taxonomia.view-display-id-block_1 .item-list-accordeon ul.listado-de-logros {
+    grid-template-columns: 1fr !important;
+  }
+  .path-padres #main-wrapper #main {
+    width: 94% !important;
+  }
+}
+@media (min-width: 768px) and (max-width: 1000px) {
+  .path-padres .view-resumen-de-clases {
+    padding-top: 2rem;
+  }
+  .path-padres .view-resumen-de-clases .resumen-clase .header {
+    flex-direction: column;
+  }
+  .path-padres .view-resumen-de-clases .resumen-clase .header div:nth-child(1) {
+    order: 1;
+  }
+  .path-padres .view-resumen-de-clases .resumen-clase .header div:nth-child(2) {
+    text-align: end;
+    margin-bottom: 0.5rem;
+  }
+}
+@media (min-width: 300px) and (max-width: 960px) {
+  .path-padres #page-wrapper #main-wrapper .container #block-koala-content .content .layout--onecol .layout__region--content .block-views-blockmis-koalas-block-2 .content .view-display-id-block_2 .view-content #views-bootstrap-tab-views-bootstrap-mis-koalas-block-2 .tab-content .tab-pane .views-field .field-content {
+    flex-direction: column;
+    width: auto;
+  }
+  .path-padres #page-wrapper #main-wrapper .container #block-koala-content .content .layout--onecol .layout__region--content .block-views-blockmis-koalas-block-2 .content .view-display-id-block_2 .view-content #views-bootstrap-tab-views-bootstrap-mis-koalas-block-2 .tab-content .tab-pane .views-field .field-content .boton-agendar {
+    height: 2rem;
+  }
+  .path-padres #page-wrapper #main-wrapper .container #block-koala-content .content .layout--onecol .layout__region--content .block-views-blockmis-koalas-block-2 .content .view-display-id-block_2 .view-content #views-bootstrap-tab-views-bootstrap-mis-koalas-block-2 .tab-content .tab-pane .views-field .field-content .boton-agendar:last-child {
+    height: auto;
+  }
+  .path-padres .view-id-logros_taxonomia.view-display-id-block_1 .item-list-accordeon ul.listado-de-logros li {
+    padding: 6px 4px 4px 28px !important;
+  }
+}
+.acciones-a-realizar {
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+footer.site-footer.footer-mis-koalas {
+  margin-top: 0rem;
+}
+
+.progress .progress-bar.background-10 {
+  background: #727F7F !important;
+}
+.progress .progress-bar.background-30 {
+  background: #297E88 !important;
+}
+.progress .progress-bar.background-50 {
+  background: #FF6669 !important;
+}
+.progress .progress-bar.background-70 {
+  background: #FBAF00 !important;
+}
+.progress .progress-bar.background-85 {
+  background: #869021 !important;
+}
+.progress .progress-bar.background-100 {
+  background: #00D2C2 !important;
+}
